@@ -1,0 +1,1648 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>true</authentication>
+    <key><![CDATA[fDfi6rdiIgfTp49R0xj8MQ]]></key>
+    <method><![CDATA[book_show]]></method>
+  </Request>
+  <book>
+    <id>865</id>
+    <title>The Alchemist</title>
+    <isbn><![CDATA[0061122416]]></isbn>
+    <isbn13><![CDATA[9780061122415]]></isbn13>
+    <asin><![CDATA[]]></asin>
+    <image_url>http://d.gr-assets.com/books/1287827991m/865.jpg</image_url>
+    <small_image_url>http://d.gr-assets.com/books/1287827991s/865.jpg</small_image_url>
+    <publication_year>1993</publication_year>
+    <publication_month>5</publication_month>
+    <publication_day>1</publication_day>
+    <publisher>HarperCollins</publisher>
+    <language_code>eng</language_code>
+    <is_ebook>false</is_ebook>
+    <description><![CDATA[Paulo Coelho's enchanting novel has inspired a devoted following around the world. This story, dazzling in its powerful simplicity and inspiring wisdom, is about an Andalusian shepherd boy named Santiago who travels from his homeland in Spain to the Egyptian desert in search of a treasure buried in the Pyramids. Along the way he meets a Gypsy woman, a man who calls himself king, and an alchemist, all of whom point Santiago in the direction of his quest. No one knows what the treasure is, or if Santiago will be able to surmount the obstacles along the way. But what starts out as a journey to find worldly goods turns into a discovery of the treasure found within. Lush, evocative, and deeply humane, the story of Santiago is an eternal testament to the transforming power of our dreams and the importance of listening to our hearts.]]></description>
+    <work>
+      <best_book_id type="integer">865</best_book_id>
+      <books_count type="integer">11</books_count>
+      <default_chaptering_book_id type="integer" nil="true"/>
+      <default_description_language_code nil="true"/>
+      <desc_user_id type="integer">11264970</desc_user_id>
+      <id type="integer">4835472</id>
+      <media_type>book</media_type>
+      <original_language_id type="integer" nil="true"/>
+      <original_publication_day type="integer" nil="true"/>
+      <original_publication_month type="integer" nil="true"/>
+      <original_publication_year type="integer">1988</original_publication_year>
+      <original_title>O Alquimista</original_title>
+      <rating_dist>5:260461|4:223502|3:168119|2:76665|1:48592|total:777339</rating_dist>
+      <ratings_count type="integer">780823</ratings_count>
+      <ratings_sum type="integer">2916125</ratings_sum>
+      <reviews_count type="integer">1159873</reviews_count>
+      <text_reviews_count type="integer">34061</text_reviews_count>
+    </work>
+    <average_rating>3.73</average_rating>
+    <num_pages><![CDATA[197]]></num_pages>
+    <format><![CDATA[Paperback]]></format>
+    <edition_information><![CDATA[]]></edition_information>
+    <ratings_count><![CDATA[744553]]></ratings_count>
+    <text_reviews_count><![CDATA[29705]]></text_reviews_count>
+    <url><![CDATA[http://www.goodreads.com/book/show/865.The_Alchemist]]></url>
+    <link><![CDATA[http://www.goodreads.com/book/show/865.The_Alchemist]]></link>
+    <authors>
+      <author>
+        <id>566</id>
+        <name>Paulo Coelho</name>
+        <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+        <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+        <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+        <average_rating>3.68</average_rating>
+        <ratings_count>1230879</ratings_count>
+        <text_reviews_count>58856</text_reviews_count>
+      </author>
+    </authors>
+
+    <my_review>
+      <id>502892948</id>
+
+
+      <rating>4</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Fri Jan 11 00:40:05 -0800 2013</date_added>
+      <date_updated>Fri Jan 11 00:40:05 -0800 2013</date_updated>
+      <read_count></read_count>
+      <body>
+        Brilliant read!
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/502892948]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/502892948]]></link>
+      <owned>0</owned>
+    </my_review>
+    <friend_reviews>
+      <review>
+        <id>191000763</id>
+        <user>
+          <id>5890040</id>
+          <name>Vishal</name>
+          <location>Salt Lake City, UT</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/5890040-vishal-nageshkar]]></link>
+          <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/m_111x148-ed68a3a40c70b78add8e1bdde8780d31.png]]></image_url>
+          <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/m_50x66-e89fc14c32a41c0eb4298dfafe929b65.png]]></small_image_url>
+        </user>
+
+
+
+        <rating>4</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Wed Jul 27 21:04:36 -0700 2011</date_added>
+        <date_updated>Wed Aug 03 01:38:39 -0700 2011</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[Alchemists convert gold from junk. Can a human life be considered junk, to be turned into gold?<br />The Alchemist is the story of a young Shepherd who sets out to find a treasure, only to realize that the hidden treasure lies within.]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/191000763]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/191000763]]></link>
+      </review>
+
+      <review>
+        <id>284308453</id>
+        <user>
+          <id>7915589</id>
+          <name>Shrikanth</name>
+          <location></location>
+          <link><![CDATA[http://www.goodreads.com/user/show/7915589-shrikanth]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1330165372p3/7915589.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1330165372p2/7915589.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>4</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sun Feb 26 07:23:11 -0800 2012</date_added>
+        <date_updated>Sat Feb 08 18:38:52 -0800 2014</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/284308453]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/284308453]]></link>
+      </review>
+
+      <review>
+        <id>507920243</id>
+        <user>
+          <id>16186257</id>
+          <name>Kannan</name>
+          <location>Bangalore, 19, India</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/16186257-kannan-aravind]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1357562705p3/16186257.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1357562705p2/16186257.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>4</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Wed Jan 16 01:37:02 -0800 2013</date_added>
+        <date_updated>Wed Jan 16 01:37:02 -0800 2013</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/507920243]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/507920243]]></link>
+      </review>
+
+      <review>
+        <id>448428859</id>
+        <user>
+          <id>13912082</id>
+          <name>Solairaja</name>
+          <location>Madras, 25, India</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/13912082-solairaja]]></link>
+          <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png]]></image_url>
+          <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png]]></small_image_url>
+        </user>
+
+
+
+        <rating>4</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sun Nov 04 09:46:35 -0800 2012</date_added>
+        <date_updated>Sun Nov 04 09:46:35 -0800 2012</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/448428859]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/448428859]]></link>
+      </review>
+
+      <review>
+        <id>374145762</id>
+        <user>
+          <id>11169095</id>
+          <name>Srikrishnan</name>
+          <location>Gurgaon, 10, India</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/11169095-srikrishnan]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1342936409p3/11169095.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1342936409p2/11169095.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>4</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sat Jul 21 23:46:38 -0700 2012</date_added>
+        <date_updated>Sat Jul 21 23:46:38 -0700 2012</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/374145762]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/374145762]]></link>
+      </review>
+
+      <review>
+        <id>104948549</id>
+        <user>
+          <id>1301819</id>
+          <name>Sindhuja</name>
+          <location>Chennai, Tamilnadu, India</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/1301819-sindhuja]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1297537508p3/1301819.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1297537508p2/1301819.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>4</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sun May 30 19:20:04 -0700 2010</date_added>
+        <date_updated>Sun May 30 19:20:04 -0700 2010</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/104948549]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/104948549]]></link>
+      </review>
+
+      <review>
+        <id>72345351</id>
+        <user>
+          <id>2771933</id>
+          <name>Ghouse</name>
+          <location>Trichy, TN, India</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/2771933-ghouse]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1320558722p3/2771933.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1320558722p2/2771933.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>4</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+          <shelf name="interesting" />
+          <shelf name="fiction" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Thu Sep 24 09:40:11 -0700 2009</date_added>
+        <date_updated>Mon Mar 22 08:00:51 -0700 2010</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/72345351]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/72345351]]></link>
+      </review>
+
+      <review>
+        <id>363090579</id>
+        <user>
+          <id>10759968</id>
+          <name>Bharath</name>
+          <location>Bangalore, 19, India</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/10759968-bharath]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1341677673p3/10759968.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1341677673p2/10759968.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>3</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sat Jul 07 09:24:20 -0700 2012</date_added>
+        <date_updated>Sat Jul 07 09:24:20 -0700 2012</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/363090579]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/363090579]]></link>
+      </review>
+
+      <review>
+        <id>333186704</id>
+        <user>
+          <id>7915589</id>
+          <name>Shrikanth</name>
+          <location></location>
+          <link><![CDATA[http://www.goodreads.com/user/show/7915589-shrikanth]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1330165372p3/7915589.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1330165372p2/7915589.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>3</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sun May 20 04:44:57 -0700 2012</date_added>
+        <date_updated>Sun May 20 04:44:57 -0700 2012</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/333186704]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/333186704]]></link>
+      </review>
+
+      <review>
+        <id>292158859</id>
+        <user>
+          <id>5038384</id>
+          <name>Abhishek</name>
+          <location>The United States</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/5038384-abhishek]]></link>
+          <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/m_111x148-ed68a3a40c70b78add8e1bdde8780d31.png]]></image_url>
+          <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/m_50x66-e89fc14c32a41c0eb4298dfafe929b65.png]]></small_image_url>
+        </user>
+
+
+
+        <rating>3</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sat Mar 10 17:29:59 -0800 2012</date_added>
+        <date_updated>Sat Mar 10 17:29:59 -0800 2012</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/292158859]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/292158859]]></link>
+      </review>
+
+      <review>
+        <id>773359333</id>
+        <user>
+          <id>25953851</id>
+          <name>Rama</name>
+          <location>Redmond, WA</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/25953851-rama-krishnan]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1385269303p3/25953851.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1385269303p2/25953851.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>0</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sun Nov 24 23:16:56 -0800 2013</date_added>
+        <date_updated>Sun Nov 24 23:16:56 -0800 2013</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/773359333]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/773359333]]></link>
+      </review>
+
+      <review>
+        <id>342105983</id>
+        <user>
+          <id>7761379</id>
+          <name>Natarajan</name>
+          <location>The United Kingdom</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/7761379-natarajan]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1329299199p3/7761379.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1329299199p2/7761379.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>0</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Mon Jun 04 00:26:12 -0700 2012</date_added>
+        <date_updated>Mon Jun 04 00:26:21 -0700 2012</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/342105983]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/342105983]]></link>
+      </review>
+
+      <review>
+        <id>329177217</id>
+        <user>
+          <id>9494327</id>
+          <name>Ankit</name>
+          <location>The United States</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/9494327-ankit]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1336931795p3/9494327.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1336931795p2/9494327.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>0</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="to-read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sun May 13 11:02:56 -0700 2012</date_added>
+        <date_updated>Sun May 13 11:02:56 -0700 2012</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/329177217]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/329177217]]></link>
+      </review>
+
+    </friend_reviews>
+    <reviews start="1" end="20" total="2000" api_blocked_count="0">
+      <review>
+        <id>4968096</id>
+        <user>
+          <id>80444</id>
+          <name>Sarah</name>
+          <location>Washington, DC</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/80444-sarah]]></link>
+          <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/f_111x148-50ade1db09790810151d48c044458007.png]]></image_url>
+          <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/f_50x66-e0ba3b90c110cd67123d6a850d85373e.png]]></small_image_url>
+        </user>
+
+
+
+        <rating>2</rating>
+        <votes>594</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for><![CDATA[people trying to find themselves]]></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at>Sun Jul 01 00:00:00 -0700 2007</read_at>
+        <date_added>Wed Aug 22 18:28:20 -0700 2007</date_added>
+        <date_updated>Sun Jan 12 00:47:04 -0800 2014</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[I feel like everyone LOVES this book, but I was kind of underwhelmed.  I know that translation affects the quality of writing, but I could not get into this writing style.  At all.  I felt like it was totally affected and contrived.  He was going for this "fable/parable" style, but it seemed to fail miserably.  The parable-like quality was totally contrived, and I thought the "moral" was pretty stupid.  <br /><br />Moral: everything you want and need is close to home. Take chances.  Follow your "personal legacy."<br /><br />Then....there was a supernatural element which was just plain dumb.  Granted, I am not religious.  I think god-fearing people get more out of this bc they can take that leap of faith, excuse the phrase.  If this was supposed to be a story of magic, I may have been into it.  But it was supposed to be a simple story of knowing yourself.  And I think, philosophically speaking, when you truly know yourself that is when you truly realize your destiny.  Why do you need supernatural forces to convey that message?  This was about realizing your destiny, or "personal legacy."  It could have been done without the hocus pocus, and, yes, the cheese.  <br /><br />In short, the book attempted to be deep and failed.  "Speaking with the wind and the sun" and "being a shepherd" and getting over "personal hardship" all as part of a transparent "higher plan" (read: personal legacy) doesn't make a plot deep.  A character simply called "boy" and short sentences doesn't make a story a fable.  Learning from your flocks and from nature doesn't make a character inexplicably wise.  I really got nothing out of this book.<br /><br />It is short though.  The book came very highly recommended.  Read it to judge the hype for yourself.  After all, a whole nation, including Bill Clinton (who I'm into), thought it was a touching account that personally changed them.  Then again, this is the same country who thought The Celestine Prophesy was worthwhile.  Gag.]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/4968096]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/4968096]]></link>
+      </review>
+
+      <review>
+        <id>4515369</id>
+        <user>
+          <id>277180</id>
+          <name>Christopher</name>
+          <location>Seattle, WA</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/277180-christopher]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1202777149p3/277180.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1202777149p2/277180.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>2</rating>
+        <votes>411</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Mon Aug 13 22:48:08 -0700 2007</date_added>
+        <date_updated>Mon Jan 13 14:26:25 -0800 2014</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[I really disliked this book. I dislike it in the way that I dislike a great deal of modern self help books. Their basic message is that if you want something to happen, you need to want it as hard as you can, without caring about anything else, not allowing yourself to doubt it, or let criticisms will get in the way then it will happen.<br />I disagree with this notion, not only because it is false, but because it is bad.<br />Just because we desire something, does not make it good. This idea of 'following your heart' is often wrong. Who are we to be the arbiters of truth? Why should our hearts be sources of information that go beyond logic, doubt and reasoning? Haven't we all desired things that have turned out to not be in our best interest, or to be harmful to others? Andrew Jackson was a man known to have a lot of integrity. He was always 'true' to himself and followed his heart. Andrew Jackson is the man who initiated the 'Trail of Tears'. Moving Native Americans from their homes and into reservations. <br />Next, this idea of not letting ourselves doubt or consider doubts. This is a terrible and dishonest way to live. If we don't consider doubts, and entertain them often, then we are deliberately blinding ourselves. Deliberately making ourselves ignorant. If someone doesn't give serious consideration to the idea that they may be wrong. Give serious thought to why they believe what they do, and that perhaps those who doubt them may be correct, then they are behaving in a dangerous and dishonest way.<br />Not giving heed to the concerns doubts and criticisms of others is something I believe is a major fault in modern society. Often, people fail to recognize the needs of the group and the community. We place so much emphasis on the needs and rights of the individual. This causes people to focus so much on themselves to the detriment of others around them. At times, it can be beneficial to go against the group, but one should first give serious consideration to  the groups concerns.<br /><br />According to Ideas like the Alchemist, groups like, the Westboro Baptist Church,(godhatesfags.com) should be seen as American heroes. These are people who take a totally irrational stance, and stick to it as hard as they can in complete defiance to the views of everyone around them.<br />]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/4515369]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/4515369]]></link>
+      </review>
+
+      <review>
+        <id>4797927</id>
+        <user>
+          <id>138926</id>
+          <name>Clint</name>
+          <location></location>
+          <link><![CDATA[http://www.goodreads.com/user/show/138926-clint]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1380358030p3/138926.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1380358030p2/138926.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>1</rating>
+        <votes>384</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+          <shelf name="incredibly-fucking-awful" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Mon Aug 20 03:26:58 -0700 2007</date_added>
+        <date_updated>Mon Jan 13 10:16:48 -0800 2014</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[I hate this book so much.  I used to work at a hippie vegetarian restaurant where everyone raved about it, so I should have known what a disaster it would be.  Writing in the style of a fable does not convince me that what the author says is true or profound, this just sucks all around, and people who describe it as magical or inspirational are probably dudes I will not be having a beer with anytime soon.  This guy, he's probably going to get a Nobel one day, too.]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/4797927]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/4797927]]></link>
+      </review>
+
+      <review>
+        <id>65807329</id>
+        <user>
+          <id>2391622</id>
+          <name>Lujayn</name>
+          <location>Jeddah, Saudi Arabia</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/2391622-lujayn-al]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1342860699p3/2391622.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1342860699p2/2391622.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>5</rating>
+        <votes>323</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+          <shelf name="favorites" />
+        </shelves>
+        <recommended_for>المتفلسفون ، والساخطون </recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at>Sat Aug 01 00:00:00 -0700 2009</read_at>
+        <date_added>Sat Aug 01 17:13:13 -0700 2009</date_added>
+        <date_updated>Mon Jan 13 09:13:17 -0800 2014</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[كلّ شيء مكتوب !<br /><br />ما إن انتهيت من قراءة هذه الرواية حتى  أحسستُ أن الدنيا سكتت ، و العالم سكت <br /><br />و أنني أريدُ أن أسكتُ باقي عمري ..<br /><br /> أتأمل الحياة .. لعل روح العالم تغمرني فأفلسف الحياة كما شاء لي قلبي <br /><br />مليئة هذه الرواية بالرموز و الحكم و التراث و الأخلاق بل وحتى الآيات الإسلامية<br /><br /><br /><br />تحسّ و أنت تقرؤها برياح أندلسية تلفح فكرك ، تجعلكَ تبتسم بين حكمة و أخرى <br /><br />ببساطة القدر ، و تعقيد البشر .. بعمق المعاني ، و سطحية الفهم <br /><br />هذه الرواية تجسّد القدر و الحكمة في أسمى معانيها ، كما نؤمن بها تمامًا<br /><br />أحببتُ حكمها جدًا " كيف يتحدّث الكون لغة واحدة هي الحب ، العمل ، متعة الهدف <br /><br />و كيف نتعلّم تقديس الحياة من حولنا على بساطتها، والتفكّر في كلّ أحداثها على أنّها منحٌ و إشارات يلقيها الله في طريقنا لتقودنا نحو ذواتناو مجدنا <br /><br />و كيف أن الكنز قريب جدًا جدًا من أحدنا كما كان قريبًا عند شجرة الجميز التي  نام تحتها سانتياغو أو الفتى - كما يسميه الكاتب - إلا أن العمل من أجل الحصول و الجهد المبذول و التعب المضني في سبيل الوصول.. كان هو الغاية .. و هو سرّ الوجود و " الإنجاز العظيم " فما معنى الكنز إن لم تستحقّ الحصول عليه !! <br /><br />أحسستُ بالقرب الشديد من جوّها ، صورة الراعي ، و الخيميائي .. إكسير الحياة والإنجاز العظيم  ..روح العالم و الأسطورة الشخصية<br /><br />حقًا ، لقد خلق كلّ منا لـ يحقق أسطورة<br /><br />و الحياة لا تمنحُ الفرص إلا للراغبين<br /><br /><br /><br />]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/65807329]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/65807329]]></link>
+      </review>
+
+      <review>
+        <id>6595270</id>
+        <user>
+          <id>24126</id>
+          <name>Marte</name>
+          <location>Lørenskog, Norway</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/24126-marte-patel]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1365239560p3/24126.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1365239560p2/24126.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>1</rating>
+        <votes>307</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+          <shelf name="fiction" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at>Sat Dec 01 00:00:00 -0800 2007</read_at>
+        <date_added>Sat Sep 22 05:57:30 -0700 2007</date_added>
+        <date_updated>Mon Jan 13 10:17:20 -0800 2014</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[Utter drivel. The book was badly written, righteous, condescending, preachy, and worst of all, the ending was morally questionable. All the fables and stories are stolen from elsewhere, religious ideas and spirituality are badly mixed, and everything is so <strong>obvious</strong>.<br /><br />The book harps on about tapping into the Soul of the World, the Language of the World, about your one true path and other nonsense. The basic idea is that if you really want something and "listen to your heart", the whole universe will help you achieve it if you only look for omens. A questionable idea in a world where people no longer want to work hard and achieve independently.<br /><br />It reads like a really bad self-help book written for 8 year old children and disguised as a symbolic parable. I read a lot of books and I can safely say this is the worst book I have ever read. It's only saving grace was that it was mercifully short.]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/6595270]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/6595270]]></link>
+      </review>
+
+      <review>
+        <id>49383351</id>
+        <user>
+          <id>2123165</id>
+          <name>asma</name>
+          <location>Kuala Lumpur, 14, Malaysia</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/2123165-asma-qadah]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1392966144p3/2123165.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1392966144p2/2123165.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>5</rating>
+        <votes>302</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+          <shelf name="friend-s-gift" />
+          <shelf name="favorites" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at>Sun Mar 15 00:00:00 -0700 2009</read_at>
+        <date_added>Sun Mar 15 17:30:20 -0700 2009</date_added>
+        <date_updated>Fri Jan 10 11:23:58 -0800 2014</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[عرفته أوّل مرة من روايته إحدى عشر دقيقة.. كانت المرة الأولى التي أقرأ فيها قصة أو رواية مترجمة؛ نظراً لعدم وثوقي غالباً في الأدبيّات المترجمة فيما سبق..<br /><br />أنهيت قبل أيام قراءة الخيميائي، شدّني الاسم؛ خاصة أنها في الانجليزية تسمى The Alchemist ولا أدري هل كانت الكيمياء فيما سبق تسمى خيمياء؟<br /><br />تدور الرواية حول راعٍ أندلسي ترك مهنته ليحقق حلماً تكرر مرّتين، زار من بعدها غجرية أوّلت له حلمه ووثقت به حين لم تأخذ منه ثمن تأويل الحلم أو تفسيره إلا بعد تحقق تأويلها حيث عليه أن يسافر من (طيفا) الأندلس إلى الأهرامات عبوراً بالبحر ثم التنقل من مدينة عربية إلى أخرى انتهاءً بالصحراء ثم الواحات..<br /><br />كـ راعٍ؛ كان عليه تعلّم الكثير من الأمور و اكتساب صفاتٍ أخرى لم تعلمه إياها رعاية الأغنام، بدءاً من الصبر و إتقان اللغة العربية و الاعتياد على أجواء الصحراء و السير وِفق أنظمة أخرى..<br /><br />إصرار سانتياغو على تحقيق حلمه رغم تعرّضه للسرقة في إحدى الحانات مما دفعه العمل في محل بلّوريات لمدة عامٍ كامل يمكّنه فيما بعد لشراء عدد كبير من الخرفان، لكنه تنازل عن ذلك في مقابل تحقيق حلمه و هو الحصول على الكنز المدفون عند الأهرامات.. المضحِك في القصة أنه كان على الراعي العَودة إلى حيث كان، إلى طيفا ليجد الكنز مخبّأً في نفس الدير الذي نام فيه يوماً و راوده الحلم!<br /><br />تدور كذلك القصة حول علاقة الإنسان بربه و مدى إيمانه و يقينه بـ”ذاته هو” و يقينه بالله و بالإشارات التي يرسلها للعبد.. جعلتني الأحداث التي دارت في القصة على مراجعة حياتي و الرياح التي هبّت عليها.. لوهلة؛ شعرت كم أنا ساخطة على حياتي فيما سبق! تساءلت عن معنى الصبر، الإيمان بالقضاء و القدر، التسليم الكامل لله!.. كلها معانٍ كانت خافية عني في الشهور الماضية، هذا إذا ما اعتبرت نفسي كثيرة الشكوى و التذمر سواء من وظيفتي أو الحياة أو أطفالي.. المرة الوحيدة التي شعرت فيها براحة نفسية عميقة حينما كنت في محنةٍ كادت أن توقف قلبي خلال شهر فبراير، لم أكن أعرف ماذا عليّ أن أفعل حينها و لم أجد أمامي سوى الاستسلام لقضاء الله، أذكر أنني دعَوْت حينها “اللهم سلّمت أمري لك أنت وحدك العالِم مابي و لا مُعين لي سواك اقضِ لي بالخير و رضّني بقضائك” كان (و ما يزال) من المهم بالنسبة لي الرضا بالقضاء و الحكم ذاته..<br /><br />باولو كويلو الرائع جداً احتفل ذات عامٍ ببيع روايته للسنة العشرين و هي النسخة الموجودة لدي، له أقف احتراماً لكاتب استمرّ الآخرون في قراءة كتابه كل هذه الأعوام!!<br />]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/49383351]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/49383351]]></link>
+      </review>
+
+      <review>
+        <id>30571376</id>
+        <user>
+          <id>1439240</id>
+          <name>Lamski Kikita</name>
+          <location></location>
+          <link><![CDATA[http://www.goodreads.com/user/show/1439240-lamski-kikita]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1321835207p3/1439240.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1321835207p2/1439240.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>5</rating>
+        <votes>276</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for>everyone</recommended_for>
+        <recommended_by>a friend</recommended_by>
+        <started_at></started_at>
+        <read_at>Thu Sep 18 00:00:00 -0700 2008</read_at>
+        <date_added>Tue Aug 19 13:39:49 -0700 2008</date_added>
+        <date_updated>Sun Jan 12 14:26:09 -0800 2014</date_updated>
+        <read_count>3</read_count>
+        <body>
+          <![CDATA[<em>"when you really want something, the whole universe conspires in helping you to achieve it"</em><br /><br /><br />This book has crossed the boundaries of books, and has taken a life of its own, creating a movement all around the globe.<br /><br />Santiago's journey and spiritual quest, the people he meets, the dreams he has, the omens he encounters, and the nature he speaks to, are all things that we can relate to..things that we've either forgotten about or simply dismissed as childhood fantasies. It is all about finding your Personal Legend and pursuing your dream regardless of any hurdles, and about being spiritually connected to the universe, which is part of us, and part of God. we are all one.<br /><br />Reading this book always sets me back on the right path towards achieving the dreams I have put on hold. We always try to do what everyone expects of us like pursuing a career that you hate just because that is what everyone does. Recognizing my personal legend, being able to talk to the trees, sky, ants, the core of the earth, the air particles, and to my heart, feeling a deeper spiritual connection with everything/everyone that is around me, feeling God inside me, and not being afraid of failing or facing challenges are just some of the few things this book has given me.<br /><br />It is <em>maktub</em> that Coelho writes this book, shares it with the world, and affect so many lives. This masterwork is a legend and a precious treasure.]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/30571376]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/30571376]]></link>
+      </review>
+
+      <review>
+        <id>37389422</id>
+        <user>
+          <id>1424485</id>
+          <name>Jonathan</name>
+          <location>The United States</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/1424485-jonathan]]></link>
+          <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/m_111x148-ed68a3a40c70b78add8e1bdde8780d31.png]]></image_url>
+          <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/m_50x66-e89fc14c32a41c0eb4298dfafe929b65.png]]></small_image_url>
+        </user>
+
+
+
+        <rating>1</rating>
+        <votes>211</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Mon Nov 10 20:21:32 -0800 2008</date_added>
+        <date_updated>Sun Jan 12 00:24:46 -0800 2014</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[I've got your Personal Legend right here, Paolo Coelho.  This may be the first book I've ever read that was so bad it actually made me angry at the author.  If I ever run into Paolo Coelho, I hope I'll beat him down to the ground and take the inflation adjusted equivalent of the 13.95 I paid for this worthless rag out of his wallet.  If you want to read something sort of thoughtful on the whole "follow your dreams" theme, the author's short introduction is actually better than the book, and doesn't delve so much into the mumbo-jumbo quasi-mystical crap that find in the story.  But, on the whole, this author is nothing but a snake oil artist, and this book belongs on the shelf with "The Secret" and other self-help books that use some sort of mystical sounding language to tell you that pursuing the things you want in life isn't just a matter of personal satisfaction, but will actually MAKE THE WORLD A BETTER PLACE IN A PROFOUND WAY.  (But what if your heart's desire is to be a serial killer?  How does that fit in your little mystical worldview, Mr. Coelho?)]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/37389422]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/37389422]]></link>
+      </review>
+
+      <review>
+        <id>10859386</id>
+        <user>
+          <id>551316</id>
+          <name>Sithara</name>
+          <location><![CDATA[Tanzania, The United Republic of]]></location>
+          <link><![CDATA[http://www.goodreads.com/user/show/551316-sithara]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1241119454p3/551316.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1241119454p2/551316.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>2</rating>
+        <votes>127</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at>Fri Jun 01 00:00:00 -0700 2007</read_at>
+        <date_added>Sat Dec 22 02:06:49 -0800 2007</date_added>
+        <date_updated>Sat Dec 22 02:22:08 -0800 2007</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[I need to start this review by stating 1) I can't stand self-help books and 2) I'm a feminist (no, I don't hate men- some men are quite awesome, but I am very conscious of women and our place in the world.)<br /><br />Short summary (mild spoilers): A boy named Santiago follows his 'Personal Legend' in traveling from Spain to the Pyramids in Egypt searching for treasure. Along the way, he learns 'the Language of the World' the 'Soul of the World' and discovers that the 'Soul of God' is 'his own soul.'<br /><br />If the statements in quotes above ('personal legend', etc) fascinate you, then you'll enjoy this book. If you think they are hokey and silly, then you'll think this is a terrible book. If you think statements such as "When you want something, all the universe conspires you to achieve it" and "All things are one" are moving and life-changing, you'll love this book. If such statements have you rolling your eyes, then this isn't your cup of tea.<br /><br />Its not that I find anything wrong with these messages.  They are important, but must be balanced with responsibility. In my experience, 'following your dreams' (or personal legend) is not the only way toward wisdom and strength. Is the person who struggles to put food on the table every day for his or her family, consciously realizing that he or she may not be following his or her 'personal legend' any less heroic than some traveler who leaves everything and everyone he or she is responsible for to go on a spiritual quest? Coelho comes close to labeling such people, as losers in life, which I find completely off the mark as some of these people have the most to offer in terms of wisdom.<br /><br />The issue of responsibility is also part of this book's sexism. The main male characters in the novel have 'Personal Legends' - they are either seeking them, or have achieved them, or have failed to achieve them. But Coelho never mentions 'Personal Legend' with regard to women, other than to say that Fatima, Santiago's fiance, is 'a part of Santiago's Personal Legend." Thats fine, but what about her own Personal Legend? Instead of traveling to find her dreams, she is content to sit around, do chores, and stare everyday at the desert to wait for his return. This is her 'fate' as a desert women.  The fact that women don't have Personal Legends is even more galling considering the fact that according to Coelho, even minerals such as lead and copper have Personal Legends, allowing them to 'evolve' to something better (ie, gold).<br /><br />In the ideal world presented in THE ALCHEMIST, it seems that the job of men is to seek out their personal legends, leaving aside thoughts of family and responsibility, and its the job of women to let them, and pine for their return. Of course, someone has to do the unheroic, inconvenient work of taking care of the children, the animals, the elderly, the ill...If everyone simply goes off on spiritual quests, deciding they have no responsibility other than to seek their Personal Legends, no one would be taking responsibility for the unglamorous work that simply has to take place for the world to run.<br /><br />On the other hand, what if both men and women are allowed to struggle towards their 'Personal Legends,' and help each other as best as they can towards them, but recognize that their responsibilities may force them to defer, compromise, or even 'sacrifice' their dreams? This may seem depressing, but it isn't necessarily. Coelho seems to think that Personal Legends are fixed at childhood (or at birth, or even before) and are not changeable: they have to be followed through to the end, no matter how silly. But in my experience, many people have chosen to adjust, compromise, and even 'give up' on their dreams, only to find that life grants them something better, or they have a new, better dream to follow, a path providing greater wisdom. For me, these people have a more realistic, more humble, more fair, and less cliched vision of the world than Paulo Coelho's vision in THE ALCHEMIST.<br /><br />]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/10859386]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/10859386]]></link>
+      </review>
+
+      <review>
+        <id>39428214</id>
+        <user>
+          <id>1775679</id>
+          <name>أحمد</name>
+          <location>Alexandria, 06, Egypt</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/1775679]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1397583835p3/1775679.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1397583835p2/1775679.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>4</rating>
+        <votes>121</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+          <shelf name="owned" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at>Mon Jan 01 00:00:00 -0800 2007</read_at>
+        <date_added>Sat Dec 06 01:37:01 -0800 2008</date_added>
+        <date_updated>Mon Dec 30 09:08:47 -0800 2013</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[رواية غيّرت روحي.<br /><br />أحمد الديب<br />2007]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/39428214]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/39428214]]></link>
+      </review>
+
+      <review>
+        <id>23924224</id>
+        <user>
+          <id>1219253</id>
+          <name>Amanda</name>
+          <location>Jonesboro, AR</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/1219253-amanda]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1395632028p3/1219253.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1395632028p2/1219253.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>1</rating>
+        <votes>113</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+          <shelf name="crap" />
+          <shelf name="book-club-made-me-do-it" />
+          <shelf name="blog" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at>Sun Feb 07 00:00:00 -0800 2010</started_at>
+        <read_at>Tue Feb 09 00:00:00 -0800 2010</read_at>
+        <date_added>Sat Jun 07 08:42:53 -0700 2008</date_added>
+        <date_updated>Sun Jan 12 09:19:55 -0800 2014</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[***spoilers and bitterness ahead--be forewarned**<br /><br />I'm not sure that I can capture my utter disdain for this book in words, but I'll give it a shot.  I read this book about three years ago and just had to re-read it for book club.  It was a steaming pile of crap then and, guess what?, it's a steaming pile of crap now.  The main reason I hate this book:  it's trite inspirational literature dressed up as an adventure quest.  You go into it thinking that it's going to be about a boy's quest for treasure.  If you read the back, there are words like "Pyramids," "Gypsy," "alchemist."  Turns out, this is just <em>The Purpose Driven Life</em> dressed up with a little fable.  It's Hallmark Hall of Fame territory set in an exotic locale.  Which pisses me off to no end as I normally try to dodge that sort of thing, but here it is masquerading as the type of book I normally like.  It's cliche, didactic, and poorly written.    <br /><br />Just as with <em>Aesop's Fables</em>, there's a moral to the story.  And Coelho keeps backing up and running over it just to make sure that we get it (and he capitalizes important key words necessary to understanding it, lest we overlook their significance).  If there's one thing Paulo Coelho can do, it's flog a dead horse.  <br /><br />Essentially, boy thinks he's happy in life.  He's a shepherd who gets to travel the world, has all of his needs met, and owns a book which he can always trade for another book when he goes to market.  What more can a boy need?  Boy is then told by a mysterious stranger that he's not happy at all.  Why not?  He has failed to recognize his Personal Legend.  Everyone has a Personal Legend, which is life's plan for you.  However, most of us give up on our Personal Legend in childhood.  If you are fortunate enough to hang onto and pursue your Personal Legend, then The Soul of the World will help you obtain it.  All of nature conspires to bring you luck and good fortune so that you can fulfill your destiny, whether it's to be a shepherd on a quest for treasure at the pyramids, a butcher, a baker, a candlestick maker, or, one would assume, a prostitute, drug dealer, or porn star.  Hey, we're all fate's bitch in <em>The Alchemist</em>.  But I digress.  Boy seeks out his Personal Legend and finds it's a long, hard road to obtaining what you want in life.  But with faith, perseverance, and just a little goshdarnit good luck, the boy learns to speak the Language of the World and tap into The Soul of the World and fulfills his Personal Legend.  And what does he learn?  That what he sought was back home, the place he started from.  Oh, silly boy.  <br /><br />So, in summation, here is what you should learn from <em>The Alchemist</em>:<br /><br />1)  Dream.  And, while you're at it, dream BIG<br />2)  Follow your bliss<br />3)  Don't be surprised if you find obstacles in your way, but you will overcome<br />4)  It's good to travel and encounter people from other cultures<br />5)  What we most often seek is right in front of us, but sometimes we have to leave home to realize it<br /><br />To all of these important life lessons, I can only say, "Well, no shit, Sherlock."  If Coelho knew anything about alchemy, he would have been able to transform this crap into gold.  Alas, it's still crap.  <br /><br />Cross posted at <a href="http://viiamanda.blogspot.com/" rel="nofollow">This Insignificant Cinder</a>]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/23924224]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/23924224]]></link>
+      </review>
+
+      <review>
+        <id>393233</id>
+        <user>
+          <id>32541</id>
+          <name>Kali</name>
+          <location>San Francisco, CA</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/32541-kali]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1174517650p3/32541.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1174517650p2/32541.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>1</rating>
+        <votes>101</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Fri Mar 23 02:31:20 -0700 2007</date_added>
+        <date_updated>Mon Jan 06 08:37:56 -0800 2014</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[Everyone (save one guy) said I would love this book. Three of my four roommates have their own copies. That one guy was right. Now this may be because he planted that seed of discontent, or it may be because this was the least creative and most redundant book I've read in a while. It answered the question, what happens when you put The Hero With a Thousand Faces, The Bible and 1001 Arabian Nights in a blender? That said, I didn't hate it. Two of the central themes (which were hammered in over and over again) are two of my favorite world views - ones I hold very dear to my heart. I understand that everyone has their own path and if it takes this silly little book to realize these two important messages, I'm just happy the reader finally discovered these truths. A) As the far more prolific writer Joseph Campbell says, Follow Your Bliss and B) As the far more prolific writer Ralph Waldo Emerson says, Once you make a decision, the universe conspires to make it happen. (See the pattern.) To explain my aversion to the third nail in the coffin of stolen redundancy, I will tell you story. I have a small collection of fortunes from fortune cookies. (I have always been in the habit of collecting good omens.) To make the list, a fortune must convey a good message when applied to life and even better when the requisite "Dirty Fortune Cookie Ending" is added. During my freshman year of college, I got the fortune "Where your treasure is, there will your heart be also . . . . . between the sheets." Hilarious, right?! Sex, love, treasure, oh the glorious metaphors. Fast forward two years, when I discover that my hilarious fortune is actually A BIBLICAL QUOTE! Straight out the OT. Well, I was shocked and appalled. I was being proselytized to by a cookie! Now, I realize that this is my own issue, but I don't want a bible-thumping cookie or 200 year old Alchemist ramming the OT down my throat. To anyone thinking about reading this book, I have given you the two things that need be learned from it. Now go read some Joseph Campbell.]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/393233]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/393233]]></link>
+      </review>
+
+      <review>
+        <id>23918036</id>
+        <user>
+          <id>1214974</id>
+          <name>Amit</name>
+          <location>delhi, India</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/1214974-amit]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1214398360p3/1214974.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1214398360p2/1214974.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>5</rating>
+        <votes>86</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by>i dont even know her name</recommended_by>
+        <started_at></started_at>
+        <read_at>Wed Jun 04 00:00:00 -0700 2008</read_at>
+        <date_added>Sat Jun 07 06:32:16 -0700 2008</date_added>
+        <date_updated>Mon Mar 17 20:06:38 -0700 2014</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[There are too many things one can learn from “The Alchemist”. Its all about following your dream and about taking the risk of following your dreams, which is actually so difficult to do and there are very few people in this world who actually do, I mean risk it all, just to follow your heart and your dream. Beauty is, the author is so right in saying that when u decide to follow your dreams the entire universe conspires in your favour which he called as the “beginners luck” and we all have been witness to this beginners luck at one or other point in our lives. Also, he talks about a stage in our journey towards realizing our dreams, where everything just goes haywire and there is everything working against us and it almost takes us to the brink of abandoning everything and just getting back to what was so familiar and comfortable (i.e. our usual daily life which we get used to) this is actually the time when we are being tested for one last time and it means also that we are really close to our objective. The example given was really great and yes nothing new but we forget simple things in our life like "the darkest hour of the night is just before the dawn". It is actually true that so many of us just leave the struggle when it gets really tough and the chips are really low, whereas actually we were so close to the objective, if only we would have had a little more patience we would have been there. In one of the episodes he talks about death, yes the fact we always forget, the only reality about our life, it is a constant which is not going to change rest everything is uncertain. There are a lot of us who either think that it happens to others and then there are others, who are so busy running after the materials that they don’t have time to think about anything, leave alone death. Yes, and those who do think about death, mostly fear it, some fear death because of the physical pain attached to it (such people actually fear the pain rather than the death, I am one of them) and there are some who think they do not want to die because its not time yet for them to go. Ironically but true, this decision about timings has thankfully not been left to us. So, how do we get over the fear of death or make it our friend, a companion? And not waste our beautiful life worrying about dying all the time. One of the possible solutions lies in this book, it reads "if i have to fight, it will be just as good a day to die as any other". Yes very much right, one would never know when he or she wakes up in the morning that if it was the last day of his or her life and in fact, that day would not be any different from all the other days already spent. So, why not take everyday as the last day of our lives and live it up.  Frankly speaking i really know what i am talking about, because I am in a profession which involves a lot of risk and death doesn’t have to look for reasons, it can just spring up from any bush in form of a small little piece of metal called a bullet coming out of the darkness of the night or just a deafening sound from under a culvert that I cross everyday. Here, everyday can be the last day of my life, every meal can be my last, every call to my wife can be the last time I would hear her sweet and loving voice and the kids… Anyways, so what I personally follow is, everyday when I wake up or every time when I move out on an operation, I say to myself "what a beautiful day to die" and there on, I just do what I have to and what I have been taught in all these years in the army and go through all the motions and concentrate on the job at hand rather than worrying about my death and I am really at peace with the fear of death. Another beautiful thought which I came across about death was in the novel by the author called "Confessions of a pilgrim". I derived from it that death can be visualized as a beautiful person who is always sitting besides us, so close to us that it travels with us wherever we go and it also accompanies us to our bed. Its a beautiful companion, a faithful companion, the only one who will never be unfaithful to us, rest all the companions are just lesser mortals and have been unfaithful at one point or other. Death always stays with us and actually speaking that’s the only companion who would accompany us all through our lives right from the moment we acquired some shape in our mother’s womb to the moment when we would get the vision of that white light and that feeling of lightness when we would finally leave this body also sometimes expressed as "VASTRA" (clothes) in the Indian mythology. As per the Indian mythology, the soul never dies, it is indestructible, it only changes a body just like we change clothes. Our soul is a part of God and it goes back to him. We can find the mention of the mighty soul of ours around the last portion of 'The Alchemist' where the shepherd realizes that ultimately it his own soul which is the “hand that wrote all” and his own soul was the part of soul of God. I firmly believe that there is no fiction involved in this story of the shepherd, but this is a true expression of mysteries and realities of our life, which we never pause to discover. There is message that this book wants to convey to us!!! I have never been into writing anything ever in my life, yes not even a personal dairy, but since the time I actually started writing which was just a month back, I realized that if we just write our thoughts as they occur, the resultant has a touch of mystery, because what we wrote with all our heart and soul, sometimes tends to surprise us. We tend to learn from what we ourselves wrote. We never realized that we had so much inside us and we don’t know from where, it all came. “The hand that wrote all”, yes I think its our soul that speaks out, the soul we never recognized, the one we never knew, the one which is part of soul of God…. …All religions have over all the years have preached a man “Know thyself, you will find God”, “look within yourself u will find all the answers”, these words are so common but how many of us actually are ready to pause and give it a try. It may sound crazy, may be the book has a effect that may appear really crazy but I am sure there are some people who would identify with me. May be when Paulo Coelho wrote this book his soul was revealing itself and that’s why some of us can identify with it because our souls are the part of same soul of God, just like his is. May be these lines of his novel were written by the “Hand that wrote all……………”<br /><br />]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/23918036]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/23918036]]></link>
+      </review>
+
+      <review>
+        <id>57474897</id>
+        <user>
+          <id>2317734</id>
+          <name>Saud</name>
+          <location>Riyadh, Saudi Arabia</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/2317734-saud-omar]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1325202633p3/2317734.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1325202633p2/2317734.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>5</rating>
+        <votes>75</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Wed May 27 05:31:53 -0700 2009</date_added>
+        <date_updated>Wed Dec 11 20:22:09 -0800 2013</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[تنبيه :في مراجعة الرواية هذه لا يوجد حرق للرواية. في هذه المراجعة يتم استعراض عقدة الرواية الأساسية. كل ما كٌتب هنا بدا لي أنه سوف يجعلك تقرأ الرواية بشكل أفضل. هذه المراجعة كٌتبت خصيصاً لأولئك الذين لم يقرءوا الرواية بعد.<br /><br />***<br />من مدونتي: ثمانون كتابا بحثا عن مخرج<br /><br /><br /><a href="http://www.80k.me" rel="nofollow">www.80k.met</a><br /><br />***<br /><br />“الخيميائي” رواية عن راعي أندلسي يسافر طلباً لكنز مدفون في مكان قريب من الأهرامات الفرعونية. يقابل الراعي العديد من الأشخاص الذين يساعدونه, أو يلهمونه, أو يقفون ضده, في طريقه للكنز. ويواجه الراعي أيضاً الكثير من المواقف الصعبة, والأفكار المحيرة, واللحظات التي تتطلب شجاعة, واللحظات التي تتطلب بصيرة.<br /><br />رواية مغرقة في البساطة والحكمة .. كعادة كل روايات باولو كويلو ..<br /><br />باولو كويلو أديب برازيلي ولِد في مدينة ريّّو دي جانيرو عام 1947, له روايات عديدة ناجحة, وقبل أن يكون روائياً, كان مخرجاً مسرحياً, وممثلاً, وكاتب أغاني, وكاتب صحفي؛ لكنه قرر في النهاية أن يكرّس حياته للأدب.<br /><br />واجهت رواية “الخيميائي” فشلاً في البداية؛ فلم يوزع منها في أول الأمر سوى 900 نسخة, بل إن الناشر اعتبرها عملاً فاشلاً لدرجة أنه أعاد لكويلو حقوق النشر, بعد ذلك نشر كويلو الرواية عند ناشر أخر لتصبح الرواية حينها الرواية الأكثر مبيعاً في الأدب البرازيلي في القرن العشرين, وتتصدر قائمة الأكثر مبيعات في ثمانية عشرة دولة, ويباع منها فوق الأربعين مليون نسخة في مئة وخمسون دولة, وتترجم لأكثر من ست وخمسون لغة, حتى أنه في عام 2003 ( بعد خمسة عشر عام من نشر الرواية ) كان ترتيب الرواية السادس على العالم في مستوى المبيعات.<br /><br />ورغم أنه عادة يشار لرواية “الخيميائي” بأنها ثاني أعمال باولو كويلو بعد “حاج كومبوستيلا”, إلا أنها في الحقيقة رابع عمل له؛ فالعمل الأول له كان (أرشيف الجحيم)؛ وهو العمل الذي نفذت طبعته الأولى ولم تعاد طباعته حتى الآن, وقد قال كويلو في أحد المقابلات أنه فخور جداً بهذا العمل, وسوف يعيد طباعته في الوقت المناسب. أما بالنسبة للعمل الثاني ( الدليل العملي للفامبيرية ) فقد سُحب لأنه بدا لكويلو أن العمل لم ينجح في إيصال الفكرة المنشودة.<br /><br />المكان الذي تبدأ منه رواية “الخيميائي” هو في جنوب أسبانيا, في سهول الأندلس, بالقرب من مدينة “طريفا” الواقعة عند مضيق جبل طارق, والتي لا يفصلها عن مدينة “طنجة” المغربية سوى 14 كيلو متر, والوقت, الذي تأخذ الرواية فيه مجراها, هو في أوائل القرن العشرين, أو أواخر القرن التاسع عشر؛ ورغم أن زمن رواية, عموماً, غير واضح فيها, إلا أننا نستطيع القطع بهذا الوقت؛ لأننا في بداية الرواية نرى خيميائياً يقرأ قصة ” التابع” ( The Disciple ) للأديب الأيرلندي “أوسكار وايلد”.<br /><br />وقصة وايلد هذه عبارة عن تعديل على أسطورة نرسيس (نرجس) الشهيرة؛ فالأسطورة تقول أن نرسيس أٌخذ بجماله, وكان يتأمل نفسه في البحيرة كل يوم, حتى سقط في البحيرة ومات غرقا. لكن أوسكار وايلد يستطرد بعد هذه النهاية, ويقول بأنه بعد وفاة نرسيس تنزل ربات الغابات لتسأل البحيرة عن جماله, لكن البحيرة تقول أنها لا تعلم عن جماله شيئاً؛ فهي كانت تنظر لجمالها هي في عينيه. في الحقيقة أنه اقتباس رائع جداً من كويلو, وقد ألقى هذا الاقتباس بظلاله على فكرة الرواية, حتى أن أحد دور النشر قد جعلت لوحة “نرسيس” للرسام الإيطالي “كارافاغو” غلافاً لرواية الخيميائي.<br /><br />وفكرة الرواية هي كالتالي:<br /><br />فكرة الرواية تقوم على مبدأ ( الوحدانية ), فكل الأشياء هي تجليات لشيء واحد؛ وكل الكون خلقته ذات الذات, وبالمثل, فإن كل ما نقوم به في حياتنا هو للقيام بشيء واحد, ولإنجاز مهمة واحدة, وتضيف الرواية, أن أيضاً ما نتمناه ونرغب به هو جزء أصيل من هذا الكون ووحدته.<br /><br />الكون كائن حي, له روح, وفيه حياة, هذه الروح تتغذى على سعادة البشر ( وأحياناً على تعاستهم ), ومن ( روح الكون ) يتولّد ما تسميه الرواية ( ألأسطورة الشخصية ).<br /><br />الأسطورة الشخصية هي الواجب الوحيد المفروض على كل شخص, أي مهمته في الحياة, ودائما ما تصير هذه المهمة هي حلم وطموح الإنسان, ودائما ما تراود الإنسان رغبة عارمة وقوية لتأدية هذه المهمة التي جاء من اجلها, وعندما تتملك الإنسان رغبة قوية لتحقيق هذه الأسطورة الشخصية فإن الكون كله يطاوعه لتحقيقها؛ ذلك لأن الكون يتغذى على سعادة البشر, وأيضاً لأن هذه المهمة هي جزء أساسي من الكون, انبعثت من روحه.<br /><br />ومن أهم أشكال مطاوعة الكون للإنسان في تحقيقه أسطورته الشخصية هي ( المبدأ الملائم)؛ فلأن الكون يريدنا أن نحقق أسطورتنا الشخصية فهو يعمد لأن يجعل (الحظ) بجانبنا في أول الأمر.<br /><br />كي نعرف ما هي المهمة التي جئنا من أجلها, وكيف نؤديها, يجب أن نصغي للغة الكون, والكون يتحدث بالإشارات, والإشارات هذه تحدث أمامنا على هيئة ما اعتدنا أن نسميه (حظ) أو ( مصادفة), هذه الإشارات هي طريقة الله – حسب وصف الرواية – في إخبارنا بالطريق الذي يجب أن نسلكه, حتى تتعلم لغة الإشارات الكونية يجب أن تتطور حدسك وتثق فيه, وكي تتطور حدسك يجب أن لا تخاف من ارتكاب الأخطاء, ويجب أن تعرف أن لكل شيء معنى ومقصد.<br /><br />أيضا تقدم الرواية بعض الأفكار الخيميائية القريبة من الأفكار السابقة, ففي علم الخيمياء هناك مصطلح ( روح العالم ), ويقصد به المبدأ الذي يحرك كل شيء, وهو قائم على تحول الأشياء وتغيرها من شكل لأخر, وهو دائماً ما يعمل لصالح الإنسان, ويقترب الإنسان من روح العالم كلما تزايدت رغبته بشيء ما, ونستطيع إدراك روح العالم من خلال لغة الإشارات أيضاً, وهي هنا تسمى (لغة العالم), اكتشاف مبدأ (روح العالم) سمي بــ ( الإنجاز العظيم ) وهو اكتشاف خيميائي مكون من جزأين, أحدهم سائل وهو ( إكسير الحياة), والأخر صلب وهو ( حجر الفلاسفة).<br /><br />دائما ما نجد نزعة روحية, وصوفية, وأحيانا باراسيكولوجية, في روايات كويلو, وهذا هو طبع كتابات كويلو, وهذا أحد أسرار نجاحه, فأحيانا يحتاج القراء من يعيد المعنى لوجودهم, ويخبرهم أن لحياتهم هدف, وأن عبثية وبرود الحضارة الحالية ليست نهاية المطاف. أيضاً يشتهر كويلو ببساطة أسلوبه الشديدة وببساطة مفرداته, تلك البساطة التي يرافقها دائماً عمق غير عادي في الطرح, ومن ما يتصف به أسلوب كويلو, هو انه لا يصف كثيراً البيئة البرازيلية, وربما يعود ذلك لكونه رجل يحب السفر؛ لذلك يهتم بوصف المكان الذي ذهب إليه أكثر من اهتمامه بوصف المكان الذي جاء منه, ويذكر أنه من أهم أسباب شهرة رواية “الخيميائي” عالميا هو سحر الشرق الموجود في الرواية, وعزز كويلو هذا السحر باستعراضه بعض أوجه التراث العربي والثقافة الإسلامية في الرواية.<br /><br />من الشخصيات التي جاءت في الرواية هي شخصية “ملكي صادق” وهو رجل عجوز يقول أنه ملك منطقة أسمها “سالم”, يتضح من الأحداث أنه كائن فوق طبيعي, فهو يعرف الأسرار والسرائر, لكن كينونته لا تتضح تماما في الرواية, مهمة “ملكي صادق” هي مساعدة الناس الذين يكونون على وشك العدول عن الجِد خلف أسطورتهم الشخصية, وهو يظهر للكل في هيئات وصور مختلفة. في الحقيقة “ملكي صادق” هو اسم ملك ورد ذكره في التوراة وذكر أيضاً بأنه ” ملك سالم “, و”سالم” اسم قديم للقدس, وقد كان “ملكي صادق” ملك لها في عهد النبي إبراهيم عليه السلام. في الحقيقة لم أجد أي ارتباط بين الشخصية التاريخية والشخصية الموجودة في الرواية.<br /><br />أن أكثر ما يميز رواية “الخيميائي” هو بساطة المواقف التي ترافقها دلالات عميقة, وهو ما يجعلني أبالغ نوعا ما, وأعتقد أن رواية “الخيميائي” كتبت بفكرتها, أعنى أن الرواية نفسها التي قدمت فكرة الإشارات الكونية, تحمل نفسها إشارات – تظهر في مواقف أو شخصيات أو جُمّّل – قد تبدو للبعض هامشية, وطفولية, وبلا أي معنى, وقد تبدو للبعض الأخر أنها دلالات مهمة, ومعاني عميقة, وإضاءات ضرورية, تماماً مثل الإشارات الكونية التي تحدثت عنها الرواية, وكأن باولو كويلو مبرمج قرر أن يكتب كتاب عن التشفير فكتب الكتاب مشفراً؛ فيكون الكتاب بهذه الطريقة كتب بفكرته.]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/57474897]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/57474897]]></link>
+      </review>
+
+      <review>
+        <id>129633077</id>
+        <user>
+          <id>3040523</id>
+          <name>Zaki</name>
+          <location>London, The United Kingdom</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/3040523-zaki]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1362589130p3/3040523.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1362589130p2/3040523.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>1</rating>
+        <votes>73</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sun Nov 07 02:27:02 -0800 2010</date_added>
+        <date_updated>Fri Jan 03 03:15:10 -0800 2014</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[A spanish shepherd boy santiago dreams about a treasure hidden at the foot of the egyptian pyramids. He leaves Spain to find it and journeys to the markets of Tangiers and across the Egyptian desert, guided along the way by a camel driver, an alchemist and other spiritual guides. and he discovers a far greater treasure (greater than any earthly gold): wisdom, self knowledge and enlightenment.  <br /><br />But the Alchemist is not about Santiago at all. It's an inspirational fable; it's about our own self discovery; it's about awakening your passions; it's about following your heart; embracing life as a journey and finding the courage to chase your dreams. <br /><br />It felt more like a really hackneyed self-help book. I don't know if it makes great literature. What is great literature? ]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/129633077]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/129633077]]></link>
+      </review>
+
+      <review>
+        <id>31225710</id>
+        <user>
+          <id>692475</id>
+          <name>Patrick</name>
+          <location>Ashland, MA</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/692475-patrick]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1198367571p3/692475.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1198367571p2/692475.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>2</rating>
+        <votes>72</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+          <shelf name="books-read-in-2008" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by>Sarah Otto</recommended_by>
+        <started_at></started_at>
+        <read_at>Mon Sep 01 00:00:00 -0700 2008</read_at>
+        <date_added>Tue Aug 26 08:24:32 -0700 2008</date_added>
+        <date_updated>Tue Sep 09 13:13:00 -0700 2008</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[Timing is everything. If I'd read '<em>The Alchemist</em>' four years ago, I'm sure I would have loved it. It deals in big, bold pronouncements of 'follow your dreams' et cetera et cetera, and it certainly makes you think about your own life and the pursuit of your own "Personal Legend" if you will. But maybe I'm older and more cynical now, or maybe it's not cynicism so much as just seeing a reality that isn't so mystical and black and white as Paulo Coelho's, but in any event, I just wasn't buying what '<em>The Alchemist</em>' was selling.<br /><br />It's a good, quick read, I'll give it that. I enjoyed myself, and I definitely thought a little bit about my own life in the process, which I appreciate from my literature. And while I was more or less with it for a while, I just couldn't stay on board with an ending that left me saying, "that's it? Really?" <strong>
+  <em>Be forewarned, there will be spoilers after this point</em>
+</strong>. The whole book Santiago is in pursuit of his "Personal Legend", which he is told is a great treasure found in the pyramids of Egypt. Along the way he befriends many people and makes a great sum of money, while also meeting a beautiful young woman who agrees to more or less be his life-partner, <em>Romeo and Juliet</em>-style (which is stupid in and of itself, but more on that later). It is at this point that he determines he has achieved a greater treasure than any he had ever dreamed of, and would go no further. Beautiful. Cue the music and themes of recognizing treasure in all its forms. Santiago has a wonderful, fulfilling life laid out before him, and would most likely die a happy man by the side of his lovely wife and adoring children, all while living comfortably as village counselor of a beautiful desert oasis. Sounds pretty nice, no?<br /><br />Well, that's where the book lost it's footing. Santiago is urged, coerced even, into continuing to follow his "Personal Legend", leaving behind his "love" (who, it should be mentioned is a "woman of the desert" and so is completely fine being abandoned by her "love" and will simply wait and wait and wait for him, whether he ever returns or not) traversing the desert and (bizarrely) evading a hostile army along the way by turning himself into the wind (it makes about as much sense as it sounds). In the end though, Coelho reveals to us that Santiago does, indeed, reach his "Personal Legend" in a two and a half page epilogue, where it is shoddily revealed that Santiago's long-sought after treasure is...treasure. Literally. Buried treasure. A box in the sand filled with gold coins and diamonds and jewelry and crowns, and all the other cliche treasure images you can think up. What the hell?<br /><br />So what message are we supposed to take from this book then? Money is the most important thing in the world? Women are objects meant to be seen and valued for their beauty, there to serve you and wait around forever while you go on wild goose chases across continents in search of money? <br /><br />Obviously I'm being facetious, and Coelho intended to say that one should follow their dreams no matter what, even if it transcends a nice, content life, so long as you are in pursuit of a life that would be even greater than you can ever imagine, sacrificing what is good now for what can be great later. But he did so in an extremely simplistic way, and the revelation of the Santiago's treasure being literally treasure was a major disappointment.<br /><br />The thing was, despite his simplicity, the book had a nice message going for a while. If Fatima was Santiago's treasure, that I could have gotten behind, even if it shows a good deal of contempt for the role of women in relationships (beauty being the most important factor in deciding on a mate, as Santiago is struck by her beauty and immediately professes his love; Fatima more or less acquiesces immediately and pledges herself to Santiago no matter what, even if he must travel the desert forever in selfish pursuit of his own dreams, with no regard for her), because that is something intangible that is meaningful and fulfilling, regardless of financial standing. But then Coelho basically goes on to say that that is just a roadblock in the way of real achievement, and that one should selfishly pursue their own dreams with no regard for those closest to them.<br /><br />How a book can go on and on talking about seeing the everyday symbols and omens in life and taking heed of them, presumably leaving metaphors for life all along the way, and then have what was presumably the biggest metaphor of them all, Santiago's treasure, turn out not to be a metaphor at all, but just money? To me, that summed up everything. I suppose Coelho realizes this, as he begins the book with a brief fable about Narcissus falling into the river because he loved staring at his reflection, and the river's disappointment in this, as the river loved gazing into Narcissus's eyes and seeing the reflection of itself. This is a horrible little story implying that everyone is obsessed only with themselves, a sad, empty little thought that Coelho spends 167 pages endorsing wholeheartedly, under the guise of following your dreams.<br /><br />I understand that other people love this book and find it inspiring, and I think I would have felt the same way years ago, when I was just out of college and it appeared I had my whole life ahead of me and a lifetime to live it. I'm older now, and I've found someone who I consider to be a real treasure, and while I still have dreams, I'm not willing to sacrifice the happiness that this life brings me every day in a single-minded pursuit of something that I want for selfish reasons (fame, fortune, etc.). If I was Santiago, I would have never left Fatima in the first place if she truly made me happy, as Santiago claimed she did. Perhaps that makes me a coward in Coelho's eyes, not unlike the Crystal merchant from the story. But it'd also make me <em>not</em> the sad Englishman, whose single-minded pursuit of his "personal legend" had cost him all his money, friends, and family and left him alone in an oasis burning lead in a tent in the vain hopes it will turn to gold.<br /><br />I guess what I'm trying to say in this long-winded review, is that this book is all about being selfish and doing what you think will make you happy, regardless of everything else. I can see why that appeals to people, especially those who want to show the doubters and find their own treasure beneath a sycamore tree, but it's sad, in a way. We live in a culture where everyone wants selfish things like fame or money or power, just to satisfy some gaping hole in their own souls, ignoring the real problems that lead to these compulsions in the first place. To me, this book feeds and even encourages that misplaced ideal, and that's a shame.]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/31225710]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/31225710]]></link>
+      </review>
+
+      <review>
+        <id>481789725</id>
+        <user>
+          <id>53165</id>
+          <name>Warwick</name>
+          <location>Zürich, Switzerland</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/53165-warwick]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1356073672p3/53165.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1356073672p2/53165.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>1</rating>
+        <votes>68</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+          <shelf name="fiction" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Thu Dec 20 11:49:33 -0800 2012</date_added>
+        <date_updated>Fri Jan 10 23:55:09 -0800 2014</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[The problem with this book is not just that it's bad, which it certainly is, but that there are so many people out there who want to corner you at parties and tell you how it's totally changed their lives.  In a way you might as well read it just so you can see how feeble-minded they must be to get any kind of philosophical nourishment out of this inexhaustible stream of clichés.  The profound lessons you'll learn from this book amount to nothing more than several variations on the theme of "only the very ugly is truly beautiful, only the very stupid are really intelligent, only black is white, only up is down" etc etc.<br /><br />The writing is too simple to be really bad, but it's the content that gets you.  By the end of the book you'll want to track down the philosopher's stone yourself and carefully beat Coelho to death with it.]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/481789725]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/481789725]]></link>
+      </review>
+
+      <review>
+        <id>11064685</id>
+        <user>
+          <id>87493</id>
+          <name>Don</name>
+          <location>Chicago, IL</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/87493-don]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1320258696p3/87493.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1320258696p2/87493.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>1</rating>
+        <votes>65</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at>Sat Dec 01 00:00:00 -0800 2007</read_at>
+        <date_added>Wed Dec 26 21:45:40 -0800 2007</date_added>
+        <date_updated>Mon Jan 06 10:48:49 -0800 2014</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[I simply could not finish this book. I got halfway through it only to wind up on goodreads.com to see what others thought.  I simply felt guilty panning a book that has received such global acclaim; more than that, I felt lame and inadequate.<br /><br />Well, it turns out that my sentiments were echoed.  I basically felt I was reading an overblown parable and that the same lessons were being spelled out again and again.  It was like the 16th verse of a hymn. <br /><br />Throughout my life I have periodically reflected to get a sense of who I am, where I am going and whether I want to end up there.  I am an extremely introspective person and I am constantly evaluating and re-evaluating my person; sometimes for the better, sometimes out of necessity.  To put a fine point on it, I regularly do that which is, for lack of a better word, preached in this book.  The problem I had with The Alchemist is that instead of feeling reinforced and validated, I felt uncomfortable and nagged.]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/11064685]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/11064685]]></link>
+      </review>
+
+      <review>
+        <id>39472366</id>
+        <user>
+          <id>1393336</id>
+          <name>Jennifer (aka EM)</name>
+          <location>Toronto, ON, Canada</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/1393336-jennifer-aka-em]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1382830949p3/1393336.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1382830949p2/1393336.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>1</rating>
+        <votes>62</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+          <shelf name="novellas" />
+        </shelves>
+        <recommended_for><![CDATA[NO ONE.  Really, I did this so you don't have to.]]></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at>Sun Jun 13 00:00:00 -0700 2010</started_at>
+        <read_at>Tue Jun 15 00:00:00 -0700 2010</read_at>
+        <date_added>Sat Dec 06 16:23:30 -0800 2008</date_added>
+        <date_updated>Mon Aug 05 07:18:05 -0700 2013</date_updated>
+        <read_count>one too many</read_count>
+        <body>
+          <![CDATA[My heart and I chatted, and we agreed, this book was short.  My heart thinks it was also stupid, and after spending some time talking to the wind, I came to agree with my heart.   <br /><br />Yet, after beginning the journey with this book and despite the words of my heart, something impelled me to continue.  Surely it had something to teach me?  The book had a lovely cover made of nicely textured stock that felt good in my hands. It offered the added efficiency of a fold-over flap--something that more publishers should make an effort to do, as it makes the use of a bookmark superfluous. But I suppose you need the collateral of winning the Guinness World Record for most translated book by a living author, and selling more than 65 million copies in more than 150 countries as one of the best-selling books in history,* to get that treatment.<br /><br /><em> * my heart cries </em><br /><br />In my country, we have an expression:  one should not judge a book by its cover.  In this case, this is especially true.  The prose turned out to be not nearly as nicely textured.  That is irony.  This book knows not of irony.  <br /><br />Still, though, I needed to complete my journey. My heart tugged on my sleeve.<br /><br />As I continued my journey, I found that the text inside was set in a pleasing font. I could find no typos, which are always a portent of doom. So I kept going.  I found the words that the font expressed were simple and easy to read.  As I read them before falling to sleep each night, they neither challenged me nor troubled my dreams.  Many people, I believe, enjoy this in a book, in the same way that they enjoy Hostess Twinkies. They are filled up with calories, which causes their bodies to believe that they have been fed a nutritious meal, when in fact their brains are lulled into sheep-like somnambulism.  They grow fat and stupid(er) under the illusion that they have received nutrition without ever experiencing the pain of having to cook, and possibly work up a sweat or burn one's fingers.<br /><br />I wondered if this book was possibly dangerous.  I wondered what kind of people would be deluded into thinking, within the guise of a poorly written but deviously well-conceived parable, that this book's philosophy was, in fact, Deep and Meaningful Truth.  <br /><br />This book, I felt, was perhaps insidiously evil, a force with which I needed to do battle. I did not know which weapon to use, as irony appears to be rendered completely ineffective within a 3-metre radius of this book.  Still, irony and a love of absurdity hovered around me as I searched for the true meaning in this book, and why it appears to offer a powerful message to so many.<br /><br />I consulted the Oracle, known across all the lands by many names.  She appeared to me in the form of Wikipedia, Queen of All The People's Knowledge.  Now, there's an alchemist for you:  Queen Wiki can turn knowledge into nonsense and then back again before your very eyes.  The perfect Oracle for this book.<br /><br />Queen Wiki turned out to be very entertaining and illuminating in this case.  I learned that Joe Jonas and Russell Crowe loved this book. I glommed on to this as an omen that absurdity was lurking close. I interpreted it as a sign that I must continue.  Again, I was struck by the irony of that, but turning back to the book, this fleeting insight that might have had a grain of real value was immediately squelched.  <br /><br />I sipped some sweet tea from a crystal goblet, and plodded on through the desert of thought that is this book.<br /><br />This, I felt, was the lesson to be learned:  in the Middle of the Centre of the Soul of the World, where blank-eyed acolytes are led (like sheep? hmmm) to unquestioningly accept and proclaim as truth the vacuous platitudes spouted by crystal-wearing, self-appointed mystics, psychics, tarot card readers, numerologists, motivational speakers and this author, irony is dead.  Absurdity goes unrecognized.  Skepticism is turned back at the gates by ill-formed philosophies based on the unwavering power of evangelical groupthink and our species' rather fascinating susceptibility to cognitive bias, or errors in thinking, that cause us to believe as truth that which can actually be scientifically validated as false.<br /><br />This book makes a mockery of spirituality and the search for truth and meaning, under the guise of the easy, anxiety-quelling New Age philosophies that spoon-feed the stupid with Twitter-sized bites of nonsense.  Beliefs like, "good things happen to good people."  "All is right in the end. If it's not right, it's not the end."  "God doesn't give you anything you can't handle." <br /><br />To be shelved between <a href="http://www.goodreads.com/book/show/92455.The_Gift_of_Change_Spiritual_Guidance_for_Living_Your_Best_Life">
+  <strong>this</strong>
+</a> and <a href="http://www.goodreads.com/book/show/355994.There_s_a_Spiritual_Solution_to_Every_Problem">
+  <strong>this</strong>
+</a> to gather dust and never to be read again.  Do not trade or give away--you'll just be spreading the bullshit.<br /><br />My heart will go on.  <br /><br />]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/39472366]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/39472366]]></link>
+      </review>
+
+      <review>
+        <id>337479</id>
+        <user>
+          <id>31739</id>
+          <name>Andrew</name>
+          <location>Brooklyn, NY</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/31739-andrew]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1174564341p3/31739.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1174564341p2/31739.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>1</rating>
+        <votes>60</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for>the desperate</recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at>Thu Mar 01 00:00:00 -0800 2007</read_at>
+        <date_added>Tue Mar 20 05:27:38 -0700 2007</date_added>
+        <date_updated>Wed Dec 16 16:49:44 -0800 2009</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[The Alchemist has been translated into like a million languages, and it feels like it. Bland sentences, simple story telling and zero nuance. It's a quaint parable about a shepherd who bucks the current course of his life - shepherding - to go in search of his Personal Legend (Coehlo's caps, and phrase). Coehlo's got a point, and he's going to drive it through your eyeball until he's absolutely sure you've got it.<br /><br />If you ignore much of the language of the book, this is a paper-thin rehashing of Rand-like individualism <a href="http://www.goodreads.com/search/search?q= Atlas Shrugged" title=" Atlas Shrugged"> Atlas Shrugged</a> <a href="http://www.goodreads.com/search/search?q= The Fountainhead" title=" The Fountainhead"> The Fountainhead</a>.  No one can show you your way but yourself.  Step out on your own and you are invincible.  <br /><br />But all the trappings of this moral story are mystical platitudes.  "Good luck shines on those who are following their Personal Legend." "Omens are the Language of the World. Learning to read them is communicating with the Soul of the World and the hand that wrote all." "All things are one." "Listen to your heart, it speaks in the Language of the World."  I'd rather read <a href="http://www.goodreads.com/search/search?q= Siddhartha" title=" Siddhartha"> Siddhartha</a>.<br /><br />]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/337479]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/337479]]></link>
+      </review>
+
+    </reviews>
+    <popular_shelves>
+      <shelf name="to-read" count="315844"/>
+      <shelf name="currently-reading" count="11727"/>
+      <shelf name="fiction" count="5657"/>
+      <shelf name="favorites" count="4573"/>
+      <shelf name="classics" count="1455"/>
+      <shelf name="fantasy" count="1179"/>
+      <shelf name="philosophy" count="1059"/>
+      <shelf name="book-club" count="732"/>
+      <shelf name="novels" count="718"/>
+      <shelf name="spirituality" count="539"/>
+    </popular_shelves>
+    <book_links>
+      <book_link>
+        <id>3</id>
+        <name>Barnes &amp; Noble</name>
+        <link>http://www.goodreads.com/book_link/follow/3</link>
+      </book_link>
+      <book_link>
+        <id>10</id>
+        <name>Audible</name>
+        <link>http://www.goodreads.com/book_link/follow/10</link>
+      </book_link>
+      <book_link>
+        <id>4</id>
+        <name>Abebooks</name>
+        <link>http://www.goodreads.com/book_link/follow/4</link>
+      </book_link>
+      <book_link>
+        <id>882</id>
+        <name>Book Depository</name>
+        <link>http://www.goodreads.com/book_link/follow/882</link>
+      </book_link>
+      <book_link>
+        <id>1027</id>
+        <name>Kobo</name>
+        <link>http://www.goodreads.com/book_link/follow/1027</link>
+      </book_link>
+      <book_link>
+        <id>9</id>
+        <name>Indigo</name>
+        <link>http://www.goodreads.com/book_link/follow/9</link>
+      </book_link>
+      <book_link>
+        <id>2</id>
+        <name>Half.com</name>
+        <link>http://www.goodreads.com/book_link/follow/2</link>
+      </book_link>
+      <book_link>
+        <id>5</id>
+        <name>Alibris</name>
+        <link>http://www.goodreads.com/book_link/follow/5</link>
+      </book_link>
+      <book_link>
+        <id>2102</id>
+        <name>iBooks</name>
+        <link>http://www.goodreads.com/book_link/follow/2102</link>
+      </book_link>
+      <book_link>
+        <id>107</id>
+        <name>Better World Books</name>
+        <link>http://www.goodreads.com/book_link/follow/107</link>
+      </book_link>
+      <book_link>
+        <id>3928</id>
+        <name>Target.com</name>
+        <link>http://www.goodreads.com/book_link/follow/3928</link>
+      </book_link>
+      <book_link>
+        <id>1602</id>
+        <name>Google Play</name>
+        <link>http://www.goodreads.com/book_link/follow/1602</link>
+      </book_link>
+      <book_link>
+        <id>7</id>
+        <name>IndieBound</name>
+        <link>http://www.goodreads.com/book_link/follow/7</link>
+      </book_link>
+      <book_link>
+        <id>8</id>
+        <name>Libraries</name>
+        <link>http://www.goodreads.com/book_link/follow/8</link>
+      </book_link>
+
+    </book_links>
+    <series_works>
+
+    </series_works>
+    <similar_books>
+      <book>
+        <id>211264</id>
+        <title>Fludd</title>
+        <isbn>0007172893</isbn>
+        <isbn13>9780007172894</isbn13>
+        <small_image_url><![CDATA[http://www.goodreads.com/assets/nocover/60x80.png]]></small_image_url>
+        <image_url><![CDATA[http://www.goodreads.com/assets/nocover/111x148.png]]></image_url>
+        <average_rating>3.50</average_rating>
+        <ratings_count>897</ratings_count>
+        <authors>
+          <author>
+            <id>58851</id>
+            <name>Hilary Mantel</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>3165719</id>
+        <title>عودة الغائب </title>
+        <isbn>9953873461</isbn>
+        <isbn13>9789953873466</isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1264854690s/3165719.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1264854690m/3165719.jpg]]></image_url>
+        <average_rating>4.08</average_rating>
+        <ratings_count>1777</ratings_count>
+        <authors>
+          <author>
+            <id>1297551</id>
+            <name>منذر القباني</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>4653511</id>
+        <title>رجال في الشمس</title>
+        <isbn></isbn>
+        <isbn13></isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1321707850s/4653511.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1321707850m/4653511.jpg]]></image_url>
+        <average_rating>4.19</average_rating>
+        <ratings_count>4095</ratings_count>
+        <authors>
+          <author>
+            <id>1408290</id>
+            <name>غسان كنفاني</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>8239301</id>
+        <title>الطنطورية </title>
+        <isbn></isbn>
+        <isbn13>9789770928293</isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1314481218s/8239301.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1314481218m/8239301.jpg]]></image_url>
+        <average_rating>4.34</average_rating>
+        <ratings_count>5406</ratings_count>
+        <authors>
+          <author>
+            <id>1446194</id>
+            <name>رضوى عاشور</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>6909334</id>
+        <title>القوقعة: يوميات متلصص</title>
+        <isbn></isbn>
+        <isbn13>9789953890319</isbn13>
+        <small_image_url><![CDATA[http://www.goodreads.com/assets/nocover/60x80.png]]></small_image_url>
+        <image_url><![CDATA[http://www.goodreads.com/assets/nocover/111x148.png]]></image_url>
+        <average_rating>4.31</average_rating>
+        <ratings_count>2986</ratings_count>
+        <authors>
+          <author>
+            <id>2957451</id>
+            <name>مصطفى خليفة</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>11942408</id>
+        <title><![CDATA[شاب كشك فى رحلة البحث عن الجادون]]></title>
+        <isbn></isbn>
+        <isbn13>9789776337589</isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1309784315s/11942408.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1309784315m/11942408.jpg]]></image_url>
+        <average_rating>3.72</average_rating>
+        <ratings_count>5519</ratings_count>
+        <authors>
+          <author>
+            <id>5013252</id>
+            <name>عمرو سلامة</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>6801453</id>
+        <title>أعراس آمنة</title>
+        <isbn></isbn>
+        <isbn13>9789953876252</isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1398030880s/6801453.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1398030880m/6801453.jpg]]></image_url>
+        <average_rating>4.18</average_rating>
+        <ratings_count>1187</ratings_count>
+        <authors>
+          <author>
+            <id>2831048</id>
+            <name>إبراهيم نصر الله</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>6496777</id>
+        <title>Kapitan Sino</title>
+        <isbn>9710545019</isbn>
+        <isbn13>9789710545018</isbn13>
+        <small_image_url><![CDATA[http://www.goodreads.com/assets/nocover/60x80.png]]></small_image_url>
+        <image_url><![CDATA[http://www.goodreads.com/assets/nocover/111x148.png]]></image_url>
+        <average_rating>3.80</average_rating>
+        <ratings_count>3927</ratings_count>
+        <authors>
+          <author>
+            <id>674207</id>
+            <name>Bob Ong</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>3482609</id>
+        <title>أهل الكهف</title>
+        <isbn></isbn>
+        <isbn13>0009770910023</isbn13>
+        <small_image_url><![CDATA[http://www.goodreads.com/assets/nocover/60x80.png]]></small_image_url>
+        <image_url><![CDATA[http://www.goodreads.com/assets/nocover/111x148.png]]></image_url>
+        <average_rating>3.98</average_rating>
+        <ratings_count>1678</ratings_count>
+        <authors>
+          <author>
+            <id>353145</id>
+            <name>Tawfik Al-Hakim</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>320</id>
+        <title>One Hundred Years of Solitude</title>
+        <isbn>0060531045</isbn>
+        <isbn13>9780060531041</isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1327881361s/320.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1327881361m/320.jpg]]></image_url>
+        <average_rating>3.96</average_rating>
+        <ratings_count>346512</ratings_count>
+        <authors>
+          <author>
+            <id>13450</id>
+            <name>Gabriel Garcí­a Márquez</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>13103</id>
+        <title><![CDATA[The Celestine Prophecy (Celestine Prophecy, #1)]]></title>
+        <isbn>0446671002</isbn>
+        <isbn13>9780446671002</isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1341360412s/13103.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1341360412m/13103.jpg]]></image_url>
+        <average_rating>3.53</average_rating>
+        <ratings_count>53218</ratings_count>
+        <authors>
+          <author>
+            <id>8203</id>
+            <name>James Redfield</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>6116753</id>
+        <title>Boom!</title>
+        <isbn>0385616295</isbn>
+        <isbn13>9780385616294</isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1327910076s/6116753.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1327910076m/6116753.jpg]]></image_url>
+        <average_rating>3.37</average_rating>
+        <ratings_count>1455</ratings_count>
+        <authors>
+          <author>
+            <id>1050</id>
+            <name>Mark Haddon</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>13637412</id>
+        <title>ساق البامبو</title>
+        <isbn></isbn>
+        <isbn13>9786140105232</isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1336743682s/13637412.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1336743682m/13637412.jpg]]></image_url>
+        <average_rating>4.32</average_rating>
+        <ratings_count>9758</ratings_count>
+        <authors>
+          <author>
+            <id>4603829</id>
+            <name>سعود السنعوسي</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>7049082</id>
+        <title>9 dari Nadira</title>
+        <isbn></isbn>
+        <isbn13>9789799102096</isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1256900297s/7049082.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1256900297m/7049082.jpg]]></image_url>
+        <average_rating>3.89</average_rating>
+        <ratings_count>474</ratings_count>
+        <authors>
+          <author>
+            <id>760524</id>
+            <name>Leila S. Chudori</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>5886412</id>
+        <title>مأساة الحلاج</title>
+        <isbn>9770148598</isbn>
+        <isbn13></isbn13>
+        <small_image_url><![CDATA[http://www.goodreads.com/assets/nocover/60x80.png]]></small_image_url>
+        <image_url><![CDATA[http://www.goodreads.com/assets/nocover/111x148.png]]></image_url>
+        <average_rating>4.18</average_rating>
+        <ratings_count>2215</ratings_count>
+        <authors>
+          <author>
+            <id>2690927</id>
+            <name>صلاح عبد الصبور</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>2927732</id>
+        <title>أرض النفاق</title>
+        <isbn>9770172189</isbn>
+        <isbn13></isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1371818168s/2927732.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1371818168m/2927732.jpg]]></image_url>
+        <average_rating>4.08</average_rating>
+        <ratings_count>3098</ratings_count>
+        <authors>
+          <author>
+            <id>1244209</id>
+            <name>يوسف السباعي</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>545425</id>
+        <title>الرحيق المختوم</title>
+        <isbn>9953320993</isbn>
+        <isbn13></isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1289025514s/545425.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1289025514m/545425.jpg]]></image_url>
+        <average_rating>4.57</average_rating>
+        <ratings_count>5905</ratings_count>
+        <authors>
+          <author>
+            <id>1280155</id>
+            <name>Safiur-Rahman Mubarakpuri</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>33335</id>
+        <title>The Hidden Messages in Water</title>
+        <isbn>0743289803</isbn>
+        <isbn13>9780743289801</isbn13>
+        <small_image_url><![CDATA[http://www.goodreads.com/assets/nocover/60x80.png]]></small_image_url>
+        <image_url><![CDATA[http://www.goodreads.com/assets/nocover/111x148.png]]></image_url>
+        <average_rating>4.23</average_rating>
+        <ratings_count>5910</ratings_count>
+        <authors>
+          <author>
+            <id>18732</id>
+            <name>Masaru Emoto</name>
+          </author>
+        </authors>
+      </book>
+    </similar_books>
+  </book>
+
+</GoodreadsResponse>

@@ -1,0 +1,965 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>true</authentication>
+    <key><![CDATA[fDfi6rdiIgfTp49R0xj8MQ]]></key>
+    <method><![CDATA[book_show]]></method>
+  </Request>
+  <book>
+    <id>865</id>
+    <title>The Alchemist</title>
+    <isbn><![CDATA[0061122416]]></isbn>
+    <isbn13><![CDATA[9780061122415]]></isbn13>
+    <asin><![CDATA[]]></asin>
+    <image_url>http://d.gr-assets.com/books/1287827991m/865.jpg</image_url>
+    <small_image_url>http://d.gr-assets.com/books/1287827991s/865.jpg</small_image_url>
+    <publication_year>1993</publication_year>
+    <publication_month>5</publication_month>
+    <publication_day>1</publication_day>
+    <publisher>HarperCollins</publisher>
+    <language_code>eng</language_code>
+    <is_ebook>false</is_ebook>
+    <description><![CDATA[Paulo Coelho's enchanting novel has inspired a devoted following around the world. This story, dazzling in its powerful simplicity and inspiring wisdom, is about an Andalusian shepherd boy named Santiago who travels from his homeland in Spain to the Egyptian desert in search of a treasure buried in the Pyramids. Along the way he meets a Gypsy woman, a man who calls himself king, and an alchemist, all of whom point Santiago in the direction of his quest. No one knows what the treasure is, or if Santiago will be able to surmount the obstacles along the way. But what starts out as a journey to find worldly goods turns into a discovery of the treasure found within. Lush, evocative, and deeply humane, the story of Santiago is an eternal testament to the transforming power of our dreams and the importance of listening to our hearts.]]></description>
+    <work>
+      <best_book_id type="integer">865</best_book_id>
+      <books_count type="integer">11</books_count>
+      <default_chaptering_book_id type="integer" nil="true"/>
+      <default_description_language_code nil="true"/>
+      <desc_user_id type="integer">11264970</desc_user_id>
+      <id type="integer">4835472</id>
+      <media_type>book</media_type>
+      <original_language_id type="integer" nil="true"/>
+      <original_publication_day type="integer" nil="true"/>
+      <original_publication_month type="integer" nil="true"/>
+      <original_publication_year type="integer">1988</original_publication_year>
+      <original_title>O Alquimista</original_title>
+      <rating_dist>5:260461|4:223502|3:168119|2:76665|1:48592|total:777339</rating_dist>
+      <ratings_count type="integer">780823</ratings_count>
+      <ratings_sum type="integer">2916125</ratings_sum>
+      <reviews_count type="integer">1159873</reviews_count>
+      <text_reviews_count type="integer">34061</text_reviews_count>
+    </work>
+    <average_rating>3.73</average_rating>
+    <num_pages><![CDATA[197]]></num_pages>
+    <format><![CDATA[Paperback]]></format>
+    <edition_information><![CDATA[]]></edition_information>
+    <ratings_count><![CDATA[744553]]></ratings_count>
+    <text_reviews_count><![CDATA[29705]]></text_reviews_count>
+    <url><![CDATA[http://www.goodreads.com/book/show/865.The_Alchemist]]></url>
+    <link><![CDATA[http://www.goodreads.com/book/show/865.The_Alchemist]]></link>
+    <authors>
+      <author>
+        <id>566</id>
+        <name>Paulo Coelho</name>
+        <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+        <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+        <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+        <average_rating>3.68</average_rating>
+        <ratings_count>1230879</ratings_count>
+        <text_reviews_count>58856</text_reviews_count>
+      </author>
+    </authors>
+
+    <my_review>
+      <id>502892948</id>
+
+
+      <rating>4</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Fri Jan 11 00:40:05 -0800 2013</date_added>
+      <date_updated>Fri Jan 11 00:40:05 -0800 2013</date_updated>
+      <read_count></read_count>
+      <body>
+        Brilliant read!
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/502892948]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/502892948]]></link>
+      <owned>0</owned>
+    </my_review>
+    <friend_reviews>
+      <review>
+        <id>191000763</id>
+        <user>
+          <id>5890040</id>
+          <name>Vishal</name>
+          <location>Salt Lake City, UT</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/5890040-vishal-nageshkar]]></link>
+          <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/m_111x148-ed68a3a40c70b78add8e1bdde8780d31.png]]></image_url>
+          <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/m_50x66-e89fc14c32a41c0eb4298dfafe929b65.png]]></small_image_url>
+        </user>
+
+
+
+        <rating>4</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Wed Jul 27 21:04:36 -0700 2011</date_added>
+        <date_updated>Wed Aug 03 01:38:39 -0700 2011</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[Alchemists convert gold from junk. Can a human life be considered junk, to be turned into gold?<br />The Alchemist is the story of a young Shepherd who sets out to find a treasure, only to realize that the hidden treasure lies within.]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/191000763]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/191000763]]></link>
+      </review>
+
+      <review>
+        <id>284308453</id>
+        <user>
+          <id>7915589</id>
+          <name>Shrikanth</name>
+          <location></location>
+          <link><![CDATA[http://www.goodreads.com/user/show/7915589-shrikanth]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1330165372p3/7915589.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1330165372p2/7915589.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>4</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sun Feb 26 07:23:11 -0800 2012</date_added>
+        <date_updated>Sat Feb 08 18:38:52 -0800 2014</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/284308453]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/284308453]]></link>
+      </review>
+
+      <review>
+        <id>507920243</id>
+        <user>
+          <id>16186257</id>
+          <name>Kannan</name>
+          <location>Bangalore, 19, India</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/16186257-kannan-aravind]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1357562705p3/16186257.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1357562705p2/16186257.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>4</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Wed Jan 16 01:37:02 -0800 2013</date_added>
+        <date_updated>Wed Jan 16 01:37:02 -0800 2013</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/507920243]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/507920243]]></link>
+      </review>
+
+      <review>
+        <id>448428859</id>
+        <user>
+          <id>13912082</id>
+          <name>Solairaja</name>
+          <location>Madras, 25, India</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/13912082-solairaja]]></link>
+          <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png]]></image_url>
+          <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png]]></small_image_url>
+        </user>
+
+
+
+        <rating>4</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sun Nov 04 09:46:35 -0800 2012</date_added>
+        <date_updated>Sun Nov 04 09:46:35 -0800 2012</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/448428859]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/448428859]]></link>
+      </review>
+
+      <review>
+        <id>374145762</id>
+        <user>
+          <id>11169095</id>
+          <name>Srikrishnan</name>
+          <location>Gurgaon, 10, India</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/11169095-srikrishnan]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1342936409p3/11169095.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1342936409p2/11169095.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>4</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sat Jul 21 23:46:38 -0700 2012</date_added>
+        <date_updated>Sat Jul 21 23:46:38 -0700 2012</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/374145762]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/374145762]]></link>
+      </review>
+
+      <review>
+        <id>104948549</id>
+        <user>
+          <id>1301819</id>
+          <name>Sindhuja</name>
+          <location>Chennai, Tamilnadu, India</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/1301819-sindhuja]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1297537508p3/1301819.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1297537508p2/1301819.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>4</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sun May 30 19:20:04 -0700 2010</date_added>
+        <date_updated>Sun May 30 19:20:04 -0700 2010</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/104948549]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/104948549]]></link>
+      </review>
+
+      <review>
+        <id>72345351</id>
+        <user>
+          <id>2771933</id>
+          <name>Ghouse</name>
+          <location>Trichy, TN, India</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/2771933-ghouse]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1320558722p3/2771933.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1320558722p2/2771933.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>4</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+          <shelf name="interesting" />
+          <shelf name="fiction" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Thu Sep 24 09:40:11 -0700 2009</date_added>
+        <date_updated>Mon Mar 22 08:00:51 -0700 2010</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/72345351]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/72345351]]></link>
+      </review>
+
+      <review>
+        <id>363090579</id>
+        <user>
+          <id>10759968</id>
+          <name>Bharath</name>
+          <location>Bangalore, 19, India</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/10759968-bharath]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1341677673p3/10759968.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1341677673p2/10759968.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>3</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sat Jul 07 09:24:20 -0700 2012</date_added>
+        <date_updated>Sat Jul 07 09:24:20 -0700 2012</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/363090579]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/363090579]]></link>
+      </review>
+
+      <review>
+        <id>333186704</id>
+        <user>
+          <id>7915589</id>
+          <name>Shrikanth</name>
+          <location></location>
+          <link><![CDATA[http://www.goodreads.com/user/show/7915589-shrikanth]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1330165372p3/7915589.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1330165372p2/7915589.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>3</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sun May 20 04:44:57 -0700 2012</date_added>
+        <date_updated>Sun May 20 04:44:57 -0700 2012</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/333186704]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/333186704]]></link>
+      </review>
+
+      <review>
+        <id>292158859</id>
+        <user>
+          <id>5038384</id>
+          <name>Abhishek</name>
+          <location>The United States</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/5038384-abhishek]]></link>
+          <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/m_111x148-ed68a3a40c70b78add8e1bdde8780d31.png]]></image_url>
+          <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/m_50x66-e89fc14c32a41c0eb4298dfafe929b65.png]]></small_image_url>
+        </user>
+
+
+
+        <rating>3</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sat Mar 10 17:29:59 -0800 2012</date_added>
+        <date_updated>Sat Mar 10 17:29:59 -0800 2012</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/292158859]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/292158859]]></link>
+      </review>
+
+      <review>
+        <id>773359333</id>
+        <user>
+          <id>25953851</id>
+          <name>Rama</name>
+          <location>Redmond, WA</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/25953851-rama-krishnan]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1385269303p3/25953851.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1385269303p2/25953851.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>0</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sun Nov 24 23:16:56 -0800 2013</date_added>
+        <date_updated>Sun Nov 24 23:16:56 -0800 2013</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/773359333]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/773359333]]></link>
+      </review>
+
+      <review>
+        <id>342105983</id>
+        <user>
+          <id>7761379</id>
+          <name>Natarajan</name>
+          <location>The United Kingdom</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/7761379-natarajan]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1329299199p3/7761379.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1329299199p2/7761379.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>0</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Mon Jun 04 00:26:12 -0700 2012</date_added>
+        <date_updated>Mon Jun 04 00:26:21 -0700 2012</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/342105983]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/342105983]]></link>
+      </review>
+
+      <review>
+        <id>329177217</id>
+        <user>
+          <id>9494327</id>
+          <name>Ankit</name>
+          <location>The United States</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/9494327-ankit]]></link>
+          <image_url><![CDATA[http://d.gr-assets.com/users/1336931795p3/9494327.jpg]]></image_url>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1336931795p2/9494327.jpg]]></small_image_url>
+        </user>
+
+
+
+        <rating>0</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="to-read" />
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at></read_at>
+        <date_added>Sun May 13 11:02:56 -0700 2012</date_added>
+        <date_updated>Sun May 13 11:02:56 -0700 2012</date_updated>
+        <read_count></read_count>
+        <body>
+
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/329177217]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/329177217]]></link>
+      </review>
+
+    </friend_reviews>
+    <reviews start="1" end="1" total="100" api_blocked_count="0">
+      <review>
+        <id>4968096</id>
+        <user>
+          <id>80444</id>
+          <name>Sarah</name>
+          <location>Washington, DC</location>
+          <link><![CDATA[http://www.goodreads.com/user/show/80444-sarah]]></link>
+          <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/f_111x148-50ade1db09790810151d48c044458007.png]]></image_url>
+          <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/f_50x66-e0ba3b90c110cd67123d6a850d85373e.png]]></small_image_url>
+        </user>
+
+
+
+        <rating>2</rating>
+        <votes>594</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+        <shelves>
+          <shelf name="read" />
+        </shelves>
+        <recommended_for><![CDATA[people trying to find themselves]]></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at></started_at>
+        <read_at>Sun Jul 01 00:00:00 -0700 2007</read_at>
+        <date_added>Wed Aug 22 18:28:20 -0700 2007</date_added>
+        <date_updated>Sun Jan 12 00:47:04 -0800 2014</date_updated>
+        <read_count></read_count>
+        <body>
+          <![CDATA[I feel like everyone LOVES this book, but I was kind of underwhelmed.  I know that translation affects the quality of writing, but I could not get into this writing style.  At all.  I felt like it was totally affected and contrived.  He was going for this "fable/parable" style, but it seemed to fail miserably.  The parable-like quality was totally contrived, and I thought the "moral" was pretty stupid.  <br /><br />Moral: everything you want and need is close to home. Take chances.  Follow your "personal legacy."<br /><br />Then....there was a supernatural element which was just plain dumb.  Granted, I am not religious.  I think god-fearing people get more out of this bc they can take that leap of faith, excuse the phrase.  If this was supposed to be a story of magic, I may have been into it.  But it was supposed to be a simple story of knowing yourself.  And I think, philosophically speaking, when you truly know yourself that is when you truly realize your destiny.  Why do you need supernatural forces to convey that message?  This was about realizing your destiny, or "personal legacy."  It could have been done without the hocus pocus, and, yes, the cheese.  <br /><br />In short, the book attempted to be deep and failed.  "Speaking with the wind and the sun" and "being a shepherd" and getting over "personal hardship" all as part of a transparent "higher plan" (read: personal legacy) doesn't make a plot deep.  A character simply called "boy" and short sentences doesn't make a story a fable.  Learning from your flocks and from nature doesn't make a character inexplicably wise.  I really got nothing out of this book.<br /><br />It is short though.  The book came very highly recommended.  Read it to judge the hype for yourself.  After all, a whole nation, including Bill Clinton (who I'm into), thought it was a touching account that personally changed them.  Then again, this is the same country who thought The Celestine Prophesy was worthwhile.  Gag.]]>
+        </body>
+        <comments_count>review_comments_count</comments_count>
+        <url><![CDATA[http://www.goodreads.com/review/show/4968096]]></url>
+        <link><![CDATA[http://www.goodreads.com/review/show/4968096]]></link>
+      </review>
+
+    </reviews>
+    <popular_shelves>
+      <shelf name="to-read" count="315844"/>
+      <shelf name="currently-reading" count="11727"/>
+      <shelf name="fiction" count="5657"/>
+      <shelf name="favorites" count="4573"/>
+      <shelf name="classics" count="1455"/>
+      <shelf name="fantasy" count="1179"/>
+      <shelf name="philosophy" count="1059"/>
+      <shelf name="book-club" count="732"/>
+      <shelf name="novels" count="718"/>
+      <shelf name="spirituality" count="539"/>
+    </popular_shelves>
+    <book_links>
+      <book_link>
+        <id>3</id>
+        <name>Barnes &amp; Noble</name>
+        <link>http://www.goodreads.com/book_link/follow/3</link>
+      </book_link>
+      <book_link>
+        <id>10</id>
+        <name>Audible</name>
+        <link>http://www.goodreads.com/book_link/follow/10</link>
+      </book_link>
+      <book_link>
+        <id>4</id>
+        <name>Abebooks</name>
+        <link>http://www.goodreads.com/book_link/follow/4</link>
+      </book_link>
+      <book_link>
+        <id>882</id>
+        <name>Book Depository</name>
+        <link>http://www.goodreads.com/book_link/follow/882</link>
+      </book_link>
+      <book_link>
+        <id>1027</id>
+        <name>Kobo</name>
+        <link>http://www.goodreads.com/book_link/follow/1027</link>
+      </book_link>
+      <book_link>
+        <id>9</id>
+        <name>Indigo</name>
+        <link>http://www.goodreads.com/book_link/follow/9</link>
+      </book_link>
+      <book_link>
+        <id>2</id>
+        <name>Half.com</name>
+        <link>http://www.goodreads.com/book_link/follow/2</link>
+      </book_link>
+      <book_link>
+        <id>5</id>
+        <name>Alibris</name>
+        <link>http://www.goodreads.com/book_link/follow/5</link>
+      </book_link>
+      <book_link>
+        <id>2102</id>
+        <name>iBooks</name>
+        <link>http://www.goodreads.com/book_link/follow/2102</link>
+      </book_link>
+      <book_link>
+        <id>107</id>
+        <name>Better World Books</name>
+        <link>http://www.goodreads.com/book_link/follow/107</link>
+      </book_link>
+      <book_link>
+        <id>3928</id>
+        <name>Target.com</name>
+        <link>http://www.goodreads.com/book_link/follow/3928</link>
+      </book_link>
+      <book_link>
+        <id>1602</id>
+        <name>Google Play</name>
+        <link>http://www.goodreads.com/book_link/follow/1602</link>
+      </book_link>
+      <book_link>
+        <id>7</id>
+        <name>IndieBound</name>
+        <link>http://www.goodreads.com/book_link/follow/7</link>
+      </book_link>
+      <book_link>
+        <id>8</id>
+        <name>Libraries</name>
+        <link>http://www.goodreads.com/book_link/follow/8</link>
+      </book_link>
+
+    </book_links>
+    <series_works>
+
+    </series_works>
+    <similar_books>
+      <book>
+        <id>211264</id>
+        <title>Fludd</title>
+        <isbn>0007172893</isbn>
+        <isbn13>9780007172894</isbn13>
+        <small_image_url><![CDATA[http://www.goodreads.com/assets/nocover/60x80.png]]></small_image_url>
+        <image_url><![CDATA[http://www.goodreads.com/assets/nocover/111x148.png]]></image_url>
+        <average_rating>3.50</average_rating>
+        <ratings_count>897</ratings_count>
+        <authors>
+          <author>
+            <id>58851</id>
+            <name>Hilary Mantel</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>3165719</id>
+        <title>عودة الغائب </title>
+        <isbn>9953873461</isbn>
+        <isbn13>9789953873466</isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1264854690s/3165719.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1264854690m/3165719.jpg]]></image_url>
+        <average_rating>4.08</average_rating>
+        <ratings_count>1777</ratings_count>
+        <authors>
+          <author>
+            <id>1297551</id>
+            <name>منذر القباني</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>4653511</id>
+        <title>رجال في الشمس</title>
+        <isbn></isbn>
+        <isbn13></isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1321707850s/4653511.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1321707850m/4653511.jpg]]></image_url>
+        <average_rating>4.19</average_rating>
+        <ratings_count>4095</ratings_count>
+        <authors>
+          <author>
+            <id>1408290</id>
+            <name>غسان كنفاني</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>8239301</id>
+        <title>الطنطورية </title>
+        <isbn></isbn>
+        <isbn13>9789770928293</isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1314481218s/8239301.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1314481218m/8239301.jpg]]></image_url>
+        <average_rating>4.34</average_rating>
+        <ratings_count>5406</ratings_count>
+        <authors>
+          <author>
+            <id>1446194</id>
+            <name>رضوى عاشور</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>6909334</id>
+        <title>القوقعة: يوميات متلصص</title>
+        <isbn></isbn>
+        <isbn13>9789953890319</isbn13>
+        <small_image_url><![CDATA[http://www.goodreads.com/assets/nocover/60x80.png]]></small_image_url>
+        <image_url><![CDATA[http://www.goodreads.com/assets/nocover/111x148.png]]></image_url>
+        <average_rating>4.31</average_rating>
+        <ratings_count>2986</ratings_count>
+        <authors>
+          <author>
+            <id>2957451</id>
+            <name>مصطفى خليفة</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>11942408</id>
+        <title><![CDATA[شاب كشك فى رحلة البحث عن الجادون]]></title>
+        <isbn></isbn>
+        <isbn13>9789776337589</isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1309784315s/11942408.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1309784315m/11942408.jpg]]></image_url>
+        <average_rating>3.72</average_rating>
+        <ratings_count>5519</ratings_count>
+        <authors>
+          <author>
+            <id>5013252</id>
+            <name>عمرو سلامة</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>6801453</id>
+        <title>أعراس آمنة</title>
+        <isbn></isbn>
+        <isbn13>9789953876252</isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1398030880s/6801453.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1398030880m/6801453.jpg]]></image_url>
+        <average_rating>4.18</average_rating>
+        <ratings_count>1187</ratings_count>
+        <authors>
+          <author>
+            <id>2831048</id>
+            <name>إبراهيم نصر الله</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>6496777</id>
+        <title>Kapitan Sino</title>
+        <isbn>9710545019</isbn>
+        <isbn13>9789710545018</isbn13>
+        <small_image_url><![CDATA[http://www.goodreads.com/assets/nocover/60x80.png]]></small_image_url>
+        <image_url><![CDATA[http://www.goodreads.com/assets/nocover/111x148.png]]></image_url>
+        <average_rating>3.80</average_rating>
+        <ratings_count>3927</ratings_count>
+        <authors>
+          <author>
+            <id>674207</id>
+            <name>Bob Ong</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>3482609</id>
+        <title>أهل الكهف</title>
+        <isbn></isbn>
+        <isbn13>0009770910023</isbn13>
+        <small_image_url><![CDATA[http://www.goodreads.com/assets/nocover/60x80.png]]></small_image_url>
+        <image_url><![CDATA[http://www.goodreads.com/assets/nocover/111x148.png]]></image_url>
+        <average_rating>3.98</average_rating>
+        <ratings_count>1678</ratings_count>
+        <authors>
+          <author>
+            <id>353145</id>
+            <name>Tawfik Al-Hakim</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>320</id>
+        <title>One Hundred Years of Solitude</title>
+        <isbn>0060531045</isbn>
+        <isbn13>9780060531041</isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1327881361s/320.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1327881361m/320.jpg]]></image_url>
+        <average_rating>3.96</average_rating>
+        <ratings_count>346512</ratings_count>
+        <authors>
+          <author>
+            <id>13450</id>
+            <name>Gabriel Garcí­a Márquez</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>13103</id>
+        <title><![CDATA[The Celestine Prophecy (Celestine Prophecy, #1)]]></title>
+        <isbn>0446671002</isbn>
+        <isbn13>9780446671002</isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1341360412s/13103.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1341360412m/13103.jpg]]></image_url>
+        <average_rating>3.53</average_rating>
+        <ratings_count>53218</ratings_count>
+        <authors>
+          <author>
+            <id>8203</id>
+            <name>James Redfield</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>6116753</id>
+        <title>Boom!</title>
+        <isbn>0385616295</isbn>
+        <isbn13>9780385616294</isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1327910076s/6116753.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1327910076m/6116753.jpg]]></image_url>
+        <average_rating>3.37</average_rating>
+        <ratings_count>1455</ratings_count>
+        <authors>
+          <author>
+            <id>1050</id>
+            <name>Mark Haddon</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>13637412</id>
+        <title>ساق البامبو</title>
+        <isbn></isbn>
+        <isbn13>9786140105232</isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1336743682s/13637412.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1336743682m/13637412.jpg]]></image_url>
+        <average_rating>4.32</average_rating>
+        <ratings_count>9758</ratings_count>
+        <authors>
+          <author>
+            <id>4603829</id>
+            <name>سعود السنعوسي</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>7049082</id>
+        <title>9 dari Nadira</title>
+        <isbn></isbn>
+        <isbn13>9789799102096</isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1256900297s/7049082.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1256900297m/7049082.jpg]]></image_url>
+        <average_rating>3.89</average_rating>
+        <ratings_count>474</ratings_count>
+        <authors>
+          <author>
+            <id>760524</id>
+            <name>Leila S. Chudori</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>5886412</id>
+        <title>مأساة الحلاج</title>
+        <isbn>9770148598</isbn>
+        <isbn13></isbn13>
+        <small_image_url><![CDATA[http://www.goodreads.com/assets/nocover/60x80.png]]></small_image_url>
+        <image_url><![CDATA[http://www.goodreads.com/assets/nocover/111x148.png]]></image_url>
+        <average_rating>4.18</average_rating>
+        <ratings_count>2215</ratings_count>
+        <authors>
+          <author>
+            <id>2690927</id>
+            <name>صلاح عبد الصبور</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>2927732</id>
+        <title>أرض النفاق</title>
+        <isbn>9770172189</isbn>
+        <isbn13></isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1371818168s/2927732.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1371818168m/2927732.jpg]]></image_url>
+        <average_rating>4.08</average_rating>
+        <ratings_count>3098</ratings_count>
+        <authors>
+          <author>
+            <id>1244209</id>
+            <name>يوسف السباعي</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>545425</id>
+        <title>الرحيق المختوم</title>
+        <isbn>9953320993</isbn>
+        <isbn13></isbn13>
+        <small_image_url><![CDATA[http://d.gr-assets.com/books/1289025514s/545425.jpg]]></small_image_url>
+        <image_url><![CDATA[http://d.gr-assets.com/books/1289025514m/545425.jpg]]></image_url>
+        <average_rating>4.57</average_rating>
+        <ratings_count>5905</ratings_count>
+        <authors>
+          <author>
+            <id>1280155</id>
+            <name>Safiur-Rahman Mubarakpuri</name>
+          </author>
+        </authors>
+      </book>
+      <book>
+        <id>33335</id>
+        <title>The Hidden Messages in Water</title>
+        <isbn>0743289803</isbn>
+        <isbn13>9780743289801</isbn13>
+        <small_image_url><![CDATA[http://www.goodreads.com/assets/nocover/60x80.png]]></small_image_url>
+        <image_url><![CDATA[http://www.goodreads.com/assets/nocover/111x148.png]]></image_url>
+        <average_rating>4.23</average_rating>
+        <ratings_count>5910</ratings_count>
+        <authors>
+          <author>
+            <id>18732</id>
+            <name>Masaru Emoto</name>
+          </author>
+        </authors>
+      </book>
+    </similar_books>
+  </book>
+
+</GoodreadsResponse>

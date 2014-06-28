@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>true</authentication>
+    <key><![CDATA[fDfi6rdiIgfTp49R0xj8MQ]]></key>
+    <method><![CDATA[group_members]]></method>
+  </Request>
+  <group_users type="array">
+    <group_user>
+      <comments_count type="integer">7</comments_count>
+      <created_at type="datetime">2013-01-17T23:39:38+00:00</created_at>
+      <id type="integer">2658407</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Viswanath</first_name>
+        <id type="integer">8320965</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">29</comments_count>
+      <created_at type="datetime">2010-05-08T22:56:18+00:00</created_at>
+      <id type="integer">776498</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Dara S.</first_name>
+        <id type="integer">1314610</id>
+      </user>
+      <user_status>
+        <id type="integer">44895087</id>
+        <book>
+          <id type="integer">18505832</id>
+          <title>Natchez Burning (Penn Cage, #4)</title>
+          <small_image_url>https://d.gr-assets.com/books/1383438264s/18505832.jpg</small_image_url>
+        </book>
+      </user_status>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">5</comments_count>
+      <created_at type="datetime">2013-03-18T16:43:33+00:00</created_at>
+      <id type="integer">2880807</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Lindsey</first_name>
+        <id type="integer">10530251</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">17</comments_count>
+      <created_at type="datetime">2009-03-24T09:03:31+00:00</created_at>
+      <id type="integer">352409</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Gunne</first_name>
+        <id type="integer">1925634</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">0</comments_count>
+      <created_at type="datetime">2013-09-29T23:02:50+00:00</created_at>
+      <id type="integer">3555716</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Chelsie </first_name>
+        <id type="integer">19647734</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">1039</comments_count>
+      <created_at type="datetime">2013-06-28T21:38:11+00:00</created_at>
+      <id type="integer">3241715</id>
+      <moderator_at type="datetime">2013-08-20T19:38:05+00:00</moderator_at>
+      <user>
+        <first_name>Meghan</first_name>
+        <id type="integer">7714961</id>
+      </user>
+      <user_status>
+        <id type="integer">44805331</id>
+        <book>
+          <id type="integer">250792</id>
+          <title>Ain’t I a Woman: Black Women and Feminism</title>
+          <small_image_url>https://d.gr-assets.com/books/1371539140s/250792.jpg</small_image_url>
+        </book>
+      </user_status>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">0</comments_count>
+      <created_at type="datetime">2013-01-27T23:55:41+00:00</created_at>
+      <id type="integer">2698069</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Peg</first_name>
+        <id type="integer">50484</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">0</comments_count>
+      <created_at type="datetime">2013-07-24T20:11:59+00:00</created_at>
+      <id type="integer">3326782</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Sarah</first_name>
+        <id type="integer">118210</id>
+      </user>
+      <user_status>
+        <id type="integer">43808962</id>
+        <book>
+          <id type="integer">8268599</id>
+          <title>Apollo's Angels: A History of Ballet</title>
+          <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-6121bf4c1f669098041843ec9650ca19.png</small_image_url>
+        </book>
+      </user_status>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">10841</comments_count>
+      <created_at type="datetime">2007-07-10T04:34:44+00:00</created_at>
+      <id type="integer">4603</id>
+      <moderator_at type="datetime">2011-04-01T01:15:31+00:00</moderator_at>
+      <user>
+        <first_name>rivka</first_name>
+        <id type="integer">171430</id>
+      </user>
+      <user_status>
+        <id type="integer">44272203</id>
+        <book>
+          <id type="integer">17155290</id>
+          <title>Lilmod Ulelamed: From the Teachings of Our Sages</title>
+          <small_image_url>https://d.gr-assets.com/books/1355850288s/17155290.jpg</small_image_url>
+        </book>
+      </user_status>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">1</comments_count>
+      <created_at type="datetime">2012-10-01T20:30:22+00:00</created_at>
+      <id type="integer">2337818</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Dan</first_name>
+        <id type="integer">214234</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">1</comments_count>
+      <created_at type="datetime">2013-08-08T11:02:58+00:00</created_at>
+      <id type="integer">3374958</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Mickie</first_name>
+        <id type="integer">236101</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">0</comments_count>
+      <created_at type="datetime">2009-07-09T16:22:41+00:00</created_at>
+      <id type="integer">466950</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Sarah</first_name>
+        <id type="integer">569630</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">3</comments_count>
+      <created_at type="datetime">2009-08-18T03:24:31+00:00</created_at>
+      <id type="integer">509683</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Sandy</first_name>
+        <id type="integer">618376</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">67</comments_count>
+      <created_at type="datetime">2007-12-11T10:34:59+00:00</created_at>
+      <id type="integer">37188</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Chrissie</first_name>
+        <id type="integer">632247</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">31</comments_count>
+      <created_at type="datetime">2008-04-30T07:05:53+00:00</created_at>
+      <id type="integer">90570</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Silvana</first_name>
+        <id type="integer">666003</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">6</comments_count>
+      <created_at type="datetime">2014-01-10T05:54:40+00:00</created_at>
+      <id type="integer">3840644</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Kristal</first_name>
+        <id type="integer">675825</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">23</comments_count>
+      <created_at type="datetime">2008-11-29T14:35:33+00:00</created_at>
+      <id type="integer">236637</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Nancy</first_name>
+        <id type="integer">763271</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">0</comments_count>
+      <created_at type="datetime">2012-05-11T22:19:42+00:00</created_at>
+      <id type="integer">1968651</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Patrick</first_name>
+        <id type="integer">922495</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">1</comments_count>
+      <created_at type="datetime">2013-02-22T15:38:10+00:00</created_at>
+      <id type="integer">2796642</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Sherry</first_name>
+        <id type="integer">949090</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">1</comments_count>
+      <created_at type="datetime">2011-01-22T18:21:20+00:00</created_at>
+      <id type="integer">1076768</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Lianne</first_name>
+        <id type="integer">990839</id>
+      </user>
+      <user_status>
+        <id type="integer">44944063</id>
+        <book>
+          <id type="integer">17906370</id>
+          <title>Dear Life</title>
+          <small_image_url>https://d.gr-assets.com/books/1387996870s/17906370.jpg</small_image_url>
+        </book>
+      </user_status>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">3</comments_count>
+      <created_at type="datetime">2010-02-12T23:09:03+00:00</created_at>
+      <id type="integer">687414</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Tayler</first_name>
+        <id type="integer">999914</id>
+      </user>
+      <user_status>
+        <id type="integer">44815833</id>
+        <book>
+          <id type="integer">6444533</id>
+          <title>The Kingdom of Ohio</title>
+          <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-6121bf4c1f669098041843ec9650ca19.png</small_image_url>
+        </book>
+      </user_status>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">5</comments_count>
+      <created_at type="datetime">2008-09-04T18:09:38+00:00</created_at>
+      <id type="integer">164851</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Ed</first_name>
+        <id type="integer">1077703</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">1</comments_count>
+      <created_at type="datetime">2013-05-18T15:55:57+00:00</created_at>
+      <id type="integer">3092027</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Debra</first_name>
+        <id type="integer">1088245</id>
+      </user>
+      <user_status>
+        <id type="integer">44940590</id>
+      </user_status>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">11</comments_count>
+      <created_at type="datetime">2009-12-07T15:59:34+00:00</created_at>
+      <id type="integer">616448</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Ed</first_name>
+        <id type="integer">1090620</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">1</comments_count>
+      <created_at type="datetime">2012-09-12T03:31:09+00:00</created_at>
+      <id type="integer">2279417</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Catherine</first_name>
+        <id type="integer">1270344</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">2</comments_count>
+      <created_at type="datetime">2013-10-04T05:38:36+00:00</created_at>
+      <id type="integer">3569678</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Ashley</first_name>
+        <id type="integer">1343864</id>
+      </user>
+      <user_status>
+        <id type="integer">44930975</id>
+        <book>
+          <id type="integer">47645</id>
+          <title>Lirael (Abhorsen, #2)</title>
+          <small_image_url>https://d.gr-assets.com/books/1294087829s/47645.jpg</small_image_url>
+        </book>
+      </user_status>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">3648</comments_count>
+      <created_at type="datetime">2008-10-10T02:51:54+00:00</created_at>
+      <id type="integer">192833</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Becky</first_name>
+        <id type="integer">1376766</id>
+      </user>
+      <user_status>
+        <id type="integer">44931376</id>
+        <book>
+          <id type="integer">18404289</id>
+          <title>Brutal Youth</title>
+          <small_image_url>https://d.gr-assets.com/books/1392927239s/18404289.jpg</small_image_url>
+        </book>
+      </user_status>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">9</comments_count>
+      <created_at type="datetime">2012-12-19T05:35:36+00:00</created_at>
+      <id type="integer">2554750</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Nate</first_name>
+        <id type="integer">1396606</id>
+      </user>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">4</comments_count>
+      <created_at type="datetime">2013-09-21T03:14:52+00:00</created_at>
+      <id type="integer">3528521</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Nick</first_name>
+        <id type="integer">1409101</id>
+      </user>
+      <user_status>
+        <id type="integer">44904971</id>
+        <book>
+          <id type="integer">1134753</id>
+          <title>L.A. Confidential</title>
+          <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-6121bf4c1f669098041843ec9650ca19.png</small_image_url>
+        </book>
+      </user_status>
+    </group_user>
+    <group_user>
+      <comments_count type="integer">16</comments_count>
+      <created_at type="datetime">2011-01-04T00:34:43+00:00</created_at>
+      <id type="integer">1047412</id>
+      <moderator_at type="datetime" nil="true"/>
+      <user>
+        <first_name>Trudi</first_name>
+        <id type="integer">1416912</id>
+      </user>
+    </group_user>
+  </group_users>
+
+</GoodreadsResponse>

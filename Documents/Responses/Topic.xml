@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>true</authentication>
+    <key><![CDATA[fDfi6rdiIgfTp49R0xj8MQ]]></key>
+    <method><![CDATA[topic_show]]></method>
+  </Request>
+  <topic>
+    <id>1088556</id>
+    <author_user_id>889496</author_user_id>
+    <author_user_name>Daniel D</author_user_name>
+    <comments_count>27</comments_count>
+    <new_comments_count>2</new_comments_count>
+    <comments_per_page>50</comments_per_page>
+    <title>Goodreads for Windows 8</title>
+    <updated_at>Tue Nov 06 09:14:57 -0800 2012</updated_at>
+    <last_comment_at>Fri Mar 07 07:19:53 -0800 2014</last_comment_at>
+    <subject_type>Group</subject_type>
+    <folder>
+      <id type="integer">58737</id>
+      <name>examples / showcase</name>
+    </folder>
+
+    <subscription_frequency>O</subscription_frequency>
+    <is_member>true</is_member>
+    <group_subscription_frequency>O</group_subscription_frequency>
+    <group>
+      <id type="integer">8095</id>
+      <title>Goodreads Developers</title>
+      <p1_image_url>http://d.gr-assets.com/groups/1220414390p1/8095.jpg</p1_image_url>
+    </group>
+
+    <comments start="1" end="27" total="27">
+      <comment>
+        <id>61242116</id>
+        <body><![CDATA[I've released a new Goodreads app designed for Windows 8 desktops/tablets. It's passed certification, and is now available in the windows store:<br /><br /><a href="http://apps.microsoft.com/webpdp/app/tome/8194c239-dfde-4c89-be7a-a89bae59a33a" target="_blank" rel="nofollow">http://apps.microsoft.com/webpdp/app/...</a><br /><br />Unfortunately, logging in with Facebook is not supported due to issues with the Microsoft WebAuthenticationBroker and Facebook Connect. You'll have to use a standard goodreads username/password.<br /><br />I'd love some feedback if anyone wants to give it a try.]]></body>
+        <updated_at>Fri Apr 26 15:14:03 -0700 2013</updated_at>
+        <user>
+          <id>889496</id>
+          <name>Daniel</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1292097280p2/889496.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>61252765</id>
+        <body><![CDATA[If only we had a windows tablet. :)]]></body>
+        <updated_at>Tue Nov 06 12:44:50 -0800 2012</updated_at>
+        <user>
+          <id>73</id>
+          <name>Michael</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1389653970p2/73.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>61257091</id>
+        <body><![CDATA[Great to hear Daniel!  We aren't building one of those ourselves for some time.]]></body>
+        <updated_at>Tue Nov 06 14:00:21 -0800 2012</updated_at>
+        <user>
+          <id>1</id>
+          <name>Otis</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1189644957p2/1.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>62579394</id>
+        <body><![CDATA[nice tread, good apps.<br />now we make a apps GR for win8 but with other concept, special for children.]]></body>
+        <updated_at>Wed Nov 28 17:04:48 -0800 2012</updated_at>
+        <user>
+          <id>7037792</id>
+          <name>Muhammad</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1322723213p2/7037792.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>64439340</id>
+        <body><![CDATA[Do you have an updated link? The link seems dead]]></body>
+        <updated_at>Sat Dec 29 20:18:03 -0800 2012</updated_at>
+        <user>
+          <id>4571904</id>
+          <name>Nancy</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1290460454p2/4571904.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>64442320</id>
+        <body><![CDATA[My app has been re-listed as "Tome" in the Windows Store:<br /><br /><a href="http://apps.microsoft.com/webpdp/app/tome/8194c239-dfde-4c89-be7a-a89bae59a33a" target="_blank" rel="nofollow">http://apps.microsoft.com/webpdp/app/...</a><br /><br />The new version should support Facebook authentication.]]></body>
+        <updated_at>Sat Dec 29 21:01:41 -0800 2012</updated_at>
+        <user>
+          <id>889496</id>
+          <name>Daniel</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1292097280p2/889496.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>64877020</id>
+        <body>Yay yay yay (:</body>
+        <updated_at>Fri Jan 04 14:57:14 -0800 2013</updated_at>
+        <user>
+          <id>7205835</id>
+          <name>Tabatha</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1397581998p2/7205835.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>65698375</id>
+        <body><![CDATA[Hi, the app just keeps searching. Doesn't show my shelves or books.<br /><br />Like this: <a href="http://i.imgur.com/Crsml.png" target="_blank" rel="nofollow">http://i.imgur.com/Crsml.png</a>]]></body>
+        <updated_at>Wed Jan 16 11:41:00 -0800 2013</updated_at>
+        <user>
+          <id>9968996</id>
+          <name>Filipe</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1367952316p2/9968996.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>66182540</id>
+        <body><![CDATA[Hi Filipe,<br /><br />I haven't been able to reproduce this issue on my own computer. Are you still experiencing this issue, and if so, what kind of device are you using Tome on (type/model)?]]></body>
+        <updated_at>Tue Jan 22 19:14:16 -0800 2013</updated_at>
+        <user>
+          <id>889496</id>
+          <name>Daniel</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1292097280p2/889496.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>66306232</id>
+        <body><![CDATA[Yes. My device is an Asus N53sn laptop.<br /><br />I can see friends, groups and search for books. But updates or shelves doesn't show anything.]]></body>
+        <updated_at>Thu Jan 24 13:59:43 -0800 2013</updated_at>
+        <user>
+          <id>9968996</id>
+          <name>Filipe</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1367952316p2/9968996.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>66391436</id>
+        <body><![CDATA[Hi Filipe,<br /><br />I've submitted a new update that should hopefully fix this issue. <br /><br />It usually takes about a week for Microsoft to certify and release an update, please let me know if it resolves your issue.]]></body>
+        <updated_at>Fri Jan 25 16:48:24 -0800 2013</updated_at>
+        <user>
+          <id>889496</id>
+          <name>Daniel</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1292097280p2/889496.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>68211476</id>
+        <body><![CDATA[It's no longer listed in the store. :(]]></body>
+        <updated_at>Tue Feb 19 17:48:22 -0800 2013</updated_at>
+        <user>
+          <id>5295323</id>
+          <name>Nick</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1303329273p2/5295323.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>70000223</id>
+        <body><![CDATA[Hi Daniel,<br /><br />I'm working on a windows 8 app for goodreads. How did you manage to OAuth Goodreads? Is it by using a provided C# library for goodreads or some other method? Thanks in advance.]]></body>
+        <updated_at>Sun Mar 17 00:59:41 -0700 2013</updated_at>
+        <user>
+          <id>3680792</id>
+          <name>Harshini</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1329048819p2/3680792.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>70080646</id>
+        <body><![CDATA[I originally used the Chq.OAuth library, but ran into some trouble with post data. I ended up writing my own OAuth library.]]></body>
+        <updated_at>Mon Mar 18 06:36:47 -0700 2013</updated_at>
+        <user>
+          <id>889496</id>
+          <name>Daniel</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1292097280p2/889496.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>70093584</id>
+        <body><![CDATA[Hi,Thanks for the reply. I used webauthenticationbroker sample provided. I managed to get oauth_token. Do I need to get access_token also? <br /><br />Is your own oauth libabry available to download? Thanks.]]></body>
+        <updated_at>Mon Mar 18 10:29:00 -0700 2013</updated_at>
+        <user>
+          <id>3680792</id>
+          <name>Harshini</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1329048819p2/3680792.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>70155338</id>
+        <body><![CDATA[Yes, you will need the access token to make your requests. My library is not available for download, but the Chq.OAuth github page has some good examples:<br /><a href="https://github.com/myquay/Chq.OAuth" target="_blank" rel="nofollow">https://github.com/myquay/Chq.OAuth</a>]]></body>
+        <updated_at>Tue Mar 19 06:53:33 -0700 2013</updated_at>
+        <user>
+          <id>889496</id>
+          <name>Daniel</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1292097280p2/889496.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>72482185</id>
+        <body><![CDATA[Hi Daniel,<br /><br />this is great! Do you, by any chance, have a goodreads app that can be installed on a Windows 8 phone? I have Book queue but it doesn't allow me to access my shelf or mark books as currently reading or read.]]></body>
+        <updated_at>Sat Apr 20 11:26:43 -0700 2013</updated_at>
+        <user>
+          <id>11744405</id>
+          <name>Gareth Cj.</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1382688878p2/11744405.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>72873412</id>
+        <body><![CDATA[@Gareth check out Social Reads]]></body>
+        <updated_at>Fri Apr 26 05:01:13 -0700 2013</updated_at>
+        <user>
+          <id>14393932</id>
+          <name>Peter</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1352399617p2/14393932.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>72875692</id>
+        <body><![CDATA[Hi Gareth,<br /><br />At the moment I don't have any plans for a Windows Phone app. It looks like there are a bunch of other good options already available (Such as Social Reads that Peter mentioned).]]></body>
+        <updated_at>Fri Apr 26 05:52:13 -0700 2013</updated_at>
+        <user>
+          <id>889496</id>
+          <name>Daniel</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1292097280p2/889496.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>72906702</id>
+        <body><![CDATA[Hi Daniel. Do you know if this app will be available again for windows 8? Store link says no longer available.]]></body>
+        <updated_at>Fri Apr 26 14:47:40 -0700 2013</updated_at>
+        <user>
+          <id>5295323</id>
+          <name>Nick</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1303329273p2/5295323.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>72908224</id>
+        <body><![CDATA[It's been re-listed under the name "Tome", here's the updated link: <a href="http://apps.microsoft.com/webpdp/app/tome/8194c239-dfde-4c89-be7a-a89bae59a33a" target="_blank" rel="nofollow">http://apps.microsoft.com/webpdp/app/...</a>]]></body>
+        <updated_at>Fri Apr 26 15:13:45 -0700 2013</updated_at>
+        <user>
+          <id>889496</id>
+          <name>Daniel</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1292097280p2/889496.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>72908326</id>
+        <body>Thank you!</body>
+        <updated_at>Fri Apr 26 15:15:27 -0700 2013</updated_at>
+        <user>
+          <id>5295323</id>
+          <name>Nick</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1303329273p2/5295323.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>78114216</id>
+        <body><![CDATA[well man 2 requests:<br />1) you should be able to update your reading status from the app.<br />2)if you plan to have ads, make it more simetric or such, with the diferent tiles of the ap.<br />cheers.]]></body>
+        <updated_at>Wed Jul 10 12:04:59 -0700 2013</updated_at>
+        <user>
+          <id>5977305</id>
+          <name>Jack</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1371461526p2/5977305.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>78172929</id>
+        <body><![CDATA[Hi Jack,<br /><br />You can update your reading status from the app by using the context menu from a book page. (Right click, or swipe your finger up from the bottom).<br /><br />Also, the app does have small ads displayed on most of the pages.]]></body>
+        <updated_at>Thu Jul 11 06:57:18 -0700 2013</updated_at>
+        <user>
+          <id>889496</id>
+          <name>Daniel</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1292097280p2/889496.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>78173466</id>
+        <body><![CDATA[<em>Daniel wrote: "Hi Jack,<br /><br />You can update your reading status from the app by using the context menu from a book page. (Right click, or swipe your finger up from the bottom).<br /><br />Also, the app does have small ads disp..."</em><br />ok, i'll try that. but on windows 8, adds are clumsy. and go beyond the screen even.]]></body>
+        <updated_at>Thu Jul 11 07:07:20 -0700 2013</updated_at>
+        <user>
+          <id>5977305</id>
+          <name>Jack</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1371461526p2/5977305.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>94137966</id>
+        <body><![CDATA[Hi,<br /><br />Am using the app on the Surface RT but it just asks me to login. When I click on that it says unable to log in. Nothing else happens. Uninstalled.]]></body>
+        <updated_at>Fri Mar 07 06:33:13 -0800 2014</updated_at>
+        <user>
+          <id>6609734</id>
+          <name>Gautam</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1346918756p2/6609734.jpg]]></small_image_url>
+        </user>
+      </comment>
+      <comment>
+        <id>94140298</id>
+        <body><![CDATA[I removed this app from the windows store 6 months ago, so it shouldn't be available.]]></body>
+        <updated_at>Fri Mar 07 07:19:53 -0800 2014</updated_at>
+        <user>
+          <id>889496</id>
+          <name>Daniel</name>
+          <small_image_url><![CDATA[http://d.gr-assets.com/users/1292097280p2/889496.jpg]]></small_image_url>
+        </user>
+      </comment>
+    </comments>
+  </topic>
+
+</GoodreadsResponse>

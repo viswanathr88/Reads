@@ -1,0 +1,990 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>true</authentication>
+    <key><![CDATA[fDfi6rdiIgfTp49R0xj8MQ]]></key>
+    <method><![CDATA[friend_user]]></method>
+  </Request>
+  <friends start="1" end="83" total="83">
+    <user>
+      <id>5038384</id>
+      <name>Abhishek</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/5038384-abhishek]]></link>
+      <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/m_111x148-ed68a3a40c70b78add8e1bdde8780d31.png]]></image_url>
+      <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/m_50x66-e89fc14c32a41c0eb4298dfafe929b65.png]]></small_image_url>
+      <friends_count>137</friends_count>
+      <reviews_count>60</reviews_count>
+      <created_at>Sun Mar 25 10:21:13 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>15065951</id>
+      <name>Adithya Sundar</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/15065951-adithya-sundar]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1354337694p3/15065951.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1354337694p2/15065951.jpg]]></small_image_url>
+      <friends_count>238</friends_count>
+      <reviews_count>7</reviews_count>
+      <created_at>Fri Nov 30 20:55:03 -0800 2012</created_at>
+    </user>
+    <user>
+      <id>8373880</id>
+      <name>Akhil</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/8373880-akhil]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1387856984p3/8373880.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1387856984p2/8373880.jpg]]></small_image_url>
+      <friends_count>159</friends_count>
+      <reviews_count>71</reviews_count>
+      <created_at>Sat Apr 27 21:02:56 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>7084506</id>
+      <name>Alagappan Ramanathan</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/7084506-alagappan-ramanathan]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1322680488p3/7084506.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1322680488p2/7084506.jpg]]></small_image_url>
+      <friends_count>146</friends_count>
+      <reviews_count>50</reviews_count>
+      <created_at>Tue Oct 16 10:16:34 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>17405650</id>
+      <name>Ameer Basha</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/17405650-ameer-basha]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1360695563p3/17405650.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1360695563p2/17405650.jpg]]></small_image_url>
+      <friends_count>61</friends_count>
+      <reviews_count>13</reviews_count>
+      <created_at>Tue Feb 12 10:59:33 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>21448324</id>
+      <name>Anant Raman</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/21448324-anant-raman]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1371618632p3/21448324.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1371618632p2/21448324.jpg]]></small_image_url>
+      <friends_count>9</friends_count>
+      <reviews_count>0</reviews_count>
+      <created_at>Tue Jun 18 22:10:36 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>18522538</id>
+      <name>Anil Joseph</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/18522538-anil-joseph]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1363714092p3/18522538.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1363714092p2/18522538.jpg]]></small_image_url>
+      <friends_count>186</friends_count>
+      <reviews_count>106</reviews_count>
+      <created_at>Tue Mar 19 10:28:22 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>9494327</id>
+      <name>Ankit</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/9494327-ankit]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1336931795p3/9494327.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1336931795p2/9494327.jpg]]></small_image_url>
+      <friends_count>201</friends_count>
+      <reviews_count>61</reviews_count>
+      <created_at>Sun May 13 10:56:43 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>19606938</id>
+      <name>Ankur Saxena</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/19606938-ankur-saxena]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1366467119p3/19606938.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1366467119p2/19606938.jpg]]></small_image_url>
+      <friends_count>56</friends_count>
+      <reviews_count>1</reviews_count>
+      <created_at>Sat Apr 20 07:12:05 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>18850709</id>
+      <name>Anshu Prateek</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/18850709-anshu-prateek]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1364570904p3/18850709.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1364570904p2/18850709.jpg]]></small_image_url>
+      <friends_count>41</friends_count>
+      <reviews_count>0</reviews_count>
+      <created_at>Sat Sep 21 11:31:15 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>19433806</id>
+      <name>Anubhav Kandpal</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/19433806-anubhav-kandpal]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1365998090p3/19433806.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1365998090p2/19433806.jpg]]></small_image_url>
+      <friends_count>100</friends_count>
+      <reviews_count>7</reviews_count>
+      <created_at>Sun Apr 14 20:55:00 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>20007168</id>
+      <name>Anubhav Hajela</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/20007168-anubhav-hajela]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1367586178p3/20007168.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1367586178p2/20007168.jpg]]></small_image_url>
+      <friends_count>78</friends_count>
+      <reviews_count>0</reviews_count>
+      <created_at>Fri May 03 06:03:08 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>25657743</id>
+      <name>Ashish Panigrahi</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/25657743-ashish-panigrahi]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1384516894p3/25657743.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1384516894p2/25657743.jpg]]></small_image_url>
+      <friends_count>29</friends_count>
+      <reviews_count>0</reviews_count>
+      <created_at>Fri Nov 15 04:02:31 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>11536401</id>
+      <name>Balakrishnan</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/11536401-balakrishnan]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1344017650p3/11536401.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1344017650p2/11536401.jpg]]></small_image_url>
+      <friends_count>58</friends_count>
+      <reviews_count>57</reviews_count>
+      <created_at>Fri Aug 03 11:14:15 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>19818887</id>
+      <name>Baradwaaj Ramanujam</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/19818887-baradwaaj-ramanujam]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1367057118p3/19818887.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1367057118p2/19818887.jpg]]></small_image_url>
+      <friends_count>56</friends_count>
+      <reviews_count>1</reviews_count>
+      <created_at>Sat Apr 27 03:05:24 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>17405443</id>
+      <name>Bharat Goyal</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/17405443-bharat-goyal]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1360695028p3/17405443.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1360695028p2/17405443.jpg]]></small_image_url>
+      <friends_count>82</friends_count>
+      <reviews_count>0</reviews_count>
+      <created_at>Tue Feb 12 10:50:37 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>10759968</id>
+      <name>Bharath</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/10759968-bharath]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1341677673p3/10759968.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1341677673p2/10759968.jpg]]></small_image_url>
+      <friends_count>138</friends_count>
+      <reviews_count>80</reviews_count>
+      <created_at>Sat Jul 07 09:14:42 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>24130201</id>
+      <name>Bharath Ramaswamy</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/24130201-bharath-ramaswamy]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1379784203p3/24130201.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1379784203p2/24130201.jpg]]></small_image_url>
+      <friends_count>119</friends_count>
+      <reviews_count>3</reviews_count>
+      <created_at>Sat Sep 21 10:23:42 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>23964990</id>
+      <name>Birottam Dutta</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/23964990-birottam-dutta]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1379251158p3/23964990.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1379251158p2/23964990.jpg]]></small_image_url>
+      <friends_count>96</friends_count>
+      <reviews_count>24</reviews_count>
+      <created_at>Thu Oct 03 07:32:23 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>18048039</id>
+      <name>Chitralekha Sumbrui</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/18048039-chitralekha-sumbrui]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1362428800p3/18048039.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1362428800p2/18048039.jpg]]></small_image_url>
+      <friends_count>219</friends_count>
+      <reviews_count>3</reviews_count>
+      <created_at>Mon Mar 04 12:26:49 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>10953238</id>
+      <name>Devika</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/10953238-devika]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1342286737p3/10953238.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1342286737p2/10953238.jpg]]></small_image_url>
+      <friends_count>175</friends_count>
+      <reviews_count>37</reviews_count>
+      <created_at>Sat Jul 14 10:25:46 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>11133914</id>
+      <name>Devs</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/11133914-devs]]></link>
+      <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png]]></image_url>
+      <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png]]></small_image_url>
+      <friends_count>26</friends_count>
+      <reviews_count>346</reviews_count>
+      <created_at>Fri Jul 20 14:24:51 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>9807296</id>
+      <name>Divya</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/9807296-divya]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1338099678p3/9807296.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1338099678p2/9807296.jpg]]></small_image_url>
+      <friends_count>128</friends_count>
+      <reviews_count>46</reviews_count>
+      <created_at>Sat May 26 23:21:25 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>22460642</id>
+      <name>Divya</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/22460642-divya]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1374602873p3/22460642.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1374602873p2/22460642.jpg]]></small_image_url>
+      <friends_count>198</friends_count>
+      <reviews_count>227</reviews_count>
+      <created_at>Tue Jul 23 11:08:09 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>26877525</id>
+      <name>Ershad</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/26877525-ershad]]></link>
+      <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png]]></image_url>
+      <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png]]></small_image_url>
+      <friends_count>58</friends_count>
+      <reviews_count>16</reviews_count>
+      <created_at>Tue Dec 24 17:11:25 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>7917853</id>
+      <name>Gayathri</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/7917853-gayathri]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1330181689p3/7917853.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1330181689p2/7917853.jpg]]></small_image_url>
+      <friends_count>167</friends_count>
+      <reviews_count>122</reviews_count>
+      <user_status>
+        <body></body>
+        <chapter type="integer" nil="true"/>
+        <comments_count type="integer">0</comments_count>
+        <created_at type="datetime">2014-02-26T11:32:34+00:00</created_at>
+        <id type="integer">39881184</id>
+        <last_comment_at type="datetime" nil="true"/>
+        <note_updated_at type="datetime" nil="true"/>
+        <note_uri nil="true"/>
+        <page type="integer">130</page>
+        <percent type="integer">53</percent>
+        <ratings_count type="integer">0</ratings_count>
+        <updated_at type="datetime">2014-02-26T11:32:34+00:00</updated_at>
+        <work_id type="integer">1385044</work_id>
+        <book>
+          <id type="integer">6514</id>
+          <isbn>0061148512</isbn>
+          <isbn13>9780061148514</isbn13>
+          <text_reviews_count type="integer">6695</text_reviews_count>
+          <title>The Bell Jar</title>
+          <image_url>http://d.gr-assets.com/books/1379098702m/6514.jpg</image_url>
+          <small_image_url>http://d.gr-assets.com/books/1379098702s/6514.jpg</small_image_url>
+          <link>http://www.goodreads.com/book/show/6514.The_Bell_Jar</link>
+          <num_pages>244</num_pages>
+          <format>Paperback</format>
+          <edition_information/>
+          <publisher>Harper Perennial Modern Classics</publisher>
+          <publication_day/>
+          <publication_year>2006</publication_year>
+          <publication_month/>
+          <average_rating>3.93</average_rating>
+          <ratings_count>273842</ratings_count>
+          <description>A Special Paperback Edition to Commemorate the Fiftieth Anniversary of the Publication of Sylvia Plath's Remarkable Novel&lt;br&gt;&lt;br&gt;Sylvia Plath's shocking, realistic, and intensely emotional novel about a woman falling into the grip of insanity&lt;br&gt;&lt;br&gt;Esther Greenwood is brilliant, beautiful, enormously talented, and successful, but slowly going under—maybe for the last time. In her acclaimed and enduring masterwork, Sylvia Plath brilliantly draws the reader into Esther's breakdown with such intensity that her insanity becomes palpably real, even rational—as accessible an experience as going to the movies. A deep penetration into the darkest and most harrowing corners of the human psyche, &lt;em&gt;The Bell Jar&lt;/em&gt; is an extraordinary accomplishment and a haunting American classic.</description>
+          <authors>
+            <author>
+              <id>4379</id>
+              <name>Sylvia Plath</name>
+              <image_url><![CDATA[http://d.gr-assets.com/authors/1373572652p5/4379.jpg]]></image_url>
+              <small_image_url><![CDATA[http://d.gr-assets.com/authors/1373572652p2/4379.jpg]]></small_image_url>
+              <link><![CDATA[http://www.goodreads.com/author/show/4379.Sylvia_Plath]]></link>
+              <average_rating>3.99</average_rating>
+              <ratings_count>335747</ratings_count>
+              <text_reviews_count>10327</text_reviews_count>
+            </author>
+          </authors>
+          <published>2006</published>
+        </book>
+      </user_status>
+
+      <created_at>Sun Jan 06 05:38:58 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>2771933</id>
+      <name>Ghouse</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/2771933-ghouse]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1320558722p3/2771933.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1320558722p2/2771933.jpg]]></small_image_url>
+      <friends_count>369</friends_count>
+      <reviews_count>138</reviews_count>
+      <created_at>Mon Dec 31 04:58:39 -0800 2012</created_at>
+    </user>
+    <user>
+      <id>10285515</id>
+      <name>Hari</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/10285515-hari]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1339961000p3/10285515.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1339961000p2/10285515.jpg]]></small_image_url>
+      <friends_count>205</friends_count>
+      <reviews_count>18</reviews_count>
+      <created_at>Sun Jun 17 12:23:26 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>12918762</id>
+      <name>Jacob Neroth</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/12918762-jacob-neroth]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1347922246p3/12918762.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1347922246p2/12918762.jpg]]></small_image_url>
+      <friends_count>63</friends_count>
+      <reviews_count>0</reviews_count>
+      <created_at>Mon Sep 17 15:50:52 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>16186257</id>
+      <name>Kannan Aravind</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/16186257-kannan-aravind]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1357562705p3/16186257.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1357562705p2/16186257.jpg]]></small_image_url>
+      <friends_count>133</friends_count>
+      <reviews_count>83</reviews_count>
+      <created_at>Mon Jan 07 04:45:15 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>7597792</id>
+      <name>Karthik</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/7597792-karthik]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1328192745p3/7597792.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1328192745p2/7597792.jpg]]></small_image_url>
+      <friends_count>25</friends_count>
+      <reviews_count>23</reviews_count>
+      <created_at>Wed Mar 21 20:04:04 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>7844364</id>
+      <name>Koushik</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/7844364-koushik]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1394300747p3/7844364.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1394300747p2/7844364.jpg]]></small_image_url>
+      <friends_count>71</friends_count>
+      <reviews_count>26</reviews_count>
+      <created_at>Mon Mar 04 11:41:18 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>1877798</id>
+      <name>Krithika</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/1877798-krithika]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1345152840p3/1877798.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1345152840p2/1877798.jpg]]></small_image_url>
+      <friends_count>19</friends_count>
+      <reviews_count>36</reviews_count>
+      <created_at>Sat Jun 08 15:41:01 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>9117210</id>
+      <name>Lavanya</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/9117210-lavanya]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1335601703p3/9117210.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1335601703p2/9117210.jpg]]></small_image_url>
+      <friends_count>113</friends_count>
+      <reviews_count>22</reviews_count>
+      <created_at>Sat Apr 28 01:28:28 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>10245537</id>
+      <name>Madhan Rajasekkharan</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/10245537-madhan-rajasekkharan]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1339944591p3/10245537.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1339944591p2/10245537.jpg]]></small_image_url>
+      <friends_count>187</friends_count>
+      <reviews_count>51</reviews_count>
+      <created_at>Mon Jun 18 06:36:59 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>16516922</id>
+      <name>Madhavan</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/16516922-madhavan]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1358391159p3/16516922.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1358391159p2/16516922.jpg]]></small_image_url>
+      <friends_count>53</friends_count>
+      <reviews_count>8</reviews_count>
+      <created_at>Wed Jan 16 18:52:47 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>10283981</id>
+      <name>Manoj</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/10283981-manoj]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1339955530p3/10283981.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1339955530p2/10283981.jpg]]></small_image_url>
+      <friends_count>78</friends_count>
+      <reviews_count>13</reviews_count>
+      <created_at>Sun Jun 17 10:52:16 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>19088648</id>
+      <name>Maruti Agarwal</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/19088648-maruti-agarwal]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1365100212p3/19088648.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1365100212p2/19088648.jpg]]></small_image_url>
+      <friends_count>118</friends_count>
+      <reviews_count>2</reviews_count>
+      <created_at>Thu Apr 04 11:30:24 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>30671317</id>
+      <name>Narayana B</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/30671317-narayana-b]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1397893591p3/30671317.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1397893591p2/30671317.jpg]]></small_image_url>
+      <friends_count>101</friends_count>
+      <reviews_count>0</reviews_count>
+      <created_at>Sat Apr 19 00:46:39 -0700 2014</created_at>
+    </user>
+    <user>
+      <id>7761379</id>
+      <name>Natarajan</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/7761379-natarajan]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1329299199p3/7761379.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1329299199p2/7761379.jpg]]></small_image_url>
+      <friends_count>118</friends_count>
+      <reviews_count>68</reviews_count>
+      <created_at>Mon Apr 02 11:47:20 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>16649604</id>
+      <name>Nikhil Pandey</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/16649604-nikhil-pandey]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1358758009p3/16649604.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1358758009p2/16649604.jpg]]></small_image_url>
+      <friends_count>59</friends_count>
+      <reviews_count>37</reviews_count>
+      <created_at>Mon Jan 21 00:46:56 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>22442299</id>
+      <name>Niraj Khanchandani</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/22442299-niraj-khanchandani]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1374550628p3/22442299.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1374550628p2/22442299.jpg]]></small_image_url>
+      <friends_count>37</friends_count>
+      <reviews_count>0</reviews_count>
+      <created_at>Mon Jul 22 20:37:45 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>16296911</id>
+      <name>Niranjan</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/16296911-niranjan]]></link>
+      <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png]]></image_url>
+      <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png]]></small_image_url>
+      <friends_count>90</friends_count>
+      <reviews_count>0</reviews_count>
+      <created_at>Thu Jan 10 04:57:14 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>9906034</id>
+      <name>Nitin</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/9906034-nitin]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1338468170p3/9906034.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1338468170p2/9906034.jpg]]></small_image_url>
+      <friends_count>97</friends_count>
+      <reviews_count>0</reviews_count>
+      <created_at>Thu May 31 05:42:54 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>16298777</id>
+      <name>Pallavi Acharya</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/16298777-pallavi-acharya]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1357827398p3/16298777.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1357827398p2/16298777.jpg]]></small_image_url>
+      <friends_count>17</friends_count>
+      <reviews_count>4</reviews_count>
+      <created_at>Thu Jan 10 06:16:08 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>18200847</id>
+      <name>Paramesh Narayanan</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/18200847-paramesh-narayanan]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1362829132p3/18200847.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1362829132p2/18200847.jpg]]></small_image_url>
+      <friends_count>10</friends_count>
+      <reviews_count>1</reviews_count>
+      <created_at>Sat Mar 09 03:38:56 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>20468844</id>
+      <name>Payal Agrawal</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/20468844-payal-agrawal]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1368876989p3/20468844.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1368876989p2/20468844.jpg]]></small_image_url>
+      <friends_count>131</friends_count>
+      <reviews_count>1</reviews_count>
+      <created_at>Sat May 18 04:36:39 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>4268767</id>
+      <name>Pravin Ramesh</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/4268767-pravin-ramesh]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1284056311p3/4268767.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1284056311p2/4268767.jpg]]></small_image_url>
+      <friends_count>134</friends_count>
+      <reviews_count>0</reviews_count>
+      <created_at>Sat Dec 28 05:03:42 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>15069441</id>
+      <name>Priya Sekar</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/15069441-priya-sekar]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1354351448p3/15069441.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1354351448p2/15069441.jpg]]></small_image_url>
+      <friends_count>71</friends_count>
+      <reviews_count>29</reviews_count>
+      <created_at>Sat Dec 01 00:44:32 -0800 2012</created_at>
+    </user>
+    <user>
+      <id>18045978</id>
+      <name>Punit Jain</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/18045978-punit-jain]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1362424019p3/18045978.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1362424019p2/18045978.jpg]]></small_image_url>
+      <friends_count>67</friends_count>
+      <reviews_count>3</reviews_count>
+      <created_at>Mon Mar 04 11:07:09 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>8557759</id>
+      <name>Purva</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/8557759-purva]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1333419984p3/8557759.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1333419984p2/8557759.jpg]]></small_image_url>
+      <friends_count>15</friends_count>
+      <reviews_count>83</reviews_count>
+      <created_at>Tue Aug 28 21:38:33 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>18855714</id>
+      <name>Raghavendra Prasad</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/18855714-raghavendra-prasad]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1364578608p3/18855714.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1364578608p2/18855714.jpg]]></small_image_url>
+      <friends_count>49</friends_count>
+      <reviews_count>4</reviews_count>
+      <created_at>Fri Mar 29 10:36:54 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>8967367</id>
+      <name>Rahul</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/8967367-rahul]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1335119241p3/8967367.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1335119241p2/8967367.jpg]]></small_image_url>
+      <friends_count>48</friends_count>
+      <reviews_count>1</reviews_count>
+      <created_at>Sun Apr 22 18:58:27 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>13379382</id>
+      <name>Rahul Govindan</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/13379382-rahul-govindan]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1349360982p3/13379382.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1349360982p2/13379382.jpg]]></small_image_url>
+      <friends_count>132</friends_count>
+      <reviews_count>12</reviews_count>
+      <created_at>Thu Oct 04 07:29:33 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>25953851</id>
+      <name>Rama Krishnan</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/25953851-rama-krishnan]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1385269303p3/25953851.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1385269303p2/25953851.jpg]]></small_image_url>
+      <friends_count>55</friends_count>
+      <reviews_count>16</reviews_count>
+      <created_at>Sat Nov 23 21:01:48 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>21659999</id>
+      <name>Rushanth Veerasingham</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/21659999-rushanth-veerasingham]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1372227727p3/21659999.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1372227727p2/21659999.jpg]]></small_image_url>
+      <friends_count>136</friends_count>
+      <reviews_count>0</reviews_count>
+      <created_at>Tue Jun 25 23:22:21 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>10283397</id>
+      <name>S Navin</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/10283397-s-navin]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1339953521p3/10283397.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1339953521p2/10283397.jpg]]></small_image_url>
+      <friends_count>94</friends_count>
+      <reviews_count>37</reviews_count>
+      <created_at>Sun Jun 17 10:18:48 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>22222432</id>
+      <name>Saraswathy Hariharan</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/22222432-saraswathy-hariharan]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1373891058p3/22222432.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1373891058p2/22222432.jpg]]></small_image_url>
+      <friends_count>116</friends_count>
+      <reviews_count>11</reviews_count>
+      <created_at>Mon Jul 15 05:24:23 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>12918603</id>
+      <name>Sesh Vader</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/12918603-sesh-vader]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1347921801p3/12918603.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1347921801p2/12918603.jpg]]></small_image_url>
+      <friends_count>84</friends_count>
+      <reviews_count>41</reviews_count>
+      <created_at>Mon Sep 17 15:43:30 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>21306534</id>
+      <name>Shalini Shah</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/21306534-shalini-shah]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1371219303p3/21306534.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1371219303p2/21306534.jpg]]></small_image_url>
+      <friends_count>64</friends_count>
+      <reviews_count>0</reviews_count>
+      <created_at>Fri Jun 14 07:15:12 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>23338455</id>
+      <name>Shankar</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/23338455-shankar]]></link>
+      <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png]]></image_url>
+      <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png]]></small_image_url>
+      <friends_count>185</friends_count>
+      <reviews_count>0</reviews_count>
+      <created_at>Fri Aug 23 05:53:11 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>10956623</id>
+      <name>Shraddha Sawardekar</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/10956623-shraddha-sawardekar]]></link>
+      <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/f_111x148-50ade1db09790810151d48c044458007.png]]></image_url>
+      <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/f_50x66-e0ba3b90c110cd67123d6a850d85373e.png]]></small_image_url>
+      <friends_count>226</friends_count>
+      <reviews_count>1</reviews_count>
+      <created_at>Thu May 09 10:37:23 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>7915589</id>
+      <name>Shrikanth</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/7915589-shrikanth]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1330165372p3/7915589.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1330165372p2/7915589.jpg]]></small_image_url>
+      <friends_count>58</friends_count>
+      <reviews_count>46</reviews_count>
+      <created_at>Sat May 19 09:20:19 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>8436100</id>
+      <name>Siddhartha</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/8436100-siddhartha]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1332912313p3/8436100.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1332912313p2/8436100.jpg]]></small_image_url>
+      <friends_count>78</friends_count>
+      <reviews_count>2</reviews_count>
+      <created_at>Thu Apr 05 19:57:10 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>1301819</id>
+      <name>Sindhuja</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/1301819-sindhuja]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1297537508p3/1301819.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1297537508p2/1301819.jpg]]></small_image_url>
+      <friends_count>38</friends_count>
+      <reviews_count>352</reviews_count>
+      <created_at>Sun Jan 06 08:02:21 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>6848964</id>
+      <name>Sivaguru</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/6848964-sivaguru]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1320201034p3/6848964.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1320201034p2/6848964.jpg]]></small_image_url>
+      <friends_count>105</friends_count>
+      <reviews_count>17</reviews_count>
+      <created_at>Thu Nov 29 16:17:38 -0800 2012</created_at>
+    </user>
+    <user>
+      <id>7844432</id>
+      <name>Sivasubramanian  R</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/7844432-sivasubramanian-r]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1330973241p3/7844432.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1330973241p2/7844432.jpg]]></small_image_url>
+      <friends_count>150</friends_count>
+      <reviews_count>53</reviews_count>
+      <created_at>Fri Mar 23 21:20:21 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>13912082</id>
+      <name>Solairaja</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/13912082-solairaja]]></link>
+      <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png]]></image_url>
+      <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png]]></small_image_url>
+      <friends_count>58</friends_count>
+      <reviews_count>10</reviews_count>
+      <created_at>Tue Oct 23 23:09:40 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>21784017</id>
+      <name>Sonam Patel</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/21784017-sonam-patel]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1372607769p3/21784017.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1372607769p2/21784017.jpg]]></small_image_url>
+      <friends_count>110</friends_count>
+      <reviews_count>14</reviews_count>
+      <created_at>Sun Jun 30 08:57:43 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>11290826</id>
+      <name>Sowmya</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/11290826-sowmya]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1343267273p3/11290826.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1343267273p2/11290826.jpg]]></small_image_url>
+      <friends_count>153</friends_count>
+      <reviews_count>37</reviews_count>
+      <created_at>Wed Jul 25 18:48:04 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>11169095</id>
+      <name>Srikrishnan</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/11169095-srikrishnan]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1342936409p3/11169095.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1342936409p2/11169095.jpg]]></small_image_url>
+      <friends_count>13</friends_count>
+      <reviews_count>24</reviews_count>
+      <created_at>Sat Jul 21 22:53:33 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>16323795</id>
+      <name>Srinivethan Rangasamy</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/16323795-srinivethan-rangasamy]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1357885796p3/16323795.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1357885796p2/16323795.jpg]]></small_image_url>
+      <friends_count>81</friends_count>
+      <reviews_count>78</reviews_count>
+      <created_at>Thu Jan 10 22:30:10 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>8303742</id>
+      <name>Subbu</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/8303742-subbu]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1332301199p3/8303742.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1332301199p2/8303742.jpg]]></small_image_url>
+      <friends_count>29</friends_count>
+      <reviews_count>205</reviews_count>
+      <user_status>
+        <body></body>
+        <chapter type="integer" nil="true"/>
+        <comments_count type="integer">0</comments_count>
+        <created_at type="datetime">2014-04-29T11:34:41+00:00</created_at>
+        <id type="integer">42854249</id>
+        <last_comment_at type="datetime" nil="true"/>
+        <note_updated_at type="datetime" nil="true"/>
+        <note_uri nil="true"/>
+        <page type="integer">32</page>
+        <percent type="integer">20</percent>
+        <ratings_count type="integer">0</ratings_count>
+        <updated_at type="datetime">2014-04-29T11:34:41+00:00</updated_at>
+        <work_id type="integer">1499866</work_id>
+        <book>
+          <id type="integer">111050</id>
+          <isbn>0140061401</isbn>
+          <isbn13>9780140061406</isbn13>
+          <text_reviews_count type="integer">163</text_reviews_count>
+          <title>July's People</title>
+          <image_url>http://d.gr-assets.com/books/1328616249m/111050.jpg</image_url>
+          <small_image_url>http://d.gr-assets.com/books/1328616249s/111050.jpg</small_image_url>
+          <link>http://www.goodreads.com/book/show/111050.July_s_People</link>
+          <num_pages>160</num_pages>
+          <format>Paperback</format>
+          <edition_information>Reprint</edition_information>
+          <publisher>Penguin Books</publisher>
+          <publication_day>29</publication_day>
+          <publication_year>1982</publication_year>
+          <publication_month>7</publication_month>
+          <average_rating>3.52</average_rating>
+          <ratings_count>2627</ratings_count>
+          <description>Not all whites in South Africa are outright racists. Some, like Bam and Maureen Smales in Nadine Gordimer's thrilling and powerful novel &lt;em&gt;July's People&lt;/em&gt;, are sensitive to the plights of blacks during the apartheid state. So imagine their quandary when the blacks stage a full-scale revolution that sends the Smaleses scampering into isolation. The premise of the book is expertly crafted; it speaks much about the confusing state of affairs of South Africa and serves as the backbone for a terrific adventure. </description>
+          <authors>
+            <author>
+              <id>55397</id>
+              <name>Nadine Gordimer</name>
+              <image_url><![CDATA[http://d.gr-assets.com/authors/1328615990p5/55397.jpg]]></image_url>
+              <small_image_url><![CDATA[http://d.gr-assets.com/authors/1328615990p2/55397.jpg]]></small_image_url>
+              <link><![CDATA[http://www.goodreads.com/author/show/55397.Nadine_Gordimer]]></link>
+              <average_rating>3.57</average_rating>
+              <ratings_count>12308</ratings_count>
+              <text_reviews_count>1318</text_reviews_count>
+            </author>
+          </authors>
+          <published>1982</published>
+        </book>
+      </user_status>
+
+      <created_at>Wed Mar 21 21:26:18 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>7842367</id>
+      <name>Subramanian</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/7842367-subramanian]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1329775791p3/7842367.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1329775791p2/7842367.jpg]]></small_image_url>
+      <friends_count>173</friends_count>
+      <reviews_count>41</reviews_count>
+      <created_at>Thu Apr 04 18:22:06 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>19559725</id>
+      <name>Sudharshan Ganesan</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/19559725-sudharshan-ganesan]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1366325250p3/19559725.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1366325250p2/19559725.jpg]]></small_image_url>
+      <friends_count>69</friends_count>
+      <reviews_count>11</reviews_count>
+      <created_at>Thu Apr 18 15:47:35 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>14599418</id>
+      <name>Surakshith Mayur</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/14599418-surakshith-mayur]]></link>
+      <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png]]></image_url>
+      <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png]]></small_image_url>
+      <friends_count>128</friends_count>
+      <reviews_count>110</reviews_count>
+      <created_at>Wed Nov 14 18:28:40 -0800 2012</created_at>
+    </user>
+    <user>
+      <id>16315452</id>
+      <name>Test</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/16315452-test]]></link>
+      <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png]]></image_url>
+      <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png]]></small_image_url>
+      <friends_count>1</friends_count>
+      <reviews_count>3</reviews_count>
+      <user_status>
+        <body>hello</body>
+        <chapter type="integer" nil="true"/>
+        <comments_count type="integer">4</comments_count>
+        <created_at type="datetime">2013-01-11T19:23:29+00:00</created_at>
+        <id type="integer">22036936</id>
+        <last_comment_at type="datetime">2013-01-13T00:22:54+00:00</last_comment_at>
+        <note_updated_at type="datetime" nil="true"/>
+        <note_uri>kca://note/amzn1.grok.note.09b0a1e95e799f4418a82aadb67dfb75</note_uri>
+        <page type="integer">100</page>
+        <percent type="integer">20</percent>
+        <ratings_count type="integer">0</ratings_count>
+        <updated_at type="datetime">2013-08-27T05:55:04+00:00</updated_at>
+        <work_id type="integer">1839081</work_id>
+        <book>
+          <id type="integer">78987</id>
+          <isbn>0312997140</isbn>
+          <isbn13>9780312997144</isbn13>
+          <text_reviews_count type="integer">313</text_reviews_count>
+          <title>The Prodigal Daughter (Kane &amp; Abel, #2)</title>
+          <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+          <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+          <link>http://www.goodreads.com/book/show/78987.The_Prodigal_Daughter</link>
+          <num_pages>496</num_pages>
+          <format>Paperback</format>
+          <edition_information/>
+          <publisher>St. Martin's Press</publisher>
+          <publication_day>16</publication_day>
+          <publication_year>2004</publication_year>
+          <publication_month>5</publication_month>
+          <average_rating>3.87</average_rating>
+          <ratings_count>15836</ratings_count>
+          <description>
+            &lt;div&gt;With a will of steel, Polish immigrant Florentyna Rosnovski is indeed Abel's daughter. She shares with her father a love of America, his ideals, and his dream for the future. But she wants more to be the first female president.&lt;br&gt;&lt;br&gt;Golden boy Richard Kane was born into a life of luxury. The scion of a banking magnate he is successful, handsome, and determined to carve his own path in the world-and to &lt;br&gt;build a future with the woman he loves. &lt;br&gt;&lt;br&gt;With Florentyna's ultimate goal only a heartbeat away, both are about to discover the shattering price of power as a titanic battle of betrayal and deception reaches out from the past-a blood feud between two generations that threatens to destroy everything Florentyna and Richard have fought to achieve.&lt;br&gt;
+            &lt;/div&gt;
+          </description>
+          <authors>
+            <author>
+              <id>4820</id>
+              <name>Jeffrey Archer</name>
+              <image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p5/4820.jpg]]></image_url>
+              <small_image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p2/4820.jpg]]></small_image_url>
+              <link><![CDATA[http://www.goodreads.com/author/show/4820.Jeffrey_Archer]]></link>
+              <average_rating>3.91</average_rating>
+              <ratings_count>244039</ratings_count>
+              <text_reviews_count>13205</text_reviews_count>
+            </author>
+          </authors>
+          <published>2004</published>
+        </book>
+      </user_status>
+
+      <created_at>Tue Apr 29 00:40:50 -0700 2014</created_at>
+    </user>
+    <user>
+      <id>10749529</id>
+      <name>Venkat</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/10749529-venkat]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1341633136p3/10749529.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1341633136p2/10749529.jpg]]></small_image_url>
+      <friends_count>82</friends_count>
+      <reviews_count>1</reviews_count>
+      <created_at>Fri Jul 06 20:52:24 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>8775811</id>
+      <name>Venkateswaran</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/8775811-venkateswaran]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1334400614p3/8775811.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1334400614p2/8775811.jpg]]></small_image_url>
+      <friends_count>71</friends_count>
+      <reviews_count>53</reviews_count>
+      <created_at>Sun Apr 29 01:58:23 -0700 2012</created_at>
+    </user>
+    <user>
+      <id>26030807</id>
+      <name>Vinay S</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/26030807-vinay-s]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1385469569p3/26030807.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1385469569p2/26030807.jpg]]></small_image_url>
+      <friends_count>46</friends_count>
+      <reviews_count>1</reviews_count>
+      <created_at>Tue Nov 26 04:39:35 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>18384856</id>
+      <name>Vinayak Iyer</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/18384856-vinayak-iyer]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1363336266p3/18384856.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1363336266p2/18384856.jpg]]></small_image_url>
+      <friends_count>119</friends_count>
+      <reviews_count>1</reviews_count>
+      <created_at>Fri Mar 15 01:31:18 -0700 2013</created_at>
+    </user>
+    <user>
+      <id>18994850</id>
+      <name>Vishal Kumar</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/18994850-vishal-kumar]]></link>
+      <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png]]></image_url>
+      <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png]]></small_image_url>
+      <friends_count>56</friends_count>
+      <reviews_count>33</reviews_count>
+      <created_at>Thu Dec 19 20:36:21 -0800 2013</created_at>
+    </user>
+    <user>
+      <id>5890040</id>
+      <name>Vishal Nageshkar</name>
+      <link><![CDATA[http://www.goodreads.com/user/show/5890040-vishal-nageshkar]]></link>
+      <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/m_111x148-ed68a3a40c70b78add8e1bdde8780d31.png]]></image_url>
+      <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/m_50x66-e89fc14c32a41c0eb4298dfafe929b65.png]]></small_image_url>
+      <friends_count>75</friends_count>
+      <reviews_count>215</reviews_count>
+      <created_at>Mon Apr 30 01:02:01 -0700 2012</created_at>
+    </user>
+  </friends>
+</GoodreadsResponse>

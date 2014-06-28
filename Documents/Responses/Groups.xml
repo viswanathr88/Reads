@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>true</authentication>
+    <key><![CDATA[fDfi6rdiIgfTp49R0xj8MQ]]></key>
+    <method><![CDATA[group_list]]></method>
+  </Request>
+  <groups>
+    <user>
+      <first_name>Viswanath</first_name>
+      <id type="integer">8320965</id>
+      <user_name>viswanathr</user_name>
+      <p2_image_url>http://d.gr-assets.com/users/1354926863p2/8320965.jpg</p2_image_url>
+    </user>
+
+    <count>2</count>
+    <list start="1" end="2" total="2">
+      <group>
+        <id>8095</id>
+        <access>public</access>
+        <users_count>756</users_count>
+        <title><![CDATA[Goodreads Developers]]></title>
+        <image_url><![CDATA[http://d.gr-assets.com/groups/1220414390p2/8095.jpg]]></image_url>
+        <last_activity_at><![CDATA[Sat May 03 02:03:06 -0700 2014]]></last_activity_at>
+      </group>
+      <group>
+        <id>1</id>
+        <access>public</access>
+        <users_count>15002</users_count>
+        <title><![CDATA[Goodreads Feedback]]></title>
+        <image_url><![CDATA[http://d.gr-assets.com/groups/1182455834p2/1.jpg]]></image_url>
+        <last_activity_at><![CDATA[Sun May 04 21:51:32 -0700 2014]]></last_activity_at>
+      </group>
+    </list>
+  </groups>
+
+</GoodreadsResponse>

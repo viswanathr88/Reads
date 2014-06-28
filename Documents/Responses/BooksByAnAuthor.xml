@@ -1,0 +1,705 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>true</authentication>
+    <key><![CDATA[fDfi6rdiIgfTp49R0xj8MQ]]></key>
+    <method><![CDATA[author_list]]></method>
+  </Request>
+  <author>
+    <id>566</id>
+    <name>Paulo Coelho</name>
+    <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+    <books start="1" end="20" total="102">
+      <book>
+        <id type="integer">865</id>
+        <isbn>0061122416</isbn>
+        <isbn13>9780061122415</isbn13>
+        <text_reviews_count type="integer">29708</text_reviews_count>
+        <title>The Alchemist</title>
+        <image_url>http://d.gr-assets.com/books/1287827991m/865.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1287827991s/865.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/865.The_Alchemist</link>
+        <num_pages>197</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>HarperCollins</publisher>
+        <publication_day>1</publication_day>
+        <publication_year>1993</publication_year>
+        <publication_month>5</publication_month>
+        <average_rating>3.73</average_rating>
+        <ratings_count>780823</ratings_count>
+        <description>Paulo Coelho's enchanting novel has inspired a devoted following around the world. This story, dazzling in its powerful simplicity and inspiring wisdom, is about an Andalusian shepherd boy named Santiago who travels from his homeland in Spain to the Egyptian desert in search of a treasure buried in the Pyramids. Along the way he meets a Gypsy woman, a man who calls himself king, and an alchemist, all of whom point Santiago in the direction of his quest. No one knows what the treasure is, or if Santiago will be able to surmount the obstacles along the way. But what starts out as a journey to find worldly goods turns into a discovery of the treasure found within. Lush, evocative, and deeply humane, the story of Santiago is an eternal testament to the transforming power of our dreams and the importance of listening to our hearts.</description>
+        <my_review>
+          <id>502892948</id>
+
+
+          <rating>4</rating>
+          <votes>0</votes>
+          <spoiler_flag>false</spoiler_flag>
+          <spoilers_state>none</spoilers_state>
+          <shelves>
+            <shelf name="read" />
+          </shelves>
+          <recommended_for></recommended_for>
+          <recommended_by></recommended_by>
+          <started_at></started_at>
+          <read_at></read_at>
+          <date_added>Fri Jan 11 00:40:05 -0800 2013</date_added>
+          <date_updated>Fri Jan 11 00:40:05 -0800 2013</date_updated>
+          <read_count></read_count>
+          <body>
+            Brilliant read!
+          </body>
+          <comments_count>review_comments_count</comments_count>
+          <url><![CDATA[http://www.goodreads.com/review/show/502892948]]></url>
+          <link><![CDATA[http://www.goodreads.com/review/show/502892948]]></link>
+          <owned>0</owned>
+        </my_review>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published>1993</published>
+      </book>
+      <book>
+        <id type="integer">1431</id>
+        <isbn>0061124265</isbn>
+        <isbn13>9780061124266</isbn13>
+        <text_reviews_count type="integer">3044</text_reviews_count>
+        <title>Veronika Decides to Die</title>
+        <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+        <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        <link>http://www.goodreads.com/book/show/1431.Veronika_Decides_to_Die</link>
+        <num_pages>240</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>Harper Perennial</publisher>
+        <publication_day>1</publication_day>
+        <publication_year>2006</publication_year>
+        <publication_month>6</publication_month>
+        <average_rating>3.69</average_rating>
+        <ratings_count>79880</ratings_count>
+        <description>In his latest international bestseller, the celebrated author of &lt;em&gt;The Alchemist&lt;/em&gt; addresses the fundamental questions asked by millions:  What am I doing here today?  and Why do I go on living?&lt;p&gt;Twenty-four-year-old Veronika seems to have everything she could wish for: youth and beauty, pleny of attractive boyfriends, a fulfilling job, and a loving family.  Yet something is lacking in her life.  Inside her is a void so deep that nothing could possibly ever fill it.  So, on the morning of November 11, 1997, Veronika decides to die.  She takes a handful of sleeping pills expecting never to wake up.&lt;/p&gt;&lt;p&gt;Naturally Veronika is stunned when she does wake up at Villete, a local mental hospital, where the staff informs her that she has, in fact, partially succeeded in achieving her goal.  While the overdose didn't kill Veronika immediately, the medication has damaged her heart so severely that she has only days to live.&lt;/p&gt;&lt;p&gt;The story follows Veronika through the intense week of self-discovery that ensues.  To her surprise, Veronika finds herself drawn to the confinement of Villete and its patients, who, each in his or her individual way, reflect the heart of human experience.  In the heightened state of life's final moments, Veronika discovers things she has never really allowed herself to feel before: hatred, fear, curiosity, love, and sexual awakening.  She finds that every second of her existence is a choice between living and dying, and at the eleventh hour emerges more open to life than ever before.&lt;/p&gt;&lt;p&gt;&lt;em&gt;In Veronika Decides to Die,&lt;/em&gt; Paulo Coelho takes the reader on a distinctly modern quest to find meaning in a culture overshadowed by angst, soulless routine, and pervasive conformity. Based on events in Coelho's own life, &lt;em&gt;Veronika Decides to Die&lt;/em&gt; questions the meaning of madness and celebrates individuals who do not fit into patterns society considers to be normal.  Poignant and illuminating, it is a dazzling portrait of a young woman at the crossroads of despair and liberation, and a poetic, exuberant appreciation of each day as a renewed opportunity.&lt;/p&gt;</description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published>2006</published>
+      </book>
+      <book>
+        <id type="integer">1430</id>
+        <isbn>0060589280</isbn>
+        <isbn13>9780060589288</isbn13>
+        <text_reviews_count type="integer">2922</text_reviews_count>
+        <title>Eleven Minutes</title>
+        <image_url>http://d.gr-assets.com/books/1358266987m/1430.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1358266987s/1430.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/1430.Eleven_Minutes</link>
+        <num_pages>273</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>Harper Perennial</publisher>
+        <publication_day>29</publication_day>
+        <publication_year>2005</publication_year>
+        <publication_month>3</publication_month>
+        <average_rating>3.70</average_rating>
+        <ratings_count>69584</ratings_count>
+        <description>&lt;em&gt;Eleven Minutes&lt;/em&gt; is the story of Maria, a young girl from a Brazilian village, whose first innocent brushes with love leave her heartbroken. At a tender age, she becomes convinced that she will never find true love, instead believing that "love is a terrible thing that will make you suffer. . . ." A chance meeting in Rio takes her to Geneva, where she dreams of finding fame and fortune. Maria's despairing view of love is put to the test when she meets a handsome young painter. In this odyssey of self-discovery, Maria has to choose between pursuing a path of darkness -- sexual pleasure for its own sake -- or risking everything to find her own "inner light" and the possibility of sacred sex, sex in the context of love.&lt;br&gt;&lt;br&gt;This P.S. edition features an extra 16 pages of insights into the book, including author interviews, recommended reading, and more.</description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published>2005</published>
+      </book>
+      <book>
+        <id type="integer">1428</id>
+        <isbn>0061122092</isbn>
+        <isbn13>9780061122095</isbn13>
+        <text_reviews_count type="integer">1710</text_reviews_count>
+        <title>By the River Piedra I Sat Down and Wept</title>
+        <image_url>http://d.gr-assets.com/books/1358269995m/1428.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1358269995s/1428.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/1428.By_the_River_Piedra_I_Sat_Down_and_Wept</link>
+        <num_pages>208</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>Harper Perennial</publisher>
+        <publication_day>23</publication_day>
+        <publication_year>2006</publication_year>
+        <publication_month>5</publication_month>
+        <average_rating>3.58</average_rating>
+        <ratings_count>45661</ratings_count>
+        <description>From Paulo Coelho, author of the international bestseller &lt;em&gt;The Alchemist&lt;/em&gt;, comes a poignant, richly poetic story that reflects the depth of love and life.&lt;br&gt;&lt;br&gt;Rarely does adolescent love reach its full potential, but what happens when two young lovers reunite after eleven years? Time has transformed Pilar into a strong and independent woman, while her devoted childhood friend has grown into a handsome and charismatic spiritual leader. She has learned well how to bury her feelings . . . and he has turned to religion as a refuge from his raging inner conflicts.&lt;br&gt;&lt;br&gt;Now they are together once again, embarking on a journey fraught with difficulties, as long-buried demons of blame and resentment resurface after more than a decade. But in a small village in the French Pyrenees, by the waters of the River Piedra, a most special relationship will be reexamined in the dazzling light of some of life's biggest questions.</description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published>2006</published>
+      </book>
+      <book>
+        <id type="integer">816720</id>
+        <isbn>0007251866</isbn>
+        <isbn13>9780007251865</isbn13>
+        <text_reviews_count type="integer">1879</text_reviews_count>
+        <title>The Witch Of Portobello</title>
+        <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+        <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        <link>http://www.goodreads.com/book/show/816720.The_Witch_Of_Portobello</link>
+        <num_pages>320</num_pages>
+        <format>Hardcover</format>
+        <edition_information/>
+        <publisher></publisher>
+        <publication_day/>
+        <publication_year>2007</publication_year>
+        <publication_month/>
+        <average_rating>3.48</average_rating>
+        <ratings_count>38097</ratings_count>
+        <description>How do we find the courage to always be true to ourselves—even if we are unsure of whom we are?&lt;br&gt;&lt;br&gt;That is the central question of international bestselling author Paulo Coelho's profound new work, &lt;em&gt;The Witch of Portobello&lt;/em&gt;. It is the story of a mysterious woman named Athena, told by the many who knew her well—or hardly at all.</description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published>2007</published>
+      </book>
+      <book>
+        <id type="integer">1427</id>
+        <isbn>0060832819</isbn>
+        <isbn13>9780060832810</isbn13>
+        <text_reviews_count type="integer">1577</text_reviews_count>
+        <title>The Zahir</title>
+        <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+        <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        <link>http://www.goodreads.com/book/show/1427.The_Zahir</link>
+        <num_pages>336</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>Harper Perennial</publisher>
+        <publication_day>3</publication_day>
+        <publication_year>2006</publication_year>
+        <publication_month>7</publication_month>
+        <average_rating>3.55</average_rating>
+        <ratings_count>36320</ratings_count>
+        <description>The narrator of &lt;em&gt;The Zahir&lt;/em&gt; is a bestselling novelist who lives in Paris and enjoys all the privileges money and celebrity bring. His wife of ten years, Esther, is a war correspondent who has disappeared along with a friend, Mikhail, who may or may not be her lover.&lt;br&gt;&lt;br&gt;Was Esther kidnapped, murdered, or did she simply escape a marriage that left her unfulfilled? The narrator doesn't have any answers, but he has plenty of questions of his own. Then one day Mikhail finds the narrator and promises to reunite him with his wife. In his attempt to recapture a lost love, the narrator discovers something unexpected about himself.</description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published>2006</published>
+      </book>
+      <book>
+        <id type="integer">68591</id>
+        <isbn>9504915248</isbn>
+        <isbn13>9789504915249</isbn13>
+        <text_reviews_count type="integer">1164</text_reviews_count>
+        <title>Brida</title>
+        <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+        <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        <link>http://www.goodreads.com/book/show/68591.Brida</link>
+        <num_pages>264</num_pages>
+        <format></format>
+        <edition_information/>
+        <publisher></publisher>
+        <publication_day/>
+        <publication_year>2006</publication_year>
+        <publication_month/>
+        <average_rating>3.45</average_rating>
+        <ratings_count>33296</ratings_count>
+        <description>O livro conta a história de Brida O' Fern, uma irlandesa de 21 anos em busca da magia e dos poderes ocultos. Durante sua busca, Brida conhece um mago, Mago de Folk, que promete ensiná-la através da Tradição do Sol, que explica tudo através da natureza e de suas manifestações divinas. Mas Brida toma, na verdade, como mestra, Wicca, uma bela mulher que lhe ensina através da Tradição da Lua, a antiga Tradição das Bruxas, que explica o Universo através da Sabedoria e do Tempo. Sua evolução espiritual e sua busca pela Outra Parte (a famosa alma gêmea) estão retratadas neste livro emocionante e tão interessante quanto os outros livros do autor - segue contudo, o estilo altamente "místico" como "O Diário de um Mago" e "O Alquimista".</description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published>2006</published>
+      </book>
+      <book>
+        <id type="integer">4008</id>
+        <isbn>0060527994</isbn>
+        <isbn13>9780060527990</isbn13>
+        <text_reviews_count type="integer">1229</text_reviews_count>
+        <title>The Devil and Miss Prym</title>
+        <image_url>http://d.gr-assets.com/books/1359082264m/4008.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1359082264s/4008.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/4008.The_Devil_and_Miss_Prym</link>
+        <num_pages>201</num_pages>
+        <format>Hardcover</format>
+        <edition_information/>
+        <publisher>Harper</publisher>
+        <publication_day>3</publication_day>
+        <publication_year>2006</publication_year>
+        <publication_month>7</publication_month>
+        <average_rating>3.58</average_rating>
+        <ratings_count>31459</ratings_count>
+        <description>A community devoured by greed, cowardice and fear. A man persecuted by the ghosts of his painful past. A young woman searching for happiness. In one eventful week, each of them will face questions of life, death and power. Each of them will have to choose their own path. Will they choose good or evil?&lt;br&gt;The remote village of Viscos is the setting for this extraordinary struggle. A stranger arrives, carrying with him a backpack which contains a notebook and eleven bars of pure gold. He comes searching for an answer that torments him:&lt;br&gt;Are human beings, in essence, good or evil?&lt;br&gt;In welcoming this mysterious foreigner, the whole village becomes an accomplice to hid sophisticated plot which will forever mark their lives.&lt;br&gt;In this stunning novel, Paulo Coelho dramatizes the struggle within every soul between light and darkness, and its relevance to our everyday struggles: To dare to follow our dreams, to have the courage to be different and to master the fear that prevents us from truly living. &lt;em&gt;The Devil and Miss Prym&lt;/em&gt; is a story charged with emotion, in which the integrity of being human meets a terrifying test.&lt;br&gt;&lt;strong&gt;This book has a life-enhancing impact on millions of people&lt;/strong&gt;-The Times.</description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published>2006</published>
+      </book>
+      <book>
+        <id type="integer">4004</id>
+        <isbn>0722534876</isbn>
+        <isbn13>9780722534878</isbn13>
+        <text_reviews_count type="integer">555</text_reviews_count>
+        <title>The Pilgrimage</title>
+        <image_url>http://d.gr-assets.com/books/1307909268m/4004.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1307909268s/4004.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/4004.The_Pilgrimage</link>
+        <num_pages>250</num_pages>
+        <format/>
+        <edition_information/>
+        <publisher></publisher>
+        <publication_day/>
+        <publication_year/>
+        <publication_month/>
+        <average_rating>3.61</average_rating>
+        <ratings_count>20826</ratings_count>
+        <description>'The Pilgrimage' recounts the spectacular trials of Paolo Coelho and his mysterious mentor, Petrus, as they journey across Spain in search of a miraculous sword.</description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published/>
+      </book>
+      <book>
+        <id type="integer">4005</id>
+        <isbn>0722536542</isbn>
+        <isbn13>9780722536544</isbn13>
+        <text_reviews_count type="integer">560</text_reviews_count>
+        <title>The Fifth Mountain</title>
+        <image_url>http://d.gr-assets.com/books/1358268472m/4005.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1358268472s/4005.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/4005.The_Fifth_Mountain</link>
+        <num_pages>245</num_pages>
+        <format/>
+        <edition_information/>
+        <publisher></publisher>
+        <publication_day/>
+        <publication_year/>
+        <publication_month/>
+        <average_rating>3.61</average_rating>
+        <ratings_count>19858</ratings_count>
+        <description>Immerse yourself in an electrifying reading experience like no other -- international bestselling author Paulo Coelho's "The Fifth Mountain." A stunning novel in the tradition of the highly acclaimed "The Alchemist, " this is Coelho's daring retelling of the prophet Elijah. During the chaos of the ninth century B.C., Jezebel, wife to Israel's ruler, orders the execution of all prophets who refuse to worship the pagan god Baal. The young prophet Elijah, commanded by an angel of God to flee Israel, seeks safety in the land of Zarephath, where he unexpectedly finds true love with a young widow. But this new-found rapture is to be cut short, and Elijah sees all of his hopes and dreams irrevocably erased. What follows is sure to be viewed as Coelho's literary milestone: the quietly moving account of a man touched by the hand of God who must triumph over his frustrations in a soul-shattering trial of faith.Inspired by a circumstance that forever altered Coelho's own life, "The Fifth Mountain" is a testament to the truth that tragedy in life should not be considered a punishment but a challenge of the spirit. Gorgeous in its narrative and unforgettable in its prose, "The Fifth Mountain" teaches without being sanctimonious. This is a timeless story for the ages, a tale of the past that resonates powerfully for today's readers.</description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published/>
+      </book>
+      <book>
+        <id type="integer">9086994</id>
+        <isbn nil="true"/>
+        <isbn13>9788575425770</isbn13>
+        <text_reviews_count type="integer">1001</text_reviews_count>
+        <title>Aleph</title>
+        <image_url>http://d.gr-assets.com/books/1397502326m/9086994.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1397502326s/9086994.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/9086994-aleph</link>
+        <num_pages></num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher></publisher>
+        <publication_day></publication_day>
+        <publication_year></publication_year>
+        <publication_month></publication_month>
+        <average_rating>3.42</average_rating>
+        <ratings_count>15772</ratings_count>
+        <description>Transforme sua vida. Reescreva seu destino. &lt;br&gt;&lt;br&gt;Num tom franco e extremamente pessoal, Paulo Coelho relata sua incrível jornada de autodescoberta. Como o pastor Santiago de seu grande sucesso O alquimista, o escritor vive uma grave crise de fé. À procura de um caminho de renovação e crescimento espiritual, ele resolve começar tudo de novo: viajar, experimentar, se reconectar às pessoas e ao mundo. &lt;br&gt;&lt;br&gt;Ao embarcar para a África, depois para a Europa e, por fim, cruzar a Ásia pela ferrovia transiberiana, Paulo busca revitalizar sua energia e sua paixão. Mas nem pode imaginar que surpresa essa peregrinação lhe reserva. &lt;br&gt;&lt;br&gt;Ele conhece Hilal, uma jovem e talentosa violinista, e descobre que ela foi sua grande paixão numa vida passada, mas que ele a traiu de maneira tão covarde que, mesmo 500 anos depois, isso o impede de ser feliz. Juntos, os dois se lançam numa viagem pelo tempo e o espaço, abrindo-se para o amor, o perdão e a coragem de enfrentar os desafios da vida.</description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published></published>
+      </book>
+      <book>
+        <id type="integer">5356711</id>
+        <isbn>0061750441</isbn>
+        <isbn13>9780061750441</isbn13>
+        <text_reviews_count type="integer">874</text_reviews_count>
+        <title>The Winner Stands Alone</title>
+        <image_url>http://d.gr-assets.com/books/1358266380m/5356711.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1358266380s/5356711.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/5356711-the-winner-stands-alone</link>
+        <num_pages>343</num_pages>
+        <format>Hardcover</format>
+        <edition_information/>
+        <publisher>Harper</publisher>
+        <publication_day>7</publication_day>
+        <publication_year>2009</publication_year>
+        <publication_month>4</publication_month>
+        <average_rating>3.38</average_rating>
+        <ratings_count>15868</ratings_count>
+        <description>
+          &lt;blockquote&gt;The beloved, bestselling international author of &lt;em&gt;The Alchemist&lt;/em&gt; returns with another haunting novel—a thrilling journey into our constant fascination with the worlds of fame, fortune, and celebrity.&lt;br&gt;&lt;br&gt;
+          &lt;/blockquote&gt;A profound meditation on personal power and innocent dreams that are manipulated or undone by success, &lt;em&gt;The Winner Stands Alone&lt;/em&gt; is set in the exciting worlds of fashion and cinema. Taking place over the course of twenty-four hours during the Cannes Film Festival, it is the story of Igor, a successful, driven Russian entrepreneur who will go to the darkest lengths to reclaim a lost love—his ex-wife, Ewa. Believing that his life with Ewa was divinely ordained, Igor once told her that he would destroy whole worlds to get her back. The conflict between an individual evil force and society emerges, and as the novel unfolds, morality is derailed.&lt;br&gt;&lt;br&gt;Meet the players and poseurs behind the scenes at Cannes—the "Superclass" of producers, actors, designers, and supermodels, as well as the aspiring starlets, has-been stars, and jaded hangers-on. Adroitly interweaving the characters' stories, Paulo Coelho uses his twelfth novel to paint an engrossing picture of a world overrun by glamour and excess, and shows us the possibly dire consequences of our obsession with fame.
+        </description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published>2009</published>
+      </book>
+      <book>
+        <id type="integer">1426</id>
+        <isbn>0060527986</isbn>
+        <isbn13>9780060527983</isbn13>
+        <text_reviews_count type="integer">514</text_reviews_count>
+        <title>Warrior of the Light</title>
+        <image_url>http://d.gr-assets.com/books/1359135200m/1426.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1359135200s/1426.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/1426.Warrior_of_the_Light</link>
+        <num_pages>142</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>HarperOne</publisher>
+        <publication_day>30</publication_day>
+        <publication_year>2004</publication_year>
+        <publication_month>3</publication_month>
+        <average_rating>3.68</average_rating>
+        <ratings_count>13365</ratings_count>
+        <description>Warrior of the Light: A Manual is an inspirational companion to The Alchemist, an international bestseller that has beguiled millions of readers around the world. Every short passage invites us to live out our dreams, to embrace the uncertainty of life, and to rise to our own unique destiny. In his inimitable style, Paulo Coelho helps bring out the Warrior of the Light within each of us. He also shows readers how to embark upon the way of the Warrior: the one who appreciates the miracle of being alive, the one who accepts failure, and the one whose quest leads him to become the person he wants to be.&lt;br&gt;&lt;br&gt;Paulo Coelho is one of the most beloved storytellers of our time. Now, in the long-awaited companion to his first novel, Coelho presents a collection of philosophical stories that will delight and guide seekers everywhere.</description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published>2004</published>
+      </book>
+      <book>
+        <id type="integer">4006</id>
+        <isbn>0722533942</isbn>
+        <isbn13>9780722533949</isbn13>
+        <text_reviews_count type="integer">385</text_reviews_count>
+        <title>The Valkyries</title>
+        <image_url>http://d.gr-assets.com/books/1358269194m/4006.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1358269194s/4006.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/4006.The_Valkyries</link>
+        <num_pages>212</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>HarperTorch (an imprint of HarperCollins Publishers)</publisher>
+        <publication_day>6</publication_day>
+        <publication_year>1999</publication_year>
+        <publication_month>9</publication_month>
+        <average_rating>3.30</average_rating>
+        <ratings_count>10884</ratings_count>
+        <description>A Magical Tale About Forgiving Our Past and Believing in Our Future&lt;br&gt;&lt;br&gt;The enchanting, true story of The Valkyries begins in Rio de Janeiro when author Paulo Coelho gives his mysterious master J., the only manuscript for his book The Alchemist. Haunted by a devastating curse, Coelho confesses to J., "I′ve seen my dreams fall apart just when I seemed about to achieve them." In response, J. gives Coelho a daunting task: He must find and speak with his guardian angel. "The curse can be broken," he replies, "if you complete the task."&lt;br&gt;&lt;br&gt;Rising to the challenge, Paulo and his wife, Cristina, drop everything, pack their bags, and take off on a forty day adventure into the starkly beautiful and sometimes dangerous Mojave Desert where they encounter more than they bargained for. A masterful blend of the exotic locales, dramatic adventure, and magical storytelling, for which Coelho′s fictional works are renowned, this true-life account is at once a modern-day adventure and a metaphysical odyssey.</description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published>1999</published>
+      </book>
+      <book>
+        <id type="integer">587666</id>
+        <isbn>0007235801</isbn>
+        <isbn13>9780007235803</isbn13>
+        <text_reviews_count type="integer">418</text_reviews_count>
+        <title>Like the Flowing River</title>
+        <image_url>http://d.gr-assets.com/books/1356806433m/587666.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1356806433s/587666.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/587666.Like_the_Flowing_River</link>
+        <num_pages>245</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>Harper Collins Uk</publisher>
+        <publication_day/>
+        <publication_year/>
+        <publication_month/>
+        <average_rating>3.95</average_rating>
+        <ratings_count>8939</ratings_count>
+        <description>A breathtaking collection of reflections from one of the world's best loved storytellers, Paulo Coelho.&lt;br&gt;&lt;br&gt; In this riveting collection of thoughts and stories, Paulo Coelho, the author of 'The Alchemist', offers his personal reflections on a wide range of subjects from archery and music to elegance, traveling and the nature of good and evil. &lt;br&gt;&lt;br&gt;An old woman explains to her grandson how a mere pencil can show him the path to happiness...instructions on how to climb a mountain reveal the secret to making your dreams a reality!the story of Ghengis Khan and the Falcon that teaches about the folly of anger - and the art of friendship!a pianist who performs an example in fulfilling your destiny!the author learns three important lessons when he goes to the rescue of a man in the street - Paulo shows us how life has lessons for us in the greatest, smallest and most unusual of experiences.&lt;br&gt;&lt;br&gt; 'Like the Flowing River' includes jewel-like fables, packed with meaning and retold in Coelho's inimitable style. Sharing his thoughts on spirituality, life and ethics, Paulo touches you with his philosophy and invites you to go on an exciting journey of your own.</description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published/>
+      </book>
+      <book>
+        <id type="integer">16054811</id>
+        <isbn>0385349831</isbn>
+        <isbn13>9780385349833</isbn13>
+        <text_reviews_count type="integer">834</text_reviews_count>
+        <title>Manuscript Found in Accra</title>
+        <image_url>http://d.gr-assets.com/books/1362586181m/16054811.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1362586181s/16054811.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/16054811-manuscript-found-in-accra</link>
+        <num_pages>208</num_pages>
+        <format>Hardcover</format>
+        <edition_information/>
+        <publisher>Knopf</publisher>
+        <publication_day>2</publication_day>
+        <publication_year>2013</publication_year>
+        <publication_month>4</publication_month>
+        <average_rating>3.80</average_rating>
+        <ratings_count>7080</ratings_count>
+        <description>The latest novel from the #1 internationally best-selling author of &lt;em&gt;The Alchemist.&lt;/em&gt;&lt;br&gt;&lt;br&gt;&lt;em&gt;There is nothing wrong with anxiety.&lt;br&gt;Although we cannot control God's time, it is part of the human condition to want to receive the thing we are waiting for as quickly as possible.&lt;br&gt;Or to drive away whatever is causing our fear....&lt;br&gt;Anxiety was born in the very same moment as mankind. And since we will never be able to master it, we will have to learn to live with it-just as we have learned to live with storms.&lt;/em&gt;&lt;br&gt;&lt;br&gt;* * *&lt;br&gt;&lt;br&gt;July 14, 1099. Jerusalem awaits the invasion of the crusaders who have surrounded the city's gates. There, inside the ancient city's walls, men and women of every age and every faith have gathered to hear the wise words of a mysterious man known only as the Copt. He has summoned the townspeople to address their fears with truth:&lt;br&gt;&lt;br&gt;"Tomorrow, harmony will become discord. Joy will be replaced by grief. Peace will give way to war.... None of us can know what tomorrow will hold, because each day has its good and its bad moments. So, when you ask your questions, forget about the troops outside and the fear inside. Our task is not to leave a record of what happened on this date for those who will inherit the Earth; history will take care of that. Therefore, we will speak about our daily lives, about the difficulties we have had to face."&lt;br&gt;&lt;br&gt;The people begin with questions about defeat, struggle, and the nature of their enemies; they contemplate the will to change and the virtues of loyalty and solitude; and they ultimately turn to questions of beauty, love, wisdom, sex, elegance, and what the future holds. "What is success?" poses the Copt. "It is being able to go to bed each night with your soul at peace."&lt;br&gt;&lt;br&gt;* * *&lt;br&gt;&lt;br&gt;Now, these many centuries later, the wise man's answers are a record of the human values that have endured throughout time. And, in Paulo Coelho's hands, The Manuscript Found in Accra reveals that who we are, what we fear, and what we hope for the future come from the knowledge and belief that can be found within us, and not from the adversity that surrounds us.</description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published>2013</published>
+      </book>
+      <book>
+        <id type="integer">53809</id>
+        <isbn>8408057235</isbn>
+        <isbn13>9788408057239</isbn13>
+        <text_reviews_count type="integer">169</text_reviews_count>
+        <title>Maktub</title>
+        <image_url>http://d.gr-assets.com/books/1361293164m/53809.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1361293164s/53809.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/53809.Maktub</link>
+        <num_pages></num_pages>
+        <format></format>
+        <edition_information/>
+        <publisher></publisher>
+        <publication_day></publication_day>
+        <publication_year></publication_year>
+        <publication_month></publication_month>
+        <average_rating>3.41</average_rating>
+        <ratings_count>5473</ratings_count>
+        <description></description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published></published>
+      </book>
+      <book>
+        <id type="integer">103557</id>
+        <isbn>0061374814</isbn>
+        <isbn13>9780061374814</isbn13>
+        <text_reviews_count type="integer">50</text_reviews_count>
+        <title>Life: Selected Quotations</title>
+        <image_url>http://d.gr-assets.com/books/1375876782m/103557.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1375876782s/103557.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/103557.Life</link>
+        <num_pages>128</num_pages>
+        <format>Hardcover</format>
+        <edition_information/>
+        <publisher>Harper</publisher>
+        <publication_day>23</publication_day>
+        <publication_year>2007</publication_year>
+        <publication_month>10</publication_month>
+        <average_rating>4.18</average_rating>
+        <ratings_count>1114</ratings_count>
+        <description>This collection of selected quotes from Paulo Coelho's impressive body of work is a must–have item for fans of this celebrated and internationally bestselling author. A beautiful book with four–colour artwork by the renowned Norwegian artist Anne Kristin Hagesaether, it contains inspirational quotes from such beloved Coelho titles as Eleven Minutes, The Valkyries, The Devil And Miss Prym, The Zahir, and the mega bestseller The Alchemist. Whether read in one sitting or savoured gradually, this is a visually stunning and enlightening look into Coelho's extraordinary perspective on life –one that has won over millions of readers worldwide and made Coelho one of the top–selling authors in the world.</description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published>2007</published>
+      </book>
+      <book>
+        <id type="integer">9276509</id>
+        <isbn>0062024329</isbn>
+        <isbn13>9780062024329</isbn13>
+        <text_reviews_count type="integer">140</text_reviews_count>
+        <title>The Alchemist: A Graphic Novel</title>
+        <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+        <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        <link>http://www.goodreads.com/book/show/9276509-the-alchemist</link>
+        <num_pages>208</num_pages>
+        <format>Hardcover</format>
+        <edition_information/>
+        <publisher>HarperOne</publisher>
+        <publication_day>23</publication_day>
+        <publication_year>2010</publication_year>
+        <publication_month>11</publication_month>
+        <average_rating>3.76</average_rating>
+        <ratings_count>890</ratings_count>
+        <description>Andalusian shepherd boy Santiago travels from his homeland in Spain to the Egyptian desert in search of a treasure buried in the Pyramids. Along the way he meets a Gypsy woman, a man who calls himself king, and an alchemist, all of whom point Santiago in the direction of his quest. No one knows what the treasure is, or if Santiago will be able to surmount the obstacles along the way. But what starts out as a journey to find worldly goods turns into a discovery of the treasure found within.&lt;br&gt;&lt;br&gt;Since its first printing &lt;em&gt;The Alchemist&lt;/em&gt; has been translated into seventy-one languages and sold forty million copies worldwide, establishing itself as a modern classic that will enchant and inspire readers for generations to come. Beautifully rendered, &lt;em&gt;The Alchemist: A Graphic Novel&lt;/em&gt; is a must have for any collector's library.</description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published>2010</published>
+      </book>
+      <book>
+        <id type="integer">6333213</id>
+        <isbn>0557010071</isbn>
+        <isbn13>9780557010073</isbn13>
+        <text_reviews_count type="integer">59</text_reviews_count>
+        <title>The Way Of The Bow</title>
+        <image_url>http://d.gr-assets.com/books/1330693712m/6333213.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1330693712s/6333213.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/6333213-the-way-of-the-bow</link>
+        <num_pages></num_pages>
+        <format></format>
+        <edition_information/>
+        <publisher></publisher>
+        <publication_day></publication_day>
+        <publication_year></publication_year>
+        <publication_month></publication_month>
+        <average_rating>3.67</average_rating>
+        <ratings_count>695</ratings_count>
+        <description></description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published></published>
+      </book>
+    </books>
+  </author>
+
+</GoodreadsResponse>

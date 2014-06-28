@@ -1,0 +1,1308 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>true</authentication>
+    <key><![CDATA[fDfi6rdiIgfTp49R0xj8MQ]]></key>
+    <method><![CDATA[user_show]]></method>
+  </Request>
+  <user>
+    <id>8320965</id>
+    <name>Viswanath Ramanan</name>
+    <user_name>viswanathr</user_name>
+    <link><![CDATA[http://www.goodreads.com/user/show/8320965-viswanath]]></link>
+    <image_url><![CDATA[http://d.gr-assets.com/users/1354926863p3/8320965.jpg]]></image_url>
+    <small_image_url><![CDATA[http://d.gr-assets.com/users/1354926863p2/8320965.jpg]]></small_image_url>
+    <is_following>false</is_following>
+    <about></about>
+    <age></age>
+    <gender>male</gender>
+    <location></location>
+    <website></website>
+    <joined>03/2012</joined>
+    <last_active>05/2014</last_active>
+    <interests></interests>
+    <favorite_books>Science fiction, detective</favorite_books>
+    <favorite_authors>
+      <author>
+        <id type="integer">9068</id>
+        <name>Sidney Sheldon</name>
+      </author>
+    </favorite_authors>
+    <friend>false</friend>
+    <friend_status>self</friend_status>
+    <updates_rss_url><![CDATA[http://www.goodreads.com/user/updates_rss/8320965?key=0f470668cee209e1d06f7fccf79e2cc08af0cdf5]]></updates_rss_url>
+    <reviews_rss_url><![CDATA[http://www.goodreads.com/review/list_rss/8320965?key=0f470668cee209e1d06f7fccf79e2cc08af0cdf5&shelf=%23ALL%23]]></reviews_rss_url>
+    <friends_count type="integer">83</friends_count>
+    <groups_count>2</groups_count>
+    <reviews_count type="integer">33</reviews_count>
+    <user_shelves type="array">
+      <user_shelf>
+        <book_count type="integer">19</book_count>
+        <description nil="true"/>
+        <display_fields></display_fields>
+        <exclusive_flag type="boolean">true</exclusive_flag>
+        <featured type="boolean">true</featured>
+        <id type="integer">28106884</id>
+        <name>read</name>
+        <order nil="true"/>
+        <per_page type="integer" nil="true"/>
+        <recommend_for type="boolean">true</recommend_for>
+        <sort nil="true"/>
+        <sticky type="boolean" nil="true"/>
+      </user_shelf>
+      <user_shelf>
+        <book_count type="integer">2</book_count>
+        <description nil="true"/>
+        <display_fields></display_fields>
+        <exclusive_flag type="boolean">true</exclusive_flag>
+        <featured type="boolean">false</featured>
+        <id type="integer">28106883</id>
+        <name>currently-reading</name>
+        <order nil="true"/>
+        <per_page type="integer" nil="true"/>
+        <recommend_for type="boolean">true</recommend_for>
+        <sort nil="true"/>
+        <sticky type="boolean" nil="true"/>
+      </user_shelf>
+      <user_shelf>
+        <book_count type="integer">12</book_count>
+        <description nil="true"/>
+        <display_fields></display_fields>
+        <exclusive_flag type="boolean">true</exclusive_flag>
+        <featured type="boolean">false</featured>
+        <id type="integer">49489512</id>
+        <name>to-read</name>
+        <order>a</order>
+        <per_page type="integer" nil="true"/>
+        <recommend_for type="boolean">true</recommend_for>
+        <sort>position</sort>
+        <sticky type="boolean" nil="true"/>
+      </user_shelf>
+      <user_shelf>
+        <book_count type="integer">4</book_count>
+        <description nil="true"/>
+        <display_fields></display_fields>
+        <exclusive_flag type="boolean">false</exclusive_flag>
+        <featured type="boolean">false</featured>
+        <id type="integer">96964442</id>
+        <name>test</name>
+        <order nil="true"/>
+        <per_page type="integer" nil="true"/>
+        <recommend_for type="boolean">true</recommend_for>
+        <sort nil="true"/>
+        <sticky type="boolean" nil="true"/>
+      </user_shelf>
+      <user_shelf>
+        <book_count type="integer">1</book_count>
+        <description nil="true"/>
+        <display_fields></display_fields>
+        <exclusive_flag type="boolean">false</exclusive_flag>
+        <featured type="boolean">false</featured>
+        <id type="integer">96964582</id>
+        <name>test2</name>
+        <order nil="true"/>
+        <per_page type="integer" nil="true"/>
+        <recommend_for type="boolean">true</recommend_for>
+        <sort nil="true"/>
+        <sticky type="boolean" nil="true"/>
+      </user_shelf>
+      <user_shelf>
+        <book_count type="integer">2</book_count>
+        <description nil="true"/>
+        <display_fields></display_fields>
+        <exclusive_flag type="boolean">false</exclusive_flag>
+        <featured type="boolean">false</featured>
+        <id type="integer">96965277</id>
+        <name>test3</name>
+        <order nil="true"/>
+        <per_page type="integer" nil="true"/>
+        <recommend_for type="boolean">true</recommend_for>
+        <sort nil="true"/>
+        <sticky type="boolean" nil="true"/>
+      </user_shelf>
+      <user_shelf>
+        <book_count type="integer">1</book_count>
+        <description nil="true"/>
+        <display_fields></display_fields>
+        <exclusive_flag type="boolean">false</exclusive_flag>
+        <featured type="boolean">false</featured>
+        <id type="integer">100315586</id>
+        <name>test4</name>
+        <order nil="true"/>
+        <per_page type="integer" nil="true"/>
+        <recommend_for type="boolean">true</recommend_for>
+        <sort nil="true"/>
+        <sticky type="boolean" nil="true"/>
+      </user_shelf>
+      <user_shelf>
+        <book_count type="integer">1</book_count>
+        <description nil="true"/>
+        <display_fields></display_fields>
+        <exclusive_flag type="boolean">false</exclusive_flag>
+        <featured type="boolean">false</featured>
+        <id type="integer">100315740</id>
+        <name>test5</name>
+        <order nil="true"/>
+        <per_page type="integer" nil="true"/>
+        <recommend_for type="boolean">true</recommend_for>
+        <sort nil="true"/>
+        <sticky type="boolean" nil="true"/>
+      </user_shelf>
+    </user_shelves>
+    <updates type="array">
+
+      <update type="readstatus">
+        <action_text><![CDATA[wants to read <a href="http://www.goodreads.com/review/show/926189322" only_path="false">The Sins of the Father (The Clifton Chronicles, #2)</a>]]></action_text>
+        <link>http://www.goodreads.com/read_statuses/409599270</link>
+        <image_url>http://d.gr-assets.com/users/1354926863p2/8320965.jpg</image_url>
+        <actor>
+          <id type="integer">8320965</id>
+          <name>Viswanath Ramanan</name>
+          <image_url>http://d.gr-assets.com/users/1354926863p2/8320965.jpg</image_url>
+          <link>http://www.goodreads.com/user/show/8320965-viswanath</link>
+        </actor>
+        <updated_at>Thu, 01 May 2014 20:37:22 -0700</updated_at>
+        <object>
+          <read_status>
+            <id type="integer">409599270</id>
+            <old_status nil="true"/>
+            <review_id type="integer">926189322</review_id>
+            <status>to-read</status>
+            <updated_at type="datetime">2014-05-02T03:37:22+00:00</updated_at>
+            <user_id type="integer">8320965</user_id>
+            <review>
+              <book-id type="integer">12160906</book-id>
+              <comments-count type="integer">0</comments-count>
+              <created-at type="datetime">2014-05-02T03:37:22+00:00</created-at>
+              <hidden-flag type="boolean">false</hidden-flag>
+              <id type="integer">926189322</id>
+              <language-code type="integer" nil="true"/>
+              <last-comment-at type="datetime" nil="true"/>
+              <last-revision-at type="datetime">2014-05-02T03:37:22+00:00</last-revision-at>
+              <non-friends-rating-count type="integer">0</non-friends-rating-count>
+              <notes nil="true"/>
+              <rating type="integer">0</rating>
+              <ratings-count type="integer">0</ratings-count>
+              <ratings-sum type="integer">0</ratings-sum>
+              <read-at type="datetime" nil="true"/>
+              <read-count nil="true"/>
+              <read-status>to-read</read-status>
+              <recommendation nil="true"/>
+              <recommender-user-id1 type="integer">0</recommender-user-id1>
+              <recommender-user-name1 nil="true"/>
+              <review nil="true"/>
+              <sell-flag type="boolean">false</sell-flag>
+              <spoiler-flag type="boolean">false</spoiler-flag>
+              <started-at type="datetime" nil="true"/>
+              <updated-at type="datetime">2014-05-02T03:37:22+00:00</updated-at>
+              <user-id type="integer">8320965</user-id>
+              <weight type="integer">0</weight>
+              <work-id type="integer">17131961</work-id>
+              <book>
+                <asin nil="true"/>
+                <asin_updater_user_id type="integer" nil="true"/>
+                <author_id type="integer">4820</author_id>
+                <author_id_updater_user_id type="integer">-41</author_id_updater_user_id>
+                <author_role nil="true"/>
+                <author_role_updater_user_id type="integer">2993169</author_role_updater_user_id>
+                <book_authors_count type="integer">0</book_authors_count>
+                <created_at type="datetime">2011-07-27T02:15:19+00:00</created_at>
+                <description>On the heels of the international bestseller &lt;i&gt;Only Time Will Tell&lt;/i&gt;, Jeffrey Archer picks up the sweeping story of the Clifton Chronicles….&lt;br&gt;&lt;br&gt;Only days before Britain declares war on Germany, Harry Clifton, hoping to escape the consequences of long-buried family secrets, and forced to accept that his desire to marry Emma Barrington will never be fulfilled, has joined the Merchant Navy.  But his ship is sunk in the Atlantic by a German U-boat, drowning almost the entire crew.  An American cruise liner, the SS Kansas Star, rescues a handful of sailors, among them Harry and the third officer, an American named Tom Bradshaw.  When Bradshaw dies in the night, Harry seizes on the chance to escape his tangled past and assumes his identity.&lt;br&gt;&lt;br&gt;But on landing in America, he quickly learns the mistake he has made, when he discovers what is awaiting Bradshaw in New York.  Without any way of proving his true identity, Harry Clifton is now chained to a past that could be far worse than the one he had hoped to escape.</description>
+                <description_language_code nil="true"/>
+                <description_updater_user_id type="integer">-41</description_updater_user_id>
+                <edition_information nil="true"/>
+                <edition_information_updater_user_id type="integer" nil="true"/>
+                <format>Hardcover</format>
+                <format_updater_user_id type="integer">-41</format_updater_user_id>
+                <id type="integer">12160906</id>
+                <image_updater_user_id type="integer">-9</image_updater_user_id>
+                <image_uploaded_at type="datetime">2014-03-27T23:12:32+00:00</image_uploaded_at>
+                <isbn>1250000971</isbn>
+                <isbn13>9781250000972</isbn13>
+                <isbn13_updater_user_id type="integer">-41</isbn13_updater_user_id>
+                <isbn_updater_user_id type="integer">-41</isbn_updater_user_id>
+                <language_code>eng</language_code>
+                <language_updater_user_id type="integer">-9</language_updater_user_id>
+                <num_pages type="integer">352</num_pages>
+                <num_pages_updater_user_id type="integer">-41</num_pages_updater_user_id>
+                <publication_date_updater_user_id type="integer">-41</publication_date_updater_user_id>
+                <publication_day type="integer">8</publication_day>
+                <publication_month type="integer">5</publication_month>
+                <publication_year type="integer">2012</publication_year>
+                <publisher>St. Martin's Press</publisher>
+                <publisher_language_code nil="true"/>
+                <publisher_updater_user_id type="integer">-41</publisher_updater_user_id>
+                <ratings_count type="integer">11017</ratings_count>
+                <ratings_sum type="integer">42917</ratings_sum>
+                <reviews_count type="integer">17067</reviews_count>
+                <s3_image_at type="datetime">2014-03-27T23:12:33+00:00</s3_image_at>
+                <sort_by_title>sins of the father (the clifton chronicles, #2), the</sort_by_title>
+                <source_url nil="true"/>
+                <text_reviews_count type="integer">1187</text_reviews_count>
+                <title>The Sins of the Father (The Clifton Chronicles, #2)</title>
+                <title_language_code nil="true"/>
+                <title_updater_user_id type="integer">4959295</title_updater_user_id>
+                <updated_at type="datetime">2014-05-04T12:54:24+00:00</updated_at>
+                <url>http://us.macmillan.com/thesinsofthefather/JeffreyArcher</url>
+                <url_updater_user_id type="integer">182453</url_updater_user_id>
+                <work_id type="integer">17131961</work_id>
+                <author>
+                  <about>
+                    Jeffrey Howard Archer, Baron Archer of Weston-super-Mare (born 15 April 1940) is an English author and former politician.
+
+                    He was a Member of Parliament and deputy chairman of the Conservative Party, and became a life peer in 1992. His political career, having suffered several controversies, ended after a conviction for perverting the course of justice and his subsequent imprisonment. He is married to Mary Archer, a scientist specialising in solar power. Outside politics, he is a novelist, playwright and short story writer.
+
+                    &lt;a href="http://en.wikipedia.org/wiki/Jeffrey_Archer"&gt;Wikipedia link&lt;/a&gt;
+
+                    http://us.macmillan.com/author/jeffreyarcher
+                  </about>
+                  <author_program_at type="datetime" nil="true"/>
+                  <best_book_id type="integer">78983</best_book_id>
+                  <books_count type="integer">1102</books_count>
+                  <born_at type="datetime">1940-04-15T00:00:00+00:00</born_at>
+                  <country_code>GB</country_code>
+                  <created_at type="datetime">2006-12-08T20:12:59+00:00</created_at>
+                  <died_at type="datetime" nil="true"/>
+                  <fanships_count type="integer">2262</fanships_count>
+                  <gender>M</gender>
+                  <genre1>Mystery &amp; Thrillers</genre1>
+                  <genre2></genre2>
+                  <genre3></genre3>
+                  <hometown>London</hometown>
+                  <id type="integer">4820</id>
+                  <image_copyright>http://www.barnesandnoble.com/writers/writer.asp?cid=968039</image_copyright>
+                  <image_uploaded_at type="datetime">2008-04-17T20:06:40+00:00</image_uploaded_at>
+                  <influences></influences>
+                  <name>Jeffrey Archer</name>
+                  <name_language_code nil="true"/>
+                  <postal_code nil="true"/>
+                  <rating_dist>5:8293|4:13261|3:10925|2:2535|1:425|total:35439</rating_dist>
+                  <ratings_count type="integer">244039</ratings_count>
+                  <ratings_sum type="integer">953268</ratings_sum>
+                  <reviews_count type="integer">351657</reviews_count>
+                  <s3_image_at type="datetime">2008-04-17T20:06:41+00:00</s3_image_at>
+                  <searched_for_at type="datetime">2007-02-26T05:23:16+00:00</searched_for_at>
+                  <text_reviews_count type="integer">13205</text_reviews_count>
+                  <updated_at type="datetime">2014-05-05T04:40:29+00:00</updated_at>
+                  <uploader_user_id type="integer">785027</uploader_user_id>
+                  <url>http://www.jeffreyarcher.co.uk/</url>
+                  <user_id type="integer" nil="true"/>
+                  <works_count type="integer">133</works_count>
+                </author>
+              </book>
+            </review>
+          </read_status>
+
+        </object>
+      </update>
+
+      <update type="readstatus">
+        <action_text><![CDATA[wants to read <a href="http://www.goodreads.com/review/show/926188266" only_path="false">Best Kept Secret (The Clifton Chronicles, #3)</a>]]></action_text>
+        <link>http://www.goodreads.com/read_statuses/409597910</link>
+        <image_url>http://d.gr-assets.com/users/1354926863p2/8320965.jpg</image_url>
+        <actor>
+          <id type="integer">8320965</id>
+          <name>Viswanath Ramanan</name>
+          <image_url>http://d.gr-assets.com/users/1354926863p2/8320965.jpg</image_url>
+          <link>http://www.goodreads.com/user/show/8320965-viswanath</link>
+        </actor>
+        <updated_at>Thu, 01 May 2014 20:35:49 -0700</updated_at>
+        <object>
+          <read_status>
+            <id type="integer">409597910</id>
+            <old_status nil="true"/>
+            <review_id type="integer">926188266</review_id>
+            <status>to-read</status>
+            <updated_at type="datetime">2014-05-02T03:35:49+00:00</updated_at>
+            <user_id type="integer">8320965</user_id>
+            <review>
+              <book-id type="integer">15793074</book-id>
+              <comments-count type="integer">0</comments-count>
+              <created-at type="datetime">2014-05-02T03:35:49+00:00</created-at>
+              <hidden-flag type="boolean">false</hidden-flag>
+              <id type="integer">926188266</id>
+              <language-code type="integer" nil="true"/>
+              <last-comment-at type="datetime" nil="true"/>
+              <last-revision-at type="datetime">2014-05-02T03:35:49+00:00</last-revision-at>
+              <non-friends-rating-count type="integer">0</non-friends-rating-count>
+              <notes nil="true"/>
+              <rating type="integer">0</rating>
+              <ratings-count type="integer">0</ratings-count>
+              <ratings-sum type="integer">0</ratings-sum>
+              <read-at type="datetime" nil="true"/>
+              <read-count nil="true"/>
+              <read-status>to-read</read-status>
+              <recommendation nil="true"/>
+              <recommender-user-id1 type="integer">0</recommender-user-id1>
+              <recommender-user-name1 nil="true"/>
+              <review nil="true"/>
+              <sell-flag type="boolean">false</sell-flag>
+              <spoiler-flag type="boolean">false</spoiler-flag>
+              <started-at type="datetime" nil="true"/>
+              <updated-at type="datetime">2014-05-02T03:35:49+00:00</updated-at>
+              <user-id type="integer">8320965</user-id>
+              <weight type="integer">0</weight>
+              <work-id type="integer">21503547</work-id>
+              <book>
+                <asin nil="true"/>
+                <asin_updater_user_id type="integer" nil="true"/>
+                <author_id type="integer">4820</author_id>
+                <author_id_updater_user_id type="integer">-41</author_id_updater_user_id>
+                <author_role nil="true"/>
+                <author_role_updater_user_id type="integer">-9</author_role_updater_user_id>
+                <book_authors_count type="integer">0</book_authors_count>
+                <created_at type="datetime">2012-08-07T01:01:07+00:00</created_at>
+                <description nil="true"/>
+                <description_language_code nil="true"/>
+                <description_updater_user_id type="integer">5136858</description_updater_user_id>
+                <edition_information nil="true"/>
+                <edition_information_updater_user_id type="integer" nil="true"/>
+                <format>Hardcover</format>
+                <format_updater_user_id type="integer">-41</format_updater_user_id>
+                <id type="integer">15793074</id>
+                <image_updater_user_id type="integer">-9</image_updater_user_id>
+                <image_uploaded_at type="datetime">2014-01-02T04:32:35+00:00</image_uploaded_at>
+                <isbn>125000098X</isbn>
+                <isbn13>9781250000989</isbn13>
+                <isbn13_updater_user_id type="integer">-41</isbn13_updater_user_id>
+                <isbn_updater_user_id type="integer">-41</isbn_updater_user_id>
+                <language_code>eng</language_code>
+                <language_updater_user_id type="integer">-9</language_updater_user_id>
+                <num_pages type="integer">373</num_pages>
+                <num_pages_updater_user_id type="integer">5706631</num_pages_updater_user_id>
+                <publication_date_updater_user_id type="integer">-41</publication_date_updater_user_id>
+                <publication_day type="integer">30</publication_day>
+                <publication_month type="integer">4</publication_month>
+                <publication_year type="integer">2013</publication_year>
+                <publisher>St. Martin's Press</publisher>
+                <publisher_language_code nil="true"/>
+                <publisher_updater_user_id type="integer">-41</publisher_updater_user_id>
+                <ratings_count type="integer">5457</ratings_count>
+                <ratings_sum type="integer">20311</ratings_sum>
+                <reviews_count type="integer">10191</reviews_count>
+                <s3_image_at type="datetime">2014-01-02T04:32:39+00:00</s3_image_at>
+                <sort_by_title>best kept secret (the clifton chronicles, #3)</sort_by_title>
+                <source_url nil="true"/>
+                <text_reviews_count type="integer">865</text_reviews_count>
+                <title>Best Kept Secret (The Clifton Chronicles, #3)</title>
+                <title_language_code nil="true"/>
+                <title_updater_user_id type="integer">4959295</title_updater_user_id>
+                <updated_at type="datetime">2014-05-04T13:03:56+00:00</updated_at>
+                <url>http://us.macmillan.com/bestkeptsecret-1/JeffreyArcher</url>
+                <url_updater_user_id type="integer">182453</url_updater_user_id>
+                <work_id type="integer">21503547</work_id>
+                <author>
+                  <about>
+                    Jeffrey Howard Archer, Baron Archer of Weston-super-Mare (born 15 April 1940) is an English author and former politician.
+
+                    He was a Member of Parliament and deputy chairman of the Conservative Party, and became a life peer in 1992. His political career, having suffered several controversies, ended after a conviction for perverting the course of justice and his subsequent imprisonment. He is married to Mary Archer, a scientist specialising in solar power. Outside politics, he is a novelist, playwright and short story writer.
+
+                    &lt;a href="http://en.wikipedia.org/wiki/Jeffrey_Archer"&gt;Wikipedia link&lt;/a&gt;
+
+                    http://us.macmillan.com/author/jeffreyarcher
+                  </about>
+                  <author_program_at type="datetime" nil="true"/>
+                  <best_book_id type="integer">78983</best_book_id>
+                  <books_count type="integer">1102</books_count>
+                  <born_at type="datetime">1940-04-15T00:00:00+00:00</born_at>
+                  <country_code>GB</country_code>
+                  <created_at type="datetime">2006-12-08T20:12:59+00:00</created_at>
+                  <died_at type="datetime" nil="true"/>
+                  <fanships_count type="integer">2262</fanships_count>
+                  <gender>M</gender>
+                  <genre1>Mystery &amp; Thrillers</genre1>
+                  <genre2></genre2>
+                  <genre3></genre3>
+                  <hometown>London</hometown>
+                  <id type="integer">4820</id>
+                  <image_copyright>http://www.barnesandnoble.com/writers/writer.asp?cid=968039</image_copyright>
+                  <image_uploaded_at type="datetime">2008-04-17T20:06:40+00:00</image_uploaded_at>
+                  <influences></influences>
+                  <name>Jeffrey Archer</name>
+                  <name_language_code nil="true"/>
+                  <postal_code nil="true"/>
+                  <rating_dist>5:8293|4:13261|3:10925|2:2535|1:425|total:35439</rating_dist>
+                  <ratings_count type="integer">244039</ratings_count>
+                  <ratings_sum type="integer">953268</ratings_sum>
+                  <reviews_count type="integer">351657</reviews_count>
+                  <s3_image_at type="datetime">2008-04-17T20:06:41+00:00</s3_image_at>
+                  <searched_for_at type="datetime">2007-02-26T05:23:16+00:00</searched_for_at>
+                  <text_reviews_count type="integer">13205</text_reviews_count>
+                  <updated_at type="datetime">2014-05-05T04:40:29+00:00</updated_at>
+                  <uploader_user_id type="integer">785027</uploader_user_id>
+                  <url>http://www.jeffreyarcher.co.uk/</url>
+                  <user_id type="integer" nil="true"/>
+                  <works_count type="integer">133</works_count>
+                </author>
+              </book>
+            </review>
+          </read_status>
+
+        </object>
+      </update>
+
+      <update type="review">
+        <action_text><![CDATA[gave 4 stars to <a href="http://www.goodreads.com/book/show/78983.Kane_and_Abel">Kane and Abel (Kane and Abel, #1)</a> by <a href="http://www.goodreads.com/author/show/4820.Jeffrey_Archer">Jeffrey Archer</a>]]></action_text>
+        <link>http://www.goodreads.com/review/show/300464490</link>
+        <image_url>http://d.gr-assets.com/books/1388965561s/78983.jpg</image_url>
+        <actor>
+          <id type="integer">8320965</id>
+          <name>Viswanath Ramanan</name>
+          <image_url>http://d.gr-assets.com/users/1354926863p2/8320965.jpg</image_url>
+          <link>http://www.goodreads.com/user/show/8320965-viswanath</link>
+        </actor>
+        <updated_at>Mon, 28 Apr 2014 22:52:01 -0700</updated_at>
+        <action type="rating">
+          <rating>4</rating>
+        </action>
+        <object>
+          <book>
+            <id>78983</id>
+            <title><![CDATA[Kane and Abel (Kane and Abel, #1)]]></title>
+            <link>http://www.goodreads.com/book/show/78983.Kane_and_Abel</link>
+            <authors>
+              <author>
+                <id>4820</id>
+                <name>Jeffrey Archer</name>
+                <image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p5/4820.jpg]]></image_url>
+                <small_image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p2/4820.jpg]]></small_image_url>
+                <link><![CDATA[http://www.goodreads.com/author/show/4820.Jeffrey_Archer]]></link>
+                <average_rating>3.91</average_rating>
+                <ratings_count>244039</ratings_count>
+                <text_reviews_count>13205</text_reviews_count>
+              </author>
+            </authors>
+          </book>
+        </object>
+        <body><![CDATA[This is one of archer's best books. You cannot put it down! Thumbs up!!!]]></body>
+      </update>
+
+      <update type="review">
+        <action_text><![CDATA[gave 4 stars to <a href="http://www.goodreads.com/book/show/968.The_Da_Vinci_Code">The Da Vinci Code (Robert Langdon, #2)</a> by <a href="http://www.goodreads.com/author/show/630.Dan_Brown">Dan Brown</a>]]></action_text>
+        <link>http://www.goodreads.com/review/show/309293886</link>
+        <image_url>http://d.gr-assets.com/books/1303252999s/968.jpg</image_url>
+        <actor>
+          <id type="integer">8320965</id>
+          <name>Viswanath Ramanan</name>
+          <image_url>http://d.gr-assets.com/users/1354926863p2/8320965.jpg</image_url>
+          <link>http://www.goodreads.com/user/show/8320965-viswanath</link>
+        </actor>
+        <updated_at>Mon, 28 Apr 2014 16:09:42 -0700</updated_at>
+        <action type="rating">
+          <rating>4</rating>
+        </action>
+        <object>
+          <book>
+            <id>968</id>
+            <title><![CDATA[The Da Vinci Code (Robert Langdon, #2)]]></title>
+            <link>http://www.goodreads.com/book/show/968.The_Da_Vinci_Code</link>
+            <authors>
+              <author>
+                <id>630</id>
+                <name>Dan Brown</name>
+                <image_url><![CDATA[http://d.gr-assets.com/authors/1206553442p5/630.jpg]]></image_url>
+                <small_image_url><![CDATA[http://d.gr-assets.com/authors/1206553442p2/630.jpg]]></small_image_url>
+                <link><![CDATA[http://www.goodreads.com/author/show/630.Dan_Brown]]></link>
+                <average_rating>3.69</average_rating>
+                <ratings_count>3236910</ratings_count>
+                <text_reviews_count>106417</text_reviews_count>
+              </author>
+            </authors>
+          </book>
+        </object>
+        <body><![CDATA[This is probably one of the best Langdon stories!]]></body>
+      </update>
+
+      <update type="userstatus">
+        <action_text><![CDATA[is on page 70 of 496 of <a href="http://www.goodreads.com/book/show/78987.The_Prodigal_Daughter">The Prodigal Daughter</a>]]></action_text>
+        <link>http://www.goodreads.com/user_status/show/42791550</link>
+        <image_url>http://d.gr-assets.com/users/1354926863p2/8320965.jpg</image_url>
+        <actor>
+          <id type="integer">8320965</id>
+          <name>Viswanath Ramanan</name>
+          <image_url>http://d.gr-assets.com/users/1354926863p2/8320965.jpg</image_url>
+          <link>http://www.goodreads.com/user/show/8320965-viswanath</link>
+        </actor>
+        <updated_at>Sun, 27 Apr 2014 19:49:54 -0700</updated_at>
+        <object>
+          <user_status>
+            <body nil="true"/>
+            <book_id type="integer">78987</book_id>
+            <chapter type="integer" nil="true"/>
+            <comments_count type="integer">0</comments_count>
+            <created_at type="datetime">2014-04-28T02:49:54+00:00</created_at>
+            <id type="integer">42791550</id>
+            <last_comment_at type="datetime" nil="true"/>
+            <note_updated_at type="datetime" nil="true"/>
+            <note_uri nil="true"/>
+            <page type="integer">70</page>
+            <percent type="integer">14</percent>
+            <ratings_count type="integer">0</ratings_count>
+            <updated_at type="datetime">2014-04-28T02:49:54+00:00</updated_at>
+            <user_id type="integer">8320965</user_id>
+            <work_id type="integer">1839081</work_id>
+            <review_id type="integer">300464314</review_id>
+            <book>
+              <asin nil="true"/>
+              <asin_updater_user_id type="integer" nil="true"/>
+              <author_id type="integer">4820</author_id>
+              <author_id_updater_user_id type="integer">-51</author_id_updater_user_id>
+              <author_role nil="true"/>
+              <author_role_updater_user_id type="integer">171430</author_role_updater_user_id>
+              <book_authors_count type="integer">0</book_authors_count>
+              <created_at type="datetime">2007-02-08T19:39:27+00:00</created_at>
+              <description>&lt;div&gt;With a will of steel, Polish immigrant Florentyna Rosnovski is indeed Abel's daughter. She shares with her father a love of America, his ideals, and his dream for the future. But she wants more to be the first female president.&lt;br&gt;&lt;br&gt;Golden boy Richard Kane was born into a life of luxury. The scion of a banking magnate he is successful, handsome, and determined to carve his own path in the world-and to &lt;br&gt;build a future with the woman he loves. &lt;br&gt;&lt;br&gt;With Florentyna's ultimate goal only a heartbeat away, both are about to discover the shattering price of power as a titanic battle of betrayal and deception reaches out from the past-a blood feud between two generations that threatens to destroy everything Florentyna and Richard have fought to achieve.&lt;br&gt;&lt;/div&gt;</description>
+              <description_language_code nil="true"/>
+              <description_updater_user_id type="integer">595835</description_updater_user_id>
+              <edition_information nil="true"/>
+              <edition_information_updater_user_id type="integer" nil="true"/>
+              <format>Paperback</format>
+              <format_updater_user_id type="integer">669573</format_updater_user_id>
+              <id type="integer">78987</id>
+              <image_updater_user_id type="integer">-9</image_updater_user_id>
+              <image_uploaded_at type="datetime">2013-12-13T08:46:02+00:00</image_uploaded_at>
+              <isbn>0312997140</isbn>
+              <isbn13>9780312997144</isbn13>
+              <isbn13_updater_user_id type="integer">-41</isbn13_updater_user_id>
+              <isbn_updater_user_id type="integer">-51</isbn_updater_user_id>
+              <language_code>eng</language_code>
+              <language_updater_user_id type="integer">669573</language_updater_user_id>
+              <num_pages type="integer">496</num_pages>
+              <num_pages_updater_user_id type="integer">-51</num_pages_updater_user_id>
+              <publication_date_updater_user_id type="integer">-51</publication_date_updater_user_id>
+              <publication_day type="integer">16</publication_day>
+              <publication_month type="integer">5</publication_month>
+              <publication_year type="integer">2004</publication_year>
+              <publisher>St. Martin's Press</publisher>
+              <publisher_language_code nil="true"/>
+              <publisher_updater_user_id type="integer">-51</publisher_updater_user_id>
+              <ratings_count type="integer">15324</ratings_count>
+              <ratings_sum type="integer">59403</ratings_sum>
+              <reviews_count type="integer">20252</reviews_count>
+              <s3_image_at type="datetime">2013-12-13T08:46:06+00:00</s3_image_at>
+              <sort_by_title>prodigal daughter (kane &amp; abel, #2), the</sort_by_title>
+              <source_url nil="true"/>
+              <text_reviews_count type="integer">313</text_reviews_count>
+              <title>The Prodigal Daughter (Kane &amp; Abel, #2)</title>
+              <title_language_code nil="true"/>
+              <title_updater_user_id type="integer">669573</title_updater_user_id>
+              <updated_at type="datetime">2014-05-04T10:57:00+00:00</updated_at>
+              <url nil="true"/>
+              <url_updater_user_id type="integer" nil="true"/>
+              <work_id type="integer">1839081</work_id>
+              <author>
+                <about>
+                  Jeffrey Howard Archer, Baron Archer of Weston-super-Mare (born 15 April 1940) is an English author and former politician.
+
+                  He was a Member of Parliament and deputy chairman of the Conservative Party, and became a life peer in 1992. His political career, having suffered several controversies, ended after a conviction for perverting the course of justice and his subsequent imprisonment. He is married to Mary Archer, a scientist specialising in solar power. Outside politics, he is a novelist, playwright and short story writer.
+
+                  &lt;a href="http://en.wikipedia.org/wiki/Jeffrey_Archer"&gt;Wikipedia link&lt;/a&gt;
+
+                  http://us.macmillan.com/author/jeffreyarcher
+                </about>
+                <author_program_at type="datetime" nil="true"/>
+                <best_book_id type="integer">78983</best_book_id>
+                <books_count type="integer">1102</books_count>
+                <born_at type="datetime">1940-04-15T00:00:00+00:00</born_at>
+                <country_code>GB</country_code>
+                <created_at type="datetime">2006-12-08T20:12:59+00:00</created_at>
+                <died_at type="datetime" nil="true"/>
+                <fanships_count type="integer">2262</fanships_count>
+                <gender>M</gender>
+                <genre1>Mystery &amp; Thrillers</genre1>
+                <genre2></genre2>
+                <genre3></genre3>
+                <hometown>London</hometown>
+                <id type="integer">4820</id>
+                <image_copyright>http://www.barnesandnoble.com/writers/writer.asp?cid=968039</image_copyright>
+                <image_uploaded_at type="datetime">2008-04-17T20:06:40+00:00</image_uploaded_at>
+                <influences></influences>
+                <name>Jeffrey Archer</name>
+                <name_language_code nil="true"/>
+                <postal_code nil="true"/>
+                <rating_dist>5:8293|4:13261|3:10925|2:2535|1:425|total:35439</rating_dist>
+                <ratings_count type="integer">244039</ratings_count>
+                <ratings_sum type="integer">953268</ratings_sum>
+                <reviews_count type="integer">351657</reviews_count>
+                <s3_image_at type="datetime">2008-04-17T20:06:41+00:00</s3_image_at>
+                <searched_for_at type="datetime">2007-02-26T05:23:16+00:00</searched_for_at>
+                <text_reviews_count type="integer">13205</text_reviews_count>
+                <updated_at type="datetime">2014-05-05T04:40:29+00:00</updated_at>
+                <uploader_user_id type="integer">785027</uploader_user_id>
+                <url>http://www.jeffreyarcher.co.uk/</url>
+                <user_id type="integer" nil="true"/>
+                <works_count type="integer">133</works_count>
+              </author>
+            </book>
+          </user_status>
+        </object>
+      </update>
+
+      <update type="readstatus">
+        <action_text><![CDATA[wants to read <a href="http://www.goodreads.com/review/show/920476204" only_path="false">July's People</a>]]></action_text>
+        <link>http://www.goodreads.com/read_statuses/402359252</link>
+        <image_url>http://d.gr-assets.com/users/1354926863p2/8320965.jpg</image_url>
+        <actor>
+          <id type="integer">8320965</id>
+          <name>Viswanath Ramanan</name>
+          <image_url>http://d.gr-assets.com/users/1354926863p2/8320965.jpg</image_url>
+          <link>http://www.goodreads.com/user/show/8320965-viswanath</link>
+        </actor>
+        <updated_at>Fri, 25 Apr 2014 16:00:36 -0700</updated_at>
+        <object>
+          <read_status>
+            <id type="integer">402359252</id>
+            <old_status>read</old_status>
+            <review_id type="integer">920476204</review_id>
+            <status>to-read</status>
+            <updated_at type="datetime">2014-04-25T23:00:36+00:00</updated_at>
+            <user_id type="integer">8320965</user_id>
+            <review>
+              <book-id type="integer">111050</book-id>
+              <comments-count type="integer">0</comments-count>
+              <created-at type="datetime">2014-04-25T23:00:35+00:00</created-at>
+              <hidden-flag type="boolean">false</hidden-flag>
+              <id type="integer">920476204</id>
+              <language-code type="integer" nil="true"/>
+              <last-comment-at type="datetime" nil="true"/>
+              <last-revision-at type="datetime">2014-04-25T23:00:36+00:00</last-revision-at>
+              <non-friends-rating-count type="integer">0</non-friends-rating-count>
+              <notes nil="true"/>
+              <rating type="integer">0</rating>
+              <ratings-count type="integer">0</ratings-count>
+              <ratings-sum type="integer">0</ratings-sum>
+              <read-at type="datetime" nil="true"/>
+              <read-count nil="true"/>
+              <read-status>to-read</read-status>
+              <recommendation nil="true"/>
+              <recommender-user-id1 type="integer">0</recommender-user-id1>
+              <recommender-user-name1 nil="true"/>
+              <review nil="true"/>
+              <sell-flag type="boolean">false</sell-flag>
+              <spoiler-flag type="boolean">false</spoiler-flag>
+              <started-at type="datetime" nil="true"/>
+              <updated-at type="datetime">2014-04-25T23:00:36+00:00</updated-at>
+              <user-id type="integer">8320965</user-id>
+              <weight type="integer">0</weight>
+              <work-id type="integer">1499866</work-id>
+              <book>
+                <asin nil="true"/>
+                <asin_updater_user_id type="integer" nil="true"/>
+                <author_id type="integer">55397</author_id>
+                <author_id_updater_user_id type="integer">-44</author_id_updater_user_id>
+                <author_role nil="true"/>
+                <author_role_updater_user_id type="integer">7479477</author_role_updater_user_id>
+                <book_authors_count type="integer">0</book_authors_count>
+                <created_at type="datetime">2007-02-16T17:49:27+00:00</created_at>
+                <description>&lt;b&gt;Winner of the Nobel Prize in Literature&lt;/b&gt;&lt;br&gt;&lt;br&gt; For years, it had been what is called a “deteriorating situation.” Now all over South Africa the cities are battlegrounds. The members of the Smales family—liberal whites—are rescued from the terror by their servant, July, who leads them to refuge in his village. What happens to the Smaleses and to July—the shifts in character and relationships—gives us an unforgettable look into the terrifying, tacit understandings and misunderstandings between blacks and whites.</description>
+                <description_language_code nil="true"/>
+                <description_updater_user_id type="integer">-1001</description_updater_user_id>
+                <edition_information>Reprint</edition_information>
+                <edition_information_updater_user_id type="integer">3125981</edition_information_updater_user_id>
+                <format>Paperback</format>
+                <format_updater_user_id type="integer">-44</format_updater_user_id>
+                <id type="integer">111050</id>
+                <image_updater_user_id type="integer">4188862</image_updater_user_id>
+                <image_uploaded_at type="datetime">2012-02-07T12:04:09+00:00</image_uploaded_at>
+                <isbn>0140061401</isbn>
+                <isbn13>9780140061406</isbn13>
+                <isbn13_updater_user_id type="integer">-44</isbn13_updater_user_id>
+                <isbn_updater_user_id type="integer">-44</isbn_updater_user_id>
+                <language_code>eng</language_code>
+                <language_updater_user_id type="integer">1171106</language_updater_user_id>
+                <num_pages type="integer">160</num_pages>
+                <num_pages_updater_user_id type="integer">3125981</num_pages_updater_user_id>
+                <publication_date_updater_user_id type="integer">-44</publication_date_updater_user_id>
+                <publication_day type="integer">29</publication_day>
+                <publication_month type="integer">7</publication_month>
+                <publication_year type="integer">1982</publication_year>
+                <publisher>Penguin Books</publisher>
+                <publisher_language_code nil="true"/>
+                <publisher_updater_user_id type="integer">-44</publisher_updater_user_id>
+                <ratings_count type="integer">2440</ratings_count>
+                <ratings_sum type="integer">8651</ratings_sum>
+                <reviews_count type="integer">5050</reviews_count>
+                <s3_image_at type="datetime">2012-09-13T12:59:33+00:00</s3_image_at>
+                <sort_by_title>july's people</sort_by_title>
+                <source_url nil="true"/>
+                <text_reviews_count type="integer">163</text_reviews_count>
+                <title>July's People</title>
+                <title_language_code nil="true"/>
+                <title_updater_user_id type="integer">-44</title_updater_user_id>
+                <updated_at type="datetime">2014-05-04T09:53:35+00:00</updated_at>
+                <url nil="true"/>
+                <url_updater_user_id type="integer" nil="true"/>
+                <work_id type="integer">1499866</work_id>
+                <author>
+                  <about>
+                    Awarded the 1991 Nobel Prize in Literature, commended for being an author "who through her magnificent epic writing has - in the words of Alfred Nobel - been of very great benefit to humanity."
+
+                    See http://www.contemporarywriters.com/authors/?p=auth03D25I553012635618
+                  </about>
+                  <author_program_at type="datetime" nil="true"/>
+                  <best_book_id type="integer">111050</best_book_id>
+                  <books_count type="integer">453</books_count>
+                  <born_at type="datetime">1923-11-20T00:00:00+00:00</born_at>
+                  <country_code>ZA</country_code>
+                  <created_at type="datetime">2007-02-12T20:11:29+00:00</created_at>
+                  <died_at type="datetime" nil="true"/>
+                  <fanships_count type="integer">191</fanships_count>
+                  <gender>F</gender>
+                  <genre1>Literature &amp; Fiction</genre1>
+                  <genre2></genre2>
+                  <genre3></genre3>
+                  <hometown>Johannesburg</hometown>
+                  <id type="integer">55397</id>
+                  <image_copyright>http://www.google.com.sa/imgres?q=Nadine+Gordimer&amp;um=1&amp;hl=ar&amp;safe=active&amp;sa=N&amp;tbm=isch&amp;tbnid=rHZhj0br1sJc0M:&amp;imgrefurl=http://www.nobelprize.org/nobel_prizes/literature/laureates/1991/gordimer-bio.htm</image_copyright>
+                  <image_uploaded_at type="datetime">2012-02-07T11:59:50+00:00</image_uploaded_at>
+                  <influences>Nelson Mandela</influences>
+                  <name>Nadine Gordimer</name>
+                  <name_language_code nil="true"/>
+                  <postal_code nil="true"/>
+                  <rating_dist>5:779|4:1603|3:1369|2:444|1:144|total:4339</rating_dist>
+                  <ratings_count type="integer">12308</ratings_count>
+                  <ratings_sum type="integer">43911</ratings_sum>
+                  <reviews_count type="integer">26515</reviews_count>
+                  <s3_image_at type="datetime">2012-02-07T11:59:52+00:00</s3_image_at>
+                  <searched_for_at type="datetime">2007-03-05T13:59:09+00:00</searched_for_at>
+                  <text_reviews_count type="integer">1318</text_reviews_count>
+                  <updated_at type="datetime">2014-05-05T02:05:40+00:00</updated_at>
+                  <uploader_user_id type="integer">4188862</uploader_user_id>
+                  <url></url>
+                  <user_id type="integer" nil="true"/>
+                  <works_count type="integer">116</works_count>
+                </author>
+              </book>
+            </review>
+          </read_status>
+
+        </object>
+      </update>
+
+      <update type="readstatus">
+        <action_text><![CDATA[wants to read <a href="http://www.goodreads.com/review/show/892092790" only_path="false">The Hidden Reality: Parallel Universes and the Deep Laws of the Cosmos</a>]]></action_text>
+        <link>http://www.goodreads.com/read_statuses/366746081</link>
+        <image_url>http://d.gr-assets.com/users/1354926863p2/8320965.jpg</image_url>
+        <actor>
+          <id type="integer">8320965</id>
+          <name>Viswanath Ramanan</name>
+          <image_url>http://d.gr-assets.com/users/1354926863p2/8320965.jpg</image_url>
+          <link>http://www.goodreads.com/user/show/8320965-viswanath</link>
+        </actor>
+        <updated_at>Tue, 25 Mar 2014 22:02:09 -0700</updated_at>
+        <object>
+          <read_status>
+            <id type="integer">366746081</id>
+            <old_status nil="true"/>
+            <review_id type="integer">892092790</review_id>
+            <status>to-read</status>
+            <updated_at type="datetime">2014-03-26T05:02:08+00:00</updated_at>
+            <user_id type="integer">8320965</user_id>
+            <review>
+              <book-id type="integer">8167094</book-id>
+              <comments-count type="integer">0</comments-count>
+              <created-at type="datetime">2014-03-26T05:02:08+00:00</created-at>
+              <hidden-flag type="boolean">false</hidden-flag>
+              <id type="integer">892092790</id>
+              <language-code type="integer" nil="true"/>
+              <last-comment-at type="datetime" nil="true"/>
+              <last-revision-at type="datetime">2014-03-26T05:02:08+00:00</last-revision-at>
+              <non-friends-rating-count type="integer">0</non-friends-rating-count>
+              <notes nil="true"/>
+              <rating type="integer">0</rating>
+              <ratings-count type="integer">0</ratings-count>
+              <ratings-sum type="integer">0</ratings-sum>
+              <read-at type="datetime" nil="true"/>
+              <read-count nil="true"/>
+              <read-status>to-read</read-status>
+              <recommendation nil="true"/>
+              <recommender-user-id1 type="integer">0</recommender-user-id1>
+              <recommender-user-name1 nil="true"/>
+              <review nil="true"/>
+              <sell-flag type="boolean">false</sell-flag>
+              <spoiler-flag type="boolean">false</spoiler-flag>
+              <started-at type="datetime" nil="true"/>
+              <updated-at type="datetime">2014-03-26T05:02:08+00:00</updated-at>
+              <user-id type="integer">8320965</user-id>
+              <weight type="integer">0</weight>
+              <work-id type="integer">13013056</work-id>
+              <book>
+                <asin nil="true"/>
+                <asin_updater_user_id type="integer" nil="true"/>
+                <author_id type="integer">509</author_id>
+                <author_id_updater_user_id type="integer">-50</author_id_updater_user_id>
+                <author_role nil="true"/>
+                <author_role_updater_user_id type="integer">1244470</author_role_updater_user_id>
+                <book_authors_count type="integer">0</book_authors_count>
+                <created_at type="datetime">2010-05-10T18:40:25+00:00</created_at>
+                <description>From the best-selling author of &lt;i&gt;The Elegant Universe&lt;/i&gt; and &lt;i&gt;The Fabric of the Cosmos&lt;/i&gt; comes his most expansive and accessible book to date—a book that takes on the grandest question: Is ours the only universe?&lt;br&gt;&lt;br&gt;There was a time when “universe” meant all there is. Everything. Yet, in recent years discoveries in physics and cosmology have led a number of scientists to conclude that our universe may be one among many. With crystal-clear prose and inspired use of analogy, Brian Greene shows how a range of different “multiverse” proposals emerges from theories developed to explain the most refined observations of both subatomic particles and the dark depths of space: a multiverse in which you have an infinite number of doppelgängers, each reading this sentence in a distant universe; a multiverse comprising a vast ocean of bubble universes, of which ours is but one; a multiverse that endlessly cycles through time, or one that might be hovering millimeters away yet remains invisible; another in which every possibility allowed by quantum physics is brought to life. Or, perhaps strangest of all, a multiverse made purely of math.&lt;br&gt;&lt;br&gt;Greene, one of our foremost physicists and science writers, takes us on a captivating exploration of these parallel worlds and reveals how much of reality’s true nature may be deeply hidden within them. And, with his unrivaled ability to make the most challenging of material accessible and entertaining, Greene tackles the core question: How can fundamental science progress if great swaths of reality lie beyond our reach?&lt;br&gt;&lt;br&gt;Sparked by Greene’s trademark wit and precision, &lt;i&gt;The Hidden Reality&lt;/i&gt; is at once a far-reaching survey of cutting-edge physics and a remarkable journey to the very edge of reality—a journey grounded firmly in science and limited only by our imagination.</description>
+                <description_language_code nil="true"/>
+                <description_updater_user_id type="integer">-50</description_updater_user_id>
+                <edition_information nil="true"/>
+                <edition_information_updater_user_id type="integer" nil="true"/>
+                <format>Hardcover</format>
+                <format_updater_user_id type="integer">-50</format_updater_user_id>
+                <id type="integer">8167094</id>
+                <image_updater_user_id type="integer">-50</image_updater_user_id>
+                <image_uploaded_at type="datetime">2011-11-04T18:28:20+00:00</image_uploaded_at>
+                <isbn>0307265633</isbn>
+                <isbn13>9780307265630</isbn13>
+                <isbn13_updater_user_id type="integer">-50</isbn13_updater_user_id>
+                <isbn_updater_user_id type="integer">-50</isbn_updater_user_id>
+                <language_code>eng</language_code>
+                <language_updater_user_id type="integer">-50</language_updater_user_id>
+                <num_pages type="integer">384</num_pages>
+                <num_pages_updater_user_id type="integer">-50</num_pages_updater_user_id>
+                <publication_date_updater_user_id type="integer">-50</publication_date_updater_user_id>
+                <publication_day type="integer">25</publication_day>
+                <publication_month type="integer">1</publication_month>
+                <publication_year type="integer">2011</publication_year>
+                <publisher>Knopf</publisher>
+                <publisher_language_code nil="true"/>
+                <publisher_updater_user_id type="integer">-50</publisher_updater_user_id>
+                <ratings_count type="integer">5909</ratings_count>
+                <ratings_sum type="integer">23929</ratings_sum>
+                <reviews_count type="integer">16701</reviews_count>
+                <s3_image_at type="datetime">2012-09-23T05:11:25+00:00</s3_image_at>
+                <sort_by_title>hidden reality: parallel universes and the deep laws of the cosmos, the</sort_by_title>
+                <source_url nil="true"/>
+                <text_reviews_count type="integer">350</text_reviews_count>
+                <title>The Hidden Reality: Parallel Universes and the Deep Laws of the Cosmos</title>
+                <title_language_code nil="true"/>
+                <title_updater_user_id type="integer">1244470</title_updater_user_id>
+                <updated_at type="datetime">2014-05-04T12:11:36+00:00</updated_at>
+                <url nil="true"/>
+                <url_updater_user_id type="integer" nil="true"/>
+                <work_id type="integer">13013056</work_id>
+                <author>
+                  <about>Brian Greene is an American theoretical physicist and one of the best-known string theorists. He has been a professor of physics and mathematics at Columbia University since 1996.  He has become known to a wider audience through his books for the general public and a related PBS television special.</about>
+                  <author_program_at type="datetime" nil="true"/>
+                  <best_book_id type="integer">22435</best_book_id>
+                  <books_count type="integer">141</books_count>
+                  <born_at type="datetime">1963-02-09T00:00:00+00:00</born_at>
+                  <country_code>US</country_code>
+                  <created_at type="datetime">2006-09-03T04:51:24+00:00</created_at>
+                  <died_at type="datetime" nil="true"/>
+                  <fanships_count type="integer">599</fanships_count>
+                  <gender>M</gender>
+                  <genre1>Science</genre1>
+                  <genre2></genre2>
+                  <genre3></genre3>
+                  <hometown>New York City</hometown>
+                  <id type="integer">509</id>
+                  <image_copyright>From http://www.superstringtheory.com/people/bgreene.html</image_copyright>
+                  <image_uploaded_at type="datetime">2008-11-19T04:54:57+00:00</image_uploaded_at>
+                  <influences></influences>
+                  <name>Brian Greene</name>
+                  <name_language_code nil="true"/>
+                  <postal_code nil="true"/>
+                  <rating_dist>5:2669|4:3985|3:1784|2:244|1:40|total:8722</rating_dist>
+                  <ratings_count type="integer">59398</ratings_count>
+                  <ratings_sum type="integer">241524</ratings_sum>
+                  <reviews_count type="integer">129040</reviews_count>
+                  <s3_image_at type="datetime">2008-11-19T04:55:00+00:00</s3_image_at>
+                  <searched_for_at type="datetime">2006-12-28T23:40:26+00:00</searched_for_at>
+                  <text_reviews_count type="integer">2232</text_reviews_count>
+                  <updated_at type="datetime">2014-05-05T04:04:10+00:00</updated_at>
+                  <uploader_user_id type="integer">127985</uploader_user_id>
+                  <url>http://www.columbia.edu/cu/physics/fac-bios/Greene/faculty.html</url>
+                  <user_id type="integer" nil="true"/>
+                  <works_count type="integer">12</works_count>
+                </author>
+              </book>
+            </review>
+          </read_status>
+
+        </object>
+      </update>
+
+      <update type="readstatus">
+        <action_text><![CDATA[wants to read <a href="http://www.goodreads.com/review/show/892075520" only_path="false">The English Teacher</a>]]></action_text>
+        <link>http://www.goodreads.com/read_statuses/366723708</link>
+        <image_url>http://d.gr-assets.com/users/1354926863p2/8320965.jpg</image_url>
+        <actor>
+          <id type="integer">8320965</id>
+          <name>Viswanath Ramanan</name>
+          <image_url>http://d.gr-assets.com/users/1354926863p2/8320965.jpg</image_url>
+          <link>http://www.goodreads.com/user/show/8320965-viswanath</link>
+        </actor>
+        <updated_at>Tue, 25 Mar 2014 21:32:22 -0700</updated_at>
+        <object>
+          <read_status>
+            <id type="integer">366723708</id>
+            <old_status nil="true"/>
+            <review_id type="integer">892075520</review_id>
+            <status>to-read</status>
+            <updated_at type="datetime">2014-03-26T04:32:22+00:00</updated_at>
+            <user_id type="integer">8320965</user_id>
+            <review>
+              <book-id type="integer">196743</book-id>
+              <comments-count type="integer">0</comments-count>
+              <created-at type="datetime">2014-03-26T04:32:22+00:00</created-at>
+              <hidden-flag type="boolean">false</hidden-flag>
+              <id type="integer">892075520</id>
+              <language-code type="integer" nil="true"/>
+              <last-comment-at type="datetime" nil="true"/>
+              <last-revision-at type="datetime">2014-03-26T04:32:22+00:00</last-revision-at>
+              <non-friends-rating-count type="integer">0</non-friends-rating-count>
+              <notes nil="true"/>
+              <rating type="integer">0</rating>
+              <ratings-count type="integer">0</ratings-count>
+              <ratings-sum type="integer">0</ratings-sum>
+              <read-at type="datetime" nil="true"/>
+              <read-count nil="true"/>
+              <read-status>to-read</read-status>
+              <recommendation nil="true"/>
+              <recommender-user-id1 type="integer">0</recommender-user-id1>
+              <recommender-user-name1 nil="true"/>
+              <review nil="true"/>
+              <sell-flag type="boolean">false</sell-flag>
+              <spoiler-flag type="boolean">false</spoiler-flag>
+              <started-at type="datetime" nil="true"/>
+              <updated-at type="datetime">2014-03-26T04:32:22+00:00</updated-at>
+              <user-id type="integer">8320965</user-id>
+              <weight type="integer">0</weight>
+              <work-id type="integer">575387</work-id>
+              <book>
+                <asin nil="true"/>
+                <asin_updater_user_id type="integer" nil="true"/>
+                <author_id type="integer">1305302</author_id>
+                <author_id_updater_user_id type="integer">-9</author_id_updater_user_id>
+                <author_role nil="true"/>
+                <author_role_updater_user_id type="integer">-9</author_role_updater_user_id>
+                <book_authors_count type="integer">0</book_authors_count>
+                <created_at type="datetime">2007-02-27T18:51:17+00:00</created_at>
+                <description>This novel completes the informal trilogy which began with "Swami and Friends" and "The Bachelor of Arts," The protagonist, Krishna, is an English teacher at the same college he had attended as a student. Although Krishna has recently married, his wife Susila and their daughter live with his parents-in-law some miles away. The story opens with his immediate family deciding to join him in Malgudi. Krishna is initially frightened by his new state of affairs, but he soon finds that his love for both his wife and child grows deeper than he could have imagined. &lt;br&gt;"Mr. Narayan has repeatedly been compared with Chekhov. Ordinarily such comparisons are gratuitous and strained, but in this case there are such clear and insistent echoes that any careful reader will be aware of them. There is that sense of rightness which transcends mere structure. There is the inexplicable blending of tragedy and humor. Most of all, there is a brooding awareness of fate which makes the story seem not authored, but merely translated."--J.F. Muehl, "Saturday Review" &lt;br&gt;"[Narayan] does not deal in exemplary fates, and the Western novel's machinery of retribution is far too grandiose for him. . . . In Narayan's world, scores are not settled but dissolved, recycled, restated. 'Both of us will shed our forms soon and perhaps we could meet again, who knows? So goodbye for the present.' These are the concluding words for the novel "A Tiger for Malgudi," but they constitute a universal epilogue one could append to most of Narayan's fiction."--Russell Davies, "Times Literary Supplement"</description>
+                <description_language_code nil="true"/>
+                <description_updater_user_id type="integer">-9</description_updater_user_id>
+                <edition_information nil="true"/>
+                <edition_information_updater_user_id type="integer" nil="true"/>
+                <format>Paperback</format>
+                <format_updater_user_id type="integer">-9</format_updater_user_id>
+                <id type="integer">196743</id>
+                <image_updater_user_id type="integer">-9</image_updater_user_id>
+                <image_uploaded_at type="datetime">2013-12-28T20:34:19+00:00</image_uploaded_at>
+                <isbn>0099282283</isbn>
+                <isbn13>9780099282280</isbn13>
+                <isbn13_updater_user_id type="integer">-57</isbn13_updater_user_id>
+                <isbn_updater_user_id type="integer">-9</isbn_updater_user_id>
+                <language_code>eng</language_code>
+                <language_updater_user_id type="integer">-9</language_updater_user_id>
+                <num_pages type="integer">180</num_pages>
+                <num_pages_updater_user_id type="integer">716403</num_pages_updater_user_id>
+                <publication_date_updater_user_id type="integer">-9</publication_date_updater_user_id>
+                <publication_day type="integer">1</publication_day>
+                <publication_month type="integer">12</publication_month>
+                <publication_year type="integer">2006</publication_year>
+                <publisher>Vintage Books</publisher>
+                <publisher_language_code nil="true"/>
+                <publisher_updater_user_id type="integer">-9</publisher_updater_user_id>
+                <ratings_count type="integer">1484</ratings_count>
+                <ratings_sum type="integer">5578</ratings_sum>
+                <reviews_count type="integer">2909</reviews_count>
+                <s3_image_at type="datetime">2013-12-28T20:34:22+00:00</s3_image_at>
+                <sort_by_title>english teacher, the</sort_by_title>
+                <source_url nil="true"/>
+                <text_reviews_count type="integer">58</text_reviews_count>
+                <title>The English Teacher</title>
+                <title_language_code nil="true"/>
+                <title_updater_user_id type="integer">129343</title_updater_user_id>
+                <updated_at type="datetime">2014-05-04T06:14:03+00:00</updated_at>
+                <url nil="true"/>
+                <url_updater_user_id type="integer" nil="true"/>
+                <work_id type="integer">575387</work_id>
+                <author>
+                  <about>
+                    R. K. Narayan is among the best known and most widely read Indian novelists writing in English.
+
+                    R.K. Narayan was born in Madras, South India, in 1906, and educated there and at Maharaja's College in Mysore. His first novel, Swami and Friends and its successor, The Bachelor of Arts, are both set in the enchanting fictional territory of Malgudi and are only two out of the twelve novels he based there. In 1958 Narayan's work The Guide won him the National Prize of the Indian Literary Academy, his country's highest literary honor.
+
+                    In addition to his novels, Narayan has authored five collections of short stories, including A Horse and Two Goats, Malguidi Days, and Under the Banyan Tree, two travel books, two volumes of essays, a volume of memoirs, and the re-told legends Gods, Demons and Others, The Ramayana, and the Mahabharata. In 1980 he was awarded the A.C. Benson Medal by the Royal Society of Literature and in 1982 he was made an Honorary Member of the American Academy and Institute of Arts and Letters.
+
+                    Most of Narayan's work, starting with his first novel Swami and Friends (1935), captures many Indian traits while retaining a unique identity of its own. He was sometimes compared to the American writer William Faulkner, whose novels were also grounded in a compassionate humanism and celebrated the humour and energy of ordinary life.
+
+                    Narayan who lived till age of ninety-four, died in 2001. He wrote for more than fifty years, and published until he was eighty seven. He wrote fourteen novels, five volumes of short stories, a number of travelogues and collections of non-fiction, condensed versions of Indian epics in English, and the memoir My Days.
+
+                    -Wikipedia &amp; Amazon.co.uk
+
+                  </about>
+                  <author_program_at type="datetime" nil="true"/>
+                  <best_book_id type="integer">14082</best_book_id>
+                  <books_count type="integer">330</books_count>
+                  <born_at type="datetime">1906-10-10T00:00:00+00:00</born_at>
+                  <country_code>IN</country_code>
+                  <created_at type="datetime">2008-03-17T20:03:22+00:00</created_at>
+                  <died_at type="datetime">2001-05-13T00:00:00+00:00</died_at>
+                  <fanships_count type="integer">514</fanships_count>
+                  <gender>M</gender>
+                  <genre1>Literature &amp; Fiction</genre1>
+                  <genre2>Nonfiction</genre2>
+                  <genre3></genre3>
+                  <hometown>Chennai</hometown>
+                  <id type="integer">1305302</id>
+                  <image_copyright>http://en.wikipedia.org/wiki/R.K._Narayan</image_copyright>
+                  <image_uploaded_at type="datetime">2008-05-16T19:36:05+00:00</image_uploaded_at>
+                  <influences></influences>
+                  <name>R.K. Narayan</name>
+                  <name_language_code nil="true"/>
+                  <postal_code nil="true"/>
+                  <rating_dist>5:1445|4:2137|3:1541|2:309|1:47|total:5479</rating_dist>
+                  <ratings_count type="integer">30504</ratings_count>
+                  <ratings_sum type="integer">120457</ratings_sum>
+                  <reviews_count type="integer">55017</reviews_count>
+                  <s3_image_at type="datetime">2008-05-16T19:36:07+00:00</s3_image_at>
+                  <searched_for_at type="datetime">2008-03-21T07:47:37+00:00</searched_for_at>
+                  <text_reviews_count type="integer">1435</text_reviews_count>
+                  <updated_at type="datetime">2014-05-05T04:24:41+00:00</updated_at>
+                  <uploader_user_id type="integer">785027</uploader_user_id>
+                  <url></url>
+                  <user_id type="integer" nil="true"/>
+                  <works_count type="integer">70</works_count>
+                </author>
+              </book>
+            </review>
+          </read_status>
+
+        </object>
+      </update>
+
+      <update type="review">
+        <action_text><![CDATA[gave 2 stars to <a href="http://www.goodreads.com/book/show/105578.One_Night_at_the_Call_Center">One Night at the Call Center (Paperback)</a> by <a href="http://www.goodreads.com/author/show/61124.Chetan_Bhagat">Chetan Bhagat</a>]]></action_text>
+        <link>http://www.goodreads.com/review/show/502485170</link>
+        <image_url>http://d.gr-assets.com/books/1320500924s/105578.jpg</image_url>
+        <actor>
+          <id type="integer">8320965</id>
+          <name>Viswanath Ramanan</name>
+          <image_url>http://d.gr-assets.com/users/1354926863p2/8320965.jpg</image_url>
+          <link>http://www.goodreads.com/user/show/8320965-viswanath</link>
+        </actor>
+        <updated_at>Wed, 27 Nov 2013 22:29:38 -0800</updated_at>
+        <action type="rating">
+          <rating>2</rating>
+        </action>
+        <object>
+          <book>
+            <id>105578</id>
+            <title>One Night at the Call Center</title>
+            <link>http://www.goodreads.com/book/show/105578.One_Night_at_the_Call_Center</link>
+            <authors>
+              <author>
+                <id>61124</id>
+                <name>Chetan Bhagat</name>
+                <image_url><![CDATA[http://d.gr-assets.com/authors/1255919964p5/61124.jpg]]></image_url>
+                <small_image_url><![CDATA[http://d.gr-assets.com/authors/1255919964p2/61124.jpg]]></small_image_url>
+                <link><![CDATA[http://www.goodreads.com/author/show/61124.Chetan_Bhagat]]></link>
+                <average_rating>3.15</average_rating>
+                <ratings_count>156948</ratings_count>
+                <text_reviews_count>5519</text_reviews_count>
+              </author>
+            </authors>
+          </book>
+        </object>
+        <body><![CDATA[This book could have been a lot better but it was not handled well.]]></body>
+      </update>
+
+      <update type="readstatus">
+        <action_text><![CDATA[wants to read <a href="http://www.goodreads.com/review/show/766237986" only_path="false">The Osterman Weekend</a>]]></action_text>
+        <link>http://www.goodreads.com/read_statuses/211882047</link>
+        <image_url>http://d.gr-assets.com/users/1354926863p2/8320965.jpg</image_url>
+        <actor>
+          <id type="integer">8320965</id>
+          <name>Viswanath Ramanan</name>
+          <image_url>http://d.gr-assets.com/users/1354926863p2/8320965.jpg</image_url>
+          <link>http://www.goodreads.com/user/show/8320965-viswanath</link>
+        </actor>
+        <updated_at>Fri, 15 Nov 2013 23:14:55 -0800</updated_at>
+        <object>
+          <read_status>
+            <id type="integer">211882047</id>
+            <old_status nil="true"/>
+            <review_id type="integer">766237986</review_id>
+            <status>to-read</status>
+            <updated_at type="datetime">2013-11-16T07:14:55+00:00</updated_at>
+            <user_id type="integer">8320965</user_id>
+            <review>
+              <book-id type="integer">356248</book-id>
+              <comments-count type="integer">0</comments-count>
+              <created-at type="datetime">2013-11-16T07:14:54+00:00</created-at>
+              <hidden-flag type="boolean">false</hidden-flag>
+              <id type="integer">766237986</id>
+              <language-code type="integer" nil="true"/>
+              <last-comment-at type="datetime" nil="true"/>
+              <last-revision-at type="datetime">2013-11-16T07:14:54+00:00</last-revision-at>
+              <non-friends-rating-count type="integer">0</non-friends-rating-count>
+              <notes nil="true"/>
+              <rating type="integer">0</rating>
+              <ratings-count type="integer">0</ratings-count>
+              <ratings-sum type="integer">0</ratings-sum>
+              <read-at type="datetime" nil="true"/>
+              <read-count nil="true"/>
+              <read-status>to-read</read-status>
+              <recommendation nil="true"/>
+              <recommender-user-id1 type="integer">0</recommender-user-id1>
+              <recommender-user-name1 nil="true"/>
+              <review nil="true"/>
+              <sell-flag type="boolean">false</sell-flag>
+              <spoiler-flag type="boolean">false</spoiler-flag>
+              <started-at type="datetime" nil="true"/>
+              <updated-at type="datetime">2013-11-16T07:14:54+00:00</updated-at>
+              <user-id type="integer">8320965</user-id>
+              <weight type="integer">0</weight>
+              <work-id type="integer">1698636</work-id>
+              <book>
+                <asin nil="true"/>
+                <asin_updater_user_id type="integer" nil="true"/>
+                <author_id type="integer">5293</author_id>
+                <author_id_updater_user_id type="integer">-51</author_id_updater_user_id>
+                <author_role nil="true"/>
+                <author_role_updater_user_id type="integer">6308201</author_role_updater_user_id>
+                <book_authors_count type="integer">0</book_authors_count>
+                <created_at type="datetime">2007-03-16T13:56:16+00:00</created_at>
+                <description>In Zurich. . .in Moscow. . .in Washington. The&amp;#160;&amp;#160;machinery was already set in motion, while in a&amp;#160;&amp;#160;quiet suburb an odd assortment of men and women&amp;#160;&amp;#160;gathered for a momentous weekend. At stake was the&amp;#160;&amp;#160;very existence of the United States of America. .&amp;#160;&amp;#160;.and the future of the entire free&amp;#160;&amp;#160;world.</description>
+                <description_language_code nil="true"/>
+                <description_updater_user_id type="integer">-30</description_updater_user_id>
+                <edition_information nil="true"/>
+                <edition_information_updater_user_id type="integer" nil="true"/>
+                <format>Paperback</format>
+                <format_updater_user_id type="integer">-51</format_updater_user_id>
+                <id type="integer">356248</id>
+                <image_updater_user_id type="integer">5147740</image_updater_user_id>
+                <image_uploaded_at type="datetime">2012-11-24T02:44:39+00:00</image_uploaded_at>
+                <isbn>0194242846</isbn>
+                <isbn13>9780194242844</isbn13>
+                <isbn13_updater_user_id type="integer">-51</isbn13_updater_user_id>
+                <isbn_updater_user_id type="integer">-51</isbn_updater_user_id>
+                <language_code>eng</language_code>
+                <language_updater_user_id type="integer">-110</language_updater_user_id>
+                <num_pages type="integer">96</num_pages>
+                <num_pages_updater_user_id type="integer">-51</num_pages_updater_user_id>
+                <publication_date_updater_user_id type="integer">-51</publication_date_updater_user_id>
+                <publication_day type="integer">1</publication_day>
+                <publication_month type="integer">4</publication_month>
+                <publication_year type="integer">1985</publication_year>
+                <publisher>Oxford University Press, USA</publisher>
+                <publisher_language_code nil="true"/>
+                <publisher_updater_user_id type="integer">-51</publisher_updater_user_id>
+                <ratings_count type="integer">4358</ratings_count>
+                <ratings_sum type="integer">15834</ratings_sum>
+                <reviews_count type="integer">5488</reviews_count>
+                <s3_image_at type="datetime">2012-11-24T02:44:42+00:00</s3_image_at>
+                <sort_by_title>osterman weekend, the</sort_by_title>
+                <source_url nil="true"/>
+                <text_reviews_count type="integer">64</text_reviews_count>
+                <title>The Osterman Weekend</title>
+                <title_language_code nil="true"/>
+                <title_updater_user_id type="integer">8399932</title_updater_user_id>
+                <updated_at type="datetime">2014-05-04T06:03:00+00:00</updated_at>
+                <url nil="true"/>
+                <url_updater_user_id type="integer" nil="true"/>
+                <work_id type="integer">1698636</work_id>
+                <author>
+                  <about>
+                    Robert Ludlum was the author of twenty-seven novels, each one a New York Times bestseller. There are more than 210 million of his books in print, and they have been translated into thirty-two languages. He is the author of The Scarlatti Inheritance, The Chancellor Manuscript, and the Jason Bourne series--The Bourne Identity, The Bourne Supremacy, and The Bourne Ultimatum--among others. Mr. Ludlum passed away in March, 2001. Ludlum also published books under the pseudonyms &lt;a href="http://www.goodreads.com/author/show/19634.Jonathan_Ryder"&gt;Jonathan Ryder&lt;/a&gt; and &lt;a href="http://www.goodreads.com/author/show/6914549.Michael_Shepherd"&gt;Michael Shepherd&lt;/a&gt;.
+
+                    Some of Ludlum's novels have been made into films and mini-series, including &lt;i&gt;The Osterman Weekend, The Holcroft Covenant, The Apocalypse Watch, The Bourne Identity, The Bourne Supremacy&lt;/i&gt; and &lt;i&gt;The Bourne Ultimatum&lt;/i&gt;. A non-Ludlum book supposedly inspired by his unused notes, &lt;i&gt;Covert One: The Hades Factor&lt;/i&gt;, has also been made into a mini-series. The &lt;i&gt;Bourne&lt;/i&gt; movies, starring Matt Damon in the title role, have been commercially and critically successful (&lt;i&gt;The Bourne Ultimatum&lt;/i&gt; won three Academy Awards in 2008), although the story lines depart significantly from the source material.
+                  </about>
+                  <author_program_at type="datetime" nil="true"/>
+                  <best_book_id type="integer">7869</best_book_id>
+                  <books_count type="integer">1611</books_count>
+                  <born_at type="datetime">1927-05-25T00:00:00+00:00</born_at>
+                  <country_code>US</country_code>
+                  <created_at type="datetime">2006-12-09T06:26:48+00:00</created_at>
+                  <died_at type="datetime">2001-07-12T00:00:00+00:00</died_at>
+                  <fanships_count type="integer">1675</fanships_count>
+                  <gender>M</gender>
+                  <genre1>Thriller</genre1>
+                  <genre2>Crime</genre2>
+                  <genre3></genre3>
+                  <hometown>New York, New York</hometown>
+                  <id type="integer">5293</id>
+                  <image_copyright>http://en.wikipedia.org/wiki/Robert_Ludlum</image_copyright>
+                  <image_uploaded_at type="datetime">2008-04-17T20:47:47+00:00</image_uploaded_at>
+                  <influences></influences>
+                  <name>Robert Ludlum</name>
+                  <name_language_code nil="true"/>
+                  <postal_code nil="true"/>
+                  <rating_dist>5:51525|4:62558|3:49918|2:14765|1:8639|total:187405</rating_dist>
+                  <ratings_count type="integer">535061</ratings_count>
+                  <ratings_sum type="integer">2085932</ratings_sum>
+                  <reviews_count type="integer">721447</reviews_count>
+                  <s3_image_at type="datetime">2008-04-17T20:47:49+00:00</s3_image_at>
+                  <searched_for_at type="datetime">2007-01-27T07:30:17+00:00</searched_for_at>
+                  <text_reviews_count type="integer">7444</text_reviews_count>
+                  <updated_at type="datetime">2014-05-05T05:04:22+00:00</updated_at>
+                  <uploader_user_id type="integer">785027</uploader_user_id>
+                  <url>http://robert-ludlum.com/</url>
+                  <user_id type="integer" nil="true"/>
+                  <works_count type="integer">97</works_count>
+                </author>
+              </book>
+            </review>
+          </read_status>
+
+        </object>
+      </update>
+    </updates>
+    <user_statuses>
+      <user_status>
+        <body nil="true"/>
+        <chapter type="integer" nil="true"/>
+        <comments_count type="integer">1</comments_count>
+        <created_at type="datetime">2013-01-11T16:14:43+00:00</created_at>
+        <id type="integer">22030067</id>
+        <last_comment_at type="datetime">2013-02-12T18:25:26+00:00</last_comment_at>
+        <note_updated_at type="datetime" nil="true"/>
+        <note_uri nil="true"/>
+        <page type="integer">20</page>
+        <percent type="integer">3</percent>
+        <ratings_count type="integer">0</ratings_count>
+        <updated_at type="datetime">2013-01-11T16:14:43+00:00</updated_at>
+        <work_id type="integer">23464</work_id>
+        <review_id type="integer">472601305</review_id>
+        <book>
+          <id type="integer">22435</id>
+          <num_pages type="integer">569</num_pages>
+          <title>The Fabric of the Cosmos (Space, Time, and the Texture of Reality)</title>
+          <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+          <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+          <authors>
+            <author>
+              <id>509</id>
+              <name>Brian Greene</name>
+            </author>
+          </authors>
+        </book>
+      </user_status>
+      <user_status>
+        <body nil="true"/>
+        <chapter type="integer" nil="true"/>
+        <comments_count type="integer">0</comments_count>
+        <created_at type="datetime">2014-04-28T02:49:54+00:00</created_at>
+        <id type="integer">42791550</id>
+        <last_comment_at type="datetime" nil="true"/>
+        <note_updated_at type="datetime" nil="true"/>
+        <note_uri nil="true"/>
+        <page type="integer">70</page>
+        <percent type="integer">14</percent>
+        <ratings_count type="integer">0</ratings_count>
+        <updated_at type="datetime">2014-04-28T02:49:54+00:00</updated_at>
+        <work_id type="integer">1839081</work_id>
+        <review_id type="integer">300464314</review_id>
+        <book>
+          <id type="integer">78987</id>
+          <num_pages type="integer">496</num_pages>
+          <title>The Prodigal Daughter (Kane &amp; Abel, #2)</title>
+          <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+          <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+          <authors>
+            <author>
+              <id>4820</id>
+              <name>Jeffrey Archer</name>
+            </author>
+          </authors>
+        </book>
+      </user_status>
+    </user_statuses>
+  </user>
+
+</GoodreadsResponse>

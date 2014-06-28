@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>true</authentication>
+    <key><![CDATA[fDfi6rdiIgfTp49R0xj8MQ]]></key>
+    <method><![CDATA[user_compare]]></method>
+  </Request>
+  <compare>
+    <not_in_common>76</not_in_common>
+    <your_library_percent>8.82</your_library_percent>
+    <their_library_percent>3.80</their_library_percent>
+    <your_total_books_count>34</your_total_books_count>
+    <their_total_books_count>79</their_total_books_count>
+    <common_count>3</common_count>
+    <reviews>
+      <review>
+        <book>
+          <title>The Alchemist</title>
+          <id>865</id>
+          <url><![CDATA[http://www.goodreads.com/book/show/865.The_Alchemist]]></url>
+        </book>
+        <your_review>
+          <id>502892948</id>
+          <rating>4</rating>
+          <text>Brilliant read!</text>
+
+        </your_review>
+        <their_review>
+          <id>88164982</id>
+          <rating>4</rating>
+
+        </their_review>
+      </review>
+      <review>
+        <book>
+          <title>The Da Vinci Code</title>
+          <id>968</id>
+          <url><![CDATA[http://www.goodreads.com/book/show/968.The_Da_Vinci_Code]]></url>
+        </book>
+        <your_review>
+          <id>309293886</id>
+          <rating>4</rating>
+          <text><![CDATA[This is probably one of the best Langdon stories!]]></text>
+
+        </your_review>
+        <their_review>
+          <id>88165008</id>
+          <rating>4</rating>
+
+        </their_review>
+      </review>
+      <review>
+        <book>
+          <title>The Kite Runner</title>
+          <id>77203</id>
+          <url><![CDATA[http://www.goodreads.com/book/show/77203.The_Kite_Runner]]></url>
+        </book>
+        <your_review>
+          <id>502304967</id>
+          <rating>to-read</rating>
+
+        </your_review>
+        <their_review>
+          <id>88165010</id>
+          <rating>5</rating>
+
+        </their_review>
+      </review>
+    </reviews>
+  </compare>
+
+</GoodreadsResponse>

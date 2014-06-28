@@ -1,0 +1,749 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>true</authentication>
+    <key><![CDATA[fDfi6rdiIgfTp49R0xj8MQ]]></key>
+    <method><![CDATA[search_index]]></method>
+  </Request>
+  <search>
+    <query><![CDATA[archer]]></query>
+    <results-start>1</results-start>
+    <results-end>20</results-end>
+    <total-results>3663</total-results>
+    <source>Goodreads</source>
+    <query-time-seconds>0.12</query-time-seconds>
+    <results>
+      <work>
+        <books_count type="integer">6</books_count>
+        <id type="integer">3359826</id>
+        <original_publication_day type="integer">1</original_publication_day>
+        <original_publication_month type="integer">4</original_publication_month>
+        <original_publication_year type="integer">2008</original_publication_year>
+        <ratings_count type="integer">739</ratings_count>
+        <text_reviews_count type="integer">112</text_reviews_count>
+        <average_rating>3.81</average_rating>
+        <best_book type="Book">
+          <id type="integer">3322012</id>
+          <title>The Archer</title>
+          <author>
+            <id type="integer">1122775</id>
+            <name>Abigail Roux</name>
+          </author>
+          <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+          <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">69</books_count>
+        <id type="integer">1084150</id>
+        <original_publication_day type="integer">1</original_publication_day>
+        <original_publication_month type="integer">1</original_publication_month>
+        <original_publication_year type="integer">1979</original_publication_year>
+        <ratings_count type="integer">46543</ratings_count>
+        <text_reviews_count type="integer">1616</text_reviews_count>
+        <average_rating>4.22</average_rating>
+        <best_book type="Book">
+          <id type="integer">78983</id>
+          <title>Kane and Abel (Kane and Abel, #1)</title>
+          <author>
+            <id type="integer">4820</id>
+            <name>Jeffrey Archer</name>
+          </author>
+          <my_review>
+            <id>300464490</id>
+            <book>
+              <id type="integer">78983</id>
+              <isbn>0312995059</isbn>
+              <isbn13>9780312995058</isbn13>
+              <text_reviews_count type="integer">1384</text_reviews_count>
+              <title>Kane and Abel (Kane and Abel, #1)</title>
+              <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+              <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+              <link>http://www.goodreads.com/book/show/78983.Kane_and_Abel</link>
+              <num_pages>592</num_pages>
+              <format>Paperback</format>
+              <edition_information/>
+              <publisher>St. Martin's Paperbacks</publisher>
+              <publication_day>13</publication_day>
+              <publication_year>2004</publication_year>
+              <publication_month>3</publication_month>
+              <average_rating>4.22</average_rating>
+              <ratings_count>46537</ratings_count>
+              <description>Born on the same day near the turn of the century on opposite sides of the world, both men are brought together by fate and the quest of a dream. These two men -- ambitious, powerful, ruthless -- are locked in a relentless struggle to build an empire, fuelled by their all-consuming hatred. Over 60 years and three generations, through war, marriage, fortune, and disaster, Kane and Abel battle for the success and triumph that only one man can have.</description>
+              <authors>
+                <author>
+                  <id>4820</id>
+                  <name>Jeffrey Archer</name>
+                  <image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p5/4820.jpg]]></image_url>
+                  <small_image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p2/4820.jpg]]></small_image_url>
+                  <link><![CDATA[http://www.goodreads.com/author/show/4820.Jeffrey_Archer]]></link>
+                  <average_rating>3.91</average_rating>
+                  <ratings_count>244039</ratings_count>
+                  <text_reviews_count>13205</text_reviews_count>
+                </author>
+              </authors>
+              <published>2004</published>
+            </book>
+
+
+
+            <rating>4</rating>
+            <votes>0</votes>
+            <spoiler_flag>false</spoiler_flag>
+            <spoilers_state>none</spoilers_state>
+            <shelves>
+              <shelf name="read" />
+            </shelves>
+            <recommended_for></recommended_for>
+            <recommended_by></recommended_by>
+            <started_at></started_at>
+            <read_at></read_at>
+            <date_added>Sun Mar 25 11:06:46 -0700 2012</date_added>
+            <date_updated>Mon Apr 28 22:52:01 -0700 2014</date_updated>
+            <read_count></read_count>
+            <body>
+              <![CDATA[This is one of archer's best books. You cannot put it down! Thumbs up!!!]]>
+            </body>
+            <comments_count>review_comments_count</comments_count>
+            <url><![CDATA[http://www.goodreads.com/review/show/300464490]]></url>
+            <link><![CDATA[http://www.goodreads.com/review/show/300464490]]></link>
+            <owned>0</owned>
+          </my_review>
+          <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+          <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">37</books_count>
+        <id type="integer">449786</id>
+        <original_publication_day type="integer" nil="true"/>
+        <original_publication_month type="integer" nil="true"/>
+        <original_publication_year type="integer">1982</original_publication_year>
+        <ratings_count type="integer">4066</ratings_count>
+        <text_reviews_count type="integer">144</text_reviews_count>
+        <average_rating>3.86</average_rating>
+        <best_book type="Book">
+          <id type="integer">106585</id>
+          <title>The Transmigration of Timothy Archer</title>
+          <author>
+            <id type="integer">4764</id>
+            <name>Philip K. Dick</name>
+          </author>
+          <image_url>http://d.gr-assets.com/books/1355321809m/106585.jpg</image_url>
+          <small_image_url>http://d.gr-assets.com/books/1355321809s/106585.jpg</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">1</books_count>
+        <id type="integer">27460785</id>
+        <original_publication_day type="integer">16</original_publication_day>
+        <original_publication_month type="integer">11</original_publication_month>
+        <original_publication_year type="integer">2013</original_publication_year>
+        <ratings_count type="integer">3</ratings_count>
+        <text_reviews_count type="integer">1</text_reviews_count>
+        <average_rating>3.00</average_rating>
+        <best_book type="Book">
+          <id type="integer">19389197</id>
+          <title>Archer</title>
+          <author>
+            <id type="integer">7241947</id>
+            <name>Alexia Stark</name>
+          </author>
+          <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+          <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">10</books_count>
+        <id type="integer">9585076</id>
+        <original_publication_day type="integer">13</original_publication_day>
+        <original_publication_month type="integer">9</original_publication_month>
+        <original_publication_year type="integer">2010</original_publication_year>
+        <ratings_count type="integer">275250</ratings_count>
+        <text_reviews_count type="integer">27895</text_reviews_count>
+        <average_rating>3.95</average_rating>
+        <best_book type="Book">
+          <id type="integer">7937843</id>
+          <title>Room</title>
+          <author>
+            <id type="integer">23613</id>
+            <name>Emma Donoghue</name>
+          </author>
+          <image_url>http://d.gr-assets.com/books/1344265419m/7937843.jpg</image_url>
+          <small_image_url>http://d.gr-assets.com/books/1344265419s/7937843.jpg</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">7</books_count>
+        <id type="integer">18120890</id>
+        <original_publication_day type="integer">9</original_publication_day>
+        <original_publication_month type="integer">7</original_publication_month>
+        <original_publication_year type="integer">2012</original_publication_year>
+        <ratings_count type="integer">4281</ratings_count>
+        <text_reviews_count type="integer">593</text_reviews_count>
+        <average_rating>4.19</average_rating>
+        <best_book type="Book">
+          <id type="integer">12963146</id>
+          <title>Short-Straw Bride (Archer Brothers, #1)</title>
+          <author>
+            <id type="integer">3114906</id>
+            <name>Karen Witemeyer</name>
+          </author>
+          <image_url>http://d.gr-assets.com/books/1327254843m/12963146.jpg</image_url>
+          <small_image_url>http://d.gr-assets.com/books/1327254843s/12963146.jpg</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">16</books_count>
+        <id type="integer">3652511</id>
+        <original_publication_day type="integer">1</original_publication_day>
+        <original_publication_month type="integer">10</original_publication_month>
+        <original_publication_year type="integer">2008</original_publication_year>
+        <ratings_count type="integer">211431</ratings_count>
+        <text_reviews_count type="integer">416</text_reviews_count>
+        <average_rating>4.23</average_rating>
+        <best_book type="Book">
+          <id type="integer">3609760</id>
+          <title>Twilight: The Complete Illustrated Movie Companion</title>
+          <author>
+            <id type="integer">61939</id>
+            <name>Mark Cotta Vaz</name>
+          </author>
+          <image_url>http://d.gr-assets.com/books/1352539022m/3609760.jpg</image_url>
+          <small_image_url>http://d.gr-assets.com/books/1352539022s/3609760.jpg</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">33</books_count>
+        <id type="integer">14570985</id>
+        <original_publication_day type="integer">1</original_publication_day>
+        <original_publication_month type="integer">1</original_publication_month>
+        <original_publication_year type="integer">2011</original_publication_year>
+        <ratings_count type="integer">18352</ratings_count>
+        <text_reviews_count type="integer">2253</text_reviews_count>
+        <average_rating>3.98</average_rating>
+        <best_book type="Book">
+          <id type="integer">10872085</id>
+          <title>Only Time Will Tell (The Clifton Chronicles, #1)</title>
+          <author>
+            <id type="integer">4820</id>
+            <name>Jeffrey Archer</name>
+          </author>
+          <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+          <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">60</books_count>
+        <id type="integer">1952681</id>
+        <original_publication_day type="integer">1</original_publication_day>
+        <original_publication_month type="integer">1</original_publication_month>
+        <original_publication_year type="integer">1976</original_publication_year>
+        <ratings_count type="integer">18284</ratings_count>
+        <text_reviews_count type="integer">525</text_reviews_count>
+        <average_rating>3.97</average_rating>
+        <best_book type="Book">
+          <id type="integer">78982</id>
+          <title>Not a Penny More, Not a Penny Less</title>
+          <author>
+            <id type="integer">4820</id>
+            <name>Jeffrey Archer</name>
+          </author>
+          <my_review>
+            <id>309293934</id>
+            <book>
+              <id type="integer">78982</id>
+              <isbn>0312997132</isbn>
+              <isbn13>9780312997137</isbn13>
+              <text_reviews_count type="integer">474</text_reviews_count>
+              <title>Not a Penny More, Not a Penny Less</title>
+              <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+              <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+              <link>http://www.goodreads.com/book/show/78982.Not_a_Penny_More_Not_a_Penny_Less</link>
+              <num_pages>305</num_pages>
+              <format>Paperback</format>
+              <edition_information/>
+              <publisher>St. Martin's Paperbacks</publisher>
+              <publication_day>16</publication_day>
+              <publication_year>2004</publication_year>
+              <publication_month>5</publication_month>
+              <average_rating>3.97</average_rating>
+              <ratings_count>18282</ratings_count>
+              <description>
+                &lt;div&gt;The conned: an Oxford don, a revered society physician, a chic French art dealer, and a charming English lord. They have one thing in common. Overnight, each novice investor lost his life's fortune to one man. The con: Harvey Metcalfe!!&lt;br&gt;&lt;br&gt;A brilliant, self-made guru of deceit. A very dangerous individual. And now, a hunted man. &lt;br&gt;&lt;br&gt;With nothing left to lose four strangers are about to come together-each expert in their own field. Their plan: find Harvey, shadow him, trap him, and penny-for-penny, destroy him. From the luxurious casinos of Monte Carlo to the high-stakes windows at Ascot to the bustling streets of Wall Street to fashionable London galleries, their own ingenious game has begun. It's called revenge-and they were taught by a master&lt;br&gt;
+                &lt;/div&gt;
+              </description>
+              <authors>
+                <author>
+                  <id>4820</id>
+                  <name>Jeffrey Archer</name>
+                  <image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p5/4820.jpg]]></image_url>
+                  <small_image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p2/4820.jpg]]></small_image_url>
+                  <link><![CDATA[http://www.goodreads.com/author/show/4820.Jeffrey_Archer]]></link>
+                  <average_rating>3.91</average_rating>
+                  <ratings_count>244039</ratings_count>
+                  <text_reviews_count>13205</text_reviews_count>
+                </author>
+              </authors>
+              <published>2004</published>
+            </book>
+
+
+
+            <rating>4</rating>
+            <votes>0</votes>
+            <spoiler_flag>false</spoiler_flag>
+            <spoilers_state>none</spoilers_state>
+            <shelves>
+              <shelf name="read" />
+            </shelves>
+            <recommended_for></recommended_for>
+            <recommended_by></recommended_by>
+            <started_at></started_at>
+            <read_at></read_at>
+            <date_added>Mon Apr 09 08:18:55 -0700 2012</date_added>
+            <date_updated>Sat Jan 12 11:31:51 -0800 2013</date_updated>
+            <read_count></read_count>
+            <body>
+              <![CDATA[This is one of archer's finest works! ]]>
+            </body>
+            <comments_count>review_comments_count</comments_count>
+            <url><![CDATA[http://www.goodreads.com/review/show/309293934]]></url>
+            <link><![CDATA[http://www.goodreads.com/review/show/309293934]]></link>
+            <owned>0</owned>
+          </my_review>
+          <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+          <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">1</books_count>
+        <id type="integer">4672723</id>
+        <original_publication_day type="integer" nil="true"/>
+        <original_publication_month type="integer" nil="true"/>
+        <original_publication_year type="integer" nil="true"/>
+        <ratings_count type="integer">1</ratings_count>
+        <text_reviews_count type="integer">0</text_reviews_count>
+        <average_rating>5.00</average_rating>
+        <best_book type="Book">
+          <id type="integer">4622726</id>
+          <title>Archer</title>
+          <author>
+            <id type="integer">777138</id>
+            <name>Anne Brooksbank</name>
+          </author>
+          <image_url>http://d.gr-assets.com/books/1314414696m/4622726.jpg</image_url>
+          <small_image_url>http://d.gr-assets.com/books/1314414696s/4622726.jpg</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">48</books_count>
+        <id type="integer">1839081</id>
+        <original_publication_day type="integer" nil="true"/>
+        <original_publication_month type="integer" nil="true"/>
+        <original_publication_year type="integer">1982</original_publication_year>
+        <ratings_count type="integer">15836</ratings_count>
+        <text_reviews_count type="integer">369</text_reviews_count>
+        <average_rating>3.87</average_rating>
+        <best_book type="Book">
+          <id type="integer">78987</id>
+          <title>The Prodigal Daughter (Kane &amp; Abel, #2)</title>
+          <author>
+            <id type="integer">4820</id>
+            <name>Jeffrey Archer</name>
+          </author>
+          <my_review>
+            <id>300464314</id>
+            <book>
+              <id type="integer">78987</id>
+              <isbn>0312997140</isbn>
+              <isbn13>9780312997144</isbn13>
+              <text_reviews_count type="integer">313</text_reviews_count>
+              <title>The Prodigal Daughter (Kane &amp; Abel, #2)</title>
+              <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+              <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+              <link>http://www.goodreads.com/book/show/78987.The_Prodigal_Daughter</link>
+              <num_pages>496</num_pages>
+              <format>Paperback</format>
+              <edition_information/>
+              <publisher>St. Martin's Press</publisher>
+              <publication_day>16</publication_day>
+              <publication_year>2004</publication_year>
+              <publication_month>5</publication_month>
+              <average_rating>3.87</average_rating>
+              <ratings_count>15836</ratings_count>
+              <description>
+                &lt;div&gt;With a will of steel, Polish immigrant Florentyna Rosnovski is indeed Abel's daughter. She shares with her father a love of America, his ideals, and his dream for the future. But she wants more to be the first female president.&lt;br&gt;&lt;br&gt;Golden boy Richard Kane was born into a life of luxury. The scion of a banking magnate he is successful, handsome, and determined to carve his own path in the world-and to &lt;br&gt;build a future with the woman he loves. &lt;br&gt;&lt;br&gt;With Florentyna's ultimate goal only a heartbeat away, both are about to discover the shattering price of power as a titanic battle of betrayal and deception reaches out from the past-a blood feud between two generations that threatens to destroy everything Florentyna and Richard have fought to achieve.&lt;br&gt;
+                &lt;/div&gt;
+              </description>
+              <authors>
+                <author>
+                  <id>4820</id>
+                  <name>Jeffrey Archer</name>
+                  <image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p5/4820.jpg]]></image_url>
+                  <small_image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p2/4820.jpg]]></small_image_url>
+                  <link><![CDATA[http://www.goodreads.com/author/show/4820.Jeffrey_Archer]]></link>
+                  <average_rating>3.91</average_rating>
+                  <ratings_count>244039</ratings_count>
+                  <text_reviews_count>13205</text_reviews_count>
+                </author>
+              </authors>
+              <published>2004</published>
+            </book>
+
+
+
+            <rating>0</rating>
+            <votes>0</votes>
+            <spoiler_flag>false</spoiler_flag>
+            <spoilers_state>none</spoilers_state>
+            <shelves>
+              <shelf name="currently-reading" />
+              <shelf name="test5" />
+              <shelf name="test3" />
+              <shelf name="test4" />
+            </shelves>
+            <recommended_for></recommended_for>
+            <recommended_by></recommended_by>
+            <started_at>Sun Mar 25 11:06:24 -0700 2012</started_at>
+            <read_at></read_at>
+            <date_added>Sun Mar 25 11:06:24 -0700 2012</date_added>
+            <date_updated>Thu Oct 24 22:50:09 -0700 2013</date_updated>
+            <read_count></read_count>
+            <body>
+
+            </body>
+            <comments_count>review_comments_count</comments_count>
+            <url><![CDATA[http://www.goodreads.com/review/show/300464314]]></url>
+            <link><![CDATA[http://www.goodreads.com/review/show/300464314]]></link>
+            <owned>0</owned>
+          </my_review>
+          <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+          <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">46</books_count>
+        <id type="integer">3062843</id>
+        <original_publication_day type="integer">1</original_publication_day>
+        <original_publication_month type="integer">1</original_publication_month>
+        <original_publication_year type="integer">2008</original_publication_year>
+        <ratings_count type="integer">13981</ratings_count>
+        <text_reviews_count type="integer">1262</text_reviews_count>
+        <average_rating>4.02</average_rating>
+        <best_book type="Book">
+          <id type="integer">1611988</id>
+          <title>A Prisoner of Birth</title>
+          <author>
+            <id type="integer">4820</id>
+            <name>Jeffrey Archer</name>
+          </author>
+          <my_review>
+            <id>502180611</id>
+            <book>
+              <id type="integer">1611988</id>
+              <isbn>0312379293</isbn>
+              <isbn13>9780312379292</isbn13>
+              <text_reviews_count type="integer">1078</text_reviews_count>
+              <title>A Prisoner of Birth</title>
+              <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+              <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+              <link>http://www.goodreads.com/book/show/1611988.A_Prisoner_of_Birth</link>
+              <num_pages>501</num_pages>
+              <format></format>
+              <edition_information/>
+              <publisher></publisher>
+              <publication_day></publication_day>
+              <publication_year></publication_year>
+              <publication_month></publication_month>
+              <average_rating>4.02</average_rating>
+              <ratings_count>13980</ratings_count>
+              <description>&lt;p&gt;ONE NIGHT. TWO MEN. FOUR WITNESSES...&lt;/p&gt;&lt;p&gt;A MASTERPIECE OF SUSPENSE AND STORYTELLING.&lt;/p&gt;&lt;p&gt;International bestseller and master storyteller Jeffrey Archer is at the very top of his game in this story of fate and fortune, redemption and revenge.&lt;/p&gt;&lt;p&gt;If Danny Cartwright had proposed to Beth Wilson the day before, or the day after, he would not have been arrested and charged with the murder of his best friend. But when the four prosecution witnesses are a barrister, a popular actor, an aristocrat, and the youngest partner in an established firm's history, who is going to believe his side of the story?&lt;/p&gt;&lt;p&gt;Danny is sentenced to twenty-two years and sent to Belmarsh prison, the highest-security jail in the land, from where no inmate has ever escaped.&lt;/p&gt;&lt;p&gt;However, Spencer Craig, Lawrence Davenport, Gerald Payne, and Toby Mortimer all underestimate Danny's determination to seek revenge, and Beth's relentless quest to pursue justice, which ends up with all four fighting for their lives.&lt;/p&gt;&lt;p&gt;Thus begins Jeffrey Archer's most powerful novel since &lt;em&gt;Kane and Abel,&lt;/em&gt; with a cast of characters that will remain with you long after you've turned the last page.&lt;/p&gt;&lt;p&gt;And if that is not enough, prepare for an ending that will shock even the most ardent of Archer's fans.&lt;/p&gt;</description>
+              <authors>
+                <author>
+                  <id>4820</id>
+                  <name>Jeffrey Archer</name>
+                  <image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p5/4820.jpg]]></image_url>
+                  <small_image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p2/4820.jpg]]></small_image_url>
+                  <link><![CDATA[http://www.goodreads.com/author/show/4820.Jeffrey_Archer]]></link>
+                  <average_rating>3.91</average_rating>
+                  <ratings_count>244039</ratings_count>
+                  <text_reviews_count>13205</text_reviews_count>
+                </author>
+              </authors>
+              <published></published>
+            </book>
+
+
+
+            <rating>4</rating>
+            <votes>0</votes>
+            <spoiler_flag>false</spoiler_flag>
+            <spoilers_state>none</spoilers_state>
+            <shelves>
+              <shelf name="read" />
+            </shelves>
+            <recommended_for></recommended_for>
+            <recommended_by></recommended_by>
+            <started_at>Thu Jan 10 09:10:26 -0800 2013</started_at>
+            <read_at>Thu Jan 10 09:11:18 -0800 2013</read_at>
+            <date_added>Thu Jan 10 09:10:26 -0800 2013</date_added>
+            <date_updated>Fri Aug 30 00:35:28 -0700 2013</date_updated>
+            <read_count></read_count>
+            <body>
+
+            </body>
+            <comments_count>review_comments_count</comments_count>
+            <url><![CDATA[http://www.goodreads.com/review/show/502180611]]></url>
+            <link><![CDATA[http://www.goodreads.com/review/show/502180611]]></link>
+            <owned>0</owned>
+          </my_review>
+          <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+          <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">9</books_count>
+        <id type="integer">2852083</id>
+        <original_publication_day type="integer" nil="true"/>
+        <original_publication_month type="integer">2</original_publication_month>
+        <original_publication_year type="integer">1955</original_publication_year>
+        <ratings_count type="integer">562</ratings_count>
+        <text_reviews_count type="integer">13</text_reviews_count>
+        <average_rating>3.80</average_rating>
+        <best_book type="Book">
+          <id type="integer">595206</id>
+          <title>The Name Is Archer</title>
+          <author>
+            <id type="integer">70090</id>
+            <name>Ross Macdonald</name>
+          </author>
+          <image_url>http://d.gr-assets.com/books/1328938878m/595206.jpg</image_url>
+          <small_image_url>http://d.gr-assets.com/books/1328938878s/595206.jpg</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">18</books_count>
+        <id type="integer">2121966</id>
+        <original_publication_day type="integer">4</original_publication_day>
+        <original_publication_month type="integer">9</original_publication_month>
+        <original_publication_year type="integer">2002</original_publication_year>
+        <ratings_count type="integer">4680</ratings_count>
+        <text_reviews_count type="integer">85</text_reviews_count>
+        <average_rating>4.29</average_rating>
+        <best_book type="Book">
+          <id type="integer">271265</id>
+          <title>Bleach Volume 04: Quincy Archer Hates You (Bleach #4)</title>
+          <author>
+            <id type="integer">1977</id>
+            <name>Tite Kubo</name>
+          </author>
+          <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+          <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">4</books_count>
+        <id type="integer">16534</id>
+        <original_publication_day type="integer">1</original_publication_day>
+        <original_publication_month type="integer">7</original_publication_month>
+        <original_publication_year type="integer">1996</original_publication_year>
+        <ratings_count type="integer">163637</ratings_count>
+        <text_reviews_count type="integer">8625</text_reviews_count>
+        <average_rating>4.16</average_rating>
+        <best_book type="Book">
+          <id type="integer">14497</id>
+          <title>Neverwhere</title>
+          <author>
+            <id type="integer">1221698</id>
+            <name>Neil Gaiman</name>
+          </author>
+          <image_url>http://d.gr-assets.com/books/1348747943m/14497.jpg</image_url>
+          <small_image_url>http://d.gr-assets.com/books/1348747943s/14497.jpg</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">28</books_count>
+        <id type="integer">17131961</id>
+        <original_publication_day type="integer" nil="true"/>
+        <original_publication_month type="integer" nil="true"/>
+        <original_publication_year type="integer">2012</original_publication_year>
+        <ratings_count type="integer">12250</ratings_count>
+        <text_reviews_count type="integer">1393</text_reviews_count>
+        <average_rating>3.89</average_rating>
+        <best_book type="Book">
+          <id type="integer">12160906</id>
+          <title>The Sins of the Father (The Clifton Chronicles, #2)</title>
+          <author>
+            <id type="integer">4820</id>
+            <name>Jeffrey Archer</name>
+          </author>
+          <my_review>
+            <id>926189322</id>
+            <book>
+              <id type="integer">12160906</id>
+              <isbn>1250000971</isbn>
+              <isbn13>9781250000972</isbn13>
+              <text_reviews_count type="integer">1187</text_reviews_count>
+              <title>The Sins of the Father (The Clifton Chronicles, #2)</title>
+              <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+              <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+              <link>http://www.goodreads.com/book/show/12160906-the-sins-of-the-father</link>
+              <num_pages>352</num_pages>
+              <format>Hardcover</format>
+              <edition_information/>
+              <publisher>St. Martin's Press</publisher>
+              <publication_day>8</publication_day>
+              <publication_year>2012</publication_year>
+              <publication_month>5</publication_month>
+              <average_rating>3.89</average_rating>
+              <ratings_count>12250</ratings_count>
+              <description>On the heels of the international bestseller &lt;em&gt;Only Time Will Tell&lt;/em&gt;, Jeffrey Archer picks up the sweeping story of the Clifton Chronicles….&lt;br&gt;&lt;br&gt;Only days before Britain declares war on Germany, Harry Clifton, hoping to escape the consequences of long-buried family secrets, and forced to accept that his desire to marry Emma Barrington will never be fulfilled, has joined the Merchant Navy.  But his ship is sunk in the Atlantic by a German U-boat, drowning almost the entire crew.  An American cruise liner, the SS Kansas Star, rescues a handful of sailors, among them Harry and the third officer, an American named Tom Bradshaw.  When Bradshaw dies in the night, Harry seizes on the chance to escape his tangled past and assumes his identity.&lt;br&gt;&lt;br&gt;But on landing in America, he quickly learns the mistake he has made, when he discovers what is awaiting Bradshaw in New York.  Without any way of proving his true identity, Harry Clifton is now chained to a past that could be far worse than the one he had hoped to escape.</description>
+              <authors>
+                <author>
+                  <id>4820</id>
+                  <name>Jeffrey Archer</name>
+                  <image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p5/4820.jpg]]></image_url>
+                  <small_image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p2/4820.jpg]]></small_image_url>
+                  <link><![CDATA[http://www.goodreads.com/author/show/4820.Jeffrey_Archer]]></link>
+                  <average_rating>3.91</average_rating>
+                  <ratings_count>244039</ratings_count>
+                  <text_reviews_count>13205</text_reviews_count>
+                </author>
+              </authors>
+              <published>2012</published>
+            </book>
+
+
+
+            <rating>0</rating>
+            <votes>0</votes>
+            <spoiler_flag>false</spoiler_flag>
+            <spoilers_state>none</spoilers_state>
+            <shelves>
+              <shelf name="to-read" />
+              <shelf name="test" />
+            </shelves>
+            <recommended_for></recommended_for>
+            <recommended_by></recommended_by>
+            <started_at></started_at>
+            <read_at></read_at>
+            <date_added>Thu May 01 20:37:22 -0700 2014</date_added>
+            <date_updated>Thu May 01 20:37:22 -0700 2014</date_updated>
+            <read_count></read_count>
+            <body>
+
+            </body>
+            <comments_count>review_comments_count</comments_count>
+            <url><![CDATA[http://www.goodreads.com/review/show/926189322]]></url>
+            <link><![CDATA[http://www.goodreads.com/review/show/926189322]]></link>
+            <owned>0</owned>
+          </my_review>
+          <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+          <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">1</books_count>
+        <id type="integer">14211519</id>
+        <original_publication_day type="integer">1</original_publication_day>
+        <original_publication_month type="integer">1</original_publication_month>
+        <original_publication_year type="integer">1979</original_publication_year>
+        <ratings_count type="integer">1</ratings_count>
+        <text_reviews_count type="integer">0</text_reviews_count>
+        <average_rating>3.00</average_rating>
+        <best_book type="Book">
+          <id type="integer">9328265</id>
+          <title>Archer</title>
+          <author>
+            <id type="integer">53420</id>
+            <name>Alan Clark</name>
+          </author>
+          <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+          <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">1</books_count>
+        <id type="integer">22124532</id>
+        <original_publication_day type="integer">9</original_publication_day>
+        <original_publication_month type="integer">8</original_publication_month>
+        <original_publication_year type="integer">2012</original_publication_year>
+        <ratings_count type="integer">1</ratings_count>
+        <text_reviews_count type="integer">1</text_reviews_count>
+        <average_rating>3.00</average_rating>
+        <best_book type="Book">
+          <id type="integer">16195434</id>
+          <title>Archer</title>
+          <author>
+            <id type="integer">6598179</id>
+            <name>Brendan Perry</name>
+          </author>
+          <image_url>http://d.gr-assets.com/books/1355119436m/16195434.jpg</image_url>
+          <small_image_url>http://d.gr-assets.com/books/1355119436s/16195434.jpg</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">18</books_count>
+        <id type="integer">165862</id>
+        <original_publication_day type="integer" nil="true"/>
+        <original_publication_month type="integer" nil="true"/>
+        <original_publication_year type="integer">1993</original_publication_year>
+        <ratings_count type="integer">1845</ratings_count>
+        <text_reviews_count type="integer">58</text_reviews_count>
+        <average_rating>3.86</average_rating>
+        <best_book type="Book">
+          <id type="integer">171759</id>
+          <title>The Apothecary Rose (Owen Archer, #1)</title>
+          <author>
+            <id type="integer">2622364</id>
+            <name>Candace Robb</name>
+          </author>
+          <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+          <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        </best_book>
+      </work>
+
+      <work>
+        <books_count type="integer">40</books_count>
+        <id type="integer">520878</id>
+        <original_publication_day type="integer">31</original_publication_day>
+        <original_publication_month type="integer">12</original_publication_month>
+        <original_publication_year type="integer">1985</original_publication_year>
+        <ratings_count type="integer">10689</ratings_count>
+        <text_reviews_count type="integer">227</text_reviews_count>
+        <average_rating>3.83</average_rating>
+        <best_book type="Book">
+          <id type="integer">78970</id>
+          <title>A Matter of Honor</title>
+          <author>
+            <id type="integer">4820</id>
+            <name>Jeffrey Archer</name>
+          </author>
+          <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+          <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        </best_book>
+      </work>
+
+    </results>
+  </search>
+
+</GoodreadsResponse>

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{50F37359-1DEA-47AB-9249-EA864608911C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Epiphany.ViewModel</RootNamespace>
+    <AssemblyName>Epiphany.ViewModel</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <Folder Include="Items\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\AsyncCommand.cs" />
+    <Compile Include="Base\CancelEventArgs.cs" />
+    <Compile Include="Base\Command.cs" />
+    <Compile Include="Base\CommandBase.cs" />
+    <Compile Include="Base\DataViewModel.cs" />
+    <Compile Include="Base\ExecutedEventArgs.cs" />
+    <Compile Include="Base\ICommand.cs" />
+    <Compile Include="Base\ItemViewModel.cs" />
+    <Compile Include="Base\UriBuilder.cs" />
+    <Compile Include="Base\SourceModel.cs" />
+    <Compile Include="Base\ViewModelBase.cs" />
+    <Compile Include="Base\ViewModelParameter.cs" />
+    <Compile Include="Base\VoidType.cs" />
+    <Compile Include="Commands\AddShelfCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\FetchAuthorCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\FetchBookCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\FetchFeedCommand.cs" />
+    <Compile Include="Commands\FetchGroupCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\LikeOnFacebookCommand.cs" />
+    <Compile Include="Commands\Login\CheckUriCommand.cs" />
+    <Compile Include="Commands\Login\FinishLoginCommand.cs" />
+    <Compile Include="Commands\Login\LoginCommand.cs" />
+    <Compile Include="Commands\Login\VerifyLoginCommand.cs" />
+    <Compile Include="Commands\Navigation\GoBackCommand.cs" />
+    <Compile Include="Commands\Navigation\ShowOptionsCommand.cs" />
+    <Compile Include="Commands\RateAppCommand.cs" />
+    <Compile Include="Commands\SaveFeedOptionsCommand.cs" />
+    <Compile Include="Data\AboutViewModel.cs" />
+    <Compile Include="Data\FeedOptionsViewModel.cs" />
+    <Compile Include="Data\FeedViewModel.cs" />
+    <Compile Include="Data\HomeViewModel.cs" />
+    <Compile Include="Data\LogonViewModel.cs" />
+    <Compile Include="FeedOptions.cs" />
+    <Compile Include="IFeedOptionsViewModel.cs" />
+    <Compile Include="Settings\IAppSettings.cs" />
+    <Compile Include="Interfaces\IAboutViewModel.cs" />
+    <Compile Include="Interfaces\IAddBookViewModel.cs" />
+    <Compile Include="Interfaces\IBookViewModel.cs" />
+    <Compile Include="Interfaces\ICustomBookshelfItemViewModel.cs" />
+    <Compile Include="Interfaces\IFeedItemViewModel.cs" />
+    <Compile Include="Interfaces\IFeedViewModel.cs" />
+    <Compile Include="Interfaces\IHomeViewModel.cs" />
+    <Compile Include="Interfaces\ILauncherViewModel.cs" />
+    <Compile Include="Interfaces\ILogonViewModel.cs" />
+    <Compile Include="ISettingsViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IAppRateService.cs" />
+    <Compile Include="Services\INavigationOperation.cs" />
+    <Compile Include="Services\INavigationService.cs" />
+    <Compile Include="Services\ITimer.cs" />
+    <Compile Include="Services\ITimerService.cs" />
+    <Compile Include="Services\IUrlLauncher.cs" />
+    <Compile Include="SettingsViewModel.cs" />
+    <Compile Include="Settings\SettingsChangedEventArgs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Epiphany.Model\Epiphany.Model.csproj">
+      <Project>{d4ededd9-ccd4-43d9-821b-9731c187802e}</Project>
+      <Name>Epiphany.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4EDEDD9-CCD4-43D9-821B-9731C187802E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Epiphany.Model</RootNamespace>
+    <AssemblyName>Epiphany.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Adapter\AuthorAdapter.cs" />
+    <Compile Include="Adapter\BookAdapter.cs" />
+    <Compile Include="Adapter\BookshelfAdapter.cs" />
+    <Compile Include="Adapter\CommentAdapter.cs" />
+    <Compile Include="Adapter\EventAdapter.cs" />
+    <Compile Include="Adapter\FeedItemAdapter.cs" />
+    <Compile Include="Adapter\GroupAdapter.cs" />
+    <Compile Include="Adapter\IAdapter.cs" />
+    <Compile Include="Adapter\NotificationAdapter.cs" />
+    <Compile Include="Adapter\ProfileAdapter.cs" />
+    <Compile Include="Adapter\ReviewAdapter.cs" />
+    <Compile Include="Adapter\TopicAdapter.cs" />
+    <Compile Include="Adapter\UserAdapter.cs" />
+    <Compile Include="Adapter\UserStatusAdapter.cs" />
+    <Compile Include="Adapter\WorkAdapter.cs" />
+    <Compile Include="Authentication\AuthConfig.cs" />
+    <Compile Include="Authentication\Credential.cs" />
+    <Compile Include="Authentication\Session.cs" />
+    <Compile Include="Authentication\SessionChangedEventArgs.cs" />
+    <Compile Include="Authentication\Token.cs" />
+    <Compile Include="Collections\IAsyncEnumerable.cs" />
+    <Compile Include="Collections\IAsyncEnumerator.cs" />
+    <Compile Include="Collections\INotifyCollectionReset.cs" />
+    <Compile Include="Collections\IPagedCollection.cs" />
+    <Compile Include="Collections\PagedCollection.cs" />
+    <Compile Include="Collections\PagedCollectionEnumerator.cs" />
+    <Compile Include="Collections\TimedCache.cs" />
+    <Compile Include="Converter.cs" />
+    <Compile Include="DataSources\DataSource.cs" />
+    <Compile Include="DataSources\IDataSource.cs" />
+    <Compile Include="DataSources\IPagedDataSource.cs" />
+    <Compile Include="DataSources\PagedDataSource.cs" />
+    <Compile Include="Entity\AuthorModel.cs" />
+    <Compile Include="Entity\BookLinkModel.cs" />
+    <Compile Include="Entity\BookModel.cs" />
+    <Compile Include="Entity\BookshelfModel.cs" />
+    <Compile Include="Entity\CommentModel.cs" />
+    <Compile Include="Entity\Entity.cs" />
+    <Compile Include="Entity\FeedItemModel.cs" />
+    <Compile Include="Entity\FriendFeedItemModel.cs" />
+    <Compile Include="Entity\GroupFolderModel.cs" />
+    <Compile Include="Entity\GroupModel.cs" />
+    <Compile Include="Entity\IEntity.cs" />
+    <Compile Include="Entity\LiteraryEventModel.cs" />
+    <Compile Include="Entity\ModeratorModel.cs" />
+    <Compile Include="Entity\NotificationModel.cs" />
+    <Compile Include="Entity\ProfileModel.cs" />
+    <Compile Include="Entity\ReadStatusFeedItemModel.cs" />
+    <Compile Include="Entity\ReviewFeedItemModel.cs" />
+    <Compile Include="Entity\ReviewModel.cs" />
+    <Compile Include="Entity\ShelfInformation.cs" />
+    <Compile Include="Entity\TopicModel.cs" />
+    <Compile Include="Entity\UserModel.cs" />
+    <Compile Include="Entity\UserStatusFeedItemModel.cs" />
+    <Compile Include="Entity\UserStatusModel.cs" />
+    <Compile Include="Entity\WorkModel.cs" />
+    <Compile Include="Messaging\AddReviewMessage.cs" />
+    <Compile Include="Messaging\Base\IMessage.cs" />
+    <Compile Include="Messaging\Base\IMessageSubscription.cs" />
+    <Compile Include="Messaging\Base\IMessenger.cs" />
+    <Compile Include="Messaging\Base\MessageBase.cs" />
+    <Compile Include="Messaging\BookAddedOrRemovedMessage.cs" />
+    <Compile Include="Messaging\GenericMessage.cs" />
+    <Compile Include="Messaging\MessageSubscription.cs" />
+    <Compile Include="Messaging\Messenger.cs" />
+    <Compile Include="Messaging\ReviewAddedOrEditedMessage.cs" />
+    <Compile Include="Messaging\SessionChangedMessage.cs" />
+    <Compile Include="ModelException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\ISettingStorage.cs" />
+    <Compile Include="Settings\ModelSettings.cs" />
+    <Compile Include="Services\AuthorService.cs" />
+    <Compile Include="Services\BookService.cs" />
+    <Compile Include="Services\BookshelfService.cs" />
+    <Compile Include="Services\Cache\CachedAuthorService.cs" />
+    <Compile Include="Services\Cache\CachedBookService.cs" />
+    <Compile Include="Services\Cache\CachedBookshelfService.cs" />
+    <Compile Include="Services\Cache\CachedReviewService.cs" />
+    <Compile Include="Services\Cache\CachedUserService.cs" />
+    <Compile Include="Services\EventService.cs" />
+    <Compile Include="Services\GroupService.cs" />
+    <Compile Include="Services\Interfaces\IAuthorService.cs" />
+    <Compile Include="Services\Interfaces\IAuthService.cs" />
+    <Compile Include="Services\Interfaces\IBookService.cs" />
+    <Compile Include="Services\Interfaces\IBookshelfService.cs" />
+    <Compile Include="Services\Interfaces\IEventService.cs" />
+    <Compile Include="Services\Interfaces\IGroupService.cs" />
+    <Compile Include="Services\Interfaces\ILogonService.cs" />
+    <Compile Include="Services\Interfaces\INotificationService.cs" />
+    <Compile Include="Services\Interfaces\IReviewService.cs" />
+    <Compile Include="Services\Interfaces\IStatusService.cs" />
+    <Compile Include="Services\Interfaces\IUserService.cs" />
+    <Compile Include="Services\LogonService.cs" />
+    <Compile Include="Services\NotificationService.cs" />
+    <Compile Include="Services\ReviewService.cs" />
+    <Compile Include="Services\ServiceFactory.cs" />
+    <Compile Include="Services\StatusService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="ServiceUrls.cs" />
+    <Compile Include="Settings\SettingTags.cs" />
+    <Compile Include="Web\IWebClient.cs" />
+    <Compile Include="Web\WebRequest.cs" />
+    <Compile Include="Web\WebResponse.cs" />
+    <Compile Include="Web\WebResponseValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Epiphany.Xml\Epiphany.Xml.csproj">
+      <Project>{0cbd2a4b-b8ed-466b-8e12-ad66e984467b}</Project>
+      <Name>Epiphany.Xml</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

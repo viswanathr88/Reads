@@ -1,0 +1,1336 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>false</authentication>
+    <method><![CDATA[]]></method>
+  </Request>
+  <updates type="array">
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 141 of 228 of <a href="http://www.goodreads.com/book/show/8563789-where-things-come-back">Where Things Come Back</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947408</link>
+      <image_url>http://d.gr-assets.com/books/1330581469s/8563789.jpg</image_url>
+      <actor>
+        <id type="integer">28080413</id>
+        <name>Xana</name>
+        <image_url>http://d.gr-assets.com/users/1395789301p2/28080413.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/28080413-xana</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:08:26 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 47 of 246 of <a href="http://www.goodreads.com/book/show/20294156-raw-faith">Raw Faith</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947407</link>
+      <image_url>http://d.gr-assets.com/books/1388960821s/20294156.jpg</image_url>
+      <actor>
+        <id type="integer">10726512</id>
+        <name>Kristen</name>
+        <image_url>http://s.gr-assets.com/assets/nophoto/user/f_50x66-e0ba3b90c110cd67123d6a850d85373e.png</image_url>
+        <link>http://www.goodreads.com/user/show/10726512-kristen</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:08:26 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 71% done with <a href="http://www.goodreads.com/book/show/11870085-the-fault-in-our-stars">The Fault in Our Stars</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947406</link>
+      <image_url>http://d.gr-assets.com/books/1360206420s/11870085.jpg</image_url>
+      <actor>
+        <id type="integer">5183535</id>
+        <name>Brian</name>
+        <image_url>http://d.gr-assets.com/users/1301203325p2/5183535.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/5183535-brian</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:08:25 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 80% done with <a href="http://www.goodreads.com/book/show/8930197-night-embrace">Night Embrace</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947405</link>
+      <image_url>http://d.gr-assets.com/books/1362612294s/8930197.jpg</image_url>
+      <actor>
+        <id type="integer">27259771</id>
+        <name>Christine Jeffers busser</name>
+        <image_url>http://d.gr-assets.com/users/1388701219p2/27259771.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/27259771-christine-jeffers-busser</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:08:24 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 45 of 387 of <a href="http://www.goodreads.com/book/show/3410425-divine-justice">Divine Justice</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947404</link>
+      <image_url>http://d.gr-assets.com/books/1336266873s/3410425.jpg</image_url>
+      <actor>
+        <id type="integer">26471554</id>
+        <name>Mdcalik</name>
+        <image_url>http://s.gr-assets.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png</image_url>
+        <link>http://www.goodreads.com/user/show/26471554-mdcalik</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:08:23 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 22% done with <a href="http://www.goodreads.com/book/show/8886579-matched">Matched</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947403</link>
+      <image_url>http://d.gr-assets.com/books/1342383797s/8886579.jpg</image_url>
+      <actor>
+        <id type="integer">7110556</id>
+        <name>Darcee</name>
+        <image_url>http://d.gr-assets.com/users/1323193452p2/7110556.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/7110556-darcee</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:08:22 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 41% done with <a href="http://www.goodreads.com/book/show/17793631-abaddon-s-gate">Abaddon's Gate</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947402</link>
+      <image_url>http://d.gr-assets.com/books/1365781139s/17793631.jpg</image_url>
+      <actor>
+        <id type="integer">25825588</id>
+        <name>Jonathan</name>
+        <image_url>http://d.gr-assets.com/users/1385564131p2/25825588.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/25825588-jonathan</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:08:22 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 205 of 359 of <a href="http://www.goodreads.com/book/show/7766027-i-hunt-killers">I Hunt Killers</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947401</link>
+      <image_url>http://d.gr-assets.com/books/1333289403s/7766027.jpg</image_url>
+      <actor>
+        <id type="integer">5259779</id>
+        <name>Sydeli</name>
+        <image_url>http://d.gr-assets.com/users/1355046821p2/5259779.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/5259779-sydeli</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:08:19 -0700</updated_at>
+      <body><![CDATA[JAZZ HOW FREAKING STUPID ARE YOU]]></body>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 132 of 372 of <a href="http://www.goodreads.com/book/show/18693715-prototype">Prototype</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947400</link>
+      <image_url>http://d.gr-assets.com/books/1385784489s/18693715.jpg</image_url>
+      <actor>
+        <id type="integer">22079947</id>
+        <name>Erika</name>
+        <image_url>http://d.gr-assets.com/users/1401716777p2/22079947.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/22079947-erika</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:08:15 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 213 of 292 of <a href="http://www.goodreads.com/book/show/10766509-the-best-of-me">The Best of Me</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947399</link>
+      <image_url>http://d.gr-assets.com/books/1301685366s/10766509.jpg</image_url>
+      <actor>
+        <id type="integer">14286846</id>
+        <name>Amanda</name>
+        <image_url>http://d.gr-assets.com/users/1352312227p2/14286846.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/14286846-amanda</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:08:13 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is finished with <a href="http://www.goodreads.com/book/show/13557624-magnificent-devices">Magnificent Devices</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947398</link>
+      <image_url>http://d.gr-assets.com/books/1343272680s/13557624.jpg</image_url>
+      <actor>
+        <id type="integer">15927767</id>
+        <name>Lenora</name>
+        <image_url>http://d.gr-assets.com/users/1358784033p2/15927767.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/15927767-lenora</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:08:12 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 26% done with <a href="http://www.goodreads.com/book/show/19015729-twisted-together">Twisted Together</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947397</link>
+      <image_url>http://d.gr-assets.com/books/1387550441s/19015729.jpg</image_url>
+      <actor>
+        <id type="integer">6805355</id>
+        <name>Jennifer Young</name>
+        <image_url>http://d.gr-assets.com/users/1401638736p2/6805355.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/6805355-jennifer-young</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:08:09 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 128 of 384 of <a href="http://www.goodreads.com/book/show/20820994-i-ll-give-you-the-sun">I'll Give You the Sun</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947396</link>
+      <image_url>http://d.gr-assets.com/books/1392575990s/20820994.jpg</image_url>
+      <actor>
+        <id type="integer">16751097</id>
+        <name>Ursula Uriarte</name>
+        <image_url>http://d.gr-assets.com/users/1359009893p2/16751097.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/16751097-ursula-uriarte</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:08:06 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 137 of 217 of <a href="http://www.goodreads.com/book/show/2413331.Sweethearts">Sweethearts</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947395</link>
+      <image_url>http://d.gr-assets.com/books/1402635563s/2413331.jpg</image_url>
+      <actor>
+        <id type="integer">26163422</id>
+        <name>madelynn</name>
+        <image_url>http://d.gr-assets.com/users/1400168764p2/26163422.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/26163422-madelynn</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:08:01 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 260 of 454 of <a href="http://www.goodreads.com/book/show/6457229-the-monstrumologist">The Monstrumologist</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947394</link>
+      <image_url>http://d.gr-assets.com/books/1307409930s/6457229.jpg</image_url>
+      <actor>
+        <id type="integer">13936874</id>
+        <name>Anna Lemaster</name>
+        <image_url>http://s.gr-assets.com/assets/nophoto/user/f_50x66-e0ba3b90c110cd67123d6a850d85373e.png</image_url>
+        <link>http://www.goodreads.com/user/show/13936874-anna-lemaster</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:08:00 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is starting <a href="http://www.goodreads.com/book/show/16126082-brilliant-devices">Brilliant Devices</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947393</link>
+      <image_url>http://d.gr-assets.com/books/1356465636s/16126082.jpg</image_url>
+      <actor>
+        <id type="integer">15927767</id>
+        <name>Lenora</name>
+        <image_url>http://d.gr-assets.com/users/1358784033p2/15927767.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/15927767-lenora</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:58 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is reading <a href="http://www.goodreads.com/book/show/17880714-crashed">Crashed</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947392</link>
+      <image_url>http://d.gr-assets.com/books/1391008361s/17880714.jpg</image_url>
+      <actor>
+        <id type="integer">11955081</id>
+        <name>Gemma</name>
+        <image_url>http://d.gr-assets.com/users/1351952188p2/11955081.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/11955081-gemma</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:08:00 -0700</updated_at>
+      <body><![CDATA[I can't get myself into reading this tonight. I just watched tfios movie and my mind is still reeling on it.]]></body>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 113 of 259 of <a href="http://www.goodreads.com/book/show/13667.The_Farthest_Shore">The Farthest Shore</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947391</link>
+      <image_url>http://d.gr-assets.com/books/1388200537s/13667.jpg</image_url>
+      <actor>
+        <id type="integer">25116721</id>
+        <name>Alexander Lyons</name>
+        <image_url>http://d.gr-assets.com/users/1382973456p2/25116721.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/25116721-alexander-lyons</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:57 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 174 of 304 of <a href="http://www.goodreads.com/book/show/2527900.Nudge">Nudge</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947390</link>
+      <image_url>http://d.gr-assets.com/books/1328828013s/2527900.jpg</image_url>
+      <actor>
+        <id type="integer">1456570</id>
+        <name>Guz</name>
+        <image_url>http://s.gr-assets.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png</image_url>
+        <link>http://www.goodreads.com/user/show/1456570-guz</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:53 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 48 of 216 of <a href="http://www.goodreads.com/book/show/11350683-the-missing-twin">The Missing Twin</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947389</link>
+      <image_url>http://d.gr-assets.com/books/1348359839s/11350683.jpg</image_url>
+      <actor>
+        <id type="integer">5233781</id>
+        <name>Nathalie</name>
+        <image_url>http://d.gr-assets.com/users/1302151544p2/5233781.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/5233781-nathalie</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:53 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 218 of 336 of <a href="http://www.goodreads.com/book/show/216196.The_Burn_Journals">The Burn Journals</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947388</link>
+      <image_url>http://d.gr-assets.com/books/1388561751s/216196.jpg</image_url>
+      <actor>
+        <id type="integer">19778929</id>
+        <name>Steph</name>
+        <image_url>http://d.gr-assets.com/users/1393402208p2/19778929.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/19778929-steph</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:52 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 149 of 432 of <a href="http://www.goodreads.com/book/show/10055424-the-enemy">The Enemy</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947387</link>
+      <image_url>http://d.gr-assets.com/books/1386404952s/10055424.jpg</image_url>
+      <actor>
+        <id type="integer">22175956</id>
+        <name>Leovely</name>
+        <image_url>http://d.gr-assets.com/users/1397243360p2/22175956.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/22175956-leovely</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:52 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 17% done with <a href="http://www.goodreads.com/book/show/6314763-orange-is-the-new-black">Orange Is the New Black</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947386</link>
+      <image_url>http://d.gr-assets.com/books/1320520714s/6314763.jpg</image_url>
+      <actor>
+        <id type="integer">2369258</id>
+        <name>Maria</name>
+        <image_url>http://d.gr-assets.com/users/1399525717p2/2369258.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/2369258-maria</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:50 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 188 of 320 of <a href="http://www.goodreads.com/book/show/18271235-we-are-called-to-rise">We Are Called to Rise</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947385</link>
+      <image_url>http://d.gr-assets.com/books/1394990512s/18271235.jpg</image_url>
+      <actor>
+        <id type="integer">5456693</id>
+        <name>Brandy</name>
+        <image_url>http://d.gr-assets.com/users/1371562694p2/5456693.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/5456693-brandy</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:50 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 9% done with <a href="http://www.goodreads.com/book/show/18505796-10-happier">10% Happier</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947384</link>
+      <image_url>http://d.gr-assets.com/books/1397426977s/18505796.jpg</image_url>
+      <actor>
+        <id type="integer">3835852</id>
+        <name>Wilf Wilson</name>
+        <image_url>http://d.gr-assets.com/users/1309096291p2/3835852.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/3835852-wilf-wilson</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:52 -0700</updated_at>
+      <body><![CDATA[Dunno if I'll finish this]]></body>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 312 of 369 of <a href="http://www.goodreads.com/book/show/18007564-the-martian">The Martian</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947383</link>
+      <image_url>http://d.gr-assets.com/books/1377707689s/18007564.jpg</image_url>
+      <actor>
+        <id type="integer">30918521</id>
+        <name>Wendy</name>
+        <image_url>http://s.gr-assets.com/assets/nophoto/user/f_50x66-e0ba3b90c110cd67123d6a850d85373e.png</image_url>
+        <link>http://www.goodreads.com/user/show/30918521-wendy</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:45 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 10 of 403 of <a href="http://www.goodreads.com/book/show/10959.Sophie_s_World">Sophie's World</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947382</link>
+      <image_url>http://d.gr-assets.com/books/1343459906s/10959.jpg</image_url>
+      <actor>
+        <id type="integer">29074415</id>
+        <name>Niloofar</name>
+        <image_url>http://d.gr-assets.com/users/1395057867p2/29074415.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/29074415-niloofar</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:37 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 282 of 360 of <a href="http://www.goodreads.com/book/show/7631105-the-scorch-trials">The Scorch Trials</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947381</link>
+      <image_url>http://d.gr-assets.com/books/1388240248s/7631105.jpg</image_url>
+      <actor>
+        <id type="integer">30602594</id>
+        <name>Irene Figueruelo huertos</name>
+        <image_url>http://d.gr-assets.com/users/1397675076p2/30602594.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/30602594-irene-figueruelo-huertos</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:37 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 176 of 466 of <a href="http://www.goodreads.com/book/show/11408650-the-unbecoming-of-mara-dyer">The Unbecoming of Mara Dyer</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947380</link>
+      <image_url>http://d.gr-assets.com/books/1336655755s/11408650.jpg</image_url>
+      <actor>
+        <id type="integer">7189060</id>
+        <name>Reese</name>
+        <image_url>http://d.gr-assets.com/users/1398091418p2/7189060.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/7189060-reese</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:35 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 172 of 480 of <a href="http://www.goodreads.com/book/show/382870.A_College_of_Magics">A College of Magics</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947379</link>
+      <image_url>http://d.gr-assets.com/books/1389326269s/382870.jpg</image_url>
+      <actor>
+        <id type="integer">23079142</id>
+        <name>Coolcurry</name>
+        <image_url>http://d.gr-assets.com/users/1390711460p2/23079142.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/23079142-coolcurry</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:33 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 23% done with <a href="http://www.goodreads.com/book/show/18465657-the-one-only">The One & Only</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947378</link>
+      <image_url>http://d.gr-assets.com/books/1387399626s/18465657.jpg</image_url>
+      <actor>
+        <id type="integer">9152342</id>
+        <name>Bryce Keesee</name>
+        <image_url>http://d.gr-assets.com/users/1396201139p2/9152342.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/9152342-bryce-keesee</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:34 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 36% done with <a href="http://www.goodreads.com/book/show/20761530-real-vampires-take-a-bite-out-of-christmas">Real Vampires Take a Bite Out of Christmas</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947377</link>
+      <image_url>http://d.gr-assets.com/books/1391995071s/20761530.jpg</image_url>
+      <actor>
+        <id type="integer">10508340</id>
+        <name>Amber Giffen</name>
+        <image_url>http://d.gr-assets.com/users/1374047537p2/10508340.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/10508340-amber-giffen</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:29 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 40 of 614 of <a href="http://www.goodreads.com/book/show/30597.The_Hunchback_of_Notre_Dame">The Hunchback of Notre-Dame</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947376</link>
+      <image_url>http://d.gr-assets.com/books/1388342667s/30597.jpg</image_url>
+      <actor>
+        <id type="integer">31729030</id>
+        <name>Annette Rosado</name>
+        <image_url>http://d.gr-assets.com/users/1401744558p2/31729030.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/31729030-annette-rosado</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:27 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 150 of 336 of <a href="http://www.goodreads.com/book/show/51606.Johnny_Got_His_Gun">Johnny Got His Gun</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947375</link>
+      <image_url>http://d.gr-assets.com/books/1386925458s/51606.jpg</image_url>
+      <actor>
+        <id type="integer">27099760</id>
+        <name>Terri</name>
+        <image_url>http://d.gr-assets.com/users/1388317927p2/27099760.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/27099760-terri</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:27 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 7% done with <a href="http://www.goodreads.com/book/show/17333575-the-abominable">The Abominable</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947374</link>
+      <image_url>http://d.gr-assets.com/books/1400843845s/17333575.jpg</image_url>
+      <actor>
+        <id type="integer">4472316</id>
+        <name>Zulfiya</name>
+        <image_url>http://d.gr-assets.com/users/1339961562p2/4472316.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/4472316-zulfiya</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:25 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 5% done with <a href="http://www.goodreads.com/book/show/19400355-once-upon-a-summer">Once Upon a Summer</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947373</link>
+      <image_url>http://d.gr-assets.com/books/1394807417s/19400355.jpg</image_url>
+      <actor>
+        <id type="integer">4173875</id>
+        <name>Sharon</name>
+        <image_url>http://d.gr-assets.com/users/1302194678p2/4173875.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/4173875-sharon</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:26 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 150 of 416 of <a href="http://www.goodreads.com/book/show/9375.Fried_Green_Tomatoes_at_the_Whistle_Stop_Cafe">Fried Green Tomatoes at the Whistle Stop Cafe</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947372</link>
+      <image_url>http://d.gr-assets.com/books/1165961740s/9375.jpg</image_url>
+      <actor>
+        <id type="integer">7110556</id>
+        <name>Darcee</name>
+        <image_url>http://d.gr-assets.com/users/1323193452p2/7110556.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/7110556-darcee</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:25 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 380 of 565 of <a href="http://www.goodreads.com/book/show/18335634-clockwork-princess">Clockwork Princess</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947371</link>
+      <image_url>http://d.gr-assets.com/books/1376663659s/18335634.jpg</image_url>
+      <actor>
+        <id type="integer">19485844</id>
+        <name>Charley Adams</name>
+        <image_url>http://d.gr-assets.com/users/1400704132p2/19485844.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/19485844-charley-adams</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:27 -0700</updated_at>
+      <body><![CDATA[*sigh*]]></body>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[In the mood for bad boy biker novels ;D This mood doesn't come around often but when it does...&lt;333]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947370</link>
+      <image_url></image_url>
+      <actor>
+        <id type="integer">2619039</id>
+        <name>Nisha</name>
+        <image_url>http://d.gr-assets.com/users/1362316440p2/2619039.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/2619039-nisha</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:20 -0700</updated_at>
+      <body><![CDATA[In the mood for bad boy biker novels ;D This mood doesn't come around often but when it does...&lt;333]]></body>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 226 of 256 of <a href="http://www.goodreads.com/book/show/18456183-simple-perfection">Simple Perfection</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947369</link>
+      <image_url>http://d.gr-assets.com/books/1386532609s/18456183.jpg</image_url>
+      <actor>
+        <id type="integer">26889736</id>
+        <name>Nadya Nabila</name>
+        <image_url>http://d.gr-assets.com/users/1394857246p2/26889736.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/26889736-nadya-nabila</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:19 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 30 of 240 of <a href="http://www.goodreads.com/book/show/3623222-daniel-leader-s-kit-with-dvds">Daniel Leader's Kit with DVDs</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947368</link>
+      <image_url>http://d.gr-assets.com/books/1372683883s/3623222.jpg</image_url>
+      <actor>
+        <id type="integer">1589557</id>
+        <name>christie</name>
+        <image_url>http://s.gr-assets.com/assets/nophoto/user/f_50x66-e0ba3b90c110cd67123d6a850d85373e.png</image_url>
+        <link>http://www.goodreads.com/user/show/1589557-christie</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:16 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 228 of 416 of <a href="http://www.goodreads.com/book/show/6562.Creature">Creature</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947367</link>
+      <image_url>http://d.gr-assets.com/books/1388847241s/6562.jpg</image_url>
+      <actor>
+        <id type="integer">11010188</id>
+        <name>Nicole</name>
+        <image_url>http://d.gr-assets.com/users/1343507716p2/11010188.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/11010188-nicole</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:16 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is finished with <a href="http://www.goodreads.com/book/show/11870085-the-fault-in-our-stars">The Fault in Our Stars</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947366</link>
+      <image_url>http://d.gr-assets.com/books/1360206420s/11870085.jpg</image_url>
+      <actor>
+        <id type="integer">31427971</id>
+        <name>Jeremy Paula</name>
+        <image_url>http://s.gr-assets.com/assets/nophoto/user/m_50x66-e89fc14c32a41c0eb4298dfafe929b65.png</image_url>
+        <link>http://www.goodreads.com/user/show/31427971-jeremy-paula</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:17 -0700</updated_at>
+      <body><![CDATA[I enjoyed the book and cried over it during and after having finished it. I really liked the protagonists and I think it's the whole teenage angst and other problems they faced in life that made them relatable. I also loved their conversations; they were very witty and intellectual I what they had to say. John Green did a great job!]]></body>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 242 of 448 of <a href="http://www.goodreads.com/book/show/17262142-the-plague-forge">The Plague Forge</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947365</link>
+      <image_url>http://d.gr-assets.com/books/1363836946s/17262142.jpg</image_url>
+      <actor>
+        <id type="integer">2134184</id>
+        <name>Clarke Fielding</name>
+        <image_url>http://d.gr-assets.com/users/1296692058p2/2134184.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/2134184-clarke-fielding</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:06 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 256 of 360 of <a href="http://www.goodreads.com/book/show/72429.Harry_Potter_Y_El_Prisionero_De_Azkaban">Harry Potter Y El Prisionero De Azkaban</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947364</link>
+      <image_url>http://d.gr-assets.com/books/1266465811s/72429.jpg</image_url>
+      <actor>
+        <id type="integer">7250775</id>
+        <name>Marthita</name>
+        <image_url>http://d.gr-assets.com/users/1385491402p2/7250775.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/7250775-marthita</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:08 -0700</updated_at>
+      <body><![CDATA[Ojala y se hubiera visto como Gryffindor le pateaba el trasero a Slytherin en la Copa de Quidditch]]></body>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 49 of 296 of <a href="http://www.goodreads.com/book/show/18756871-h-rins-barn">Húrins Barn</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947363</link>
+      <image_url>http://d.gr-assets.com/books/1383755053s/18756871.jpg</image_url>
+      <actor>
+        <id type="integer">22202937</id>
+        <name>Minh Ha</name>
+        <image_url>http://d.gr-assets.com/users/1389977590p2/22202937.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/22202937-minh-ha</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:05 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 29 of 127 of <a href="http://www.goodreads.com/book/show/14933288-deafness-and-hearing-loss">Deafness and Hearing Loss</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947362</link>
+      <image_url>http://d.gr-assets.com/books/1358734272s/14933288.jpg</image_url>
+      <actor>
+        <id type="integer">3103687</id>
+        <name>Sofia</name>
+        <image_url>http://d.gr-assets.com/users/1382435955p2/3103687.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/3103687-sofia</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:02 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 230 of 428 of <a href="http://www.goodreads.com/book/show/84351.The_Secret_History_of_the_Pink_Carnation">The Secret History of the Pink Carnation</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947361</link>
+      <image_url>http://d.gr-assets.com/books/1401644797s/84351.jpg</image_url>
+      <actor>
+        <id type="integer">3096266</id>
+        <name>Laura</name>
+        <image_url>http://d.gr-assets.com/users/1385769905p2/3096266.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/3096266-laura</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:07:02 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 86% done with <a href="http://www.goodreads.com/book/show/18770158-still-breathin">Still Breathin'</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947360</link>
+      <image_url>http://d.gr-assets.com/books/1386612340s/18770158.jpg</image_url>
+      <actor>
+        <id type="integer">5700740</id>
+        <name>Amber</name>
+        <image_url>http://d.gr-assets.com/users/1319739036p2/5700740.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/5700740-amber</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:56 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 35 of 288 of <a href="http://www.goodreads.com/book/show/12852666-the-age-of-miracles">The Age of Miracles</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947359</link>
+      <image_url>http://d.gr-assets.com/books/1345666831s/12852666.jpg</image_url>
+      <actor>
+        <id type="integer">2295390</id>
+        <name>Susan</name>
+        <image_url>http://d.gr-assets.com/users/1362326192p2/2295390.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/2295390-susan</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:58 -0700</updated_at>
+      <body><![CDATA[Love it so far. Wish the kiddos would leave me alone to read...]]></body>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 40 of 614 of <a href="http://www.goodreads.com/book/show/30597.The_Hunchback_of_Notre_Dame">The Hunchback of Notre-Dame</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947358</link>
+      <image_url>http://d.gr-assets.com/books/1388342667s/30597.jpg</image_url>
+      <actor>
+        <id type="integer">31729030</id>
+        <name>Annette Rosado</name>
+        <image_url>http://d.gr-assets.com/users/1401744558p2/31729030.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/31729030-annette-rosado</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:56 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 60 of 368 of <a href="http://www.goodreads.com/book/show/17262127-the-funeral-dress">The Funeral Dress</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947357</link>
+      <image_url>http://d.gr-assets.com/books/1369434613s/17262127.jpg</image_url>
+      <actor>
+        <id type="integer">1589557</id>
+        <name>christie</name>
+        <image_url>http://s.gr-assets.com/assets/nophoto/user/f_50x66-e0ba3b90c110cd67123d6a850d85373e.png</image_url>
+        <link>http://www.goodreads.com/user/show/1589557-christie</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:55 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 128 of 403 of <a href="http://www.goodreads.com/book/show/28078.The_Birth_of_Venus">The Birth of Venus</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947356</link>
+      <image_url>http://d.gr-assets.com/books/1388195878s/28078.jpg</image_url>
+      <actor>
+        <id type="integer">22611583</id>
+        <name>Danielle</name>
+        <image_url>http://d.gr-assets.com/users/1379895647p2/22611583.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/22611583-danielle</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:56 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 162 of 232 of <a href="http://www.goodreads.com/book/show/16280042-hide-and-seek">Hide and Seek</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947355</link>
+      <image_url>http://d.gr-assets.com/books/1354830662s/16280042.jpg</image_url>
+      <actor>
+        <id type="integer">6907424</id>
+        <name>Kel</name>
+        <image_url>http://d.gr-assets.com/users/1352522575p2/6907424.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/6907424-kel</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:55 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 130 of 305 of <a href="http://www.goodreads.com/book/show/9275658-legend">Legend</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947354</link>
+      <image_url>http://d.gr-assets.com/books/1397663963s/9275658.jpg</image_url>
+      <actor>
+        <id type="integer">14321439</id>
+        <name>Morgan</name>
+        <image_url>http://d.gr-assets.com/users/1402323703p2/14321439.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/14321439-morgan</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:54 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 129 of 384 of <a href="http://www.goodreads.com/book/show/22379919-sapphire-blue">Sapphire Blue</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947353</link>
+      <image_url>http://s.gr-assets.com/assets/nophoto/book/50x75-6121bf4c1f669098041843ec9650ca19.png</image_url>
+      <actor>
+        <id type="integer">7382101</id>
+        <name>Samantha S</name>
+        <image_url>http://d.gr-assets.com/users/1396645450p2/7382101.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/7382101-samantha-s</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:54 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 20% done with <a href="http://www.goodreads.com/book/show/16174841-risking-fate">Risking Fate</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947352</link>
+      <image_url>http://d.gr-assets.com/books/1354037132s/16174841.jpg</image_url>
+      <actor>
+        <id type="integer">20607838</id>
+        <name>Manda</name>
+        <image_url>http://d.gr-assets.com/users/1399427245p2/20607838.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/20607838-manda</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:55 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is reading <a href="http://www.goodreads.com/book/show/194746.No_Longer_Human">No Longer Human</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947350</link>
+      <image_url>http://d.gr-assets.com/books/1338660260s/194746.jpg</image_url>
+      <actor>
+        <id type="integer">3381634</id>
+        <name>Praj</name>
+        <image_url>http://d.gr-assets.com/users/1401885690p2/3381634.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/3381634-praj</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:56 -0700</updated_at>
+      <body>
+        <![CDATA[&lt;i&gt; I find it difficult to understand the kind of human being who lives, or who is sure he can live, purely, happily, serenely while engaged in deceit. Human beings never did teach me that abstruse secret. If I had only known that one thing I should never have had to dread human beings so,...&lt;/i&gt;
+ 
+ Yozo may have hit a little too close to home...]]>
+      </body>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 142 of 368 of <a href="http://www.goodreads.com/book/show/16684083-witchfall">Witchfall</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947349</link>
+      <image_url>http://d.gr-assets.com/books/1362429921s/16684083.jpg</image_url>
+      <actor>
+        <id type="integer">30141345</id>
+        <name>Emmalstreets</name>
+        <image_url>http://s.gr-assets.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png</image_url>
+        <link>http://www.goodreads.com/user/show/30141345-emmalstreets</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:53 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 104 of 316 of <a href="http://www.goodreads.com/book/show/18819489-the-fault-in-our-stars">The Fault in Our Stars</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947348</link>
+      <image_url>http://d.gr-assets.com/books/1384813070s/18819489.jpg</image_url>
+      <actor>
+        <id type="integer">14539222</id>
+        <name>Μαρία</name>
+        <image_url>http://d.gr-assets.com/users/1355077993p2/14539222.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/14539222</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:52 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 152 of 870 of <a href="http://www.goodreads.com/book/show/2.Harry_Potter_and_the_Order_of_the_Phoenix">Harry Potter and the Order of the Phoenix</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947347</link>
+      <image_url>http://d.gr-assets.com/books/1387141547s/2.jpg</image_url>
+      <actor>
+        <id type="integer">24521485</id>
+        <name>Amanda</name>
+        <image_url>http://d.gr-assets.com/users/1399658312p2/24521485.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/24521485-amanda</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:53 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 181 of 271 of <a href="http://www.goodreads.com/book/show/227443.Bridget_Jones_s_Diary">Bridget Jones's Diary</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947346</link>
+      <image_url>http://d.gr-assets.com/books/1292060045s/227443.jpg</image_url>
+      <actor>
+        <id type="integer">19526384</id>
+        <name>Kristin</name>
+        <image_url>http://d.gr-assets.com/users/1397526973p2/19526384.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/19526384-kristin</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:49 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 147 of 313 of <a href="http://www.goodreads.com/book/show/11870085-the-fault-in-our-stars">The Fault in Our Stars</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947345</link>
+      <image_url>http://d.gr-assets.com/books/1360206420s/11870085.jpg</image_url>
+      <actor>
+        <id type="integer">19334369</id>
+        <name>Ana</name>
+        <image_url>http://d.gr-assets.com/users/1397638358p2/19334369.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/19334369-ana</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:49 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 53% done with <a href="http://www.goodreads.com/book/show/17830611-the-amber-road">The Amber Road</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947344</link>
+      <image_url>http://d.gr-assets.com/books/1366357728s/17830611.jpg</image_url>
+      <actor>
+        <id type="integer">18814245</id>
+        <name>Jean-luc</name>
+        <image_url>http://s.gr-assets.com/assets/nophoto/user/m_50x66-e89fc14c32a41c0eb4298dfafe929b65.png</image_url>
+        <link>http://www.goodreads.com/user/show/18814245-jean-luc</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:46 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 235 of 336 of <a href="http://www.goodreads.com/book/show/10803121-the-alloy-of-law">The Alloy of Law</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947343</link>
+      <image_url>http://d.gr-assets.com/books/1402602975s/10803121.jpg</image_url>
+      <actor>
+        <id type="integer">4159427</id>
+        <name>Athena (Shardbearer)</name>
+        <image_url>http://d.gr-assets.com/users/1401733200p2/4159427.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/4159427-athena-shardbearer</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:48 -0700</updated_at>
+      <body>
+        <![CDATA[&lt;b&gt;Vindication&lt;/b&gt;
+ 
+ &lt;i&gt;Wasing the where of needing..&lt;/i&gt;]]>
+      </body>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 292 of 369 of <a href="http://www.goodreads.com/book/show/7735333-matched">Matched</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947342</link>
+      <image_url>http://d.gr-assets.com/books/1367706191s/7735333.jpg</image_url>
+      <actor>
+        <id type="integer">11263498</id>
+        <name>Jennifer</name>
+        <image_url>http://d.gr-assets.com/users/1343884639p2/11263498.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/11263498-jennifer</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:45 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 65 of 264 of <a href="http://www.goodreads.com/book/show/11672159-the-dark-wife">The Dark Wife</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947341</link>
+      <image_url>http://d.gr-assets.com/books/1393783729s/11672159.jpg</image_url>
+      <actor>
+        <id type="integer">7877350</id>
+        <name>Abby</name>
+        <image_url>http://d.gr-assets.com/users/1370234298p2/7877350.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/7877350-abby</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:44 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 23% done with <a href="http://www.goodreads.com/book/show/19265916-azagoth">Azagoth</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947340</link>
+      <image_url>http://d.gr-assets.com/books/1386437089s/19265916.jpg</image_url>
+      <actor>
+        <id type="integer">2097486</id>
+        <name>Jasmin</name>
+        <image_url>http://d.gr-assets.com/users/1288637809p2/2097486.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/2097486-jasmin</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:43 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 322 of 417 of <a href="http://www.goodreads.com/book/show/12326644-the-kingmaker-s-daughter">The Kingmaker's Daughter</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947339</link>
+      <image_url>http://d.gr-assets.com/books/1332688725s/12326644.jpg</image_url>
+      <actor>
+        <id type="integer">6092767</id>
+        <name>Isabell</name>
+        <image_url>http://d.gr-assets.com/users/1354451240p2/6092767.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/6092767-isabell</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:40 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 207 of 462 of <a href="http://www.goodreads.com/book/show/8318303-jane-eyre">Jane Eyre</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947338</link>
+      <image_url>http://d.gr-assets.com/books/1336268020s/8318303.jpg</image_url>
+      <actor>
+        <id type="integer">11030127</id>
+        <name>Maša</name>
+        <image_url>http://d.gr-assets.com/users/1398516751p2/11030127.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/11030127-ma-a</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:40 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 13 of 565 of <a href="http://www.goodreads.com/book/show/18335634-clockwork-princess">Clockwork Princess</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947337</link>
+      <image_url>http://d.gr-assets.com/books/1376663659s/18335634.jpg</image_url>
+      <actor>
+        <id type="integer">25255878</id>
+        <name>Paula</name>
+        <image_url>http://d.gr-assets.com/users/1391284435p2/25255878.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/25255878-paula</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:38 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 108 of 186 of <a href="http://www.goodreads.com/book/show/6093019-bride-of-the-water-god-volume-3">Bride of the Water God, Volume 3</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947336</link>
+      <image_url>http://d.gr-assets.com/books/1330556343s/6093019.jpg</image_url>
+      <actor>
+        <id type="integer">4739746</id>
+        <name>Alicia</name>
+        <image_url>http://d.gr-assets.com/users/1395959798p2/4739746.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/4739746-alicia</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:36 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 20 of 288 of <a href="http://www.goodreads.com/book/show/17225848-brain-on-fire">Brain on Fire</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947335</link>
+      <image_url>http://d.gr-assets.com/books/1370214316s/17225848.jpg</image_url>
+      <actor>
+        <id type="integer">13574291</id>
+        <name>Diana Morokhovets</name>
+        <image_url>http://s.gr-assets.com/assets/nophoto/user/f_50x66-e0ba3b90c110cd67123d6a850d85373e.png</image_url>
+        <link>http://www.goodreads.com/user/show/13574291-diana-morokhovets</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:33 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 252 of 336 of <a href="http://www.goodreads.com/book/show/22102365-para-w-ruch">Para w ruch</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947334</link>
+      <image_url>http://d.gr-assets.com/books/1400239454s/22102365.jpg</image_url>
+      <actor>
+        <id type="integer">8802405</id>
+        <name>Marta</name>
+        <image_url>http://d.gr-assets.com/users/1368535891p2/8802405.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/8802405-marta</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:32 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 375 of 408 of <a href="http://www.goodreads.com/book/show/577177.The_Drawing_of_the_Three">The Drawing of the Three</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947333</link>
+      <image_url>http://d.gr-assets.com/books/1376207177s/577177.jpg</image_url>
+      <actor>
+        <id type="integer">6385787</id>
+        <name>Richard</name>
+        <image_url>http://s.gr-assets.com/assets/nophoto/user/m_50x66-e89fc14c32a41c0eb4298dfafe929b65.png</image_url>
+        <link>http://www.goodreads.com/user/show/6385787-richard</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:31 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[The best way to define "reality" is by living bound by what one perceives to be "correct" or "true" hence one's subjective interpretation...]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947332</link>
+      <image_url></image_url>
+      <actor>
+        <id type="integer">29461691</id>
+        <name>Amaterasu</name>
+        <image_url>http://d.gr-assets.com/users/1401901478p2/29461691.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/29461691-amaterasu</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:31 -0700</updated_at>
+      <body><![CDATA[The best way to define &quot;reality&quot; is by living bound by what one perceives to be &quot;correct&quot; or &quot;true&quot; hence one's subjective interpretation of these two concepts]]></body>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 120 of 160 of <a href="http://www.goodreads.com/book/show/316568._">جامعه‌شناسی خودمانی</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947331</link>
+      <image_url>http://d.gr-assets.com/books/1173713444s/316568.jpg</image_url>
+      <actor>
+        <id type="integer">3234700</id>
+        <name>A m i r</name>
+        <image_url>http://d.gr-assets.com/users/1376482941p2/3234700.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/3234700-a-m-i-r</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:31 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 509 of 704 of <a href="http://www.goodreads.com/book/show/21526183-sandheden-om-harry-quebert-sagen">Sandheden om Harry Quebert-sagen</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947330</link>
+      <image_url>http://d.gr-assets.com/books/1395419194s/21526183.jpg</image_url>
+      <actor>
+        <id type="integer">6952884</id>
+        <name>Simone Hagemann</name>
+        <image_url>http://d.gr-assets.com/users/1366645123p2/6952884.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/6952884-simone-hagemann</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:29 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 179 of 224 of <a href="http://www.goodreads.com/book/show/894814.Fear_and_Loathing_in_Las_Vegas">Fear and Loathing in Las Vegas</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947329</link>
+      <image_url>http://d.gr-assets.com/books/1179262061s/894814.jpg</image_url>
+      <actor>
+        <id type="integer">7239623</id>
+        <name>Daphna</name>
+        <image_url>http://s.gr-assets.com/assets/nophoto/user/f_50x66-e0ba3b90c110cd67123d6a850d85373e.png</image_url>
+        <link>http://www.goodreads.com/user/show/7239623-daphna</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:28 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 61% done with <a href="http://www.goodreads.com/book/show/9237252-the-essential-h-p-lovecraft-collection">The Essential H.P. Lovecraft Collection</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947328</link>
+      <image_url>http://d.gr-assets.com/books/1328355106s/9237252.jpg</image_url>
+      <actor>
+        <id type="integer">24185259</id>
+        <name>Kayla</name>
+        <image_url>http://d.gr-assets.com/users/1386442902p2/24185259.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/24185259-kayla</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:29 -0700</updated_at>
+      <body><![CDATA[Finishe Herbert West: Reanimator - SO GOOD. One of my favorites, for sure.]]></body>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 132 of 233 of <a href="http://www.goodreads.com/book/show/202565.O_Come_Ye_Back_to_Ireland">O Come Ye Back to Ireland</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947327</link>
+      <image_url>http://d.gr-assets.com/books/1330036657s/202565.jpg</image_url>
+      <actor>
+        <id type="integer">1276725</id>
+        <name>Jennifer Bergman</name>
+        <image_url>http://d.gr-assets.com/users/1374120057p2/1276725.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/1276725-jennifer-bergman</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:28 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 70% done with <a href="http://www.goodreads.com/book/show/15711341-written-in-red">Written in Red</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947326</link>
+      <image_url>http://d.gr-assets.com/books/1342193270s/15711341.jpg</image_url>
+      <actor>
+        <id type="integer">31933335</id>
+        <name>Megan</name>
+        <image_url>http://s.gr-assets.com/assets/nophoto/user/f_50x66-e0ba3b90c110cd67123d6a850d85373e.png</image_url>
+        <link>http://www.goodreads.com/user/show/31933335-megan</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:26 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 208 of 736 of <a href="http://www.goodreads.com/book/show/20498620-na-sombra-da-vida">Na Sombra da Vida</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947325</link>
+      <image_url>http://d.gr-assets.com/books/1389279717s/20498620.jpg</image_url>
+      <actor>
+        <id type="integer">9291973</id>
+        <name>Denise</name>
+        <image_url>http://d.gr-assets.com/users/1400052926p2/9291973.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/9291973-denise</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:27 -0700</updated_at>
+      <body>
+        <![CDATA[a minha reacção quando aparece algum capítulo sobre o Qhuinn
+ &lt;img id=&quot;irc_mi&quot; src=&quot;http://media.tumblr.com/tumblr_m7jn79oOcH1rp62eq.gif&quot; width=&quot;500&quot; height=&quot;242&quot; style=&quot;margin-top: 187px;&quot;&gt;]]>
+      </body>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 159 of 349 of <a href="http://www.goodreads.com/book/show/20804910-orgueil-pr-jug-s-zombies">Orgueil & Préjugés & Zombies</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947324</link>
+      <image_url>http://s.gr-assets.com/assets/nophoto/book/50x75-6121bf4c1f669098041843ec9650ca19.png</image_url>
+      <actor>
+        <id type="integer">17846864</id>
+        <name>France</name>
+        <image_url>http://d.gr-assets.com/users/1364118916p2/17846864.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/17846864-france</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:26 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 78 of 326 of <a href="http://www.goodreads.com/book/show/5470.1984">1984</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947323</link>
+      <image_url>http://d.gr-assets.com/books/1348990566s/5470.jpg</image_url>
+      <actor>
+        <id type="integer">12162098</id>
+        <name>Amelia</name>
+        <image_url>http://d.gr-assets.com/users/1384913896p2/12162098.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/12162098-amelia</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:17 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 116 of 224 of <a href="http://www.goodreads.com/book/show/22455829-jei-pasilik-iau">Jei pasilikčiau</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947322</link>
+      <image_url>http://d.gr-assets.com/books/1402485677s/22455829.jpg</image_url>
+      <actor>
+        <id type="integer">19702688</id>
+        <name>Simona</name>
+        <image_url>http://d.gr-assets.com/users/1366728001p2/19702688.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/19702688-simona</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:15 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 243 of 365 of <a href="http://www.goodreads.com/book/show/5907.The_Hobbit">The Hobbit</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947321</link>
+      <image_url>http://d.gr-assets.com/books/1372847500s/5907.jpg</image_url>
+      <actor>
+        <id type="integer">30127312</id>
+        <name>Katie Bajorek</name>
+        <image_url>http://d.gr-assets.com/users/1402061009p2/30127312.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/30127312-katie-bajorek</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:14 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 139 of 382 of <a href="http://www.goodreads.com/book/show/13362536-opal">Opal</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947320</link>
+      <image_url>http://d.gr-assets.com/books/1348200300s/13362536.jpg</image_url>
+      <actor>
+        <id type="integer">31674003</id>
+        <name>Nina Gregg</name>
+        <image_url>http://d.gr-assets.com/users/1400951230p2/31674003.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/31674003-nina-gregg</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:06 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 312 of 401 of <a href="http://www.goodreads.com/book/show/10808006-private">Private</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947319</link>
+      <image_url>http://d.gr-assets.com/books/1390710719s/10808006.jpg</image_url>
+      <actor>
+        <id type="integer">8576762</id>
+        <name>Tammy</name>
+        <image_url>http://d.gr-assets.com/users/1374674267p2/8576762.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/8576762-tammy</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:07 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 56% done with <a href="http://www.goodreads.com/book/show/7728889-the-diviners">The Diviners</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947318</link>
+      <image_url>http://d.gr-assets.com/books/1336424966s/7728889.jpg</image_url>
+      <actor>
+        <id type="integer">20267051</id>
+        <name>Elodia</name>
+        <image_url>http://d.gr-assets.com/users/1401687508p2/20267051.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/20267051-elodia</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:07 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 21% done with <a href="http://www.goodreads.com/book/show/7827221-desires-of-the-dead">Desires of the Dead</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947317</link>
+      <image_url>http://d.gr-assets.com/books/1288223505s/7827221.jpg</image_url>
+      <actor>
+        <id type="integer">1977404</id>
+        <name>Morgan</name>
+        <image_url>http://d.gr-assets.com/users/1397281150p2/1977404.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/1977404-morgan</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:02 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 318 of 400 of <a href="http://www.goodreads.com/book/show/106484.Hard_Boiled_Wonderland_and_the_End_of_the_World">Hard-Boiled Wonderland and the End of the World</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947316</link>
+      <image_url>http://d.gr-assets.com/books/1320525702s/106484.jpg</image_url>
+      <actor>
+        <id type="integer">20695588</id>
+        <name>Brandon</name>
+        <image_url>http://s.gr-assets.com/assets/nophoto/user/m_50x66-e89fc14c32a41c0eb4298dfafe929b65.png</image_url>
+        <link>http://www.goodreads.com/user/show/20695588-brandon</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:01 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 58% done with <a href="http://www.goodreads.com/book/show/12551082-things-i-can-t-forget">Things I Can't Forget</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947315</link>
+      <image_url>http://d.gr-assets.com/books/1343855583s/12551082.jpg</image_url>
+      <actor>
+        <id type="integer">16111866</id>
+        <name>Jacqueline</name>
+        <image_url>http://d.gr-assets.com/users/1377618720p2/16111866.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/16111866-jacqueline</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:06:00 -0700</updated_at>
+      <body><![CDATA[Love it!]]></body>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 167 of 356 of <a href="http://www.goodreads.com/book/show/10194157-shadow-and-bone">Shadow and Bone</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947314</link>
+      <image_url>http://d.gr-assets.com/books/1339533695s/10194157.jpg</image_url>
+      <actor>
+        <id type="integer">16436088</id>
+        <name>Justine M</name>
+        <image_url>http://d.gr-assets.com/users/1358188491p2/16436088.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/16436088-justine-m</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:05:56 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 83 of 135 of <a href="http://www.goodreads.com/book/show/17233489-dlekler-cesurdur">Ödlekler Cesurdur</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947313</link>
+      <image_url>http://d.gr-assets.com/books/1357920816s/17233489.jpg</image_url>
+      <actor>
+        <id type="integer">19588474</id>
+        <name>Mustafa Başaran</name>
+        <image_url>http://d.gr-assets.com/users/1397501384p2/19588474.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/19588474-mustafa-ba-aran</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:05:55 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 201 of 434 of <a href="http://www.goodreads.com/book/show/18089931-boundless">Boundless</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947312</link>
+      <image_url>http://d.gr-assets.com/books/1372040848s/18089931.jpg</image_url>
+      <actor>
+        <id type="integer">16383206</id>
+        <name>Anna Rose</name>
+        <image_url>http://d.gr-assets.com/users/1402075372p2/16383206.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/16383206-anna-rose</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:05:54 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is reading <a href="http://www.goodreads.com/book/show/194373.The_Memoirs_of_Sherlock_Holmes">The Memoirs of Sherlock Holmes</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947311</link>
+      <image_url>http://d.gr-assets.com/books/1374680963s/194373.jpg</image_url>
+      <actor>
+        <id type="integer">22202937</id>
+        <name>Minh Ha</name>
+        <image_url>http://d.gr-assets.com/users/1389977590p2/22202937.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/22202937-minh-ha</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:05:55 -0700</updated_at>
+      <body><![CDATA[344]]></body>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is finished with <a href="http://www.goodreads.com/book/show/16068905-fangirl">Fangirl</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947310</link>
+      <image_url>http://d.gr-assets.com/books/1355886270s/16068905.jpg</image_url>
+      <actor>
+        <id type="integer">23957081</id>
+        <name>Patti</name>
+        <image_url>http://d.gr-assets.com/users/1379217777p2/23957081.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/23957081-patti</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:05:51 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is 20% done with <a href="http://www.goodreads.com/book/show/6561983-the-strain">The Strain</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947309</link>
+      <image_url>http://d.gr-assets.com/books/1327960829s/6561983.jpg</image_url>
+      <actor>
+        <id type="integer">594335</id>
+        <name>Blayne</name>
+        <image_url>http://d.gr-assets.com/users/1336714048p2/594335.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/594335-blayne</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:05:51 -0700</updated_at>
+    </update>
+    <update type="UserStatus">
+      <action_text><![CDATA[is on page 109 of 1232 of <a href="http://www.goodreads.com/book/show/16238995-the-reality-dysfunction">The Reality Dysfunction</a>]]></action_text>
+      <link>http://www.goodreads.com/user_status/show/44947308</link>
+      <image_url>http://d.gr-assets.com/books/1354643208s/16238995.jpg</image_url>
+      <actor>
+        <id type="integer">14218195</id>
+        <name>Harriet Young-macgregor</name>
+        <image_url>http://d.gr-assets.com/users/1351949988p2/14218195.jpg</image_url>
+        <link>http://www.goodreads.com/user/show/14218195-harriet-young-macgregor</link>
+      </actor>
+
+      <updated_at>Fri, 13 Jun 2014 09:05:50 -0700</updated_at>
+    </update>
+  </updates>
+
+</GoodreadsResponse>

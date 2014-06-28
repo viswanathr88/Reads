@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>true</authentication>
+    <key><![CDATA[fDfi6rdiIgfTp49R0xj8MQ]]></key>
+    <method><![CDATA[topic_group_folder]]></method>
+  </Request>
+  <group_folder>
+    <id>58737</id>
+    <group_id>8095</group_id>
+    <items_count>31</items_count>
+    <name>examples / showcase</name>
+    <topics start="1" end="30" total="30">
+      <topic>
+        <comments_count type="integer">6</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">1174392</id>
+        <last_comment_at type="datetime">2014-05-03T09:03:06+00:00</last_comment_at>
+        <title>Epiphany - A Goodreads app for Windows phone 8</title>
+        <unread_count type="integer">2</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Viswanath</first_name>
+          <id type="integer">8320965</id>
+          <last_name>Ramanan</last_name>
+          <user_name>viswanathr</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">40</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">1151568</id>
+        <last_comment_at type="datetime">2014-04-11T15:16:53+00:00</last_comment_at>
+        <title>Social Reads - GR app for Windows Phone, Windows8 and WindowsRT</title>
+        <unread_count type="integer">0</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Peter</first_name>
+          <id type="integer">14393932</id>
+          <last_name>Mitri</last_name>
+          <user_name>petermitri</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">71</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">393438</id>
+        <last_comment_at type="datetime">2014-03-22T12:37:58+00:00</last_comment_at>
+        <title>GoodReads Android App</title>
+        <unread_count type="integer">71</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Adam</first_name>
+          <id type="integer">1192135</id>
+          <last_name>Jones</last_name>
+          <user_name>JadeMason</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">27</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">1088556</id>
+        <last_comment_at type="datetime">2014-03-07T15:19:53+00:00</last_comment_at>
+        <title>Goodreads for Windows 8</title>
+        <unread_count type="integer">2</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Daniel</first_name>
+          <id type="integer">889496</id>
+          <last_name>D</last_name>
+          <user_name nil="true"/>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">12</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">899987</id>
+        <last_comment_at type="datetime">2013-10-28T09:14:43+00:00</last_comment_at>
+        <title>MetroReads: Windows Phone app for Goodreads</title>
+        <unread_count type="integer">0</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Karsten</first_name>
+          <id type="integer">7368486</id>
+          <last_name>Strøbæk</last_name>
+          <user_name>strobaek</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">12</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">846268</id>
+        <last_comment_at type="datetime">2013-10-11T12:30:01+00:00</last_comment_at>
+        <title>Goodreads for Android Tablets</title>
+        <unread_count type="integer">0</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Daniel</first_name>
+          <id type="integer">889496</id>
+          <last_name>D</last_name>
+          <user_name nil="true"/>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">6</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">1195135</id>
+        <last_comment_at type="datetime">2013-10-10T19:52:27+00:00</last_comment_at>
+        <title>PHP widget with the last read books: anyone interested?</title>
+        <unread_count type="integer">0</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Flapane</first_name>
+          <id type="integer">17015082</id>
+          <last_name></last_name>
+          <user_name>flapane</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">2</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">1363814</id>
+        <last_comment_at type="datetime">2013-06-10T19:35:49+00:00</last_comment_at>
+        <title>HELP with php oauth to goodreads</title>
+        <unread_count type="integer">2</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Tonypower24</first_name>
+          <id type="integer">12970430</id>
+          <last_name nil="true"/>
+          <user_name nil="true"/>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">2</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">1344305</id>
+        <last_comment_at type="datetime">2013-05-28T17:12:28+00:00</last_comment_at>
+        <title>OAuth Library for iOS</title>
+        <unread_count type="integer">2</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Yonatan</first_name>
+          <id type="integer">20479881</id>
+          <last_name>Kogan</last_name>
+          <user_name>yjkogan</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">4</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">1244040</id>
+        <last_comment_at type="datetime">2013-03-12T02:09:35+00:00</last_comment_at>
+        <title>How to use OAuth in Javascript to develop a windows 7 gadget</title>
+        <unread_count type="integer">4</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Harshini</first_name>
+          <id type="integer">3680792</id>
+          <last_name>Nawarathna</last_name>
+          <user_name>harshani</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">3</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">972830</id>
+        <last_comment_at type="datetime">2012-08-23T13:29:28+00:00</last_comment_at>
+        <title>Question about retrieving book reviews</title>
+        <unread_count type="integer">0</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Rodger</first_name>
+          <id type="integer">8597680</id>
+          <last_name>Wilson</last_name>
+          <user_name nil="true"/>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">2</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">982906</id>
+        <last_comment_at type="datetime">2012-08-06T18:34:12+00:00</last_comment_at>
+        <title>Toronto Public Library &amp; Goodreads check-out script</title>
+        <unread_count type="integer">2</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Chris</first_name>
+          <id type="integer">11249747</id>
+          <last_name>Nolan.ca</last_name>
+          <user_name>chrisnolanca</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">3</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">418304</id>
+        <last_comment_at type="datetime">2012-07-31T21:25:09+00:00</last_comment_at>
+        <title>really simple ruby oauth example</title>
+        <unread_count type="integer">2</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Michael</first_name>
+          <id type="integer">73</id>
+          <last_name>Economy</last_name>
+          <user_name>michaeleconomy</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">3</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">898964</id>
+        <last_comment_at type="datetime">2012-05-19T03:35:25+00:00</last_comment_at>
+        <title>Drupal Module</title>
+        <unread_count type="integer">3</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Gregg</first_name>
+          <id type="integer">7213498</id>
+          <last_name>Marshall</last_name>
+          <user_name>greggmarshall</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">3</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">870342</id>
+        <last_comment_at type="datetime">2012-04-19T20:06:35+00:00</last_comment_at>
+        <title>super-simple shelf timeline</title>
+        <unread_count type="integer">3</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Rob</first_name>
+          <id type="integer">156533</id>
+          <last_name>Friesel</last_name>
+          <user_name>founddrama</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">6</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">835540</id>
+        <last_comment_at type="datetime">2012-03-16T22:14:12+00:00</last_comment_at>
+        <title>Stars vs text</title>
+        <unread_count type="integer">6</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Nicholas</first_name>
+          <id type="integer">4900932</id>
+          <last_name>Odiseos</last_name>
+          <user_name>nodiseos</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">5</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">811234</id>
+        <last_comment_at type="datetime">2012-03-02T01:31:57+00:00</last_comment_at>
+        <title>if isbn exists?</title>
+        <unread_count type="integer">5</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Mike</first_name>
+          <id type="integer">4384436</id>
+          <last_name>Soriano</last_name>
+          <user_name>msoriano</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">6</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">811294</id>
+        <last_comment_at type="datetime">2012-02-23T00:56:59+00:00</last_comment_at>
+        <title>goodreads logo files</title>
+        <unread_count type="integer">6</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Tim</first_name>
+          <id type="integer">3346629</id>
+          <last_name>Heuer</last_name>
+          <user_name>timheuer</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">8</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">809787</id>
+        <last_comment_at type="datetime">2012-02-22T00:26:15+00:00</last_comment_at>
+        <title>Create User</title>
+        <unread_count type="integer">8</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Tim</first_name>
+          <id type="integer">3346629</id>
+          <last_name>Heuer</last_name>
+          <user_name>timheuer</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">9</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">778984</id>
+        <last_comment_at type="datetime">2012-02-13T05:03:56+00:00</last_comment_at>
+        <title>Wordpress single-sign on and PHP support for OAuth</title>
+        <unread_count type="integer">9</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Pat</first_name>
+          <id type="integer">7479075</id>
+          <last_name>Anvil</last_name>
+          <user_name>patanvil</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">5</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">794564</id>
+        <last_comment_at type="datetime">2012-02-10T22:00:32+00:00</last_comment_at>
+        <title>My new App. </title>
+        <unread_count type="integer">5</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Sean</first_name>
+          <id type="integer">7625698</id>
+          <last_name>Bamforth</last_name>
+          <user_name nil="true"/>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">10</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">787402</id>
+        <last_comment_at type="datetime">2012-02-02T01:09:56+00:00</last_comment_at>
+        <title>Anyone grok the square brackets problem?</title>
+        <unread_count type="integer">10</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Shawn</first_name>
+          <id type="integer">978468</id>
+          <last_name></last_name>
+          <user_name nil="true"/>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">9</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">745800</id>
+        <last_comment_at type="datetime">2011-12-26T13:00:10+00:00</last_comment_at>
+        <title>Android example?</title>
+        <unread_count type="integer">9</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Grunthos</first_name>
+          <id type="integer">5129458</id>
+          <last_name nil="true"/>
+          <user_name nil="true"/>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">1</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">636781</id>
+        <last_comment_at type="datetime">2011-08-20T01:17:59+00:00</last_comment_at>
+        <title>bookmates</title>
+        <unread_count type="integer">1</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Michael</first_name>
+          <id type="integer">73</id>
+          <last_name>Economy</last_name>
+          <user_name>michaeleconomy</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">3</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">613072</id>
+        <last_comment_at type="datetime">2011-07-26T03:11:51+00:00</last_comment_at>
+        <title>Goodreads module for NodeJS (via npm)</title>
+        <unread_count type="integer">3</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Brad</first_name>
+          <id type="integer">4085451</id>
+          <last_name>Dickason</last_name>
+          <user_name nil="true"/>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">5</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">450031</id>
+        <last_comment_at type="datetime">2011-07-24T01:02:09+00:00</last_comment_at>
+        <title>My web app (which connects with Goodreads)</title>
+        <unread_count type="integer">5</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Rob</first_name>
+          <id type="integer">3150017</id>
+          <last_name>Boland</last_name>
+          <user_name>rpboland</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">12</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">591233</id>
+        <last_comment_at type="datetime">2011-06-28T18:55:33+00:00</last_comment_at>
+        <title>Goodreads OAuth Docs</title>
+        <unread_count type="integer">0</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Craig</first_name>
+          <id type="integer">1549922</id>
+          <last_name>Jolicoeur</last_name>
+          <user_name>cpjolicoeur</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">2</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">557730</id>
+        <last_comment_at type="datetime">2011-05-20T17:33:50+00:00</last_comment_at>
+        <title>What Should I Read Next?</title>
+        <unread_count type="integer">2</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Greg</first_name>
+          <id type="integer">1513354</id>
+          <last_name>Kennedy</last_name>
+          <user_name nil="true"/>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">6</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">491408</id>
+        <last_comment_at type="datetime">2011-04-02T05:48:54+00:00</last_comment_at>
+        <title>Wordpress Plugin</title>
+        <unread_count type="integer">6</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Michael</first_name>
+          <id type="integer">1874313</id>
+          <last_name>Castello</last_name>
+          <user_name>steelwolf</user_name>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+      <topic>
+        <comments_count type="integer">1</comments_count>
+        <context_id type="integer">8095</context_id>
+        <context_type>Group</context_type>
+        <id type="integer">472474</id>
+        <last_comment_at type="datetime">2011-01-15T03:23:19+00:00</last_comment_at>
+        <title>Joomla plugin and PHP api</title>
+        <unread_count type="integer">0</unread_count>
+        <subject_type nil="true"/>
+        <subject_id nil="true"/>
+        <author_user type="User">
+          <first_name>Justin</first_name>
+          <id type="integer">1876491</id>
+          <last_name>Ray</last_name>
+          <user_name nil="true"/>
+        </author_user>
+        <folder>
+          <id type="integer">58737</id>
+          <name>examples / showcase</name>
+        </folder>
+      </topic>
+
+    </topics>
+  </group_folder>
+
+</GoodreadsResponse>

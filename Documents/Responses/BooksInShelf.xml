@@ -1,0 +1,1177 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>true</authentication>
+    <key><![CDATA[fDfi6rdiIgfTp49R0xj8MQ]]></key>
+    <method><![CDATA[review_list]]></method>
+  </Request>
+  <reviews start="1" end="19" total="19">
+    <review>
+      <id>511464014</id>
+      <book>
+        <id type="integer">2552623</id>
+        <isbn>0735624259</isbn>
+        <isbn13>9780735624252</isbn13>
+        <text_reviews_count type="integer">4</text_reviews_count>
+        <title>How We Test Software at Microsoft®</title>
+        <image_url>http://d.gr-assets.com/books/1328828824m/2552623.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1328828824s/2552623.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/2552623.How_We_Test_Software_at_Microsoft_</link>
+        <num_pages>448</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>Microsoft Press</publisher>
+        <publication_day>17</publication_day>
+        <publication_year>2008</publication_year>
+        <publication_month>12</publication_month>
+        <average_rating>3.75</average_rating>
+        <ratings_count>28</ratings_count>
+        <description>It may surprise you to learn that Microsoft employs as many software testers as developers. Less surprising is the emphasis the company places on the testing discipline—and its role in managing quality across a diverse, 150+ product portfolio.&lt;br&gt;&lt;br&gt;This book—written by three of Microsoft’s most prominent test professionals—shares the best practices, tools, and systems used by the company’s 9,000-strong corps of testers. Learn how your colleagues at Microsoft design and manage testing, their approach to training and career development, and what challenges they see ahead. Most important, you’ll get practical insights you can apply for better results in your organization.&lt;br&gt;&lt;br&gt;Discover how to:&lt;br&gt;&lt;br&gt;&lt;br&gt;Design effective tests and run them throughout the product lifecycle Minimize cost and risk with functional tests, and know when to apply structural techniques Measure code complexity to identify bugs and potential maintenance issues Use models to generate test cases, surface unexpected application behavior, and manage risk Know when to employ automated tests, design them for long-term use, and plug into an automation infrastructure Review the hallmarks of great testers—and the tools they use to run tests, probe systems, and track progress efficiently Explore the challenges of testing services vs. shrink-wrapped software</description>
+        <authors>
+          <author>
+            <id>403732</id>
+            <name>Alan Page</name>
+            <image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_200x266-312f5971f6b4a667fe0e83c852b56858.png]]></image_url>
+            <small_image_url><![CDATA[http://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/403732.Alan_Page]]></link>
+            <average_rating>3.48</average_rating>
+            <ratings_count>291</ratings_count>
+            <text_reviews_count>40</text_reviews_count>
+          </author>
+        </authors>
+        <published>2008</published>
+      </book>
+
+
+
+      <rating>4</rating>
+      <votes>1</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Sat Jan 19 20:47:32 -0800 2013</date_added>
+      <date_updated>Sat Jan 19 20:47:47 -0800 2013</date_updated>
+      <read_count></read_count>
+      <body>
+
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/511464014]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/511464014]]></link>
+      <owned>0</owned>
+    </review>
+
+    <review>
+      <id>502892948</id>
+      <book>
+        <id type="integer">865</id>
+        <isbn>0061122416</isbn>
+        <isbn13>9780061122415</isbn13>
+        <text_reviews_count type="integer">29705</text_reviews_count>
+        <title>The Alchemist</title>
+        <image_url>http://d.gr-assets.com/books/1287827991m/865.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1287827991s/865.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/865.The_Alchemist</link>
+        <num_pages>197</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>HarperCollins</publisher>
+        <publication_day>1</publication_day>
+        <publication_year>1993</publication_year>
+        <publication_month>5</publication_month>
+        <average_rating>3.73</average_rating>
+        <ratings_count>780823</ratings_count>
+        <description>Paulo Coelho's enchanting novel has inspired a devoted following around the world. This story, dazzling in its powerful simplicity and inspiring wisdom, is about an Andalusian shepherd boy named Santiago who travels from his homeland in Spain to the Egyptian desert in search of a treasure buried in the Pyramids. Along the way he meets a Gypsy woman, a man who calls himself king, and an alchemist, all of whom point Santiago in the direction of his quest. No one knows what the treasure is, or if Santiago will be able to surmount the obstacles along the way. But what starts out as a journey to find worldly goods turns into a discovery of the treasure found within. Lush, evocative, and deeply humane, the story of Santiago is an eternal testament to the transforming power of our dreams and the importance of listening to our hearts.</description>
+        <authors>
+          <author>
+            <id>566</id>
+            <name>Paulo Coelho</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p5/566.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1201840056p2/566.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/566.Paulo_Coelho]]></link>
+            <average_rating>3.68</average_rating>
+            <ratings_count>1230879</ratings_count>
+            <text_reviews_count>58856</text_reviews_count>
+          </author>
+        </authors>
+        <published>1993</published>
+      </book>
+
+
+
+      <rating>4</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Fri Jan 11 00:40:05 -0800 2013</date_added>
+      <date_updated>Fri Jan 11 00:40:05 -0800 2013</date_updated>
+      <read_count></read_count>
+      <body>
+        Brilliant read!
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/502892948]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/502892948]]></link>
+      <owned>0</owned>
+    </review>
+
+    <review>
+      <id>502485170</id>
+      <book>
+        <id type="integer">105578</id>
+        <isbn>0345498321</isbn>
+        <isbn13>9780345498328</isbn13>
+        <text_reviews_count type="integer">630</text_reviews_count>
+        <title>One Night at the Call Center</title>
+        <image_url>http://d.gr-assets.com/books/1320500924m/105578.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1320500924s/105578.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/105578.One_Night_at_the_Call_Center</link>
+        <num_pages>320</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>Ballantine Books</publisher>
+        <publication_day>1</publication_day>
+        <publication_year>2007</publication_year>
+        <publication_month>5</publication_month>
+        <average_rating>2.46</average_rating>
+        <ratings_count>25748</ratings_count>
+        <description>Press 1 for technical support. &lt;br&gt;Press 2 for broken hearts.&lt;br&gt;Press 3 if your life has totally crashed. . . . &lt;br&gt;&lt;br&gt;Six friends work nights at a call center in India, providing technical support for a major U.S. appliance corporation. Skilled in patience–and accent management–they help American consumers keep their lives running. Yet behind the headsets, everybody’s heart is on the line. &lt;br&gt;&lt;br&gt;Shyam (Sam to his callers) has lost his self-confidence after being dumped by the girl who just so happens to be sitting next to him. Priyanka’s domineering mother has arranged for her daughter’s upscale marriage to an Indian man in Seattle. Esha&lt;em&gt; &lt;/em&gt;longs to be a model but discovers it’s a horizontal romp to the runway. Lost, dissatisfied Vroom has high ideals, but compromises them by talking on the phone to idiots each night. Traditional Radhika has just found out that her husband is sleeping with his secretary. And Military Uncle (nobody knows his real name) sits alone working the online chat. &lt;br&gt;&lt;br&gt;They all try to make it through their shifts–and maintain their sanity–under the eagle eye of a boss whose ego rivals his incompetence. But tonight is no ordinary night. Tonight is Thanksgiving in America: Appliances are going haywire, and the phones are ringing off their hooks. Then one call, from one very special caller, changes everything.&lt;br&gt;&lt;br&gt;Chetan Bhagat’s delicious romantic comedy takes us inside the world of the international call center, where cultural cross-wires come together with perfect pathos, hilarity, and spice.</description>
+        <authors>
+          <author>
+            <id>61124</id>
+            <name>Chetan Bhagat</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1255919964p5/61124.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1255919964p2/61124.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/61124.Chetan_Bhagat]]></link>
+            <average_rating>3.15</average_rating>
+            <ratings_count>156948</ratings_count>
+            <text_reviews_count>5519</text_reviews_count>
+          </author>
+        </authors>
+        <published>2007</published>
+      </book>
+
+
+
+      <rating>2</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Thu Jan 10 15:02:51 -0800 2013</date_added>
+      <date_updated>Wed Nov 27 22:29:38 -0800 2013</date_updated>
+      <read_count></read_count>
+      <body>
+        <![CDATA[This book could have been a lot better but it was not handled well.]]>
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/502485170]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/502485170]]></link>
+      <owned>0</owned>
+    </review>
+
+    <review>
+      <id>502180611</id>
+      <book>
+        <id type="integer">1611988</id>
+        <isbn>0312379293</isbn>
+        <isbn13>9780312379292</isbn13>
+        <text_reviews_count type="integer">1078</text_reviews_count>
+        <title>A Prisoner of Birth</title>
+        <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+        <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        <link>http://www.goodreads.com/book/show/1611988.A_Prisoner_of_Birth</link>
+        <num_pages>501</num_pages>
+        <format></format>
+        <edition_information/>
+        <publisher></publisher>
+        <publication_day></publication_day>
+        <publication_year></publication_year>
+        <publication_month></publication_month>
+        <average_rating>4.02</average_rating>
+        <ratings_count>13980</ratings_count>
+        <description>&lt;p&gt;ONE NIGHT. TWO MEN. FOUR WITNESSES...&lt;/p&gt;&lt;p&gt;A MASTERPIECE OF SUSPENSE AND STORYTELLING.&lt;/p&gt;&lt;p&gt;International bestseller and master storyteller Jeffrey Archer is at the very top of his game in this story of fate and fortune, redemption and revenge.&lt;/p&gt;&lt;p&gt;If Danny Cartwright had proposed to Beth Wilson the day before, or the day after, he would not have been arrested and charged with the murder of his best friend. But when the four prosecution witnesses are a barrister, a popular actor, an aristocrat, and the youngest partner in an established firm's history, who is going to believe his side of the story?&lt;/p&gt;&lt;p&gt;Danny is sentenced to twenty-two years and sent to Belmarsh prison, the highest-security jail in the land, from where no inmate has ever escaped.&lt;/p&gt;&lt;p&gt;However, Spencer Craig, Lawrence Davenport, Gerald Payne, and Toby Mortimer all underestimate Danny's determination to seek revenge, and Beth's relentless quest to pursue justice, which ends up with all four fighting for their lives.&lt;/p&gt;&lt;p&gt;Thus begins Jeffrey Archer's most powerful novel since &lt;em&gt;Kane and Abel,&lt;/em&gt; with a cast of characters that will remain with you long after you've turned the last page.&lt;/p&gt;&lt;p&gt;And if that is not enough, prepare for an ending that will shock even the most ardent of Archer's fans.&lt;/p&gt;</description>
+        <authors>
+          <author>
+            <id>4820</id>
+            <name>Jeffrey Archer</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p5/4820.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p2/4820.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/4820.Jeffrey_Archer]]></link>
+            <average_rating>3.91</average_rating>
+            <ratings_count>244039</ratings_count>
+            <text_reviews_count>13205</text_reviews_count>
+          </author>
+        </authors>
+        <published></published>
+      </book>
+
+
+
+      <rating>4</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at>Thu Jan 10 09:10:26 -0800 2013</started_at>
+      <read_at>Thu Jan 10 09:11:18 -0800 2013</read_at>
+      <date_added>Thu Jan 10 09:10:26 -0800 2013</date_added>
+      <date_updated>Fri Aug 30 00:35:28 -0700 2013</date_updated>
+      <read_count></read_count>
+      <body>
+
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/502180611]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/502180611]]></link>
+      <owned>0</owned>
+    </review>
+
+    <review>
+      <id>501161545</id>
+      <book>
+        <id type="integer">976</id>
+        <isbn>0671027387</isbn>
+        <isbn13>9780671027384</isbn13>
+        <text_reviews_count type="integer">4775</text_reviews_count>
+        <title>Deception Point</title>
+        <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+        <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        <link>http://www.goodreads.com/book/show/976.Deception_Point</link>
+        <num_pages>556</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>Pocket Books</publisher>
+        <publication_day>26</publication_day>
+        <publication_year>2002</publication_year>
+        <publication_month>11</publication_month>
+        <average_rating>3.57</average_rating>
+        <ratings_count>279415</ratings_count>
+        <description>&lt;em&gt;A shocking scientific discovery. A conspiracy of staggering brilliance. A thriller unlike any you've ever read....&lt;/em&gt;&lt;br&gt;&lt;br&gt;When a NASA satellite discovers an astonishingly rare object buried deep in the Arctic ice, the floundering space agency proclaims a much-needed victory -- a victory with profound implications for NASA policy and the impending presidential election. To verify the authenticity of the find, the White House calls upon the skills of intelligence analyst Rachel Sexton. Accompanied by a team of experts, including the charismatic scholar Michael Tolland, Rachel travels to the Arctic and uncovers the unthinkable: evidence of scientific trickery -- a bold deception that threatens to plunge the world into controversy. But before she can warn the president, Rachel and Michael are ambushed by a team of assassins. Fleeing for their lives across a desolate and lethal landscape, their only hope for survival is to discover who is behind this masterful plot. The truth, they will learn, is the most shocking deception of all.&lt;br&gt;&lt;br&gt;</description>
+        <authors>
+          <author>
+            <id>630</id>
+            <name>Dan Brown</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1206553442p5/630.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1206553442p2/630.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/630.Dan_Brown]]></link>
+            <average_rating>3.69</average_rating>
+            <ratings_count>3236910</ratings_count>
+            <text_reviews_count>106417</text_reviews_count>
+          </author>
+        </authors>
+        <published>2002</published>
+      </book>
+
+
+
+      <rating>3</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Wed Jan 09 09:32:39 -0800 2013</date_added>
+      <date_updated>Mon Feb 11 20:49:34 -0800 2013</date_updated>
+      <read_count></read_count>
+      <body>
+
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/501161545]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/501161545]]></link>
+      <owned>0</owned>
+    </review>
+
+    <review>
+      <id>501159352</id>
+      <book>
+        <id type="integer">58696</id>
+        <isbn>0140439447</isbn>
+        <isbn13>9780140439441</isbn13>
+        <text_reviews_count type="integer">2339</text_reviews_count>
+        <title>David Copperfield</title>
+        <image_url>http://d.gr-assets.com/books/1309281852m/58696.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1309281852s/58696.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/58696.David_Copperfield</link>
+        <num_pages>974</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>Penguin Classics</publisher>
+        <publication_day>28</publication_day>
+        <publication_year>2004</publication_year>
+        <publication_month>12</publication_month>
+        <average_rating>3.92</average_rating>
+        <ratings_count>98735</ratings_count>
+        <description>&lt;em&gt;David Copperfield&lt;/em&gt; is the story of a young man’s adventures on his journey from an unhappy and impoverished childhood to the discovery of his vocation as a successful novelist. Among the gloriously vivid cast of characters he encounters are his tyrannical stepfather, Mr. Murdstone; his formidable aunt, Betsey Trotwood; the eternally humble yet treacherous Uriah Heep; frivolous, enchanting Dora; and the magnificently impecunious Micawber, one of literature’s great comic creations.&lt;br&gt;&lt;br&gt;In &lt;em&gt;David Copperfield&lt;/em&gt;—the novel he described as his “favorite child”—Dickens drew revealingly on his own experiences to create one of his most exuberant and enduringly popular works, filled with tragedy and comedy in equal measure.&lt;br&gt;&lt;br&gt;Originally published as a monthly serial, from May 1849 to November 1850.</description>
+        <authors>
+          <author>
+            <id>239579</id>
+            <name>Charles Dickens</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1387078070p5/239579.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1387078070p2/239579.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/239579.Charles_Dickens]]></link>
+            <average_rating>3.81</average_rating>
+            <ratings_count>1528370</ratings_count>
+            <text_reviews_count>41360</text_reviews_count>
+          </author>
+        </authors>
+        <published>2004</published>
+      </book>
+
+
+
+      <rating>0</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Wed Jan 09 09:30:34 -0800 2013</date_added>
+      <date_updated>Wed Jan 09 09:30:34 -0800 2013</date_updated>
+      <read_count></read_count>
+      <body>
+
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/501159352]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/501159352]]></link>
+      <owned>0</owned>
+    </review>
+
+    <review>
+      <id>501159242</id>
+      <book>
+        <id type="integer">7733</id>
+        <isbn>0141439491</isbn>
+        <isbn13>9780141439495</isbn13>
+        <text_reviews_count type="integer">1691</text_reviews_count>
+        <title>Gulliver's Travels</title>
+        <image_url>http://d.gr-assets.com/books/1344534942m/7733.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1344534942s/7733.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/7733.Gulliver_s_Travels</link>
+        <num_pages>306</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>Penguin Classics</publisher>
+        <publication_day>25</publication_day>
+        <publication_year>2003</publication_year>
+        <publication_month>2</publication_month>
+        <average_rating>3.51</average_rating>
+        <ratings_count>112853</ratings_count>
+        <description>Shipwrecked castaway Lemuel Gulliver’s encounters with the petty, diminutive Lilliputians, the crude giants of Brobdingnag, the abstracted scientists of Laputa, the philosophical Houyhnhnms, and the brutish Yahoos give him new, bitter insights into human behavior. Swift’s fantastic and subversive book remains supremely relevant in our own age of distortion, hypocrisy, and irony.</description>
+        <authors>
+          <author>
+            <id>1831</id>
+            <name>Jonathan Swift</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1183238507p5/1831.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1183238507p2/1831.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/1831.Jonathan_Swift]]></link>
+            <average_rating>3.63</average_rating>
+            <ratings_count>149930</ratings_count>
+            <text_reviews_count>3220</text_reviews_count>
+          </author>
+        </authors>
+        <published>2003</published>
+      </book>
+
+
+
+      <rating>4</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Wed Jan 09 09:30:26 -0800 2013</date_added>
+      <date_updated>Thu Jan 10 15:41:01 -0800 2013</date_updated>
+      <read_count></read_count>
+      <body>
+
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/501159242]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/501159242]]></link>
+      <owned>0</owned>
+    </review>
+
+    <review>
+      <id>501158886</id>
+      <book>
+        <id type="integer">105576</id>
+        <isbn>8129104598</isbn>
+        <isbn13>9788129104595</isbn13>
+        <text_reviews_count type="integer">1169</text_reviews_count>
+        <title>Five Point Someone: What Not to Do at IIT</title>
+        <image_url>http://d.gr-assets.com/books/1298571209m/105576.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1298571209s/105576.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/105576.Five_Point_Someone</link>
+        <num_pages>267</num_pages>
+        <format></format>
+        <edition_information/>
+        <publisher></publisher>
+        <publication_day></publication_day>
+        <publication_year></publication_year>
+        <publication_month></publication_month>
+        <average_rating>3.46</average_rating>
+        <ratings_count>39444</ratings_count>
+        <description>Five Point Someone is a story about three friends in IIT who are unable to cope.&lt;br&gt;&lt;br&gt;The book starts with a disclaimer, “This is not a book to teach you how to get into IIT or even how to live in college. In fact, it describes how screwed up things can get if you don’t think straight.”&lt;br&gt;&lt;br&gt;Three hostelmates – Alok, Hari and Ryan get off to a bad start in IIT – they screw up the first class quiz. And while they try to make amends, things only get worse. It takes them a while to realize: If you try and screw with the IIT system, it comes back to double screw you. Before they know it, they are at the lowest echelons of IIT society. They have a five-point-something GPA out of ten, ranking near the end of their class. This GPA is a tattoo that will remain with them, and come in the way of anything else that matters – their friendship, their future, their love life. While the world expects IITians to conquer the world, these guys are struggling to survive.&lt;br&gt;&lt;br&gt;Will they make it? Do under performers have a right to live? Can they show that they are not just a five-point-somebody but a five-point-someone?</description>
+        <authors>
+          <author>
+            <id>61124</id>
+            <name>Chetan Bhagat</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1255919964p5/61124.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1255919964p2/61124.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/61124.Chetan_Bhagat]]></link>
+            <average_rating>3.15</average_rating>
+            <ratings_count>156948</ratings_count>
+            <text_reviews_count>5519</text_reviews_count>
+          </author>
+        </authors>
+        <published></published>
+      </book>
+
+
+
+      <rating>4</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Wed Jan 09 09:30:00 -0800 2013</date_added>
+      <date_updated>Thu Jan 10 15:45:48 -0800 2013</date_updated>
+      <read_count></read_count>
+      <body>
+
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/501158886]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/501158886]]></link>
+      <owned>0</owned>
+    </review>
+
+    <review>
+      <id>501158360</id>
+      <book>
+        <id type="integer">5326</id>
+        <isbn>1561797464</isbn>
+        <isbn13>9781561797462</isbn13>
+        <text_reviews_count type="integer">4597</text_reviews_count>
+        <title>A Christmas Carol</title>
+        <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+        <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        <link>http://www.goodreads.com/book/show/5326.A_Christmas_Carol</link>
+        <num_pages>104</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>Bethany House Publishers</publisher>
+        <publication_day>9</publication_day>
+        <publication_year>1999</publication_year>
+        <publication_month>9</publication_month>
+        <average_rating>3.97</average_rating>
+        <ratings_count>254594</ratings_count>
+        <description>One of the best-loved and most quoted stories of “the man who invented Christmas”—English writer Charles Dickens—&lt;em&gt;A Christmas Carol&lt;/em&gt; debuted in 1843 and has touched millions of hearts since. &lt;br&gt;&lt;br&gt;Cruel miser Ebeneezer Scrooge has never met a shilling he doesn’t like...and hardly a man he does. And he hates Christmas most of all. When Scrooge is visited by his old partner, Jacob Marley, and the ghosts of Christmas Past, Christmas Present, and Christmas Yet to Come, he learns eternal lessons of charity, kindness, and goodwill. Experience a true Victorian Christmas!</description>
+        <authors>
+          <author>
+            <id>239579</id>
+            <name>Charles Dickens</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1387078070p5/239579.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1387078070p2/239579.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/239579.Charles_Dickens]]></link>
+            <average_rating>3.81</average_rating>
+            <ratings_count>1528370</ratings_count>
+            <text_reviews_count>41360</text_reviews_count>
+          </author>
+        </authors>
+        <published>1999</published>
+      </book>
+
+
+
+      <rating>0</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Wed Jan 09 09:29:26 -0800 2013</date_added>
+      <date_updated>Wed Jan 09 09:29:26 -0800 2013</date_updated>
+      <read_count></read_count>
+      <body>
+
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/501158360]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/501158360]]></link>
+      <owned>0</owned>
+    </review>
+
+    <review>
+      <id>500867354</id>
+      <book>
+        <id type="integer">22034</id>
+        <isbn>0451205766</isbn>
+        <isbn13>9780451205766</isbn13>
+        <text_reviews_count type="integer">2849</text_reviews_count>
+        <title>The Godfather</title>
+        <image_url>http://d.gr-assets.com/books/1394988109m/22034.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1394988109s/22034.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/22034.The_Godfather</link>
+        <num_pages>448</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>NAL Trade</publisher>
+        <publication_day>1</publication_day>
+        <publication_year>2002</publication_year>
+        <publication_month>3</publication_month>
+        <average_rating>4.33</average_rating>
+        <ratings_count>155932</ratings_count>
+        <description>More than thirty years ago, a classic was born. A searing novel of the Mafia underworld, &lt;strong&gt;The Godfather&lt;/strong&gt; introduced readers to the first family of American crime fiction, the Corleones, and the powerful legacy of tradition, blood, and honor that was passed on from father to son. With its themes of the seduction of power, the pitfalls of greed, and family allegiance, it resonated with millions of readers across the world—and became the definitive novel of the virile, violent subculture that remains steeped in intrigue, in controversy, and in our collective consciousness.</description>
+        <authors>
+          <author>
+            <id>12605</id>
+            <name>Mario Puzo</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1379918709p5/12605.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1379918709p2/12605.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/12605.Mario_Puzo]]></link>
+            <average_rating>4.21</average_rating>
+            <ratings_count>188267</ratings_count>
+            <text_reviews_count>4859</text_reviews_count>
+          </author>
+        </authors>
+        <published>2002</published>
+      </book>
+
+
+
+      <rating>5</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Wed Jan 09 00:55:36 -0800 2013</date_added>
+      <date_updated>Thu Aug 29 22:54:04 -0700 2013</date_updated>
+      <read_count></read_count>
+      <body>
+
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/500867354]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/500867354]]></link>
+      <owned>0</owned>
+    </review>
+
+    <review>
+      <id>500428782</id>
+      <book>
+        <id type="integer">1953</id>
+        <isbn>0141439602</isbn>
+        <isbn13>9780141439600</isbn13>
+        <text_reviews_count type="integer">6992</text_reviews_count>
+        <title>A Tale of Two Cities</title>
+        <image_url>http://d.gr-assets.com/books/1344922523m/1953.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1344922523s/1953.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/1953.A_Tale_of_Two_Cities</link>
+        <num_pages>544</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>Penguin Classics</publisher>
+        <publication_day>27</publication_day>
+        <publication_year>2003</publication_year>
+        <publication_month>5</publication_month>
+        <average_rating>3.74</average_rating>
+        <ratings_count>475540</ratings_count>
+        <description>
+          &lt;strong&gt;
+          &lt;em&gt;'Liberty, equality, fraternity, or death; -- the last, much the easiest to bestow, O Guillotine!'&lt;/em&gt;
+          &lt;/strong&gt;&lt;br&gt;&lt;br&gt;After eighteen years as a political prisoner in the Bastille, the ageing Doctor Manette is finally released and reunited with his daughter in England. There the lives of two very different men, Charles Darnay, an exiled French aristocrat, and Sydney Carton, a disreputable but brilliant English lawyer, become enmeshed through their love for Lucie Manette. From the tranquil roads of London, they are drawn against their will to the vengeful, bloodstained streets of Paris at the height of the Reign of Terror, and they soon fall under the lethal shadow of La Guillotine.&lt;br&gt;&lt;br&gt;This edition uses the text as it appeared in its serial publication in 1859 to convey the full scope of Dickens's vision, and includes the original illustrations by H. K. Browne ('Phiz'). Richard Maxwell's introduction discusses the intricate interweaving of epic drama with personal tragedy.
+        </description>
+        <authors>
+          <author>
+            <id>239579</id>
+            <name>Charles Dickens</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1387078070p5/239579.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1387078070p2/239579.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/239579.Charles_Dickens]]></link>
+            <average_rating>3.81</average_rating>
+            <ratings_count>1528370</ratings_count>
+            <text_reviews_count>41360</text_reviews_count>
+          </author>
+        </authors>
+        <published>2003</published>
+      </book>
+
+
+
+      <rating>0</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Tue Jan 08 15:31:49 -0800 2013</date_added>
+      <date_updated>Tue Jan 08 15:31:49 -0800 2013</date_updated>
+      <read_count></read_count>
+      <body>
+
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/500428782]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/500428782]]></link>
+      <owned>0</owned>
+    </review>
+
+    <review>
+      <id>479214146</id>
+      <book>
+        <id type="integer">14554</id>
+        <isbn>0006479677</isbn>
+        <isbn13>9780006479673</isbn13>
+        <text_reviews_count type="integer">846</text_reviews_count>
+        <title>If Tomorrow Comes</title>
+        <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+        <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        <link>http://www.goodreads.com/book/show/14554.If_Tomorrow_Comes</link>
+        <num_pages>501</num_pages>
+        <format>Hardcover</format>
+        <edition_information/>
+        <publisher>William Morrow and Co., Inc.</publisher>
+        <publication_day/>
+        <publication_year>1985</publication_year>
+        <publication_month/>
+        <average_rating>3.96</average_rating>
+        <ratings_count>29510</ratings_count>
+        <description>This is a story of intrigue and revenge. Tracy Whitney is youg, beautiful and intelligent - and about to marry into wealth and glamour. Until, suddenly, she is betrayed, framed by a ruthless Mafia gang, abandoned by the man she loves. Only her ingenuity saves her and helps her fight back.</description>
+        <authors>
+          <author>
+            <id>9068</id>
+            <name>Sidney Sheldon</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1209169297p5/9068.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1209169297p2/9068.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/9068.Sidney_Sheldon]]></link>
+            <average_rating>3.76</average_rating>
+            <ratings_count>295991</ratings_count>
+            <text_reviews_count>8470</text_reviews_count>
+          </author>
+        </authors>
+        <published>1985</published>
+      </book>
+
+
+
+      <rating>0</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Sun Dec 16 18:45:56 -0800 2012</date_added>
+      <date_updated>Sun Dec 16 18:45:56 -0800 2012</date_updated>
+      <read_count></read_count>
+      <body>
+
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/479214146]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/479214146]]></link>
+      <owned>0</owned>
+    </review>
+
+    <review>
+      <id>321954695</id>
+      <book>
+        <id type="integer">43326</id>
+        <isbn>0446607207</isbn>
+        <isbn13>9780446607209</isbn13>
+        <text_reviews_count type="integer">656</text_reviews_count>
+        <title>Tell Me Your Dreams</title>
+        <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+        <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        <link>http://www.goodreads.com/book/show/43326.Tell_Me_Your_Dreams</link>
+        <num_pages>384</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>Vision</publisher>
+        <publication_day>1</publication_day>
+        <publication_year>1999</publication_year>
+        <publication_month>8</publication_month>
+        <average_rating>3.87</average_rating>
+        <ratings_count>21767</ratings_count>
+        <description>Computer whiz Ashley Patterson is convinced she is being stalked. Coworker Toni Prescott has a penchant for Internet dating and little time for anyone else. And Alette Peters prefers quiet weekends in the arms of a beefcake artist. They know virtually nothing about each other--until the three women are linked by a murder investigation that will lead to one of the most bizarre trials of the century.</description>
+        <authors>
+          <author>
+            <id>9068</id>
+            <name>Sidney Sheldon</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1209169297p5/9068.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1209169297p2/9068.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/9068.Sidney_Sheldon]]></link>
+            <average_rating>3.76</average_rating>
+            <ratings_count>295991</ratings_count>
+            <text_reviews_count>8470</text_reviews_count>
+          </author>
+        </authors>
+        <published>1999</published>
+      </book>
+
+
+
+      <rating>4</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Mon Apr 30 23:45:47 -0700 2012</date_added>
+      <date_updated>Mon Apr 30 23:45:47 -0700 2012</date_updated>
+      <read_count></read_count>
+      <body>
+
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/321954695]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/321954695]]></link>
+      <owned>0</owned>
+    </review>
+
+    <review>
+      <id>309294124</id>
+      <book>
+        <id type="integer">2122</id>
+        <isbn>0451191153</isbn>
+        <isbn13>9780451191151</isbn13>
+        <text_reviews_count type="integer">7066</text_reviews_count>
+        <title>The Fountainhead</title>
+        <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+        <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        <link>http://www.goodreads.com/book/show/2122.The_Fountainhead</link>
+        <num_pages>720</num_pages>
+        <format>Paperback</format>
+        <edition_information>Centennial Edition </edition_information>
+        <publisher>Signet</publisher>
+        <publication_day>1</publication_day>
+        <publication_year>1996</publication_year>
+        <publication_month>9</publication_month>
+        <average_rating>3.81</average_rating>
+        <ratings_count>180974</ratings_count>
+        <description>When The Fountainhead was first published, Ayn Rand''s daringly original literary vision and her groundbreaking philosophy, Objectivism, won immediate worldwide interest and acclaim. This instant classic is the story of an intransigent young architect, his violent battle against conventional standards, and his explosive love affair with a beautiful woman who struggles to defeat him. This edition contains a special afterword by Rand's literary executor, Leonard Peikoff, which includes excerpts from Ayn Rand's own notes on the making of The Fountainhead. As fresh today as it was then, here is a novel about a hero-and about those who try to destroy him.</description>
+        <authors>
+          <author>
+            <id>432</id>
+            <name>Ayn Rand</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1168729178p5/432.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1168729178p2/432.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/432.Ayn_Rand]]></link>
+            <average_rating>3.72</average_rating>
+            <ratings_count>486443</ratings_count>
+            <text_reviews_count>25953</text_reviews_count>
+          </author>
+        </authors>
+        <published>1996</published>
+      </book>
+
+
+
+      <rating>4</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at>Fri Jul 11 00:00:00 -0700 2008</read_at>
+      <date_added>Mon Apr 09 08:19:21 -0700 2012</date_added>
+      <date_updated>Thu Jan 10 15:48:55 -0800 2013</date_updated>
+      <read_count></read_count>
+      <body>
+        <![CDATA[Good second half. First part of the book could have been better.]]>
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/309294124]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/309294124]]></link>
+      <owned>0</owned>
+    </review>
+
+    <review>
+      <id>309293934</id>
+      <book>
+        <id type="integer">78982</id>
+        <isbn>0312997132</isbn>
+        <isbn13>9780312997137</isbn13>
+        <text_reviews_count type="integer">474</text_reviews_count>
+        <title>Not a Penny More, Not a Penny Less</title>
+        <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+        <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        <link>http://www.goodreads.com/book/show/78982.Not_a_Penny_More_Not_a_Penny_Less</link>
+        <num_pages>305</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>St. Martin's Paperbacks</publisher>
+        <publication_day>16</publication_day>
+        <publication_year>2004</publication_year>
+        <publication_month>5</publication_month>
+        <average_rating>3.97</average_rating>
+        <ratings_count>18282</ratings_count>
+        <description>
+          &lt;div&gt;The conned: an Oxford don, a revered society physician, a chic French art dealer, and a charming English lord. They have one thing in common. Overnight, each novice investor lost his life's fortune to one man. The con: Harvey Metcalfe!!&lt;br&gt;&lt;br&gt;A brilliant, self-made guru of deceit. A very dangerous individual. And now, a hunted man. &lt;br&gt;&lt;br&gt;With nothing left to lose four strangers are about to come together-each expert in their own field. Their plan: find Harvey, shadow him, trap him, and penny-for-penny, destroy him. From the luxurious casinos of Monte Carlo to the high-stakes windows at Ascot to the bustling streets of Wall Street to fashionable London galleries, their own ingenious game has begun. It's called revenge-and they were taught by a master&lt;br&gt;
+          &lt;/div&gt;
+        </description>
+        <authors>
+          <author>
+            <id>4820</id>
+            <name>Jeffrey Archer</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p5/4820.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p2/4820.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/4820.Jeffrey_Archer]]></link>
+            <average_rating>3.91</average_rating>
+            <ratings_count>244039</ratings_count>
+            <text_reviews_count>13205</text_reviews_count>
+          </author>
+        </authors>
+        <published>2004</published>
+      </book>
+
+
+
+      <rating>4</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Mon Apr 09 08:18:55 -0700 2012</date_added>
+      <date_updated>Sat Jan 12 11:31:51 -0800 2013</date_updated>
+      <read_count></read_count>
+      <body>
+        <![CDATA[This is one of archer's finest works! ]]>
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/309293934]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/309293934]]></link>
+      <owned>0</owned>
+    </review>
+
+    <review>
+      <id>309293886</id>
+      <book>
+        <id type="integer">968</id>
+        <isbn>0307277674</isbn>
+        <isbn13>9780307277671</isbn13>
+        <text_reviews_count type="integer">27529</text_reviews_count>
+        <title>The Da Vinci Code (Robert Langdon, #2)</title>
+        <image_url>http://d.gr-assets.com/books/1303252999m/968.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1303252999s/968.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/968.The_Da_Vinci_Code</link>
+        <num_pages>490</num_pages>
+        <format></format>
+        <edition_information/>
+        <publisher></publisher>
+        <publication_day></publication_day>
+        <publication_year></publication_year>
+        <publication_month></publication_month>
+        <average_rating>3.70</average_rating>
+        <ratings_count>1157026</ratings_count>
+        <description>An ingenious code hidden in the works of Leonardo da Vinci. A desperate race through the cathedrals and castles of Europe. An astonishing truth concealed for centuries . . . unveiled at last.&lt;br&gt;&lt;br&gt;While in Paris, Harvard symbologist Robert Langdon is awakened by a phone call in the dead of the night. The elderly curator of the Louvre has been murdered inside the museum, his body covered in baffling symbols. As Langdon and gifted French cryptologist Sophie Neveu sort through the bizarre riddles, they are stunned to discover a trail of clues hidden in the works of Leonardo da Vinci—clues visible for all to see and yet ingeniously disguised by the painter.&lt;br&gt;&lt;br&gt;Even more startling, the late curator was involved in the Priory of Sion—a secret society whose members included Sir Isaac Newton, Victor Hugo, and Da Vinci—and he guarded a breathtaking historical secret. Unless Langdon and Neveu can decipher the labyrinthine puzzle—while avoiding the faceless adversary who shadows their every move—the explosive, ancient truth will be lost forever.</description>
+        <authors>
+          <author>
+            <id>630</id>
+            <name>Dan Brown</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1206553442p5/630.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1206553442p2/630.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/630.Dan_Brown]]></link>
+            <average_rating>3.69</average_rating>
+            <ratings_count>3236910</ratings_count>
+            <text_reviews_count>106417</text_reviews_count>
+          </author>
+        </authors>
+        <published></published>
+      </book>
+
+
+
+      <rating>4</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Mon Apr 09 08:18:47 -0700 2012</date_added>
+      <date_updated>Mon Apr 28 16:09:42 -0700 2014</date_updated>
+      <read_count></read_count>
+      <body>
+        <![CDATA[This is probably one of the best Langdon stories!]]>
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/309293886]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/309293886]]></link>
+      <owned>0</owned>
+    </review>
+
+    <review>
+      <id>309293832</id>
+      <book>
+        <id type="integer">960</id>
+        <isbn>1416524797</isbn>
+        <isbn13>9781416524793</isbn13>
+        <text_reviews_count type="integer">16074</text_reviews_count>
+        <title>Angels &amp; Demons  (Robert Langdon, #1)</title>
+        <image_url>http://d.gr-assets.com/books/1303390735m/960.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1303390735s/960.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/960.Angels_Demons</link>
+        <num_pages>713</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>1416524797</publisher>
+        <publication_day>1</publication_day>
+        <publication_year>2006</publication_year>
+        <publication_month>4</publication_month>
+        <average_rating>3.78</average_rating>
+        <ratings_count>1146395</ratings_count>
+        <description>When world-renowned Harvard symbologist Robert Langdon is summoned to a Swiss research facility to analyze a mysterious symbol—seared into the chest of a murdered physicist—he discovers evidence of the unimaginable: the resurgence of an ancient secret brotherhood known as the Illuminati ... the most powerful underground organization ever to walk the earth. The Illuminati has now surfaced to carry out the final phase of its legendary vendetta against its most hated enemy—the Catholic Church. &lt;br&gt;&lt;br&gt;Langdon’s worst fears are confirmed on the eve of the holy conclave, when a messenger of the Illuminati announces they have hidden an unstoppable time bomb at the very heart of Vatican City. With the countdown under way, Langdon jets to Rome to join forces with Vittoria Vetra, a beautiful and mysterious Italian scientist, to assist the Vatican in a desperate bid for survival. &lt;br&gt;&lt;br&gt;Embarking on a frantic hunt through sealed crypts, dangerous catacombs, deserted cathedrals, and even the most secretive vault on earth, Langdon and Vetra follow a 400-year-old trail of ancient symbols that snakes across Rome toward the long-forgotten Illuminati lair ... a clandestine location that contains the only hope for Vatican salvation.</description>
+        <authors>
+          <author>
+            <id>630</id>
+            <name>Dan Brown</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1206553442p5/630.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1206553442p2/630.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/630.Dan_Brown]]></link>
+            <average_rating>3.69</average_rating>
+            <ratings_count>3236910</ratings_count>
+            <text_reviews_count>106417</text_reviews_count>
+          </author>
+        </authors>
+        <published>2006</published>
+      </book>
+
+
+
+      <rating>4</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Mon Apr 09 08:18:40 -0700 2012</date_added>
+      <date_updated>Thu Jan 10 19:04:56 -0800 2013</date_updated>
+      <read_count></read_count>
+      <body>
+
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/309293832]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/309293832]]></link>
+      <owned>0</owned>
+    </review>
+
+    <review>
+      <id>300464783</id>
+      <book>
+        <id type="integer">2429135</id>
+        <isbn>0307269752</isbn>
+        <isbn13>9780307269751</isbn13>
+        <text_reviews_count type="integer">42133</text_reviews_count>
+        <title>The Girl with the Dragon Tattoo (Millennium, #1)</title>
+        <image_url>http://d.gr-assets.com/books/1327868566m/2429135.jpg</image_url>
+        <small_image_url>http://d.gr-assets.com/books/1327868566s/2429135.jpg</small_image_url>
+        <link>http://www.goodreads.com/book/show/2429135.The_Girl_with_the_Dragon_Tattoo</link>
+        <num_pages>465</num_pages>
+        <format></format>
+        <edition_information>1st edition</edition_information>
+        <publisher></publisher>
+        <publication_day></publication_day>
+        <publication_year></publication_year>
+        <publication_month></publication_month>
+        <average_rating>4.06</average_rating>
+        <ratings_count>1077435</ratings_count>
+        <description>&lt;p&gt;Mikael Blomkvist, a once-respected financial journalist, watches his professional life rapidly crumble around him. Prospects appear bleak until an unexpected (and unsettling) offer to resurrect his name is extended by an old-school titan of Swedish industry. The catch—and there's always a catch—is that Blomkvist must first spend a year researching a mysterious disappearance that has remained unsolved for nearly four decades. With few other options, he accepts and enlists the help of investigator Lisbeth Salander, a misunderstood genius with a cache of authority issues. Little is as it seems in Larsson's novel, but there is at least one constant: you really don't want to mess with the girl with the dragon tattoo.&lt;/p&gt;</description>
+        <authors>
+          <author>
+            <id>706255</id>
+            <name>Stieg Larsson</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1246466225p5/706255.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1246466225p2/706255.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/706255.Stieg_Larsson]]></link>
+            <average_rating>4.10</average_rating>
+            <ratings_count>1814168</ratings_count>
+            <text_reviews_count>106222</text_reviews_count>
+          </author>
+        </authors>
+        <published></published>
+      </book>
+
+
+
+      <rating>4</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Sun Mar 25 11:07:23 -0700 2012</date_added>
+      <date_updated>Sun Mar 25 11:07:25 -0700 2012</date_updated>
+      <read_count></read_count>
+      <body>
+
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/300464783]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/300464783]]></link>
+      <owned>0</owned>
+    </review>
+
+    <review>
+      <id>300464490</id>
+      <book>
+        <id type="integer">78983</id>
+        <isbn>0312995059</isbn>
+        <isbn13>9780312995058</isbn13>
+        <text_reviews_count type="integer">1384</text_reviews_count>
+        <title>Kane and Abel (Kane and Abel, #1)</title>
+        <image_url>http://www.goodreads.com/assets/nocover/111x148.png</image_url>
+        <small_image_url>http://www.goodreads.com/assets/nocover/60x80.png</small_image_url>
+        <link>http://www.goodreads.com/book/show/78983.Kane_and_Abel</link>
+        <num_pages>592</num_pages>
+        <format>Paperback</format>
+        <edition_information/>
+        <publisher>St. Martin's Paperbacks</publisher>
+        <publication_day>13</publication_day>
+        <publication_year>2004</publication_year>
+        <publication_month>3</publication_month>
+        <average_rating>4.22</average_rating>
+        <ratings_count>46537</ratings_count>
+        <description>Born on the same day near the turn of the century on opposite sides of the world, both men are brought together by fate and the quest of a dream. These two men -- ambitious, powerful, ruthless -- are locked in a relentless struggle to build an empire, fuelled by their all-consuming hatred. Over 60 years and three generations, through war, marriage, fortune, and disaster, Kane and Abel battle for the success and triumph that only one man can have.</description>
+        <authors>
+          <author>
+            <id>4820</id>
+            <name>Jeffrey Archer</name>
+            <image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p5/4820.jpg]]></image_url>
+            <small_image_url><![CDATA[http://d.gr-assets.com/authors/1208462800p2/4820.jpg]]></small_image_url>
+            <link><![CDATA[http://www.goodreads.com/author/show/4820.Jeffrey_Archer]]></link>
+            <average_rating>3.91</average_rating>
+            <ratings_count>244039</ratings_count>
+            <text_reviews_count>13205</text_reviews_count>
+          </author>
+        </authors>
+        <published>2004</published>
+      </book>
+
+
+
+      <rating>4</rating>
+      <votes>0</votes>
+      <spoiler_flag>false</spoiler_flag>
+      <spoilers_state>none</spoilers_state>
+      <shelves>
+        <shelf name="read" />
+      </shelves>
+      <recommended_for></recommended_for>
+      <recommended_by></recommended_by>
+      <started_at></started_at>
+      <read_at></read_at>
+      <date_added>Sun Mar 25 11:06:46 -0700 2012</date_added>
+      <date_updated>Mon Apr 28 22:52:01 -0700 2014</date_updated>
+      <read_count></read_count>
+      <body>
+        <![CDATA[This is one of archer's best books. You cannot put it down! Thumbs up!!!]]>
+      </body>
+      <comments_count>review_comments_count</comments_count>
+      <url><![CDATA[http://www.goodreads.com/review/show/300464490]]></url>
+      <link><![CDATA[http://www.goodreads.com/review/show/300464490]]></link>
+      <owned>0</owned>
+    </review>
+
+  </reviews>
+
+</GoodreadsResponse>

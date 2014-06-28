@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>true</authentication>
+    <key><![CDATA[fDfi6rdiIgfTp49R0xj8MQ]]></key>
+    <method><![CDATA[user_status_show]]></method>
+  </Request>
+  <user_status>
+    <id>28080413</id>
+    <header>
+      <![CDATA[Charity is reading <a href="http://www.goodreads.com/review/show/625271315">Board Resolution</a>]]>
+    </header>
+    <body>
+      <![CDATA[I think this is one of her lowest rated reads, but I have to read the entire series to be happy. Besides, I definitely don't mind kink.]]>
+    </body>
+    <created_at>2013-05-26T15:45:53-07:00</created_at>
+    <likes_count>0</likes_count>
+    <comments_count>0</comments_count>
+    <liked>false</liked>
+    <page></page>
+    <percent></percent>
+    <updated_at>2013-09-08T02:28:57-07:00</updated_at>
+    <work_id>10223878</work_id>
+    <user>
+      <id>5832036</id>
+      <name>Charity</name>
+      <location></location>
+      <link><![CDATA[http://www.goodreads.com/user/show/5832036-charity]]></link>
+      <image_url><![CDATA[http://d.gr-assets.com/users/1395964235p3/5832036.jpg]]></image_url>
+      <small_image_url><![CDATA[http://d.gr-assets.com/users/1395964235p2/5832036.jpg]]></small_image_url>
+    </user>
+
+    <book>
+      <id>7654724</id>
+      <title><![CDATA[Board Resolution (Knights of the Board Room, #1)]]></title>
+      <isbn>1419925776</isbn>
+      <isbn13>9781419925771</isbn13>
+      <small_image_url><![CDATA[http://s.gr-assets.com/assets/nophoto/book/50x75-6121bf4c1f669098041843ec9650ca19.png]]></small_image_url>
+      <image_url><![CDATA[http://s.gr-assets.com/assets/nophoto/book/111x148-6204a98ba2aba2d1aa07b9bea87124f8.png]]></image_url>
+      <average_rating>3.73</average_rating>
+      <ratings_count>1827</ratings_count>
+      <authors>
+        <author>
+          <id>103359</id>
+          <name>Joey W. Hill</name>
+        </author>
+      </authors>
+    </book>
+    <comments start="0" end="0" total="0">
+    </comments>
+    <previous_updates></previous_updates>
+    <user_status>
+      <id>28081536</id>
+      <body>Too high a price for this, being only 96 pages.  Booooo. I have to learn to look a bit closer before I buy. As for the book, porn on paper. And no time wasting either.</body>
+      <created_at>2013-05-26T16:19:49-07:00</created_at>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <page></page>
+      <percent>15</percent>
+      <updated_at>2013-09-08T02:29:52-07:00</updated_at>
+      <work_id>10223878</work_id>
+    </user_status>
+  </user_status>
+
+
+</GoodreadsResponse>

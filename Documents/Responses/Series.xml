@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+-<GoodreadsResponse>
+
+
+  -<Request>
+
+    <authentication>true</authentication>
+
+
+    -<key>
+
+      <![CDATA[fDfi6rdiIgfTp49R0xj8MQ]]>
+
+    </key>
+
+
+    -<method>
+
+      <![CDATA[series_show]]>
+
+    </method>
+
+  </Request>
+
+
+  -<series>
+
+    <id>40321</id>
+
+
+    -<title>
+
+      <![CDATA[ Drina ]]>
+
+    </title>
+
+
+    -<description>
+
+      <![CDATA[ ]]>
+
+    </description>
+
+
+    -<note>
+
+      <![CDATA[ ]]>
+
+    </note>
+
+    <series_works_count>11</series_works_count>
+
+    <primary_work_count>11</primary_work_count>
+
+    <numbered>true</numbered>
+
+
+    -<series_works>
+
+
+      -<series_work>
+
+        <id>144541</id>
+
+        <user_position>1</user_position>
+        <work>
+          <id type="integer">6990</id>
+          <ratings_count type="integer">355</ratings_count>
+          <ratings_sum type="integer">1420</ratings_sum>
+          <reviews_count type="integer">627</reviews_count>
+          <best_book type="Book">
+            <id type="integer">1151568</id>
+            <title>Ballet for Drina (Drina, #1)</title>
+            <author>
+              <id type="integer">227840</id>
+              <name>Jean Estoril</name>
+            </author>
+          </best_book>
+        </work>
+      </series_work>
+
+
+      -<series_work>
+
+        <id>155231</id>
+
+        <user_position>2</user_position>
+        <work>
+          <id type="integer">1139050</id>
+          <ratings_count type="integer">190</ratings_count>
+          <ratings_sum type="integer">767</ratings_sum>
+          <reviews_count type="integer">279</reviews_count>
+          <best_book type="Book">
+            <id type="integer">1151567</id>
+            <title>Drina's Dancing Year (Drina, #2)</title>
+            <author>
+              <id type="integer">227840</id>
+              <name>Jean Estoril</name>
+            </author>
+          </best_book>
+        </work>
+      </series_work>
+
+
+      -<series_work>
+
+        <id>144542</id>
+
+        <user_position>3</user_position>
+        <work>
+          <id type="integer">6992</id>
+          <ratings_count type="integer">191</ratings_count>
+          <ratings_sum type="integer">780</ratings_sum>
+          <reviews_count type="integer">277</reviews_count>
+          <best_book type="Book">
+            <id type="integer">3143</id>
+            <title>Drina Dances in Exile (Drina, #3)</title>
+            <author>
+              <id type="integer">227840</id>
+              <name>Jean Estoril</name>
+            </author>
+          </best_book>
+        </work>
+      </series_work>
+
+
+      -<series_work>
+
+        <id>144543</id>
+
+        <user_position>4</user_position>
+        <work>
+          <id type="integer">6993</id>
+          <ratings_count type="integer">173</ratings_count>
+          <ratings_sum type="integer">703</ratings_sum>
+          <reviews_count type="integer">256</reviews_count>
+          <best_book type="Book">
+            <id type="integer">3146</id>
+            <title>Drina Dances in Italy (Drina, #4)</title>
+            <author>
+              <id type="integer">227840</id>
+              <name>Jean Estoril</name>
+            </author>
+          </best_book>
+        </work>
+      </series_work>
+
+
+      -<series_work>
+
+        <id>144394</id>
+
+        <user_position>5</user_position>
+        <work>
+          <id type="integer">121</id>
+          <ratings_count type="integer">168</ratings_count>
+          <ratings_sum type="integer">683</ratings_sum>
+          <reviews_count type="integer">251</reviews_count>
+          <best_book type="Book">
+            <id type="integer">3150</id>
+            <title>Drina Dances Again (Drina, #5)</title>
+            <author>
+              <id type="integer">227840</id>
+              <name>Jean Estoril</name>
+            </author>
+          </best_book>
+        </work>
+      </series_work>
+
+
+      -<series_work>
+
+        <id>144544</id>
+
+        <user_position>6</user_position>
+        <work>
+          <id type="integer">6997</id>
+          <ratings_count type="integer">114</ratings_count>
+          <ratings_sum type="integer">475</ratings_sum>
+          <reviews_count type="integer">198</reviews_count>
+          <best_book type="Book">
+            <id type="integer">3151</id>
+            <title>Drina Dances In New York (Drina, #6)</title>
+            <author>
+              <id type="integer">227840</id>
+              <name>Jean Estoril</name>
+            </author>
+          </best_book>
+        </work>
+      </series_work>
+
+
+      -<series_work>
+
+        <id>167022</id>
+
+        <user_position>7</user_position>
+        <work>
+          <id type="integer">3859327</id>
+          <ratings_count type="integer">104</ratings_count>
+          <ratings_sum type="integer">433</ratings_sum>
+          <reviews_count type="integer">180</reviews_count>
+          <best_book type="Book">
+            <id type="integer">3645</id>
+            <title>Drina Dances in Paris (Drina, #7)</title>
+            <author>
+              <id type="integer">227840</id>
+              <name>Jean Estoril</name>
+            </author>
+          </best_book>
+        </work>
+      </series_work>
+
+
+      -<series_work>
+
+        <id>158664</id>
+
+        <user_position>8</user_position>
+        <work>
+          <id type="integer">1733579</id>
+          <ratings_count type="integer">111</ratings_count>
+          <ratings_sum type="integer">452</ratings_sum>
+          <reviews_count type="integer">183</reviews_count>
+          <best_book type="Book">
+            <id type="integer">3156</id>
+            <title>Drina Dances in Madeira (Drina, #8)</title>
+            <author>
+              <id type="integer">227840</id>
+              <name>Jean Estoril</name>
+            </author>
+          </best_book>
+        </work>
+      </series_work>
+
+
+      -<series_work>
+
+        <id>144395</id>
+
+        <user_position>9</user_position>
+        <work>
+          <id type="integer">122</id>
+          <ratings_count type="integer">112</ratings_count>
+          <ratings_sum type="integer">454</ratings_sum>
+          <reviews_count type="integer">187</reviews_count>
+          <best_book type="Book">
+            <id type="integer">3644</id>
+            <title>Drina Dances in Switzerland (Drina, #9)</title>
+            <author>
+              <id type="integer">227840</id>
+              <name>Jean Estoril</name>
+            </author>
+          </best_book>
+        </work>
+      </series_work>
+
+
+      -<series_work>
+
+        <id>144393</id>
+
+        <user_position>10</user_position>
+        <work>
+          <id type="integer">120</id>
+          <ratings_count type="integer">89</ratings_count>
+          <ratings_sum type="integer">371</ratings_sum>
+          <reviews_count type="integer">147</reviews_count>
+          <best_book type="Book">
+            <id type="integer">3155</id>
+            <title>Drina Goes on Tour (Drina, #10)</title>
+            <author>
+              <id type="integer">227840</id>
+              <name>Jean Estoril</name>
+            </author>
+          </best_book>
+        </work>
+      </series_work>
+
+
+      -<series_work>
+
+        <id>144392</id>
+
+        <user_position>11</user_position>
+        <work>
+          <id type="integer">118</id>
+          <ratings_count type="integer">100</ratings_count>
+          <ratings_sum type="integer">415</ratings_sum>
+          <reviews_count type="integer">185</reviews_count>
+          <best_book type="Book">
+            <id type="integer">3326</id>
+            <title>Drina Ballerina (Drina, #11)</title>
+            <author>
+              <id type="integer">227840</id>
+              <name>Jean Estoril</name>
+            </author>
+          </best_book>
+        </work>
+      </series_work>
+
+    </series_works>
+
+  </series>
+
+</GoodreadsResponse>
