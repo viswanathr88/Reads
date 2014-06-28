@@ -82,8 +82,8 @@
     <Compile Include="Data\FeedViewModel.cs" />
     <Compile Include="Data\HomeViewModel.cs" />
     <Compile Include="Data\LogonViewModel.cs" />
-    <Compile Include="FeedOptions.cs" />
-    <Compile Include="IFeedOptionsViewModel.cs" />
+    <Compile Include="Interfaces\FeedOptions.cs" />
+    <Compile Include="Interfaces\IFeedOptionsViewModel.cs" />
     <Compile Include="Settings\IAppSettings.cs" />
     <Compile Include="Interfaces\IAboutViewModel.cs" />
     <Compile Include="Interfaces\IAddBookViewModel.cs" />
@@ -94,7 +94,7 @@
     <Compile Include="Interfaces\IHomeViewModel.cs" />
     <Compile Include="Interfaces\ILauncherViewModel.cs" />
     <Compile Include="Interfaces\ILogonViewModel.cs" />
-    <Compile Include="ISettingsViewModel.cs" />
+    <Compile Include="Interfaces\ISettingsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IAppRateService.cs" />
     <Compile Include="Services\INavigationOperation.cs" />
@@ -102,7 +102,7 @@
     <Compile Include="Services\ITimer.cs" />
     <Compile Include="Services\ITimerService.cs" />
     <Compile Include="Services\IUrlLauncher.cs" />
-    <Compile Include="SettingsViewModel.cs" />
+    <Compile Include="Interfaces\SettingsViewModel.cs" />
     <Compile Include="Settings\SettingsChangedEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
