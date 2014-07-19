@@ -1,7 +1,18 @@
-﻿<Application
-    x:Class="Epiphany.App"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Epiphany">
+﻿<Application x:Class="Epiphany.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:Epiphany">
 
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UI/IconStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            
+            
+            <x:String x:Key="AppNameLowerCase">epiphany</x:String>
+            <x:String x:Key="AppName">Epiphany</x:String>
+        </ResourceDictionary>
+
+    </Application.Resources>
 </Application>
