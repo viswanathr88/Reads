@@ -5,7 +5,7 @@ using System;
 
 namespace Epiphany.ViewModel
 {
-    public class LogonViewModel : DataViewModel, ILogonViewModel
+    public class LogonViewModel : DataViewModel
     {
         private bool isWaitingForUserInteraction;
         private object error;
@@ -266,7 +266,7 @@ namespace Epiphany.ViewModel
 
         private void NavigateHome()
         {
-            this.navigationService.CreateFor<IHomeViewModel>().Navigate();
+            this.navigationService.CreateFor<HomeViewModel>().Navigate();
         }
     }
 }

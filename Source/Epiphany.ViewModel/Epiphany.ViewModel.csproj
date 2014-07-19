@@ -39,7 +39,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <Folder Include="Items\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\AsyncCommand.cs" />
@@ -78,23 +77,13 @@
     <Compile Include="Commands\RateAppCommand.cs" />
     <Compile Include="Commands\SaveFeedOptionsCommand.cs" />
     <Compile Include="Data\AboutViewModel.cs" />
+    <Compile Include="Data\FeedOptions.cs" />
     <Compile Include="Data\FeedOptionsViewModel.cs" />
     <Compile Include="Data\FeedViewModel.cs" />
     <Compile Include="Data\HomeViewModel.cs" />
     <Compile Include="Data\LogonViewModel.cs" />
-    <Compile Include="Interfaces\FeedOptions.cs" />
-    <Compile Include="Interfaces\IFeedOptionsViewModel.cs" />
+    <Compile Include="Items\FeedItemViewModel.cs" />
     <Compile Include="Settings\IAppSettings.cs" />
-    <Compile Include="Interfaces\IAboutViewModel.cs" />
-    <Compile Include="Interfaces\IAddBookViewModel.cs" />
-    <Compile Include="Interfaces\IBookViewModel.cs" />
-    <Compile Include="Interfaces\ICustomBookshelfItemViewModel.cs" />
-    <Compile Include="Interfaces\IFeedItemViewModel.cs" />
-    <Compile Include="Interfaces\IFeedViewModel.cs" />
-    <Compile Include="Interfaces\IHomeViewModel.cs" />
-    <Compile Include="Interfaces\ILauncherViewModel.cs" />
-    <Compile Include="Interfaces\ILogonViewModel.cs" />
-    <Compile Include="Interfaces\ISettingsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IAppRateService.cs" />
     <Compile Include="Services\INavigationOperation.cs" />
@@ -102,7 +91,6 @@
     <Compile Include="Services\ITimer.cs" />
     <Compile Include="Services\ITimerService.cs" />
     <Compile Include="Services\IUrlLauncher.cs" />
-    <Compile Include="Interfaces\SettingsViewModel.cs" />
     <Compile Include="Settings\SettingsChangedEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>

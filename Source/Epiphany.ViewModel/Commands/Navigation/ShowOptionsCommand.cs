@@ -17,7 +17,7 @@ namespace Epiphany.ViewModel.Commands
 
         protected override VoidType ExecuteSync(VoidType param)
         {
-            this.navigationService.CreateFor<IFeedOptionsViewModel>().Navigate();
+            this.navigationService.CreateFor<FeedOptionsViewModel>().Navigate();
             return VoidType.Empty;
         }
     }

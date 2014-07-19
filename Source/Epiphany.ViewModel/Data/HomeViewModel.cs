@@ -5,13 +5,13 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public class HomeViewModel : DataViewModel, IHomeViewModel
+    public class HomeViewModel : DataViewModel
     {
         private readonly IUserService userService;
         private readonly INavigationService navigationService;
         private readonly IAppSettings appSettings;
 
-        private IFeedViewModel feedViewModel;
+        private FeedViewModel feedViewModel;
 
         public HomeViewModel(IUserService userService, INavigationService navigationService, IAppSettings settings)
         {
@@ -35,7 +35,7 @@ namespace Epiphany.ViewModel
             get { throw new NotImplementedException(); }
         }
 
-        public IFeedViewModel FeedViewModel
+        public FeedViewModel FeedViewModel
         {
             get
             {
@@ -46,11 +46,6 @@ namespace Epiphany.ViewModel
 
                 return this.feedViewModel;
             }
-        }
-
-        public ILauncherViewModel LauncherViewModel
-        {
-            get { throw new NotImplementedException(); }
         }
 
         public ICommand ShowNotifications

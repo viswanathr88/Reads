@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public class AboutViewModel : DataViewModel, IAboutViewModel
+    public class AboutViewModel : DataViewModel
     {
         private readonly ICommand likeOnFacebookCommand;
         private readonly ICommand rateAppCommand;

@@ -9,16 +9,16 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public class FeedViewModel : DataViewModel, IFeedViewModel
+    public class FeedViewModel : DataViewModel
     {
         //
         // Private Members
         //
         private readonly INavigationService navigationService;
-        private IFeedOptionsViewModel feedOptionsViewModel;
+        private FeedOptionsViewModel feedOptionsViewModel;
         private readonly IUserService userService;
         private readonly IAppSettings appSettings;
-        private IList<IFeedItemViewModel> feed;
+        private IList<FeedItemViewModel> feed;
         private bool isFilterEnabled;
         private bool isFeedEmpty;
         //
@@ -40,7 +40,7 @@ namespace Epiphany.ViewModel
 
             this.appSettings.SettingChanged += OnSettingChanged;
 
-            this.Feed = new ObservableCollection<IFeedItemViewModel>();
+            this.Feed = new ObservableCollection<FeedItemViewModel>();
             this.fetchFeedCommand = new FetchFeedCommand(userService);
             this.fetchFeedCommand.Executing += OnCommandExecuting;
             this.fetchFeedCommand.Executed += OnFetchFeedExecuted;
@@ -63,7 +63,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<IFeedItemViewModel> Feed
+        public IList<FeedItemViewModel> Feed
         {
             get { return feed; }
             private set
@@ -89,7 +89,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IFeedOptionsViewModel FeedOptionsViewModel
+        public FeedOptionsViewModel FeedOptionsViewModel
         {
             get
             {
@@ -132,7 +132,7 @@ namespace Epiphany.ViewModel
             if (e.State == CommandExecutionState.Success)
             {
                 IEnumerable<FeedItemModel> items = this.FetchFeed.Result;
-                Feed = new ObservableCollection<IFeedItemViewModel>();
+                Feed = new ObservableCollection<FeedItemViewModel>();
                 if (items != null)
                 {
                     foreach (FeedItemModel model in items)
