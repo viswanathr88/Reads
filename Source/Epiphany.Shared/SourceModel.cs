@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Epiphany.ViewModel.Attributes
+namespace Epiphany.Attributes
 {
     [AttributeUsage(System.AttributeTargets.Class |
                             System.AttributeTargets.Struct)]

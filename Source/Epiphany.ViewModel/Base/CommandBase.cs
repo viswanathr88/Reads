@@ -9,20 +9,18 @@ namespace Epiphany.ViewModel.Commands
 
         public bool CanExecute(object parameter)
         {
-            if (typeof(T2) == typeof(VoidType))
-            {
-                return true;
-            }
-            else
+            // If the type is not voidtype, perform
+            // type checking
+            if (typeof(T2) != typeof(VoidType))
             {
                 if (parameter == null)
                     return false;
 
                 if (!(parameter is T2))
                     return false;
-
-                return CanExecute((T2)parameter);
             }
+
+            return CanExecute((T2)parameter);
         }
 
         public void Execute(object parameter)

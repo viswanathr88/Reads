@@ -1,4 +1,5 @@
 ﻿
+using Epiphany.Settings;
 using Epiphany.ViewModel.Services;
 namespace Epiphany.ViewModel.Commands
 {

@@ -1,4 +1,5 @@
 ﻿using Epiphany.Model.Services;
+using Epiphany.Settings;
 using Epiphany.ViewModel.Services;
 using System;
 using System.Windows.Input;

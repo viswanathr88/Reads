@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="40afcec4-14d5-41af-8730-607ff23e5a17" Publisher="CN=Viswanath" Version="1.0.0.0" />
+  <Identity Name="18719ViswanathRamanan.Epiphany" Publisher="CN=F13159E3-8501-4753-9208-FDD795A7A68F" Version="1.1.0.0" />
   <Properties>
     <DisplayName>Epiphany</DisplayName>
     <PublisherDisplayName>Viswanath Ramanan</PublisherDisplayName>

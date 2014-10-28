@@ -81,6 +81,14 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <ProjectReference Include="..\Epiphany.Model\Epiphany.Model.csproj">
+      <Project>{d4ededd9-ccd4-43d9-821b-9731c187802e}</Project>
+      <Name>Epiphany.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epiphany.ViewModel\Epiphany.ViewModel.csproj">
+      <Project>{50f37359-1dea-47ab-9249-ea864608911c}</Project>
+      <Name>Epiphany.ViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,6 +111,8 @@
     <Content Include="Assets\Square71x71Logo.scale-240.png" />
     <Content Include="Assets\StoreLogo.scale-240.png" />
     <Content Include="Assets\WideLogo.scale-240.png" />
+    <None Include="app.config" />
+    <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="UI\Pages\HomePage.xaml">

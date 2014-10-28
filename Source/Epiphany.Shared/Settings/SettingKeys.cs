@@ -1,11 +1,26 @@
 ﻿
-namespace Epiphany.Model
+namespace Epiphany.Settings
 {
     /// <summary>
     /// Represents a class with keys for each setting
     /// </summary>
     static class SettingKeys
     {
+        public static string EnableTransparentTile
+        {
+            get
+            {
+                return "EnableTransparentTile";
+            }
+        }
+
+        public static string UseMyLocation
+        {
+            get
+            {
+                return "UseMyLocation";
+            }
+        }
         public static string UpdateTypeKey
         {
             get

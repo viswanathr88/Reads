@@ -1,9 +1,10 @@
 ﻿using Epiphany.Model.Services;
 using System;
+using System.ComponentModel;
 
-namespace Epiphany.ViewModel
+namespace Epiphany.Settings
 {
-    public interface IAppSettings
+    public interface IAppSettings : INotifyPropertyChanged
     {
         FeedUpdateType UpdateType
         {
@@ -52,7 +53,5 @@ namespace Epiphany.ViewModel
             get;
             set;
         }
-
-        event EventHandler<SettingsChangedEventArgs> SettingChanged;
     }
 }

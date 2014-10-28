@@ -1,17 +1,22 @@
 ﻿using Epiphany.Model.Services;
-using Epiphany.Model.Settings;
-using System;
-using System.Collections.Generic;
+using Epiphany.Settings;
+using System.ComponentModel;
 
-namespace Epiphany.Model
+namespace Epiphany.Phone.Settings
 {
-    public class ModelSettings
+    public sealed class AppSettings : IAppSettings
     {
+        //
+        // Private members
+        //
+        private static object syncRoot = new object();
+        private static volatile AppSettings instance;
         private readonly ISettingStorage storage;
-
         //
         // Default values
         //
+        private const bool enableTransparentTileDefault = false;
+        private const bool useMyLocationDefault = false;
         private const FeedUpdateType updateTypeDefault = FeedUpdateType.all;
         private const FeedUpdateFilter updateFilterDefault = FeedUpdateFilter.friends;
         private const bool enableLoggingDefault = false;
@@ -19,14 +24,56 @@ namespace Epiphany.Model
         private const BookSortOrder sortOrderDefault = BookSortOrder.d;
         private const BookSearchType searchTypeDefault = BookSearchType.All;
 
-        public ModelSettings(ISettingStorage storage)
+        private AppSettings()
         {
-            if (storage == null)
+            this.storage = SettingsStore.Instance;
+        }
+        
+        public static AppSettings Instance
+        {
+            get
             {
-                throw new ArgumentNullException();
-            }
+                if (instance == null)
+                {
+                    lock (syncRoot)
+                    {
+                        if (instance == null)
+                            instance = new AppSettings();
+                    }
+                }
 
-            this.storage = storage;
+                return instance;
+            }
+        }
+        public bool EnableTransparentTile
+        {
+            get
+            {
+                return this.storage.GetValueOrDefault<bool>(SettingKeys.EnableTransparentTile, enableTransparentTileDefault);
+            }
+            set
+            {
+                if (storage.AddOrUpdate(SettingKeys.EnableTransparentTile, value))
+                {
+                    RaisePropertyChanged(SettingKeys.EnableTransparentTile);
+                }
+            }
+        }
+
+
+        public bool UseMyLocation
+        {
+            get
+            {
+                return storage.GetValueOrDefault<bool>(SettingKeys.UseMyLocation, useMyLocationDefault);
+            }
+            set
+            {
+                if (storage.AddOrUpdate(SettingKeys.UseMyLocation, value))
+                {
+                    RaisePropertyChanged(SettingKeys.UseMyLocation);
+                }
+            }
         }
 
         public FeedUpdateType UpdateType
@@ -37,7 +84,10 @@ namespace Epiphany.Model
             }
             set
             {
-                storage.AddOrUpdate(SettingKeys.UpdateTypeKey, value);
+                if (storage.AddOrUpdate(SettingKeys.UpdateTypeKey, value))
+                {
+                    RaisePropertyChanged(SettingKeys.UpdateTypeKey);
+                }
             }
         }
 
@@ -98,6 +148,16 @@ namespace Epiphany.Model
             set
             {
                 storage.AddOrUpdate(SettingKeys.SearchTypeKey, value);
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void RaisePropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
     }

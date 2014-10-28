@@ -50,9 +50,7 @@
     <Compile Include="Base\ICommand.cs" />
     <Compile Include="Base\ItemViewModel.cs" />
     <Compile Include="Base\UriBuilder.cs" />
-    <Compile Include="Base\SourceModel.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
-    <Compile Include="Base\ViewModelParameter.cs" />
     <Compile Include="Base\VoidType.cs" />
     <Compile Include="Commands\AddShelfCommand.cs">
       <SubType>Code</SubType>
@@ -83,6 +81,7 @@
     <Compile Include="Data\HomeViewModel.cs" />
     <Compile Include="Data\LogonViewModel.cs" />
     <Compile Include="Items\FeedItemViewModel.cs" />
+    <Compile Include="Services\IResourceFinder.cs" />
     <Compile Include="Settings\IAppSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IAppRateService.cs" />
@@ -91,7 +90,7 @@
     <Compile Include="Services\ITimer.cs" />
     <Compile Include="Services\ITimerService.cs" />
     <Compile Include="Services\IUrlLauncher.cs" />
-    <Compile Include="Settings\SettingsChangedEventArgs.cs" />
+    <Compile Include="Settings\ISettingStorage.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Epiphany.Model\Epiphany.Model.csproj">
