@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public class FeedViewModel : DataViewModel
+    public class FeedViewModel : DataViewModel<VoidType>
     {
         //
         // Private Members
@@ -119,7 +119,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override void Load()
+        public override void Load(VoidType param)
         {
             if (!IsLoaded)
             {

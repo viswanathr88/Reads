@@ -12,6 +12,8 @@
             
             <x:String x:Key="AppNameLowerCase">epiphany</x:String>
             <x:String x:Key="AppName">Epiphany</x:String>
+            
+            <local:ViewModelLocator x:Key="ViewModelLocator" />
         </ResourceDictionary>
 
     </Application.Resources>

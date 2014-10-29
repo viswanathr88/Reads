@@ -1,12 +1,13 @@
 ﻿using Epiphany.Model.Services;
 using Epiphany.Settings;
+using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System;
 using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public class HomeViewModel : DataViewModel
+    public class HomeViewModel : DataViewModel<VoidType>
     {
         private readonly IUserService userService;
         private readonly INavigationService navigationService;
@@ -26,9 +27,9 @@ namespace Epiphany.ViewModel
             this.appSettings = settings;
         }
 
-        public override void Load()
+        public override void Load(VoidType param)
         {
-            
+
         }
 
         public int NewNotificationCount

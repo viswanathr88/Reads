@@ -5,7 +5,7 @@ using System;
 
 namespace Epiphany.ViewModel
 {
-    public class LogonViewModel : DataViewModel
+    public class LogonViewModel : DataViewModel<VoidType>
     {
         private bool isWaitingForUserInteraction;
         private object error;
@@ -138,7 +138,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override void Load()
+        public override void Load(VoidType param)
         {
             if (!IsLoaded)
             {
@@ -266,7 +266,7 @@ namespace Epiphany.ViewModel
 
         private void NavigateHome()
         {
-            this.navigationService.CreateFor<HomeViewModel>().Navigate();
+            this.navigationService.Navigate<HomeViewModel, VoidType>(VoidType.Empty);
         }
     }
 }

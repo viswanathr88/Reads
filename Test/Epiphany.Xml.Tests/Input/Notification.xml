@@ -1,0 +1,1868 @@
+﻿<GoodreadsResponse>
+  <Request>
+    <authentication>false</authentication>
+    <method>
+      <![CDATA[ ]]>
+    </method>
+  </Request>
+  <notifications end="30" start="1" total="33">
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>31176611</id>
+          <name>Santhosh</name>
+          <location>India</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/31176611-santhosh-kumar
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1399470219p3/31176611.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1399470219p2/31176611.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2014-05-07T06:44:44-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/31176611-santhosh-kumar">Santhosh</a> became your friend
+]]>
+        </html>
+        <text>Santhosh became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/31176611-santhosh-kumar
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2014-05-07T13:44:07+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">254163833</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2014-05-07T13:44:07+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">31176611</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>31125955</id>
+          <name>Murugan</name>
+          <location>The United States</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/31125955-murugan-ayyappan
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1399314972p3/31125955.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1399314972p2/31125955.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2014-05-05T11:36:17-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/31125955-murugan-ayyappan">Murugan</a> became your friend
+]]>
+        </html>
+        <text>Murugan became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/31125955-murugan-ayyappan
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2014-05-05T18:36:16+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">253717459</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2014-05-05T18:36:16+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">31125955</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>16315452</id>
+          <name>Test</name>
+          <location>Redmond, WA</location>
+          <link>
+            <![CDATA[ https://www.goodreads.com/user/show/16315452-test ]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2014-04-29T15:45:15-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/16315452-test">Test</a> liked <a href="https://www.goodreads.com/read_statuses/402359252?type=readstatus#rating_24847648">your status</a>
+]]>
+        </html>
+        <text>Test liked your status</text>
+      </body>
+      <url>
+        https://www.goodreads.com/read_statuses/402359252?type=readstatus#rating_24847648
+      </url>
+      <resource_type>Rating</resource_type>
+      <group_resource_type>ReadStatus</group_resource_type>
+      <group_resource>
+        <read_status>
+          <id type="integer">402359252</id>
+          <old_status>read</old_status>
+          <review_id type="integer">920476204</review_id>
+          <status>to-read</status>
+          <updated_at type="datetime">2014-04-25T23:00:36+00:00</updated_at>
+          <user_id type="integer">8320965</user_id>
+        </read_status>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>16315452</id>
+          <name>Test</name>
+          <location>Redmond, WA</location>
+          <link>
+            <![CDATA[ https://www.goodreads.com/user/show/16315452-test ]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2014-04-29T15:45:12-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/16315452-test">Test</a> commented on <a href="https://www.goodreads.com/comment/show/97627903">your review of The Da Vinci Code (Robert Langdon, #2)</a>
+]]>
+        </html>
+        <text>
+          <![CDATA[
+Test commented on your review of The Da Vinci Code (Robert Langdon, #2)
+]]>
+        </text>
+      </body>
+      <url>https://www.goodreads.com/comment/show/97627903</url>
+      <resource_type>Comment</resource_type>
+      <group_resource_type>Review</group_resource_type>
+      <group_resource>
+        <review>
+          <book_id type="integer">968</book_id>
+          <comments_count type="integer">0</comments_count>
+          <created_at type="datetime">2012-04-09T15:18:47+00:00</created_at>
+          <hidden_flag type="boolean">false</hidden_flag>
+          <id type="integer">309293886</id>
+          <language_code type="integer" nil="true"/>
+          <last_comment_at type="datetime" nil="true"/>
+          <last_revision_at type="datetime">2014-04-28T23:09:42+00:00</last_revision_at>
+          <non_friends_rating_count type="integer">0</non_friends_rating_count>
+          <notes nil="true"/>
+          <rating type="integer">4</rating>
+          <ratings_count type="integer">0</ratings_count>
+          <ratings_sum type="integer">0</ratings_sum>
+          <read_at type="datetime" nil="true"/>
+          <read_count nil="true"/>
+          <read_status>read</read_status>
+          <recommendation nil="true"/>
+          <recommender_user_id1 type="integer">0</recommender_user_id1>
+          <recommender_user_name1 nil="true"/>
+          <review>This is probably one of the best Langdon stories!</review>
+          <sell_flag type="boolean">false</sell_flag>
+          <spoiler_flag type="boolean">false</spoiler_flag>
+          <started_at type="datetime" nil="true"/>
+          <updated_at type="datetime">2014-04-28T23:09:42+00:00</updated_at>
+          <user_id type="integer">8320965</user_id>
+          <weight type="integer">4</weight>
+          <work_id type="integer">2982101</work_id>
+        </review>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>16315452</id>
+          <name>Test</name>
+          <location>Redmond, WA</location>
+          <link>
+            <![CDATA[ https://www.goodreads.com/user/show/16315452-test ]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2014-04-29T15:44:52-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/16315452-test">Test</a> commented on <a href="https://www.goodreads.com/comment/show/97627881">your review of Kane and Abel (Kane and Abel, #1)</a>
+]]>
+        </html>
+        <text>
+          <![CDATA[
+Test commented on your review of Kane and Abel (Kane and Abel, #1)
+]]>
+        </text>
+      </body>
+      <url>https://www.goodreads.com/comment/show/97627881</url>
+      <resource_type>Comment</resource_type>
+      <group_resource_type>Review</group_resource_type>
+      <group_resource>
+        <review>
+          <book_id type="integer">78983</book_id>
+          <comments_count type="integer">0</comments_count>
+          <created_at type="datetime">2012-03-25T18:06:46+00:00</created_at>
+          <hidden_flag type="boolean">false</hidden_flag>
+          <id type="integer">300464490</id>
+          <language_code type="integer" nil="true"/>
+          <last_comment_at type="datetime" nil="true"/>
+          <last_revision_at type="datetime">2014-04-29T05:52:01+00:00</last_revision_at>
+          <non_friends_rating_count type="integer">0</non_friends_rating_count>
+          <notes nil="true"/>
+          <rating type="integer">4</rating>
+          <ratings_count type="integer">0</ratings_count>
+          <ratings_sum type="integer">0</ratings_sum>
+          <read_at type="datetime" nil="true"/>
+          <read_count nil="true"/>
+          <read_status>read</read_status>
+          <recommendation nil="true"/>
+          <recommender_user_id1 type="integer">0</recommender_user_id1>
+          <recommender_user_name1 nil="true"/>
+          <review>
+            This is one of archer's best books. You cannot put it down! Thumbs up!!!
+          </review>
+          <sell_flag type="boolean">false</sell_flag>
+          <spoiler_flag type="boolean">false</spoiler_flag>
+          <started_at type="datetime" nil="true"/>
+          <updated_at type="datetime">2014-04-29T05:52:01+00:00</updated_at>
+          <user_id type="integer">8320965</user_id>
+          <weight type="integer">7</weight>
+          <work_id type="integer">1084150</work_id>
+        </review>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>16516922</id>
+          <name>Madhavan</name>
+          <location/>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/16516922-madhavan
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1358391159p3/16516922.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1358391159p2/16516922.jpg
+]]>
+          </small_image_url>
+        </user>
+        <user>
+          <id>16315452</id>
+          <name>Test</name>
+          <location>Redmond, WA</location>
+          <link>
+            <![CDATA[ https://www.goodreads.com/user/show/16315452-test ]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2014-04-29T15:43:00-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/16516922-madhavan">Madhavan</a> and <a href="/user/show/16315452-test">Test</a> liked <a href="https://www.goodreads.com/user_status/show/42791550?type=userstatus#rating_24822529">your status</a>
+]]>
+        </html>
+        <text>
+          <![CDATA[ Madhavan and Test liked your status ]]>
+        </text>
+      </body>
+      <url>
+        https://www.goodreads.com/user_status/show/42791550?type=userstatus#rating_24822529
+      </url>
+      <resource_type>Rating</resource_type>
+      <group_resource_type>UserStatus</group_resource_type>
+      <group_resource>
+        <user_status>
+          <body nil="true"/>
+          <book_id type="integer">78987</book_id>
+          <chapter type="integer" nil="true"/>
+          <comments_count type="integer">0</comments_count>
+          <created_at type="datetime">2014-04-28T02:49:54+00:00</created_at>
+          <id type="integer">42791550</id>
+          <last_comment_at type="datetime" nil="true"/>
+          <note_updated_at type="datetime" nil="true"/>
+          <note_uri nil="true"/>
+          <page type="integer">70</page>
+          <percent type="integer">14</percent>
+          <ratings_count type="integer">0</ratings_count>
+          <updated_at type="datetime">2014-04-28T02:49:54+00:00</updated_at>
+          <user_id type="integer">8320965</user_id>
+          <work_id type="integer">1839081</work_id>
+        </user_status>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>16315452</id>
+          <name>Test</name>
+          <location>Redmond, WA</location>
+          <link>
+            <![CDATA[ https://www.goodreads.com/user/show/16315452-test ]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2014-04-29T15:42:51-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/16315452-test">Test</a> liked <a href="https://www.goodreads.com/read_statuses/190246876?type=readstatus#rating_24847598">your status</a>
+]]>
+        </html>
+        <text>Test liked your status</text>
+      </body>
+      <url>
+        https://www.goodreads.com/read_statuses/190246876?type=readstatus#rating_24847598
+      </url>
+      <resource_type>Rating</resource_type>
+      <group_resource_type>ReadStatus</group_resource_type>
+      <group_resource>
+        <read_status>
+          <id type="integer">190246876</id>
+          <old_status>to-read</old_status>
+          <review_id type="integer">300464314</review_id>
+          <status>currently-reading</status>
+          <updated_at type="datetime">2013-10-25T05:50:09+00:00</updated_at>
+          <user_id type="integer">8320965</user_id>
+        </read_status>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>16315452</id>
+          <name>Test</name>
+          <location>Redmond, WA</location>
+          <link>
+            <![CDATA[ https://www.goodreads.com/user/show/16315452-test ]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2014-04-29T15:42:48-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/16315452-test">Test</a> commented on <a href="https://www.goodreads.com/comment/show/97627759">your status</a>
+]]>
+        </html>
+        <text>Test commented on your status</text>
+      </body>
+      <url>https://www.goodreads.com/comment/show/97627759</url>
+      <resource_type>Comment</resource_type>
+      <group_resource_type>ReadStatus</group_resource_type>
+      <group_resource>
+        <read_status>
+          <id type="integer">190246876</id>
+          <old_status>to-read</old_status>
+          <review_id type="integer">300464314</review_id>
+          <status>currently-reading</status>
+          <updated_at type="datetime">2013-10-25T05:50:09+00:00</updated_at>
+          <user_id type="integer">8320965</user_id>
+        </read_status>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>30671317</id>
+          <name>Narayana</name>
+          <location>Amherst, MA</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/30671317-narayana-b
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1397893591p3/30671317.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1397893591p2/30671317.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2014-04-19T00:46:39-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/30671317-narayana-b">Narayana</a> became your friend
+]]>
+        </html>
+        <text>Narayana became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/30671317-narayana-b
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2014-04-19T07:46:39+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">249697633</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2014-04-19T07:46:39+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">30671317</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>4268767</id>
+          <name>Pravin</name>
+          <location>Columbus, OH</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/4268767-pravin-ramesh
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1284056311p3/4268767.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1284056311p2/4268767.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-12-28T05:03:43-08:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/4268767-pravin-ramesh">Pravin</a> became your friend
+]]>
+        </html>
+        <text>Pravin became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/4268767-pravin-ramesh
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-12-28T13:03:42+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">218757197</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-12-28T13:03:42+00:00</updated_at>
+          <updates_flag type="boolean">true</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">4268767</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>26877525</id>
+          <name>Ershad</name>
+          <location/>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/26877525-ershad
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-12-24T17:11:25-08:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/26877525-ershad">Ershad</a> became your friend
+]]>
+        </html>
+        <text>Ershad became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/26877525-ershad
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-12-25T01:11:25+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">217222587</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-12-25T01:11:25+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">26877525</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>18994850</id>
+          <name>Vishal</name>
+          <location>The United Kingdom</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/18994850-vishal-kumar
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-12-19T20:36:44-08:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/18994850-vishal-kumar">Vishal</a> became your friend
+]]>
+        </html>
+        <text>Vishal became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/18994850-vishal-kumar
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-12-20T04:36:21+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">216122913</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-12-20T04:36:21+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">18994850</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>26030807</id>
+          <name>Vinay</name>
+          <location>Mysore, 19, India</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/26030807-vinay-s
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1385469569p3/26030807.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1385469569p2/26030807.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-11-26T04:39:35-08:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/26030807-vinay-s">Vinay</a> became your friend
+]]>
+        </html>
+        <text>Vinay became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/26030807-vinay-s
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-11-26T12:39:35+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">210245781</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-11-26T12:39:35+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">26030807</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>25953851</id>
+          <name>Rama</name>
+          <location>Redmond, WA</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/25953851-rama-krishnan
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1385269303p3/25953851.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1385269303p2/25953851.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-11-23T21:01:48-08:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/25953851-rama-krishnan">Rama</a> became your friend
+]]>
+        </html>
+        <text>Rama became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/25953851-rama-krishnan
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-11-24T05:01:48+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">208550363</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-11-24T05:01:48+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">25953851</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>25657743</id>
+          <name>Ashish</name>
+          <location>Kolkata, 28, India</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/25657743-ashish-panigrahi
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1384516894p3/25657743.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1384516894p2/25657743.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-11-15T04:02:35-08:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/25657743-ashish-panigrahi">Ashish</a> became your friend
+]]>
+        </html>
+        <text>Ashish became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/25657743-ashish-panigrahi
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-11-15T12:02:34+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">203859884</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-11-15T12:02:34+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">25657743</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>23964990</id>
+          <name>Birottam</name>
+          <location>New Delhi, 07, India</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/23964990-birottam-dutta
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1379251158p3/23964990.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1379251158p2/23964990.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-10-03T07:32:24-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/23964990-birottam-dutta">Birottam</a> became your friend
+]]>
+        </html>
+        <text>Birottam became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/23964990-birottam-dutta
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-10-03T14:32:23+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">189281087</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-10-03T14:32:23+00:00</updated_at>
+          <updates_flag type="boolean">true</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">23964990</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>24130201</id>
+          <name>Bharath</name>
+          <location>College Park, MD</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/24130201-bharath-ramaswamy
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1379784203p3/24130201.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1379784203p2/24130201.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-09-21T10:23:43-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/24130201-bharath-ramaswamy">Bharath</a> became your friend
+]]>
+        </html>
+        <text>Bharath became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/24130201-bharath-ramaswamy
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-09-21T17:23:43+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">186310350</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-09-21T17:23:43+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">24130201</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>4038946</id>
+          <name>Ciprian</name>
+          <location/>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/4038946-ciprian-rusen
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1365706083p3/4038946.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1365706083p2/4038946.jpg
+]]>
+          </small_image_url>
+        </user>
+        <user>
+          <id>1326859</id>
+          <name>David</name>
+          <location>Lisboa, Portugal</location>
+          <link>
+            <![CDATA[ https://www.goodreads.com/user/show/1326859-david ]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1237846716p3/1326859.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1237846716p2/1326859.jpg
+]]>
+          </small_image_url>
+        </user>
+        <user>
+          <id>11978911</id>
+          <name>Bookworm R</name>
+          <location/>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/11978911-bookworm-r
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1378836734p3/11978911.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1378836734p2/11978911.jpg
+]]>
+          </small_image_url>
+        </user>
+        <user>
+          <id>3304181</id>
+          <name>Lauren</name>
+          <location>The United States</location>
+          <link>
+            <![CDATA[ https://www.goodreads.com/user/show/3304181-lauren ]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1306367562p3/3304181.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1306367562p2/3304181.jpg
+]]>
+          </small_image_url>
+        </user>
+        <user>
+          <id>7849360</id>
+          <name>Oceans</name>
+          <location>Ljubljana, 01, Slovenia</location>
+          <link>
+            <![CDATA[ https://www.goodreads.com/user/show/7849360-oceans ]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1342972114p3/7849360.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1342972114p2/7849360.jpg
+]]>
+          </small_image_url>
+        </user>
+        <user>
+          <id>7402911</id>
+          <name>
+            <![CDATA[ Jennifer (Still crazy after all these years) ]]>
+          </name>
+          <location>Dorval, QC, Canada</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/7402911-jennifer-still-crazy-after-all-these-years
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1391371008p3/7402911.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1391371008p2/7402911.jpg
+]]>
+          </small_image_url>
+        </user>
+        <user>
+          <id>11720591</id>
+          <name>Brandon</name>
+          <location>Bristol, WI</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/11720591-brandon
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1391227641p3/11720591.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1391227641p2/11720591.jpg
+]]>
+          </small_image_url>
+        </user>
+        <user>
+          <id>3403147</id>
+          <name>Brent</name>
+          <location/>
+          <link>
+            <![CDATA[ https://www.goodreads.com/user/show/3403147-brent ]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1353841812p3/3403147.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1353841812p2/3403147.jpg
+]]>
+          </small_image_url>
+        </user>
+        <user>
+          <id>11177071</id>
+          <name>Kelly (Diva Booknerd)</name>
+          <location>Melbourne, Australia</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/11177071-kelly-diva-booknerd
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1399190958p3/11177071.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1399190958p2/11177071.jpg
+]]>
+          </small_image_url>
+        </user>
+        <user>
+          <id>4685500</id>
+          <name>Angela</name>
+          <location/>
+          <link>
+            <![CDATA[ https://www.goodreads.com/user/show/4685500-angela ]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1383166672p3/4685500.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1383166672p2/4685500.jpg
+]]>
+          </small_image_url>
+        </user>
+        <user>
+          <id>14393932</id>
+          <name>Peter</name>
+          <location>Beirut, 04, Lebanon</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/14393932-peter-mitri
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1352399617p3/14393932.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1352399617p2/14393932.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-09-03T10:07:40-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/4038946-ciprian-rusen">Ciprian</a>, <a href="/user/show/1326859-david">David</a>, <a href="/user/show/11978911-bookworm-r">Bookworm R</a>, <a href="/user/show/3304181-lauren">Lauren</a>, <a href="/user/show/7849360-oceans">Oceans</a>, <a href="/user/show/7402911-jennifer-still-crazy-after-all-these-years">Jennifer (Still crazy after all these years)</a>, <a href="/user/show/11720591-brandon">Brandon</a>, <a href="/user/show/3403147-brent">Brent</a>, <a href="/user/show/11177071-kelly-diva-booknerd">Kelly (Diva Booknerd)</a>, <a href="/user/show/4685500-angela">Angela </a>, and <a href="/user/show/14393932-peter-mitri">Peter</a> commented on <a href="https://www.goodreads.com/comment/show/73742726">the thread: Windows Phone 7.5 or 8.0 App</a>
+]]>
+        </html>
+        <text>
+          <![CDATA[
+Ciprian, David, Bookworm R, Lauren, Oceans, Jennifer (Still crazy after all these years), Brandon, Brent, Kelly (Diva Booknerd), Angela , and Peter commented on the thread: Windows Phone 7.5 or 8.0 App
+]]>
+        </text>
+      </body>
+      <url>https://www.goodreads.com/comment/show/73742726</url>
+      <resource_type>Comment</resource_type>
+      <group_resource_type>Topic</group_resource_type>
+      <group_resource>
+        <topic>
+          <actual_views_count type="integer">1420</actual_views_count>
+          <author_id type="integer" nil="true"/>
+          <author_user_id type="integer">6766924</author_user_id>
+          <book_id type="integer" nil="true"/>
+          <closed_at type="datetime" nil="true"/>
+          <comments_count type="integer">60</comments_count>
+          <context_id type="integer">1</context_id>
+          <context_type>Group</context_type>
+          <created_at type="datetime">2012-08-20T20:30:31+00:00</created_at>
+          <folder_id type="integer">123533</folder_id>
+          <id type="integer">1000177</id>
+          <important_at type="datetime" nil="true"/>
+          <last_comment_at type="datetime">2013-09-03T17:06:16+00:00</last_comment_at>
+          <last_comment_id type="integer">82166225</last_comment_id>
+          <question_flag type="boolean">false</question_flag>
+          <title>Windows Phone 7.5 or 8.0 App</title>
+          <topic_views_count type="integer">1420</topic_views_count>
+          <updated_at type="datetime">2012-08-20T20:30:31+00:00</updated_at>
+          <work_id type="integer" nil="true"/>
+        </topic>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>23338455</id>
+          <name>Shankar</name>
+          <location>Bangalore, 19, India</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/23338455-shankar
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/u_111x148-237d8a3da790277a99416629face31f7.png
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/u_50x66-d9f6a4a5badfda0f69e70cc94d962125.png
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-08-23T05:53:12-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/23338455-shankar">Shankar</a> became your friend
+]]>
+        </html>
+        <text>Shankar became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/23338455-shankar
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-08-23T12:53:11+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">178384475</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-08-23T12:53:11+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">23338455</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>22913645</id>
+          <name>Chichi</name>
+          <location>The United States</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/22913645-chichi-andrea
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1375913273p3/22913645.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1375913273p2/22913645.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-08-08T13:23:27-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/22913645-chichi-andrea">Chichi</a> is following your reviews
+]]>
+        </html>
+        <text>
+          <![CDATA[ Chichi is following your reviews ]]>
+        </text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/22913645-chichi-andrea
+      </url>
+      <resource_type>UserFollowing</resource_type>
+      <group_resource_type>UserFollowing</group_resource_type>
+      <group_resource>
+        <user_following>
+          <created_at type="datetime">2013-08-08T20:23:27+00:00</created_at>
+          <follower_id type="integer">22913645</follower_id>
+          <id type="integer">15008099</id>
+          <user_id type="integer">8320965</user_id>
+        </user_following>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>22460642</id>
+          <name>Divya</name>
+          <location/>
+          <link>
+            <![CDATA[ https://www.goodreads.com/user/show/22460642-divya ]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1374602873p3/22460642.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1374602873p2/22460642.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-07-23T11:08:09-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/22460642-divya">Divya</a> became your friend
+]]>
+        </html>
+        <text>Divya became your friend</text>
+      </body>
+      <url>https://www.goodreads.com/user/show/22460642-divya</url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-07-23T18:08:08+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">168424033</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-07-23T18:08:08+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">22460642</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>22442299</id>
+          <name>Niraj</name>
+          <location>Hoboken, NJ</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/22442299-niraj-khanchandani
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1374550628p3/22442299.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1374550628p2/22442299.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-07-22T20:37:45-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/22442299-niraj-khanchandani">Niraj</a> became your friend
+]]>
+        </html>
+        <text>Niraj became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/22442299-niraj-khanchandani
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-07-23T03:37:45+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">168209831</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-07-23T03:37:45+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">22442299</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>22222432</id>
+          <name>Saraswathy</name>
+          <location>New Delhi, 07, India</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/22222432-saraswathy-hariharan
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1373891058p3/22222432.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1373891058p2/22222432.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-07-15T05:24:23-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/22222432-saraswathy-hariharan">Saraswathy</a> became your friend
+]]>
+        </html>
+        <text>
+          <![CDATA[ Saraswathy became your friend ]]>
+        </text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/22222432-saraswathy-hariharan
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-07-15T12:24:23+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">165498134</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-07-15T12:24:23+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">22222432</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>21784017</id>
+          <name>Sonam</name>
+          <location>Hialeah, FL</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/21784017-sonam-patel
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1372607769p3/21784017.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1372607769p2/21784017.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-06-30T08:57:44-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/21784017-sonam-patel">Sonam</a> became your friend
+]]>
+        </html>
+        <text>Sonam became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/21784017-sonam-patel
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-06-30T15:57:43+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">160069709</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-06-30T15:57:43+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">21784017</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>21659999</id>
+          <name>Rushanth</name>
+          <location>Colombo, 36, Sri Lanka</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/21659999-rushanth-veerasingham
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1372227727p3/21659999.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1372227727p2/21659999.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-06-25T23:22:21-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/21659999-rushanth-veerasingham">Rushanth</a> became your friend
+]]>
+        </html>
+        <text>Rushanth became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/21659999-rushanth-veerasingham
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-06-26T06:22:21+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">158610673</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-06-26T06:22:21+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">21659999</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>21448324</id>
+          <name>Anant</name>
+          <location>Madras, 25, India</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/21448324-anant-raman
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1371618632p3/21448324.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1371618632p2/21448324.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-06-18T22:10:36-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/21448324-anant-raman">Anant</a> became your friend
+]]>
+        </html>
+        <text>Anant became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/21448324-anant-raman
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-06-19T05:10:36+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">156076538</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-06-19T05:10:36+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">21448324</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>21306534</id>
+          <name>Shalini</name>
+          <location>Noida, 36, India</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/21306534-shalini-shah
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1371219303p3/21306534.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1371219303p2/21306534.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-06-14T07:15:12-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/21306534-shalini-shah">Shalini</a> became your friend
+]]>
+        </html>
+        <text>Shalini became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/21306534-shalini-shah
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-06-14T14:15:12+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">154327449</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-06-14T14:15:12+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">21306534</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>1877798</id>
+          <name>Krithika</name>
+          <location>Madras, 25, India</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/1877798-krithika
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1345152840p3/1877798.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1345152840p2/1877798.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-06-08T15:41:01-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/1877798-krithika">Krithika</a> became your friend
+]]>
+        </html>
+        <text>Krithika became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/1877798-krithika
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-06-08T22:41:01+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">152281521</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-06-08T22:41:01+00:00</updated_at>
+          <updates_flag type="boolean">true</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">1877798</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>20468844</id>
+          <name>Payal</name>
+          <location>Mumbai, 16, India</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/20468844-payal-agrawal
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1368876989p3/20468844.jpg
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://d.gr-assets.com/users/1368876989p2/20468844.jpg
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-05-18T04:36:39-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/20468844-payal-agrawal">Payal</a> became your friend
+]]>
+        </html>
+        <text>Payal became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/20468844-payal-agrawal
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-05-18T11:36:39+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">144346903</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-05-18T11:36:39+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">20468844</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+    <notification>
+      <id>1</id>
+      <actors>
+        <user>
+          <id>10956623</id>
+          <name>Shraddha</name>
+          <location>Muscat, 06, Oman</location>
+          <link>
+            <![CDATA[
+https://www.goodreads.com/user/show/10956623-shraddha-sawardekar
+]]>
+          </link>
+          <image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/f_111x148-50ade1db09790810151d48c044458007.png
+]]>
+          </image_url>
+          <small_image_url>
+            <![CDATA[
+https://www.goodreads.com/assets/nophoto/user/f_50x66-e0ba3b90c110cd67123d6a850d85373e.png
+]]>
+          </small_image_url>
+        </user>
+      </actors>
+      <new>false</new>
+      <created_at>2013-05-09T10:37:24-07:00</created_at>
+      <body>
+        <html>
+          <![CDATA[
+<a href="/user/show/10956623-shraddha-sawardekar">Shraddha</a> became your friend
+]]>
+        </html>
+        <text>Shraddha became your friend</text>
+      </body>
+      <url>
+        https://www.goodreads.com/user/show/10956623-shraddha-sawardekar
+      </url>
+      <resource_type>Friend</resource_type>
+      <group_resource_type>Friend</group_resource_type>
+      <group_resource>
+        <friend>
+          <created_at type="datetime">2013-05-09T17:37:23+00:00</created_at>
+          <friend_approved_at type="datetime" nil="true"/>
+          <friend_user_id type="integer">8320965</friend_user_id>
+          <id type="integer">141069420</id>
+          <relationship nil="true"/>
+          <story nil="true"/>
+          <updated_at type="datetime">2013-05-09T17:37:23+00:00</updated_at>
+          <updates_flag type="boolean">false</updates_flag>
+          <user_approved_at type="datetime" nil="true"/>
+          <user_id type="integer">10956623</user_id>
+        </friend>
+      </group_resource>
+    </notification>
+  </notifications>
+</GoodreadsResponse>

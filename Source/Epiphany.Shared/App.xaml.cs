@@ -1,19 +1,12 @@
 ﻿using Epiphany.UI.Pages;
+using Epiphany.ViewModel;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+using System.Diagnostics;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
@@ -30,6 +23,7 @@ namespace Epiphany
         private TransitionCollection transitions;
 #endif
 
+        private const string viewModelLocatorKey = "ViewModelLocator";
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -46,7 +40,7 @@ namespace Epiphany
         /// search results, and so forth.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected async override void OnLaunched(LaunchActivatedEventArgs e)
         {
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
@@ -54,6 +48,8 @@ namespace Epiphany
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
+            // Let's initialize our app
+            await InitializeAsync();
 
             Frame rootFrame = Window.Current.Content as Frame;
 
@@ -96,7 +92,7 @@ namespace Epiphany
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                if (!rootFrame.Navigate(typeof(HomePage), e.Arguments))
+                if (!rootFrame.Navigate(typeof(HomePage), VoidType.Empty))
                 {
                     throw new Exception("Failed to create initial page");
                 }
@@ -133,6 +129,26 @@ namespace Epiphany
 
             // TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        /// <summary>
+        /// Initializes the app
+        /// </summary>
+        /// <returns></returns>
+        private async Task InitializeAsync()
+        {
+            // Initialize ViewModelLocator
+            Debug.Assert(Resources != null);
+            Debug.Assert(Resources.ContainsKey(viewModelLocatorKey));
+
+            if (Resources.ContainsKey(viewModelLocatorKey))
+            {
+                ViewModelLocator locator = Resources[viewModelLocatorKey] as ViewModelLocator;
+                Debug.Assert(locator != null);
+                await locator.InitializeAsync();
+            }
+
+            // Set up Logging
         }
     }
 }

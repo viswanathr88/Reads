@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public class FeedOptionsViewModel : DataViewModel
+    public class FeedOptionsViewModel : DataViewModel<VoidType>
     {
         private readonly IAppSettings appSettings;
         private FeedOptions feedOptions;
@@ -95,7 +95,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override void Load()
+        public override void Load(VoidType param)
         {
             if (!IsLoaded)
             {
@@ -105,6 +105,7 @@ namespace Epiphany.ViewModel
                 IsLoaded = true;
             }
         }
+
         private void CreateFeedOptions()
         {
             FeedOptions = new FeedOptions(CurrentUpdateType, CurrentUpdateFilter);

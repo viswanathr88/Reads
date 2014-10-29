@@ -65,6 +65,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epiphany.Windows", "Source\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epiphany.WindowsPhone", "Source\Epiphany.WindowsPhone\Epiphany.WindowsPhone.csproj", "{BC8D03BB-E7F3-45BD-9A15-22E7B3B849F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epiphany.Utilities", "Source\Epiphany.Utilities\Epiphany.Utilities.csproj", "{3DFD3B4A-996B-476B-BA5A-B354BBBA696A}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Source\Epiphany.Shared\Epiphany.Shared.projitems*{abcd7f2c-ab38-4ae0-ade6-8926a7e7311d}*SharedItemsImports = 4
@@ -226,6 +228,20 @@ Global
 		{BC8D03BB-E7F3-45BD-9A15-22E7B3B849F8}.Release|x86.ActiveCfg = Release|x86
 		{BC8D03BB-E7F3-45BD-9A15-22E7B3B849F8}.Release|x86.Build.0 = Release|x86
 		{BC8D03BB-E7F3-45BD-9A15-22E7B3B849F8}.Release|x86.Deploy.0 = Release|x86
+		{3DFD3B4A-996B-476B-BA5A-B354BBBA696A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DFD3B4A-996B-476B-BA5A-B354BBBA696A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DFD3B4A-996B-476B-BA5A-B354BBBA696A}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{3DFD3B4A-996B-476B-BA5A-B354BBBA696A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3DFD3B4A-996B-476B-BA5A-B354BBBA696A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3DFD3B4A-996B-476B-BA5A-B354BBBA696A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3DFD3B4A-996B-476B-BA5A-B354BBBA696A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3DFD3B4A-996B-476B-BA5A-B354BBBA696A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DFD3B4A-996B-476B-BA5A-B354BBBA696A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DFD3B4A-996B-476B-BA5A-B354BBBA696A}.Release|ARM.ActiveCfg = Release|Any CPU
+		{3DFD3B4A-996B-476B-BA5A-B354BBBA696A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3DFD3B4A-996B-476B-BA5A-B354BBBA696A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3DFD3B4A-996B-476B-BA5A-B354BBBA696A}.Release|x64.ActiveCfg = Release|Any CPU
+		{3DFD3B4A-996B-476B-BA5A-B354BBBA696A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -240,5 +256,6 @@ Global
 		{1F4DA18D-ECFC-494D-BA21-83E142CB2B28} = {956701B8-1F1F-455F-B6F8-287E3C0FDA0F}
 		{ABCD7F2C-AB38-4AE0-ADE6-8926A7E7311D} = {956701B8-1F1F-455F-B6F8-287E3C0FDA0F}
 		{BC8D03BB-E7F3-45BD-9A15-22E7B3B849F8} = {956701B8-1F1F-455F-B6F8-287E3C0FDA0F}
+		{3DFD3B4A-996B-476B-BA5A-B354BBBA696A} = {956701B8-1F1F-455F-B6F8-287E3C0FDA0F}
 	EndGlobalSection
 EndGlobal

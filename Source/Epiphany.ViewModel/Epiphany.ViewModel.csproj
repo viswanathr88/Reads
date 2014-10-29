@@ -48,6 +48,7 @@
     <Compile Include="Base\DataViewModel.cs" />
     <Compile Include="Base\ExecutedEventArgs.cs" />
     <Compile Include="Base\ICommand.cs" />
+    <Compile Include="Base\IDataViewModel.cs" />
     <Compile Include="Base\ItemViewModel.cs" />
     <Compile Include="Base\UriBuilder.cs" />
     <Compile Include="Base\ViewModelBase.cs" />

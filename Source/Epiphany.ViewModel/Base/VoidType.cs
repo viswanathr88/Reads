@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Epiphany.ViewModel.Commands
+namespace Epiphany.ViewModel
 {
     public class VoidType
     {

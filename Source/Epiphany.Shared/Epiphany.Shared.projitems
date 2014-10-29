@@ -19,11 +19,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\ObservableDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IViewLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NavigationService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\AppSettings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\SettingKeys.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\SettingsStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SourceModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)UI\DataPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewLocator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -34,8 +36,5 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Authentication\" />
   </ItemGroup>
 </Project>
