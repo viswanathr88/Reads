@@ -19,14 +19,17 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\ObservableDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IViewLocator.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)NavigationService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\AppSettings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\SettingKeys.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\SettingsStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SourceModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewLocator.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModelLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewServices\IViewLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewServices\NavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewServices\Timer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewServices\TimerService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewServices\TokenParser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewServices\ViewLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewServices\ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en-US\Resources.resw" />

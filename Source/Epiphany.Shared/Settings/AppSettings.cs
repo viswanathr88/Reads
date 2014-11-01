@@ -1,8 +1,7 @@
 ﻿using Epiphany.Model.Services;
-using Epiphany.Settings;
 using System.ComponentModel;
 
-namespace Epiphany.Phone.Settings
+namespace Epiphany.Settings
 {
     public sealed class AppSettings : IAppSettings
     {

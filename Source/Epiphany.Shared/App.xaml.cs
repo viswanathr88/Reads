@@ -1,4 +1,5 @@
 ﻿using Epiphany.UI.Pages;
+using Epiphany.View;
 using Epiphany.ViewModel;
 using System;
 using System.Diagnostics;
