@@ -1,4 +1,4 @@
-﻿using Epiphany.Attributes;
+﻿using Epiphany.View.Attributes;
 using Epiphany.ViewModel;
 
 namespace Epiphany.UI.Pages

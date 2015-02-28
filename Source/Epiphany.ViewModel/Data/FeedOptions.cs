@@ -6,7 +6,6 @@ namespace Epiphany.ViewModel
     {
         private readonly FeedUpdateType updateType;
         private readonly FeedUpdateFilter updateFilter;
-        private FeedUpdateType CurrentUpdateType;
 
         public FeedOptions(FeedUpdateType type, FeedUpdateFilter filter)
         {

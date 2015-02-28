@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Epiphany.Attributes
+namespace Epiphany.View.Attributes
 {
     [AttributeUsage(System.AttributeTargets.Class |
                             System.AttributeTargets.Struct)]

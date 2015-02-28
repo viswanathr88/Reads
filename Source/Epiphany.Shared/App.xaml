@@ -1,7 +1,7 @@
 ﻿<Application x:Class="Epiphany.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:view="using:Epiphany.View">
+             xmlns:view="using:Epiphany.View.Services">
 
     <Application.Resources>
         <ResourceDictionary>
@@ -12,7 +12,7 @@
             
             <x:String x:Key="AppNameLowerCase">epiphany</x:String>
             <x:String x:Key="AppName">Epiphany</x:String>
-            
+
             <view:ViewModelLocator x:Key="ViewModelLocator" />
         </ResourceDictionary>
 

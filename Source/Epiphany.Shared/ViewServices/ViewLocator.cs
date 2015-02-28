@@ -1,4 +1,5 @@
-﻿using Epiphany.Attributes;
+﻿using Epiphany.View.Attributes;
+using Epiphany.View.Services;
 using System;
 using System.Collections.Generic;
 using System.IO;

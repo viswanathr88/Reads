@@ -1,12 +1,10 @@
 ﻿using Epiphany.Model.Services;
 using Epiphany.Settings;
-using Epiphany.View.Services;
 using Epiphany.ViewModel;
 using Epiphany.ViewModel.Services;
-using System;
 using System.Threading.Tasks;
 
-namespace Epiphany.View
+namespace Epiphany.View.Services
 {
     public class ViewModelLocator
     {
@@ -30,10 +28,9 @@ namespace Epiphany.View
 
         public ViewModelLocator()
         {
-            //
+            this.authService = new AuthService();
             // Setup the service factory
-            //
-            //this.modelFactory = new ServiceFactory(this.authService);
+            this.modelFactory = new ServiceFactory(this.authService);
             this.appSettings = AppSettings.Instance;
             //
             // Setup all the view services
@@ -76,7 +73,12 @@ namespace Epiphany.View
         {
             get
             {
-                throw new NotImplementedException();
+                if (this.aboutViewModel == null)
+                {
+                    this.aboutViewModel = new AboutViewModel(null, null);
+                }
+
+                return this.aboutViewModel;
             }
         }
     }

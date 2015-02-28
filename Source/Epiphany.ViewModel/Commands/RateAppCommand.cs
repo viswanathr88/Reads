@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel.Commands
 {
-    class RateAppCommand : ICommand
+    class RateAppCommand : Command<VoidType, VoidType>
     {
         private readonly IAppRateService service;
 
@@ -12,17 +12,15 @@ namespace Epiphany.ViewModel.Commands
             this.service = service;
         }
 
-        public bool CanExecute(object parameter)
+        public override bool CanExecute(VoidType param)
         {
             return true;
         }
 
-        public event System.EventHandler CanExecuteChanged;
-
-        public void Execute(object parameter)
+        protected override VoidType ExecuteSync(VoidType param)
         {
-            service.RateApp();
-
+            this.service.RateApp();
+            return VoidType.Empty;
         }
     }
 }

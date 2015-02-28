@@ -1,7 +1,6 @@
 ﻿
-using Epiphany.ViewModel;
 using System;
-namespace Epiphany.View
+namespace Epiphany.View.Services
 {
     public interface IViewLocator
     {

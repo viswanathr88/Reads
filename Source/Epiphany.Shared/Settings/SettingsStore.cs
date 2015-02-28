@@ -1,4 +1,5 @@
-﻿using Windows.Foundation.Collections;
+﻿using Epiphany.Settings;
+using Windows.Foundation.Collections;
 using Windows.Storage;
 
 namespace Epiphany.Settings
