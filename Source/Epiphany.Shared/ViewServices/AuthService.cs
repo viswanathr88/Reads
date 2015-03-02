@@ -124,9 +124,15 @@ namespace Epiphany.View.Services
             var request = new RestRequest("api/auth_user", HttpMethod.Get);
             this.restClient.Authenticator = OAuth1Authenticator.ForProtectedResource(config.ConsumerKey, 
                 config.ConsumerKeySecret, permanentToken.AuthToken, permanentToken.TokenSecret);
-            IRestResponse<string> response = await this.restClient.Execute<string>(request);
+            IRestResponse response = await this.restClient.Execute(request);
 
-            if (string.IsNullOrEmpty(response.Data))
+            if (response == null || response.RawBytes == null || response.RawBytes.Length <= 0)
+            {
+                throw new ModelException(ModelExceptionType.NoTokens);
+            }
+
+            string content = Encoding.UTF8.GetString(response.RawBytes, 0, response.RawBytes.Length);
+            if (string.IsNullOrEmpty(content))
             {
                 throw new ModelException(ModelExceptionType.NoUserId);
             }
@@ -134,7 +140,7 @@ namespace Epiphany.View.Services
             Credential credential = null;
             try
             {
-                XDocument document = XDocument.Parse(response.Data);
+                XDocument document = XDocument.Parse(content);
                 XElement responseElement = document.Element("GoodreadsResponse");
                 int id = int.Parse((string)responseElement.Element("user").Attribute("id"));
                 string name = (string)responseElement.Element("user").Element("name");

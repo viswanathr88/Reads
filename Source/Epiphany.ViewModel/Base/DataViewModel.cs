@@ -1,7 +1,5 @@
-﻿using Epiphany.ViewModel.Services;
+﻿using Epiphany.Logging;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace Epiphany.ViewModel
 {
@@ -36,6 +34,7 @@ namespace Epiphany.ViewModel
 
         public void Load(object param)
         {
+            Log.Instance.Debug(param.GetType().ToString(), GetName());
             T safeParam = GetSafeParam(param);
 
             Load(safeParam);

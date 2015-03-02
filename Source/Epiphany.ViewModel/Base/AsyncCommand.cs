@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Epiphany.Logging;
+using System;
 using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel.Commands
@@ -25,11 +26,13 @@ namespace Epiphany.ViewModel.Commands
                 {
                     Error = ex;
                     state = CommandExecutionState.Failure;
+                    Log.Instance.Error(string.Format("{0} Stack - {1}", ex.Message, ex.StackTrace), GetName());
                 }
             }
             else
             {
                 state = CommandExecutionState.Cancelled;
+                Log.Instance.Warn("Execute was cancelled", GetName());
             }
             RaiseExecuted(state);
         }

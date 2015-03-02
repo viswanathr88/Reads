@@ -1,4 +1,5 @@
-﻿using Epiphany.Model.Authentication;
+﻿using Epiphany.Logging;
+using Epiphany.Model.Authentication;
 using Epiphany.Model.Messaging;
 using System;
 using System.Threading.Tasks;
@@ -114,11 +115,9 @@ namespace Epiphany.Model.Services
                 State = LogonState.Connected;
                 result = true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // 
-                // TODO: Log a warning here
-                //
+                Log.Instance.Warn(ex.StackTrace, GetType().ToString());
             }
             return result;
         }

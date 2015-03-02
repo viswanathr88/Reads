@@ -160,6 +160,7 @@ namespace Epiphany.ViewModel
             StopTimer();
             if (e.State == CommandExecutionState.Success)
             {
+                Log.Instance.Info(this.verifyLoginCommand.Result.ToString(), GetName());
                 if (this.verifyLoginCommand.Result)
                 {
                     NavigateHome();

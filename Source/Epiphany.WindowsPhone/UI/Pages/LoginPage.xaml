@@ -10,10 +10,9 @@
     DataContext="{Binding Logon, Source={StaticResource VMLocator}}">
 
     <Grid>
-        <WebView Visibility="Visible"
+        <WebView Visibility="{Binding IsWaitingForUserInteraction, Converter={StaticResource VisibilityConverter}}"
                  Source="{Binding CurrentUri}"
-                 NavigationStarting="WebView_NavigationStarting"
-                 NavigationCompleted="WebView_NavigationCompleted"
+                 NavigationStarting="OnNavigationStarting"
                  />
     </Grid>
 </local:DataPage>
