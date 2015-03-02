@@ -1,9 +1,16 @@
-﻿using System;
+﻿using Epiphany.Logging;
+using System;
 
 namespace Epiphany.ViewModel.Commands
 {
     public abstract class CommandBase<T1, T2> : ICommand<T1, T2>
     {
+        private readonly string name;
+
+        public CommandBase()
+        {
+            this.name = GetType().ToString();
+        }
         public abstract bool CanExecute(T2 param);
         public abstract void Execute(T2 param);
 
@@ -53,19 +60,30 @@ namespace Epiphany.ViewModel.Commands
         protected void RaiseExecuting(CancelEventArgs args)
         {
             if (Executing != null)
+            {
+                Log.Instance.Debug("", GetName());
                 Executing(this, args);
+            }
         }
 
         protected void RaiseExecuted(CommandExecutionState state)
         {
             if (Executed != null)
+            {
+                Log.Instance.Debug(state.ToString(), GetName());
                 Executed(this, new ExecutedEventArgs(state));
+            }
         }
 
         protected void RaiseCanExecuteChanged()
         {
             if (CanExecuteChanged != null)
                 CanExecuteChanged(this, EventArgs.Empty);
+        }
+
+        protected string GetName()
+        {
+            return this.name;
         }
 
         private T2 GetSafeParam(object parameter)

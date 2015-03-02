@@ -22,9 +22,4 @@ namespace Epiphany.ViewModel.Commands
         event EventHandler<CancelEventArgs> Executing;
         event EventHandler<ExecutedEventArgs> Executed;
     }
-
-    public interface ISimpleCommand : ICommand<VoidType, VoidType>
-    {
-
-    }
 }

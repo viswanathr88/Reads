@@ -59,7 +59,7 @@ namespace Epiphany.Model.Authentication
             this.requestTokenUri = new Uri("http://www.goodreads.com/oauth/request_token");
             this.authorizeUri = new Uri("http://www.goodreads.com/oauth/authorize");
             this.accessTokenUri = new Uri("http://www.goodreads.com/oauth/access_token");
-            this.callbackUri = new Uri("http://localhost/goodreads_oauth_callback");
+            this.callbackUri = new Uri("http://myepiphanyapp.com/goodreads_oauth_callback");
         }
         /// <summary>
         /// Gets the consumer key

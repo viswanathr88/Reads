@@ -1,7 +1,9 @@
-﻿using Epiphany.Model.Services;
+﻿using Epiphany.Logging;
+using Epiphany.Model.Services;
 using Epiphany.Settings;
 using Epiphany.ViewModel;
 using Epiphany.ViewModel.Services;
+using System.Diagnostics.Tracing;
 using System.Threading.Tasks;
 
 namespace Epiphany.View.Services
@@ -42,6 +44,8 @@ namespace Epiphany.View.Services
         public async Task InitializeAsync()
         {
             await this.navigationService.InitializeAsync();
+            Log.Instance.Debug("Complete", GetType().ToString());
+
         }
         public LogonViewModel Logon
         {

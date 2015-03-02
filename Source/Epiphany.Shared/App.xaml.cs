@@ -1,9 +1,11 @@
-﻿using Epiphany.UI.Pages;
+﻿using Epiphany.Logging;
+using Epiphany.UI.Pages;
 using Epiphany.View;
 using Epiphany.View.Services;
 using Epiphany.ViewModel;
 using System;
 using System.Diagnostics;
+using System.Diagnostics.Tracing;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -25,7 +27,7 @@ namespace Epiphany
         private TransitionCollection transitions;
 #endif
 
-        private const string viewModelLocatorKey = "ViewModelLocator";
+        private const string viewModelLocatorKey = "VMLocator";
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -94,7 +96,7 @@ namespace Epiphany
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                if (!rootFrame.Navigate(typeof(HomePage), VoidType.Empty))
+                if (!rootFrame.Navigate(typeof(LoginPage), VoidType.Empty))
                 {
                     throw new Exception("Failed to create initial page");
                 }
@@ -139,18 +141,31 @@ namespace Epiphany
         /// <returns></returns>
         private async Task InitializeAsync()
         {
-            // Initialize ViewModelLocator
-            Debug.Assert(Resources != null);
-            Debug.Assert(Resources.ContainsKey(viewModelLocatorKey));
+            // Set up Logging
+            SetupLogging();
 
+            // Initialize ViewModelLocator
             if (Resources.ContainsKey(viewModelLocatorKey))
             {
                 ViewModelLocator locator = Resources[viewModelLocatorKey] as ViewModelLocator;
-                Debug.Assert(locator != null);
-                await locator.InitializeAsync();
+                if (locator == null)
+                {
+                    Log.Instance.Error("ViewModelLocator was not found! Cannot Initialize", GetType().ToString());
+                }
+                else
+                {
+                    await locator.InitializeAsync();
+                }
             }
+        }
 
-            // Set up Logging
+        private void SetupLogging()
+        {
+            Logger logger = new Logger();
+            Log.SetLogger(logger);
+
+            EventListener debugLog = new Logging.DebugLog();
+            debugLog.EnableEvents(logger, EventLevel.Verbose);
         }
     }
 }

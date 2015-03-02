@@ -82,6 +82,7 @@ namespace Epiphany.Model.Services
             State = LogonState.Connecting;
             await this.authService.RequestTemporaryToken();
             Uri authorizeUri = this.authService.GetAuthorizeUri();
+
             return authorizeUri;
         }
 

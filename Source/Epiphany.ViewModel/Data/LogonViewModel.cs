@@ -1,4 +1,5 @@
-﻿using Epiphany.Model.Services;
+﻿using Epiphany.Logging;
+using Epiphany.Model.Services;
 using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System;
@@ -12,7 +13,6 @@ namespace Epiphany.ViewModel
         private Uri currentUri;
         private ITimer timer;
         private bool isSignInTakingLonger;
-
         //
         // Services
         //
@@ -140,6 +140,8 @@ namespace Epiphany.ViewModel
 
         public override void Load(VoidType param)
         {
+            Log.Instance.Debug(IsLoaded.ToString(), GetName());
+
             if (!IsLoaded)
             {
                 this.verifyLoginCommand.Execute(VoidType.Empty);

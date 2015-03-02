@@ -7,6 +7,11 @@ namespace Epiphany.ViewModel
 {
     public abstract class ViewModelBase : INotifyPropertyChanged, IDisposable
     {
+        private readonly string name;
+        public ViewModelBase()
+        {
+            this.name = GetType().ToString();
+        }
         public void SetValue(string propertyName, string value)
         {
             PropertyInfo info = GetProperty(propertyName);
@@ -34,6 +39,11 @@ namespace Epiphany.ViewModel
         {
             PropertyInfo pInfo = this.GetType().GetRuntimeProperty(propertyName);
             return pInfo;
+        }
+
+        protected string GetName()
+        {
+            return this.name;
         }
 
         protected void RaisePropertyChanged<T>(Expression<Func<T>> expr)

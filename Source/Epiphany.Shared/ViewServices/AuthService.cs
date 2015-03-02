@@ -7,8 +7,10 @@ using RestSharp.Portable;
 using RestSharp.Portable.Authenticators;
 using System;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Windows.Security.Authentication.Web;
 using Windows.Storage;
 
 namespace Epiphany.View.Services
@@ -18,6 +20,7 @@ namespace Epiphany.View.Services
         private readonly AuthConfig config = new AuthConfig();
         private readonly RestClient restClient;
         private readonly TokenParser tokenParser;
+        private readonly IWebClient webClient;
         private Token temporaryToken;
         private Token permanentToken;
         private Credential cachedCredential;
@@ -33,6 +36,8 @@ namespace Epiphany.View.Services
             this.tokenParser = new TokenParser();
             this.permanentToken = ReadTokensFromStorage();
             this.cachedCredential = ReadCredentialFromStorage();
+
+            this.webClient = new WebClient(this);
         }
         public AuthConfig Configuration
         {
@@ -46,9 +51,15 @@ namespace Epiphany.View.Services
         {
             restClient.Authenticator = OAuth1Authenticator.ForRequestToken(config.ConsumerKey, config.ConsumerKeySecret);
             var request = new RestRequest("oauth/request_token", HttpMethod.Get);
-            IRestResponse<string> response = await this.restClient.Execute<string>(request);          
-            
-            if (!this.tokenParser.TryParseTokens(response.Data, out this.temporaryToken))
+            IRestResponse response = await this.restClient.Execute(request);
+
+            if (response == null || response.RawBytes == null || response.RawBytes.Length <= 0)
+            {
+                throw new ModelException(ModelExceptionType.NoTokens);
+            }
+
+            string content = Encoding.UTF8.GetString(response.RawBytes, 0, response.RawBytes.Length);
+            if (!this.tokenParser.TryParseTokens(content, out this.temporaryToken))
             {
                 throw new ModelException(ModelExceptionType.NoTokens);
             }
@@ -68,9 +79,15 @@ namespace Epiphany.View.Services
             var request = new RestRequest("oauth/access_token", HttpMethod.Get);
             this.restClient.Authenticator = OAuth1Authenticator.ForAccessToken(config.ConsumerKey, config.ConsumerKeySecret, 
                 temporaryToken.AuthToken, temporaryToken.TokenSecret, string.Empty);
-            IRestResponse<string> response = await this.restClient.Execute<string>(request);
+            IRestResponse response = await this.restClient.Execute(request);
 
-            if (!this.tokenParser.TryParseTokens(response.Data, out this.permanentToken))
+            if (response == null || response.RawBytes == null || response.RawBytes.Length <= 0)
+            {
+                throw new ModelException(ModelExceptionType.NoTokens);
+            }
+
+            string content = Encoding.UTF8.GetString(response.RawBytes, 0, response.RawBytes.Length);
+            if (!this.tokenParser.TryParseTokens(content, out this.permanentToken))
             {
                 throw new ModelException(ModelExceptionType.NoTokens);
             }
@@ -89,10 +106,11 @@ namespace Epiphany.View.Services
 
             var request = new RestRequest("oauth/authorize");
             request.AddParameter("oauth_token", temporaryToken.AuthToken);
-            request.AddParameter("oauth_callback", "http://localhost/goodreads_oauth_callback");
+            request.AddParameter("oauth_callback", this.Configuration.CallbackUri);
             request.AddParameter("mobile", 1);
 
             var url = this.restClient.BuildUri(request);
+
             return url;
         }
 
@@ -181,8 +199,7 @@ namespace Epiphany.View.Services
 
         public IWebClient GetAuthCapableWebClient()
         {
-            IWebClient webClient = new WebClient(this);
-            return webClient;
+            return this.webClient;
         }
 
         private Token ReadTokensFromStorage()
