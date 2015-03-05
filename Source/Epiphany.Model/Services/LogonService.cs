@@ -126,6 +126,7 @@ namespace Epiphany.Model.Services
         {
             await this.authService.Logout();
             this.state = LogonState.NotConnected;
+            Session = null;
         }
 
         public event EventHandler<SessionChangedEventArgs> SessionChanged;

@@ -6,22 +6,31 @@ namespace Epiphany.Model
     {
         public static int ToInt(string value, int defaultValue)
         {
-            int returnValue = defaultValue;
-            int.TryParse(value, out returnValue);
+            int returnValue = 0;
+            if (!int.TryParse(value, out returnValue))
+            {
+                returnValue = defaultValue;
+            }
             return returnValue;
         }
 
         public static double ToDouble(string value, double defaultValue)
         {
-            double returnValue = defaultValue;
-            double.TryParse(value, out returnValue);
+            double returnValue = 0.0;
+            if (!double.TryParse(value, out returnValue))
+            {
+                returnValue = defaultValue;
+            }
             return returnValue;
         }
 
         public static bool ToBool(string value, bool defaultValue)
         {
-            bool returnValue = defaultValue;
-            bool.TryParse(value, out returnValue);
+            bool returnValue = false;
+            if (!bool.TryParse(value, out returnValue))
+            {
+                returnValue = defaultValue;
+            }
             return returnValue;
         }
 

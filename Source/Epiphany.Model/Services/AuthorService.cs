@@ -12,13 +12,12 @@ namespace Epiphany.Model.Services
     {
         private readonly IWebClient webClient;
         private readonly IMessenger messenger;
-        private readonly IAdapter<AuthorModel, GoodreadsAuthor> adapter;
+        private IAdapter<AuthorModel, GoodreadsAuthor> adapter;
 
         public AuthorService(IWebClient webClient, IMessenger messenger)
         {
             this.webClient = webClient;
             this.messenger = messenger;
-            this.adapter = new AuthorAdapter();
         }
 
         public async Task<AuthorModel> GetAuthorAsync(int id)
@@ -41,12 +40,24 @@ namespace Epiphany.Model.Services
             //
             // Create the model
             //
-            return this.adapter.Convert(author);
+            return Adapter.Convert(author);
         }
 
         public Task FlipFanshipAsync(AuthorModel author)
         {
             throw new System.NotImplementedException();
+        }
+
+        private IAdapter<AuthorModel, GoodreadsAuthor> Adapter
+        {
+            get
+            {
+                if (this.adapter == null)
+                {
+                    this.adapter = new AuthorAdapter();
+                }
+                return this.adapter;
+            }
         }
     }
 }

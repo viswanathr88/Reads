@@ -15,8 +15,8 @@ namespace Epiphany.Model.Services
         private readonly IWebClient webClient;
         private readonly IMessenger messenger;
         private readonly int pageSize = 20;
-        private readonly IAdapter<BookModel, GoodreadsBook> adapter;
-        private readonly IAdapter<WorkModel, GoodreadsWork> workAdapter;
+        private IAdapter<BookModel, GoodreadsBook> adapter;
+        private IAdapter<WorkModel, GoodreadsWork> workAdapter;
 
         private GoodreadsAuthor recentAuthor;
 
@@ -29,8 +29,6 @@ namespace Epiphany.Model.Services
 
             this.webClient = webClient;
             this.messenger = messenger;
-            this.adapter = new BookAdapter();
-            this.workAdapter = new WorkAdapter(this.adapter);
 
             //
             // Listen to Author message
@@ -58,7 +56,7 @@ namespace Epiphany.Model.Services
             //
             // Create the model
             //
-            return this.adapter.Convert(book);
+            return BookAdapter.Convert(book);
         }
 
         public IPagedCollection<BookModel> GetBooks(AuthorModel author)
@@ -91,11 +89,11 @@ namespace Epiphany.Model.Services
                 //
                 // Leverage the books that were fetched as part of the author instead of retrieving it again
                 //
-                books = new PagedCollection<BookModel, GoodreadsBook, GoodreadsBooks>(ds, adapter, recentAuthor.BookCollection.Items);
+                books = new PagedCollection<BookModel, GoodreadsBook, GoodreadsBooks>(ds, BookAdapter, recentAuthor.BookCollection.Items);
             }
             else
             {
-                books = new PagedCollection<BookModel, GoodreadsBook, GoodreadsBooks>(ds, this.adapter, pageSize);
+                books = new PagedCollection<BookModel, GoodreadsBook, GoodreadsBooks>(ds, BookAdapter, pageSize);
             }
             return books;
         }
@@ -118,7 +116,7 @@ namespace Epiphany.Model.Services
             //
             // Create the collection
             //
-            return new PagedCollection<BookModel, GoodreadsBook, GoodreadsBooks>(ds, adapter, pageSize);
+            return new PagedCollection<BookModel, GoodreadsBook, GoodreadsBooks>(ds, BookAdapter, pageSize);
         }
 
         public async Task AddBook(BookshelfModel shelf, BookModel book)
@@ -172,7 +170,7 @@ namespace Epiphany.Model.Services
             // Create the data source for the collection
             //
             IPagedDataSource<GoodreadsSearch> ds = new PagedDataSource<GoodreadsSearch>(webClient, headers, ServiceUrls.SearchUrl);
-            return new PagedCollection<WorkModel, GoodreadsWork, GoodreadsSearch>(ds, workAdapter, pageSize);
+            return new PagedCollection<WorkModel, GoodreadsWork, GoodreadsSearch>(ds, WorkAdapter, pageSize);
         }
 
         private void HandleAuthorRetrieved(object sender, GenericMessage<GoodreadsAuthor> msg)
@@ -181,6 +179,32 @@ namespace Epiphany.Model.Services
             if (author != null)
             {
                 this.recentAuthor = author;
+            }
+        }
+
+        private IAdapter<BookModel, GoodreadsBook> BookAdapter
+        {
+            get
+            {
+                if (this.adapter == null)
+                {
+                    this.adapter = new BookAdapter();
+                }
+
+                return this.adapter;
+            }
+        }
+
+        private IAdapter<WorkModel, GoodreadsWork> WorkAdapter
+        {
+            get
+            {
+                if (this.workAdapter == null)
+                {
+                    this.workAdapter = new WorkAdapter(BookAdapter);
+                }
+
+                return this.workAdapter;
             }
         }
     }

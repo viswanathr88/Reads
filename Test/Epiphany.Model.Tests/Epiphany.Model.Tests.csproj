@@ -79,6 +79,7 @@
     </Compile>
     <Compile Include="AssertHelper.cs" />
     <Compile Include="Collections\PagedCollectionTests.cs" />
+    <Compile Include="ConverterTests.cs" />
     <Compile Include="DataSources\DataSourceTests.cs" />
     <Compile Include="FileReader.cs" />
     <Compile Include="LocalizedStrings.cs" />
@@ -93,6 +94,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\LogonServiceTests.cs" />
+    <Compile Include="Services\MockAuthService.cs" />
     <Compile Include="TestParser.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -34,6 +34,7 @@ namespace Epiphany.View.Services
         {
             this.restClient = new RestClient(config.BaseUri.ToString());
             this.tokenParser = new TokenParser();
+
             this.permanentToken = ReadTokensFromStorage();
             this.cachedCredential = ReadCredentialFromStorage();
 
