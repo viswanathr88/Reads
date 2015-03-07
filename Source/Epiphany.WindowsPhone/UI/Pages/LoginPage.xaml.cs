@@ -24,5 +24,11 @@ namespace Epiphany.UI.Pages
                 vm.CheckUriForLoginCompletion.Execute(args.Uri);
             }
         }
+
+        private void OnNavigationCompleted(WebView sender, WebViewNavigationCompletedEventArgs args)
+        {
+            LogonViewModel vm = (LogonViewModel)this.DataContext;
+            vm.SetIsLoading(false);
+        }
     }
 }

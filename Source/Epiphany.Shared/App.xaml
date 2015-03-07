@@ -9,6 +9,9 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/UI/IconStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            
+            <!-- Colors and Themes -->
+            <SolidColorBrush x:Key="ApplicationPageBackgroundBrush" Color="#4B698C" />
                      
             <x:String x:Key="AppNameLowerCase">epiphany</x:String>
             <x:String x:Key="AppName">Epiphany</x:String>
@@ -16,6 +19,7 @@
             <view:ViewModelLocator x:Key="VMLocator" />
             
             <converters:BoolToVisibilityConverter x:Key="VisibilityConverter" />
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
             
         </ResourceDictionary>
 

@@ -1,5 +1,6 @@
 ﻿using Epiphany.View.Attributes;
 using Epiphany.ViewModel;
+using Windows.UI.Xaml.Navigation;
 
 namespace Epiphany.UI.Pages
 {

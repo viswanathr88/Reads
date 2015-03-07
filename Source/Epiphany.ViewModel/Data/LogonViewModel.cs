@@ -148,6 +148,11 @@ namespace Epiphany.ViewModel
             }
         }
 
+        public void SetIsLoading(bool isLoading)
+        {
+            IsLoading = isLoading;
+        }
+
         private void OnVerifyLoginExecuting(object sender, CancelEventArgs e)
         {
             IsLoading = true;
@@ -171,7 +176,6 @@ namespace Epiphany.ViewModel
                     this.loginCommand.Execute(VoidType.Empty);
                 }
             }
-            IsLoading = false;
         }
 
         private void OnLoginExecuted(object sender, ExecutedEventArgs e)
@@ -185,8 +189,8 @@ namespace Epiphany.ViewModel
             else
             {
                 Error = this.loginCommand.Error;
+                IsLoading = false;
             }
-            IsLoading = false;
         }
 
         private void OnCheckUriExecuted(object sender, ExecutedEventArgs e)
@@ -196,6 +200,7 @@ namespace Epiphany.ViewModel
                 if (this.checkUriCommand.Result)
                 {
                     IsWaitingForUserInteraction = false;
+                    IsLoading = true;
                     StartTimer();
                     finishLoginCommand.Execute(VoidType.Empty);
                 }
@@ -203,6 +208,7 @@ namespace Epiphany.ViewModel
             else
             {
                 Error = this.checkUriCommand.Error;
+                IsLoading = false;
             }
         }
 
