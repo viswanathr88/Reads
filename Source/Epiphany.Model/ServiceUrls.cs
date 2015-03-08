@@ -127,7 +127,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "update/friends";
+                return "updates/friends";
             }
         }
 

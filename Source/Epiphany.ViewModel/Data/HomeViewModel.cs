@@ -3,6 +3,7 @@ using Epiphany.Settings;
 using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System;
+using System.ComponentModel;
 using System.Windows.Input;
 
 namespace Epiphany.ViewModel
@@ -29,7 +30,10 @@ namespace Epiphany.ViewModel
 
         public override void Load(VoidType param)
         {
-
+            if (!FeedViewModel.IsLoaded)
+            {
+                FeedViewModel.Load(param);
+            }
         }
 
         public int NewNotificationCount
