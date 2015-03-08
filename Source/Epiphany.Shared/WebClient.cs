@@ -1,4 +1,5 @@
-﻿using Epiphany.Model;
+﻿using Epiphany.Logging;
+using Epiphany.Model;
 using Epiphany.Model.Authentication;
 using Epiphany.Model.Services;
 using Epiphany.Model.Web;
@@ -7,6 +8,7 @@ using RestSharp.Portable.Authenticators;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Epiphany.View.Web
@@ -28,6 +30,12 @@ namespace Epiphany.View.Web
         }
         public async Task<WebResponse> ExecuteAsync(WebRequest request)
         {
+            if (request == null)
+            {
+                throw new ArgumentNullException("request", "Request cannot be null");
+            }
+
+            Log.Instance.Debug(request.ToString(), GetType().ToString());
             switch (request.Method)
             {
                 case WebMethod.Get:
@@ -59,8 +67,13 @@ namespace Epiphany.View.Web
                 request.AddParameter(paramater.Key, paramater.Value);
             }
             request.AddParameter("key", this.authService.Configuration.ConsumerKey);
-            IRestResponse<string> response = await this.restClient.Execute<string>(request);
-            WebResponse webResponse = new WebResponse(response.StatusCode, response.Data);
+            
+            IRestResponse response = await this.restClient.Execute(request);
+
+            string content = Encoding.UTF8.GetString(response.RawBytes, 0, response.RawBytes.Length);
+            WebResponse webResponse = new WebResponse(response.StatusCode, content);
+            Log.Instance.Debug(webResponse.ToString(), GetType().ToString());
+            
             return webResponse;
         }
 
@@ -82,8 +95,13 @@ namespace Epiphany.View.Web
                 request.AddParameter(paramater.Key, paramater.Value);
             }
             request.AddParameter("key", this.authService.Configuration.ConsumerKey);
-            IRestResponse<string> response = await this.restClient.Execute<string>(request);
-            WebResponse webResponse = new WebResponse(response.StatusCode, string.Empty);
+            
+            IRestResponse response = await this.restClient.Execute(request);
+
+            string content = Encoding.UTF8.GetString(response.RawBytes, 0, response.RawBytes.Length);
+            WebResponse webResponse = new WebResponse(response.StatusCode, content);
+            Log.Instance.Debug(webResponse.ToString(), GetType().ToString());
+
             return webResponse;
         }
     }

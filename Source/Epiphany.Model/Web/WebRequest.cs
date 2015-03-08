@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Epiphany.Model.Web
 {
@@ -59,6 +60,18 @@ namespace Epiphany.Model.Web
             {
                 this.method = value;
             }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.AppendLine(string.Format("URL={0}, Method={1}, Headers.Count={2}", Url, Method, Headers.Count));
+            foreach (KeyValuePair<string, object> header in Headers)
+            {
+                builder.AppendLine(string.Format("Key={0}, Value={1}", header.Key, header.Value.ToString()));
+            }
+
+            return builder.ToString();
         }
     }
 }

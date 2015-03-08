@@ -1,5 +1,6 @@
 ﻿
 using System.Net;
+using System.Text;
 namespace Epiphany.Model.Web
 {
     /// <summary>
@@ -34,6 +35,18 @@ namespace Epiphany.Model.Web
             {
                 return this.content;
             }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.AppendLine("StatusCode = " + StatusCode);
+            if (!string.IsNullOrEmpty(Content))
+            {
+                builder.AppendLine(Content);
+            }
+
+            return builder.ToString();
         }
     }
 }
