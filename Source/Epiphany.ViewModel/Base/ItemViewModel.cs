@@ -32,7 +32,7 @@ namespace Epiphany.ViewModel
             {
                 if (this.isSelected == value) return;
                 this.isSelected = value;
-                RaisePropertyChanged("IsSelected");
+                RaisePropertyChanged();
             }
         }
     }

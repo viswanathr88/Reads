@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Epiphany.Logging;
+using System;
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace Epiphany.ViewModel
 {
@@ -52,8 +54,14 @@ namespace Epiphany.ViewModel
             RaisePropertyChanged(propertyName);
         }
 
-        protected void RaisePropertyChanged(string propertyName)
+        protected void RaisePropertyChanged([CallerMemberName] string propertyName = "")
         {
+            if (string.IsNullOrEmpty(propertyName))
+            {
+                Log.Instance.Error("Property Name is Empty", GetName());
+                return;
+            }
+
             if (PropertyChanged != null)
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
