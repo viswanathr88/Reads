@@ -68,5 +68,13 @@ namespace Epiphany.Settings
                 return "SearchType";
             }
         }
+
+        public static string CurrentThemeKey
+        {
+            get
+            {
+                return "CurrentTheme";
+            }
+        }
     }
 }

@@ -4,6 +4,13 @@ using System.ComponentModel;
 
 namespace Epiphany.Settings
 {
+    public enum Theme
+    {
+        Default,
+        ReadsTheme,
+        EpiphanyTheme
+    };
+
     public interface IAppSettings : INotifyPropertyChanged
     {
         FeedUpdateType UpdateType
@@ -37,6 +44,12 @@ namespace Epiphany.Settings
         }
 
         BookSearchType SearchType
+        {
+            get;
+            set;
+        }
+
+        Theme CurrentTheme
         {
             get;
             set;

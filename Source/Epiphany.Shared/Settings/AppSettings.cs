@@ -23,6 +23,7 @@ namespace Epiphany.Settings
         private const BookSortType sortTypeDefault = BookSortType.date_added;
         private const BookSortOrder sortOrderDefault = BookSortOrder.d;
         private const BookSearchType searchTypeDefault = BookSearchType.All;
+        private const Theme currentThemeDefault = Theme.Default;
 
         private AppSettings()
         {
@@ -148,6 +149,18 @@ namespace Epiphany.Settings
             set
             {
                 storage.AddOrUpdate(SettingKeys.SearchTypeKey, value);
+            }
+        }
+
+        public Theme CurrentTheme
+        {
+            get
+            {
+                return storage.GetValueOrDefault<Theme>(SettingKeys.CurrentThemeKey, currentThemeDefault);
+            }
+            set
+            {
+                storage.AddOrUpdate(SettingKeys.CurrentThemeKey, value);
             }
         }
 

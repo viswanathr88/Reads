@@ -1,10 +1,10 @@
 ﻿using Epiphany.Logging;
+using Epiphany.Settings;
+using Epiphany.Themes;
 using Epiphany.UI.Pages;
-using Epiphany.View;
 using Epiphany.View.Services;
 using Epiphany.ViewModel;
 using System;
-using System.Diagnostics;
 using System.Diagnostics.Tracing;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
@@ -157,6 +157,11 @@ namespace Epiphany
                     await locator.InitializeAsync();
                 }
             }
+
+            // Set app theme
+            Theme currentTheme = AppSettings.Instance.CurrentTheme;
+            ThemeManager themeManager = new ThemeManager();
+            themeManager.SetTheme(Theme.EpiphanyTheme);
         }
 
         private void SetupLogging()
