@@ -5,7 +5,7 @@
                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                 mc:Ignorable="d"
-                Background="{ThemeResource ApplicationPageBackgroundBrush}"
+                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
                 DataContext="{Binding Logon, Source={StaticResource VMLocator}}">
     <Page.Transitions>
         <TransitionCollection>
@@ -17,8 +17,7 @@
 
     <Grid>
         <ProgressRing IsActive="{Binding IsLoading}"
-                      Foreground="White"
-                      Background="Transparent" />
+                      Background="Transparent"/>
         
         <WebView Visibility="{Binding IsWaitingForUserInteraction, Converter={StaticResource VisibilityConverter}, FallbackValue=Collapsed}"
                  Source="{Binding CurrentUri}"

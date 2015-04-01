@@ -19,6 +19,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\ObservableDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\PathControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SplitPanel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\InverseBoolConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Logging\DebugLog.cs" />
@@ -28,7 +30,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Settings\SettingsStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SourceModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Themes\ThemeManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)UI\DataPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\Pages\DataPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\Pages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewServices\AuthService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewServices\IViewLocator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewServices\NavigationService.cs" />
@@ -52,6 +57,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)UI\IconStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)UI\Pages\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

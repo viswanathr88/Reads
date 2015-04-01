@@ -311,4 +311,7 @@
       <SolidColorBrush x:Key="ToolTipBackgroundThemeBrush" Color="#FFFFFFFF" />
       <SolidColorBrush x:Key="ToolTipBorderThemeBrush" Color="#FF808080" />
       <SolidColorBrush x:Key="ToolTipForegroundThemeBrush" Color="#FF666666" />
+    
+    <Color x:Key="MainHeaderSelectedColor">#FFFFFFFF</Color>
+    <Color x:Key="MainHeaderUnselectedColor">#FF282828</Color>
 </ResourceDictionary>

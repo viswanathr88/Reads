@@ -32,7 +32,7 @@ namespace Epiphany.ViewModel
         {
             if (!FeedViewModel.IsLoaded)
             {
-                FeedViewModel.Load(param);
+                //FeedViewModel.Load(param);
             }
         }
 

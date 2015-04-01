@@ -17,7 +17,7 @@
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Epiphany.Windows.App">
       <m2:VisualElements DisplayName="Epiphany" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="Epiphany is a fully-featured windows app for the Goodreads service with a simple and intuitive user interface. View recent member updates, find new books, comment on reviews and meet new people who share reading habits with you!" ForegroundText="light" BackgroundColor="#464646" ToastCapable="true">
         <m2:SplashScreen Image="Assets\SplashScreen.png" />
-        <m2:ApplicationView MinWidth="default" />
+        <m2:ApplicationView MinWidth="width320" />
       </m2:VisualElements>
     </Application>
   </Applications>

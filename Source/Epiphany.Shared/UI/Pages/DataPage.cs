@@ -16,6 +16,14 @@ namespace Epiphany.UI.Pages
             this.navigationHelper.SaveState += this.OnSaveState;
         }
 
+        public NavigationHelper NavigationHelper
+        {
+            get
+            {
+                return this.navigationHelper;
+            }
+        }
+
         protected void OnLoadState(object sender, LoadStateEventArgs e)
         {
             if (this.DataContext == null)

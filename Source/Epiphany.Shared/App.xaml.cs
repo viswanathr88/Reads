@@ -161,7 +161,7 @@ namespace Epiphany
             // Set app theme
             Theme currentTheme = AppSettings.Instance.CurrentTheme;
             ThemeManager themeManager = new ThemeManager();
-            themeManager.SetTheme(Theme.EpiphanyTheme);
+            themeManager.SetTheme(Theme.ReadsTheme);
         }
 
         private void SetupLogging()

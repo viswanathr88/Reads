@@ -3,24 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:view="using:Epiphany.View.Services"
              xmlns:converters="using:Epiphany.View.Converters">
-
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/UI/IconStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
             
-            <!-- Colors and Themes -->
-            <SolidColorBrush x:Key="ApplicationPageBackgroundBrush" Color="#4B698C" />
-                     
-            <x:String x:Key="AppNameLowerCase">epiphany</x:String>
-            <x:String x:Key="AppName">Epiphany</x:String>
+            <!-- Brushes & Colors -->
+            <Color x:Key="PageHeaderBackgroundColor">#FFE7E4D5</Color>
+            <Color x:Key="PageHeaderSelectedColor">#FF643E1A</Color>
+            <Color x:Key="PageHeaderUnselectedColor">#FF939393</Color>
             
-            <view:ViewModelLocator x:Key="VMLocator" />
-            
+            <SolidColorBrush x:Key="PageHeaderBackgroundBrush" Color="{ThemeResource PageHeaderBackgroundColor}" />
+            <SolidColorBrush x:Key="PageHeaderSelectedBrush" Color="{ThemeResource PageHeaderSelectedColor}" />
+            <SolidColorBrush x:Key="PageHeaderUnselectedBrush" Color="{ThemeResource PageHeaderUnselectedColor}" />
+            <SolidColorBrush x:Key="PageHeaderBorderBrush" Color="#FFA2A2A2" />
+
+            <!-- Common Converters -->
             <converters:BoolToVisibilityConverter x:Key="VisibilityConverter" />
             <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
             
+            <!-- ViewModel locator -->
+            <view:ViewModelLocator x:Key="VMLocator" />
         </ResourceDictionary>
 
     </Application.Resources>
