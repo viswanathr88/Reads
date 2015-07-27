@@ -61,7 +61,7 @@
                                                 <DoubleAnimation Storyboard.TargetName="leftPanePresenter"
                                                                  EnableDependentAnimation="True"
                                                                  Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
-                                                                 To="{TemplateBinding LeftPaneWidth}"
+                                                                 To="{TemplateBinding Width}"
                                                                  Duration="0:0:0.2">
                                                     <DoubleAnimation.EasingFunction>
                                                         <QuadraticEase EasingMode="EaseOut" />
@@ -72,7 +72,7 @@
                                     </VisualStateGroup>
                                 </VisualStateManager.VisualStateGroups>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="3*" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <!-- Main body container -->
@@ -89,8 +89,7 @@
                                 <!-- Left pane container -->
                                 <ContentPresenter Grid.Column="0"
                                                   x:Name="leftPanePresenter"
-                                                  Content="{TemplateBinding LeftPane}"
-                                                  Width="{TemplateBinding LeftPaneWidth}" />
+                                                  Content="{TemplateBinding LeftPane}" />
                             </Grid>
                         </ControlTemplate>
                     </Setter.Value>

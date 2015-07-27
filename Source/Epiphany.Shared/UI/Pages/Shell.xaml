@@ -6,7 +6,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:controls="using:Epiphany.Controls"
       mc:Ignorable="d"
-      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      DataContext="{Binding Shell, Source={StaticResource VMLocator}}">
 
     <Grid x:Name="LayoutRoot">
         <Grid.ChildrenTransitions>
@@ -15,20 +16,29 @@
             </TransitionCollection>
         </Grid.ChildrenTransitions>
 
-        <controls:HamburgerMenu x:Name="hamburgerMenu"
-                                LeftPaneWidth="300">
+        <controls:HamburgerMenu x:Name="hamburgerMenu">
             <controls:HamburgerMenu.LeftPane>
                 <Grid Background="{ThemeResource PhoneChromeBrush}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
-                        <RowDefinition Height="50" />
                     </Grid.RowDefinitions>
 
-                    <ToggleButton IsChecked="{Binding IsLeftPaneOpen, ElementName=hamburgerMenu, Mode=TwoWay}"
-                                  MinWidth="40"
-                                  BorderThickness="0">
-                        <SymbolIcon Symbol="Bookmarks" />
+                    <ToggleButton Grid.Row="0"
+                                  BorderThickness="0"
+                                  Height="Auto"
+                                  Width="Auto"
+                                  MinWidth="70"
+                                  MinHeight="70"
+                                  IsChecked="{Binding IsLeftPaneOpen, ElementName=hamburgerMenu, Mode=TwoWay}"
+                                  Margin="12,0,2,0">
+                        <SymbolIcon Symbol="List"
+                                    RenderTransformOrigin="0.5,0.5">
+                            <SymbolIcon.RenderTransform>
+                                <CompositeTransform ScaleX="2"
+                                                    ScaleY="2" />
+                            </SymbolIcon.RenderTransform>
+                        </SymbolIcon>
                     </ToggleButton>
 
                     <ListView Grid.Row="1"
@@ -37,9 +47,15 @@
                               SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel>
-                                    <TextBlock Padding="20"
-                                               Text="{Binding Text}" />
+                                <StackPanel Orientation="Horizontal"
+                                            Margin="30,0,0,0">
+
+                                    <SymbolIcon Symbol="{Binding Icon}" />
+
+                                    <TextBlock Padding="30,15,20,15"
+                                               Text="{Binding Text}"
+                                               Style="{StaticResource ListViewItemTextBlockStyle}"
+                                               FontSize="24" />
                                 </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>
@@ -110,6 +126,7 @@
                     </Grid>
                 </Grid>
 
+                <!-- Main Frame for hosting pages -->
                 <Frame HorizontalAlignment="Stretch"
                        VerticalAlignment="Stretch"
                        x:Name="MainFrame"

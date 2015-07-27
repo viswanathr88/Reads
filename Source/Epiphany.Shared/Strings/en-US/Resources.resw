@@ -162,4 +162,7 @@
   <data name="Search.Text" xml:space="preserve">
     <value>search</value>
   </data>
+  <data name="SettingsShellItemText" xml:space="preserve">
+    <value>Settings</value>
+  </data>
 </root>

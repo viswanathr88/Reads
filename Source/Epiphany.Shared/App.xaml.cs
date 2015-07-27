@@ -3,18 +3,12 @@ using Epiphany.Settings;
 using Epiphany.Themes;
 using Epiphany.UI.Pages;
 using Epiphany.View.Services;
-using Epiphany.ViewModel;
 using System;
 using System.Diagnostics.Tracing;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.UI;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Animation;
-using Windows.UI.Xaml.Navigation;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
@@ -25,10 +19,6 @@ namespace Epiphany
     /// </summary>
     public sealed partial class App : Application
     {
-#if WINDOWS_PHONE_APP
-        private TransitionCollection transitions;
-#endif
-
         private const string viewModelLocatorKey = "VMLocator";
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -65,54 +55,10 @@ namespace Epiphany
                 // Set the shell as the content of the app
                 Window.Current.Content = shell;
             }
-           
-            ShellViewModel vm = shell.DataContext as ShellViewModel;
-            Frame rootFrame = vm.Frame;
-
-            if (rootFrame.Content == null)
-            {
-#if WINDOWS_PHONE_APP
-                // Removes the turnstile navigation for startup.
-                if (rootFrame.ContentTransitions != null)
-                {
-                    this.transitions = new TransitionCollection();
-                    foreach (var c in rootFrame.ContentTransitions)
-                    {
-                        this.transitions.Add(c);
-                    }
-                }
-
-
-                rootFrame.ContentTransitions = null;
-                rootFrame.Navigated += this.RootFrame_FirstNavigated;
-#endif
-
-                // When the navigation stack isn't restored navigate to the first page,
-                // configuring the new page by passing required information as a navigation
-                // parameter
-                if (!rootFrame.Navigate(typeof(LoginPage), VoidType.Empty))
-                {
-                    throw new Exception("Failed to create initial page");
-                }
-            }
 
             // Ensure the current window is active
             Window.Current.Activate();
         }
-
-#if WINDOWS_PHONE_APP
-        /// <summary>
-        /// Restores the content transitions after the app has launched.
-        /// </summary>
-        /// <param name="sender">The object where the handler is attached.</param>
-        /// <param name="e">Details about the navigation event.</param>
-        private void RootFrame_FirstNavigated(object sender, NavigationEventArgs e)
-        {
-            var rootFrame = sender as Frame;
-            rootFrame.ContentTransitions = null;
-            rootFrame.Navigated -= this.RootFrame_FirstNavigated;
-        }
-#endif
 
         /// <summary>
         /// Invoked when application execution is being suspended.  Application state is saved
@@ -132,7 +78,7 @@ namespace Epiphany
         /// <summary>
         /// Initializes the app
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Returns the initialized Shell</returns>
         private async Task<Shell> InitializeAsync(LaunchActivatedEventArgs e)
         {
             // Set up Logging
@@ -140,30 +86,26 @@ namespace Epiphany
 
             // Create the shell
             var shell = new Shell();
-            var rootFrame = new Frame();
-
-            // TODO: change this value to a cache size that is appropriate for your application
-            rootFrame.CacheSize = 0;
 
             if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
             {
                 // TODO: Load state from previously suspended application
-            }       
+            }
 
-            // Initialize ViewModelLocator
-            if (Resources.ContainsKey(viewModelLocatorKey))
+            if (!Resources.ContainsKey(viewModelLocatorKey))
             {
-                ViewModelLocator locator = Resources[viewModelLocatorKey] as ViewModelLocator;
-                if (locator == null)
-                {
-                    Log.Instance.Error("ViewModelLocator was not found! Cannot Initialize");
-                    throw new NullReferenceException("viewModelLocator");
-                }
-                else
-                {
-                    await locator.InitializeAsync(rootFrame);
-                    shell.DataContext = locator.Shell;
-                }
+                throw new InvalidOperationException("ViewModelLocator is not part of Resources yet");
+            }
+
+            ViewModelLocator locator = Resources[viewModelLocatorKey] as ViewModelLocator;
+            if (locator == null)
+            {
+                Log.Instance.Error("ViewModelLocator was not found! Cannot Initialize");
+                throw new NullReferenceException("viewModelLocator");
+            }
+            else
+            {
+                await locator.InitializeAsync(shell.GetFrame());
             }
 
             // Set app theme
@@ -174,6 +116,9 @@ namespace Epiphany
             return shell;
         }
 
+        /// <summary>
+        /// Initialize Logging
+        /// </summary>
         private void SetupLogging()
         {
             Logger logger = new Logger();

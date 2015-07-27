@@ -24,8 +24,7 @@ namespace Epiphany.Controls
             if (this.MainPaneRectangle != null)
                 this.MainPaneRectangle.Tapped += (sender, e) => { this.IsLeftPaneOpen = false; };
 
-            // Ensure that the TranslateX on the RenderTransform of the left pane is set to the negative value of the left pa
-            this.SetLeftPanePresenterX();
+            this.LeftPanePresenter.Loaded += (sender, e) => { this.SetLeftPanePresenterX(); };
 
             base.OnApplyTemplate();
         }
@@ -37,7 +36,7 @@ namespace Epiphany.Controls
             {
                 this.LeftPanePresenter.RenderTransform = new CompositeTransform()
                 {
-                    TranslateX = -this.LeftPaneWidth
+                    TranslateX = -this.LeftPanePresenter.ActualWidth
                 };
             }
         }
@@ -70,20 +69,6 @@ namespace Epiphany.Controls
                         VisualStateManager.GoToState(ctrl, "CloseLeftPane", true);
                 }
             }
-        }
-
-        public static readonly DependencyProperty LeftPaneWidthProperty = DependencyProperty.Register("LeftPaneWidth", typeof(double), typeof(HamburgerMenu), new PropertyMetadata(300.0, new PropertyChangedCallback(OnLeftPaneWidthChanged)));
-        public double LeftPaneWidth
-        {
-            get { return (double)GetValue(LeftPaneWidthProperty); }
-            set { SetValue(LeftPaneWidthProperty, value); }
-        }
-        private static void OnLeftPaneWidthChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
-        {
-            // Update the starting X position of the left pane if the width is updated
-            var ctrl = sender as HamburgerMenu;
-            if (ctrl != null && args.NewValue is double)
-                ctrl.SetLeftPanePresenterX();
         }
     }
 }

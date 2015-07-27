@@ -8,19 +8,13 @@ namespace Epiphany.ViewModel
 {
     public sealed class ShellViewModel : ViewModelBase
     {
-        private Frame frame;
         private ObservableCollection<ShellItemViewModel> shellItems;
         private ShellItemViewModel selectedItem;
         private readonly INavigationService navigationService;
         private readonly ILogonService logonService;
 
-        public ShellViewModel(Frame frame, INavigationService navigationService, ILogonService logonService)
+        public ShellViewModel(INavigationService navigationService, ILogonService logonService)
         {
-            if (frame == null)
-            {
-                throw new ArgumentNullException("frame");
-            }
-
             if (navigationService == null || logonService == null)
             {
                 throw new ArgumentNullException("services");
@@ -29,27 +23,12 @@ namespace Epiphany.ViewModel
             this.navigationService = navigationService;
             this.logonService = logonService;
 
-            Frame = frame;
             Items = new ObservableCollection<ShellItemViewModel>();
             PopulateItems();
             
             if (Items.Count > 0)
             {
                 SelectedItem = Items[0];
-            }
-        }
-
-        public Frame Frame
-        {
-            get
-            {
-                return this.frame;
-            }
-            private set
-            {
-                if (this.frame == value) return;
-                this.frame = value;
-                RaisePropertyChanged();
             }
         }
 
@@ -91,6 +70,7 @@ namespace Epiphany.ViewModel
             Items.Add(new ShellItemViewModel(ShellItemType.Friends));
             Items.Add(new ShellItemViewModel(ShellItemType.Events));
             Items.Add(new ShellItemViewModel(ShellItemType.Groups));
+            Items.Add(new ShellItemViewModel(ShellItemType.Settings));
         }
     }
 }

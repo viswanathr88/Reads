@@ -48,9 +48,6 @@ namespace Epiphany.View.Services
         {
             await this.navigationService.InitializeAsync(frame);
 
-            // Create shellVM
-            this.shellViewModel = new ShellViewModel(frame, navigationService, this.modelFactory.GetLogonService());
-
             Log.Instance.Debug("Complete");
 
         }
@@ -105,6 +102,12 @@ namespace Epiphany.View.Services
         {
             get
             {
+                if (this.shellViewModel == null)
+                {
+                    // Create shellVM
+                    this.shellViewModel = new ShellViewModel(navigationService, this.modelFactory.GetLogonService());
+                }
+
                 return this.shellViewModel;
             }
         }
