@@ -4,12 +4,28 @@ namespace Epiphany.Logging
 {
     public interface ILogger
     {
-        void Debug(string message, string className, [CallerMemberName] string memberName = "");
+        void Debug(string message, 
+            [CallerMemberName] string memberName = "",
+            [CallerFilePath] string filePath = "",
+            [CallerLineNumber] int lineNumber = 0
+            );
 
-        void Info(string message, string className, [CallerMemberName] string memberName = "");
+        void Info(string message,
+            [CallerMemberName] string memberName = "",
+            [CallerFilePath] string filePath = "",
+            [CallerLineNumber] int lineNumber = 0
+            );
 
-        void Warn(string message, string className, [CallerMemberName] string memberName = "");
+        void Warn(string message,
+            [CallerMemberName] string memberName = "",
+            [CallerFilePath] string filePath = "",
+            [CallerLineNumber] int lineNumber = 0
+            );
 
-        void Error(string message, string className, [CallerMemberName] string memberName = "");
+        void Error(string message,
+            [CallerMemberName] string memberName = "",
+            [CallerFilePath] string filePath = "",
+            [CallerLineNumber] int lineNumber = 0
+            );
     }
 }

@@ -5,6 +5,7 @@ using Epiphany.ViewModel;
 using Epiphany.ViewModel.Services;
 using System.Diagnostics.Tracing;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
 
 namespace Epiphany.View.Services
 {
@@ -24,6 +25,8 @@ namespace Epiphany.View.Services
         //
         // View Models
         //
+        private ShellViewModel shellViewModel;
+
         private HomeViewModel homeViewModel;
         private LogonViewModel logonViewModel;
         private AboutViewModel aboutViewModel;
@@ -41,10 +44,14 @@ namespace Epiphany.View.Services
             this.timerService = new TimerService();
         }
 
-        public async Task InitializeAsync()
+        public async Task InitializeAsync(Frame frame)
         {
-            await this.navigationService.InitializeAsync();
-            Log.Instance.Debug("Complete", GetType().ToString());
+            await this.navigationService.InitializeAsync(frame);
+
+            // Create shellVM
+            this.shellViewModel = new ShellViewModel(frame, navigationService, this.modelFactory.GetLogonService());
+
+            Log.Instance.Debug("Complete");
 
         }
         public LogonViewModel Logon
@@ -83,6 +90,22 @@ namespace Epiphany.View.Services
                 }
 
                 return this.aboutViewModel;
+            }
+        }
+
+        public ProfileViewModel Profile
+        {
+            get
+            {
+                return new ProfileViewModel(this.modelFactory.GetUserService());
+            }
+        }
+
+        public ShellViewModel Shell
+        {
+            get
+            {
+                return this.shellViewModel;
             }
         }
     }

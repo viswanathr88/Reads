@@ -3,6 +3,7 @@ using Epiphany.Model.Services;
 using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System;
+using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
@@ -140,7 +141,7 @@ namespace Epiphany.ViewModel
 
         public override void Load(VoidType param)
         {
-            Log.Instance.Debug(IsLoaded.ToString(), GetName());
+            Log.Instance.Debug(IsLoaded.ToString());
 
             if (!IsLoaded)
             {
@@ -165,7 +166,7 @@ namespace Epiphany.ViewModel
             StopTimer();
             if (e.State == CommandExecutionState.Success)
             {
-                Log.Instance.Info(this.verifyLoginCommand.Result.ToString(), GetName());
+                Log.Instance.Info(this.verifyLoginCommand.Result.ToString());
                 if (this.verifyLoginCommand.Result)
                 {
                     NavigateHome();

@@ -9,8 +9,10 @@ using System.Diagnostics.Tracing;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
@@ -52,29 +54,20 @@ namespace Epiphany
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
-            // Let's initialize our app
-            await InitializeAsync();
 
-            Frame rootFrame = Window.Current.Content as Frame;
+            var shell = Window.Current.Content as Epiphany.UI.Pages.Shell;
 
-            // Do not repeat app initialization when the Window already has content,
-            // just ensure that the window is active
-            if (rootFrame == null)
+            if (shell == null)
             {
-                // Create a Frame to act as the navigation context and navigate to the first page
-                rootFrame = new Frame();
-
-                // TODO: change this value to a cache size that is appropriate for your application
-                rootFrame.CacheSize = 1;
-
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-                {
-                    // TODO: Load state from previously suspended application
-                }
-
-                // Place the frame in the current Window
-                Window.Current.Content = rootFrame;
+                // Initialize the app
+                shell = await InitializeAsync(e);
+                
+                // Set the shell as the content of the app
+                Window.Current.Content = shell;
             }
+           
+            ShellViewModel vm = shell.DataContext as ShellViewModel;
+            Frame rootFrame = vm.Frame;
 
             if (rootFrame.Content == null)
             {
@@ -88,6 +81,7 @@ namespace Epiphany
                         this.transitions.Add(c);
                     }
                 }
+
 
                 rootFrame.ContentTransitions = null;
                 rootFrame.Navigated += this.RootFrame_FirstNavigated;
@@ -139,10 +133,22 @@ namespace Epiphany
         /// Initializes the app
         /// </summary>
         /// <returns></returns>
-        private async Task InitializeAsync()
+        private async Task<Shell> InitializeAsync(LaunchActivatedEventArgs e)
         {
             // Set up Logging
             SetupLogging();
+
+            // Create the shell
+            var shell = new Shell();
+            var rootFrame = new Frame();
+
+            // TODO: change this value to a cache size that is appropriate for your application
+            rootFrame.CacheSize = 0;
+
+            if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
+            {
+                // TODO: Load state from previously suspended application
+            }       
 
             // Initialize ViewModelLocator
             if (Resources.ContainsKey(viewModelLocatorKey))
@@ -150,18 +156,22 @@ namespace Epiphany
                 ViewModelLocator locator = Resources[viewModelLocatorKey] as ViewModelLocator;
                 if (locator == null)
                 {
-                    Log.Instance.Error("ViewModelLocator was not found! Cannot Initialize", GetType().ToString());
+                    Log.Instance.Error("ViewModelLocator was not found! Cannot Initialize");
+                    throw new NullReferenceException("viewModelLocator");
                 }
                 else
                 {
-                    await locator.InitializeAsync();
+                    await locator.InitializeAsync(rootFrame);
+                    shell.DataContext = locator.Shell;
                 }
             }
 
             // Set app theme
             Theme currentTheme = AppSettings.Instance.CurrentTheme;
             ThemeManager themeManager = new ThemeManager();
-            themeManager.SetTheme(Theme.ReadsTheme);
+            themeManager.SetTheme(Theme.Default);
+
+            return shell;
         }
 
         private void SetupLogging()

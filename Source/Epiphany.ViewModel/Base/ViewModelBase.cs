@@ -58,7 +58,7 @@ namespace Epiphany.ViewModel
         {
             if (string.IsNullOrEmpty(propertyName))
             {
-                Log.Instance.Error("Property Name is Empty", GetName());
+                Log.Instance.Error("Property Name is Empty");
                 return;
             }
 

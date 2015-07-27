@@ -66,6 +66,7 @@
     <Compile Include="Commands\FetchGroupCommand.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Commands\FetchProfileCommand.cs" />
     <Compile Include="Commands\LikeOnFacebookCommand.cs" />
     <Compile Include="Commands\Login\CheckUriCommand.cs" />
     <Compile Include="Commands\Login\FinishLoginCommand.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Data\FeedViewModel.cs" />
     <Compile Include="Data\HomeViewModel.cs" />
     <Compile Include="Data\LogonViewModel.cs" />
+    <Compile Include="Data\ProfileViewModel.cs" />
     <Compile Include="Items\FeedItemViewModel.cs" />
     <Compile Include="Settings\IAppSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

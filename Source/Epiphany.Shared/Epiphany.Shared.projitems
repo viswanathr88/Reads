@@ -19,6 +19,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\ObservableDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\DeferredContentPresenter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\HamburgerMenu.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\PathControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\SplitPanel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\BoolToVisibilityConverter.cs" />
@@ -28,11 +30,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)Settings\AppSettings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\SettingKeys.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Settings\SettingsStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ShellItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ShellViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SourceModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Themes\ThemeManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\Pages\DataPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI\Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)UI\Pages\Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewServices\AuthService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewServices\IViewLocator.cs" />
@@ -61,6 +68,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)UI\Pages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)UI\Pages\Shell.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

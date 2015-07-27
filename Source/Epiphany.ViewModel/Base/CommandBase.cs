@@ -61,7 +61,7 @@ namespace Epiphany.ViewModel.Commands
         {
             if (Executing != null)
             {
-                Log.Instance.Debug("", GetName());
+                Log.Instance.Debug("");
                 Executing(this, args);
             }
         }
@@ -70,7 +70,7 @@ namespace Epiphany.ViewModel.Commands
         {
             if (Executed != null)
             {
-                Log.Instance.Debug(state.ToString(), GetName());
+                Log.Instance.Debug(state.ToString());
                 Executed(this, new ExecutedEventArgs(state));
             }
         }

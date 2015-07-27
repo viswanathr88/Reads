@@ -120,11 +120,23 @@
   <data name="Events.Text" xml:space="preserve">
     <value>nearby</value>
   </data>
+  <data name="EventsShellItemText" xml:space="preserve">
+    <value>Events</value>
+  </data>
+  <data name="FeedShellItemText" xml:space="preserve">
+    <value>What's new</value>
+  </data>
   <data name="Friends.Text" xml:space="preserve">
     <value>my friends</value>
   </data>
+  <data name="FriendsShellItemText" xml:space="preserve">
+    <value>Friends</value>
+  </data>
   <data name="Groups.Text" xml:space="preserve">
     <value>groups</value>
+  </data>
+  <data name="GroupsShellItemText" xml:space="preserve">
+    <value>Groups</value>
   </data>
   <data name="MainHubFeed.Header" xml:space="preserve">
     <value>WHAT'S NEW</value>
@@ -135,8 +147,14 @@
   <data name="MyBooks.Text" xml:space="preserve">
     <value>my books</value>
   </data>
+  <data name="MyBooksShellItemText" xml:space="preserve">
+    <value>My Books</value>
+  </data>
   <data name="MyProfile.Text" xml:space="preserve">
     <value>my profile</value>
+  </data>
+  <data name="MyProfileShellItemText" xml:space="preserve">
+    <value>My Profile</value>
   </data>
   <data name="RefreshButton.Label" xml:space="preserve">
     <value>refresh</value>

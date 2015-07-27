@@ -7,15 +7,14 @@ namespace Epiphany.Themes
 {
     public sealed class ThemeManager
     {
-        private readonly string className = "ThemeManager";
         public void SetTheme(Theme theme)
         {
-            Log.Instance.Info("Setting theme to " + theme, className);
+            Log.Instance.Info("Setting theme to " + theme);
 
             switch (theme)
             {
                 case Theme.Default:
-                    Log.Instance.Debug("Using system theme. Nothing to do here.", className);
+                    Log.Instance.Debug("Using system theme. Nothing to do here.");
                     break;
 
                 case Theme.EpiphanyTheme:
@@ -27,7 +26,7 @@ namespace Epiphany.Themes
                     break;
 
                 default:
-                    Log.Instance.Warn("Not supported currently", className);
+                    Log.Instance.Warn("Not supported currently");
                     break;
             };
         }
@@ -45,7 +44,7 @@ namespace Epiphany.Themes
             }
             catch (Exception ex)
             {
-                Log.Instance.Error(ex.Message + ex.StackTrace, className);
+                Log.Instance.Error(ex.Message + ex.StackTrace);
             }
         }
     }

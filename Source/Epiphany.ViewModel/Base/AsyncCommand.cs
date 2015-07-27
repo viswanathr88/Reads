@@ -26,13 +26,13 @@ namespace Epiphany.ViewModel.Commands
                 {
                     Error = ex;
                     state = CommandExecutionState.Failure;
-                    Log.Instance.Error(string.Format("{0} Stack - {1}", ex.Message, ex.StackTrace), GetName());
+                    Log.Instance.Error(string.Format("{0} Stack - {1}", ex.Message));
                 }
             }
             else
             {
                 state = CommandExecutionState.Cancelled;
-                Log.Instance.Warn("Execute was cancelled", GetName());
+                Log.Instance.Warn("Execute was cancelled");
             }
             RaiseExecuted(state);
         }

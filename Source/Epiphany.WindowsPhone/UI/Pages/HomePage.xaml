@@ -10,7 +10,7 @@
 
     <Grid x:Name="LayoutRoot">
         <Hub x:Uid="MainHub"
-             Header="{StaticResource AppNameLowerCase}">
+             Header="Epiphany">
             <HubSection x:Uid="MainHubFeed"
                         Header="what's new">
 

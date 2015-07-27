@@ -35,7 +35,7 @@ namespace Epiphany.View.Web
                 throw new ArgumentNullException("request", "Request cannot be null");
             }
 
-            Log.Instance.Debug(request.ToString(), GetType().ToString());
+            Log.Instance.Debug(request.ToString());
             switch (request.Method)
             {
                 case WebMethod.Get:
@@ -72,7 +72,7 @@ namespace Epiphany.View.Web
 
             string content = Encoding.UTF8.GetString(response.RawBytes, 0, response.RawBytes.Length);
             WebResponse webResponse = new WebResponse(response.StatusCode, content);
-            Log.Instance.Debug(webResponse.ToString(), GetType().ToString());
+            Log.Instance.Debug(webResponse.ToString());
             
             return webResponse;
         }
@@ -100,7 +100,7 @@ namespace Epiphany.View.Web
 
             string content = Encoding.UTF8.GetString(response.RawBytes, 0, response.RawBytes.Length);
             WebResponse webResponse = new WebResponse(response.StatusCode, content);
-            Log.Instance.Debug(webResponse.ToString(), GetType().ToString());
+            Log.Instance.Debug(webResponse.ToString());
 
             return webResponse;
         }

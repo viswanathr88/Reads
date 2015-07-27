@@ -4,6 +4,7 @@ using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Epiphany.ViewModel
