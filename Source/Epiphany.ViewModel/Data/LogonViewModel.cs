@@ -14,6 +14,7 @@ namespace Epiphany.ViewModel
         private Uri currentUri;
         private ITimer timer;
         private bool isSignInTakingLonger;
+        private bool isLoginCompleted;
         //
         // Services
         //
@@ -68,7 +69,7 @@ namespace Epiphany.ViewModel
                 if (this.isWaitingForUserInteraction != value)
                 {
                     this.isWaitingForUserInteraction = value;
-                    RaisePropertyChanged(() => IsWaitingForUserInteraction);
+                    RaisePropertyChanged();
                 }
             }
         }
@@ -84,7 +85,7 @@ namespace Epiphany.ViewModel
                 if (this.error != value)
                 {
                     this.error = value;
-                    RaisePropertyChanged(() => Error);
+                    RaisePropertyChanged();
                 }
             }
         }
@@ -100,7 +101,7 @@ namespace Epiphany.ViewModel
                 if (this.currentUri != value)
                 {
                     this.currentUri = value;
-                    RaisePropertyChanged(() => CurrentUri);
+                    RaisePropertyChanged();
                 }
             }
         }
@@ -119,9 +120,25 @@ namespace Epiphany.ViewModel
                 }
 
                 this.isSignInTakingLonger = value;
-                RaisePropertyChanged(() => IsSignInTakingLonger);
+                RaisePropertyChanged();
             }
         }
+
+
+        public bool IsLoginCompleted
+        {
+            get 
+            { 
+                return this.isLoginCompleted; 
+            }
+            private set 
+            {
+                if (this.isLoginCompleted != value) return;
+                this.isLoginCompleted = value;
+                RaisePropertyChanged();
+            }
+        }
+
 
         public ICommand<Uri, VoidType> Login
         {
@@ -169,7 +186,7 @@ namespace Epiphany.ViewModel
                 Log.Instance.Info(this.verifyLoginCommand.Result.ToString());
                 if (this.verifyLoginCommand.Result)
                 {
-                    NavigateHome();
+                    IsLoginCompleted = this.verifyLoginCommand.Result;
                 }
                 else
                 {
@@ -218,7 +235,8 @@ namespace Epiphany.ViewModel
             StopTimer();
             if (e.State == CommandExecutionState.Success)
             {
-                NavigateHome();
+                IsLoginCompleted = true;
+                IsLoaded = true;
             }
             else
             {
@@ -272,11 +290,6 @@ namespace Epiphany.ViewModel
             {
                 this.timer.Dispose();
             }
-        }
-
-        private void NavigateHome()
-        {
-            this.navigationService.Navigate<HomeViewModel, VoidType>(VoidType.Empty);
         }
     }
 }

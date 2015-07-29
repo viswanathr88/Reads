@@ -13,6 +13,8 @@ namespace Epiphany.Model
             {
                 throw new ArgumentNullException("shelf");
             }
+
+            this.shelf = shelf;
         }
 
         public string Name

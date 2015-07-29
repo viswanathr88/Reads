@@ -41,7 +41,7 @@ namespace Epiphany.Model.Services
             //
             this.logonService = new LogonService(this.authService, this.messenger);
             
-            /*IAuthorService authorService = new AuthorService(this.webClient, this.messenger);
+            IAuthorService authorService = new AuthorService(this.webClient, this.messenger);
             this.authorService = new CachedAuthorService(authorService, this.messenger);
             
             IBookService bookService = new BookService(this.webClient, messenger);
@@ -59,7 +59,7 @@ namespace Epiphany.Model.Services
             this.groupService = new GroupService(this.webClient);
             this.eventService = new EventService(this.webClient);
             this.notificationService = new NotificationService(this.webClient);
-            this.statusService = new StatusService(this.webClient);*/
+            this.statusService = new StatusService(this.webClient);
         }
 
         public ILogonService GetLogonService()

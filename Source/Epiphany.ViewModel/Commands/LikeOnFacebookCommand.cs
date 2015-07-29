@@ -24,5 +24,13 @@ namespace Epiphany.ViewModel.Commands
         {
             this.urlLauncher.Launch(url);
         }
+
+        private void RaiseCanExecuteChanged()
+        {
+            if (CanExecuteChanged != null)
+            {
+                CanExecuteChanged(this, EventArgs.Empty);
+            }
+        }
     }
 }
