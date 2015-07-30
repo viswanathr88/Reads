@@ -1,5 +1,5 @@
 ﻿
-namespace Epiphany.Settings
+namespace Epiphany.Model.Settings
 {
     /// <summary>
     /// Interface for a storage which stores settings

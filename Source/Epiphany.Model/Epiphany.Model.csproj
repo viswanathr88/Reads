@@ -137,6 +137,9 @@
     <Compile Include="Services\StatusService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="ServiceUrls.cs" />
+    <Compile Include="Settings\ISettingStorage.cs" />
+    <Compile Include="Settings\ModelSettings.cs" />
+    <Compile Include="Settings\SettingTags.cs" />
     <Compile Include="Web\IWebClient.cs" />
     <Compile Include="Web\WebRequest.cs" />
     <Compile Include="Web\WebResponse.cs" />

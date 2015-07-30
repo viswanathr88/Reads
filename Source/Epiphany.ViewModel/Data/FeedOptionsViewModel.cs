@@ -1,5 +1,4 @@
 ﻿using Epiphany.Model.Services;
-using Epiphany.Settings;
 using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System;

@@ -96,7 +96,7 @@
     <Compile Include="Services\ITimer.cs" />
     <Compile Include="Services\ITimerService.cs" />
     <Compile Include="Services\IUrlLauncher.cs" />
-    <Compile Include="Settings\ISettingStorage.cs" />
+    <Compile Include="Settings\SettingsChangedEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Epiphany.Model\Epiphany.Model.csproj">

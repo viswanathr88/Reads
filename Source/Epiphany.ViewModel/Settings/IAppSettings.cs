@@ -1,17 +1,9 @@
 ﻿using Epiphany.Model.Services;
 using System;
-using System.ComponentModel;
 
-namespace Epiphany.Settings
+namespace Epiphany.ViewModel
 {
-    public enum Theme
-    {
-        Default,
-        ReadsTheme,
-        EpiphanyTheme
-    };
-
-    public interface IAppSettings : INotifyPropertyChanged
+    public interface IAppSettings
     {
         FeedUpdateType UpdateType
         {
@@ -49,12 +41,6 @@ namespace Epiphany.Settings
             set;
         }
 
-        Theme CurrentTheme
-        {
-            get;
-            set;
-        }
-
         bool EnableTransparentTile
         {
             get;
@@ -66,5 +52,7 @@ namespace Epiphany.Settings
             get;
             set;
         }
+
+        event EventHandler<SettingsChangedEventArgs> SettingChanged;
     }
 }

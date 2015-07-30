@@ -94,6 +94,10 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Behaviors\BrowserNavigatingCommandBehavior.cs" />
+    <Compile Include="Behaviors\InvokeCommandActionWithArgs.cs" />
+    <Compile Include="Behaviors\PivotIndexChangeBehavior.cs" />
+    <Compile Include="Behaviors\ReturnPressBehavior.cs" />
+    <Compile Include="Behaviors\UpdateTextBindingOnPropertyChanged.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\DateToVisibilityConverter.cs" />
     <Compile Include="Converters\DoubleToVisibilityConverter.cs" />
@@ -107,6 +111,7 @@
     <Compile Include="Converters\UpperCaseConverter.cs" />
     <Compile Include="DesignData\DesignLogonViewModel.cs" />
     <Compile Include="Resources\LocalizedStrings.cs" />
+    <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\DesignTimeViewModelLocator.cs" />
     <Compile Include="Services\IViewLocator.cs" />
     <Compile Include="Services\IViewModelLocator.cs" />
@@ -116,8 +121,11 @@
     <Compile Include="Services\SourceModel.cs" />
     <Compile Include="Services\Timer.cs" />
     <Compile Include="Services\TimerService.cs" />
+    <Compile Include="Services\TokenParser.cs" />
     <Compile Include="Services\ViewLocator.cs" />
     <Compile Include="Services\ViewModelLocator.cs" />
+    <Compile Include="Settings\AppSettings.cs" />
+    <Compile Include="Settings\SettingsStore.cs" />
     <Compile Include="View\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
@@ -131,6 +139,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Web\RestSharpExtensions.cs" />
+    <Compile Include="Web\WebClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -147,6 +157,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
@@ -192,6 +203,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="RestSharp.WindowsPhone, Version=105.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RestSharpSigned.105.1.0\lib\windowsphone8\RestSharp.WindowsPhone.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Windows.Interactivity, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />

@@ -1,6 +1,5 @@
 ﻿using Epiphany.Model;
 using Epiphany.Model.Services;
-using Epiphany.Settings;
 using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System;
@@ -39,7 +38,7 @@ namespace Epiphany.ViewModel
             this.appSettings = appSettings;
             this.navigationService = navigationService;
 
-            this.appSettings.PropertyChanged += OnSettingChanged;
+            this.appSettings.SettingChanged += OnSettingChanged;
 
             this.Feed = new ObservableCollection<FeedItemViewModel>();
             this.fetchFeedCommand = new FetchFeedCommand(userService);
@@ -155,9 +154,9 @@ namespace Epiphany.ViewModel
             IsLoading = true;
         }
 
-        private void OnSettingChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        private void OnSettingChanged(object sender, SettingsChangedEventArgs e)
         {
-            if (e.PropertyName == "UpdateType" || e.PropertyName == "UpdateFilter")
+            if (e.SettingName == "UpdateType" || e.SettingName == "UpdateFilter")
             {
                 IsFilterEnabled = ComputeIsFilterEnabled();
             }
