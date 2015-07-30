@@ -9,7 +9,6 @@ namespace Epiphany.ViewModel
     sealed class LogonViewModel : DataViewModel, ILogonViewModel
     {
         private bool isWaitingForUserInteraction;
-        private object error;
         private Uri currentUri;
         private ITimer timer;
         private bool isSignInTakingLonger;
@@ -163,6 +162,7 @@ namespace Epiphany.ViewModel
                 if (this.verifyLoginCommand.Result)
                 {
                     IsLoginCompleted = this.verifyLoginCommand.Result;
+                    NavigateHome();
                 }
                 else
                 {
@@ -213,6 +213,7 @@ namespace Epiphany.ViewModel
             {
                 IsLoginCompleted = true;
                 IsLoaded = true;
+
             }
             else
             {
@@ -245,6 +246,11 @@ namespace Epiphany.ViewModel
             {
                 IsSignInTakingLonger = false;
             }
+        }
+
+        private void NavigateHome()
+        {
+            this.navigationService.CreateFor<IHomeViewModel>().Navigate();
         }
 
         public override void Dispose()

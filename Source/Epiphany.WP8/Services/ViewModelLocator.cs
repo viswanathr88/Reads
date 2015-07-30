@@ -29,7 +29,7 @@ namespace Epiphany.View.Services
             }
         }
 
-        public AboutViewModel About
+        public IAboutViewModel About
         {
             get
             {
@@ -40,6 +40,14 @@ namespace Epiphany.View.Services
         public void Dispose()
         {
             locatorImpl.Dispose();
+        }
+
+        public IHomeViewModel Home
+        {
+            get
+            {
+                return this.locatorImpl.Home;
+            }
         }
     }
 }

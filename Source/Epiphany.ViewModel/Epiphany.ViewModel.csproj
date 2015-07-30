@@ -81,6 +81,10 @@
     <Compile Include="Data\FeedOptionsViewModel.cs" />
     <Compile Include="Data\FeedViewModel.cs" />
     <Compile Include="Data\HomeViewModel.cs" />
+    <Compile Include="Data\IAboutViewModel.cs" />
+    <Compile Include="Data\IFeedOptionsViewModel.cs" />
+    <Compile Include="Data\IFeedViewModel.cs" />
+    <Compile Include="Data\IHomeViewModel.cs" />
     <Compile Include="Data\ILogonViewModel.cs" />
     <Compile Include="Data\LogonViewModel.cs" />
     <Compile Include="Items\FeedItemViewModel.cs" />

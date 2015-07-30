@@ -1,21 +1,18 @@
 ﻿using Epiphany.Model.Services;
 using Epiphany.Settings;
-using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System;
-using System.ComponentModel;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public class HomeViewModel : DataViewModel
+    sealed class HomeViewModel : DataViewModel, IHomeViewModel
     {
         private readonly IUserService userService;
         private readonly INavigationService navigationService;
         private readonly IAppSettings appSettings;
 
-        private FeedViewModel feedViewModel;
+        private IFeedViewModel feedViewModel;
 
         public HomeViewModel(IUserService userService, INavigationService navigationService, IAppSettings settings)
         {
@@ -42,7 +39,7 @@ namespace Epiphany.ViewModel
             get { throw new NotImplementedException(); }
         }
 
-        public FeedViewModel FeedViewModel
+        public IFeedViewModel FeedViewModel
         {
             get
             {

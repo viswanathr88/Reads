@@ -1,16 +1,25 @@
-﻿using Epiphany.ViewModel;
+﻿using Epiphany.View.DesignData;
+using Epiphany.ViewModel;
 using System;
 
 namespace Epiphany.View.Services
 {
     sealed class DesignTimeViewModelLocator : IViewModelLocator
     {
-        public ILogonViewModel Logon
+        public IHomeViewModel Home
         {
             get { throw new NotImplementedException(); }
         }
 
-        public AboutViewModel About
+        public ILogonViewModel Logon
+        {
+            get
+            {
+                return new DesignLogonViewModel();
+            }
+        }
+
+        public IAboutViewModel About
         {
             get { throw new NotImplementedException(); }
         }

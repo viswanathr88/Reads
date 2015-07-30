@@ -38,7 +38,7 @@ namespace Epiphany.View.Services
             Frame.Navigate(new Uri(uri, UriKind.Relative));
         }
 
-        public INavigationOperation<TViewModel> CreateFor<TViewModel>() where TViewModel : ViewModelBase
+        public INavigationOperation<TViewModel> CreateFor<TViewModel>() where TViewModel : IDataViewModel
         {
             INavigationOperation<TViewModel> operation = new NavigationOperation<TViewModel>(this, this.viewLocator);
             return operation;

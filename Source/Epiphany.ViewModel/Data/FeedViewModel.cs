@@ -10,13 +10,13 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public class FeedViewModel : DataViewModel
+    sealed class FeedViewModel : DataViewModel, IFeedViewModel
     {
         //
         // Private Members
         //
         private readonly INavigationService navigationService;
-        private FeedOptionsViewModel feedOptionsViewModel;
+        private IFeedOptionsViewModel feedOptionsViewModel;
         private readonly IUserService userService;
         private readonly IAppSettings appSettings;
         private IList<FeedItemViewModel> feed;
@@ -90,7 +90,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public FeedOptionsViewModel FeedOptionsViewModel
+        public IFeedOptionsViewModel FeedOptionsViewModel
         {
             get
             {

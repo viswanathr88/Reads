@@ -5,12 +5,17 @@ namespace Epiphany.View.Services
 {
     interface IViewModelLocator : IDisposable
     {
+        IHomeViewModel Home
+        {
+            get;
+        }
+
         ILogonViewModel Logon
         {
             get;
         }
 
-        AboutViewModel About
+        IAboutViewModel About
         {
             get;
         }

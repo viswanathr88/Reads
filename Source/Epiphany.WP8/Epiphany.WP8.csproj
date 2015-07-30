@@ -105,6 +105,7 @@
     <Compile Include="Converters\NullToVisibilityConverter.cs" />
     <Compile Include="Converters\StringToVisibilityConverter.cs" />
     <Compile Include="Converters\UpperCaseConverter.cs" />
+    <Compile Include="DesignData\DesignLogonViewModel.cs" />
     <Compile Include="Resources\LocalizedStrings.cs" />
     <Compile Include="Services\DesignTimeViewModelLocator.cs" />
     <Compile Include="Services\IViewLocator.cs" />
@@ -117,6 +118,9 @@
     <Compile Include="Services\TimerService.cs" />
     <Compile Include="Services\ViewLocator.cs" />
     <Compile Include="Services\ViewModelLocator.cs" />
+    <Compile Include="View\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DataPage.cs" />
     <Compile Include="View\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -133,6 +137,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="View\AboutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\LoginPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -149,6 +157,8 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Logo\EpiphanyLogo110px.png" />
+    <Content Include="Assets\Logo\EpiphanyLogo202px.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

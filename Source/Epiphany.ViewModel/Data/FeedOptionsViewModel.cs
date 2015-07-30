@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class FeedOptionsViewModel : DataViewModel
+    sealed class FeedOptionsViewModel : DataViewModel, IFeedOptionsViewModel
     {
         private readonly IAppSettings appSettings;
         private FeedOptions feedOptions;

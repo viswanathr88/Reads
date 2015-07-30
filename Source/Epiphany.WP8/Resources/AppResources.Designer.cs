@@ -79,11 +79,29 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MY APPLICATION.
+        ///   Looks up a localized string similar to Reads.
         /// </summary>
         public static string ApplicationTitle {
             get {
                 return ResourceManager.GetString("ApplicationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to like on facebook.
+        /// </summary>
+        public static string LikeonFBButtonText {
+            get {
+                return ResourceManager.GetString("LikeonFBButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to rate the app.
+        /// </summary>
+        public static string RateButtonText {
+            get {
+                return ResourceManager.GetString("RateButtonText", resourceCulture);
             }
         }
         
@@ -102,6 +120,33 @@ namespace Epiphany.View.Resources {
         public static string ResourceLanguage {
             get {
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to retry.
+        /// </summary>
+        public static string RetryLoginButtonText {
+            get {
+                return ResourceManager.GetString("RetryLoginButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is taking longer than expected. This could be due to a slow network connection..
+        /// </summary>
+        public static string SigningInStuckMessage {
+            get {
+                return ResourceManager.GetString("SigningInStuckMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version: 2.5.
+        /// </summary>
+        public static string VersionString {
+            get {
+                return ResourceManager.GetString("VersionString", resourceCulture);
             }
         }
     }
