@@ -168,5 +168,10 @@ namespace Epiphany.ViewModel
             return !(this.appSettings.UpdateFilter == FeedUpdateFilter.friends &&
                 this.appSettings.UpdateType == FeedUpdateType.all);
         }
+
+        public override void Load()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Windows.Markup;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using Epiphany.WP8.Resources;
+using Epiphany.View.Resources;
 
 namespace Epiphany.WP8
 {

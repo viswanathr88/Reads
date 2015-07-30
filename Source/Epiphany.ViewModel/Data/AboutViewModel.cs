@@ -39,6 +39,11 @@ namespace Epiphany.ViewModel
 
         public override void Load(VoidType param)
         {
+            Load();
+        }
+
+        public override void Load()
+        {
             // Nothing to load
             IsLoaded = true;
         }

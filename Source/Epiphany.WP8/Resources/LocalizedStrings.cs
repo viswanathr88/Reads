@@ -1,6 +1,4 @@
-﻿using Epiphany.WP8.Resources;
-
-namespace Epiphany.WP8
+﻿namespace Epiphany.View.Resources
 {
     /// <summary>
     /// Provides access to string resources.

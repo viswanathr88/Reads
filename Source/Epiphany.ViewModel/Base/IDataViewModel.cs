@@ -1,4 +1,6 @@
 ﻿
+using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 namespace Epiphany.ViewModel
 {
@@ -7,6 +9,8 @@ namespace Epiphany.ViewModel
     /// </summary>
     public interface IDataViewModel
     {
+        void Load();
+
         void Load(object param);
     }
 
@@ -14,7 +18,7 @@ namespace Epiphany.ViewModel
     /// Represents a templated version of IDataViewModel
     /// </summary>
     /// <typeparam name="TParam"></typeparam>
-    public interface IDataViewModel<TParam>
+    public interface IDataViewModel<TParam> : IDataViewModel
     {
         void Load(TParam param);
     }

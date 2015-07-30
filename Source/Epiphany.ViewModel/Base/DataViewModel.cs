@@ -33,6 +33,8 @@ namespace Epiphany.ViewModel
 
         public abstract void Load(T param);
 
+        public abstract void Load();
+
         public void Load(object param)
         {
             Log.Instance.Debug(string.Format("Param Type = {0}", param.GetType().ToString()));

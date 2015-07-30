@@ -25,5 +25,10 @@ namespace Epiphany.ViewModel
         {
             throw new NotImplementedException();
         }
+
+        public override void Load()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

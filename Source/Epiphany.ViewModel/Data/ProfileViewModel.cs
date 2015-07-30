@@ -12,6 +12,7 @@ namespace Epiphany.ViewModel
         private readonly ICommand<ProfileModel, int> fetchProfileCommand;
         private readonly IUserService userService;
         private ProfileModel model;
+        private int id = -1;
 
         public ProfileViewModel(IUserService userService)
         {
@@ -25,6 +26,20 @@ namespace Epiphany.ViewModel
             this.fetchProfileCommand = new FetchProfileCommand(userService);
             this.fetchProfileCommand.Executing += OnExecuting;
             this.fetchProfileCommand.Executed += OnFetchProfileCompleted;
+        }
+
+        public int Id
+        {
+            get
+            {
+                return this.id;
+            }
+            set
+            {
+                if (this.id == value) return;
+                this.id = value;
+                RaisePropertyChanged();
+            }
         }
 
         public ProfileModel Model
@@ -43,6 +58,18 @@ namespace Epiphany.ViewModel
 
         public override void Load(int id)
         {
+            Id = id;
+            Load();
+        }
+
+        public override void Load()
+        {
+            if (this.id == -1)
+            {
+                Log.Instance.Error("Parameter is not valid!");
+                throw new InvalidOperationException("Parameter is not valid");
+            }
+
             if (this.fetchProfileCommand.CanExecute(id))
             {
                 this.fetchProfileCommand.Execute(id);

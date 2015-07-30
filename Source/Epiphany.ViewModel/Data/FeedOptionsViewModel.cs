@@ -97,6 +97,11 @@ namespace Epiphany.ViewModel
 
         public override void Load(VoidType param)
         {
+            Load();
+        }
+
+        public override void Load()
+        {
             if (!IsLoaded)
             {
                 CurrentUpdateType = appSettings.UpdateType;

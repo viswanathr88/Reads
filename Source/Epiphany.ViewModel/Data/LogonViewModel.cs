@@ -156,7 +156,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override void Load(VoidType param)
+        public override void Load()
         {
             Log.Instance.Debug(IsLoaded.ToString());
 
@@ -164,6 +164,11 @@ namespace Epiphany.ViewModel
             {
                 this.verifyLoginCommand.Execute(VoidType.Empty);
             }
+        }
+
+        public override void Load(VoidType param)
+        {
+            Load();
         }
 
         public void SetIsLoading(bool isLoading)
