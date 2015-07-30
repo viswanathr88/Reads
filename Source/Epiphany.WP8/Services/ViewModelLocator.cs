@@ -21,7 +21,7 @@ namespace Epiphany.View.Services
 
         }
 
-        public LogonViewModel Logon
+        public ILogonViewModel Logon
         {
             get
             {

@@ -3,7 +3,7 @@ using Epiphany.ViewModel;
 
 namespace Epiphany.View
 {
-    [SourceModel(typeof(LogonViewModel))]
+    [SourceModel(typeof(ILogonViewModel))]
     public partial class LoginPage : DataPage
     {
         public LoginPage()

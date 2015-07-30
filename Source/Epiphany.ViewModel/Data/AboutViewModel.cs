@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public class AboutViewModel : DataViewModel<VoidType>
+    public class AboutViewModel : DataViewModel
     {
         private readonly ICommand likeOnFacebookCommand;
         private readonly ICommand rateAppCommand;
@@ -35,11 +35,6 @@ namespace Epiphany.ViewModel
             {
                 return this.rateAppCommand;
             }
-        }
-
-        public override void Load(VoidType param)
-        {
-            Load();
         }
 
         public override void Load()

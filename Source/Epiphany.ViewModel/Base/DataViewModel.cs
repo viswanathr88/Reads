@@ -4,10 +4,11 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
-    public abstract class DataViewModel<T> : ViewModelBase, IDataViewModel<T>, IDataViewModel
+    public abstract class DataViewModel : ViewModelBase, IDataViewModel
     {
         private bool isLoading;
         private bool isLoaded;
+        private object error;
 
         public bool IsLoading
         {
@@ -16,7 +17,7 @@ namespace Epiphany.ViewModel
             {
                 if (this.isLoading == value) return;
                 this.isLoading = value;
-                RaisePropertyChanged("IsLoading");
+                RaisePropertyChanged();
             }
         }
 
@@ -27,35 +28,25 @@ namespace Epiphany.ViewModel
             {
                 if (this.isLoaded == value) return;
                 this.isLoaded = value;
-                RaisePropertyChanged("IsLoaded");
+                RaisePropertyChanged();
             }
         }
-
-        public abstract void Load(T param);
 
         public abstract void Load();
 
-        public void Load(object param)
+
+        public object Error
         {
-            Log.Instance.Debug(string.Format("Param Type = {0}", param.GetType().ToString()));
-            T safeParam = GetSafeParam(param);
-
-            Load(safeParam);
-        }
-
-        private T GetSafeParam(object param)
-        {
-            if (param == null)
+            get
             {
-                throw new ArgumentNullException();
+                return this.error;
             }
-
-            if (!(param is T))
+            protected set
             {
-                throw new InvalidOperationException();
+                if (this.error == value) return;
+                this.error = value;
+                RaisePropertyChanged();
             }
-
-            return (T)param;
         }
     }
 }

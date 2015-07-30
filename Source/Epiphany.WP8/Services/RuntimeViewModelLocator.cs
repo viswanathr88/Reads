@@ -5,7 +5,7 @@ namespace Epiphany.View.Services
 {
     sealed class RuntimeViewModelLocator : IViewModelLocator
     {
-        public LogonViewModel Logon
+        public ILogonViewModel Logon
         {
             get { throw new NotImplementedException(); }
         }

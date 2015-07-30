@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public class FeedViewModel : DataViewModel<VoidType>
+    public class FeedViewModel : DataViewModel
     {
         //
         // Private Members
@@ -119,7 +119,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override void Load(VoidType param)
+        public override void Load()
         {
             if (!IsLoaded)
             {
@@ -167,11 +167,6 @@ namespace Epiphany.ViewModel
         {
             return !(this.appSettings.UpdateFilter == FeedUpdateFilter.friends &&
                 this.appSettings.UpdateType == FeedUpdateType.all);
-        }
-
-        public override void Load()
-        {
-            throw new NotImplementedException();
         }
     }
 }

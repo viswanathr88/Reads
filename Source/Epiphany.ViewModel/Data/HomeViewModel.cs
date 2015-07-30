@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public class HomeViewModel : DataViewModel<VoidType>
+    public class HomeViewModel : DataViewModel
     {
         private readonly IUserService userService;
         private readonly INavigationService navigationService;
@@ -29,7 +29,7 @@ namespace Epiphany.ViewModel
             this.appSettings = settings;
         }
 
-        public override void Load(VoidType param)
+        public override void Load()
         {
             if (!FeedViewModel.IsLoaded)
             {
@@ -63,11 +63,6 @@ namespace Epiphany.ViewModel
         public ICommand ShowAbout
         {
             get { throw new NotImplementedException(); }
-        }
-
-        public override void Load()
-        {
-            throw new NotImplementedException();
         }
     }
 }

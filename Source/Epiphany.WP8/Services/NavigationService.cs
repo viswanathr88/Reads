@@ -38,15 +38,10 @@ namespace Epiphany.View.Services
             Frame.Navigate(new Uri(uri, UriKind.Relative));
         }
 
-        public INavigationOperation<TViewModel> CreateFor<TViewModel>() where TViewModel : IDataViewModel
+        public INavigationOperation<TViewModel> CreateFor<TViewModel>() where TViewModel : ViewModelBase
         {
             INavigationOperation<TViewModel> operation = new NavigationOperation<TViewModel>(this, this.viewLocator);
             return operation;
-        }
-
-        public void Navigate<TViewModel, TParam>(TParam param) where TViewModel : DataViewModel<TParam>
-        {
-            throw new NotImplementedException();
         }
 
         private PhoneApplicationFrame Frame

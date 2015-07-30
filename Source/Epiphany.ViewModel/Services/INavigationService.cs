@@ -12,9 +12,7 @@ namespace Epiphany.ViewModel.Services
 
         void GoBackAll();
 
-        void Navigate<TViewModel, TParam>(TParam param) where TViewModel : DataViewModel<TParam>;
-
-        INavigationOperation<TViewModel> CreateFor<TViewModel>() where TViewModel : IDataViewModel;
+        INavigationOperation<TViewModel> CreateFor<TViewModel>() where TViewModel : ViewModelBase;
 
         void Navigate(string uri);
     }

@@ -3,11 +3,10 @@ using Epiphany.Model.Services;
 using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System;
-using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
-    public class LogonViewModel : DataViewModel<VoidType>
+    sealed class LogonViewModel : DataViewModel, ILogonViewModel
     {
         private bool isWaitingForUserInteraction;
         private object error;
@@ -15,14 +14,12 @@ namespace Epiphany.ViewModel
         private ITimer timer;
         private bool isSignInTakingLonger;
         private bool isLoginCompleted;
-        //
+
         // Services
-        //
         private readonly ILogonService logonService;
         private readonly INavigationService navigationService;
-        //
+
         // Commands
-        //
         private readonly ICommand<bool, VoidType> verifyLoginCommand;
         private readonly ICommand<Uri, VoidType> loginCommand;
         private readonly ICommand<bool, Uri> checkUriCommand;
@@ -69,22 +66,6 @@ namespace Epiphany.ViewModel
                 if (this.isWaitingForUserInteraction != value)
                 {
                     this.isWaitingForUserInteraction = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
-        public object Error
-        {
-            get
-            {
-                return this.error;
-            }
-            private set
-            {
-                if (this.error != value)
-                {
-                    this.error = value;
                     RaisePropertyChanged();
                 }
             }
@@ -164,16 +145,6 @@ namespace Epiphany.ViewModel
             {
                 this.verifyLoginCommand.Execute(VoidType.Empty);
             }
-        }
-
-        public override void Load(VoidType param)
-        {
-            Load();
-        }
-
-        public void SetIsLoading(bool isLoading)
-        {
-            IsLoading = isLoading;
         }
 
         private void OnVerifyLoginExecuting(object sender, CancelEventArgs e)

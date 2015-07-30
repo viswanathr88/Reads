@@ -5,7 +5,7 @@ namespace Epiphany.View.Services
 {
     interface IViewModelLocator : IDisposable
     {
-        LogonViewModel Logon
+        ILogonViewModel Logon
         {
             get;
         }
