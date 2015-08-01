@@ -1,0 +1,148 @@
+﻿<local:DataPage x:Class="Epiphany.View.AddBookPage"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:local="clr-namespace:Epiphany.View"
+                xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                xmlns:conv="clr-namespace:Epiphany.View.Converters"
+                xmlns:controls="clr-namespace:Epiphany.Controls"
+                xmlns:appbar="clr-namespace:BindableApplicationBar;assembly=BindableApplicationBar"
+                xmlns:behaviors="clr-namespace:Epiphany.View.Behaviors"
+                xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                FontSize="{StaticResource PhoneFontSizeNormal}"
+                Foreground="{StaticResource PhoneForegroundBrush}"
+                SupportedOrientations="Portrait"
+                Orientation="Portrait"
+                mc:Ignorable="d"
+                shell:SystemTray.IsVisible="True"
+                shell:SystemTray.Opacity="0"
+                shell:SystemTray.ForegroundColor="{StaticResource PhoneForegroundColor}"
+                DataContext="{Binding AddBook, Source={StaticResource VMLocator}}">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot"
+          Background="{StaticResource PhoneBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!-- progress bar-->
+        <ProgressBar IsIndeterminate="{Binding IsLoading}"
+                     IsEnabled="{Binding IsLoading}"
+                     Foreground="{StaticResource PhoneForegroundBrush}"
+                     Background="Transparent" />
+        <!--Pivot Control-->
+        <phone:Pivot Grid.Row="1"
+                     Title="{Binding Title, Converter={StaticResource ToUpperCaseConverter}}"
+                     Margin="0,25,0,0"
+                     Foreground="{StaticResource PhoneForegroundBrush}">
+            <!--Pivot item one-->
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.AddToShelfTitle, Source={StaticResource LocalizedStrings}}"
+                             Foreground="{StaticResource PhoneForegroundBrush}">
+                <!--ContentPanel - place additional content here-->
+                <Grid x:Name="ContentPanel"
+                      Margin="12,0,12,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="90" />
+                        <RowDefinition Height="75" /> <!-- extra space for the appbar-->
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Grid.Row="0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="225" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="75" />
+                                    <RowDefinition Height="75" />
+                                    <RowDefinition Height="75" />
+                                </Grid.RowDefinitions>
+                                <RadioButton Grid.Row="0"
+                                             Content="read"
+                                             GroupName="standardShelves"
+                                             IsChecked="{Binding IsReadSelected, Mode=TwoWay}"
+                                             Foreground="{StaticResource PhoneForegroundBrush}"
+                                             />
+                                <RadioButton Grid.Row="1"
+                                             Content="currently-reading"
+                                             GroupName="standardShelves"
+                                             IsChecked="{Binding IsCurrentlyReadingSelected, Mode=TwoWay}"
+                                             Foreground="{StaticResource PhoneForegroundBrush}"/>
+                                <RadioButton Grid.Row="2"
+                                             Content="to-read"
+                                             GroupName="standardShelves"
+                                             IsChecked="{Binding IsToReadSelected,Mode=TwoWay}"
+                                             Foreground="{StaticResource PhoneForegroundBrush}"/>
+                            </Grid>
+                            <ListBox Grid.Row="1"
+                                     ItemsSource="{Binding CustomShelves}"
+                                     ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal"
+                                                    Margin="0,0,0,17">
+                                            <CheckBox VerticalAlignment="Center"
+                                                      IsChecked="{Binding IsEnabled, Mode=TwoWay}"
+                                                      Foreground="{StaticResource PhoneForegroundBrush}"/>
+                                            <TextBlock Margin="-10,0,0,0"
+                                                       Text="{Binding Name}"
+                                                       DataContext="{Binding Bookshelf}"
+                                                       VerticalAlignment="Center"
+                                                       FontSize="24"
+                                                       Foreground="{StaticResource PhoneForegroundBrush}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </Grid>
+                    </ScrollViewer>
+                    <Grid Grid.Row="1"
+                          Margin="0,15,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="75" />
+                        </Grid.ColumnDefinitions>
+                        <toolkit:PhoneTextBox Grid.Column="0"
+                                              Hint="{Binding Path=LocalizedResources.CreateNewShelfHintText, Source={StaticResource LocalizedStrings}}"
+                                              x:Name="shelfNameBox"
+                                              Text="{Binding ShelfName, Mode=TwoWay}">
+                            <i:Interaction.Behaviors>
+                                <behaviors:UpdateTextBindingOnPropertyChanged />
+                            </i:Interaction.Behaviors>
+                        </toolkit:PhoneTextBox>
+                        <Button Grid.Column="1"
+                                Width="80"
+                                Foreground="{StaticResource PhoneForegroundBrush}"
+                                Command="{Binding CreateShelf}"
+                                CommandParameter="{Binding ShelfName}">
+                            <Button.Content>
+                                <Image Source="/Assets/Icons/add.png" />
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </phone:PivotItem>
+        </phone:Pivot>      
+    </Grid>
+    <appbar:Bindable.ApplicationBar>
+        <appbar:BindableApplicationBar IsVisible="{Binding Path=AddBookViewModel.IsLoaded}"
+                                       BindableOpacity="0.9999">
+            <appbar:BindableApplicationBarButton IconUri="/Assets/Icons/ok.png"
+                                                 Text="add"
+                                                 Command="{Binding Path=AddBookViewModel.AddToShelves}"
+                                                 CommandParameter="{Binding Path=AddBookViewModel.AddToShelvesArgs}"/>
+            <!-- deleting a review is not supported by goodreads anymore -->
+            <!--<appbar:BindableApplicationBarButton IconUri="/Assets/Icons/minus.png"
+                                                 Text="remove"
+                                                 Command="{Binding Path=AddBookViewModel.RemoveBook}"
+                                                 CommandParameter="{Binding Path=AddBookViewModel.Book}"/>-->
+        </appbar:BindableApplicationBar>
+    </appbar:Bindable.ApplicationBar>
+    
+</local:DataPage>

@@ -15,6 +15,11 @@ namespace Epiphany.View.Services
             get;
         }
 
+        IAddBookViewModel AddBook
+        {
+            get;
+        }
+
         IAboutViewModel About
         {
             get;

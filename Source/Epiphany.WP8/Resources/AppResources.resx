@@ -149,4 +149,7 @@
   <data name="RateButtonText" xml:space="preserve">
     <value>rate the app</value>
   </data>
+  <data name="AddToShelfTitle" xml:space="preserve">
+    <value>add to shelf</value>
+  </data>
 </root>

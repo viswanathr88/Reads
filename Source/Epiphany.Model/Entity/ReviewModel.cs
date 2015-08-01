@@ -1,5 +1,6 @@
 ﻿using Epiphany.Xml;
 using System;
+using System.Collections.Generic;
 
 namespace Epiphany.Model
 {
@@ -7,26 +8,11 @@ namespace Epiphany.Model
     {
         private readonly GoodreadsReview review;
         private readonly int id;
-        private readonly int rating;
-        private readonly string body;
 
-        public ReviewModel(GoodreadsReview review)
+        internal ReviewModel(GoodreadsReview review)
         {
             this.review = review;
             this.id = review.Id;
-            this.rating = Converter.ToInt(review.Rating, 0);
-            this.body = review.Body;
-        }
-
-        public static ReviewModel Create(int rating, string body)
-        {
-            return new ReviewModel(rating, body);
-        }
-
-        private ReviewModel(int rating, string body)
-        {
-            this.rating = rating;
-            this.body = body;
         }
         
         public override int Id
@@ -146,6 +132,21 @@ namespace Epiphany.Model
             get
             {
                 return this.review.Link;
+            }
+        }
+
+        public IEnumerable<string> Shelves
+        {
+            get
+            {
+                IList<string> shelves = new List<string>();
+                foreach (GoodreadsShelf shelf in this.review.Shelves)
+                {
+                    string name = string.IsNullOrEmpty(shelf.Name) ? shelf.Name2 : shelf.Name;
+                    shelves.Add(name);
+                }
+
+                return shelves;
             }
         }
     }

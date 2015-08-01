@@ -109,6 +109,7 @@
     <Compile Include="Converters\NullToVisibilityConverter.cs" />
     <Compile Include="Converters\StringToVisibilityConverter.cs" />
     <Compile Include="Converters\UpperCaseConverter.cs" />
+    <Compile Include="DesignData\DesignAddBookViewModel.cs" />
     <Compile Include="DesignData\DesignLogonViewModel.cs" />
     <Compile Include="Resources\LocalizedStrings.cs" />
     <Compile Include="Services\AuthService.cs" />
@@ -128,6 +129,9 @@
     <Compile Include="Settings\SettingsStore.cs" />
     <Compile Include="View\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddBookPage.xaml.cs">
+      <DependentUpon>AddBookPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DataPage.cs" />
     <Compile Include="View\LoginPage.xaml.cs">
@@ -155,6 +159,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\AddBookPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\LoginPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -172,6 +180,40 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Icons\add.png" />
+    <Content Include="Assets\Icons\addfriend.png" />
+    <Content Include="Assets\Icons\appbar.home.png" />
+    <Content Include="Assets\Icons\appbar.message.send.png" />
+    <Content Include="Assets\Icons\appbar.pin.png" />
+    <Content Include="Assets\Icons\appbar.sort.png" />
+    <Content Include="Assets\Icons\appbar.user.add.png" />
+    <Content Include="Assets\Icons\asc-dark.png" />
+    <Content Include="Assets\Icons\asc-light.png" />
+    <Content Include="Assets\Icons\books.png" />
+    <Content Include="Assets\Icons\cancel.png" />
+    <Content Include="Assets\Icons\Dark\Books.png" />
+    <Content Include="Assets\Icons\Dark\Events.png" />
+    <Content Include="Assets\Icons\Dark\Friends.png" />
+    <Content Include="Assets\Icons\Dark\Groups.png" />
+    <Content Include="Assets\Icons\Dark\Profile.png" />
+    <Content Include="Assets\Icons\Dark\Scanner.png" />
+    <Content Include="Assets\Icons\des-dark.png" />
+    <Content Include="Assets\Icons\des-light.png" />
+    <Content Include="Assets\Icons\events.png" />
+    <Content Include="Assets\Icons\feature.search.dark.png" />
+    <Content Include="Assets\Icons\feature.search.png" />
+    <Content Include="Assets\Icons\friends.png" />
+    <Content Include="Assets\Icons\groups.png" />
+    <Content Include="Assets\Icons\like.png" />
+    <Content Include="Assets\Icons\minus.png" />
+    <Content Include="Assets\Icons\ok.png" />
+    <Content Include="Assets\Icons\pin.png" />
+    <Content Include="Assets\Icons\profile.png" />
+    <Content Include="Assets\Icons\profile1.png" />
+    <Content Include="Assets\Icons\RateAndReview.png" />
+    <Content Include="Assets\Icons\refresh.png" />
+    <Content Include="Assets\Icons\send.png" />
+    <Content Include="Assets\Icons\unlike.png" />
     <Content Include="Assets\Logo\EpiphanyLogo110px.png" />
     <Content Include="Assets\Logo\EpiphanyLogo202px.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
@@ -189,6 +231,12 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="README_FIRST.txt" />
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
@@ -207,6 +255,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="BindableApplicationBar, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\BindableApplicationBar.1.1.0.0\lib\wp8\BindableApplicationBar.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=8.0.1.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="RestSharp.WindowsPhone, Version=105.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\RestSharpSigned.105.1.0\lib\windowsphone8\RestSharp.WindowsPhone.dll</HintPath>
       <Private>True</Private>

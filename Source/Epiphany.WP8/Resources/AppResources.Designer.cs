@@ -61,6 +61,15 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to add to shelf.
+        /// </summary>
+        public static string AddToShelfTitle {
+            get {
+                return ResourceManager.GetString("AddToShelfTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to add.
         /// </summary>
         public static string AppBarButtonText {

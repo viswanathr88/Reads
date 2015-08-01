@@ -53,15 +53,25 @@
     <Compile Include="Base\UriBuilder.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="Base\VoidType.cs" />
+    <Compile Include="Collections\AlphabetKeyedList.cs" />
+    <Compile Include="Collections\BidirectionalMap.cs" />
+    <Compile Include="Collections\DeltaList.cs" />
+    <Compile Include="Collections\DeltaListItem.cs" />
+    <Compile Include="Collections\Group.cs" />
+    <Compile Include="Collections\KeyedList.cs" />
+    <Compile Include="Collections\SortedList.cs" />
     <Compile Include="Commands\AddShelfCommand.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Commands\AddToShelfCommandArgs.cs" />
+    <Compile Include="Commands\AddToShelvesCommand.cs" />
     <Compile Include="Commands\FetchAuthorCommand.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Commands\FetchBookCommand.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Commands\FetchBookshelvesCommand.cs" />
     <Compile Include="Commands\FetchFeedCommand.cs" />
     <Compile Include="Commands\FetchGroupCommand.cs">
       <SubType>Code</SubType>
@@ -72,22 +82,30 @@
     <Compile Include="Commands\Login\FinishLoginCommand.cs" />
     <Compile Include="Commands\Login\LoginCommand.cs" />
     <Compile Include="Commands\Login\VerifyLoginCommand.cs" />
+    <Compile Include="Commands\Navigation\CloseCommand.cs" />
     <Compile Include="Commands\Navigation\GoBackCommand.cs" />
+    <Compile Include="Commands\Navigation\GoHomeCommand.cs" />
+    <Compile Include="Commands\Navigation\ShowAboutCommand.cs" />
+    <Compile Include="Commands\Navigation\ShowAddBookCommand.cs" />
     <Compile Include="Commands\Navigation\ShowOptionsCommand.cs" />
     <Compile Include="Commands\RateAppCommand.cs" />
     <Compile Include="Commands\SaveFeedOptionsCommand.cs" />
     <Compile Include="Data\AboutViewModel.cs" />
+    <Compile Include="Data\AddBookViewModel.cs" />
     <Compile Include="Data\FeedOptions.cs" />
     <Compile Include="Data\FeedOptionsViewModel.cs" />
     <Compile Include="Data\FeedViewModel.cs" />
     <Compile Include="Data\HomeViewModel.cs" />
     <Compile Include="Data\IAboutViewModel.cs" />
+    <Compile Include="Data\IAddBookViewModel.cs" />
     <Compile Include="Data\IFeedOptionsViewModel.cs" />
     <Compile Include="Data\IFeedViewModel.cs" />
     <Compile Include="Data\IHomeViewModel.cs" />
     <Compile Include="Data\ILogonViewModel.cs" />
     <Compile Include="Data\LogonViewModel.cs" />
+    <Compile Include="Items\CustomBookshelfItemViewModel.cs" />
     <Compile Include="Items\FeedItemViewModel.cs" />
+    <Compile Include="Services\IResourceLoader.cs" />
     <Compile Include="Settings\IAppSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IAppRateService.cs" />

@@ -29,6 +29,14 @@ namespace Epiphany.View.Services
             }
         }
 
+        public IHomeViewModel Home
+        {
+            get
+            {
+                return this.locatorImpl.Home;
+            }
+        }
+
         public IAboutViewModel About
         {
             get
@@ -37,17 +45,18 @@ namespace Epiphany.View.Services
             }
         }
 
-        public void Dispose()
-        {
-            locatorImpl.Dispose();
-        }
 
-        public IHomeViewModel Home
+        public IAddBookViewModel AddBook
         {
             get
             {
-                return this.locatorImpl.Home;
+                return this.locatorImpl.AddBook;
             }
+        }
+
+        public void Dispose()
+        {
+            locatorImpl.Dispose();
         }
     }
 }

@@ -12,6 +12,8 @@ namespace Epiphany.View.Services
         private readonly INavigationService navigationService;
         private readonly ITimerService timerService;
         private readonly IAppSettings appSettings;
+        private readonly IAppRateService appRateService;
+        private readonly IUrlLauncher urlLauncher;
 
         public RuntimeViewModelLocator()
         {
@@ -36,12 +38,31 @@ namespace Epiphany.View.Services
 
         public IAboutViewModel About
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                IAboutViewModel vm = new AboutViewModel(this.appRateService, this.urlLauncher);
+                return vm;
+            }
+        }
+
+        public IAddBookViewModel AddBook
+        {
+            get
+            {
+                IAddBookViewModel vm = new AddBookViewModel(
+                    this.serviceFactory.GetLogonService(),
+                    this.serviceFactory.GetBookService(),
+                    this.serviceFactory.GetBookshelfService(),
+                    this.navigationService
+                    );
+
+                return vm;
+            }
         }
 
         public void Dispose()
         {
-            
+
         }
     }
 }

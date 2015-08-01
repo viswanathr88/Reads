@@ -24,6 +24,14 @@ namespace Epiphany.View.Services
             get { throw new NotImplementedException(); }
         }
 
+        public IAddBookViewModel AddBook
+        {
+            get
+            {
+                return new DesignAddBookViewModel();
+            }
+        }
+
         public void Dispose()
         {
 
