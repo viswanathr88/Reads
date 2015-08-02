@@ -9,7 +9,7 @@ namespace Epiphany.View.Behaviors
     /// Custom behavior that executes a command when the Pivot's Current Index changes to a particular index
     /// </summary>
     /// <remarks>
-    /// When the user swipes on a Pivot control, it's SelectedIndex property changes. This behavior will look
+    /// When the profile swipes on a Pivot control, it's SelectedIndex property changes. This behavior will look
     /// for a particular index to become active and when it does, it executes the command with the parameter
     /// </remarks>
     public class PivotIndexChangeBehavior : Behavior<Pivot>

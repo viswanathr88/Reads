@@ -30,7 +30,7 @@ namespace Epiphany.ViewModel
         /// </summary>
         ICommand ShowSearch { get; }
         /// <summary>
-        /// Gets the current session with user information
+        /// Gets the current session with profile information
         /// </summary>
         Session CurrentSession { get; }
     }

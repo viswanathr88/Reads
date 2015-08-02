@@ -122,6 +122,8 @@
     <Compile Include="Data\ProfileViewModel.cs" />
     <Compile Include="Items\CustomBookshelfItemViewModel.cs" />
     <Compile Include="Items\FeedItemViewModel.cs" />
+    <Compile Include="Items\ProfileItemViewModel.cs" />
+    <Compile Include="Items\ProfileItemViewModelFactory.cs" />
     <Compile Include="Services\IResourceLoader.cs" />
     <Compile Include="Settings\IAppSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

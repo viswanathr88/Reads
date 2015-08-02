@@ -120,8 +120,8 @@ namespace Epiphany.View.Services
             {
                 XDocument document = XDocument.Parse(response.Content);
                 XElement responseElement = document.Element("GoodreadsResponse");
-                int id = int.Parse((string)responseElement.Element("user").Attribute("id"));
-                string name = (string)responseElement.Element("user").Element("name");
+                int id = int.Parse((string)responseElement.Element("profile").Attribute("id"));
+                string name = (string)responseElement.Element("profile").Element("name");
                 credential = new Credential(name, id);
             }
             catch (Exception)

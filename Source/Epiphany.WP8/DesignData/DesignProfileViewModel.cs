@@ -1,6 +1,7 @@
 ﻿using Epiphany.Model;
 using Epiphany.Model.Collections;
 using Epiphany.ViewModel;
+using Epiphany.ViewModel.Items;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -16,8 +17,14 @@ namespace Epiphany.View.DesignData
             Name = "Test User";
             AreShelvesEmpty = true;
             AreUpdatesEmpty = true;
-            IsLoading = true;
+            IsLoading = false;
             IsLoaded = true;
+            //ImageUrl = "http://www.viscofoods.com/wp-content/themes/456market/assets//img/placeholder.png";
+
+            ProfileItems = new List<ProfileItemViewModel>();
+            ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.Age, "25", false));
+            ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.Username, "testuser", false));
+            ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.ViewInGoodreads, "www.goodreads.com", true));
         }
         public int Id
         {
@@ -31,7 +38,7 @@ namespace Epiphany.View.DesignData
             private set;
         }
 
-        public Model.ProfileModel Model
+        public ProfileModel Model
         {
             get;
             private set;
@@ -44,6 +51,12 @@ namespace Epiphany.View.DesignData
         }
 
         public bool AreUpdatesEmpty
+        {
+            get;
+            private set;
+        }
+
+        public string ImageUrl
         {
             get;
             private set;
@@ -77,6 +90,13 @@ namespace Epiphany.View.DesignData
         public override Task LoadAsync()
         {
             throw new NotImplementedException();
+        }
+
+
+        public IList<ProfileItemViewModel> ProfileItems
+        {
+            get;
+            private set;
         }
     }
 }

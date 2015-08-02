@@ -39,6 +39,20 @@ namespace Epiphany.Model
             get { return this.profile.Name; }
         }
 
+        public string ImageUrl
+        {
+            get
+            {
+                string url = this.profile.ImageUrl;
+                if (string.IsNullOrEmpty(url))
+                {
+                    url = this.profile.SmallImageUrl;
+                }
+
+                return url;
+            }
+        }
+
         public string Link
         {
             get { return this.profile.Link; }
@@ -106,7 +120,12 @@ namespace Epiphany.Model
 
         public bool IsFriend
         {
-            get { return false; }
+            get { return Converter.ToBool(profile.IsFriend, false); }
+        }
+
+        public bool IsPendingFriendRequest
+        {
+            get { return this.profile.FriendStatus == "request_pending_to"; }
         }
     }
 }

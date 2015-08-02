@@ -18,11 +18,11 @@ namespace Epiphany.ViewModel
         /// </summary>
         bool IsLoginCompleted { get; }
         /// <summary>
-        /// Returns true if sign in is taking longer than user
+        /// Returns true if sign in is taking longer than profile
         /// </summary>
         bool IsSignInTakingLonger { get; }
         /// <summary>
-        /// Returns true if the VM is waiting for some user interaction during login
+        /// Returns true if the VM is waiting for some profile interaction during login
         /// </summary>
         bool IsWaitingForUserInteraction { get; }
         /// <summary>

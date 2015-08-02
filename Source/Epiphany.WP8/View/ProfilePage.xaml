@@ -55,15 +55,31 @@
                                             Height="200"
                                             Width="200"
                                             Background="{StaticResource PhoneSubtleBrush}"
-                                            Visibility="{Binding ImageUrl, Converter={StaticResource InverseStringToVisibilityConverter}, FallbackValue=Collapsed}"
-                                            DataContext="{Binding Model}" />
+                                            Visibility="{Binding ImageUrl, Converter={StaticResource InverseStringToVisibilityConverter}, FallbackValue=Collapsed}" />
                                     <Image Grid.Row="0"
                                            HorizontalAlignment="Left"
                                            Source="{Binding ImageUrl}"
                                            Margin="12,0,0,12"
-                                           DataContext="{Binding Model}"
                                            Height="200"
                                            Width="200" />
+                                    <controls:LongListSelector x:Name="profileItemsList"
+                                                               ItemsSource="{Binding ProfileItems}"
+                                                               Grid.Row="1">
+                                        <controls:LongListSelector.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Margin="0,0,0,20">
+                                                    <TextBlock Text="{Binding Type}"
+                                                               Foreground="{StaticResource PhoneAccentBrush}"
+                                                               Style="{StaticResource PhoneTextLargeStyle}" />
+                                                    <TextBlock Text="{Binding Value}"
+                                                               Foreground="{StaticResource PhoneSubtleBrush}"
+                                                               Margin="12,0,0,0"
+                                                               TextTrimming="WordEllipsis"
+                                                               TextWrapping="Wrap" />
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </controls:LongListSelector.ItemTemplate>
+                                    </controls:LongListSelector>
 
                                     <Grid Grid.Row="2" />
                                 </Grid>

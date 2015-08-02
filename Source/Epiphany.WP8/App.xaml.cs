@@ -50,8 +50,8 @@ namespace Epiphany.WP8
 
                 // Prevent the screen from turning off while under the debugger by disabling
                 // the application's idle detection.
-                // Caution:- Use this under debug mode only. Application that disables user idle detection will continue to run
-                // and consume battery power when the user is not using the phone.
+                // Caution:- Use this under debug mode only. Application that disables profile idle detection will continue to run
+                // and consume battery power when the profile is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
 
@@ -75,7 +75,7 @@ namespace Epiphany.WP8
         {
         }
 
-        // Code to execute when the application is closing (eg, user hit Back)
+        // Code to execute when the application is closing (eg, profile hit Back)
         // This code will not execute when the application is deactivated
         private void Application_Closing(object sender, ClosingEventArgs e)
         {

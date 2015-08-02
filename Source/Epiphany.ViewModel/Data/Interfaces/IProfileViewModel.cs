@@ -1,6 +1,7 @@
 ﻿
 using Epiphany.Model;
 using Epiphany.Model.Collections;
+using Epiphany.ViewModel.Items;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
@@ -29,6 +30,16 @@ namespace Epiphany.ViewModel
         }
 
         bool AreUpdatesEmpty
+        {
+            get;
+        }
+
+        string ImageUrl
+        {
+            get;
+        }
+
+        IList<ProfileItemViewModel> ProfileItems
         {
             get;
         }

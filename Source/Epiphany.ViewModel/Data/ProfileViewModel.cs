@@ -2,6 +2,7 @@
 using Epiphany.Model.Collections;
 using Epiphany.Model.Services;
 using Epiphany.ViewModel.Commands;
+using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
 using System;
 using System.Collections.Generic;
@@ -15,18 +16,21 @@ namespace Epiphany.ViewModel
     {
         private int id;
         private string name;
+        private string imageUrl;
         private ProfileModel profileModel;
+        private readonly ProfileItemViewModelFactory profileItemFactory;
 
         private readonly IBookshelfService bookshelfService;
 
         private readonly IAsyncCommand<ProfileModel, int> fetchProfileCommand;
         private readonly IAsyncCommand<IEnumerable<BookshelfModel>, IAsyncEnumerator<BookshelfModel>> fetchBookshelvesCommand;
+        private IAsyncEnumerator<BookshelfModel> enumerator;
         private readonly ICommand goHomeCommand;
         private bool areShelvesEmpty;
         private bool areUpdatesEmpty;
-        private IAsyncEnumerator<BookshelfModel> enumerator;
 
         private ObservableCollection<BookshelfModel> shelves;
+        private IList<ProfileItemViewModel> profileItems;
 
         public ProfileViewModel(IUserService userService, IBookshelfService bookshelfService, INavigationService navService)
         {
@@ -36,10 +40,11 @@ namespace Epiphany.ViewModel
             }
 
             this.bookshelfService = bookshelfService;
+            this.profileItemFactory = new ProfileItemViewModelFactory();
 
             this.fetchProfileCommand = new FetchProfileCommand(userService);
             this.fetchProfileCommand.Executing += OnCommandExecuting;
-            //this.fetchProfileCommand.Executed += OnProfileFetched;
+            this.fetchProfileCommand.Executed += OnProfileFetched;
 
             this.fetchBookshelvesCommand = new FetchBookshelvesCommand(bookshelfService);
             this.fetchBookshelvesCommand.Executing += OnCommandExecuting;
@@ -106,6 +111,39 @@ namespace Epiphany.ViewModel
             }
         }
 
+        public string ImageUrl
+        {
+            get { return this.imageUrl; }
+            private set
+            {
+                if (this.imageUrl == value) return;
+                this.imageUrl = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public ObservableCollection<BookshelfModel> Shelves
+        {
+            get { return this.shelves; }
+            private set
+            {
+                if (this.shelves == value) return;
+                this.shelves = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public IList<ProfileItemViewModel> ProfileItems
+        {
+            get { return this.profileItems; }
+            set
+            {
+                if (this.profileItems == value) return;
+                this.profileItems = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public ICommand GoHome
         {
             get { return this.goHomeCommand; }
@@ -132,27 +170,12 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public ObservableCollection<BookshelfModel> Shelves
-        {
-            get { return this.shelves; }
-            private set
-            {
-                if (this.shelves == value) return;
-                this.shelves = value;
-                RaisePropertyChanged();
-            }
-        }
-
         public override async Task LoadAsync()
         {
-            /*if (!IsLoaded && this.fetchProfileCommand.CanExecute(Id))
+            if (!IsLoaded && this.fetchProfileCommand.CanExecute(Id))
             {
                 await this.fetchProfileCommand.ExecuteAsync(Id);
-            }*/
-            IsLoading = true;
-            await this.fetchProfileCommand.ExecuteAsync(Id);
-            IsLoading = false;
-            IsLoaded = true;
+            }
         }
 
         private void OnCommandExecuting(object sender, CancelEventArgs e)
@@ -166,7 +189,9 @@ namespace Epiphany.ViewModel
             if (e.State == CommandExecutionState.Success)
             {
                 Model = this.fetchProfileCommand.Result;
+                ImageUrl = Model.ImageUrl;
                 FetchBookshelvesArg = this.bookshelfService.GetBookshelves(Id).GetEnumerator();
+                ProfileItems = this.profileItemFactory.GetProfileItems(Model);
                 IsLoaded = true;
             }
         }
@@ -182,6 +207,5 @@ namespace Epiphany.ViewModel
                 }
             }
         }
-
     }
 }
