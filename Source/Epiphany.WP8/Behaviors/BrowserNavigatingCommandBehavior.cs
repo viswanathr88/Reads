@@ -52,8 +52,8 @@ namespace Epiphany.View.Behaviors
         /// <summary>
         /// Navigating event handler
         /// </summary>
-        /// <param name="sender">sender</param>
-        /// <param name="e">args</param>
+        /// <uri name="sender">sender</uri>
+        /// <uri name="e">args</uri>
         private void OnBrowserNavigating(object sender, NavigatingEventArgs e)
         {
             if (Command != null && Command.CanExecute(e.Uri))

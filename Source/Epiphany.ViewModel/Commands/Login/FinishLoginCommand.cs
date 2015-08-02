@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel.Commands
 {
-    class FinishLoginCommand : AsyncCommand<VoidType, VoidType>
+    class FinishLoginCommand : AsyncCommand
     {
         private readonly ILogonService logonService;
 
@@ -12,15 +12,14 @@ namespace Epiphany.ViewModel.Commands
             this.logonService = logonService;
         }
 
-        public override bool CanExecute(VoidType param)
+        protected override bool CanExecute()
         {
             return true;
         }
 
-        protected override async Task<VoidType> ExecuteAsync(VoidType param)
+        protected async override Task RunAsync()
         {
             await this.logonService.FinishLogin();
-            return VoidType.Empty;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Epiphany.ViewModel.Commands
             return true;
         }
 
-        protected override async Task<IEnumerable<BookshelfModel>> ExecuteAsync(IAsyncEnumerator<BookshelfModel> param)
+        protected async override Task RunAsync(IAsyncEnumerator<BookshelfModel> param)
         {
             IList<BookshelfModel> shelves = new List<BookshelfModel>();
             for (int i = 0; i < count; i++)
@@ -36,7 +36,7 @@ namespace Epiphany.ViewModel.Commands
                 shelves.Add(param.Current);
             }
 
-            return shelves;
+            Result = shelves;
         }
     }
 }

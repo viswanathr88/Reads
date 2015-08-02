@@ -2,6 +2,7 @@
 using Microsoft.Phone.Controls;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
@@ -11,7 +12,7 @@ namespace Epiphany.View.Services
     class ViewLocator : IViewLocator
     {
         private readonly IDictionary<Type, Type> viewModelToViewMap;
-
+        private readonly string prefixPath = "View";
         public ViewLocator()
         {
             this.viewModelToViewMap = new Dictionary<Type, Type>();
@@ -41,7 +42,9 @@ namespace Epiphany.View.Services
         public string GetViewKey(Type viewType)
         {
             string assemblyName = GetAssemblyName(viewType.Assembly);
-            string key = viewType.FullName.Replace(assemblyName, "").Replace(".", "/") + ".xaml";
+            string pageName = viewType.FullName.Split('.').Last();
+            string key = @"/" + prefixPath + "/" + pageName + ".xaml";
+            //string key = viewType.FullName.Replace(assemblyName, "").Replace(".", "/") + ".xaml";
 
             if (!GetAssemblyName(Application.Current.GetType().Assembly).Equals(assemblyName))
             {

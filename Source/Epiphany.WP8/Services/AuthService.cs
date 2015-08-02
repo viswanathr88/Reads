@@ -91,7 +91,7 @@ namespace Epiphany.View.Services
 
             var request = new RestRequest("oauth/authorize");
             request.AddParameter("oauth_token", temporaryToken.AuthToken);
-            request.AddParameter("oauth_callback", "http://localhost/goodreads_oauth_callback");
+            request.AddParameter("oauth_callback", Configuration.CallbackUri);
             request.AddParameter("mobile", 1);
 
             var url = this.restClient.BuildUri(request);

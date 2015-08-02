@@ -3,10 +3,12 @@ using Epiphany.Model.Services;
 using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System;
+using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    sealed class LogonViewModel : DataViewModel, ILogonViewModel
+    public sealed class LogonViewModel : DataViewModel, ILogonViewModel
     {
         private bool isWaitingForUserInteraction;
         private Uri currentUri;
@@ -19,10 +21,10 @@ namespace Epiphany.ViewModel
         private readonly INavigationService navigationService;
 
         // Commands
-        private readonly ICommand<bool, VoidType> verifyLoginCommand;
-        private readonly ICommand<Uri, VoidType> loginCommand;
+        private readonly IAsyncCommand<bool, VoidType> verifyLoginCommand;
+        private readonly IAsyncCommand<Uri, VoidType> loginCommand;
         private readonly ICommand<bool, Uri> checkUriCommand;
-        private readonly ICommand<VoidType, VoidType> finishLoginCommand;
+        private readonly IAsyncCommand<VoidType> finishLoginCommand;
 
         public LogonViewModel(ILogonService logonService, INavigationService navigationService, ITimerService timerService)
         {
@@ -113,7 +115,7 @@ namespace Epiphany.ViewModel
             }
             private set 
             {
-                if (this.isLoginCompleted != value) return;
+                if (this.isLoginCompleted == value) return;
                 this.isLoginCompleted = value;
                 RaisePropertyChanged();
             }
@@ -136,13 +138,13 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override void Load()
+        public async override Task LoadAsync()
         {
             Log.Instance.Debug(IsLoaded.ToString());
 
             if (!IsLoaded)
             {
-                this.verifyLoginCommand.Execute(VoidType.Empty);
+                await this.verifyLoginCommand.ExecuteAsync(VoidType.Empty);
             }
         }
 
@@ -153,7 +155,7 @@ namespace Epiphany.ViewModel
             StartTimer();
         }
 
-        private void OnVerifyLoginExecuted(object sender, ExecutedEventArgs e)
+        private async void OnVerifyLoginExecuted(object sender, ExecutedEventArgs e)
         {
             StopTimer();
             if (e.State == CommandExecutionState.Success)
@@ -162,12 +164,13 @@ namespace Epiphany.ViewModel
                 if (this.verifyLoginCommand.Result)
                 {
                     IsLoginCompleted = this.verifyLoginCommand.Result;
+                    IsLoaded = true;
                     NavigateHome();
                 }
                 else
                 {
                     StartTimer();
-                    this.loginCommand.Execute(VoidType.Empty);
+                    await this.loginCommand.ExecuteAsync(VoidType.Empty);
                 }
             }
         }
@@ -187,7 +190,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        private void OnCheckUriExecuted(object sender, ExecutedEventArgs e)
+        private async void OnCheckUriExecuted(object sender, ExecutedEventArgs e)
         {
             if (e.State == CommandExecutionState.Success)
             {
@@ -196,7 +199,7 @@ namespace Epiphany.ViewModel
                     IsWaitingForUserInteraction = false;
                     IsLoading = true;
                     StartTimer();
-                    finishLoginCommand.Execute(VoidType.Empty);
+                    await finishLoginCommand.ExecuteAsync(VoidType.Empty);
                 }
             }
             else
@@ -213,7 +216,7 @@ namespace Epiphany.ViewModel
             {
                 IsLoginCompleted = true;
                 IsLoaded = true;
-
+                NavigateHome();
             }
             else
             {

@@ -13,12 +13,15 @@ namespace Epiphany.View
         {
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
 
             if (this.DataContext == null)
+            {
+                Log.Instance.Error("There is no DataContext set on the View");
                 return;
+            }
 
             ViewModelBase vm = this.DataContext as ViewModelBase;
             if (vm == null)
@@ -39,7 +42,7 @@ namespace Epiphany.View
                 return;
             }
 
-            dataVM.Load();
+            await dataVM.LoadAsync();
         }
 
         protected override void OnRemovedFromJournal(JournalEntryRemovedEventArgs e)

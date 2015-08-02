@@ -118,7 +118,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override void Load()
+        public void Load()
         {
             if (!IsLoaded)
             {
@@ -166,6 +166,11 @@ namespace Epiphany.ViewModel
         {
             return !(this.appSettings.UpdateFilter == FeedUpdateFilter.friends &&
                 this.appSettings.UpdateType == FeedUpdateType.all);
+        }
+
+        public override System.Threading.Tasks.Task LoadAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }

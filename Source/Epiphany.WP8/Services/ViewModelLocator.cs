@@ -2,7 +2,7 @@
 
 namespace Epiphany.View.Services
 {
-    sealed class ViewModelLocator : IViewModelLocator
+    public sealed class ViewModelLocator : IViewModelLocator
     {
         private readonly IViewModelLocator locatorImpl;
 
@@ -51,6 +51,14 @@ namespace Epiphany.View.Services
             get
             {
                 return this.locatorImpl.AddBook;
+            }
+        }
+
+        public IProfileViewModel Profile
+        {
+            get
+            {
+                return this.locatorImpl.Profile;
             }
         }
 

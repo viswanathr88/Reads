@@ -29,10 +29,6 @@ namespace Epiphany.View.DesignData
             }
 
         }
-        public override void Load()
-        {
-
-        }
 
         public ICommand<ViewModel.Commands.AddToShelvesCommandArgs> AddToShelves
         {
@@ -94,6 +90,11 @@ namespace Epiphany.View.DesignData
         {
             get;
             private set;
+        }
+
+        public override System.Threading.Tasks.Task LoadAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }

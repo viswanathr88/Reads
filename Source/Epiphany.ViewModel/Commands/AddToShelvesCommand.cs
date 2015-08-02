@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel.Commands
 {
-    sealed class AddToShelvesCommand : AsyncCommand<VoidType, AddToShelvesCommandArgs>
+    sealed class AddToShelvesCommand : AsyncCommand<AddToShelvesCommandArgs>
     {
         private readonly IBookService bookService;
 
@@ -25,12 +25,7 @@ namespace Epiphany.ViewModel.Commands
             return args.Book != null && args.ChangesList.Count > 0;
         }
 
-        private bool IsStandardShelf(string shelf)
-        {
-            return shelf == "currently-reading" || shelf == "read" || shelf == "to-read";
-        }
-
-        protected override async Task<VoidType> ExecuteAsync(AddToShelvesCommandArgs args)
+        protected async override Task RunAsync(AddToShelvesCommandArgs args)
         {
             foreach (DeltaListItem<string> item in args.ChangesList)
             {
@@ -67,7 +62,10 @@ namespace Epiphany.ViewModel.Commands
                     }
                 }
             }
-            return VoidType.Empty;
+        }
+        private bool IsStandardShelf(string shelf)
+        {
+            return shelf == "currently-reading" || shelf == "read" || shelf == "to-read";
         }
     }
 }

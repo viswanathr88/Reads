@@ -2,7 +2,6 @@
 using Epiphany.Settings;
 using Epiphany.ViewModel;
 using Epiphany.ViewModel.Services;
-using System;
 
 namespace Epiphany.View.Services
 {
@@ -15,6 +14,9 @@ namespace Epiphany.View.Services
         private readonly IAppRateService appRateService;
         private readonly IUrlLauncher urlLauncher;
 
+        private ILogonViewModel logonVM;
+        private IHomeViewModel homeVM;
+
         public RuntimeViewModelLocator()
         {
             IAuthService authService = new AuthService();
@@ -24,16 +26,46 @@ namespace Epiphany.View.Services
             this.navigationService = new NavigationService();
             this.appSettings = AppSettings.Instance;
             this.timerService = new TimerService();
+            this.appRateService = new AppRateService();
+            this.urlLauncher = new UrlLauncher();
         }
 
         public IHomeViewModel Home
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                if (this.homeVM == null)
+                {
+                    this.homeVM = new HomeViewModel(this.serviceFactory.GetUserService(), this.serviceFactory.GetLogonService(), 
+                        this.navigationService, this.appSettings);
+                }
+
+                return this.homeVM;
+            }
         }
 
         public ILogonViewModel Logon
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                if (this.logonVM == null)
+                {
+                    this.logonVM = new LogonViewModel(this.serviceFactory.GetLogonService(), navigationService, this.timerService);
+                }
+
+                return this.logonVM;
+            }
+        }
+
+        public IProfileViewModel Profile
+        {
+            get
+            {
+                return new ProfileViewModel(
+                    this.serviceFactory.GetUserService(), 
+                    this.serviceFactory.GetBookshelfService(), 
+                    this.navigationService);
+            }
         }
 
         public IAboutViewModel About

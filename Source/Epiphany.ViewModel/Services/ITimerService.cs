@@ -7,7 +7,7 @@ namespace Epiphany.ViewModel.Services
         /// <summary>
         /// Creates a timer
         /// </summary>
-        /// <param name="action">The Action to trigger when the timer ticks</param>
+        /// <uri name="action">The Action to trigger when the timer ticks</uri>
         /// <returns>timer</returns>
         ITimer CreateTimer(Action action);
     }

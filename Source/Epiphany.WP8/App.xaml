@@ -11,10 +11,15 @@
     <!--Application Resources-->
     <Application.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Resources/Converters.xaml" />
-            </ResourceDictionary.MergedDictionaries>
 
+            <converters:BooleanToVisibilityConverter x:Key="BooleanVisibilityConverter" />
+            <converters:InverseBooleanToVisibilityConverter x:Key="InverseBooleanVisibilityConverter" />
+            <converters:UpperCaseConverter x:Key="ToUpperCaseConverter" />
+            <converters:NullToVisibilityConverter x:Key="NullVisibilityConverter" />
+            <converters:EnumBooleanConverter x:Key="EnumBoolConverter" />
+            <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
+            <converters:InverseStringToVisibilityConverter x:Key="InverseStringToVisibilityConverter" />
+            
             <resources:LocalizedStrings x:Key="LocalizedStrings" />
             <viewservices:ViewModelLocator x:Key="VMLocator" />
             

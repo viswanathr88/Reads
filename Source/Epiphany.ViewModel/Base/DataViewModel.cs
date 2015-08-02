@@ -28,11 +28,11 @@ namespace Epiphany.ViewModel
             {
                 if (this.isLoaded == value) return;
                 this.isLoaded = value;
-                RaisePropertyChanged();
+                RaisePropertyChanged(() => IsLoaded);
             }
         }
 
-        public abstract void Load();
+        public abstract Task LoadAsync();
 
 
         public object Error

@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.ComponentModel;
+using System.Threading.Tasks;
 namespace Epiphany.ViewModel
 {
     /// <summary>
@@ -18,7 +19,7 @@ namespace Epiphany.ViewModel
             get;
         }
 
-        void Load();
+        Task LoadAsync();
 
         object Error
         {

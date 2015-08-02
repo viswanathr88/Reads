@@ -18,9 +18,9 @@ namespace Epiphany.ViewModel.Commands
             return true;
         }
 
-        protected override async Task<IEnumerable<FeedItemModel>> ExecuteAsync(VoidType param)
+        protected async override Task RunAsync(VoidType param)
         {
-            return await this.userService.GetFriendUpdatesAsync(FeedUpdateType.all, FeedUpdateFilter.friends);
+            Result = await this.userService.GetFriendUpdatesAsync(FeedUpdateType.all, FeedUpdateFilter.friends);
         }
     }
 }

@@ -47,13 +47,13 @@ namespace Epiphany.Model.Services
             IBookService bookService = new BookService(this.webClient, messenger);
             this.bookService = new CachedBookService(bookService, messenger);
             
-            IBookshelfService bookshelfService = new BookshelfService(this.webClient);
+            IBookshelfService bookshelfService = new BookshelfService(this.webClient, this.messenger);
             this.bookshelfService = new CachedBookshelfService(bookshelfService, messenger);
             
             IReviewService reviewService = new ReviewService(this.webClient, this.messenger);
             this.reviewService = new CachedReviewService(reviewService, messenger);
             
-            IUserService userService = new UserService(this.webClient);
+            IUserService userService = new UserService(this.webClient, this.messenger);
             this.userService = new CachedUserService(userService, messenger);
 
             this.groupService = new GroupService(this.webClient);

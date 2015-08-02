@@ -1,6 +1,7 @@
 ﻿using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Epiphany.ViewModel
@@ -37,10 +38,11 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override void Load()
+        public override Task LoadAsync()
         {
             // Nothing to load
             IsLoaded = true;
+            return Task.FromResult(true);
         }
     }
 }

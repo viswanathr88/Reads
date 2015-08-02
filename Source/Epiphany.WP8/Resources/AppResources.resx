@@ -152,4 +152,43 @@
   <data name="AddToShelfTitle" xml:space="preserve">
     <value>add to shelf</value>
   </data>
+  <data name="MenuHeader" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="WhatsNewHeader" xml:space="preserve">
+    <value>What's New</value>
+  </data>
+  <data name="HomeEventsTitle" xml:space="preserve">
+    <value>events</value>
+  </data>
+  <data name="HomeFriendsTitle" xml:space="preserve">
+    <value>friends</value>
+  </data>
+  <data name="HomeGroupsTitle" xml:space="preserve">
+    <value>groups</value>
+  </data>
+  <data name="HomeMyBooksTitle" xml:space="preserve">
+    <value>my books</value>
+  </data>
+  <data name="HomeMyProfileTitle" xml:space="preserve">
+    <value>my profile</value>
+  </data>
+  <data name="SearchTitle" xml:space="preserve">
+    <value>search</value>
+  </data>
+  <data name="NoBookshelvesMessage" xml:space="preserve">
+    <value>There are no bookshelves!</value>
+  </data>
+  <data name="NoUpdatesMessage" xml:space="preserve">
+    <value>There are no updates!</value>
+  </data>
+  <data name="ProfileAboutTitle" xml:space="preserve">
+    <value>profile</value>
+  </data>
+  <data name="ProfileBookshelvesTitle" xml:space="preserve">
+    <value>bookshelves</value>
+  </data>
+  <data name="ProfileUpdatesTitle" xml:space="preserve">
+    <value>updates</value>
+  </data>
 </root>

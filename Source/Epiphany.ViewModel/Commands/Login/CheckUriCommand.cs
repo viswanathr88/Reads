@@ -16,7 +16,7 @@ namespace Epiphany.ViewModel.Commands
             return true;
         }
 
-        protected override bool ExecuteSync(Uri uri)
+        protected override void Run(Uri uri)
         {
             bool result = false;
 
@@ -25,7 +25,7 @@ namespace Epiphany.ViewModel.Commands
                 result = uri.ToString().Contains("authorize=1");
             }
 
-            return result;
+            Result = result;
         }
     }
 }

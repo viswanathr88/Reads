@@ -24,5 +24,10 @@ namespace Epiphany.View.Services
         {
             get;
         }
+
+        IProfileViewModel Profile
+        {
+            get;
+        }
     }
 }

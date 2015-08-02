@@ -4,7 +4,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel.Commands
 {
-    class LikeOnFacebookCommand : ICommand
+    sealed class LikeOnFacebookCommand : Command
     {
         private readonly IUrlLauncher urlLauncher;
         private readonly string url = "www.facebook.com/epiphanywp";
@@ -13,24 +13,15 @@ namespace Epiphany.ViewModel.Commands
         {
             this.urlLauncher = launcher;
         }
-        public bool CanExecute(object parameter)
+
+        protected override bool CanExecute()
         {
             return true;
         }
 
-        public event EventHandler CanExecuteChanged;
-
-        public void Execute(object parameter)
+        protected override void Run()
         {
             this.urlLauncher.Launch(url);
-        }
-
-        private void RaiseCanExecuteChanged()
-        {
-            if (CanExecuteChanged != null)
-            {
-                CanExecuteChanged(this, EventArgs.Empty);
-            }
         }
     }
 }

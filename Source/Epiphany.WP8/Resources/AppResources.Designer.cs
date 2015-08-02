@@ -97,11 +97,110 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to events.
+        /// </summary>
+        public static string HomeEventsTitle {
+            get {
+                return ResourceManager.GetString("HomeEventsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to friends.
+        /// </summary>
+        public static string HomeFriendsTitle {
+            get {
+                return ResourceManager.GetString("HomeFriendsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to groups.
+        /// </summary>
+        public static string HomeGroupsTitle {
+            get {
+                return ResourceManager.GetString("HomeGroupsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to my books.
+        /// </summary>
+        public static string HomeMyBooksTitle {
+            get {
+                return ResourceManager.GetString("HomeMyBooksTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to my profile.
+        /// </summary>
+        public static string HomeMyProfileTitle {
+            get {
+                return ResourceManager.GetString("HomeMyProfileTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to like on facebook.
         /// </summary>
         public static string LikeonFBButtonText {
             get {
                 return ResourceManager.GetString("LikeonFBButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Menu.
+        /// </summary>
+        public static string MenuHeader {
+            get {
+                return ResourceManager.GetString("MenuHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are no bookshelves!.
+        /// </summary>
+        public static string NoBookshelvesMessage {
+            get {
+                return ResourceManager.GetString("NoBookshelvesMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are no updates!.
+        /// </summary>
+        public static string NoUpdatesMessage {
+            get {
+                return ResourceManager.GetString("NoUpdatesMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to profile.
+        /// </summary>
+        public static string ProfileAboutTitle {
+            get {
+                return ResourceManager.GetString("ProfileAboutTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to bookshelves.
+        /// </summary>
+        public static string ProfileBookshelvesTitle {
+            get {
+                return ResourceManager.GetString("ProfileBookshelvesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to updates.
+        /// </summary>
+        public static string ProfileUpdatesTitle {
+            get {
+                return ResourceManager.GetString("ProfileUpdatesTitle", resourceCulture);
             }
         }
         
@@ -142,6 +241,15 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to search.
+        /// </summary>
+        public static string SearchTitle {
+            get {
+                return ResourceManager.GetString("SearchTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This is taking longer than expected. This could be due to a slow network connection..
         /// </summary>
         public static string SigningInStuckMessage {
@@ -156,6 +264,15 @@ namespace Epiphany.View.Resources {
         public static string VersionString {
             get {
                 return ResourceManager.GetString("VersionString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What&apos;s New.
+        /// </summary>
+        public static string WhatsNewHeader {
+            get {
+                return ResourceManager.GetString("WhatsNewHeader", resourceCulture);
             }
         }
     }

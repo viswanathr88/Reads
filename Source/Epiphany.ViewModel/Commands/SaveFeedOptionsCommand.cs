@@ -2,7 +2,7 @@
 using Epiphany.ViewModel.Services;
 namespace Epiphany.ViewModel.Commands
 {
-    class SaveFeedOptionsCommand : Command<VoidType, FeedOptions>
+    sealed class SaveFeedOptionsCommand : Command<FeedOptions>
     {
         private readonly IAppSettings appSettings;
         private readonly INavigationService navigationService;
@@ -19,7 +19,7 @@ namespace Epiphany.ViewModel.Commands
                 appSettings.UpdateFilter != param.UpdateFilter;
         }
 
-        protected override VoidType ExecuteSync(FeedOptions param)
+        protected override void Run(FeedOptions param)
         {
             appSettings.UpdateType = param.UpdateType;
             appSettings.UpdateFilter = param.UpdateFilter;
@@ -28,7 +28,6 @@ namespace Epiphany.ViewModel.Commands
             {
                 this.navigationService.GoBack();
             }
-            return VoidType.Empty;
         }
     }
 }

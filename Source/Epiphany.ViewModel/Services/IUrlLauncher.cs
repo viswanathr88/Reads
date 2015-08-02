@@ -9,7 +9,7 @@ namespace Epiphany.ViewModel.Services
         /// <summary>
         /// Launch a given url
         /// </summary>
-        /// <param name="url">url</param>
+        /// <uri name="url">url</uri>
         void Launch(string url);
     }
 }

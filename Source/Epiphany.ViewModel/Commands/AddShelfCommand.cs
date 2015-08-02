@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel.Commands
 {
-    class AddShelfCommand : AsyncCommand<VoidType, string>
+    class AddShelfCommand : AsyncCommand<string>
     {
         private readonly IBookshelfService service;
 
@@ -19,18 +19,17 @@ namespace Epiphany.ViewModel.Commands
             this.service = service;
         }
 
-        public override bool CanExecute(string param)
+        public override bool CanExecute(string shelfName)
         {
-            return !string.IsNullOrEmpty(param);
+            return !string.IsNullOrEmpty(shelfName);
         }
 
-        protected override async Task<VoidType> ExecuteAsync(string shelfName)
+        protected async override Task RunAsync(string shelfName)
         {
             BookshelfModel shelf = new BookshelfModel(0);
             shelf.Name = shelfName;
 
             await this.service.AddShelf(shelf);
-            return new VoidType();
         }
     }
 }

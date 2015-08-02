@@ -3,51 +3,38 @@ using System;
 
 namespace Epiphany.ViewModel.Commands
 {
-    public abstract class CommandBase<T1, T2> : ICommand<T1, T2>
+    abstract class CommandBase<T> : ICommand<T>
     {
-        private readonly string name;
+        public abstract bool CanExecute(T param);
 
-        public CommandBase()
-        {
-            this.name = GetType().ToString();
-        }
-        public abstract bool CanExecute(T2 param);
-        public abstract void Execute(T2 param);
+        public abstract void Execute(T param);
 
         public bool CanExecute(object parameter)
         {
             // If the type is not voidtype, perform
             // type checking
-            if (typeof(T2) != typeof(VoidType))
+            if (typeof(T) != typeof(VoidType))
             {
                 if (parameter == null)
                     return false;
 
-                if (!(parameter is T2))
+                if (!(parameter is T))
                     return false;
             }
 
-            return CanExecute((T2)parameter);
+            return CanExecute((T)parameter);
         }
 
         public void Execute(object parameter)
         {
-            Error = null;
             if (CanExecute(parameter))
             {
-                T2 param = GetSafeParam(parameter);
+                T param = GetSafeParam(parameter);
                 Execute(param);
             }
         }
 
         public Exception Error
-        {
-            get;
-            protected set;
-        }
-
-
-        public T1 Result
         {
             get;
             protected set;
@@ -78,22 +65,19 @@ namespace Epiphany.ViewModel.Commands
         protected void RaiseCanExecuteChanged()
         {
             if (CanExecuteChanged != null)
+            {
                 CanExecuteChanged(this, EventArgs.Empty);
+            }
         }
 
-        protected string GetName()
+        protected T GetSafeParam(object parameter)
         {
-            return this.name;
-        }
+            T param = default(T);
 
-        private T2 GetSafeParam(object parameter)
-        {
-            T2 param = default(T2);
-
-            if (typeof(T2) == typeof(VoidType) && parameter == null)
-                param = default(T2);
+            if (typeof(T) == typeof(VoidType) && parameter == null)
+                param = default(T);
             else
-                param = (T2)parameter;
+                param = (T)parameter;
 
             return param;
         }

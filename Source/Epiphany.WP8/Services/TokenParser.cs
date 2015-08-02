@@ -8,7 +8,7 @@ namespace Epiphany.View.Services
         /// <summary>
         /// Parse OAuth token and secret from the webresponse
         /// </summary>
-        /// <param name="response">The web response string</param>
+        /// <uri name="response">The web response string</uri>
         /// <returns>True if parsing succeeded, false otherwise</returns>
         public bool TryParseTokens(string responseText, out Token token)
         {

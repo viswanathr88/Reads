@@ -24,9 +24,9 @@ namespace Epiphany.ViewModel.Commands
             return param > 0;
         }
 
-        protected override async Task<BookModel> ExecuteAsync(int param)
+        protected async override Task RunAsync(int param)
         {
-            return await this.service.GetBook(param);
+            Result = await this.service.GetBook(param);
         }
     }
 }

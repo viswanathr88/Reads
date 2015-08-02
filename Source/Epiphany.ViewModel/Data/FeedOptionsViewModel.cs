@@ -13,8 +13,8 @@ namespace Epiphany.ViewModel
         private FeedUpdateFilter updateFilter;
         private FeedUpdateType updateType;
 
-        private readonly ICommand<VoidType, FeedOptions> saveFeedOptionsCommand;
-        private readonly ICommand<VoidType, VoidType> goBackCommand;
+        private readonly ICommand<FeedOptions> saveFeedOptionsCommand;
+        private readonly ICommand goBackCommand;
 
         public FeedOptionsViewModel(IAppSettings appSettings, INavigationService navigationService)
         {
@@ -78,7 +78,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public ICommand<VoidType, FeedOptions> SaveOptions
+        public ICommand<FeedOptions> SaveOptions
         {
             get
             {
@@ -94,7 +94,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override void Load()
+        public void Load()
         {
             if (!IsLoaded)
             {
@@ -108,6 +108,11 @@ namespace Epiphany.ViewModel
         private void CreateFeedOptions()
         {
             FeedOptions = new FeedOptions(CurrentUpdateType, CurrentUpdateFilter);
+        }
+
+        public override System.Threading.Tasks.Task LoadAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }

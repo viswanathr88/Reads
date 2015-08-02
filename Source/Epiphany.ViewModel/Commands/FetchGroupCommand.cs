@@ -24,9 +24,9 @@ namespace Epiphany.ViewModel.Commands
             return param > 0;
         }
 
-        protected override async Task<GroupModel> ExecuteAsync(int param)
+        protected async override Task RunAsync(int param)
         {
-            return await this.service.GetGroup(param);
+            Result = await this.service.GetGroup(param);
         }
     }
 }

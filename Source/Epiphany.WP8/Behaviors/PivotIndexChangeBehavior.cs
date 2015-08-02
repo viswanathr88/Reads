@@ -88,8 +88,8 @@ namespace Epiphany.View.Behaviors
         /// <summary>
         /// SelectionChanged event handler
         /// </summary>
-        /// <param name="sender">sender</param>
-        /// <param name="e">args</param>
+        /// <uri name="sender">sender</uri>
+        /// <uri name="e">args</uri>
         void OnSelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             Pivot pivot = sender as Pivot;

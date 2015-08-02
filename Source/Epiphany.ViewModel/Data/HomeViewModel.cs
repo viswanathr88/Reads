@@ -1,36 +1,34 @@
 ﻿using Epiphany.Model.Services;
 using Epiphany.ViewModel.Services;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    sealed class HomeViewModel : DataViewModel, IHomeViewModel
+    public sealed class HomeViewModel : DataViewModel, IHomeViewModel
     {
         private readonly IUserService userService;
         private readonly INavigationService navigationService;
         private readonly IAppSettings appSettings;
+        private readonly ILogonService logonService;
 
         private IFeedViewModel feedViewModel;
+        private ILauncherViewModel launcherVM;
 
-        public HomeViewModel(IUserService userService, INavigationService navigationService, IAppSettings settings)
+        public HomeViewModel(IUserService userService, ILogonService logonService, 
+            INavigationService navigationService, IAppSettings settings)
         {
-            if (userService == null || navigationService == null || settings == null)
+            if (userService == null || navigationService == null 
+                || settings == null || logonService == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("services");
             }
 
             this.userService = userService;
             this.navigationService = navigationService;
             this.appSettings = settings;
-        }
-
-        public override void Load()
-        {
-            if (!FeedViewModel.IsLoaded)
-            {
-                //FeedViewModel.Load(param);
-            }
+            this.logonService = logonService;
         }
 
         public int NewNotificationCount
@@ -51,6 +49,19 @@ namespace Epiphany.ViewModel
             }
         }
 
+        public ILauncherViewModel Launcher
+        {
+            get
+            {
+                if (this.launcherVM == null)
+                {
+                    this.launcherVM = new LauncherViewModel(this.navigationService, this.logonService);
+                }
+
+                return this.launcherVM;
+            }
+        }
+
         public ICommand ShowNotifications
         {
             get { throw new NotImplementedException(); }
@@ -59,6 +70,11 @@ namespace Epiphany.ViewModel
         public ICommand ShowAbout
         {
             get { throw new NotImplementedException(); }
+        }
+
+        public override Task LoadAsync()
+        {
+            return Task.FromResult(true);
         }
     }
 }

@@ -48,9 +48,9 @@ namespace Epiphany.View.DesignData
             get { return null; }
         }
 
-        public override void Load()
+        public override System.Threading.Tasks.Task LoadAsync()
         {
-            
+            throw new NotImplementedException();
         }
     }
 }

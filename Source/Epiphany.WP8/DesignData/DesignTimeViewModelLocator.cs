@@ -1,4 +1,5 @@
 ﻿using Epiphany.View.DesignData;
+using Epiphany.View.Services;
 using Epiphany.ViewModel;
 using System;
 
@@ -21,7 +22,12 @@ namespace Epiphany.View.Services
 
         public IAboutViewModel About
         {
-            get { throw new NotImplementedException(); }
+            get { return null; }
+        }
+
+        public IProfileViewModel Profile
+        {
+            get { return new DesignProfileViewModel(); }
         }
 
         public IAddBookViewModel AddBook

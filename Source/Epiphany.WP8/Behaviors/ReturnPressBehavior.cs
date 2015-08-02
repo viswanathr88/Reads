@@ -69,8 +69,8 @@ namespace Epiphany.View.Behaviors
         /// <summary>
         /// Callback for KeyUp event
         /// </summary>
-        /// <param name="sender">sender</param>
-        /// <param name="e">args</param>
+        /// <uri name="sender">sender</uri>
+        /// <uri name="e">args</uri>
         private void OnKeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
             if (e.Key == Key.Enter)

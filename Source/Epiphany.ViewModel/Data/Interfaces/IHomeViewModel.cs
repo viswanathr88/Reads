@@ -9,6 +9,10 @@ namespace Epiphany.ViewModel
         /// </summary>
         IFeedViewModel FeedViewModel { get; }
         /// <summary>
+        /// Get the launcher
+        /// </summary>
+        ILauncherViewModel Launcher { get; }
+        /// <summary>
         /// Gets the count of new notifications
         /// </summary>
         int NewNotificationCount { get; }

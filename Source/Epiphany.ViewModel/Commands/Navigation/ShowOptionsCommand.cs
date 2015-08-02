@@ -2,7 +2,7 @@
 
 namespace Epiphany.ViewModel.Commands
 {
-    class ShowOptionsCommand : Command<VoidType, VoidType>
+    class ShowOptionsCommand : Command
     {
         private readonly INavigationService navigationService;
 
@@ -10,15 +10,15 @@ namespace Epiphany.ViewModel.Commands
         {
             this.navigationService = service;
         }
-        public override bool CanExecute(VoidType param)
+
+        protected override bool CanExecute()
         {
             return true;
         }
 
-        protected override VoidType ExecuteSync(VoidType param)
+        protected override void Run()
         {
             this.navigationService.CreateFor<FeedOptionsViewModel>().Navigate();
-            return VoidType.Empty;
         }
     }
 }

@@ -2,7 +2,7 @@
 using Epiphany.ViewModel.Services;
 namespace Epiphany.ViewModel.Commands
 {
-    class ShowAboutCommand : Command<VoidType, VoidType>
+    class ShowAboutCommand : Command
     {
         private readonly INavigationService navigationService;
 
@@ -11,15 +11,14 @@ namespace Epiphany.ViewModel.Commands
             this.navigationService = navigationService;
         }
 
-        public override bool CanExecute(VoidType param)
+        protected override bool CanExecute()
         {
             return true;
         }
 
-        protected override VoidType ExecuteSync(VoidType param)
+        protected override void Run()
         {
             this.navigationService.CreateFor<IAboutViewModel>().Navigate();
-            return VoidType.Empty;
         }
     }
 }

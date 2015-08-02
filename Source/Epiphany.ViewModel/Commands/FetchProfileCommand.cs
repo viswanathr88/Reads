@@ -13,7 +13,7 @@ namespace Epiphany.ViewModel.Commands
         {
             if (userService == null)
             {
-                throw new ArgumentNullException("userService");
+                throw new ArgumentNullException("navService");
             }
 
             this.userService = userService;
@@ -23,9 +23,9 @@ namespace Epiphany.ViewModel.Commands
             return true;
         }
 
-        protected async override Task<ProfileModel> ExecuteAsync(int param)
+        protected async override Task RunAsync(int param)
         {
-            return await this.userService.GetProfile(param);
+            Result = await this.userService.GetProfile(param);
         }
     }
 }

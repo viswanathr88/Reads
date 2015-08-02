@@ -24,6 +24,6 @@ namespace Epiphany.ViewModel
         /// <summary>
         /// Saves the options
         /// </summary>
-        ICommand<VoidType, FeedOptions> SaveOptions { get; }
+        ICommand<FeedOptions> SaveOptions { get; }
     }
 }

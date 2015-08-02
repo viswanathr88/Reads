@@ -2,7 +2,7 @@
 
 namespace Epiphany.ViewModel.Commands
 {
-    class GoBackCommand : Command<VoidType, VoidType>
+    class GoBackCommand : Command
     {
         private readonly INavigationService navigationService;
 
@@ -11,18 +11,17 @@ namespace Epiphany.ViewModel.Commands
             this.navigationService = navigationService;
         }
 
-        public override bool CanExecute(VoidType param)
+        protected override bool CanExecute()
         {
             return this.navigationService.CanGoBack;
         }
 
-        protected override VoidType ExecuteSync(VoidType param)
+        protected override void Run()
         {
             if (this.navigationService.CanGoBack)
             {
                 this.navigationService.GoBack();
             }
-            return VoidType.Empty;
         }
     }
 }

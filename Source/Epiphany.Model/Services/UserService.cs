@@ -14,14 +14,16 @@ namespace Epiphany.Model.Services
     internal class UserService : IUserService
     {
         private readonly IWebClient webClient;
+        private readonly IMessenger messenger;
         private readonly IAdapter<UserModel, GoodreadsUser> userAdapter;
         private readonly IAdapter<ProfileModel, GoodreadsProfile> profileAdapter;
         private readonly IAdapter<FeedItemModel, GoodreadsUpdate> feedItemAdapter;
         private readonly int friendCollectionSize = 200;
 
-        public UserService(IWebClient webClient)
+        public UserService(IWebClient webClient, IMessenger messenger)
         {
             this.webClient = webClient;
+            this.messenger = messenger;
             this.userAdapter = new UserAdapter();
             this.profileAdapter = new ProfileAdapter();
             this.feedItemAdapter = new FeedItemAdapter();
@@ -40,6 +42,11 @@ namespace Epiphany.Model.Services
             //
             IDataSource<GoodreadsProfile> ds = new DataSource<GoodreadsProfile>(webClient, headers, ServiceUrls.ProfileUrl);
             GoodreadsProfile profile = await ds.GetAsync();
+
+            // Send a message to all listeners
+            GenericMessage<GoodreadsProfile> msg = new GenericMessage<GoodreadsProfile>(this, profile);
+            this.messenger.SendMessage<GenericMessage<GoodreadsProfile>>(this, msg);
+
             //
             // Convert and return the profile model
             //

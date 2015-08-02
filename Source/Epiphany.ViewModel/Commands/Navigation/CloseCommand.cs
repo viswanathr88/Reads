@@ -4,7 +4,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel.Commands
 {
-    class CloseCommand : Command<VoidType, VoidType>
+    class CloseCommand : Command
     {
         private readonly INavigationService navigationService;
 
@@ -18,18 +18,17 @@ namespace Epiphany.ViewModel.Commands
             this.navigationService = navigationService;
         }
 
-        public override bool CanExecute(VoidType param)
+        protected override bool CanExecute()
         {
             return true;
         }
 
-        protected override VoidType ExecuteSync(VoidType param)
+        protected override void Run()
         {
             if (this.navigationService.CanGoBack)
             {
                 this.navigationService.GoBack();
             }
-            return VoidType.Empty;
         }
     }
 }

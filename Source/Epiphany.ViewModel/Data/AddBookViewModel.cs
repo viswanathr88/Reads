@@ -7,6 +7,7 @@ using Epiphany.ViewModel.Services;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
@@ -16,7 +17,7 @@ namespace Epiphany.ViewModel
         private ObservableCollection<CustomBookshelfItemViewModel> customShelves;
         private ICommand<AddToShelvesCommandArgs> addToShelvesCommand;
         private AddToShelvesCommandArgs addToShelvesCommandArgs;        
-        private ICommand<BookModel, int> fetchBookCommand;
+        private IAsyncCommand<BookModel, int> fetchBookCommand;
         private ICommand<string> createShelfCommand;
 
         private readonly ILogonService logonService;
@@ -183,12 +184,8 @@ namespace Epiphany.ViewModel
             get { return this.createShelfCommand; }
         }
 
-        public override void Load()
+        public void Load()
         {
-            if (this.fetchBookCommand.CanExecute(this.Id))
-            {
-                this.fetchBookCommand.Execute(this.Id);
-            }
         }
 
         private void OnCommandExecuting(object sender, ViewModel.Commands.CancelEventArgs e)
@@ -326,6 +323,14 @@ namespace Epiphany.ViewModel
             foreach (CustomBookshelfItemViewModel vm in CustomShelves)
             {
                 vm.PropertyChanged -= OnBookshelfItemPropertyChanged;
+            }
+        }
+
+        public override async Task LoadAsync()
+        {
+            if (this.fetchBookCommand.CanExecute(this.Id))
+            {
+                await this.fetchBookCommand.ExecuteAsync(this.Id);
             }
         }
     }

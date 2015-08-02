@@ -3,7 +3,7 @@ using Epiphany.Model;
 using Epiphany.ViewModel.Services;
 namespace Epiphany.ViewModel.Commands
 {
-    class ShowAddBookCommand : Command<VoidType, BookModel>
+    class ShowAddBookCommand : Command<BookModel>
     {
         private readonly INavigationService navigationService;
 
@@ -22,9 +22,9 @@ namespace Epiphany.ViewModel.Commands
             return param.UserReview == null;
         }
 
-        protected override VoidType ExecuteSync(BookModel param)
+        protected override void Run(BookModel param)
         {
-            return VoidType.Empty;
+            throw new System.NotImplementedException();
         }
     }
 }

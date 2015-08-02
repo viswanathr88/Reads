@@ -18,9 +18,9 @@ namespace Epiphany.ViewModel.Commands
             return true;
         }
 
-        protected override async Task<Uri> ExecuteAsync(VoidType param)
+        protected async override Task RunAsync(VoidType param)
         {
-            return await this.service.StartLogin();
+            Result = await this.service.StartLogin();
         }
     }
 }

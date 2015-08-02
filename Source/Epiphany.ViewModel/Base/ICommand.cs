@@ -12,13 +12,13 @@ namespace Epiphany.ViewModel.Commands
         /// <summary>
         /// Return true if this command can execute for the given parameter
         /// </summary>
-        /// <param name="param"></param>
+        /// <uri name="uri"></uri>
         /// <returns></returns>
         bool CanExecute(T param);
         /// <summary>
         /// Executes the command with given parameter
         /// </summary>
-        /// <param name="param"></param>
+        /// <uri name="uri"></uri>
         void Execute(T param);
         /// <summary>
         /// Gets the error that occurred during command execution
@@ -42,7 +42,7 @@ namespace Epiphany.ViewModel.Commands
     /// </summary>
     /// <typeparam name="T1">Return type</typeparam>
     /// <typeparam name="T2">Parameter type</typeparam>
-    public interface ICommand<T1, T2> : ICommand<T2>, ICommand
+    public interface ICommand<T1, T2> : ICommand<T2>
     {
         /// <summary>
         /// Gets the result of type T1
