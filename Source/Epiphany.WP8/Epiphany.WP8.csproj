@@ -94,24 +94,32 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Behaviors\BrowserNavigatingCommandBehavior.cs" />
+    <Compile Include="Behaviors\IncrementalLoadingBehavior.cs" />
     <Compile Include="Behaviors\InvokeCommandActionWithArgs.cs" />
     <Compile Include="Behaviors\PivotIndexChangeBehavior.cs" />
     <Compile Include="Behaviors\ReturnPressBehavior.cs" />
     <Compile Include="Behaviors\UpdateTextBindingOnPropertyChanged.cs" />
+    <Compile Include="Controls\Bookshelf.xaml.cs">
+      <DependentUpon>Bookshelf.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LongListSelector.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\DateToVisibilityConverter.cs" />
     <Compile Include="Converters\DoubleToVisibilityConverter.cs" />
+    <Compile Include="Converters\EnabledToForegroundConverter.cs" />
     <Compile Include="Converters\EnumBooleanConverter.cs" />
     <Compile Include="Converters\IntToVisibilityConverter.cs" />
     <Compile Include="Converters\InverseBooleanConverter.cs" />
     <Compile Include="Converters\InverseBooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\InverseStringToVisibilityConverter.cs" />
     <Compile Include="Converters\NullToVisibilityConverter.cs" />
+    <Compile Include="Converters\ProfileItemTypeToStringConverter.cs" />
+    <Compile Include="Converters\ProfileItemValueToStringConverter.cs" />
     <Compile Include="Converters\StringToVisibilityConverter.cs" />
     <Compile Include="Converters\UpperCaseConverter.cs" />
     <Compile Include="Controls\DeferredContentPresenter.cs" />
     <Compile Include="DesignData\DesignAddBookViewModel.cs" />
+    <Compile Include="DesignData\DesignFriendsViewModel.cs" />
     <Compile Include="DesignData\DesignLogonViewModel.cs" />
     <Compile Include="DesignData\DesignProfileViewModel.cs" />
     <Compile Include="Resources\LocalizedStrings.cs" />
@@ -122,6 +130,7 @@
     <Compile Include="Services\IViewModelLocator.cs" />
     <Compile Include="Services\NavigationOperation.cs" />
     <Compile Include="Services\NavigationService.cs" />
+    <Compile Include="Services\ResourceLoader.cs" />
     <Compile Include="Services\RuntimeViewModelLocator.cs" />
     <Compile Include="Services\SourceModel.cs" />
     <Compile Include="Services\Timer.cs" />
@@ -138,7 +147,13 @@
     <Compile Include="View\AddBookPage.xaml.cs">
       <DependentUpon>AddBookPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\BooksPage.xaml.cs">
+      <DependentUpon>BooksPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DataPage.cs" />
+    <Compile Include="View\FriendsPage.xaml.cs">
+      <DependentUpon>FriendsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -162,6 +177,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Controls\Bookshelf.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\BooksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FriendsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\ProfilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

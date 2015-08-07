@@ -1,4 +1,4 @@
-﻿<local:DataPage x:Class="Epiphany.View.View.ProfilePage"
+﻿<local:DataPage x:Class="Epiphany.View.ProfilePage"
                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:local="clr-namespace:Epiphany.View"
@@ -6,8 +6,11 @@
                 xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
                 xmlns:controls="clr-namespace:Epiphany.View.Controls"
                 xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                xmlns:converters="clr-namespace:Epiphany.View.Converters"
                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                xmlns:behaviors="clr-namespace:Epiphany.View.Behaviors"
                 FontFamily="{StaticResource PhoneFontFamilyNormal}"
                 FontSize="{StaticResource PhoneFontSizeNormal}"
                 Foreground="{StaticResource PhoneForegroundBrush}"
@@ -17,14 +20,38 @@
                 shell:SystemTray.IsVisible="True"
                 shell:SystemTray.Opacity="0"
                 DataContext="{Binding Profile, Source={StaticResource VMLocator}}">
+    
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeIn" />
+            </toolkit:NavigationInTransition.Backward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideDownFadeOut" />
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileFeatherTransition Mode="ForwardOut" />
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    
+    <local:DataPage.Resources>
+        <converters:ProfileItemTypeToStringConverter x:Key="ProfileItemTypeToStringConverter" />
+        <converters:ProfileItemValueToStringConverter x:Key="ProfileItemValueToStringConverter" />
+        <converters:EnabledToForegroundConverter x:Key="EnabledToForegroundConverter" />
+    </local:DataPage.Resources>
 
-    <Grid x:Name="LayoutRoot"
+<Grid x:Name="LayoutRoot"
           Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="10" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-
+    
         <!-- progress bar-->
         <ProgressBar IsIndeterminate="{Binding IsLoading}"
                      IsEnabled="{Binding IsLoading}"
@@ -38,41 +65,78 @@
                 <DataTemplate>
                     <phone:Pivot Title="{Binding Name, Converter={StaticResource ToUpperCaseConverter}}"
                                  Margin="0,25,0,0"
-                                 Foreground="{StaticResource PhoneForegroundBrush}">
+                                 Foreground="{StaticResource PhoneForegroundBrush}"
+                                 x:Name="MainPivot"
+                                 toolkit:TurnstileFeatherEffect.FeatheringIndex="1">
+                        <i:Interaction.Behaviors>
+                            <behaviors:PivotIndexChangeBehavior DesiredIndex="1"
+                                                                ShouldExecuteCommand="{Binding ShelvesLoaded, Converter={StaticResource InverseBooleanConverter}}"
+                                                                Command="{Binding FetchBookshelves}"
+                                                                CommandParameter="{Binding FetchBookshelvesArg}" />
+                        </i:Interaction.Behaviors>
+                        <phone:Pivot.RenderTransform>
+                            <CompositeTransform />
+                        </phone:Pivot.RenderTransform>
+                        <phone:Pivot.Triggers>
+                            <EventTrigger>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="MainPivot"
+                                                         Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
+                                                         From="100"
+                                                         To="0"
+                                                         Duration="0:0:0.3">
+                                            <DoubleAnimation.EasingFunction>
+                                                <QuadraticEase EasingMode="EaseInOut" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        
+                                        <DoubleAnimation Storyboard.TargetName="MainPivot"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         From="0"
+                                                         To="1"
+                                                         Duration="0:0:0.4" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </phone:Pivot.Triggers>
+                        
                         <!--Pivot item one-->
                         <phone:PivotItem Header="{Binding Path=LocalizedResources.ProfileAboutTitle, Source={StaticResource LocalizedStrings}}"
                                          Foreground="{StaticResource PhoneForegroundBrush}">
                             <ScrollViewer>
                                 <Grid>
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="220" />
+                                        <RowDefinition Height="Auto" />
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="50" />
                                     </Grid.RowDefinitions>
                                     <Border Grid.Row="0"
                                             HorizontalAlignment="Left"
                                             Margin="12,0,0,12"
-                                            Height="200"
-                                            Width="200"
+                                            Height="150"
+                                            Width="150"
                                             Background="{StaticResource PhoneSubtleBrush}"
                                             Visibility="{Binding ImageUrl, Converter={StaticResource InverseStringToVisibilityConverter}, FallbackValue=Collapsed}" />
                                     <Image Grid.Row="0"
                                            HorizontalAlignment="Left"
                                            Source="{Binding ImageUrl}"
                                            Margin="12,0,0,12"
-                                           Height="200"
-                                           Width="200" />
+                                           Height="150"
+                                           Width="150" />
                                     <controls:LongListSelector x:Name="profileItemsList"
                                                                ItemsSource="{Binding ProfileItems}"
-                                                               Grid.Row="1">
+                                                               Grid.Row="1"
+                                                               ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                                               toolkit:TiltEffect.IsTiltEnabled="True">
                                         <controls:LongListSelector.ItemTemplate>
                                             <DataTemplate>
                                                 <StackPanel Margin="0,0,0,20">
-                                                    <TextBlock Text="{Binding Type}"
-                                                               Foreground="{StaticResource PhoneAccentBrush}"
+                                                    <TextBlock Text="{Binding Type, Converter={StaticResource ProfileItemTypeToStringConverter}}"
+                                                               Foreground="{Binding IsEnabled, Converter={StaticResource EnabledToForegroundConverter}}"
                                                                Style="{StaticResource PhoneTextLargeStyle}" />
-                                                    <TextBlock Text="{Binding Value}"
-                                                               Foreground="{StaticResource PhoneSubtleBrush}"
+                                                    <TextBlock Text="{Binding BindsDirectlyToSource=True, Converter={StaticResource ProfileItemValueToStringConverter}}"
+                                                               Foreground="{Binding IsEnabled, Converter={StaticResource EnabledToForegroundConverter}}"
                                                                Margin="12,0,0,0"
                                                                TextTrimming="WordEllipsis"
                                                                TextWrapping="Wrap" />
@@ -98,7 +162,27 @@
                                                Style="{StaticResource PhoneTextLargeStyle}"
                                                Visibility="{Binding AreShelvesEmpty, Converter={StaticResource BooleanVisibilityConverter}, FallbackValue=Collapsed}" />
 
-                                    <!-- Add a list to show bookshelves -->
+                                    <controls:LongListSelector ItemsSource="{Binding Shelves}"
+                                                               LayoutMode="Grid"
+                                                               GridCellSize="200,200"
+                                                               toolkit:TiltEffect.IsTiltEnabled="True"
+                                                               toolkit:TurnstileFeatherEffect.FeatheringIndex="0"
+                                                               SelectedItem="{Binding SelectedShelf, Mode=TwoWay}"
+                                                               Padding="12,0,0,0">
+                                        <i:Interaction.Behaviors>
+                                            <behaviors:IncrementalLoadingBehavior Command="{Binding FetchBookshelves}"
+                                                                                  CommandParameter="{Binding FetchBookshelvesArg}" />
+                                        </i:Interaction.Behaviors>
+                                        <controls:LongListSelector.ItemTemplate>
+                                            <DataTemplate>
+                                                <controls:Bookshelf ShelfName="{Binding Name}"
+                                                                    NumberOfBooks="{Binding BooksCount}"
+                                                                    Background="{StaticResource PhoneAccentBrush}"
+                                                                    Foreground="{StaticResource PhoneForegroundBrush}"
+                                                                    Margin="2"/>
+                                            </DataTemplate>
+                                        </controls:LongListSelector.ItemTemplate>
+                                    </controls:LongListSelector>
                                 </Grid>
                                 <Grid Grid.Row="1" />
                             </Grid>

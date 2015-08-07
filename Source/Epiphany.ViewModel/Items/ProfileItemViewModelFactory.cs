@@ -18,7 +18,7 @@ namespace Epiphany.ViewModel
         Username,
         JoinDate,
         FriendStatus
-    }
+    };
 
     class ProfileItemViewModelFactory
     {
@@ -52,7 +52,7 @@ namespace Epiphany.ViewModel
 
             if (!profile.IsFriend && profile.IsPendingFriendRequest)
             {
-                //profileItems.Add(new ProfileItemViewModel(ProfileItemType.FriendStatus, profile.FriendStatus, false));
+                profileItems.Add(new ProfileItemViewModel(ProfileItemType.FriendStatus, "RequestPending", false));
             }
 
             return profileItems;

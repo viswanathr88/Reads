@@ -3,7 +3,6 @@ using Epiphany.Model;
 using Epiphany.Model.Collections;
 using Epiphany.ViewModel.Items;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Windows.Input;
 namespace Epiphany.ViewModel
 {
@@ -34,12 +33,27 @@ namespace Epiphany.ViewModel
             get;
         }
 
+        bool ShelvesLoaded
+        {
+            get;
+        }
+
         string ImageUrl
         {
             get;
         }
 
+        BookshelfModel SelectedShelf
+        {
+            get;
+        }
+
         IList<ProfileItemViewModel> ProfileItems
+        {
+            get;
+        }
+
+        IList<BookshelfModel> Shelves
         {
             get;
         }
@@ -60,11 +74,6 @@ namespace Epiphany.ViewModel
         }
 
         IAsyncEnumerator<BookshelfModel> FetchBookshelvesArg
-        {
-            get;
-        }
-
-        ObservableCollection<BookshelfModel> Shelves
         {
             get;
         }

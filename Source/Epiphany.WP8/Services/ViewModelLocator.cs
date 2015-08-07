@@ -62,6 +62,19 @@ namespace Epiphany.View.Services
             }
         }
 
+        public IBooksViewModel Books
+        {
+            get
+            {
+                return this.locatorImpl.Books;
+            }
+        }
+
+        public IFriendsViewModel Friends
+        {
+            get { return this.locatorImpl.Friends; }
+        }
+
         public void Dispose()
         {
             locatorImpl.Dispose();

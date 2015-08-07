@@ -25,33 +25,36 @@ namespace Epiphany.Model
 
         public override int Id
         {
-            get 
-            {
-                return this.id;
-            }
+            get { return this.id; }
         }
 
         public string Name
         {
-            get
+            get { return this.user.Name; }
+            set
             {
-                return this.user.Name;
+                if (this.user.Name == value) return;
+                this.user.Name = value;
             }
         }
 
         public string ImageUrl
         {
-            get
+            get { return this.user.ImageUrl; }
+            set
             {
-                return this.user.ImageUrl;
+                if (this.user.ImageUrl == value) return;
+                this.user.ImageUrl = value;
             }
         }
 
         public string Link
         {
-            get
+            get { return this.user.Link; }
+            set
             {
-                return this.user.Link;
+                if (this.user.Link == value) return;
+                this.user.Link = value;
             }
         }
     }

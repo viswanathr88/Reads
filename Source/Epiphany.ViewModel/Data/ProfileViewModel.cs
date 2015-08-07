@@ -21,6 +21,8 @@ namespace Epiphany.ViewModel
         private readonly ProfileItemViewModelFactory profileItemFactory;
 
         private readonly IBookshelfService bookshelfService;
+        private readonly INavigationService navService;
+        private readonly IUrlLauncher urlLauncher;
 
         private readonly IAsyncCommand<ProfileModel, int> fetchProfileCommand;
         private readonly IAsyncCommand<IEnumerable<BookshelfModel>, IAsyncEnumerator<BookshelfModel>> fetchBookshelvesCommand;
@@ -28,11 +30,14 @@ namespace Epiphany.ViewModel
         private readonly ICommand goHomeCommand;
         private bool areShelvesEmpty;
         private bool areUpdatesEmpty;
+        private bool shelvesLoaded;
 
-        private ObservableCollection<BookshelfModel> shelves;
+        private IList<BookshelfModel> shelves;
         private IList<ProfileItemViewModel> profileItems;
+        private BookshelfModel selectedShelf;
+        private ProfileItemViewModel selectedProfileItem;
 
-        public ProfileViewModel(IUserService userService, IBookshelfService bookshelfService, INavigationService navService)
+        public ProfileViewModel(IUserService userService, IBookshelfService bookshelfService, INavigationService navService, IUrlLauncher urlLauncher)
         {
             if (userService == null || navService == null || bookshelfService == null)
             {
@@ -40,6 +45,8 @@ namespace Epiphany.ViewModel
             }
 
             this.bookshelfService = bookshelfService;
+            this.navService = navService;
+            this.urlLauncher = urlLauncher;
             this.profileItemFactory = new ProfileItemViewModelFactory();
 
             this.fetchProfileCommand = new FetchProfileCommand(userService);
@@ -51,6 +58,9 @@ namespace Epiphany.ViewModel
             this.fetchBookshelvesCommand.Executed += OnBookshelvesFetched;
 
             this.goHomeCommand = new GoHomeCommand(navService);
+
+            Shelves = new ObservableCollection<BookshelfModel>();
+            ProfileItems = new ObservableCollection<ProfileItemViewModel>();
         }
 
         public int Id
@@ -111,6 +121,17 @@ namespace Epiphany.ViewModel
             }
         }
 
+        public bool ShelvesLoaded
+        {
+            get { return this.shelvesLoaded; }
+            private set
+            {
+                if (this.shelvesLoaded == value) return;
+                this.shelvesLoaded = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public string ImageUrl
         {
             get { return this.imageUrl; }
@@ -122,7 +143,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public ObservableCollection<BookshelfModel> Shelves
+        public IList<BookshelfModel> Shelves
         {
             get { return this.shelves; }
             private set
@@ -130,6 +151,66 @@ namespace Epiphany.ViewModel
                 if (this.shelves == value) return;
                 this.shelves = value;
                 RaisePropertyChanged();
+            }
+        }
+
+        public BookshelfModel SelectedShelf
+        {
+            get { return this.selectedShelf; }
+            set
+            {
+                if (this.selectedShelf == value) return;
+                this.selectedShelf = value;
+
+                this.navService.CreateFor<IBooksViewModel>()
+                    .AddParam<int>((x) => x.UserId, Id)
+                    .AddParam<string>((x) => x.UserName, Name)
+                    .AddParam<string>((x) => x.ShelfName, this.selectedShelf.Name)
+                    .Navigate();
+
+                this.selectedShelf = null;
+                RaisePropertyChanged();
+            }
+        }
+
+        public ProfileItemViewModel SelectedProfileItem
+        {
+            get { return this.selectedProfileItem; }
+            set
+            {
+                if (this.selectedProfileItem == value) return;
+                this.selectedProfileItem = value;
+
+                switch (this.selectedProfileItem.Type)
+                {
+                    case ProfileItemType.Friends:
+                        {
+                            this.navService.CreateFor<IFriendsViewModel>()
+                                .AddParam<int>((x) => x.Id, Id)
+                                .AddParam<string>((x) => x.Name, Name)
+                                .Navigate();
+                            break;
+                        }
+
+                    case ProfileItemType.Groups:
+                        {
+                            this.navService.CreateFor<IGroupsViewModel>()
+                                .AddParam<int>((x) => x.Id, Id)
+                                .AddParam<string>((x) => x.Name, Name)
+                                .Navigate();
+                            break;
+                        }
+
+                    case ProfileItemType.ViewInGoodreads:
+                        {
+                            this.urlLauncher.Launch(this.selectedProfileItem.Value);
+                            break;
+                        }
+                    default:
+                        break;
+                }
+                this.selectedProfileItem = null;
+                RaisePropertyChanged(() => SelectedProfileItem);
             }
         }
 
@@ -200,11 +281,12 @@ namespace Epiphany.ViewModel
             IsLoading = false;
             if (e.State == CommandExecutionState.Success)
             {
-                Shelves = new ObservableCollection<BookshelfModel>();
                 foreach (BookshelfModel shelf in this.fetchBookshelvesCommand.Result)
                 {
                     Shelves.Add(shelf);
                 }
+                AreShelvesEmpty = (Shelves.Count == 0);
+                ShelvesLoaded = true;
             }
         }
     }

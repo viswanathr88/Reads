@@ -29,5 +29,15 @@ namespace Epiphany.View.Services
         {
             get;
         }
+
+        IBooksViewModel Books
+        {
+            get;
+        }
+
+        IFriendsViewModel Friends
+        {
+            get;
+        }
     }
 }

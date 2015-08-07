@@ -10,7 +10,7 @@ namespace Epiphany.ViewModel.Commands
     sealed class FetchBookshelvesCommand : AsyncCommand<IEnumerable<BookshelfModel>, IAsyncEnumerator<BookshelfModel>>
     {
         private readonly IBookshelfService bookshelfService;
-        private const int count = 20;
+        private const int count = 10;
 
         public FetchBookshelvesCommand(IBookshelfService bookshelfService)
         {

@@ -2,23 +2,23 @@
 
 namespace Epiphany.ViewModel.Collections
 {
-    public class Group<T> : List<T>
+    public class Group<T> : List<T>, IGroup<string, T>
     {
-        public Group(string name, IEnumerable<T> items)
+        public Group(string key, IEnumerable<T> items)
             : base(items)
         {
-            this.Header = name;
+            this.Key = key;
         }
 
-        public string Header
+        public Group(string key)
+        {
+            Key = key;
+        }
+
+        public string Key
         {
             get;
-            private set;
-        }
-
-        public bool IsEmpty
-        {
-            get { return this.Count == 0; }
+            set;
         }
     }
 }

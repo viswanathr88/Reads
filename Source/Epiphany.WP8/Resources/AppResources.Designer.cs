@@ -70,6 +70,15 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to age.
+        /// </summary>
+        public static string AgeText {
+            get {
+                return ResourceManager.GetString("AgeText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to add.
         /// </summary>
         public static string AppBarButtonText {
@@ -93,6 +102,42 @@ namespace Epiphany.View.Resources {
         public static string ApplicationTitle {
             get {
                 return ResourceManager.GetString("ApplicationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to favorite books.
+        /// </summary>
+        public static string FavoriteBooksText {
+            get {
+                return ResourceManager.GetString("FavoriteBooksText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to friend status.
+        /// </summary>
+        public static string FriendStatusText {
+            get {
+                return ResourceManager.GetString("FriendStatusText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to friends.
+        /// </summary>
+        public static string FriendsTitle {
+            get {
+                return ResourceManager.GetString("FriendsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to gender.
+        /// </summary>
+        public static string GenderText {
+            get {
+                return ResourceManager.GetString("GenderText", resourceCulture);
             }
         }
         
@@ -142,11 +187,38 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to interests.
+        /// </summary>
+        public static string InterestsText {
+            get {
+                return ResourceManager.GetString("InterestsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to join date.
+        /// </summary>
+        public static string JoinDateText {
+            get {
+                return ResourceManager.GetString("JoinDateText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to like on facebook.
         /// </summary>
         public static string LikeonFBButtonText {
             get {
                 return ResourceManager.GetString("LikeonFBButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to location.
+        /// </summary>
+        public static string LocationText {
+            get {
+                return ResourceManager.GetString("LocationText", resourceCulture);
             }
         }
         
@@ -169,11 +241,65 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There are no friends!.
+        /// </summary>
+        public static string NoFriendsMessage {
+            get {
+                return ResourceManager.GetString("NoFriendsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There are no updates!.
         /// </summary>
         public static string NoUpdatesMessage {
             get {
                 return ResourceManager.GetString("NoUpdatesMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to friends.
+        /// </summary>
+        public static string NumberedItemFriendPlural {
+            get {
+                return ResourceManager.GetString("NumberedItemFriendPlural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to friend.
+        /// </summary>
+        public static string NumberedItemFriendSingular {
+            get {
+                return ResourceManager.GetString("NumberedItemFriendSingular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to groups.
+        /// </summary>
+        public static string NumberedItemGroupPlural {
+            get {
+                return ResourceManager.GetString("NumberedItemGroupPlural", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to group.
+        /// </summary>
+        public static string NumberedItemGroupSingular {
+            get {
+                return ResourceManager.GetString("NumberedItemGroupSingular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pending approval.
+        /// </summary>
+        public static string PendingApprovalText {
+            get {
+                return ResourceManager.GetString("PendingApprovalText", resourceCulture);
             }
         }
         
@@ -259,11 +385,47 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to username.
+        /// </summary>
+        public static string UsernameText {
+            get {
+                return ResourceManager.GetString("UsernameText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Version: 2.5.
         /// </summary>
         public static string VersionString {
             get {
                 return ResourceManager.GetString("VersionString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to view friends.
+        /// </summary>
+        public static string ViewFriendsText {
+            get {
+                return ResourceManager.GetString("ViewFriendsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to view groups.
+        /// </summary>
+        public static string ViewGroupsText {
+            get {
+                return ResourceManager.GetString("ViewGroupsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to view in goodreads.
+        /// </summary>
+        public static string ViewInGoodreadsText {
+            get {
+                return ResourceManager.GetString("ViewInGoodreadsText", resourceCulture);
             }
         }
         

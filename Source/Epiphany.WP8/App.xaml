@@ -19,7 +19,8 @@
             <converters:EnumBooleanConverter x:Key="EnumBoolConverter" />
             <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
             <converters:InverseStringToVisibilityConverter x:Key="InverseStringToVisibilityConverter" />
-            
+            <converters:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+
             <resources:LocalizedStrings x:Key="LocalizedStrings" />
             <viewservices:ViewModelLocator x:Key="VMLocator" />
             

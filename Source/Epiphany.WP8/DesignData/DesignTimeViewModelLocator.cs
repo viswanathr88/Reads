@@ -38,6 +38,17 @@ namespace Epiphany.View.Services
             }
         }
 
+        public IBooksViewModel Books
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+
+        public IFriendsViewModel Friends
+        {
+            get { return new DesignFriendsViewModel(); }
+        }
+
         public void Dispose()
         {
 

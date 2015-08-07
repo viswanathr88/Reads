@@ -1,4 +1,5 @@
-﻿using Epiphany.Model.Authentication;
+﻿using Epiphany.Model;
+using Epiphany.Model.Authentication;
 using Epiphany.ViewModel.Services;
 
 namespace Epiphany.ViewModel.Commands
@@ -27,4 +28,27 @@ namespace Epiphany.ViewModel.Commands
                 .Navigate();
         }
     }
+
+    sealed class ShowProfileForUserCommand : Command<UserModel>
+    {
+        private readonly INavigationService navService;
+
+        public ShowProfileForUserCommand(INavigationService navService)
+        {
+            this.navService = navService;
+        }
+        public override bool CanExecute(UserModel user)
+        {
+            return user.Id >= 0;
+        }
+
+        protected override void Run(UserModel user)
+        {
+            this.navService.CreateFor<IProfileViewModel>()
+                .AddParam<int>((x) => x.Id, user.Id)
+                .AddParam<string>((x) => x.Name, user.Name)
+                .Navigate();
+        }
+    }
+
 }

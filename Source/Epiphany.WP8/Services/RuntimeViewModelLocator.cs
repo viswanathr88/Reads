@@ -13,6 +13,7 @@ namespace Epiphany.View.Services
         private readonly IAppSettings appSettings;
         private readonly IAppRateService appRateService;
         private readonly IUrlLauncher urlLauncher;
+        private readonly IResourceLoader resourceLoader;
 
         private ILogonViewModel logonVM;
         private IHomeViewModel homeVM;
@@ -28,6 +29,7 @@ namespace Epiphany.View.Services
             this.timerService = new TimerService();
             this.appRateService = new AppRateService();
             this.urlLauncher = new UrlLauncher();
+            this.resourceLoader = new ResourceLoader();
         }
 
         public IHomeViewModel Home
@@ -64,7 +66,8 @@ namespace Epiphany.View.Services
                 return new ProfileViewModel(
                     this.serviceFactory.GetUserService(), 
                     this.serviceFactory.GetBookshelfService(), 
-                    this.navigationService);
+                    this.navigationService,
+                    this.urlLauncher);
             }
         }
 
@@ -92,9 +95,21 @@ namespace Epiphany.View.Services
             }
         }
 
+        public IBooksViewModel Books
+        {
+            get { return new BooksViewModel(); }
+        }
+
+
+        public IFriendsViewModel Friends
+        {
+            get { return new FriendsViewModel(this.serviceFactory.GetUserService(), this.navigationService, this.resourceLoader); }
+        }
+
         public void Dispose()
         {
 
         }
+
     }
 }

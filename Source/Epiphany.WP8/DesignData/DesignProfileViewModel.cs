@@ -15,16 +15,30 @@ namespace Epiphany.View.DesignData
         {
             Id = 50;
             Name = "Test User";
-            AreShelvesEmpty = true;
             AreUpdatesEmpty = true;
             IsLoading = false;
             IsLoaded = true;
-            //ImageUrl = "http://www.viscofoods.com/wp-content/themes/456market/assets//img/placeholder.png";
+            //ImageUrl = "http://www.viscofoods.com/wp-content/themes/456market/assets/img/placeholder.png";
 
             ProfileItems = new List<ProfileItemViewModel>();
             ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.Age, "25", false));
             ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.Username, "testuser", false));
             ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.ViewInGoodreads, "www.goodreads.com", true));
+            ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.JoinDate, DateTime.Now.ToShortDateString(), false));
+
+            Shelves = new ObservableCollection<BookshelfModel>();
+
+            for (int i = 0; i < 5; i++)
+            {
+                BookshelfModel shelf = new BookshelfModel(i)
+                {
+                    Name = "Test Shelf",
+                    BooksCount = 50
+                };
+                Shelves.Add(shelf);
+            }
+            ShelvesLoaded = true;
+            AreShelvesEmpty = false;
         }
         public int Id
         {
@@ -82,11 +96,6 @@ namespace Epiphany.View.DesignData
             get { return null; }
         }
 
-        public ObservableCollection<Model.BookshelfModel> Shelves
-        {
-            get { return null; }
-        }
-
         public override Task LoadAsync()
         {
             throw new NotImplementedException();
@@ -97,6 +106,25 @@ namespace Epiphany.View.DesignData
         {
             get;
             private set;
+        }
+
+
+        public bool ShelvesLoaded
+        {
+            get;
+            set;
+        }
+
+        public IList<BookshelfModel> Shelves
+        {
+            get;
+            set;
+        }
+
+
+        public BookshelfModel SelectedShelf
+        {
+            get { return null; }
         }
     }
 }

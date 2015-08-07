@@ -6,19 +6,45 @@ namespace Epiphany.ViewModel.Collections
 {
     public class AlphabetKeyedList<T> : IEnumerable<KeyedList<string, T>>
     {
+        private readonly IResourceLoader resourceLoader;
+        private readonly Func<T, string> keySelector;
         private readonly IList<KeyedList<string, T>> groups;
         const string globeGroupKey = "\uD83C\uDF10";
 
+        public AlphabetKeyedList(Func<T, string> keySelector, IResourceLoader resourceLoader)
+        {
+            this.resourceLoader = resourceLoader;
+            this.keySelector = keySelector;
+            groups = CreateDefaultGroups(resourceLoader);
+        }
+
         public AlphabetKeyedList(IEnumerable<T> items, Func<T, string> keySelector, IResourceLoader resourceLoader)
         {
+            this.resourceLoader = resourceLoader;
+            this.keySelector = keySelector;
             groups = CreateDefaultGroups(resourceLoader);
 
             foreach (T item in items)
             {
-                int index = resourceLoader.GetLocaleGroupIndex(keySelector(item));
-                if (index >= 0 && index < groups.Count)
-                    groups[index].Add(item);
+                Add(item);
             }
+        }
+
+        public IEnumerator<KeyedList<string, T>> GetEnumerator()
+        {
+            return this.groups.GetEnumerator();
+        }
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            return this.groups.GetEnumerator();
+        }
+
+        public void Add(T item)
+        {
+            int index = this.resourceLoader.GetLocaleGroupIndex(keySelector(item));
+            if (index >= 0 && index < groups.Count)
+                groups[index].Add(item);
         }
 
         private IList<KeyedList<string, T>> CreateDefaultGroups(IResourceLoader resourceLoader)
@@ -35,16 +61,6 @@ namespace Epiphany.ViewModel.Collections
             }
 
             return groups;
-        }
-
-        public IEnumerator<KeyedList<string, T>> GetEnumerator()
-        {
-            return this.groups.GetEnumerator();
-        }
-
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
-        {
-            return this.groups.GetEnumerator();
         }
     }
 }

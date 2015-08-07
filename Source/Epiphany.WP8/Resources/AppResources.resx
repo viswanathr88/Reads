@@ -191,4 +191,58 @@
   <data name="ProfileUpdatesTitle" xml:space="preserve">
     <value>updates</value>
   </data>
+  <data name="AgeText" xml:space="preserve">
+    <value>age</value>
+  </data>
+  <data name="FavoriteBooksText" xml:space="preserve">
+    <value>favorite books</value>
+  </data>
+  <data name="FriendStatusText" xml:space="preserve">
+    <value>friend status</value>
+  </data>
+  <data name="GenderText" xml:space="preserve">
+    <value>gender</value>
+  </data>
+  <data name="InterestsText" xml:space="preserve">
+    <value>interests</value>
+  </data>
+  <data name="JoinDateText" xml:space="preserve">
+    <value>join date</value>
+  </data>
+  <data name="LocationText" xml:space="preserve">
+    <value>location</value>
+  </data>
+  <data name="NumberedItemFriendPlural" xml:space="preserve">
+    <value>friends</value>
+  </data>
+  <data name="NumberedItemFriendSingular" xml:space="preserve">
+    <value>friend</value>
+  </data>
+  <data name="NumberedItemGroupPlural" xml:space="preserve">
+    <value>groups</value>
+  </data>
+  <data name="NumberedItemGroupSingular" xml:space="preserve">
+    <value>group</value>
+  </data>
+  <data name="PendingApprovalText" xml:space="preserve">
+    <value>pending approval</value>
+  </data>
+  <data name="UsernameText" xml:space="preserve">
+    <value>username</value>
+  </data>
+  <data name="ViewFriendsText" xml:space="preserve">
+    <value>view friends</value>
+  </data>
+  <data name="ViewGroupsText" xml:space="preserve">
+    <value>view groups</value>
+  </data>
+  <data name="ViewInGoodreadsText" xml:space="preserve">
+    <value>view in goodreads</value>
+  </data>
+  <data name="FriendsTitle" xml:space="preserve">
+    <value>friends</value>
+  </data>
+  <data name="NoFriendsMessage" xml:space="preserve">
+    <value>There are no friends!</value>
+  </data>
 </root>
