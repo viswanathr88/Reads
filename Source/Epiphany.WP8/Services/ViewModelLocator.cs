@@ -45,7 +45,6 @@ namespace Epiphany.View.Services
             }
         }
 
-
         public IAddBookViewModel AddBook
         {
             get
@@ -73,6 +72,11 @@ namespace Epiphany.View.Services
         public IFriendsViewModel Friends
         {
             get { return this.locatorImpl.Friends; }
+        }
+
+        public IEventsViewModel Events
+        {
+            get { return this.locatorImpl.Events; }
         }
 
         public void Dispose()

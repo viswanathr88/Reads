@@ -97,6 +97,15 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to refresh.
+        /// </summary>
+        public static string AppBarRefreshEventsButtonText {
+            get {
+                return ResourceManager.GetString("AppBarRefreshEventsButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reads.
         /// </summary>
         public static string ApplicationTitle {

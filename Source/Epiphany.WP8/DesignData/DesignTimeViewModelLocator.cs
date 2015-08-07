@@ -49,6 +49,11 @@ namespace Epiphany.View.Services
             get { return new DesignFriendsViewModel(); }
         }
 
+        public IEventsViewModel Events
+        {
+            get { return new DesignEventsViewModel(); }
+        }
+
         public void Dispose()
         {
 

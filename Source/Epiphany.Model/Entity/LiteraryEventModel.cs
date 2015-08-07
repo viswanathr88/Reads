@@ -28,114 +28,72 @@ namespace Epiphany.Model
 
         public override int Id
         {
-            get
-            {
-                return this.id;
-            }
+            get { return this.id; }
         }
 
         public string Access
         {
-            get
-            {
-                return this.literaryEvent.Access;
-            }
+            get { return this.literaryEvent.Access; }
         }
 
         public string Address
         {
-            get
-            {
-                return this.literaryEvent.Address;
-            }
+            get { return this.literaryEvent.Address; }
         }
 
         public bool CanInvite
         {
-            get
-            {
-                return Converter.ToBool(this.literaryEvent.CanInvite, false);
-            }
+            get { return Converter.ToBool(this.literaryEvent.CanInvite, false); }
         }
 
         public string City
         {
-            get
-            {
-                return this.literaryEvent.City;
-            }
+            get { return this.literaryEvent.City; }
         }
 
         public string CountryCode
         {
-            get
-            {
-                return this.literaryEvent.CountryCode;
-            }
+            get { return this.literaryEvent.CountryCode; }
         }
 
         public DateTime CreateTime
         {
-            get
-            {
-                return Converter.ToDateTime(this.literaryEvent.CreatedAt);
-            }
+            get { return Converter.ToDateTime(this.literaryEvent.CreatedAt); }
         }
 
         public DateTime EndTime
         {
-            get
-            {
-                return Converter.ToDateTime(this.literaryEvent.EndAt);
-            }
+            get { return Converter.ToDateTime(this.literaryEvent.EndAt); }
         }
 
         public int AttendingCount
         {
-            get
-            {
-                return Converter.ToInt(this.literaryEvent.AttendingCount, 0);
-            }
+            get { return Converter.ToInt(this.literaryEvent.AttendingCount, 0); }
         }
 
         public int ResponsesCount
         {
-            get
-            {
-                return Converter.ToInt(this.literaryEvent.ResponsesCount, 0);
-            }
+            get { return Converter.ToInt(this.literaryEvent.ResponsesCount, 0); }
         }
 
         public LiteraryEventType EventType
         {
-            get
-            {
-                return ToEventType(this.literaryEvent.EventType, LiteraryEventType.Other);
-            }
+            get { return ToEventType(this.literaryEvent.EventType, LiteraryEventType.Other); }
         }
 
         public int PostalCode
         {
-            get
-            {
-                return Converter.ToInt(this.literaryEvent.PostalCode, 0);
-            }
+            get { return Converter.ToInt(this.literaryEvent.PostalCode, 0); }
         }
 
         public bool IsPublic
         {
-            get
-            {
-                return Converter.ToBool(this.literaryEvent.IsPublic, false);
-            }
+            get { return Converter.ToBool(this.literaryEvent.IsPublic, false); }
         }
 
         public DateTime ReminderTime
         {
-            get
-            {
-                return Converter.ToDateTime(this.literaryEvent.ReminderAt);
-            }
+            get { return Converter.ToDateTime(this.literaryEvent.ReminderAt); }
         }
 
         public int ResourceId

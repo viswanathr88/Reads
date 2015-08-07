@@ -14,6 +14,7 @@ namespace Epiphany.View.Services
         private readonly IAppRateService appRateService;
         private readonly IUrlLauncher urlLauncher;
         private readonly IResourceLoader resourceLoader;
+        private readonly ILocationService locationService;
 
         private ILogonViewModel logonVM;
         private IHomeViewModel homeVM;
@@ -30,6 +31,7 @@ namespace Epiphany.View.Services
             this.appRateService = new AppRateService();
             this.urlLauncher = new UrlLauncher();
             this.resourceLoader = new ResourceLoader();
+            this.locationService = new LocationService();
         }
 
         public IHomeViewModel Home
@@ -106,10 +108,14 @@ namespace Epiphany.View.Services
             get { return new FriendsViewModel(this.serviceFactory.GetUserService(), this.navigationService, this.resourceLoader); }
         }
 
+        public IEventsViewModel Events
+        {
+            get { return new EventsViewModel(this.serviceFactory.GetEventService(), this.locationService, this.urlLauncher); }
+        }
+
         public void Dispose()
         {
 
         }
-
     }
 }

@@ -245,4 +245,7 @@
   <data name="NoFriendsMessage" xml:space="preserve">
     <value>There are no friends!</value>
   </data>
+  <data name="AppBarRefreshEventsButtonText" xml:space="preserve">
+    <value>refresh</value>
+  </data>
 </root>

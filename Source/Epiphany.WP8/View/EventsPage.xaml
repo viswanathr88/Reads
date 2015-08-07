@@ -1,0 +1,127 @@
+﻿<local:DataPage x:Class="Epiphany.View.EventsPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:local="clr-namespace:Epiphany.View"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:conv="clr-namespace:Epiphany.View.Converters"
+                            xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                            xmlns:appbar="clr-namespace:BindableApplicationBar;assembly=BindableApplicationBar"
+                            xmlns:controls="clr-namespace:Epiphany.View.Controls"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            SupportedOrientations="Portrait"
+                            Orientation="Portrait"
+                            mc:Ignorable="d"
+                            shell:SystemTray.IsVisible="True"
+                            shell:SystemTray.Opacity="0"
+                            shell:SystemTray.ForegroundColor="{StaticResource PhoneForegroundColor}"
+                            DataContext="{Binding Events, Source={StaticResource VMLocator}}">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.Resources>
+            <conv:StringToVisibilityConverter x:Key="StringToVisibilityConv" />
+        </Grid.Resources>
+
+        <!-- progress bar-->
+        <ProgressBar IsIndeterminate="{Binding IsLoading}"
+                     IsEnabled="{Binding IsLoading}"
+                     Foreground="{StaticResource PhoneForegroundBrush}"
+                     Background="Transparent" />
+        <!--Pivot Control-->
+        <phone:Pivot Grid.Row="1"
+                     Title="{Binding Path=LocalizedResources.ApplicationTitle, Converter={StaticResource ToUpperCaseConverter}, Source={StaticResource LocalizedStrings}}"
+                     Margin="0,25,0,0"
+                     Foreground="{StaticResource PhoneForegroundBrush}">
+            <!--Pivot item one-->
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.EventsTitle, Source={StaticResource LocalizedStrings}}"
+                             Foreground="{StaticResource PhoneForegroundBrush}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+                    <controls:LongListSelector ItemsSource="{Binding Events}"
+                                               SelectedItem="{Binding SelectedEvent, Mode=TwoWay}"
+                                               toolkit:TiltEffect.IsTiltEnabled="True"
+                                               Foreground="{StaticResource PhoneForegroundBrush}">
+                        <controls:LongListSelector.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="12,0,0,17">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="64" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Border BorderThickness="2"
+                                                Grid.Column="0"
+                                                Height="64"
+                                                Width="64"
+                                                BorderBrush="{StaticResource PhoneAccentBrush}"
+                                                VerticalAlignment="Top"
+                                                Margin="0,8,0,0">
+                                            <Image Grid.Column="0"
+                                                   Source="{Binding ImageUrl}"
+                                                   Height="60"
+                                                   Width="60"
+                                                   VerticalAlignment="Center"
+                                                   HorizontalAlignment="Center" />
+                                        </Border>
+
+                                        <Grid Grid.Column="1">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Row="0"
+                                                       Text="{Binding Title}"
+                                                       Style="{StaticResource PhoneTextNormalStyle}"
+                                                       TextTrimming="WordEllipsis"
+                                                       Foreground="{StaticResource PhoneForegroundBrush}"
+                                                       FontSize="22" />
+                                            <TextBlock Grid.Row="1"
+                                                       Text="{Binding Venue}"
+                                                       Style="{StaticResource PhoneTextSubtleStyle}"
+                                                       Visibility="{Binding Venue, Converter={StaticResource StringToVisibilityConv}}"
+                                                       Foreground="{StaticResource PhoneSubtleBrush}" />
+                                            <TextBlock Grid.Row="2"
+                                                       Text="{Binding Description}"
+                                                       Style="{StaticResource PhoneTextNormalStyle}"
+                                                       TextTrimming="WordEllipsis"
+                                                       Visibility="{Binding Venue, Converter={StaticResource StringToVisibilityConv}}"
+                                                       Foreground="{StaticResource PhoneForegroundBrush}" />
+                                        </Grid>
+                                    </Grid>
+                                </StackPanel>
+                            </DataTemplate>
+                        </controls:LongListSelector.ItemTemplate>
+                    </controls:LongListSelector>
+                    <Grid Grid.Row="1" />
+                </Grid>
+            </phone:PivotItem>
+        </phone:Pivot>
+
+    </Grid>
+
+    <appbar:Bindable.ApplicationBar>
+        <appbar:BindableApplicationBar IsVisible="{Binding IsLoaded}"
+                                       BindableOpacity="0.999"
+                                       Mode="Minimized">
+            <appbar:BindableApplicationBarButton IconUri="/Assets/Icons/refresh.png"
+                                                 Text="{Binding Path=LocalizedResources.AppBarRefreshEventsButtonText, Source={StaticResource LocalizedStrings}}"
+                                                 Command="{Binding Refresh}" />
+        </appbar:BindableApplicationBar>
+    </appbar:Bindable.ApplicationBar>
+
+</local:DataPage>

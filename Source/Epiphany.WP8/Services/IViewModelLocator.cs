@@ -39,5 +39,10 @@ namespace Epiphany.View.Services
         {
             get;
         }
+
+        IEventsViewModel Events
+        {
+            get;
+        }
     }
 }

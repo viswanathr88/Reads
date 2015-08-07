@@ -75,6 +75,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Commands\FetchBookshelvesCommand.cs" />
+    <Compile Include="Commands\FetchEventsCommand.cs" />
     <Compile Include="Commands\FetchFeedCommand.cs" />
     <Compile Include="Commands\FetchFriendsCommand.cs" />
     <Compile Include="Commands\FetchGroupCommand.cs">
@@ -126,10 +127,12 @@
     <Compile Include="Data\LogonViewModel.cs" />
     <Compile Include="Commands\Navigation\ShowFriendsCommand.cs" />
     <Compile Include="Data\ProfileViewModel.cs" />
+    <Compile Include="Data\EventsViewModel.cs" />
     <Compile Include="Items\CustomBookshelfItemViewModel.cs" />
     <Compile Include="Items\FeedItemViewModel.cs" />
     <Compile Include="Items\ProfileItemViewModel.cs" />
     <Compile Include="Items\ProfileItemViewModelFactory.cs" />
+    <Compile Include="Services\ILocationService.cs" />
     <Compile Include="Services\IResourceLoader.cs" />
     <Compile Include="Settings\IAppSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
