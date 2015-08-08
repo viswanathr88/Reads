@@ -14,7 +14,7 @@ namespace Epiphany.ViewModel.Commands
 
         /*public override void Execute(Book book)
         {
-            this.viewServices.DisplayAddBook(book.Id, book.Title);
+            this.navService.DisplayAddBook(book.Id, book.Title);
         }*/
 
         public override bool CanExecute(BookModel param)

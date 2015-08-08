@@ -259,6 +259,15 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No search results.
+        /// </summary>
+        public static string NoSearchResultsText {
+            get {
+                return ResourceManager.GetString("NoSearchResultsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There are no updates!.
         /// </summary>
         public static string NoUpdatesMessage {
@@ -376,11 +385,29 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to find books by title,author.
+        /// </summary>
+        public static string SearchTextBoxHint {
+            get {
+                return ResourceManager.GetString("SearchTextBoxHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to search.
         /// </summary>
         public static string SearchTitle {
             get {
                 return ResourceManager.GetString("SearchTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pick a search type.
+        /// </summary>
+        public static string SearchTypeFullModeHeader {
+            get {
+                return ResourceManager.GetString("SearchTypeFullModeHeader", resourceCulture);
             }
         }
         

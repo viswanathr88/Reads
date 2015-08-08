@@ -48,7 +48,8 @@ namespace Epiphany.Xml
             set;
         }
 
-        [XmlElement("results")]
+        [XmlArray("results")]
+        [XmlArrayItem("work")]
         public GoodreadsWork[] Items
         {
             get;

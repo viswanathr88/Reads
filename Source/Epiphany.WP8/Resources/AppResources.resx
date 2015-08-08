@@ -248,4 +248,13 @@
   <data name="AppBarRefreshEventsButtonText" xml:space="preserve">
     <value>refresh</value>
   </data>
+  <data name="NoSearchResultsText" xml:space="preserve">
+    <value>No search results</value>
+  </data>
+  <data name="SearchTextBoxHint" xml:space="preserve">
+    <value>find books by title,author</value>
+  </data>
+  <data name="SearchTypeFullModeHeader" xml:space="preserve">
+    <value>pick a search type</value>
+  </data>
 </root>

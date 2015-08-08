@@ -83,5 +83,11 @@ namespace Epiphany.View.Services
         {
             locatorImpl.Dispose();
         }
+
+
+        public ISearchViewModel Search
+        {
+            get { return this.locatorImpl.Search; }
+        }
     }
 }

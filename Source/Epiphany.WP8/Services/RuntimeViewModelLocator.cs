@@ -113,6 +113,11 @@ namespace Epiphany.View.Services
             get { return new EventsViewModel(this.serviceFactory.GetEventService(), this.locationService, this.urlLauncher); }
         }
 
+        public ISearchViewModel Search
+        {
+            get { return new SearchViewModel(this.serviceFactory.GetBookService(), this.navigationService); }
+        }
+
         public void Dispose()
         {
 

@@ -1,12 +1,12 @@
-﻿<Application
-    x:Class="Epiphany.WP8.App"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
-    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
-    xmlns:resources="clr-namespace:Epiphany.View.Resources"
-    xmlns:viewservices="clr-namespace:Epiphany.View.Services"
-    xmlns:converters="clr-namespace:Epiphany.View.Converters">
+﻿<Application x:Class="Epiphany.WP8.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+             xmlns:resources="clr-namespace:Epiphany.View.Resources"
+             xmlns:viewservices="clr-namespace:Epiphany.View.Services"
+             xmlns:converters="clr-namespace:Epiphany.View.Converters"
+             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
 
     <!--Application Resources-->
     <Application.Resources>
@@ -23,15 +23,57 @@
 
             <resources:LocalizedStrings x:Key="LocalizedStrings" />
             <viewservices:ViewModelLocator x:Key="VMLocator" />
-            
-        </ResourceDictionary>        
+
+            <ControlTemplate x:Key="ListPickerFilterTemplate"
+                             TargetType="toolkit:ListPicker">
+                <StackPanel>
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="PickerStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Highlighted" />
+                            <VisualState x:Name="Disabled" />
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                    <ContentControl Content="{TemplateBinding Header}"
+                                    ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                    Foreground="{StaticResource PhoneSubtleBrush}"
+                                    FontSize="{StaticResource PhoneFontSizeNormal}"
+                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    Margin="0 0 0 8" />
+                    <Grid>
+                        <Border x:Name="Border"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="0">
+                            <UserControl x:Name="UserControl"
+                                         Foreground="{TemplateBinding Foreground}">
+                                <StackPanel>
+                                    <TextBlock x:Name="MultipleSelectionModeSummary"
+                                               Margin="8 8 0 8" />
+                                    <Canvas x:Name="ItemsPresenterHost"
+                                            MinHeight="46">
+                                        <ItemsPresenter x:Name="ItemsPresenter">
+                                            <ItemsPresenter.RenderTransform>
+                                                <TranslateTransform x:Name="ItemsPresenterTranslateTransform" />
+                                            </ItemsPresenter.RenderTransform>
+                                        </ItemsPresenter>
+                                    </Canvas>
+                                </StackPanel>
+                            </UserControl>
+                        </Border>
+                    </Grid>
+                </StackPanel>
+            </ControlTemplate>
+
+        </ResourceDictionary>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>
         <!--Required object that handles lifetime events for the application-->
-        <shell:PhoneApplicationService
-            Launching="Application_Launching" Closing="Application_Closing"
-            Activated="Application_Activated" Deactivated="Application_Deactivated"/>
+        <shell:PhoneApplicationService Launching="Application_Launching"
+                                       Closing="Application_Closing"
+                                       Activated="Application_Activated"
+                                       Deactivated="Application_Deactivated" />
     </Application.ApplicationLifetimeObjects>
 
 </Application>

@@ -10,7 +10,7 @@ namespace Epiphany.Model.Adapter
     {
         public BookModel Convert(GoodreadsBook item)
         {
-            throw new NotImplementedException();
+            return new BookModel(item);
         }
     }
 }

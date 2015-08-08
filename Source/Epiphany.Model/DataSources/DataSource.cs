@@ -1,4 +1,5 @@
-﻿using Epiphany.Model.Web;
+﻿using Epiphany.Logging;
+using Epiphany.Model.Web;
 using Epiphany.Xml;
 using System;
 using System.Collections.Generic;
@@ -43,8 +44,9 @@ namespace Epiphany.Model.DataSources
                 T item = GetItem(response);
                 return item;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Log.Instance.Error(ex.StackTrace);
                 throw new ModelException(ModelExceptionType.ParseError);
             }
         }

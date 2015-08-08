@@ -209,13 +209,18 @@ namespace Epiphany.Model
             get
             {
                 IList<AuthorModel> authors = new List<AuthorModel>();
-                if (this.book.Authors != null)
+                if (this.book.Authors != null && this.book.Authors.Count > 0)
                 {
                     foreach (GoodreadsAuthor author in this.book.Authors)
                     {
                         authors.Add(new AuthorModel(author, null));
                     }
                 }
+                else if (this.book.Author != null)
+                {
+                    authors.Add(new AuthorModel(this.book.Author, null));
+                }
+
                 return authors;
             }
         }

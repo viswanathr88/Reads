@@ -44,5 +44,10 @@ namespace Epiphany.View.Services
         {
             get;
         }
+
+        ISearchViewModel Search
+        {
+            get;
+        }
     }
 }

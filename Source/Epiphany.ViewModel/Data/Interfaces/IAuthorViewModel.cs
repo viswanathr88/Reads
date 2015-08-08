@@ -1,7 +1,7 @@
 ﻿
 namespace Epiphany.ViewModel
 {
-    public interface IBookViewModel : IDataViewModel
+    public interface IAuthorViewModel : IDataViewModel
     {
         int Id
         {

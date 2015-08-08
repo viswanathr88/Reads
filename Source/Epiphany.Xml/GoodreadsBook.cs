@@ -28,6 +28,15 @@ namespace Epiphany.Xml
             set;
         }
 
+        // Sometimes, books can have just an author and no author collection
+        // This should be used only when Authors.Count = 0
+        [XmlElement("author")]
+        public GoodreadsAuthor Author
+        {
+            get;
+            set;
+        }
+
         [XmlElement("isbn")]
         public string ISBN
         {

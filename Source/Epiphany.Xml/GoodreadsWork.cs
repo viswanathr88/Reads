@@ -12,13 +12,6 @@ namespace Epiphany.Xml
             set;
         }
 
-        [XmlElement("best_book_id")]
-        public int BestBookId
-        {
-            get;
-            set;
-        }
-
         [XmlElement("books_count")]
         public string BooksCount
         {
@@ -68,13 +61,6 @@ namespace Epiphany.Xml
             set;
         }
 
-        [XmlElement("best_book")]
-        public GoodreadsBook BestBook
-        {
-            get;
-            set;
-        }
-
         [XmlElement("average_rating")]
         public string AverageRating
         {
@@ -98,6 +84,13 @@ namespace Epiphany.Xml
 
         [XmlElement("original_publication_year")]
         public string OriginalPublicationYear
+        {
+            get;
+            set;
+        }
+
+        [XmlElement("best_book")]
+        public GoodreadsBook BestBook
         {
             get;
             set;
