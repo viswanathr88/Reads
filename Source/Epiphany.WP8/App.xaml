@@ -26,7 +26,7 @@
 
             <ControlTemplate x:Key="ListPickerFilterTemplate"
                              TargetType="toolkit:ListPicker">
-                <StackPanel>
+                <Grid>
                     <VisualStateManager.VisualStateGroups>
                         <VisualStateGroup x:Name="PickerStates">
                             <VisualState x:Name="Normal" />
@@ -34,35 +34,44 @@
                             <VisualState x:Name="Disabled" />
                         </VisualStateGroup>
                     </VisualStateManager.VisualStateGroups>
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
                     <ContentControl Content="{TemplateBinding Header}"
                                     ContentTemplate="{TemplateBinding HeaderTemplate}"
                                     Foreground="{StaticResource PhoneSubtleBrush}"
                                     FontSize="{StaticResource PhoneFontSizeNormal}"
                                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                    Margin="0 0 0 8" />
-                    <Grid>
-                        <Border x:Name="Border"
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="0">
-                            <UserControl x:Name="UserControl"
-                                         Foreground="{TemplateBinding Foreground}">
-                                <StackPanel>
-                                    <TextBlock x:Name="MultipleSelectionModeSummary"
-                                               Margin="8 8 0 8" />
-                                    <Canvas x:Name="ItemsPresenterHost"
-                                            MinHeight="46">
-                                        <ItemsPresenter x:Name="ItemsPresenter">
-                                            <ItemsPresenter.RenderTransform>
-                                                <TranslateTransform x:Name="ItemsPresenterTranslateTransform" />
-                                            </ItemsPresenter.RenderTransform>
-                                        </ItemsPresenter>
-                                    </Canvas>
-                                </StackPanel>
-                            </UserControl>
-                        </Border>
-                    </Grid>
-                </StackPanel>
+                                    Margin="0 0 0 8"
+                                    Grid.Column="0"
+                                    VerticalAlignment="Top"
+                                    VerticalContentAlignment="Top"/>
+
+                    <Border x:Name="Border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="0"
+                            Grid.Column="1">
+                        <UserControl x:Name="UserControl"
+                                     Foreground="{TemplateBinding Foreground}">
+                            <StackPanel Margin="0">
+                                <TextBlock x:Name="MultipleSelectionModeSummary"
+                                           Margin="0" />
+                                <Canvas x:Name="ItemsPresenterHost"
+                                        MinHeight="46">
+                                    <ItemsPresenter x:Name="ItemsPresenter">
+                                        <ItemsPresenter.RenderTransform>
+                                            <TranslateTransform x:Name="ItemsPresenterTranslateTransform" />
+                                        </ItemsPresenter.RenderTransform>
+                                    </ItemsPresenter>
+                                </Canvas>
+                            </StackPanel>
+                        </UserControl>
+                    </Border>
+                </Grid>
             </ControlTemplate>
 
         </ResourceDictionary>

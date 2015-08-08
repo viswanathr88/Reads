@@ -119,10 +119,14 @@
     <Compile Include="Converters\UpperCaseConverter.cs" />
     <Compile Include="Controls\DeferredContentPresenter.cs" />
     <Compile Include="DesignData\DesignAddBookViewModel.cs" />
+    <Compile Include="DesignData\DesignAuthorItemViewModel.cs" />
+    <Compile Include="DesignData\DesignBookItemViewModel.cs" />
     <Compile Include="DesignData\DesignEventsViewModel.cs" />
     <Compile Include="DesignData\DesignFriendsViewModel.cs" />
     <Compile Include="DesignData\DesignLogonViewModel.cs" />
     <Compile Include="DesignData\DesignProfileViewModel.cs" />
+    <Compile Include="DesignData\DesignSearchItemViewModel.cs" />
+    <Compile Include="DesignData\DesignSearchViewModel.cs" />
     <Compile Include="Resources\LocalizedStrings.cs" />
     <Compile Include="Services\AppRateService.cs" />
     <Compile Include="Services\AuthService.cs" />

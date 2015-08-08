@@ -165,7 +165,7 @@ namespace Epiphany.Model.Services
             //
             IDictionary<string, object> headers = new Dictionary<string, object>();
             headers["q"] = term;
-            headers["search[field]"] = type.ToString();
+            headers["search[field]"] = type.ToString().ToLower();
             //
             // Create the data source for the collection
             //

@@ -1,6 +1,7 @@
 ﻿using Epiphany.Model;
 using Epiphany.Model.Services;
 using Epiphany.ViewModel.Commands;
+using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
 using System;
 using System.Collections.Generic;
@@ -13,33 +14,31 @@ namespace Epiphany.ViewModel
     public class SearchViewModel : DataViewModel, ISearchViewModel
     {
         private IList<BookSearchType> searchFilters;
-        private IList<SearchResultItemViewModel> searchResults;
+        private IList<ISearchResultItemViewModel> searchResults;
         private BookSearchType selectedFilter;
         private SearchQuery previousQuery;
         private bool hasResults = true;        
-        private SearchResultItemViewModel selectedResult;
+        private ISearchResultItemViewModel selectedResult;
         private SearchQuery query;
         private string searchTerm;
         private const int itemsCount = 20;
 
-        // commands
         private readonly IAsyncCommand<IEnumerable<WorkModel>, SearchQuery> searchCommand;
-        private readonly ICommand<BookModel> showBookCommand;
-
+        private readonly ICommand<IBookItemViewModel> showBookCommand;
         private readonly INavigationService navService;
 
         public SearchViewModel(IBookService bookService, INavigationService navService)
         {
             this.navService = navService;
 
-            SearchResults = new ObservableCollection<SearchResultItemViewModel>();
+            SearchResults = new ObservableCollection<ISearchResultItemViewModel>();
             SearchFilters = Enum.GetValues(typeof(BookSearchType)).Cast<BookSearchType>().ToList();
 
             this.searchCommand = new SearchCommand(bookService, itemsCount);
             this.searchCommand.Executing += OnCommandExecuting;
             this.searchCommand.Executed += OnCommandExecuted;
 
-            this.showBookCommand = new ShowBookCommand(navService);
+            this.showBookCommand = new ShowBookFromItemCommand(navService);
 
             this.selectedFilter = BookSearchType.All;
             query = new SearchQuery(this.searchTerm, this.selectedFilter);
@@ -92,7 +91,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<SearchResultItemViewModel> SearchResults
+        public IList<ISearchResultItemViewModel> SearchResults
         {
             get { return this.searchResults; }
             private set
@@ -103,7 +102,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public SearchResultItemViewModel SelectedResult
+        public ISearchResultItemViewModel SelectedResult
         {
             get { return this.selectedResult; }
             set

@@ -19,6 +19,15 @@ namespace Epiphany.View
             {
                 this.searchBox.Focus();
             }
+
+            if (this.DataContext != null)
+            {
+                ISearchViewModel vm = this.DataContext as ISearchViewModel;
+                vm.Search.Executing += (s, args) =>
+                {
+                    this.Focus();
+                };
+            }
         }
     }
 }

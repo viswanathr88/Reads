@@ -32,53 +32,36 @@
         <ProgressBar IsIndeterminate="{Binding IsLoading}"
                      IsEnabled="{Binding IsLoading}"
                      Background="Transparent" />
-        <phone:Pivot Title="{Binding LocalizedResources.ApplicationTitle, Converter={StaticResource ToUpperCaseConverter}, Source={StaticResource LocalizedStrings}}"
+        <phone:Pivot Title="{Binding LocalizedResources.SearchTitle, Converter={StaticResource ToUpperCaseConverter}, Source={StaticResource LocalizedStrings}}"
                      Margin="0,0,5,0"
                      Foreground="{StaticResource PhoneForegroundBrush}"
                      Grid.Row="1">
-            <phone:PivotItem Header="{Binding LocalizedResources.SearchTitle, Source={StaticResource LocalizedStrings}}"
-                             Foreground="{StaticResource PhoneForegroundBrush}">
+            <phone:Pivot.HeaderTemplate>
+                <DataTemplate>
+                    <Grid />
+                </DataTemplate>
+            </phone:Pivot.HeaderTemplate>
+            <phone:PivotItem>
                 <!--ContentPanel - place additional content here-->
                 <Grid x:Name="ContentPanel"
-                      Grid.Row="2"
-                      Margin="8,-20,8,0">
+                      Margin="0,-20,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <toolkit:ListPicker Grid.Row="0"
-                                        ItemsSource="{Binding SearchFilters}"
-                                        Margin="5,-20,20,0"
-                                        ExpansionMode="ExpansionAllowed"
-                                        FullModeHeader="{Binding LocalizedResources.SearchTypeFullModeHeader, Converter={StaticResource ToUpperCaseConverter}, Source={StaticResource LocalizedStrings}}"
-                                        toolkit:TiltEffect.IsTiltEnabled="True"
-                                        Template="{StaticResource ListPickerFilterTemplate}"
-                                        SelectedItem="{Binding SelectedFilter, Mode=TwoWay}">
-                        <toolkit:ListPicker.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding}" />
-                            </DataTemplate>
-                        </toolkit:ListPicker.ItemTemplate>
-                        <toolkit:ListPicker.FullModeItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Margin="0,0,0,17">
-                                    <TextBlock Text="{Binding}"
-                                               FontSize="40"
-                                               Foreground="{StaticResource PhoneForegroundBrush}" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </toolkit:ListPicker.FullModeItemTemplate>
-                    </toolkit:ListPicker>
+
                     <toolkit:PhoneTextBox IsEnabled="True"
-                                          Grid.Row="1"
+                                          Grid.Column="1"
                                           x:Name="searchBox"
                                           Hint="{Binding LocalizedResources.SearchTextBoxHint, Source={StaticResource LocalizedStrings}}"
                                           Text="{Binding SearchTerm, Mode=TwoWay}"
                                           ActionIcon="/Assets/Icons/feature.search.dark.png"
                                           AcceptsReturn="False"
                                           HidesActionItemWhenEmpty="True"
-                                          InputScope="Search">
+                                          InputScope="Search"
+                                          Height="75"
+                                          VerticalAlignment="Center">
                         <i:Interaction.Behaviors>
                             <behaviors:UpdateTextBindingOnPropertyChanged />
                             <behaviors:ReturnPressBehavior Command="{Binding Search}"
@@ -91,6 +74,25 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </toolkit:PhoneTextBox>
+
+                    <toolkit:ListPicker ItemsSource="{Binding SearchFilters}"
+                                        ExpansionMode="ExpansionAllowed"
+                                        FullModeHeader="{Binding LocalizedResources.SearchTypeFullModeHeader, Converter={StaticResource ToUpperCaseConverter}, Source={StaticResource LocalizedStrings}}"
+                                        toolkit:TiltEffect.IsTiltEnabled="True"
+                                        SelectedItem="{Binding SelectedFilter, Mode=TwoWay}"
+                                        Template="{StaticResource ListPickerFilterTemplate}"
+                                        Header="Refine: "
+                                        Grid.Row="1"
+                                        Margin="4, -10, 5, 5">
+                        <toolkit:ListPicker.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" Style="{StaticResource PhoneTextAccentStyle}"
+                                           FontSize="{StaticResource PhoneFontSizeMediumLarge}"
+                                           Margin="8, 5, 0, 0"/>
+                            </DataTemplate>
+                        </toolkit:ListPicker.HeaderTemplate>
+                    </toolkit:ListPicker>
+
                     <controls:LongListSelector Margin="0,15,0,0"
                                                Grid.Row="2"
                                                ItemsSource="{Binding SearchResults}"

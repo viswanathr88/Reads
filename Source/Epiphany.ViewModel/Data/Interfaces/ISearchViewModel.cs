@@ -1,6 +1,7 @@
 ﻿
 using Epiphany.Model;
 using Epiphany.Model.Services;
+using Epiphany.ViewModel.Items;
 using System.Collections.Generic;
 namespace Epiphany.ViewModel
 {
@@ -14,9 +15,9 @@ namespace Epiphany.ViewModel
 
         IList<BookSearchType> SearchFilters { get; }
 
-        IList<SearchResultItemViewModel> SearchResults { get; }
+        IList<ISearchResultItemViewModel> SearchResults { get; }
 
-        SearchResultItemViewModel SelectedResult { get; set; }
+        ISearchResultItemViewModel SelectedResult { get; set; }
 
         bool HasResults { get; }
 

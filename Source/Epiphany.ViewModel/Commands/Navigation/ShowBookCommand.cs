@@ -1,4 +1,5 @@
 ﻿using Epiphany.Model;
+using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
 
 namespace Epiphany.ViewModel.Commands
@@ -25,4 +26,28 @@ namespace Epiphany.ViewModel.Commands
                 .Navigate();
         }
     }
+
+    sealed class ShowBookFromItemCommand : Command<IBookItemViewModel>
+    {
+        private readonly INavigationService navService;
+
+        public ShowBookFromItemCommand(INavigationService navService)
+        {
+            this.navService = navService;
+        }
+
+        public override bool CanExecute(IBookItemViewModel book)
+        {
+            return book.Id >= 0;
+        }
+
+        protected override void Run(IBookItemViewModel book)
+        {
+            this.navService.CreateFor<IBookViewModel>()
+                .AddParam<int>((x) => x.Id, book.Id)
+                .AddParam<string>((x) => x.Name, book.Title)
+                .Navigate();
+        }
+    }
+
 }

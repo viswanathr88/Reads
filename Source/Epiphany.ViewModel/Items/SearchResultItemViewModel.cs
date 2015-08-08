@@ -3,24 +3,24 @@ using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System.Linq;
 
-namespace Epiphany.ViewModel
+namespace Epiphany.ViewModel.Items
 {
-    public class SearchResultItemViewModel : ViewModelBase
+    public sealed class SearchResultItemViewModel : ViewModelBase, ISearchResultItemViewModel
     {
-        private readonly ICommand<BookModel> showBook;
-        private readonly ICommand<AuthorModel> showAuthor;
-        private BookModel book;
-        private AuthorModel author;
+        private readonly ICommand<IBookItemViewModel> showBook;
+        private readonly ICommand<IAuthorItemViewModel> showAuthor;
+        private IBookItemViewModel book;
+        private IAuthorItemViewModel author;
 
         public SearchResultItemViewModel(BookModel book, INavigationService navService)
         {
-            this.showBook = new ShowBookCommand(navService);
-            this.showAuthor = new ShowAuthorCommand(navService);
-            Book = book;
-            Author = book.Authors.FirstOrDefault();
+            this.showBook = new ShowBookFromItemCommand(navService);
+            this.showAuthor = new ShowAuthorFromItemCommand(navService);
+            Book = new BookItemViewModel(book);
+            Author = new AuthorItemViewModel(book.Authors.FirstOrDefault());
         }
 
-        public BookModel Book
+        public IBookItemViewModel Book
         {
             get { return this.book; }
             private set
@@ -31,7 +31,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public AuthorModel Author
+        public IAuthorItemViewModel Author
         {
             get { return this.author; }
             private set
@@ -42,12 +42,12 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public ICommand<BookModel> ShowBook
+        public ICommand<IBookItemViewModel> ShowBook
         {
             get { return this.showBook; }
         }
 
-        public ICommand<AuthorModel> ShowAuthor
+        public ICommand<IAuthorItemViewModel> ShowAuthor
         {
             get { return this.showAuthor; }
         }

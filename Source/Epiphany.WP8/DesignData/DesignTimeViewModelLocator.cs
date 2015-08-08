@@ -56,7 +56,7 @@ namespace Epiphany.View.Services
 
         public ISearchViewModel Search
         {
-            get { return null; }
+            get { return new DesignSearchViewModel(); }
         }
 
         public void Dispose()
