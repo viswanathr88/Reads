@@ -101,5 +101,11 @@ namespace Epiphany.View.Services
         {
             get { return this.locatorImpl.Bookshelves; }
         }
+
+
+        public ISettingsViewModel Settings
+        {
+            get { return this.locatorImpl.Settings; }
+        }
     }
 }

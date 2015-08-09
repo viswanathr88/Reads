@@ -127,6 +127,11 @@ namespace Epiphany.View.Services
             get { return new BookshelvesViewModel(this.serviceFactory.GetBookshelfService(), this.navigationService, this.serviceFactory.GetLogonService().Session); }
         }
 
+        public ISettingsViewModel Settings
+        {
+            get { return new SettingsViewModel(this.appSettings); }
+        }
+
         public void Dispose()
         {
 

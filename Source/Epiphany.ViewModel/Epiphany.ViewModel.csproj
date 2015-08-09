@@ -100,6 +100,7 @@
     <Compile Include="Commands\Navigation\ShowOptionsCommand.cs" />
     <Compile Include="Commands\Navigation\ShowProfileCommand.cs" />
     <Compile Include="Commands\Navigation\ShowSearchCommand.cs" />
+    <Compile Include="Commands\Navigation\ShowSettingsCommand.cs" />
     <Compile Include="Commands\RateAppCommand.cs" />
     <Compile Include="Commands\SaveFeedOptionsCommand.cs" />
     <Compile Include="Commands\SearchCommand.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="Commands\Navigation\ShowFriendsCommand.cs" />
     <Compile Include="Data\ProfileViewModel.cs" />
     <Compile Include="Data\EventsViewModel.cs" />
+    <Compile Include="Data\Interfaces\ISettingsViewModel.cs" />
     <Compile Include="Items\AuthorItemViewModel.cs" />
     <Compile Include="Items\BookItemViewModel.cs" />
     <Compile Include="Items\BookshelfItemViewModel.cs" />
@@ -153,6 +155,7 @@
     <Compile Include="Data\SearchViewModel.cs" />
     <Compile Include="Services\ILocationService.cs" />
     <Compile Include="Services\IResourceLoader.cs" />
+    <Compile Include="Data\SettingsViewModel.cs" />
     <Compile Include="Settings\IAppSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IAppRateService.cs" />

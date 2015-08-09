@@ -18,6 +18,7 @@ namespace Epiphany.ViewModel
         private ILauncherViewModel launcherVM;
 
         private readonly ICommand showAboutCommand;
+        private readonly ICommand showSettingsCommand;
 
         public HomeViewModel(IUserService userService, ILogonService logonService, 
             INavigationService navigationService, IAppSettings settings)
@@ -34,6 +35,7 @@ namespace Epiphany.ViewModel
             this.logonService = logonService;
 
             this.showAboutCommand = new ShowAboutCommand(navigationService);
+            this.showSettingsCommand = new ShowSettingsCommand(navigationService);
         }
 
         public int NewNotificationCount
@@ -79,7 +81,7 @@ namespace Epiphany.ViewModel
 
         public ICommand ShowSettings
         {
-            get { throw new NotImplementedException(); }
+            get { return this.showSettingsCommand; }
         }
 
         public override Task LoadAsync()

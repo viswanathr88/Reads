@@ -326,4 +326,22 @@
   <data name="BooksTitle" xml:space="preserve">
     <value>bookshelves</value>
   </data>
+  <data name="LocationPermissionHeader" xml:space="preserve">
+    <value>Allow Epiphany to use my location</value>
+  </data>
+  <data name="NotificationPreference1" xml:space="preserve">
+    <value>No notifications</value>
+  </data>
+  <data name="NotificationPreference2" xml:space="preserve">
+    <value>Toasts and tile count</value>
+  </data>
+  <data name="NotificationPreference3" xml:space="preserve">
+    <value>Tile count only</value>
+  </data>
+  <data name="NotificationPreferenceHeader" xml:space="preserve">
+    <value>I prefer to receive</value>
+  </data>
+  <data name="EnableTransparentTileHeader" xml:space="preserve">
+    <value>Use Transparent Tile</value>
+  </data>
 </root>

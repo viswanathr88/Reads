@@ -151,6 +151,9 @@
     <Compile Include="Services\UrlLauncher.cs" />
     <Compile Include="Services\ViewLocator.cs" />
     <Compile Include="Services\ViewModelLocator.cs" />
+    <Compile Include="View\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Settings\AppSettings.cs" />
     <Compile Include="Settings\SettingsStore.cs" />
     <Compile Include="View\AboutPage.xaml.cs">
@@ -202,6 +205,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="Controls\Bookshelf.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SettingsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

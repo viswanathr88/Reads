@@ -74,5 +74,11 @@ namespace Epiphany.View.Services
         {
             get { return new DesignBookshelvesViewModel(); }
         }
+
+
+        public ISettingsViewModel Settings
+        {
+            get { throw new NotImplementedException(); }
+        }
     }
 }

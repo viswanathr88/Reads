@@ -5,59 +5,28 @@ namespace Epiphany.View.Services
 {
     interface IViewModelLocator : IDisposable
     {
-        IHomeViewModel Home
-        {
-            get;
-        }
+        IHomeViewModel Home { get; }
 
-        ILogonViewModel Logon
-        {
-            get;
-        }
+        ILogonViewModel Logon { get; }
 
-        IAddBookViewModel AddBook
-        {
-            get;
-        }
+        IAddBookViewModel AddBook { get; }
 
-        IAboutViewModel About
-        {
-            get;
-        }
+        IAboutViewModel About { get; }
 
-        IProfileViewModel Profile
-        {
-            get;
-        }
+        IProfileViewModel Profile { get; }
 
-        IBooksViewModel Books
-        {
-            get;
-        }
+        IBooksViewModel Books { get; }
 
-        IFriendsViewModel Friends
-        {
-            get;
-        }
+        IFriendsViewModel Friends { get; }
 
-        IEventsViewModel Events
-        {
-            get;
-        }
+        IEventsViewModel Events { get; }
 
-        ISearchViewModel Search
-        {
-            get;
-        }
+        ISearchViewModel Search { get; }
 
-        IAuthorViewModel Author
-        {
-            get;
-        }
+        IAuthorViewModel Author { get; }
 
-        IBookshelvesViewModel Bookshelves
-        {
-            get;
-        }
+        IBookshelvesViewModel Bookshelves { get; }
+
+        ISettingsViewModel Settings { get; }
     }
 }

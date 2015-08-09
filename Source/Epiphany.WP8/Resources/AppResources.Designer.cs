@@ -313,6 +313,15 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use Transparent Tile.
+        /// </summary>
+        public static string EnableTransparentTileHeader {
+            get {
+                return ResourceManager.GetString("EnableTransparentTileHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to favorite books.
         /// </summary>
         public static string FavoriteBooksText {
@@ -421,6 +430,15 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Allow Epiphany to use my location.
+        /// </summary>
+        public static string LocationPermissionHeader {
+            get {
+                return ResourceManager.GetString("LocationPermissionHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to location.
         /// </summary>
         public static string LocationText {
@@ -462,6 +480,42 @@ namespace Epiphany.View.Resources {
         public static string NoSearchResultsText {
             get {
                 return ResourceManager.GetString("NoSearchResultsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No notifications.
+        /// </summary>
+        public static string NotificationPreference1 {
+            get {
+                return ResourceManager.GetString("NotificationPreference1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toasts and tile count.
+        /// </summary>
+        public static string NotificationPreference2 {
+            get {
+                return ResourceManager.GetString("NotificationPreference2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tile count only.
+        /// </summary>
+        public static string NotificationPreference3 {
+            get {
+                return ResourceManager.GetString("NotificationPreference3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I prefer to receive.
+        /// </summary>
+        public static string NotificationPreferenceHeader {
+            get {
+                return ResourceManager.GetString("NotificationPreferenceHeader", resourceCulture);
             }
         }
         
