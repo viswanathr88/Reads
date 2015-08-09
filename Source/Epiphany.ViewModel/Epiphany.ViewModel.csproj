@@ -68,13 +68,13 @@
     </Compile>
     <Compile Include="Commands\AddToShelfCommandArgs.cs" />
     <Compile Include="Commands\AddToShelvesCommand.cs" />
+    <Compile Include="Commands\EnumeratorCommand.cs" />
     <Compile Include="Commands\FetchAuthorCommand.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Commands\FetchBookCommand.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Commands\FetchBookshelvesCommand.cs" />
     <Compile Include="Commands\FetchEventsCommand.cs" />
     <Compile Include="Commands\FetchFeedCommand.cs" />
     <Compile Include="Commands\FetchFriendsCommand.cs" />
@@ -105,12 +105,16 @@
     <Compile Include="Commands\SearchCommand.cs" />
     <Compile Include="Data\AboutViewModel.cs" />
     <Compile Include="Data\AddBookViewModel.cs" />
+    <Compile Include="Data\AuthorAttributeViewModel.cs" />
+    <Compile Include="Data\AuthorAttributeViewModelFactory.cs" />
+    <Compile Include="Data\AuthorViewModel.cs" />
     <Compile Include="Data\BooksViewModel.cs" />
     <Compile Include="Data\FeedOptions.cs" />
     <Compile Include="Data\FeedOptionsViewModel.cs" />
     <Compile Include="Data\FeedViewModel.cs" />
     <Compile Include="Data\FriendsViewModel.cs" />
     <Compile Include="Data\HomeViewModel.cs" />
+    <Compile Include="Data\Interfaces\IAuthorAttributeViewModel.cs" />
     <Compile Include="Data\Interfaces\IAuthorViewModel.cs" />
     <Compile Include="Data\Interfaces\IBooksViewModel.cs" />
     <Compile Include="Data\Interfaces\ILauncherViewModel.cs" />
@@ -155,6 +159,7 @@
     <Compile Include="Services\ITimerService.cs" />
     <Compile Include="Services\IUrlLauncher.cs" />
     <Compile Include="Settings\SettingsChangedEventArgs.cs" />
+    <Compile Include="Base\StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Epiphany.Model\Epiphany.Model.csproj">

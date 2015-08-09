@@ -103,6 +103,8 @@
       <DependentUpon>Bookshelf.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\LongListSelector.cs" />
+    <Compile Include="Converters\AuthorAttributeTypeConverter.cs" />
+    <Compile Include="Converters\AuthorAttributeValueConverter.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\DateToVisibilityConverter.cs" />
     <Compile Include="Converters\DoubleToVisibilityConverter.cs" />
@@ -119,7 +121,9 @@
     <Compile Include="Converters\UpperCaseConverter.cs" />
     <Compile Include="Controls\DeferredContentPresenter.cs" />
     <Compile Include="DesignData\DesignAddBookViewModel.cs" />
+    <Compile Include="DesignData\DesignAuthorAttributeViewModel.cs" />
     <Compile Include="DesignData\DesignAuthorItemViewModel.cs" />
+    <Compile Include="DesignData\DesignAuthorViewModel.cs" />
     <Compile Include="DesignData\DesignBookItemViewModel.cs" />
     <Compile Include="DesignData\DesignEventsViewModel.cs" />
     <Compile Include="DesignData\DesignFriendsViewModel.cs" />
@@ -152,6 +156,9 @@
     </Compile>
     <Compile Include="View\AddBookPage.xaml.cs">
       <DependentUpon>AddBookPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AuthorPage.xaml.cs">
+      <DependentUpon>AuthorPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\BooksPage.xaml.cs">
       <DependentUpon>BooksPage.xaml</DependentUpon>
@@ -190,6 +197,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="Controls\Bookshelf.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AuthorPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

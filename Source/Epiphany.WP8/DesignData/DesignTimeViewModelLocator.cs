@@ -59,6 +59,11 @@ namespace Epiphany.View.Services
             get { return new DesignSearchViewModel(); }
         }
 
+        public IAuthorViewModel Author
+        {
+            get { return new DesignAuthorViewModel(); }
+        }
+
         public void Dispose()
         {
 

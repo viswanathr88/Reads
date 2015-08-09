@@ -49,7 +49,7 @@ namespace Epiphany.ViewModel
             this.fetchBookCommand.Executing += OnCommandExecuting;
             this.fetchBookCommand.Executed += OnFetchBookExecuted;
 
-            this.fetchBookshelvesCommand = new FetchBookshelvesCommand(bookshelfService);
+            this.fetchBookshelvesCommand = new EnumeratorCommand<BookshelfModel>(10);
             this.fetchBookshelvesCommand.Executing += OnCommandExecuting;
             this.fetchBookshelvesCommand.Executed += OnFetchBookshelvesExecuted;
 

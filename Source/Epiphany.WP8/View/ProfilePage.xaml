@@ -20,7 +20,7 @@
                 shell:SystemTray.IsVisible="True"
                 shell:SystemTray.Opacity="0"
                 DataContext="{Binding Profile, Source={StaticResource VMLocator}}">
-    
+
     <toolkit:TransitionService.NavigationInTransition>
         <toolkit:NavigationInTransition>
             <toolkit:NavigationInTransition.Backward>
@@ -38,27 +38,28 @@
             </toolkit:NavigationOutTransition.Forward>
         </toolkit:NavigationOutTransition>
     </toolkit:TransitionService.NavigationOutTransition>
-    
+
     <local:DataPage.Resources>
         <converters:ProfileItemTypeToStringConverter x:Key="ProfileItemTypeToStringConverter" />
         <converters:ProfileItemValueToStringConverter x:Key="ProfileItemValueToStringConverter" />
         <converters:EnabledToForegroundConverter x:Key="EnabledToForegroundConverter" />
     </local:DataPage.Resources>
 
-<Grid x:Name="LayoutRoot"
+    <Grid x:Name="LayoutRoot"
           Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="10" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-    
+
         <!-- progress bar-->
         <ProgressBar IsIndeterminate="{Binding IsLoading}"
                      IsEnabled="{Binding IsLoading}"
                      Foreground="{StaticResource PhoneForegroundBrush}"
                      Background="Transparent" />
 
-        <controls:DeferredContentLoader Grid.Row="1" IsLoaded="{Binding IsLoaded}"
+        <controls:DeferredContentLoader Grid.Row="1"
+                                        IsLoaded="{Binding IsLoaded}"
                                         HorizontalContentAlignment="Stretch"
                                         VerticalContentAlignment="Stretch">
             <controls:DeferredContentLoader.DeferredContentTemplate>
@@ -90,7 +91,7 @@
                                                 <QuadraticEase EasingMode="EaseInOut" />
                                             </DoubleAnimation.EasingFunction>
                                         </DoubleAnimation>
-                                        
+
                                         <DoubleAnimation Storyboard.TargetName="MainPivot"
                                                          Storyboard.TargetProperty="Opacity"
                                                          From="0"
@@ -100,7 +101,7 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </phone:Pivot.Triggers>
-                        
+
                         <!--Pivot item one-->
                         <phone:PivotItem Header="{Binding Path=LocalizedResources.ProfileAboutTitle, Source={StaticResource LocalizedStrings}}"
                                          Foreground="{StaticResource PhoneForegroundBrush}">
@@ -179,7 +180,7 @@
                                                                     NumberOfBooks="{Binding BooksCount}"
                                                                     Background="{StaticResource PhoneAccentBrush}"
                                                                     Foreground="{StaticResource PhoneForegroundBrush}"
-                                                                    Margin="2"/>
+                                                                    Margin="2" />
                                             </DataTemplate>
                                         </controls:LongListSelector.ItemTemplate>
                                     </controls:LongListSelector>

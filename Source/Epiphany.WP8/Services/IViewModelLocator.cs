@@ -49,5 +49,10 @@ namespace Epiphany.View.Services
         {
             get;
         }
+
+        IAuthorViewModel Author
+        {
+            get;
+        }
     }
 }

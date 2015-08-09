@@ -89,5 +89,11 @@ namespace Epiphany.View.Services
         {
             get { return this.locatorImpl.Search; }
         }
+
+
+        public IAuthorViewModel Author
+        {
+            get { return this.locatorImpl.Author; }
+        }
     }
 }

@@ -102,7 +102,6 @@ namespace Epiphany.View.Services
             get { return new BooksViewModel(); }
         }
 
-
         public IFriendsViewModel Friends
         {
             get { return new FriendsViewModel(this.serviceFactory.GetUserService(), this.navigationService, this.resourceLoader); }
@@ -116,6 +115,11 @@ namespace Epiphany.View.Services
         public ISearchViewModel Search
         {
             get { return new SearchViewModel(this.serviceFactory.GetBookService(), this.navigationService); }
+        }
+
+        public IAuthorViewModel Author
+        {
+            get { return new AuthorViewModel(this.serviceFactory.GetAuthorService(), this.serviceFactory.GetBookService(), this.navigationService); }
         }
 
         public void Dispose()

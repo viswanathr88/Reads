@@ -88,11 +88,29 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to go home.
+        /// </summary>
+        public static string AppBarHomeText {
+            get {
+                return ResourceManager.GetString("AppBarHomeText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Menu Item.
         /// </summary>
         public static string AppBarMenuItemText {
             get {
                 return ResourceManager.GetString("AppBarMenuItemText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pin.
+        /// </summary>
+        public static string AppBarPinText {
+            get {
+                return ResourceManager.GetString("AppBarPinText", resourceCulture);
             }
         }
         
@@ -111,6 +129,96 @@ namespace Epiphany.View.Resources {
         public static string ApplicationTitle {
             get {
                 return ResourceManager.GetString("ApplicationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to about.
+        /// </summary>
+        public static string AuthorAboutTitle {
+            get {
+                return ResourceManager.GetString("AuthorAboutTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to average rating.
+        /// </summary>
+        public static string AuthorAverageRating {
+            get {
+                return ResourceManager.GetString("AuthorAverageRating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to books.
+        /// </summary>
+        public static string AuthorBooksTitle {
+            get {
+                return ResourceManager.GetString("AuthorBooksTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to born.
+        /// </summary>
+        public static string AuthorBorn {
+            get {
+                return ResourceManager.GetString("AuthorBorn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to gender.
+        /// </summary>
+        public static string AuthorGender {
+            get {
+                return ResourceManager.GetString("AuthorGender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to hometown.
+        /// </summary>
+        public static string AuthorHometown {
+            get {
+                return ResourceManager.GetString("AuthorHometown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to influences.
+        /// </summary>
+        public static string AuthorInfluences {
+            get {
+                return ResourceManager.GetString("AuthorInfluences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fans.
+        /// </summary>
+        public static string AuthorNumberOfFans {
+            get {
+                return ResourceManager.GetString("AuthorNumberOfFans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to works.
+        /// </summary>
+        public static string AuthorNumberOfWorks {
+            get {
+                return ResourceManager.GetString("AuthorNumberOfWorks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to authors.
+        /// </summary>
+        public static string AuthorsHeaderText {
+            get {
+                return ResourceManager.GetString("AuthorsHeaderText", resourceCulture);
             }
         }
         

@@ -257,4 +257,40 @@
   <data name="SearchTypeFullModeHeader" xml:space="preserve">
     <value>pick a search type</value>
   </data>
+  <data name="AppBarHomeText" xml:space="preserve">
+    <value>go home</value>
+  </data>
+  <data name="AppBarPinText" xml:space="preserve">
+    <value>pin</value>
+  </data>
+  <data name="AuthorAboutTitle" xml:space="preserve">
+    <value>about</value>
+  </data>
+  <data name="AuthorAverageRating" xml:space="preserve">
+    <value>average rating</value>
+  </data>
+  <data name="AuthorBooksTitle" xml:space="preserve">
+    <value>books</value>
+  </data>
+  <data name="AuthorBorn" xml:space="preserve">
+    <value>born</value>
+  </data>
+  <data name="AuthorGender" xml:space="preserve">
+    <value>gender</value>
+  </data>
+  <data name="AuthorHometown" xml:space="preserve">
+    <value>hometown</value>
+  </data>
+  <data name="AuthorInfluences" xml:space="preserve">
+    <value>influences</value>
+  </data>
+  <data name="AuthorNumberOfFans" xml:space="preserve">
+    <value>fans</value>
+  </data>
+  <data name="AuthorNumberOfWorks" xml:space="preserve">
+    <value>works</value>
+  </data>
+  <data name="AuthorsHeaderText" xml:space="preserve">
+    <value>authors</value>
+  </data>
 </root>
