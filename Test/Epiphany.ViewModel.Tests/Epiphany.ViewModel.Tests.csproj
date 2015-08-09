@@ -132,11 +132,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Source\Epiphany.Model\Epiphany.Model.csproj">
+    <ProjectReference Include="..\..\Source\Epiphany.Model\Epiphany.Model.csproj">
       <Project>{d4ededd9-ccd4-43d9-821b-9731c187802e}</Project>
       <Name>Epiphany.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Source\Epiphany.ViewModel\Epiphany.ViewModel.csproj">
+    <ProjectReference Include="..\..\Source\Epiphany.ViewModel\Epiphany.ViewModel.csproj">
       <Project>{50f37359-1dea-47ab-9249-ea864608911c}</Project>
       <Name>Epiphany.ViewModel</Name>
     </ProjectReference>
