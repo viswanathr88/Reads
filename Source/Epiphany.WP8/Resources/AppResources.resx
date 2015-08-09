@@ -293,4 +293,31 @@
   <data name="AuthorsHeaderText" xml:space="preserve">
     <value>authors</value>
   </data>
+  <data name="AppBarAboutText" xml:space="preserve">
+    <value>about</value>
+  </data>
+  <data name="AppBarAddFriendText" xml:space="preserve">
+    <value>add friend</value>
+  </data>
+  <data name="AppBarAddText" xml:space="preserve">
+    <value>add</value>
+  </data>
+  <data name="AppBarCreateText" xml:space="preserve">
+    <value>create</value>
+  </data>
+  <data name="AppBarRefreshText" xml:space="preserve">
+    <value>refresh</value>
+  </data>
+  <data name="AppBarSignOutText" xml:space="preserve">
+    <value>sign out</value>
+  </data>
+  <data name="AppBarSortText" xml:space="preserve">
+    <value>sort</value>
+  </data>
+  <data name="AppBarSubmitText" xml:space="preserve">
+    <value>submit</value>
+  </data>
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>settings</value>
+  </data>
 </root>

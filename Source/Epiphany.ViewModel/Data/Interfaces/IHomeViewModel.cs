@@ -24,5 +24,9 @@ namespace Epiphany.ViewModel
         /// Shows notifications
         /// </summary>
         ICommand ShowNotifications { get; }
+        /// <summary>
+        /// Shows Settings
+        /// </summary>
+        ICommand ShowSettings { get; }
     }
 }

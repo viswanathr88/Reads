@@ -79,11 +79,47 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to about.
+        /// </summary>
+        public static string AppBarAboutText {
+            get {
+                return ResourceManager.GetString("AppBarAboutText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to add friend.
+        /// </summary>
+        public static string AppBarAddFriendText {
+            get {
+                return ResourceManager.GetString("AppBarAddFriendText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to add.
+        /// </summary>
+        public static string AppBarAddText {
+            get {
+                return ResourceManager.GetString("AppBarAddText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to add.
         /// </summary>
         public static string AppBarButtonText {
             get {
                 return ResourceManager.GetString("AppBarButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to create.
+        /// </summary>
+        public static string AppBarCreateText {
+            get {
+                return ResourceManager.GetString("AppBarCreateText", resourceCulture);
             }
         }
         
@@ -120,6 +156,42 @@ namespace Epiphany.View.Resources {
         public static string AppBarRefreshEventsButtonText {
             get {
                 return ResourceManager.GetString("AppBarRefreshEventsButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to refresh.
+        /// </summary>
+        public static string AppBarRefreshText {
+            get {
+                return ResourceManager.GetString("AppBarRefreshText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to sign out.
+        /// </summary>
+        public static string AppBarSignOutText {
+            get {
+                return ResourceManager.GetString("AppBarSignOutText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to sort.
+        /// </summary>
+        public static string AppBarSortText {
+            get {
+                return ResourceManager.GetString("AppBarSortText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to submit.
+        /// </summary>
+        public static string AppBarSubmitText {
+            get {
+                return ResourceManager.GetString("AppBarSubmitText", resourceCulture);
             }
         }
         
@@ -516,6 +588,15 @@ namespace Epiphany.View.Resources {
         public static string SearchTypeFullModeHeader {
             get {
                 return ResourceManager.GetString("SearchTypeFullModeHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to settings.
+        /// </summary>
+        public static string SettingsTitle {
+            get {
+                return ResourceManager.GetString("SettingsTitle", resourceCulture);
             }
         }
         

@@ -8,6 +8,7 @@
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                 xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
                 xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                xmlns:appbar="clr-namespace:BindableApplicationBar;assembly=BindableApplicationBar"
                 mc:Ignorable="d"
                 FontFamily="{StaticResource PhoneFontFamilyNormal}"
                 FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -16,7 +17,7 @@
                 Orientation="Portrait"
                 shell:SystemTray.IsVisible="True"
                 DataContext="{Binding Home, Source={StaticResource VMLocator}}">
-    
+
     <toolkit:TransitionService.NavigationInTransition>
         <toolkit:NavigationInTransition>
             <toolkit:NavigationInTransition.Forward>
@@ -218,5 +219,23 @@
             </phone:PivotItem>
         </phone:Pivot>
     </Grid>
+
+    <appbar:Bindable.ApplicationBar>
+        <appbar:BindableApplicationBar IsMenuEnabled="True"
+                                       IsMenuVisible="True"
+                                       Mode="Minimized"
+                                       BindableOpacity="0.999">
+            <appbar:BindableApplicationBar.MenuItems>
+                <appbar:BindableApplicationBarMenuItem IsEnabled="True"
+                                                       Text="{Binding Path=LocalizedResources.AppBarRefreshText, Source={StaticResource LocalizedStrings}}"
+                                                       Command="{Binding Path=FeedViewModel.FetchFeed}" />
+                <appbar:BindableApplicationBarMenuItem Text="{Binding Path=LocalizedResources.SettingsTitle, Source={StaticResource LocalizedStrings}}"
+                                                       Command="{Binding ShowSettings}" />
+                <appbar:BindableApplicationBarMenuItem IsEnabled="True"
+                                                       Text="{Binding Path=LocalizedResources.AppBarAboutText, Source={StaticResource LocalizedStrings}}"
+                                                       Command="{Binding ShowAbout}" />
+            </appbar:BindableApplicationBar.MenuItems>
+        </appbar:BindableApplicationBar>
+    </appbar:Bindable.ApplicationBar>
 
 </local:DataPage>

@@ -1,4 +1,5 @@
 ﻿using Epiphany.Model.Services;
+using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace Epiphany.ViewModel
         private IFeedViewModel feedViewModel;
         private ILauncherViewModel launcherVM;
 
+        private readonly ICommand showAboutCommand;
+
         public HomeViewModel(IUserService userService, ILogonService logonService, 
             INavigationService navigationService, IAppSettings settings)
         {
@@ -29,6 +32,8 @@ namespace Epiphany.ViewModel
             this.navigationService = navigationService;
             this.appSettings = settings;
             this.logonService = logonService;
+
+            this.showAboutCommand = new ShowAboutCommand(navigationService);
         }
 
         public int NewNotificationCount
@@ -68,6 +73,11 @@ namespace Epiphany.ViewModel
         }
 
         public ICommand ShowAbout
+        {
+            get { return this.showAboutCommand; }
+        }
+
+        public ICommand ShowSettings
         {
             get { throw new NotImplementedException(); }
         }
