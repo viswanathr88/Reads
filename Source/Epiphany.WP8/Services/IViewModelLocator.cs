@@ -54,5 +54,10 @@ namespace Epiphany.View.Services
         {
             get;
         }
+
+        IBookshelvesViewModel Bookshelves
+        {
+            get;
+        }
     }
 }

@@ -320,4 +320,10 @@
   <data name="SettingsTitle" xml:space="preserve">
     <value>settings</value>
   </data>
+  <data name="AddBookshelfButtonText" xml:space="preserve">
+    <value>add</value>
+  </data>
+  <data name="BooksTitle" xml:space="preserve">
+    <value>bookshelves</value>
+  </data>
 </root>

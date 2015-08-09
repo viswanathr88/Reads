@@ -68,5 +68,11 @@ namespace Epiphany.View.Services
         {
 
         }
+
+
+        public IBookshelvesViewModel Bookshelves
+        {
+            get { return new DesignBookshelvesViewModel(); }
+        }
     }
 }

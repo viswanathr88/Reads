@@ -1,0 +1,95 @@
+﻿<local:DataPage x:Class="Epiphany.View.BookshelvesPage"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:local="clr-namespace:Epiphany.View"
+                xmlns:controls="clr-namespace:Epiphany.View.Controls"
+                xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                xmlns:appbar="clr-namespace:BindableApplicationBar;assembly=BindableApplicationBar"
+                xmlns:behaviors="clr-namespace:Epiphany.View.Behaviors"
+                xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                FontSize="{StaticResource PhoneFontSizeNormal}"
+                Foreground="{StaticResource PhoneForegroundBrush}"
+                SupportedOrientations="Portrait"
+                Orientation="Portrait"
+                mc:Ignorable="d"
+                shell:SystemTray.IsVisible="True"
+                shell:SystemTray.Opacity="0"
+                shell:SystemTray.BackgroundColor="{StaticResource PhoneBackgroundColor}"
+                Background="{StaticResource PhoneBackgroundBrush}"
+                DataContext="{Binding Bookshelves, Source={StaticResource VMLocator}}">
+    
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!-- progress bar-->
+        <ProgressBar IsIndeterminate="{Binding IsLoading}"
+                     IsEnabled="{Binding IsLoading}"
+                     Foreground="{StaticResource PhoneForegroundBrush}"
+                     Background="Transparent" />
+        <phone:Pivot Grid.Row="1"
+                     Title="{Binding Name, Converter={StaticResource ToUpperCaseConverter}}"
+                     Margin="0,25,0,0"
+                     Foreground="{StaticResource PhoneForegroundBrush}">
+            <phone:Pivot.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding BindsDirectlyToSource=True, Converter={StaticResource ToUpperCaseConverter}}"
+                               Style="{StaticResource PhoneTextTitle2Style}"
+                               Margin="2,15,15,0" />
+                </DataTemplate>
+            </phone:Pivot.HeaderTemplate>
+            <!--Pivot item one-->
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.BooksTitle, Source={StaticResource LocalizedStrings}}"
+                             Foreground="{StaticResource PhoneForegroundBrush}">
+                <ScrollViewer>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="75" />
+                        </Grid.RowDefinitions>
+                        <controls:LongListSelector ItemsSource="{Binding Bookshelves}"
+                                                   SelectedItem="{Binding SelectedBookshelf, Mode=TwoWay}"
+                                                   toolkit:TiltEffect.IsTiltEnabled="true"
+                                                   ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                                   LayoutMode="Grid"
+                                                   GridCellSize="200,200">
+                            <i:Interaction.Behaviors>
+                                <behaviors:IncrementalLoadingBehavior Command="{Binding FetchMyShelves}"
+                                                                      CommandParameter="{Binding BookshelfEnumerator}" />
+                            </i:Interaction.Behaviors>
+                            <controls:LongListSelector.ItemTemplate>
+                                <DataTemplate>
+                                    <controls:Bookshelf ShelfName="{Binding Name}"
+                                                        NumberOfBooks="{Binding NumberOfBooks}"
+                                                        Background="{StaticResource PhoneAccentBrush}"
+                                                        Foreground="{StaticResource PhoneForegroundBrush}"
+                                                        Margin="2" />
+                                </DataTemplate>
+                            </controls:LongListSelector.ItemTemplate>
+                        </controls:LongListSelector>
+                        
+                        <Grid Grid.Row="1" />
+                    </Grid>
+                </ScrollViewer>
+            </phone:PivotItem>
+        </phone:Pivot>
+    </Grid>
+    
+    <appbar:Bindable.ApplicationBar>
+        <appbar:BindableApplicationBar IsVisible="{Binding IsLoaded}"
+                                       BindableOpacity="0.999">
+            <appbar:BindableApplicationBarButton IconUri="/Assets/Icons/add.png"
+                                                 Text="{Binding Path=LocalizedResources.AddBookshelfButtonText, Source={StaticResource LocalizedStrings}}"
+                                                 Command="{Binding ShowAddShelf}" />
+            
+        </appbar:BindableApplicationBar>
+    </appbar:Bindable.ApplicationBar>
+    
+</local:DataPage>

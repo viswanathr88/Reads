@@ -125,6 +125,8 @@
     <Compile Include="DesignData\DesignAuthorItemViewModel.cs" />
     <Compile Include="DesignData\DesignAuthorViewModel.cs" />
     <Compile Include="DesignData\DesignBookItemViewModel.cs" />
+    <Compile Include="DesignData\DesignBookshelfItemViewModel.cs" />
+    <Compile Include="DesignData\DesignBookshelvesViewModel.cs" />
     <Compile Include="DesignData\DesignEventsViewModel.cs" />
     <Compile Include="DesignData\DesignFriendsViewModel.cs" />
     <Compile Include="DesignData\DesignLogonViewModel.cs" />
@@ -159,6 +161,9 @@
     </Compile>
     <Compile Include="View\AuthorPage.xaml.cs">
       <DependentUpon>AuthorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BookshelvesPage.xaml.cs">
+      <DependentUpon>BookshelvesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\BooksPage.xaml.cs">
       <DependentUpon>BooksPage.xaml</DependentUpon>
@@ -201,6 +206,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\AuthorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\BookshelvesPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

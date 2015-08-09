@@ -33,7 +33,7 @@ namespace Epiphany.Model.Services
             // Create the headers
             //
             IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["id"] = userId;
+            headers["user_id"] = userId;
             //
             // Create the data source for the collection
             //

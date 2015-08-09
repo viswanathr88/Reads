@@ -108,6 +108,7 @@
     <Compile Include="Data\AuthorAttributeViewModel.cs" />
     <Compile Include="Data\AuthorAttributeViewModelFactory.cs" />
     <Compile Include="Data\AuthorViewModel.cs" />
+    <Compile Include="Data\BookshelvesViewModel.cs" />
     <Compile Include="Data\BooksViewModel.cs" />
     <Compile Include="Data\FeedOptions.cs" />
     <Compile Include="Data\FeedOptionsViewModel.cs" />
@@ -138,10 +139,12 @@
     <Compile Include="Data\EventsViewModel.cs" />
     <Compile Include="Items\AuthorItemViewModel.cs" />
     <Compile Include="Items\BookItemViewModel.cs" />
+    <Compile Include="Items\BookshelfItemViewModel.cs" />
     <Compile Include="Items\CustomBookshelfItemViewModel.cs" />
     <Compile Include="Items\FeedItemViewModel.cs" />
     <Compile Include="Items\IAuthorItemViewModel.cs" />
     <Compile Include="Items\IBookItemViewModel.cs" />
+    <Compile Include="Items\IBookshelfItemViewModel.cs" />
     <Compile Include="Items\ISearchResultItemViewModel.cs" />
     <Compile Include="Items\ProfileItemViewModel.cs" />
     <Compile Include="Items\ProfileItemViewModelFactory.cs" />

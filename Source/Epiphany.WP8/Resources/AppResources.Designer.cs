@@ -61,6 +61,15 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to add.
+        /// </summary>
+        public static string AddBookshelfButtonText {
+            get {
+                return ResourceManager.GetString("AddBookshelfButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to add to shelf.
         /// </summary>
         public static string AddToShelfTitle {
@@ -291,6 +300,15 @@ namespace Epiphany.View.Resources {
         public static string AuthorsHeaderText {
             get {
                 return ResourceManager.GetString("AuthorsHeaderText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to bookshelves.
+        /// </summary>
+        public static string BooksTitle {
+            get {
+                return ResourceManager.GetString("BooksTitle", resourceCulture);
             }
         }
         
