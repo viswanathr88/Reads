@@ -13,6 +13,7 @@ namespace Epiphany.ViewModel
         private readonly INavigationService navigationService;
         private readonly IAppSettings appSettings;
         private readonly ILogonService logonService;
+        private readonly IResourceLoader resourceLoader;
 
         private IFeedViewModel feedViewModel;
         private ILauncherViewModel launcherVM;
@@ -21,10 +22,10 @@ namespace Epiphany.ViewModel
         private readonly ICommand showSettingsCommand;
 
         public HomeViewModel(IUserService userService, ILogonService logonService, 
-            INavigationService navigationService, IAppSettings settings)
+            INavigationService navigationService, IAppSettings settings, IResourceLoader resourceLoader)
         {
             if (userService == null || navigationService == null 
-                || settings == null || logonService == null)
+                || settings == null || logonService == null || resourceLoader == null)
             {
                 throw new ArgumentNullException("services");
             }
@@ -33,6 +34,7 @@ namespace Epiphany.ViewModel
             this.navigationService = navigationService;
             this.appSettings = settings;
             this.logonService = logonService;
+            this.resourceLoader = resourceLoader;
 
             this.showAboutCommand = new ShowAboutCommand(navigationService);
             this.showSettingsCommand = new ShowSettingsCommand(navigationService);
@@ -43,13 +45,13 @@ namespace Epiphany.ViewModel
             get { throw new NotImplementedException(); }
         }
 
-        public IFeedViewModel FeedViewModel
+        public IFeedViewModel Feed
         {
             get
             {
                 if (this.feedViewModel == null)
                 {
-                    this.feedViewModel = new FeedViewModel(userService, navigationService, appSettings);
+                    this.feedViewModel = new FeedViewModel(userService, navigationService, appSettings, resourceLoader);
                 }
 
                 return this.feedViewModel;

@@ -1,5 +1,6 @@
 ﻿using Epiphany.Model;
 using Epiphany.Model.Authentication;
+using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
 
 namespace Epiphany.ViewModel.Commands
@@ -51,4 +52,26 @@ namespace Epiphany.ViewModel.Commands
         }
     }
 
+    sealed class ShowProfileFromItemCommand : Command<IUserItemViewModel>
+    {
+        private readonly INavigationService navService;
+
+        public ShowProfileFromItemCommand(INavigationService navService)
+        {
+            this.navService = navService;
+        }
+
+        public override bool CanExecute(IUserItemViewModel user)
+        {
+            return user.Id >= 0;
+        }
+
+        protected override void Run(IUserItemViewModel user)
+        {
+            this.navService.CreateFor<IProfileViewModel>()
+                .AddParam<int>((x) => x.Id, user.Id)
+                .AddParam<string>((x) => x.Name, user.Name)
+                .Navigate();
+        }
+    }
 }

@@ -1,23 +1,19 @@
 ﻿using Epiphany.Xml;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Epiphany.Model
 {
     public sealed class ReadStatusFeedItemModel : FeedItemModel
     {
-        private readonly GoodreadsReadStatus update;
+        private readonly GoodreadsReadStatus readStatus;
 
         public ReadStatusFeedItemModel(GoodreadsUpdate update)
             : base(update)
         {
-            this.update = update.Object.ReadStatus;
-            if (this.update == null)
+            this.readStatus = update.Object.ReadStatus;
+            if (this.readStatus == null)
             {
-                this.update = new GoodreadsReadStatus();
+                this.readStatus = new GoodreadsReadStatus();
             }
         }
 
@@ -30,7 +26,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return Converter.ToInt(this.update.ReviewId, 0);
+                return Converter.ToInt(this.readStatus.ReviewId, 0);
             }
         }
 
@@ -38,7 +34,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return this.update.Status;
+                return this.readStatus.Status;
             }
         }
 
@@ -46,7 +42,15 @@ namespace Epiphany.Model
         {
             get
             {
-                return Converter.ToDateTime(this.update.UpdatedAt);
+                return Converter.ToDateTime(this.readStatus.UpdatedAt);
+            }
+        }
+
+        public BookModel Book
+        {
+            get
+            {
+                return new BookModel(this.readStatus.Review.Book);
             }
         }
 
@@ -54,7 +58,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return Converter.ToInt(this.update.UserId, 0);
+                return Converter.ToInt(this.readStatus.UserId, 0);
             }
         }
     }

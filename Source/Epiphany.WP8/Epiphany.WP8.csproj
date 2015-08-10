@@ -102,7 +102,9 @@
     <Compile Include="Controls\Bookshelf.xaml.cs">
       <DependentUpon>Bookshelf.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\FeedItemTemplateSelector.cs" />
     <Compile Include="Controls\LongListSelector.cs" />
+    <Compile Include="Controls\TemplateSelector.cs" />
     <Compile Include="Converters\AuthorAttributeTypeConverter.cs" />
     <Compile Include="Converters\AuthorAttributeValueConverter.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
@@ -118,6 +120,7 @@
     <Compile Include="Converters\ProfileItemTypeToStringConverter.cs" />
     <Compile Include="Converters\ProfileItemValueToStringConverter.cs" />
     <Compile Include="Converters\StringToVisibilityConverter.cs" />
+    <Compile Include="Converters\TimeToNowConverter.cs" />
     <Compile Include="Converters\UpperCaseConverter.cs" />
     <Compile Include="Controls\DeferredContentPresenter.cs" />
     <Compile Include="DesignData\DesignAddBookViewModel.cs" />
@@ -129,6 +132,7 @@
     <Compile Include="DesignData\DesignBookshelvesViewModel.cs" />
     <Compile Include="DesignData\DesignEventsViewModel.cs" />
     <Compile Include="DesignData\DesignFriendsViewModel.cs" />
+    <Compile Include="DesignData\DesignHomeViewModel.cs" />
     <Compile Include="DesignData\DesignLogonViewModel.cs" />
     <Compile Include="DesignData\DesignProfileViewModel.cs" />
     <Compile Include="DesignData\DesignSearchItemViewModel.cs" />
@@ -205,6 +209,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="Controls\Bookshelf.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DataTemplates.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

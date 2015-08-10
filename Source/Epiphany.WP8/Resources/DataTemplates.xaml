@@ -1,0 +1,532 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
+    <DataTemplate x:Key="FriendFeedItemDataTemplate">
+        <Grid Margin="0,0,0,17">
+            <Border Grid.Row="0"
+                    Background="{StaticResource PhoneBackgroundBrush}"
+                    BorderThickness="0"
+                    CornerRadius="1">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Tap">
+                                <i:InvokeCommandAction Command="{Binding ShowProfile}"
+                                                       CommandParameter="{Binding User}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="53" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Width="48"
+                               Height="48"
+                               MaxHeight="48"
+                               MaxWidth="48"
+                               Source="{Binding Path=User.ImageUrl}"
+                               Grid.Row="0" />
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Style="{StaticResource PhoneTextNormalStyle}"
+                                       Text="{Binding Path=User.Name}"
+                                       FontWeight="SemiBold"
+                                       VerticalAlignment="Center"
+                                       Foreground="{StaticResource PhoneAccentBrush}" />
+                            <TextBlock Grid.Row="1"
+                                       Text="{Binding UpdateTime, Converter={StaticResource TimeToNowConverter}}"
+                                       Style="{StaticResource PhoneTextSubtleStyle}"
+                                       Foreground="{StaticResource PhoneSubtleBrush}" />
+                        </Grid>                        
+                    </Grid>
+                    <Grid Grid.Row="1"
+                          Margin="10,10,0,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding ActionText, StringFormat='\{0\}:'}"
+                                   Style="{StaticResource PhoneTextNormalStyle}"
+                                   Foreground="{StaticResource PhoneForegroundBrush}"
+                                   TextWrapping="Wrap" />
+                        <Grid Grid.Row="1" Margin="12,10,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Tap">
+                                    <i:InvokeCommandAction Command="{Binding ShowProfile}"
+                                                           CommandParameter="{Binding Friend}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                            <Border BorderThickness="0"
+                                    Grid.Column="0"
+                                    Height="48"
+                                    Width="48"
+                                    BorderBrush="{StaticResource PhoneChromeBrush}">
+                                <Image Grid.Column="0"
+                                       Source="{Binding ImageUrl}"
+                                       Height="46"
+                                       Width="46"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center" />
+                            </Border>
+                            <TextBlock Text="{Binding Path=Friend.Name}"
+                                       Foreground="{StaticResource PhoneAccentBrush}"
+                                       FontWeight="Bold"
+                                       VerticalAlignment="Center"
+                                       Grid.Column="1"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="ReadStatusFeedItemDataTemplate">
+        <Grid Margin="0,0,0,17">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Border Background="{StaticResource PhoneBackgroundBrush}"
+                        BorderThickness="0"
+                        CornerRadius="1">
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Tap">
+                                    <i:InvokeCommandAction Command="{Binding ShowProfile}"
+                                                           CommandParameter="{Binding User}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="53" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Width="48"
+                                   Height="48"
+                                   MaxHeight="48"
+                                   MaxWidth="48"
+                                   Source="{Binding Path=User.ImageUrl}"
+                                   Grid.Row="0" />
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <TextBlock Style="{StaticResource PhoneTextNormalStyle}"
+                                           Text="{Binding Path=User.Name}"
+                                           FontWeight="SemiBold"
+                                           VerticalAlignment="Center"
+                                           Foreground="{StaticResource PhoneAccentBrush}" />
+                                <TextBlock Grid.Row="1"
+                                           Text="{Binding UpdateTime, Converter={StaticResource TimeToNowConverter}}"
+                                           Style="{StaticResource PhoneTextSubtleStyle}"
+                                           Foreground="{StaticResource PhoneSubtleBrush}" />
+                            </Grid>                   
+                        </Grid>
+                        <Grid Grid.Row="1"
+                              Margin="10,10,0,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{Binding ActionText, StringFormat='\{0\}:'}"
+                                       Style="{StaticResource PhoneTextNormalStyle}"
+                                       Foreground="{StaticResource PhoneBackgroundBrush}"
+                                       TextWrapping="Wrap" />
+                            <Grid Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="{Binding Path=Book.Title}"
+                                           Style="{StaticResource PhoneTextNormalStyle}"
+                                           Foreground="{StaticResource PhoneAccentBrush}"
+                                           TextWrapping="Wrap"
+                                           FontWeight="Bold">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="Tap">
+                                                <i:InvokeCommandAction Command="{Binding ShowBook}"
+                                                                       CommandParameter="{Binding Book}" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers></TextBlock>
+                                <TextBlock Text="{Binding Path=Book.MainAuthor.Name}"
+                                           Style="{StaticResource PhoneTextNormalStyle}"
+                                           Foreground="{StaticResource PhoneAccentBrush}"
+                                           Grid.Row="1"
+                                           TextWrapping="Wrap"
+                                           FontWeight="SemiBold">
+                                        <i:Interaction.Triggers>
+                                                <i:EventTrigger EventName="Tap">
+                                                    <i:InvokeCommandAction Command="{Binding ShowAuthor}"
+                                                                           CommandParameter="{Binding Path=Book.MainAuthor}" />
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers></TextBlock>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Border Background="{StaticResource PhoneSubtleBrush}"
+                        CornerRadius="1">
+                    <Grid Margin="12,0,0,0"
+                          VerticalAlignment="Center"
+                          HorizontalAlignment="Right">
+                        <TextBlock Text="{Binding LocalizedResources.CommentText, Source={StaticResource LocalizedStrings}}"
+                                   Foreground="{StaticResource PhoneAccentBrush}"
+                                   Style="{StaticResource PhoneTextSubtleStyle}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Tap">
+                                    <i:InvokeCommandAction Command="{Binding ShowReview}"
+                                                           CommandParameter="{Binding BindsDirectlyToSource=True}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </TextBlock>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="UserStatusFeedItemDataTemplate">
+        <Grid Margin="0,0,0,17">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="0" />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Border Background="{StaticResource PhoneBackgroundBrush}"
+                        BorderThickness="0"
+                        CornerRadius="1">
+                    <Grid Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Tap">
+                                    <i:InvokeCommandAction Command="{Binding ShowProfile}"
+                                                           CommandParameter="{Binding User}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="53" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Width="48"
+                                   Height="48"
+                                   MaxHeight="48"
+                                   MaxWidth="48"
+                                   Source="{Binding Path=User.ImageUrl}"
+                                   Grid.Row="0" />
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <TextBlock Style="{StaticResource PhoneTextNormalStyle}"
+                                           Text="{Binding Path=User.Name}"
+                                           FontWeight="SemiBold"
+                                           VerticalAlignment="Center"
+                                           Foreground="{StaticResource PhoneAccentBrush}" />
+                                <TextBlock Grid.Row="1"
+                                           Text="{Binding UpdateTime, Converter={StaticResource TimeToNowConverter}}"
+                                           Style="{StaticResource PhoneTextSubtleStyle}"
+                                           Foreground="{StaticResource PhoneSubtleBrush}" />
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="1"
+                              Margin="10,10,0,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{Binding ActionText, StringFormat='\{0\}:'}"
+                                       Style="{StaticResource PhoneTextNormalStyle}"
+                                       Foreground="{StaticResource PhoneBackgroundBrush}"
+                                       TextWrapping="Wrap" />
+                            <Grid Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="{Binding Path=Book.Title}"
+                                           Style="{StaticResource PhoneTextNormalStyle}"
+                                           Foreground="{StaticResource PhoneAccentBrush}"
+                                           TextWrapping="Wrap"
+                                           FontWeight="Bold">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="Tap">
+                                                <i:InvokeCommandAction Command="{Binding ShowBook}"
+                                                                       CommandParameter="{Binding Book}" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers></TextBlock>
+                                <TextBlock Text="{Binding Path=Book.MainAuthor.Name}"
+                                           Style="{StaticResource PhoneTextNormalStyle}"
+                                           Foreground="{StaticResource PhoneAccentBrush}"
+                                           Grid.Row="1"
+                                           TextWrapping="Wrap"
+                                           FontWeight="SemiBold">
+                                        <i:Interaction.Triggers>
+                                                <i:EventTrigger EventName="Tap">
+                                                    <i:InvokeCommandAction Command="{Binding ShowAuthor}"
+                                                                           CommandParameter="{Binding Path=Book.MainAuthor}" />
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers></TextBlock>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Border Background="{StaticResource PhoneSubtleBrush}"
+                        CornerRadius="1">
+                    <Grid Margin="12,0,0,0"
+                          VerticalAlignment="Center"
+                          HorizontalAlignment="Right">
+                        <TextBlock Text="{Binding LocalizedResources.CommentText, Source={StaticResource LocalizedStrings}}"
+                                   Foreground="{StaticResource PhoneAccentBrush}"
+                                   Style="{StaticResource PhoneTextSubtleStyle}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Tap">
+                                    <i:InvokeCommandAction Command="{Binding ShowReview}"
+                                                           CommandParameter="{Binding BindsDirectlyToSource=True}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </TextBlock>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="ReviewFeedItemDataTemplate">
+        <Grid Margin="0,0,0,17">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0"
+                    Background="{StaticResource PhoneBackgroundBrush}"
+                    BorderThickness="0"
+                    CornerRadius="1">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Tap">
+                                <i:InvokeCommandAction Command="{Binding ShowProfile}"
+                                                       CommandParameter="{Binding User}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="53" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Width="48"
+                               Height="48"
+                               MaxHeight="48"
+                               MaxWidth="48"
+                               Source="{Binding Path=User.ImageUrl}"
+                               Grid.Row="0" />
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Style="{StaticResource PhoneTextNormalStyle}"
+                                       Text="{Binding Path=User.Name}"
+                                       FontWeight="SemiBold"
+                                       VerticalAlignment="Center"
+                                       Foreground="{StaticResource PhoneAccentBrush}" />
+                            <TextBlock Grid.Row="1"
+                                       Text="{Binding UpdateTime, Converter={StaticResource TimeToNowConverter}}"
+                                       Style="{StaticResource PhoneTextSubtleStyle}"
+                                       Foreground="{StaticResource PhoneSubtleBrush}" />
+                        </Grid>                    
+                    </Grid>
+                    <Grid Grid.Row="1"
+                          Margin="10,10,0,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="{Binding ActionText, StringFormat='\{0\}:'}"
+                                   Style="{StaticResource PhoneTextNormalStyle}"
+                                   Foreground="{StaticResource PhoneBackgroundBrush}"
+                                   TextWrapping="Wrap" />
+                        <Grid Grid.Row="1"
+                              Margin="0,10,0,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="96" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Border Width="64"
+                                    Height="96"
+                                    Background="{StaticResource PhoneSubtleBrush}">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <i:InvokeCommandAction Command="{Binding ShowBook}"
+                                                               CommandParameter="{Binding Book}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                                <Image Source="{Binding ImageUrl}"
+                                       Width="96"
+                                       Height="96" />
+                            </Border>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="{Binding Path=Book.Title}"
+                                           Style="{StaticResource PhoneTextNormalStyle}"
+                                           Foreground="{StaticResource PhoneAccentBrush}"
+                                           TextWrapping="Wrap"
+                                           FontWeight="Bold">
+                                            <i:Interaction.Triggers>
+                                                <i:EventTrigger EventName="Tap">
+                                                    <i:InvokeCommandAction Command="{Binding ShowBook}"
+                                                                           CommandParameter="{Binding Book}" />
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers></TextBlock>
+                                <TextBlock Text="{Binding Path=Book.MainAuthor.Name}"
+                                           Style="{StaticResource PhoneTextNormalStyle}"
+                                           Foreground="{StaticResource PhoneAccentBrush}"
+                                           Grid.Row="1"
+                                           TextWrapping="Wrap"
+                                           FontWeight="SemiBold">
+                                            <i:Interaction.Triggers>
+                                                <i:EventTrigger EventName="Tap">
+                                                    <i:InvokeCommandAction Command="{Binding ShowAuthor}"
+                                                                           CommandParameter="{Binding Path=Book.MainAuthor}" />
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers></TextBlock>
+                            </Grid>
+                        </Grid>
+                        <TextBlock Grid.Row="2" 
+                                   Text="{Binding Body}"
+                                   TextWrapping="Wrap"
+                                   Style="{StaticResource PhoneTextNormalStyle}"
+                                   Foreground="{StaticResource PhoneBackgroundBrush}"
+                                   Visibility="{Binding Body, Converter={StaticResource StringToVisibilityConverter}}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Tap">
+                                    <i:InvokeCommandAction Command="{Binding ShowReview}"
+                                                           CommandParameter="{Binding BindsDirectlyToSource=True}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </TextBlock>
+                    </Grid>
+                </Grid>
+            </Border>
+            <Grid Grid.Row="1">
+                <Border Background="{StaticResource PhoneSubtleBrush}"
+                        CornerRadius="1">
+                    <Grid Margin="12,0,0,0"
+                          VerticalAlignment="Center"
+                          HorizontalAlignment="Right">
+                        <TextBlock Text="{Binding LocalizedResources.CommentText, Source={StaticResource LocalizedStrings}}"
+                                   Foreground="{StaticResource PhoneAccentBrush}"
+                                   Style="{StaticResource PhoneTextSubtleStyle}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Tap">
+                                    <i:InvokeCommandAction Command="{Binding ShowReview}"
+                                                           CommandParameter="{Binding BindsDirectlyToSource=True}" />
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </TextBlock>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="EmptyDataTemplate">
+        <Grid />
+    </DataTemplate>
+
+    <DataTemplate x:Key="ReviewItemDataTemplate">
+        <Grid Margin="0,0,0,17">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding Path=User.Name}"
+                           Style="{StaticResource PhoneTextLargeStyle}"
+                           Foreground="{StaticResource PhoneForegroundBrush}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Tap">
+                                <i:InvokeCommandAction Command="{Binding ShowProfile}"
+                                                        CommandParameter="{Binding User}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                </TextBlock>
+
+                <toolkit:Rating Grid.Column="1"
+                                Margin="0,0,10,0"
+                                AllowHalfItemIncrement="True"
+                                ReadOnly="True"
+                                RatingItemCount="5"
+                                Value="{Binding Path=Review.Rating}"
+                                Visibility="{Binding ShowRating, Converter={StaticResource BooleanVisibilityConverter}, FallbackValue=Collapsed}"
+                                Height="30"
+                                Width="150"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Background="{StaticResource PhoneBackgroundBrush}"
+                                Foreground="{StaticResource PhoneForegroundBrush}">
+                    <toolkit:Rating.FilledItemStyle>
+                        <Style TargetType="toolkit:RatingItem">
+                            <Setter Property="Background"
+                                    Value="{StaticResource PhoneForegroundBrush}" />
+                        </Style>
+                    </toolkit:Rating.FilledItemStyle>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Tap">
+                            <i:InvokeCommandAction Command="{Binding ShowReview}"
+                                                   CommandParameter="{Binding Review}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </toolkit:Rating>
+
+            </Grid>
+            <TextBlock Grid.Row="1"
+                       Text="{Binding ReviewTextSummary}"
+                       Style="{StaticResource PhoneTextNormalStyle}"
+                       Foreground="{StaticResource PhoneForegroundBrush}"
+                       TextWrapping="Wrap"
+                       Visibility="{Binding ShowReviewText, Converter={StaticResource BooleanVisibilityConverter}, FallbackValue=Collapsed}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Tap">
+                            <i:InvokeCommandAction Command="{Binding ShowReview}"
+                                                    CommandParameter="{Binding Review}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+            </TextBlock>
+        </Grid>
+
+    </DataTemplate>
+</ResourceDictionary>

@@ -68,6 +68,14 @@
                      Margin="0,25,0,0"
                      Grid.Row="1"
                      Foreground="{StaticResource PhoneForegroundBrush}">
+            <phone:Pivot.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding BindsDirectlyToSource=True, Converter={StaticResource ToUpperCaseConverter}}"
+                               Style="{StaticResource PhoneTextTitle2Style}"
+                               Margin="2,15,15,0" />
+                </DataTemplate>
+            </phone:Pivot.HeaderTemplate>
+            
             <phone:PivotItem Header="{Binding Path=LocalizedResources.FriendsTitle, Source={StaticResource LocalizedStrings}}"
                              Foreground="{StaticResource PhoneForegroundBrush}">
                 <Grid>

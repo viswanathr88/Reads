@@ -9,7 +9,7 @@ namespace Epiphany.View.Services
     {
         public IHomeViewModel Home
         {
-            get { throw new NotImplementedException(); }
+            get { return new DesignHomeViewModel(); }
         }
 
         public ILogonViewModel Logon

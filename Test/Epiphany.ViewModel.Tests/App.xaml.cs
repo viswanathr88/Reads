@@ -164,7 +164,7 @@ namespace Epiphany.ViewModel.Tests
 
         #endregion
 
-        // Initialize the app's font and flow direction as defined in its localized resource strings.
+        // InitializeProperties the app's font and flow direction as defined in its localized resource strings.
         //
         // To ensure that the font of your application is aligned with its supported languages and that the
         // FlowDirection for each of those languages follows its traditional direction, ResourceLanguage

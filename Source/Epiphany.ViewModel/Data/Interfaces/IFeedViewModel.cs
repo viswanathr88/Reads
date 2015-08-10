@@ -1,5 +1,6 @@
 ﻿using Epiphany.Model;
 using Epiphany.ViewModel.Commands;
+using Epiphany.ViewModel.Items;
 using System.Collections.Generic;
 using System.Windows.Input;
 namespace Epiphany.ViewModel
@@ -9,7 +10,7 @@ namespace Epiphany.ViewModel
         /// <summary>
         /// Gets the Feed items
         /// </summary>
-        IList<FeedItemViewModel> Feed { get; }
+        IList<IFeedItemViewModel> Feed { get; }
         /// <summary>
         /// Gets the feed options
         /// </summary>
@@ -17,7 +18,7 @@ namespace Epiphany.ViewModel
         /// <summary>
         /// Fetch the feed items
         /// </summary>
-        ICommand<IEnumerable<FeedItemModel>, VoidType> FetchFeed { get; }
+        IAsyncCommand<IEnumerable<FeedItemModel>, VoidType> FetchFeed { get; }
         /// <summary>
         /// Returns true if there are no feed items
         /// </summary>

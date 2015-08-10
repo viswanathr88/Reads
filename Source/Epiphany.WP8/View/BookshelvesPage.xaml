@@ -49,7 +49,7 @@
             <phone:PivotItem Header="{Binding Path=LocalizedResources.BooksTitle, Source={StaticResource LocalizedStrings}}"
                              Foreground="{StaticResource PhoneForegroundBrush}">
                 <ScrollViewer>
-                    <Grid>
+                    <Grid Margin="12,0,0,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="75" />

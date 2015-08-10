@@ -147,12 +147,15 @@
     <Compile Include="Items\IAuthorItemViewModel.cs" />
     <Compile Include="Items\IBookItemViewModel.cs" />
     <Compile Include="Items\IBookshelfItemViewModel.cs" />
+    <Compile Include="Items\IFeedItemViewModel.cs" />
     <Compile Include="Items\ISearchResultItemViewModel.cs" />
+    <Compile Include="Items\IUserItemViewModel.cs" />
     <Compile Include="Items\ProfileItemViewModel.cs" />
     <Compile Include="Items\ProfileItemViewModelFactory.cs" />
     <Compile Include="Data\SearchQuery.cs" />
     <Compile Include="Items\SearchResultItemViewModel.cs" />
     <Compile Include="Data\SearchViewModel.cs" />
+    <Compile Include="Items\UserItemViewModel.cs" />
     <Compile Include="Services\ILocationService.cs" />
     <Compile Include="Services\IResourceLoader.cs" />
     <Compile Include="Data\SettingsViewModel.cs" />

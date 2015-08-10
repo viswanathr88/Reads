@@ -7,11 +7,22 @@ namespace Epiphany.Model
         private readonly int id;
         private readonly string name;
 
+        private UserModel friend;
+
         internal FriendFeedItemModel(GoodreadsUpdate update)
             : base(update)
         {
             id = ParseIdFromLink(update.Link);
             name = ParseNameFromActionText(update.ActionText);
+
+            GoodreadsUser user = new GoodreadsUser()
+            {
+                Id = id,
+                Name = name,
+                ImageUrl = update.ImageUrl
+            };
+
+            Friend = new UserModel(user);
         }
 
         protected override int GetId(GoodreadsUpdate update)
@@ -19,11 +30,13 @@ namespace Epiphany.Model
             return id;
         }
 
-        public string Name
+        public UserModel Friend
         {
-            get
+            get { return this.friend; }
+            private set
             {
-                return this.name;
+                if (this.friend == value) return;
+                this.friend = value;
             }
         }
 

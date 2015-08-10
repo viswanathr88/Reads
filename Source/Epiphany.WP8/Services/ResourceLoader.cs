@@ -1,11 +1,7 @@
-﻿using Epiphany.ViewModel.Services;
+﻿using Epiphany.View.Resources;
+using Epiphany.ViewModel.Services;
 using Microsoft.Phone.Globalization;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Epiphany.View.Services
 {
@@ -15,7 +11,7 @@ namespace Epiphany.View.Services
 
         public string GetString(string key)
         {
-            throw new NotImplementedException();
+            return AppResources.ResourceManager.GetString(key, AppResources.Culture);
         }
 
         public IEnumerable<string> GetLocaleGroupHeaders()

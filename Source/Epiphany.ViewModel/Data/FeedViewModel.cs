@@ -1,10 +1,12 @@
 ﻿using Epiphany.Model;
 using Epiphany.Model.Services;
 using Epiphany.ViewModel.Commands;
+using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Epiphany.ViewModel
@@ -18,29 +20,32 @@ namespace Epiphany.ViewModel
         private IFeedOptionsViewModel feedOptionsViewModel;
         private readonly IUserService userService;
         private readonly IAppSettings appSettings;
-        private IList<FeedItemViewModel> feed;
+        private readonly IResourceLoader resourceLoader;
+        private IList<IFeedItemViewModel> feed;
         private bool isFilterEnabled;
         private bool isFeedEmpty;
         //
         // Commands
         //
-        private readonly ICommand<IEnumerable<FeedItemModel>, VoidType> fetchFeedCommand;
+        private readonly IAsyncCommand<IEnumerable<FeedItemModel>, VoidType> fetchFeedCommand;
         private readonly ICommand showOptionsCommand;
 
-        public FeedViewModel(IUserService userService, INavigationService navigationService, IAppSettings appSettings)
+        public FeedViewModel(IUserService userService, INavigationService navigationService, 
+            IAppSettings appSettings, IResourceLoader resourceLoader)
         {
-            if (userService == null || navigationService == null || appSettings == null)
+            if (userService == null || navigationService == null || appSettings == null || resourceLoader == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("services");
             }
 
             this.userService = userService;
             this.appSettings = appSettings;
             this.navigationService = navigationService;
+            this.resourceLoader = resourceLoader;
 
             this.appSettings.SettingChanged += OnSettingChanged;
 
-            this.Feed = new ObservableCollection<FeedItemViewModel>();
+            this.Feed = new ObservableCollection<IFeedItemViewModel>();
             this.fetchFeedCommand = new FetchFeedCommand(userService);
             this.fetchFeedCommand.Executing += OnCommandExecuting;
             this.fetchFeedCommand.Executed += OnFetchFeedExecuted;
@@ -63,7 +68,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<FeedItemViewModel> Feed
+        public IList<IFeedItemViewModel> Feed
         {
             get { return feed; }
             private set
@@ -102,7 +107,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public ICommand<IEnumerable<FeedItemModel>, VoidType> FetchFeed
+        public IAsyncCommand<IEnumerable<FeedItemModel>, VoidType> FetchFeed
         {
             get
             {
@@ -118,26 +123,25 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public void Load()
+        public override async Task LoadAsync()
         {
-            if (!IsLoaded)
+            if (this.fetchFeedCommand.CanExecute(VoidType.Empty))
             {
-                this.fetchFeedCommand.Execute(VoidType.Empty);
+                await this.fetchFeedCommand.ExecuteAsync(VoidType.Empty);
             }
         }
 
         private void OnFetchFeedExecuted(object sender, ExecutedEventArgs e)
         {
-            IsLoading = false;
             if (e.State == CommandExecutionState.Success)
             {
                 IEnumerable<FeedItemModel> items = this.FetchFeed.Result;
-                Feed = new ObservableCollection<FeedItemViewModel>();
+                Feed = new ObservableCollection<IFeedItemViewModel>();
                 if (items != null)
                 {
                     foreach (FeedItemModel model in items)
                     {
-                        //IFeedItemViewModel vm = 
+                        Feed.Add(new FeedItemViewModel(model, this.navigationService, this.resourceLoader)); 
                     }
                 }
 
@@ -145,8 +149,10 @@ namespace Epiphany.ViewModel
                 {
                     IsFeedEmpty = true;
                 }
-                IsLoaded = false;
+                IsLoaded = true;
             }
+
+            IsLoading = false;
         }
 
         private void OnCommandExecuting(object sender, CancelEventArgs e)
@@ -166,11 +172,6 @@ namespace Epiphany.ViewModel
         {
             return !(this.appSettings.UpdateFilter == FeedUpdateFilter.friends &&
                 this.appSettings.UpdateType == FeedUpdateType.all);
-        }
-
-        public override System.Threading.Tasks.Task LoadAsync()
-        {
-            throw new NotImplementedException();
         }
     }
 }

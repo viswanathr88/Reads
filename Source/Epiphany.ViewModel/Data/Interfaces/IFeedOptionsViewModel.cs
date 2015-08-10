@@ -14,7 +14,7 @@ namespace Epiphany.ViewModel
         /// </summary>
         FeedUpdateFilter CurrentUpdateFilter { get; set; }
         /// <summary>
-        /// Gets or sets the current update type
+        /// Gets or sets the current readStatus type
         /// </summary>
         FeedUpdateType CurrentUpdateType { get; set; }
         /// <summary>

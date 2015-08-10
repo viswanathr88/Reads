@@ -7,7 +7,7 @@ namespace Epiphany.ViewModel
         /// <summary>
         /// Gets the feed VM
         /// </summary>
-        IFeedViewModel FeedViewModel { get; }
+        IFeedViewModel Feed { get; }
         /// <summary>
         /// Get the launcher
         /// </summary>

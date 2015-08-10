@@ -61,6 +61,15 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to about {0} hours ago.
+        /// </summary>
+        public static string AboutNHoursAgoText {
+            get {
+                return ResourceManager.GetString("AboutNHoursAgoText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to add.
         /// </summary>
         public static string AddBookshelfButtonText {
@@ -313,6 +322,15 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} commented on a review:.
+        /// </summary>
+        public static string CommentFeedItemActionText {
+            get {
+                return ResourceManager.GetString("CommentFeedItemActionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use Transparent Tile.
         /// </summary>
         public static string EnableTransparentTileHeader {
@@ -327,6 +345,15 @@ namespace Epiphany.View.Resources {
         public static string FavoriteBooksText {
             get {
                 return ResourceManager.GetString("FavoriteBooksText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to %s is now friends with:.
+        /// </summary>
+        public static string FriendFeedItemActionText {
+            get {
+                return ResourceManager.GetString("FriendFeedItemActionText", resourceCulture);
             }
         }
         
@@ -421,6 +448,15 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to just a moment ago.
+        /// </summary>
+        public static string JustAMomentAgoText {
+            get {
+                return ResourceManager.GetString("JustAMomentAgoText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to like on facebook.
         /// </summary>
         public static string LikeonFBButtonText {
@@ -453,6 +489,33 @@ namespace Epiphany.View.Resources {
         public static string MenuHeader {
             get {
                 return ResourceManager.GetString("MenuHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} days ago.
+        /// </summary>
+        public static string NDaysAgoText {
+            get {
+                return ResourceManager.GetString("NDaysAgoText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} minutes ago.
+        /// </summary>
+        public static string NMinutesAgoText {
+            get {
+                return ResourceManager.GetString("NMinutesAgoText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} months ago.
+        /// </summary>
+        public static string NMonthsAgoText {
+            get {
+                return ResourceManager.GetString("NMonthsAgoText", resourceCulture);
             }
         }
         
@@ -529,6 +592,15 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} seconds ago.
+        /// </summary>
+        public static string NSecondsAgoText {
+            get {
+                return ResourceManager.GetString("NSecondsAgoText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to friends.
         /// </summary>
         public static string NumberedItemFriendPlural {
@@ -561,6 +633,60 @@ namespace Epiphany.View.Resources {
         public static string NumberedItemGroupSingular {
             get {
                 return ResourceManager.GetString("NumberedItemGroupSingular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} years ago.
+        /// </summary>
+        public static string NYearsAgoText {
+            get {
+                return ResourceManager.GetString("NYearsAgoText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 day ago.
+        /// </summary>
+        public static string OneDayAgoText {
+            get {
+                return ResourceManager.GetString("OneDayAgoText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 hour ago.
+        /// </summary>
+        public static string OneHourAgoText {
+            get {
+                return ResourceManager.GetString("OneHourAgoText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 minute ago.
+        /// </summary>
+        public static string OneMinuteAgoText {
+            get {
+                return ResourceManager.GetString("OneMinuteAgoText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 month ago.
+        /// </summary>
+        public static string OneMonthAgoText {
+            get {
+                return ResourceManager.GetString("OneMonthAgoText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1 year ago.
+        /// </summary>
+        public static string OneYearAgoText {
+            get {
+                return ResourceManager.GetString("OneYearAgoText", resourceCulture);
             }
         }
         
@@ -610,6 +736,33 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} started reading:.
+        /// </summary>
+        public static string ReadStatusFeedItemCurrentlyReadingActionText {
+            get {
+                return ResourceManager.GetString("ReadStatusFeedItemCurrentlyReadingActionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} has read:.
+        /// </summary>
+        public static string ReadStatusFeedItemHasReadActionText {
+            get {
+                return ResourceManager.GetString("ReadStatusFeedItemHasReadActionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} wants to read:.
+        /// </summary>
+        public static string ReadStatusFeedItemToReadActionText {
+            get {
+                return ResourceManager.GetString("ReadStatusFeedItemToReadActionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to LeftToRight.
         /// </summary>
         public static string ResourceFlowDirection {
@@ -633,6 +786,24 @@ namespace Epiphany.View.Resources {
         public static string RetryLoginButtonText {
             get {
                 return ResourceManager.GetString("RetryLoginButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} gave {1} stars to:.
+        /// </summary>
+        public static string ReviewFeedItemNStarRatingActionText {
+            get {
+                return ResourceManager.GetString("ReviewFeedItemNStarRatingActionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} gave 1 star to: .
+        /// </summary>
+        public static string ReviewFeedItemOneStarRatingActionText {
+            get {
+                return ResourceManager.GetString("ReviewFeedItemOneStarRatingActionText", resourceCulture);
             }
         }
         
@@ -687,6 +858,24 @@ namespace Epiphany.View.Resources {
         public static string UsernameText {
             get {
                 return ResourceManager.GetString("UsernameText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is on page {1} of {2}.
+        /// </summary>
+        public static string UserStatusFeedItemActionText {
+            get {
+                return ResourceManager.GetString("UserStatusFeedItemActionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} has finished reading:.
+        /// </summary>
+        public static string UserStatusFeedItemFinishedActionText {
+            get {
+                return ResourceManager.GetString("UserStatusFeedItemFinishedActionText", resourceCulture);
             }
         }
         

@@ -344,4 +344,67 @@
   <data name="EnableTransparentTileHeader" xml:space="preserve">
     <value>Use Transparent Tile</value>
   </data>
+  <data name="CommentFeedItemActionText" xml:space="preserve">
+    <value>{0} commented on a review:</value>
+  </data>
+  <data name="FriendFeedItemActionText" xml:space="preserve">
+    <value>%s is now friends with:</value>
+  </data>
+  <data name="ReadStatusFeedItemCurrentlyReadingActionText" xml:space="preserve">
+    <value>{0} started reading:</value>
+  </data>
+  <data name="ReadStatusFeedItemHasReadActionText" xml:space="preserve">
+    <value>{0} has read:</value>
+  </data>
+  <data name="ReviewFeedItemNStarRatingActionText" xml:space="preserve">
+    <value>{0} gave {1} stars to:</value>
+  </data>
+  <data name="ReviewFeedItemOneStarRatingActionText" xml:space="preserve">
+    <value>{0} gave 1 star to: </value>
+  </data>
+  <data name="ReadStatusFeedItemToReadActionText" xml:space="preserve">
+    <value>{0} wants to read:</value>
+  </data>
+  <data name="UserStatusFeedItemActionText" xml:space="preserve">
+    <value>{0} is on page {1} of {2}</value>
+  </data>
+  <data name="UserStatusFeedItemFinishedActionText" xml:space="preserve">
+    <value>{0} has finished reading:</value>
+  </data>
+  <data name="AboutNHoursAgoText" xml:space="preserve">
+    <value>about {0} hours ago</value>
+  </data>
+  <data name="JustAMomentAgoText" xml:space="preserve">
+    <value>just a moment ago</value>
+  </data>
+  <data name="NDaysAgoText" xml:space="preserve">
+    <value>{0} days ago</value>
+  </data>
+  <data name="NMinutesAgoText" xml:space="preserve">
+    <value>{0} minutes ago</value>
+  </data>
+  <data name="NMonthsAgoText" xml:space="preserve">
+    <value>{0} months ago</value>
+  </data>
+  <data name="NSecondsAgoText" xml:space="preserve">
+    <value>{0} seconds ago</value>
+  </data>
+  <data name="NYearsAgoText" xml:space="preserve">
+    <value>{0} years ago</value>
+  </data>
+  <data name="OneDayAgoText" xml:space="preserve">
+    <value>1 day ago</value>
+  </data>
+  <data name="OneHourAgoText" xml:space="preserve">
+    <value>1 hour ago</value>
+  </data>
+  <data name="OneMinuteAgoText" xml:space="preserve">
+    <value>1 minute ago</value>
+  </data>
+  <data name="OneMonthAgoText" xml:space="preserve">
+    <value>1 month ago</value>
+  </data>
+  <data name="OneYearAgoText" xml:space="preserve">
+    <value>1 year ago</value>
+  </data>
 </root>
