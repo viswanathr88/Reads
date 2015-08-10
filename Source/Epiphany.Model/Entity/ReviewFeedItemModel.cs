@@ -27,6 +27,14 @@ namespace Epiphany.Model
             }
         }
 
+        public int Rating
+        {
+            get
+            {
+                return this.rating;
+            }
+        }
+
         protected override int GetId(GoodreadsUpdate update)
         {
             return this.id;

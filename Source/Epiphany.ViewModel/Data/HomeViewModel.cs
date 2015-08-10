@@ -86,9 +86,12 @@ namespace Epiphany.ViewModel
             get { return this.showSettingsCommand; }
         }
 
-        public override Task LoadAsync()
+        public override async Task LoadAsync()
         {
-            return Task.FromResult(true);
+            if (Feed.FetchFeed.CanExecute(VoidType.Empty))
+            {
+                await Feed.FetchFeed.ExecuteAsync(VoidType.Empty);
+            }
         }
     }
 }

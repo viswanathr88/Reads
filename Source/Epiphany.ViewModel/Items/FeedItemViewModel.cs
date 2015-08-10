@@ -146,17 +146,12 @@ namespace Epiphany.ViewModel.Items
                     {
                         var reviewFeedItem = Item as ReviewFeedItemModel;
                         Book = new BookItemViewModel(reviewFeedItem.Book);
-                        
-                        string format = (reviewFeedItem.Book.UserReview.Rating > 1) ?
-                            ReviewFeedItemNStarRatingActionTextKey :
-                            ReviewFeedItemOneStarRatingActionTextKey;
-
-                        ActionText = string.Format(format, User.Name);
+                        ActionText = GetActionText(reviewFeedItem);
                         break;
                     }
                 case FeedItemType.Comment:
                     {
-                        ActionText = string.Format(CommentFeedItemActionTextKey, User.Name);
+                        ActionText = string.Format(resourceLoader.GetString(CommentFeedItemActionTextKey), User.Name);
                         break;
                     }
                 case FeedItemType.ReadStatus:
@@ -180,17 +175,38 @@ namespace Epiphany.ViewModel.Items
             }
         }
 
+        private string GetActionText(ReviewFeedItemModel reviewFeedItem)
+        {
+            string actionText = string.Empty;
+
+            if (reviewFeedItem.Rating < 0 || reviewFeedItem.Rating > 5)
+            {
+                throw new ArgumentOutOfRangeException("reviewFeedItem.Rating");
+            }
+
+            if (reviewFeedItem.Rating == 1)
+            {
+                actionText = string.Format(resourceLoader.GetString(ReviewFeedItemOneStarRatingActionTextKey), User.Name);
+            }
+            else
+            {
+                actionText = string.Format(resourceLoader.GetString(ReviewFeedItemNStarRatingActionTextKey), User.Name, reviewFeedItem.Rating);
+            }
+
+            return actionText;
+        }
+
         private string GetActionText(UserStatusFeedItemModel userStatusFeedItem)
         {
             string actionText = string.Empty;
 
             if (userStatusFeedItem.Percentage == 100)
             {
-                actionText = string.Format(UserStatusFeedItemFinishedActionTextKey, User.Name);
+                actionText = string.Format(resourceLoader.GetString(UserStatusFeedItemFinishedActionTextKey), User.Name);
             }
             else
             {
-                actionText = string.Format(UserStatusFeedItemActionTextKey, User.Name, 
+                actionText = string.Format(resourceLoader.GetString(UserStatusFeedItemActionTextKey), User.Name, 
                     userStatusFeedItem.Page, userStatusFeedItem.Book.NumberOfPages);
             }
 
@@ -199,22 +215,22 @@ namespace Epiphany.ViewModel.Items
 
         private string GetActionText(ReadStatusFeedItemModel readStatusFeedItem)
         {
-            string format = string.Empty;
+            string formatKey = string.Empty;
             
             if (readStatusFeedItem.Status == "currently-reading")
             {
-                format = ReadStatusFeedItemCurrentlyReadingActionTextKey;
+                formatKey = ReadStatusFeedItemCurrentlyReadingActionTextKey;
             }
             else if (readStatusFeedItem.Status == "to-read")
             {
-                format = ReadStatusFeedItemToReadActionTextKey;
+                formatKey = ReadStatusFeedItemToReadActionTextKey;
             }
             else
             {
-                format = ReadStatusFeedItemHasReadActionTextKey;
+                formatKey = ReadStatusFeedItemHasReadActionTextKey;
             }
 
-            return string.Format(format, User.Name);
+            return string.Format(resourceLoader.GetString(formatKey), User.Name);
         }
         
     }

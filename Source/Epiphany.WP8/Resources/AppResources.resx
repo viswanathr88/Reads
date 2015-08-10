@@ -348,7 +348,7 @@
     <value>{0} commented on a review:</value>
   </data>
   <data name="FriendFeedItemActionText" xml:space="preserve">
-    <value>%s is now friends with:</value>
+    <value>{0} is now friends with:</value>
   </data>
   <data name="ReadStatusFeedItemCurrentlyReadingActionText" xml:space="preserve">
     <value>{0} started reading:</value>
@@ -366,7 +366,7 @@
     <value>{0} wants to read:</value>
   </data>
   <data name="UserStatusFeedItemActionText" xml:space="preserve">
-    <value>{0} is on page {1} of {2}</value>
+    <value>{0} is on page {1} of {2} of:</value>
   </data>
   <data name="UserStatusFeedItemFinishedActionText" xml:space="preserve">
     <value>{0} has finished reading:</value>

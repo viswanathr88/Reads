@@ -349,7 +349,7 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to %s is now friends with:.
+        ///   Looks up a localized string similar to {0} is now friends with:.
         /// </summary>
         public static string FriendFeedItemActionText {
             get {
@@ -862,7 +862,7 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} is on page {1} of {2}.
+        ///   Looks up a localized string similar to {0} is on page {1} of {2} of:.
         /// </summary>
         public static string UserStatusFeedItemActionText {
             get {
