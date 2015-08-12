@@ -11,22 +11,18 @@ namespace Epiphany.ViewModel.Commands
 
         public bool CanExecute(object parameter)
         {
-            // If the type is not voidtype, perform
-            // type checking
-            if (typeof(T) != typeof(VoidType))
-            {
-                if (parameter == null)
-                    return false;
+            if (parameter == null)
+                return false;
 
-                if (!(parameter is T))
-                    return false;
-            }
+            if (!(parameter is T))
+                return false;
 
             return CanExecute((T)parameter);
         }
 
         public void Execute(object parameter)
         {
+            Log.Instance.Info(string.Format("{0} - Parameter = object", GetType()));
             if (CanExecute(parameter))
             {
                 T param = GetSafeParam(parameter);
@@ -48,7 +44,7 @@ namespace Epiphany.ViewModel.Commands
         {
             if (Executing != null)
             {
-                Log.Instance.Debug("");
+                Log.Instance.Info(GetType().ToString());
                 Executing(this, args);
             }
         }
@@ -57,7 +53,7 @@ namespace Epiphany.ViewModel.Commands
         {
             if (Executed != null)
             {
-                Log.Instance.Debug(state.ToString());
+                Log.Instance.Info(string.Format("{0} - ExecutionState = {1}", GetType(), state));
                 Executed(this, new ExecutedEventArgs(state));
             }
         }
@@ -74,7 +70,7 @@ namespace Epiphany.ViewModel.Commands
         {
             T param = default(T);
 
-            if (typeof(T) == typeof(VoidType) && parameter == null)
+            if (parameter == null)
                 param = default(T);
             else
                 param = (T)parameter;

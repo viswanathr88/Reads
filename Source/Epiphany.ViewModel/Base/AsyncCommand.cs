@@ -27,20 +27,21 @@ namespace Epiphany.ViewModel.Commands
                 {
                     try
                     {
-                        await RunAsync(param);
+                        await Task.Run(async () => await RunAsync(param));
                         state = CommandExecutionState.Success;
+                        Log.Instance.Debug(string.Format("{0} - RunAsync successful", GetType()));
                     }
                     catch (Exception ex)
                     {
                         Error = ex;
                         state = CommandExecutionState.Failure;
-                        Log.Instance.Error(string.Format("{0} Stack - {1}", ex.Message, ex.StackTrace));
+                        Log.Instance.Error(string.Format("{0} Exception Message: {1} \nStack: {2}", GetType(), ex.Message, ex.StackTrace));
                     }
                 }
                 else
                 {
                     state = CommandExecutionState.Cancelled;
-                    Log.Instance.Warn("Execute was cancelled");
+                    Log.Instance.Warn(string.Format("{0} - Execute was cancelled", GetType()));
                 }
                 RaiseExecuted(state);
             }
