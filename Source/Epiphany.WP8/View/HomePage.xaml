@@ -17,6 +17,7 @@
                 SupportedOrientations="Portrait"
                 Orientation="Portrait"
                 shell:SystemTray.IsVisible="True"
+                shell:SystemTray.Opacity="0"
                 DataContext="{Binding Home, Source={StaticResource VMLocator}}">
 
     <toolkit:TransitionService.NavigationInTransition>
@@ -50,21 +51,21 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot">
-        <Grid.Resources>
-            <DataTemplate x:Key="FeedDataTemplate">
-                <controls:FeedItemTemplateSelector ReviewFeedItemDataTemplate="{StaticResource ReviewFeedItemDataTemplate}"
-                                                FriendFeedItemDataTemplate="{StaticResource FriendFeedItemDataTemplate}"
-                                                ReadStatusFeedItemDataTemplate="{StaticResource ReadStatusFeedItemDataTemplate}"
-                                                UserStatusFeedItemDataTemplate="{StaticResource UserStatusFeedItemDataTemplate}"
-                                                FallbackDataTemplate="{StaticResource EmptyDataTemplate}"
-                                                Content="{Binding}"
-                                                HorizontalContentAlignment="Stretch" />
-            </DataTemplate>
-        </Grid.Resources>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- progress bar-->
+        <ProgressBar IsIndeterminate="{Binding IsLoading}"
+                     IsEnabled="{Binding IsLoading}"
+                     Foreground="{StaticResource PhoneForegroundBrush}"
+                     Background="Transparent" />
         
         <!--Pivot Control-->
-        <phone:Pivot Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}, Converter={StaticResource ToUpperCaseConverter}}">
+        <phone:Pivot Grid.Row="1"
+                     Margin="0,20,0,0"
+                     Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}, Converter={StaticResource ToUpperCaseConverter}}">
             <phone:Pivot.HeaderTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding}"
@@ -75,7 +76,39 @@
             <!--Pivot item one-->
             <phone:PivotItem Header="{Binding Path=LocalizedResources.WhatsNewHeader, Source={StaticResource LocalizedStrings}, Converter={StaticResource ToUpperCaseConverter}}"
                              DataContext="{Binding Feed}">
-                <Grid />
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="25" />
+                    </Grid.RowDefinitions>
+
+                    <Grid>
+
+                        <!-- empty feed message -->
+                        <TextBlock Text="{Binding Path=LocalizedResources.NoFeedMessage, Source={StaticResource LocalizedStrings}}"
+                                   Foreground="{StaticResource PhoneForegroundBrush}"
+                                   Style="{StaticResource PhoneTextLargeStyle}"
+                                   Visibility="{Binding IsFeedEmpty, Converter={StaticResource BooleanVisibilityConverter}, FallbackValue=Collapsed}"
+                                   TextWrapping="Wrap"/>
+
+                        <!-- feed -->
+                        <controls:LongListSelector Foreground="{StaticResource PhoneForegroundBrush}"
+                                                ItemsSource="{Binding Feed}">
+                            <controls:LongListSelector.ItemTemplate>
+                                <DataTemplate>
+                                    <controls:FeedItemTemplateSelector ReviewFeedItemDataTemplate="{StaticResource ReviewFeedItemDataTemplate}"
+                                                                       FriendFeedItemDataTemplate="{StaticResource FriendFeedItemDataTemplate}"
+                                                                       ReadStatusFeedItemDataTemplate="{StaticResource ReadStatusFeedItemDataTemplate}"
+                                                                       UserStatusFeedItemDataTemplate="{StaticResource UserStatusFeedItemDataTemplate}"
+                                                                       FallbackDataTemplate="{StaticResource EmptyDataTemplate}"
+                                                                       Content="{Binding}"
+                                                                       HorizontalContentAlignment="Stretch" />
+                                </DataTemplate>
+                            </controls:LongListSelector.ItemTemplate>
+                        </controls:LongListSelector>
+                    </Grid>
+                    <Grid Grid.Row="1" />
+                </Grid>
             </phone:PivotItem>
 
             <!--Pivot item two-->
@@ -109,7 +142,7 @@
                                                HorizontalAlignment="Left"
                                                Margin="12,0,0,0"
                                                Style="{StaticResource PhoneTextLargeStyle}"
-                                               Foreground="{StaticResource PhoneForegroundBrush}" />
+                                               Foreground="White" />
                                 </Grid>
                             </Border>
                             <Border Background="{StaticResource PhoneAccentBrush}"
@@ -133,7 +166,7 @@
                                                HorizontalAlignment="Left"
                                                Margin="12,0,0,0"
                                                Style="{StaticResource PhoneTextLargeStyle}"
-                                               Foreground="{StaticResource PhoneForegroundBrush}" />
+                                               Foreground="White" />
                                 </Grid>
                             </Border>
                             <Border Background="{StaticResource PhoneAccentBrush}"
@@ -157,7 +190,7 @@
                                                HorizontalAlignment="Left"
                                                Margin="12,0,0,0"
                                                Style="{StaticResource PhoneTextLargeStyle}"
-                                               Foreground="{StaticResource PhoneForegroundBrush}" />
+                                               Foreground="White" />
                                 </Grid>
                             </Border>
                             <Border Background="{StaticResource PhoneAccentBrush}"
@@ -182,7 +215,7 @@
                                                HorizontalAlignment="Left"
                                                Margin="12,0,0,0"
                                                Style="{StaticResource PhoneTextLargeStyle}"
-                                               Foreground="{StaticResource PhoneForegroundBrush}" />
+                                               Foreground="White" />
                                 </Grid>
                             </Border>
                             <Border Background="{StaticResource PhoneAccentBrush}"
@@ -205,7 +238,7 @@
                                                HorizontalAlignment="Left"
                                                Margin="12,0,0,0"
                                                Style="{StaticResource PhoneTextLargeStyle}"
-                                               Foreground="{StaticResource PhoneForegroundBrush}" />
+                                               Foreground="White" />
                                 </Grid>
                             </Border>
                             <Border Background="{StaticResource PhoneAccentBrush}"
@@ -229,7 +262,7 @@
                                                HorizontalAlignment="Left"
                                                Margin="12,0,0,0"
                                                Style="{StaticResource PhoneTextLargeStyle}"
-                                               Foreground="{StaticResource PhoneForegroundBrush}" />
+                                               Foreground="White" />
                                 </Grid>
                             </Border>
                         </toolkit:WrapPanel>
@@ -250,7 +283,7 @@
             <appbar:BindableApplicationBar.MenuItems>
                 <appbar:BindableApplicationBarMenuItem IsEnabled="True"
                                                        Text="{Binding Path=LocalizedResources.AppBarRefreshText, Source={StaticResource LocalizedStrings}}"
-                                                       Command="{Binding Path=FeedViewModel.FetchFeed}" />
+                                                       Command="{Binding Path=Feed.FetchFeed}" />
                 <appbar:BindableApplicationBarMenuItem Text="{Binding Path=LocalizedResources.SettingsTitle, Source={StaticResource LocalizedStrings}}"
                                                        Command="{Binding ShowSettings}" />
                 <appbar:BindableApplicationBarMenuItem IsEnabled="True"

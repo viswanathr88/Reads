@@ -69,7 +69,8 @@ namespace Epiphany.View.Services
                     this.serviceFactory.GetUserService(), 
                     this.serviceFactory.GetBookshelfService(), 
                     this.navigationService,
-                    this.urlLauncher);
+                    this.urlLauncher,
+                    this.resourceLoader);
             }
         }
 

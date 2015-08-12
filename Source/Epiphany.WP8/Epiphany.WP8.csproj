@@ -131,12 +131,15 @@
     <Compile Include="DesignData\DesignBookshelfItemViewModel.cs" />
     <Compile Include="DesignData\DesignBookshelvesViewModel.cs" />
     <Compile Include="DesignData\DesignEventsViewModel.cs" />
+    <Compile Include="DesignData\DesignFeedItemViewModel.cs" />
+    <Compile Include="DesignData\DesignFeedViewModel.cs" />
     <Compile Include="DesignData\DesignFriendsViewModel.cs" />
     <Compile Include="DesignData\DesignHomeViewModel.cs" />
     <Compile Include="DesignData\DesignLogonViewModel.cs" />
     <Compile Include="DesignData\DesignProfileViewModel.cs" />
     <Compile Include="DesignData\DesignSearchItemViewModel.cs" />
     <Compile Include="DesignData\DesignSearchViewModel.cs" />
+    <Compile Include="DesignData\DesignUserItemViewModel.cs" />
     <Compile Include="Resources\LocalizedStrings.cs" />
     <Compile Include="Services\AppRateService.cs" />
     <Compile Include="Services\AuthService.cs" />

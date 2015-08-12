@@ -40,9 +40,15 @@
     </toolkit:TransitionService.NavigationOutTransition>
 
     <local:DataPage.Resources>
-        <converters:ProfileItemTypeToStringConverter x:Key="ProfileItemTypeToStringConverter" />
-        <converters:ProfileItemValueToStringConverter x:Key="ProfileItemValueToStringConverter" />
-        <converters:EnabledToForegroundConverter x:Key="EnabledToForegroundConverter" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Epiphany.WP8;component/Resources/DataTemplates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <converters:ProfileItemTypeToStringConverter x:Key="ProfileItemTypeToStringConverter" />
+            <converters:ProfileItemValueToStringConverter x:Key="ProfileItemValueToStringConverter" />
+            <converters:EnabledToForegroundConverter x:Key="EnabledToForegroundConverter" />
+        </ResourceDictionary>
     </local:DataPage.Resources>
 
     <Grid x:Name="LayoutRoot"
@@ -69,6 +75,14 @@
                                  Foreground="{StaticResource PhoneForegroundBrush}"
                                  x:Name="MainPivot"
                                  toolkit:TurnstileFeatherEffect.FeatheringIndex="1">
+                        <phone:Pivot.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}"
+                                           Style="{StaticResource PhoneTextTitle2Style}"
+                                           Margin="2,15,15,15" />
+                            </DataTemplate>
+                        </phone:Pivot.HeaderTemplate>
+                        
                         <i:Interaction.Behaviors>
                             <behaviors:PivotIndexChangeBehavior DesiredIndex="1"
                                                                 ShouldExecuteCommand="{Binding ShelvesLoaded, Converter={StaticResource InverseBooleanConverter}}"
@@ -103,7 +117,7 @@
                         </phone:Pivot.Triggers>
 
                         <!--Pivot item one-->
-                        <phone:PivotItem Header="{Binding Path=LocalizedResources.ProfileAboutTitle, Source={StaticResource LocalizedStrings}}"
+                        <phone:PivotItem Header="{Binding Path=LocalizedResources.ProfileAboutTitle, Source={StaticResource LocalizedStrings}, Converter={StaticResource ToUpperCaseConverter}}"
                                          Foreground="{StaticResource PhoneForegroundBrush}">
                             <ScrollViewer>
                                 <Grid>
@@ -151,7 +165,7 @@
                             </ScrollViewer>
                         </phone:PivotItem>
                         <!--Pivot item two-->
-                        <phone:PivotItem Header="{Binding Path=LocalizedResources.ProfileBookshelvesTitle, Source={StaticResource LocalizedStrings}}">
+                        <phone:PivotItem Header="{Binding Path=LocalizedResources.ProfileBookshelvesTitle, Source={StaticResource LocalizedStrings}, Converter={StaticResource ToUpperCaseConverter}}">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*" />
@@ -179,7 +193,7 @@
                                                 <controls:Bookshelf ShelfName="{Binding Name}"
                                                                     NumberOfBooks="{Binding BooksCount}"
                                                                     Background="{StaticResource PhoneAccentBrush}"
-                                                                    Foreground="{StaticResource PhoneForegroundBrush}"
+                                                                    Foreground="White"
                                                                     Margin="2" />
                                             </DataTemplate>
                                         </controls:LongListSelector.ItemTemplate>
@@ -189,7 +203,7 @@
                             </Grid>
                         </phone:PivotItem>
                         <!-- updates-->
-                        <phone:PivotItem Header="{Binding Path=LocalizedResources.ProfileUpdatesTitle, Source={StaticResource LocalizedStrings}}">
+                        <phone:PivotItem Header="{Binding Path=LocalizedResources.ProfileUpdatesTitle, Source={StaticResource LocalizedStrings}, Converter={StaticResource ToUpperCaseConverter}}">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*" />
@@ -200,7 +214,22 @@
                                                Foreground="{StaticResource PhoneForegroundBrush}"
                                                Style="{StaticResource PhoneTextLargeStyle}"
                                                Visibility="{Binding AreUpdatesEmpty, Converter={StaticResource BooleanVisibilityConverter}, FallbackValue=Collapsed}" />
-                                    <!-- TODO: Add a list to show updates here-->
+
+                                    <controls:LongListSelector Foreground="{StaticResource PhoneForegroundBrush}"
+                                                               ItemsSource="{Binding RecentUpdates}">
+                                        <controls:LongListSelector.ItemTemplate>
+                                            <DataTemplate>
+                                                <controls:FeedItemTemplateSelector ReviewFeedItemDataTemplate="{StaticResource ReviewFeedItemDataTemplate}"
+                                                                                   FriendFeedItemDataTemplate="{StaticResource FriendFeedItemDataTemplate}"
+                                                                                   ReadStatusFeedItemDataTemplate="{StaticResource ReadStatusFeedItemDataTemplate}"
+                                                                                   UserStatusFeedItemDataTemplate="{StaticResource UserStatusFeedItemDataTemplate}"
+                                                                                   FallbackDataTemplate="{StaticResource EmptyDataTemplate}"
+                                                                                   Content="{Binding}"
+                                                                                   HorizontalContentAlignment="Stretch" />
+                                            </DataTemplate>
+                                        </controls:LongListSelector.ItemTemplate>
+                                    </controls:LongListSelector>
+                                    
                                 </Grid>
                                 <Grid Grid.Row="1" />
                             </Grid>

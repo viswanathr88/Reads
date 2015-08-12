@@ -23,6 +23,7 @@ namespace Epiphany.ViewModel
         private readonly IBookshelfService bookshelfService;
         private readonly INavigationService navService;
         private readonly IUrlLauncher urlLauncher;
+        private readonly IResourceLoader resourceLoader;
 
         private readonly IAsyncCommand<ProfileModel, int> fetchProfileCommand;
         private readonly IAsyncCommand<IEnumerable<BookshelfModel>, IAsyncEnumerator<BookshelfModel>> fetchBookshelvesCommand;
@@ -34,12 +35,14 @@ namespace Epiphany.ViewModel
 
         private IList<BookshelfModel> shelves;
         private IList<ProfileItemViewModel> profileItems;
+        private IList<IFeedItemViewModel> recentUpdates;
         private BookshelfModel selectedShelf;
         private ProfileItemViewModel selectedProfileItem;
 
-        public ProfileViewModel(IUserService userService, IBookshelfService bookshelfService, INavigationService navService, IUrlLauncher urlLauncher)
+        public ProfileViewModel(IUserService userService, IBookshelfService bookshelfService, 
+            INavigationService navService, IUrlLauncher urlLauncher, IResourceLoader resourceLoader)
         {
-            if (userService == null || navService == null || bookshelfService == null)
+            if (userService == null || navService == null || bookshelfService == null || resourceLoader == null)
             {
                 throw new ArgumentNullException("services");
             }
@@ -47,6 +50,7 @@ namespace Epiphany.ViewModel
             this.bookshelfService = bookshelfService;
             this.navService = navService;
             this.urlLauncher = urlLauncher;
+            this.resourceLoader = resourceLoader;
             this.profileItemFactory = new ProfileItemViewModelFactory();
 
             this.fetchProfileCommand = new FetchProfileCommand(userService);
@@ -61,6 +65,7 @@ namespace Epiphany.ViewModel
 
             Shelves = new ObservableCollection<BookshelfModel>();
             ProfileItems = new ObservableCollection<ProfileItemViewModel>();
+            RecentUpdates = new ObservableCollection<IFeedItemViewModel>();
         }
 
         public int Id
@@ -80,7 +85,7 @@ namespace Epiphany.ViewModel
             set
             {
                 if (this.name == value) return;
-                this.name = value;
+                this.name = value.Trim();
                 RaisePropertyChanged();
             }
         }
@@ -225,6 +230,17 @@ namespace Epiphany.ViewModel
             }
         }
 
+        public IList<IFeedItemViewModel> RecentUpdates
+        {
+            get { return this.recentUpdates; }
+            private set
+            {
+                if (this.recentUpdates == value) return;
+                this.recentUpdates = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public ICommand GoHome
         {
             get { return this.goHomeCommand; }
@@ -273,6 +289,14 @@ namespace Epiphany.ViewModel
                 ImageUrl = Model.ImageUrl;
                 FetchBookshelvesArg = this.bookshelfService.GetBookshelves(Id).GetEnumerator();
                 ProfileItems = this.profileItemFactory.GetProfileItems(Model);
+
+                RecentUpdates = new ObservableCollection<IFeedItemViewModel>();
+                foreach (FeedItemModel model in Model.RecentUpdates)
+                {
+                    RecentUpdates.Add(new FeedItemViewModel(model, navService, resourceLoader));
+                }
+                AreUpdatesEmpty = (RecentUpdates.Count == 0);
+
                 IsLoaded = true;
             }
         }

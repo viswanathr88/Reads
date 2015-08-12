@@ -38,6 +38,8 @@ namespace Epiphany.ViewModel
 
             this.showAboutCommand = new ShowAboutCommand(navigationService);
             this.showSettingsCommand = new ShowSettingsCommand(navigationService);
+
+            Feed.PropertyChanged += OnChildVMPropertyChanged;
         }
 
         public int NewNotificationCount
@@ -88,9 +90,21 @@ namespace Epiphany.ViewModel
 
         public override async Task LoadAsync()
         {
-            if (Feed.FetchFeed.CanExecute(VoidType.Empty))
+            if (!Feed.IsLoaded && Feed.FetchFeed.CanExecute(VoidType.Empty))
             {
                 await Feed.FetchFeed.ExecuteAsync(VoidType.Empty);
+            }
+        }
+
+        private void OnChildVMPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "IsLoading")
+            {
+                IsLoading = Feed.IsLoading;
+            }
+            else if (e.PropertyName == "IsLoaded")
+            {
+                IsLoaded = Feed.IsLoaded;
             }
         }
     }

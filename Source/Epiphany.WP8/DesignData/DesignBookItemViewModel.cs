@@ -14,5 +14,7 @@ namespace Epiphany.View.DesignData
         public string ImageUrl { get; set; }
 
         public IEnumerable<IAuthorItemViewModel> Authors { get; set; }
+
+        public IAuthorItemViewModel MainAuthor { get; set; }
     }
 }

@@ -407,4 +407,10 @@
   <data name="OneYearAgoText" xml:space="preserve">
     <value>1 year ago</value>
   </data>
+  <data name="CommentText" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="NoFeedMessage" xml:space="preserve">
+    <value>Add some friends on Goodreads to see your friend updates here!</value>
+  </data>
 </root>

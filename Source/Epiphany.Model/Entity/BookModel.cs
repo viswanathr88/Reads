@@ -63,7 +63,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return this.book.ImageUrl;
+                return string.IsNullOrEmpty(book.ImageUrl) ? book.SmallImageUrl : book.ImageUrl;
             }
         }
 

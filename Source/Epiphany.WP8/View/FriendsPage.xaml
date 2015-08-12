@@ -20,7 +20,28 @@
                             shell:SystemTray.BackgroundColor="{StaticResource PhoneBackgroundColor}"
                             shell:SystemTray.ForegroundColor="{StaticResource PhoneForegroundColor}"
                             DataContext="{Binding Friends, Source={StaticResource VMLocator}}">
-    
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideUpFadeIn" />
+            </toolkit:NavigationInTransition.Forward>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeIn" />
+            </toolkit:NavigationInTransition.Backward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideDownFadeOut" />
+            </toolkit:NavigationOutTransition.Forward>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideDownFadeOut" />
+            </toolkit:NavigationOutTransition.Backward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
     <local:DataPage.Resources>
         <phone:JumpListItemBackgroundConverter x:Key="BackgroundConverter" />
         <phone:JumpListItemForegroundConverter x:Key="ForegroundConverter" />

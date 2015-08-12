@@ -164,6 +164,7 @@ namespace Epiphany.ViewModel.Items
                 case FeedItemType.UserStatus:
                     {
                         var userStatusFeedItem = Item as UserStatusFeedItemModel;
+                        Book = new BookItemViewModel(userStatusFeedItem.Book);
                         ActionText = GetActionText(userStatusFeedItem);
                         break;
                     }

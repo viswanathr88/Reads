@@ -13,5 +13,7 @@ namespace Epiphany.ViewModel.Items
         double AverageRating { get; }
 
         IEnumerable<IAuthorItemViewModel> Authors { get; }
+
+        IAuthorItemViewModel MainAuthor { get; }
     }
 }

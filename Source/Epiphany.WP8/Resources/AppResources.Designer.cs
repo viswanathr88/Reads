@@ -331,6 +331,15 @@ namespace Epiphany.View.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Comment.
+        /// </summary>
+        public static string CommentText {
+            get {
+                return ResourceManager.GetString("CommentText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use Transparent Tile.
         /// </summary>
         public static string EnableTransparentTileHeader {
@@ -525,6 +534,15 @@ namespace Epiphany.View.Resources {
         public static string NoBookshelvesMessage {
             get {
                 return ResourceManager.GetString("NoBookshelvesMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add some friends on Goodreads to see your friend updates here!.
+        /// </summary>
+        public static string NoFeedMessage {
+            get {
+                return ResourceManager.GetString("NoFeedMessage", resourceCulture);
             }
         }
         

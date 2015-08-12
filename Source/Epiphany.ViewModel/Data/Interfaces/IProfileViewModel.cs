@@ -8,74 +8,34 @@ namespace Epiphany.ViewModel
 {
     public interface IProfileViewModel : IDataViewModel
     {
-        int Id
-        {
-            get;
-        }
+        int Id { get; }
 
-        string Name
-        {
-            get;
-        }
+        string Name { get; }
 
-        ProfileModel Model
-        {
-            get;
-        }
+        ProfileModel Model { get; }
 
-        bool AreShelvesEmpty
-        {
-            get;
-        }
+        bool AreShelvesEmpty { get; }
 
-        bool AreUpdatesEmpty
-        {
-            get;
-        }
+        bool AreUpdatesEmpty { get; }
 
-        bool ShelvesLoaded
-        {
-            get;
-        }
+        bool ShelvesLoaded { get; }
 
-        string ImageUrl
-        {
-            get;
-        }
+        string ImageUrl { get; }
 
-        BookshelfModel SelectedShelf
-        {
-            get;
-        }
+        BookshelfModel SelectedShelf { get; }
 
-        IList<ProfileItemViewModel> ProfileItems
-        {
-            get;
-        }
+        IList<ProfileItemViewModel> ProfileItems { get; }
 
-        IList<BookshelfModel> Shelves
-        {
-            get;
-        }
+        IList<BookshelfModel> Shelves { get; }
 
-        ICommand GoHome
-        {
-            get;
-        }
+        IList<IFeedItemViewModel> RecentUpdates { get; }
 
-        IAsyncCommand<ProfileModel, int> FetchProfile
-        {
-            get;
-        }
+        ICommand GoHome { get; }
 
-        IAsyncCommand<IEnumerable<BookshelfModel>, IAsyncEnumerator<BookshelfModel>> FetchBookshelves
-        {
-            get;
-        }
+        IAsyncCommand<ProfileModel, int> FetchProfile { get; }
 
-        IAsyncEnumerator<BookshelfModel> FetchBookshelvesArg
-        {
-            get;
-        }
+        IAsyncCommand<IEnumerable<BookshelfModel>, IAsyncEnumerator<BookshelfModel>> FetchBookshelves { get; }
+
+        IAsyncEnumerator<BookshelfModel> FetchBookshelvesArg { get; }
     }
 }

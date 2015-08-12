@@ -21,6 +21,27 @@
                 shell:SystemTray.ForegroundColor="{StaticResource PhoneForegroundColor}"
                 DataContext="{Binding Author, Source={StaticResource VMLocator}}">
 
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideUpFadeIn" />
+            </toolkit:NavigationInTransition.Forward>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideUpFadeIn" />
+            </toolkit:NavigationInTransition.Backward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideDownFadeOut" />
+            </toolkit:NavigationOutTransition.Forward>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideDownFadeOut" />
+            </toolkit:NavigationOutTransition.Backward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
     <local:DataPage.Resources>
         <converters:AuthorAttributeTypeConverter x:Key="AuthorAttributeTypeConverter" />
         <converters:AuthorAttributeValueConverter x:Key="AuthorAttributeValueConverter" />
@@ -173,7 +194,7 @@
     </Grid>
 
     <appbar:Bindable.ApplicationBar>
-        <appbar:BindableApplicationBar IsVisible="{Binding Path=AuthorViewModel.IsLoaded}"
+        <appbar:BindableApplicationBar IsVisible="{Binding IsLoaded}"
                                        BindableOpacity="0.999">
 
             <appbar:BindableApplicationBarButton Text="{Binding Path=LocalizedResources.AppBarHomeText, Source={StaticResource LocalizedStrings}}"

@@ -1,12 +1,21 @@
 ﻿using Epiphany.Model;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Epiphany.ViewModel.Items
 {
     public sealed class BookItemViewModel : ItemViewModel<BookModel>, IBookItemViewModel
     {
+        private readonly IList<IAuthorItemViewModel> authors;
+
         public BookItemViewModel(BookModel model) : base(model)
         {
+            this.authors = new List<IAuthorItemViewModel>();
+            
+            foreach (AuthorModel author in Item.Authors)
+            {
+                authors.Add(new AuthorItemViewModel(author));
+            }
         }
 
         public int Id
@@ -32,16 +41,12 @@ namespace Epiphany.ViewModel.Items
 
         public IEnumerable<IAuthorItemViewModel> Authors
         {
-            get 
-            {
-                IList<IAuthorItemViewModel> authors = new List<IAuthorItemViewModel>();
-                foreach (AuthorModel author in Item.Authors)
-                {
-                    authors.Add(new AuthorItemViewModel(author));
-                }
+            get { return this.authors; }
+        }
 
-                return authors;
-            }
+        public IAuthorItemViewModel MainAuthor
+        {
+            get { return this.authors.FirstOrDefault(); }
         }
     }
 }

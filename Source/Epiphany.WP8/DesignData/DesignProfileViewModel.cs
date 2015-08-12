@@ -108,6 +108,11 @@ namespace Epiphany.View.DesignData
             private set;
         }
 
+        public IList<IFeedItemViewModel> RecentUpdates
+        {
+            get;
+            set;
+        }
 
         public bool ShelvesLoaded
         {

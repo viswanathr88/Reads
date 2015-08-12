@@ -1,5 +1,7 @@
-﻿using Epiphany.Xml;
+﻿using Epiphany.Model.Adapter;
+using Epiphany.Xml;
 using System;
+using System.Collections.Generic;
 
 namespace Epiphany.Model
 {
@@ -8,12 +10,15 @@ namespace Epiphany.Model
         private readonly GoodreadsProfile profile;
         private readonly int id;
         private readonly string name;
+        private readonly IAdapter<FeedItemModel, GoodreadsUpdate> feedItemAdapter;
 
         public ProfileModel(int id, string name)
         {
             this.id = id;
             this.name = name;
             this.profile = new GoodreadsProfile();
+
+            this.feedItemAdapter = new FeedItemAdapter();
         }
 
         internal ProfileModel(GoodreadsProfile profile)
@@ -24,6 +29,8 @@ namespace Epiphany.Model
             this.profile = profile;
             this.id = profile.Id;
             this.name = profile.Name;
+
+            this.feedItemAdapter = new FeedItemAdapter();
         }
 
         public override int Id
@@ -126,6 +133,19 @@ namespace Epiphany.Model
         public bool IsPendingFriendRequest
         {
             get { return this.profile.FriendStatus == "request_pending_to"; }
+        }
+
+        public IList<FeedItemModel> RecentUpdates
+        {
+            get
+            {
+                IList<FeedItemModel> updates = new List<FeedItemModel>();
+                foreach (GoodreadsUpdate update in this.profile.Updates)
+                {
+                    updates.Add(this.feedItemAdapter.Convert(update));
+                }
+                return updates;
+            }
         }
     }
 }
