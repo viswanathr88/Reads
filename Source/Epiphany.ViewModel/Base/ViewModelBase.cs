@@ -7,9 +7,14 @@ using System.Runtime.CompilerServices;
 
 namespace Epiphany.ViewModel
 {
+    
+
     public abstract class ViewModelBase : INotifyPropertyChanged, IDisposable
     {
         private readonly string name;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public ViewModelBase()
         {
             this.name = GetType().ToString();
@@ -24,23 +29,6 @@ namespace Epiphany.ViewModel
             Type propertyType = info.PropertyType;
             object typedValue = Convert.ChangeType(value, propertyType, System.Globalization.CultureInfo.CurrentCulture);
             info.SetValue(this, typedValue, null);
-        }
-
-        private PropertyInfo GetProperty<T>(Expression<Func<T>> expr)
-        {
-            var member = expr.Body as MemberExpression;
-            if (member == null)
-                throw new InvalidOperationException("Expression is not a member access expression.");
-            var property = member.Member as PropertyInfo;
-            if (property == null)
-                throw new InvalidOperationException("Member in expression is not a property.");
-            return property;
-        }
-
-        private PropertyInfo GetProperty(string propertyName)
-        {
-            PropertyInfo pInfo = this.GetType().GetRuntimeProperty(propertyName);
-            return pInfo;
         }
 
         protected string GetName()
@@ -68,7 +56,22 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        private PropertyInfo GetProperty<T>(Expression<Func<T>> expr)
+        {
+            var member = expr.Body as MemberExpression;
+            if (member == null)
+                throw new InvalidOperationException("Expression is not a member access expression.");
+            var property = member.Member as PropertyInfo;
+            if (property == null)
+                throw new InvalidOperationException("Member in expression is not a property.");
+            return property;
+        }
+
+        private PropertyInfo GetProperty(string propertyName)
+        {
+            PropertyInfo pInfo = this.GetType().GetRuntimeProperty(propertyName);
+            return pInfo;
+        }
 
         public virtual void Dispose()
         {

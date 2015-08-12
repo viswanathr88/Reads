@@ -3,11 +3,24 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel.Commands
 {
+
+    public interface ICommandEx : ICommand
+    {
+        /// <summary>
+        /// Event raised when the command begins execution
+        /// </summary>
+        event EventHandler<CancelEventArgs> Executing;
+        /// <summary>
+        /// Event fired when the command has finished execution
+        /// </summary>
+        event EventHandler<ExecutedEventArgs> Executed;
+    }
+
     /// <summary>
     /// Represents a command interface with parameter T and no return type
     /// </summary>
     /// <typeparam name="T">Param of type T</typeparam>
-    public interface ICommand<T> : ICommand
+    public interface ICommand<T> : ICommandEx
     {
         /// <summary>
         /// Return true if this command can execute for the given parameter
@@ -27,14 +40,6 @@ namespace Epiphany.ViewModel.Commands
         {
             get;
         }
-        /// <summary>
-        /// Event raised when the command begins execution
-        /// </summary>
-        event EventHandler<CancelEventArgs> Executing;
-        /// <summary>
-        /// Event fired when the command has finished execution
-        /// </summary>
-        event EventHandler<ExecutedEventArgs> Executed;
     }
 
     /// <summary>

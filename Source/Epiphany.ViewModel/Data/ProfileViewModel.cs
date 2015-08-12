@@ -54,12 +54,10 @@ namespace Epiphany.ViewModel
             this.profileItemFactory = new ProfileItemViewModelFactory();
 
             this.fetchProfileCommand = new FetchProfileCommand(userService);
-            this.fetchProfileCommand.Executing += OnCommandExecuting;
-            this.fetchProfileCommand.Executed += OnProfileFetched;
+            RegisterCommand(this.fetchProfileCommand, OnProfileFetched);
 
             this.fetchBookshelvesCommand = new EnumeratorCommand<BookshelfModel>(20);
-            this.fetchBookshelvesCommand.Executing += OnCommandExecuting;
-            this.fetchBookshelvesCommand.Executed += OnBookshelvesFetched;
+            RegisterCommand(fetchBookshelvesCommand, OnBookshelvesFetched);
 
             this.goHomeCommand = new GoHomeCommand(navService);
 
@@ -280,7 +278,7 @@ namespace Epiphany.ViewModel
             IsLoading = true;
         }
 
-        private void OnProfileFetched(object sender, ExecutedEventArgs e)
+        private void OnProfileFetched(ExecutedEventArgs e)
         {
             IsLoading = false;
             if (e.State == CommandExecutionState.Success)
@@ -300,7 +298,7 @@ namespace Epiphany.ViewModel
                 IsLoaded = true;
             }
         }
-        private void OnBookshelvesFetched(object sender, ExecutedEventArgs e)
+        private void OnBookshelvesFetched(ExecutedEventArgs e)
         {
             IsLoading = false;
             if (e.State == CommandExecutionState.Success)
@@ -312,6 +310,14 @@ namespace Epiphany.ViewModel
                 AreShelvesEmpty = (Shelves.Count == 0);
                 ShelvesLoaded = true;
             }
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+
+            DeRegisterCommand(this.fetchProfileCommand);
+            DeRegisterCommand(this.fetchBookshelvesCommand);
         }
     }
 }
