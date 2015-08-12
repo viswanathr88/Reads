@@ -33,7 +33,7 @@ namespace Epiphany.View.DesignData
                     Name = "MyNameIsX",
                     ImageUrl = @"http://www.photonicconference.com/Phosphors/media/Examples/male-placeholder.png"
                 }
-            });*/
+            });
 
             Feed.Add(new DesignFeedItemViewModel()
             {
@@ -53,7 +53,7 @@ namespace Epiphany.View.DesignData
                         Name = "Test Author"
                     }
                 }
-            });
+            });*/
 
             Feed.Add(new DesignFeedItemViewModel()
             {
@@ -94,7 +94,8 @@ namespace Epiphany.View.DesignData
                     {
                         Name = "Test Author"
                     }
-                }
+                },
+                Body = "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
             });
 
         }

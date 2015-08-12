@@ -26,6 +26,8 @@ namespace Epiphany.View.DesignData
             ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.ViewInGoodreads, "www.goodreads.com", true));
             ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.JoinDate, DateTime.Now.ToShortDateString(), false));
 
+            SelectedProfileItem = ProfileItems[0];
+
             Shelves = new ObservableCollection<BookshelfModel>();
 
             for (int i = 0; i < 5; i++)
@@ -121,6 +123,12 @@ namespace Epiphany.View.DesignData
         }
 
         public IList<BookshelfModel> Shelves
+        {
+            get;
+            set;
+        }
+
+        public ProfileItemViewModel SelectedProfileItem
         {
             get;
             set;

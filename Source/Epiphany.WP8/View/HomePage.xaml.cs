@@ -10,5 +10,16 @@ namespace Epiphany.View
         {
             InitializeComponent();
         }
+
+        protected override async void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            // Remove any previous pages in the backstack
+            if (NavigationService.CanGoBack)
+            {
+                NavigationService.RemoveBackEntry();
+            }
+
+            base.OnNavigatedTo(e);
+        }
     }
 }

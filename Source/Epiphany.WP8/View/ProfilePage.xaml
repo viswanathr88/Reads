@@ -23,6 +23,9 @@
 
     <toolkit:TransitionService.NavigationInTransition>
         <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideUpFadeIn" />
+            </toolkit:NavigationInTransition.Forward>
             <toolkit:NavigationInTransition.Backward>
                 <toolkit:SlideTransition Mode="SlideUpFadeIn" />
             </toolkit:NavigationInTransition.Backward>
@@ -30,12 +33,12 @@
     </toolkit:TransitionService.NavigationInTransition>
     <toolkit:TransitionService.NavigationOutTransition>
         <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideDownFadeOut" />
+            </toolkit:NavigationOutTransition.Forward>
             <toolkit:NavigationOutTransition.Backward>
                 <toolkit:SlideTransition Mode="SlideDownFadeOut" />
             </toolkit:NavigationOutTransition.Backward>
-            <toolkit:NavigationOutTransition.Forward>
-                <toolkit:TurnstileFeatherTransition Mode="ForwardOut" />
-            </toolkit:NavigationOutTransition.Forward>
         </toolkit:NavigationOutTransition>
     </toolkit:TransitionService.NavigationOutTransition>
 
@@ -64,182 +67,174 @@
                      Foreground="{StaticResource PhoneForegroundBrush}"
                      Background="Transparent" />
 
-        <controls:DeferredContentLoader Grid.Row="1"
-                                        IsLoaded="{Binding IsLoaded}"
-                                        HorizontalContentAlignment="Stretch"
-                                        VerticalContentAlignment="Stretch">
-            <controls:DeferredContentLoader.DeferredContentTemplate>
+        <phone:Pivot Title="{Binding Name, Converter={StaticResource ToUpperCaseConverter}}"
+                     Margin="0,25,0,0"
+                     Foreground="{StaticResource PhoneForegroundBrush}"
+                     x:Name="MainPivot"
+                     toolkit:TurnstileFeatherEffect.FeatheringIndex="1"
+                     Grid.Row="1">
+            <phone:Pivot.HeaderTemplate>
                 <DataTemplate>
-                    <phone:Pivot Title="{Binding Name, Converter={StaticResource ToUpperCaseConverter}}"
-                                 Margin="0,25,0,0"
-                                 Foreground="{StaticResource PhoneForegroundBrush}"
-                                 x:Name="MainPivot"
-                                 toolkit:TurnstileFeatherEffect.FeatheringIndex="1">
-                        <phone:Pivot.HeaderTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding}"
-                                           Style="{StaticResource PhoneTextTitle2Style}"
-                                           Margin="2,15,15,15" />
-                            </DataTemplate>
-                        </phone:Pivot.HeaderTemplate>
-                        
-                        <i:Interaction.Behaviors>
-                            <behaviors:PivotIndexChangeBehavior DesiredIndex="1"
-                                                                ShouldExecuteCommand="{Binding ShelvesLoaded, Converter={StaticResource InverseBooleanConverter}}"
-                                                                Command="{Binding FetchBookshelves}"
-                                                                CommandParameter="{Binding FetchBookshelvesArg}" />
-                        </i:Interaction.Behaviors>
-                        <phone:Pivot.RenderTransform>
-                            <CompositeTransform />
-                        </phone:Pivot.RenderTransform>
-                        <phone:Pivot.Triggers>
-                            <EventTrigger>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="MainPivot"
-                                                         Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
-                                                         From="100"
-                                                         To="0"
-                                                         Duration="0:0:0.3">
-                                            <DoubleAnimation.EasingFunction>
-                                                <QuadraticEase EasingMode="EaseInOut" />
-                                            </DoubleAnimation.EasingFunction>
-                                        </DoubleAnimation>
-
-                                        <DoubleAnimation Storyboard.TargetName="MainPivot"
-                                                         Storyboard.TargetProperty="Opacity"
-                                                         From="0"
-                                                         To="1"
-                                                         Duration="0:0:0.4" />
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </phone:Pivot.Triggers>
-
-                        <!--Pivot item one-->
-                        <phone:PivotItem Header="{Binding Path=LocalizedResources.ProfileAboutTitle, Source={StaticResource LocalizedStrings}, Converter={StaticResource ToUpperCaseConverter}}"
-                                         Foreground="{StaticResource PhoneForegroundBrush}">
-                            <ScrollViewer>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="50" />
-                                    </Grid.RowDefinitions>
-                                    <Border Grid.Row="0"
-                                            HorizontalAlignment="Left"
-                                            Margin="12,0,0,12"
-                                            Height="150"
-                                            Width="150"
-                                            Background="{StaticResource PhoneSubtleBrush}"
-                                            Visibility="{Binding ImageUrl, Converter={StaticResource InverseStringToVisibilityConverter}, FallbackValue=Collapsed}" />
-                                    <Image Grid.Row="0"
-                                           HorizontalAlignment="Left"
-                                           Source="{Binding ImageUrl}"
-                                           Margin="12,0,0,12"
-                                           Height="150"
-                                           Width="150" />
-                                    <controls:LongListSelector x:Name="profileItemsList"
-                                                               ItemsSource="{Binding ProfileItems}"
-                                                               Grid.Row="1"
-                                                               ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                                                               toolkit:TiltEffect.IsTiltEnabled="True">
-                                        <controls:LongListSelector.ItemTemplate>
-                                            <DataTemplate>
-                                                <StackPanel Margin="0,0,0,20">
-                                                    <TextBlock Text="{Binding Type, Converter={StaticResource ProfileItemTypeToStringConverter}}"
-                                                               Foreground="{Binding IsEnabled, Converter={StaticResource EnabledToForegroundConverter}}"
-                                                               Style="{StaticResource PhoneTextLargeStyle}" />
-                                                    <TextBlock Text="{Binding BindsDirectlyToSource=True, Converter={StaticResource ProfileItemValueToStringConverter}}"
-                                                               Foreground="{Binding IsEnabled, Converter={StaticResource EnabledToForegroundConverter}}"
-                                                               Margin="12,0,0,0"
-                                                               TextTrimming="WordEllipsis"
-                                                               TextWrapping="Wrap" />
-                                                </StackPanel>
-                                            </DataTemplate>
-                                        </controls:LongListSelector.ItemTemplate>
-                                    </controls:LongListSelector>
-
-                                    <Grid Grid.Row="2" />
-                                </Grid>
-                            </ScrollViewer>
-                        </phone:PivotItem>
-                        <!--Pivot item two-->
-                        <phone:PivotItem Header="{Binding Path=LocalizedResources.ProfileBookshelvesTitle, Source={StaticResource LocalizedStrings}, Converter={StaticResource ToUpperCaseConverter}}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*" />
-                                    <RowDefinition Height="70" />
-                                </Grid.RowDefinitions>
-                                <Grid>
-                                    <TextBlock Text="{Binding Path=LocalizedResources.NoBookshelvesMessage, Source={StaticResource LocalizedStrings}}"
-                                               Foreground="{StaticResource PhoneForegroundBrush}"
-                                               Style="{StaticResource PhoneTextLargeStyle}"
-                                               Visibility="{Binding AreShelvesEmpty, Converter={StaticResource BooleanVisibilityConverter}, FallbackValue=Collapsed}" />
-
-                                    <controls:LongListSelector ItemsSource="{Binding Shelves}"
-                                                               LayoutMode="Grid"
-                                                               GridCellSize="200,200"
-                                                               toolkit:TiltEffect.IsTiltEnabled="True"
-                                                               toolkit:TurnstileFeatherEffect.FeatheringIndex="0"
-                                                               SelectedItem="{Binding SelectedShelf, Mode=TwoWay}"
-                                                               Padding="12,0,0,0">
-                                        <i:Interaction.Behaviors>
-                                            <behaviors:IncrementalLoadingBehavior Command="{Binding FetchBookshelves}"
-                                                                                  CommandParameter="{Binding FetchBookshelvesArg}" />
-                                        </i:Interaction.Behaviors>
-                                        <controls:LongListSelector.ItemTemplate>
-                                            <DataTemplate>
-                                                <controls:Bookshelf ShelfName="{Binding Name}"
-                                                                    NumberOfBooks="{Binding BooksCount}"
-                                                                    Background="{StaticResource PhoneAccentBrush}"
-                                                                    Foreground="White"
-                                                                    Margin="2" />
-                                            </DataTemplate>
-                                        </controls:LongListSelector.ItemTemplate>
-                                    </controls:LongListSelector>
-                                </Grid>
-                                <Grid Grid.Row="1" />
-                            </Grid>
-                        </phone:PivotItem>
-                        <!-- updates-->
-                        <phone:PivotItem Header="{Binding Path=LocalizedResources.ProfileUpdatesTitle, Source={StaticResource LocalizedStrings}, Converter={StaticResource ToUpperCaseConverter}}">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*" />
-                                    <RowDefinition Height="70" />
-                                </Grid.RowDefinitions>
-                                <Grid>
-                                    <TextBlock Text="{Binding Path=LocalizedResources.NoUpdatesMessage, Source={StaticResource LocalizedStrings}}"
-                                               Foreground="{StaticResource PhoneForegroundBrush}"
-                                               Style="{StaticResource PhoneTextLargeStyle}"
-                                               Visibility="{Binding AreUpdatesEmpty, Converter={StaticResource BooleanVisibilityConverter}, FallbackValue=Collapsed}" />
-
-                                    <controls:LongListSelector Foreground="{StaticResource PhoneForegroundBrush}"
-                                                               ItemsSource="{Binding RecentUpdates}">
-                                        <controls:LongListSelector.ItemTemplate>
-                                            <DataTemplate>
-                                                <controls:FeedItemTemplateSelector ReviewFeedItemDataTemplate="{StaticResource ReviewFeedItemDataTemplate}"
-                                                                                   FriendFeedItemDataTemplate="{StaticResource FriendFeedItemDataTemplate}"
-                                                                                   ReadStatusFeedItemDataTemplate="{StaticResource ReadStatusFeedItemDataTemplate}"
-                                                                                   UserStatusFeedItemDataTemplate="{StaticResource UserStatusFeedItemDataTemplate}"
-                                                                                   FallbackDataTemplate="{StaticResource EmptyDataTemplate}"
-                                                                                   Content="{Binding}"
-                                                                                   HorizontalContentAlignment="Stretch" />
-                                            </DataTemplate>
-                                        </controls:LongListSelector.ItemTemplate>
-                                    </controls:LongListSelector>
-                                    
-                                </Grid>
-                                <Grid Grid.Row="1" />
-                            </Grid>
-
-                        </phone:PivotItem>
-                    </phone:Pivot>
+                    <TextBlock Text="{Binding}"
+                               Style="{StaticResource PhoneTextTitle2Style}"
+                               Margin="2,15,15,15" />
                 </DataTemplate>
-            </controls:DeferredContentLoader.DeferredContentTemplate>
+            </phone:Pivot.HeaderTemplate>
 
-        </controls:DeferredContentLoader>
+            <i:Interaction.Behaviors>
+                <behaviors:PivotIndexChangeBehavior DesiredIndex="1"
+                                                    ShouldExecuteCommand="{Binding ShelvesLoaded, Converter={StaticResource InverseBooleanConverter}}"
+                                                    Command="{Binding FetchBookshelves}"
+                                                    CommandParameter="{Binding FetchBookshelvesArg}" />
+            </i:Interaction.Behaviors>
+            <phone:Pivot.RenderTransform>
+                <CompositeTransform />
+            </phone:Pivot.RenderTransform>
+            <phone:Pivot.Triggers>
+                <EventTrigger>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="MainPivot"
+                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
+                                             From="100"
+                                             To="0"
+                                             Duration="0:0:0.3">
+                                <DoubleAnimation.EasingFunction>
+                                    <QuadraticEase EasingMode="EaseInOut" />
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+
+                            <DoubleAnimation Storyboard.TargetName="MainPivot"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="0"
+                                             To="1"
+                                             Duration="0:0:0.4" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </phone:Pivot.Triggers>
+
+            <!--Pivot item one-->
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.ProfileAboutTitle, Source={StaticResource LocalizedStrings}, Converter={StaticResource ToUpperCaseConverter}}"
+                             Foreground="{StaticResource PhoneForegroundBrush}">
+                <ScrollViewer>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0"
+                                HorizontalAlignment="Left"
+                                Margin="12,0,0,12"
+                                Height="150"
+                                Width="150"
+                                Background="{StaticResource PhoneSubtleBrush}"
+                                Visibility="{Binding ImageUrl, Converter={StaticResource InverseStringToVisibilityConverter}, FallbackValue=Collapsed}" />
+                        <Image Grid.Row="0"
+                               HorizontalAlignment="Left"
+                               Source="{Binding ImageUrl}"
+                               Margin="12,0,0,12"
+                               Height="150"
+                               Width="150" />
+                        <controls:LongListSelector x:Name="profileItemsList"
+                                                   ItemsSource="{Binding ProfileItems}"
+                                                   SelectedItem="{Binding SelectedProfileItem, Mode=TwoWay}"
+                                                   Grid.Row="1"
+                                                   ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                                   toolkit:TiltEffect.IsTiltEnabled="True">
+                            <controls:LongListSelector.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Margin="0,0,0,20">
+                                        <TextBlock Text="{Binding Type, Converter={StaticResource ProfileItemTypeToStringConverter}}"
+                                                   Foreground="{Binding IsEnabled, Converter={StaticResource EnabledToForegroundConverter}}"
+                                                   Style="{StaticResource PhoneTextLargeStyle}" />
+                                        <TextBlock Text="{Binding BindsDirectlyToSource=True, Converter={StaticResource ProfileItemValueToStringConverter}}"
+                                                   Foreground="{Binding IsEnabled, Converter={StaticResource EnabledToForegroundConverter}}"
+                                                   Margin="12,0,0,0"
+                                                   TextTrimming="WordEllipsis"
+                                                   TextWrapping="Wrap" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </controls:LongListSelector.ItemTemplate>
+                        </controls:LongListSelector>
+
+                        <Grid Grid.Row="2" />
+                    </Grid>
+                </ScrollViewer>
+            </phone:PivotItem>
+            <!--Pivot item two-->
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.ProfileBookshelvesTitle, Source={StaticResource LocalizedStrings}, Converter={StaticResource ToUpperCaseConverter}}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="70" />
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <TextBlock Text="{Binding Path=LocalizedResources.NoBookshelvesMessage, Source={StaticResource LocalizedStrings}}"
+                                   Foreground="{StaticResource PhoneForegroundBrush}"
+                                   Style="{StaticResource PhoneTextLargeStyle}"
+                                   Visibility="{Binding AreShelvesEmpty, Converter={StaticResource BooleanVisibilityConverter}, FallbackValue=Collapsed}" />
+
+                        <controls:LongListSelector ItemsSource="{Binding Shelves}"
+                                                   LayoutMode="Grid"
+                                                   GridCellSize="200,200"
+                                                   toolkit:TiltEffect.IsTiltEnabled="True"
+                                                   toolkit:TurnstileFeatherEffect.FeatheringIndex="0"
+                                                   SelectedItem="{Binding SelectedShelf, Mode=TwoWay}"
+                                                   Padding="12,0,0,0">
+                            <i:Interaction.Behaviors>
+                                <behaviors:IncrementalLoadingBehavior Command="{Binding FetchBookshelves}"
+                                                                      CommandParameter="{Binding FetchBookshelvesArg}" />
+                            </i:Interaction.Behaviors>
+                            <controls:LongListSelector.ItemTemplate>
+                                <DataTemplate>
+                                    <controls:Bookshelf ShelfName="{Binding Name}"
+                                                        NumberOfBooks="{Binding BooksCount}"
+                                                        Background="{StaticResource PhoneAccentBrush}"
+                                                        Foreground="White"
+                                                        Margin="2" />
+                                </DataTemplate>
+                            </controls:LongListSelector.ItemTemplate>
+                        </controls:LongListSelector>
+                    </Grid>
+                    <Grid Grid.Row="1" />
+                </Grid>
+            </phone:PivotItem>
+            <!-- updates-->
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.ProfileUpdatesTitle, Source={StaticResource LocalizedStrings}, Converter={StaticResource ToUpperCaseConverter}}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="70" />
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <TextBlock Text="{Binding Path=LocalizedResources.NoUpdatesMessage, Source={StaticResource LocalizedStrings}}"
+                                   Foreground="{StaticResource PhoneForegroundBrush}"
+                                   Style="{StaticResource PhoneTextLargeStyle}"
+                                   Visibility="{Binding AreUpdatesEmpty, Converter={StaticResource BooleanVisibilityConverter}, FallbackValue=Collapsed}" />
+
+                        <controls:LongListSelector Foreground="{StaticResource PhoneForegroundBrush}"
+                                                   ItemsSource="{Binding RecentUpdates}">
+                            <controls:LongListSelector.ItemTemplate>
+                                <DataTemplate>
+                                    <controls:FeedItemTemplateSelector ReviewFeedItemDataTemplate="{StaticResource ReviewFeedItemDataTemplate}"
+                                                                       FriendFeedItemDataTemplate="{StaticResource FriendFeedItemDataTemplate}"
+                                                                       ReadStatusFeedItemDataTemplate="{StaticResource ReadStatusFeedItemDataTemplate}"
+                                                                       UserStatusFeedItemDataTemplate="{StaticResource UserStatusFeedItemDataTemplate}"
+                                                                       FallbackDataTemplate="{StaticResource EmptyDataTemplate}"
+                                                                       Content="{Binding}"
+                                                                       HorizontalContentAlignment="Stretch" />
+                                </DataTemplate>
+                            </controls:LongListSelector.ItemTemplate>
+                        </controls:LongListSelector>
+
+                    </Grid>
+                    <Grid Grid.Row="1" />
+                </Grid>
+
+            </phone:PivotItem>
+        </phone:Pivot>
 
     </Grid>
 

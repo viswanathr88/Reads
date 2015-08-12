@@ -418,7 +418,7 @@
                                    Text="{Binding Body}"
                                    TextWrapping="Wrap"
                                    Style="{StaticResource PhoneTextNormalStyle}"
-                                   Foreground="{StaticResource PhoneBackgroundBrush}"
+                                   Foreground="{StaticResource PhoneForegroundBrush}"
                                    Visibility="{Binding Body, Converter={StaticResource StringToVisibilityConverter}}">
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Tap">

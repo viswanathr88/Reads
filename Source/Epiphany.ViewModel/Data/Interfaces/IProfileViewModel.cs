@@ -26,6 +26,8 @@ namespace Epiphany.ViewModel
 
         IList<ProfileItemViewModel> ProfileItems { get; }
 
+        ProfileItemViewModel SelectedProfileItem { get; set; }
+
         IList<BookshelfModel> Shelves { get; }
 
         IList<IFeedItemViewModel> RecentUpdates { get; }

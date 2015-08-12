@@ -175,12 +175,12 @@
     </Grid>
 
     <appbar:Bindable.ApplicationBar>
-        <appbar:BindableApplicationBar IsVisible="{Binding Path=FriendsViewModel.IsLoaded}"
+        <appbar:BindableApplicationBar IsVisible="{Binding IsLoaded}"
                                        BindableOpacity="0.9999"
                                        Mode="Minimized">
             <appbar:BindableApplicationBar.MenuItems>
                 <appbar:BindableApplicationBarMenuItem Text="{Binding Path=LocalizedResources.AppBarHomeText, Source={StaticResource LocalizedStrings}}"
-                                                       Command="{Binding Path=FriendsViewModel.GoHome}" />
+                                                       Command="{Binding GoHome}" />
             </appbar:BindableApplicationBar.MenuItems>
             
         </appbar:BindableApplicationBar>
