@@ -203,11 +203,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="KellermanSoftware.Compare-NET-Objects-Portable">
-      <HintPath>..\packages\CompareNETObjects.3.00.0.0\lib\portable-net4+sl5+wp8+win8\KellermanSoftware.Compare-NET-Objects-Portable.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\Source\Epiphany.Xml\Epiphany.Xml.csproj">
       <Project>{0cbd2a4b-b8ed-466b-8e12-ad66e984467b}</Project>
       <Name>Epiphany.Xml</Name>
@@ -215,6 +210,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="KellermanSoftware.Compare-NET-Objects-Portable, Version=3.3.0.0, Culture=neutral, PublicKeyToken=d970ace04cc85217, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CompareNETObjects.3.03.0.0\lib\portable-net4+sl5+wp8+win8\KellermanSoftware.Compare-NET-Objects-Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

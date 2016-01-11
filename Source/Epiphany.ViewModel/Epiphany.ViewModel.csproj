@@ -109,7 +109,6 @@
     <Compile Include="Data\AuthorAttributeViewModel.cs" />
     <Compile Include="Data\AuthorAttributeViewModelFactory.cs" />
     <Compile Include="Data\AuthorViewModel.cs" />
-    <Compile Include="Data\BookshelvesViewModel.cs" />
     <Compile Include="Data\BooksViewModel.cs" />
     <Compile Include="Data\FeedOptions.cs" />
     <Compile Include="Data\FeedOptionsViewModel.cs" />

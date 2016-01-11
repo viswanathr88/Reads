@@ -125,7 +125,7 @@ namespace Epiphany.View.Services
 
         public IBookshelvesViewModel Bookshelves
         {
-            get { return new BookshelvesViewModel(this.serviceFactory.GetBookshelfService(), this.navigationService, this.serviceFactory.GetLogonService().Session); }
+            get { return null; } //return new BookshelvesViewModel(this.serviceFactory.GetBookshelfService(), this.navigationService, this.serviceFactory.GetLogonService().Session); }
         }
 
         public ISettingsViewModel Settings
