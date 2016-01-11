@@ -3,7 +3,7 @@ using System;
 
 namespace Epiphany.View.Services
 {
-    interface IViewModelLocator : IDisposable
+    public interface IViewModelLocator : IDisposable
     {
         IHomeViewModel Home { get; }
 

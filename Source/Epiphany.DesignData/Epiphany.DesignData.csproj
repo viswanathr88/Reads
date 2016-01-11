@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C48C7089-9962-4628-B96B-6BBAAAEA1E9A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Epiphany.DesignData</RootNamespace>
+    <AssemblyName>Epiphany.DesignData</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <ProjectReference Include="..\Epiphany.Model\Epiphany.Model.csproj">
+      <Project>{d4ededd9-ccd4-43d9-821b-9731c187802e}</Project>
+      <Name>Epiphany.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epiphany.ViewModel\Epiphany.ViewModel.csproj">
+      <Project>{50f37359-1dea-47ab-9249-ea864608911c}</Project>
+      <Name>Epiphany.ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DesignAddBookViewModel.cs" />
+    <Compile Include="DesignAuthorAttributeViewModel.cs" />
+    <Compile Include="DesignAuthorItemViewModel.cs" />
+    <Compile Include="DesignAuthorViewModel.cs" />
+    <Compile Include="DesignBookItemViewModel.cs" />
+    <Compile Include="DesignBookshelfItemViewModel.cs" />
+    <Compile Include="DesignBookshelvesViewModel.cs" />
+    <Compile Include="DesignEventsViewModel.cs" />
+    <Compile Include="DesignFeedItemViewModel.cs" />
+    <Compile Include="DesignFeedViewModel.cs" />
+    <Compile Include="DesignFriendsViewModel.cs" />
+    <Compile Include="DesignHomeViewModel.cs" />
+    <Compile Include="DesignLogonViewModel.cs" />
+    <Compile Include="DesignProfileViewModel.cs" />
+    <Compile Include="DesignSearchItemViewModel.cs" />
+    <Compile Include="DesignSearchViewModel.cs" />
+    <Compile Include="DesignTimeViewModelLocator.cs" />
+    <Compile Include="DesignUserItemViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

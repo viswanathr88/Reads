@@ -5,7 +5,7 @@ using System;
 
 namespace Epiphany.View.Services
 {
-    sealed class DesignTimeViewModelLocator : IViewModelLocator
+    public sealed class DesignTimeViewModelLocator : IViewModelLocator
     {
         public IHomeViewModel Home
         {

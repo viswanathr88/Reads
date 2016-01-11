@@ -179,7 +179,7 @@ namespace Epiphany.ViewModel
 
         public ICommand<AuthorModel> PinAuthor
         {
-            get { return null; }
+            get { return this.pinAuthorCommand; }
         }
 
         public ICommand GoHome

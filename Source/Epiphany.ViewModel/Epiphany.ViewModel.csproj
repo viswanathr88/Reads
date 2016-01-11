@@ -155,6 +155,7 @@
     <Compile Include="Items\SearchResultItemViewModel.cs" />
     <Compile Include="Data\SearchViewModel.cs" />
     <Compile Include="Items\UserItemViewModel.cs" />
+    <Compile Include="IViewModelLocator.cs" />
     <Compile Include="Services\ILocationService.cs" />
     <Compile Include="Services\IResourceLoader.cs" />
     <Compile Include="Data\SettingsViewModel.cs" />

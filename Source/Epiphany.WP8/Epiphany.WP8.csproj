@@ -123,30 +123,11 @@
     <Compile Include="Converters\TimeToNowConverter.cs" />
     <Compile Include="Converters\UpperCaseConverter.cs" />
     <Compile Include="Controls\DeferredContentPresenter.cs" />
-    <Compile Include="DesignData\DesignAddBookViewModel.cs" />
-    <Compile Include="DesignData\DesignAuthorAttributeViewModel.cs" />
-    <Compile Include="DesignData\DesignAuthorItemViewModel.cs" />
-    <Compile Include="DesignData\DesignAuthorViewModel.cs" />
-    <Compile Include="DesignData\DesignBookItemViewModel.cs" />
-    <Compile Include="DesignData\DesignBookshelfItemViewModel.cs" />
-    <Compile Include="DesignData\DesignBookshelvesViewModel.cs" />
-    <Compile Include="DesignData\DesignEventsViewModel.cs" />
-    <Compile Include="DesignData\DesignFeedItemViewModel.cs" />
-    <Compile Include="DesignData\DesignFeedViewModel.cs" />
-    <Compile Include="DesignData\DesignFriendsViewModel.cs" />
-    <Compile Include="DesignData\DesignHomeViewModel.cs" />
-    <Compile Include="DesignData\DesignLogonViewModel.cs" />
-    <Compile Include="DesignData\DesignProfileViewModel.cs" />
-    <Compile Include="DesignData\DesignSearchItemViewModel.cs" />
-    <Compile Include="DesignData\DesignSearchViewModel.cs" />
-    <Compile Include="DesignData\DesignUserItemViewModel.cs" />
     <Compile Include="Resources\LocalizedStrings.cs" />
     <Compile Include="Services\AppRateService.cs" />
     <Compile Include="Services\AuthService.cs" />
-    <Compile Include="DesignData\DesignTimeViewModelLocator.cs" />
     <Compile Include="Services\DebugLog.cs" />
     <Compile Include="Services\IViewLocator.cs" />
-    <Compile Include="Services\IViewModelLocator.cs" />
     <Compile Include="Services\LocationService.cs" />
     <Compile Include="Services\LoggerBase.cs" />
     <Compile Include="Services\NavigationOperation.cs" />
@@ -346,6 +327,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Epiphany.DesignData\Epiphany.DesignData.csproj">
+      <Project>{c48c7089-9962-4628-b96b-6bbaaaea1e9a}</Project>
+      <Name>Epiphany.DesignData</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Epiphany.Model\Epiphany.Model.csproj">
       <Project>{d4ededd9-ccd4-43d9-821b-9731c187802e}</Project>
       <Name>Epiphany.Model</Name>
@@ -372,6 +357,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Windows.Interactivity, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DesignData\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

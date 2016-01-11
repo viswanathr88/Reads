@@ -24,7 +24,7 @@ namespace Epiphany.View.DesignData
             ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.Age, "25", false));
             ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.Username, "testuser", false));
             ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.ViewInGoodreads, "www.goodreads.com", true));
-            ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.JoinDate, DateTime.Now.ToShortDateString(), false));
+            ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.JoinDate, DateTime.Now.ToString(), false));
 
             SelectedProfileItem = ProfileItems[0];
 
