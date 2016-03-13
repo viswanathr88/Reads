@@ -58,6 +58,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Epiphany.Strings\Epiphany.Strings.csproj">
+      <Project>{879404da-bfc5-490f-89c0-56251f88b5f5}</Project>
+      <Name>Epiphany.Strings</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Epiphany.ViewModel\Epiphany.ViewModel.csproj">
       <Project>{50f37359-1dea-47ab-9249-ea864608911c}</Project>
       <Name>Epiphany.ViewModel</Name>

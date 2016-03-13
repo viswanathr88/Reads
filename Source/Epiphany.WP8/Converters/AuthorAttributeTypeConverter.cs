@@ -1,4 +1,4 @@
-﻿using Epiphany.View.Resources;
+﻿using Epiphany.Strings;
 using Epiphany.ViewModel;
 using System;
 using System.Globalization;

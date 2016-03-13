@@ -30,7 +30,6 @@ namespace Epiphany.ViewModel
         // commands
         private readonly IAsyncCommand<IEnumerable<BookModel>, IAsyncEnumerator<BookModel>> fetchBooksCommand;
         private readonly IAsyncCommand<AuthorModel, int> fetchAuthorCommand;
-        private readonly ICommand<AuthorModel> pinAuthorCommand;
         private readonly ICommand goHomeCommand;
 
         private readonly IBookService bookService;
@@ -179,7 +178,7 @@ namespace Epiphany.ViewModel
 
         public ICommand<AuthorModel> PinAuthor
         {
-            get { return this.pinAuthorCommand; }
+            get { return null; }
         }
 
         public ICommand GoHome

@@ -6,7 +6,7 @@ using System.Windows.Markup;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using Epiphany.View.Resources;
+using Epiphany.Strings;
 using Epiphany.Logging;
 using Epiphany.View.Services;
 

@@ -1,4 +1,4 @@
-﻿using Epiphany.View.Resources;
+﻿using Epiphany.Strings;
 using Epiphany.ViewModel.Services;
 using Microsoft.Phone.Globalization;
 using System.Collections.Generic;

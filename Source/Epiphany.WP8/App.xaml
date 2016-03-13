@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
              xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
-             xmlns:resources="clr-namespace:Epiphany.View.Resources"
+             xmlns:strings="clr-namespace:Epiphany.Strings;assembly=Epiphany.Strings"
              xmlns:viewservices="clr-namespace:Epiphany.View.Services"
              xmlns:converters="clr-namespace:Epiphany.View.Converters"
              xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
@@ -22,7 +22,7 @@
             <converters:InverseBooleanConverter x:Key="InverseBooleanConverter" />
             <converters:TimeToNowConverter x:Key="TimeToNowConverter" />
 
-            <resources:LocalizedStrings x:Key="LocalizedStrings" />
+            <strings:LocalizedStrings x:Key="LocalizedStrings" />
             <viewservices:ViewModelLocator x:Key="VMLocator" />
 
             <ControlTemplate x:Key="ListPickerFilterTemplate"

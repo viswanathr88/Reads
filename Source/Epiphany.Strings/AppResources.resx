@@ -117,151 +117,63 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ResourceFlowDirection" xml:space="preserve">
-    <value>LeftToRight</value>
-    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+  <data name="AboutNHoursAgoText" xml:space="preserve">
+    <value>about {0} hours ago</value>
   </data>
-  <data name="ResourceLanguage" xml:space="preserve">
-    <value>en-US</value>
-    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
-  </data>
-  <data name="ApplicationTitle" xml:space="preserve">
-    <value>Reads</value>
-  </data>
-  <data name="AppBarButtonText" xml:space="preserve">
+  <data name="AddBookshelfButtonText" xml:space="preserve">
     <value>add</value>
-  </data>
-  <data name="AppBarMenuItemText" xml:space="preserve">
-    <value>Menu Item</value>
-  </data>
-  <data name="RetryLoginButtonText" xml:space="preserve">
-    <value>retry</value>
-  </data>
-  <data name="SigningInStuckMessage" xml:space="preserve">
-    <value>This is taking longer than expected. This could be due to a slow network connection.</value>
-  </data>
-  <data name="VersionString" xml:space="preserve">
-    <value>Version: 2.5</value>
-  </data>
-  <data name="LikeonFBButtonText" xml:space="preserve">
-    <value>like on facebook</value>
-  </data>
-  <data name="RateButtonText" xml:space="preserve">
-    <value>rate the app</value>
   </data>
   <data name="AddToShelfTitle" xml:space="preserve">
     <value>add to shelf</value>
   </data>
-  <data name="MenuHeader" xml:space="preserve">
-    <value>Menu</value>
-  </data>
-  <data name="WhatsNewHeader" xml:space="preserve">
-    <value>What's New</value>
-  </data>
-  <data name="HomeEventsTitle" xml:space="preserve">
-    <value>events</value>
-  </data>
-  <data name="HomeFriendsTitle" xml:space="preserve">
-    <value>friends</value>
-  </data>
-  <data name="HomeGroupsTitle" xml:space="preserve">
-    <value>groups</value>
-  </data>
-  <data name="HomeMyBooksTitle" xml:space="preserve">
-    <value>my books</value>
-  </data>
-  <data name="HomeMyProfileTitle" xml:space="preserve">
-    <value>my profile</value>
-  </data>
-  <data name="SearchTitle" xml:space="preserve">
-    <value>search</value>
-  </data>
-  <data name="NoBookshelvesMessage" xml:space="preserve">
-    <value>There are no bookshelves!</value>
-  </data>
-  <data name="NoUpdatesMessage" xml:space="preserve">
-    <value>There are no updates!</value>
-  </data>
-  <data name="ProfileAboutTitle" xml:space="preserve">
-    <value>profile</value>
-  </data>
-  <data name="ProfileBookshelvesTitle" xml:space="preserve">
-    <value>bookshelves</value>
-  </data>
-  <data name="ProfileUpdatesTitle" xml:space="preserve">
-    <value>updates</value>
-  </data>
   <data name="AgeText" xml:space="preserve">
     <value>age</value>
   </data>
-  <data name="FavoriteBooksText" xml:space="preserve">
-    <value>favorite books</value>
+  <data name="AppBarAboutText" xml:space="preserve">
+    <value>about</value>
   </data>
-  <data name="FriendStatusText" xml:space="preserve">
-    <value>friend status</value>
+  <data name="AppBarAddFriendText" xml:space="preserve">
+    <value>add friend</value>
   </data>
-  <data name="GenderText" xml:space="preserve">
-    <value>gender</value>
+  <data name="AppBarAddText" xml:space="preserve">
+    <value>add</value>
   </data>
-  <data name="InterestsText" xml:space="preserve">
-    <value>interests</value>
+  <data name="AppBarButtonText" xml:space="preserve">
+    <value>add</value>
   </data>
-  <data name="JoinDateText" xml:space="preserve">
-    <value>join date</value>
-  </data>
-  <data name="LocationText" xml:space="preserve">
-    <value>location</value>
-  </data>
-  <data name="NumberedItemFriendPlural" xml:space="preserve">
-    <value>friends</value>
-  </data>
-  <data name="NumberedItemFriendSingular" xml:space="preserve">
-    <value>friend</value>
-  </data>
-  <data name="NumberedItemGroupPlural" xml:space="preserve">
-    <value>groups</value>
-  </data>
-  <data name="NumberedItemGroupSingular" xml:space="preserve">
-    <value>group</value>
-  </data>
-  <data name="PendingApprovalText" xml:space="preserve">
-    <value>pending approval</value>
-  </data>
-  <data name="UsernameText" xml:space="preserve">
-    <value>username</value>
-  </data>
-  <data name="ViewFriendsText" xml:space="preserve">
-    <value>view friends</value>
-  </data>
-  <data name="ViewGroupsText" xml:space="preserve">
-    <value>view groups</value>
-  </data>
-  <data name="ViewInGoodreadsText" xml:space="preserve">
-    <value>view in goodreads</value>
-  </data>
-  <data name="FriendsTitle" xml:space="preserve">
-    <value>friends</value>
-  </data>
-  <data name="NoFriendsMessage" xml:space="preserve">
-    <value>There are no friends!</value>
-  </data>
-  <data name="AppBarRefreshEventsButtonText" xml:space="preserve">
-    <value>refresh</value>
-  </data>
-  <data name="NoSearchResultsText" xml:space="preserve">
-    <value>No search results</value>
-  </data>
-  <data name="SearchTextBoxHint" xml:space="preserve">
-    <value>find books by title,author</value>
-  </data>
-  <data name="SearchTypeFullModeHeader" xml:space="preserve">
-    <value>pick a search type</value>
+  <data name="AppBarCreateText" xml:space="preserve">
+    <value>create</value>
   </data>
   <data name="AppBarHomeText" xml:space="preserve">
     <value>go home</value>
   </data>
+  <data name="AppBarMenuItemText" xml:space="preserve">
+    <value>Menu Item</value>
+  </data>
   <data name="AppBarPinText" xml:space="preserve">
     <value>pin</value>
+  </data>
+  <data name="AppBarRefreshEventsButtonText" xml:space="preserve">
+    <value>refresh</value>
+  </data>
+  <data name="AppBarRefreshText" xml:space="preserve">
+    <value>refresh</value>
+  </data>
+  <data name="AppBarSignOutText" xml:space="preserve">
+    <value>sign out</value>
+  </data>
+  <data name="AppBarSortText" xml:space="preserve">
+    <value>sort</value>
+  </data>
+  <data name="AppBarSubmitText" xml:space="preserve">
+    <value>submit</value>
+  </data>
+  <data name="ApplicationName" xml:space="preserve">
+    <value>reads</value>
+    <comment>Name of the application</comment>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>Reads</value>
   </data>
   <data name="AuthorAboutTitle" xml:space="preserve">
     <value>about</value>
@@ -293,41 +205,89 @@
   <data name="AuthorsHeaderText" xml:space="preserve">
     <value>authors</value>
   </data>
-  <data name="AppBarAboutText" xml:space="preserve">
-    <value>about</value>
-  </data>
-  <data name="AppBarAddFriendText" xml:space="preserve">
-    <value>add friend</value>
-  </data>
-  <data name="AppBarAddText" xml:space="preserve">
-    <value>add</value>
-  </data>
-  <data name="AppBarCreateText" xml:space="preserve">
-    <value>create</value>
-  </data>
-  <data name="AppBarRefreshText" xml:space="preserve">
-    <value>refresh</value>
-  </data>
-  <data name="AppBarSignOutText" xml:space="preserve">
-    <value>sign out</value>
-  </data>
-  <data name="AppBarSortText" xml:space="preserve">
-    <value>sort</value>
-  </data>
-  <data name="AppBarSubmitText" xml:space="preserve">
-    <value>submit</value>
-  </data>
-  <data name="SettingsTitle" xml:space="preserve">
-    <value>settings</value>
-  </data>
-  <data name="AddBookshelfButtonText" xml:space="preserve">
-    <value>add</value>
-  </data>
   <data name="BooksTitle" xml:space="preserve">
     <value>bookshelves</value>
   </data>
+  <data name="CommentFeedItemActionText" xml:space="preserve">
+    <value>{0} commented on a review:</value>
+  </data>
+  <data name="CommentText" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="EnableTransparentTileHeader" xml:space="preserve">
+    <value>Use Transparent Tile</value>
+  </data>
+  <data name="FavoriteBooksText" xml:space="preserve">
+    <value>favorite books</value>
+  </data>
+  <data name="FriendFeedItemActionText" xml:space="preserve">
+    <value>{0} is now friends with:</value>
+  </data>
+  <data name="FriendStatusText" xml:space="preserve">
+    <value>friend status</value>
+  </data>
+  <data name="FriendsTitle" xml:space="preserve">
+    <value>friends</value>
+  </data>
+  <data name="GenderText" xml:space="preserve">
+    <value>gender</value>
+  </data>
+  <data name="HomeEventsTitle" xml:space="preserve">
+    <value>events</value>
+  </data>
+  <data name="HomeFriendsTitle" xml:space="preserve">
+    <value>friends</value>
+  </data>
+  <data name="HomeGroupsTitle" xml:space="preserve">
+    <value>groups</value>
+  </data>
+  <data name="HomeMyBooksTitle" xml:space="preserve">
+    <value>my books</value>
+  </data>
+  <data name="HomeMyProfileTitle" xml:space="preserve">
+    <value>my profile</value>
+  </data>
+  <data name="InterestsText" xml:space="preserve">
+    <value>interests</value>
+  </data>
+  <data name="JoinDateText" xml:space="preserve">
+    <value>join date</value>
+  </data>
+  <data name="JustAMomentAgoText" xml:space="preserve">
+    <value>just a moment ago</value>
+  </data>
+  <data name="LikeonFBButtonText" xml:space="preserve">
+    <value>like on facebook</value>
+  </data>
   <data name="LocationPermissionHeader" xml:space="preserve">
     <value>Allow Epiphany to use my location</value>
+  </data>
+  <data name="LocationText" xml:space="preserve">
+    <value>location</value>
+  </data>
+  <data name="MenuHeader" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="NDaysAgoText" xml:space="preserve">
+    <value>{0} days ago</value>
+  </data>
+  <data name="NMinutesAgoText" xml:space="preserve">
+    <value>{0} minutes ago</value>
+  </data>
+  <data name="NMonthsAgoText" xml:space="preserve">
+    <value>{0} months ago</value>
+  </data>
+  <data name="NoBookshelvesMessage" xml:space="preserve">
+    <value>There are no bookshelves!</value>
+  </data>
+  <data name="NoFeedMessage" xml:space="preserve">
+    <value>Add some friends on Goodreads to see your friend updates here!</value>
+  </data>
+  <data name="NoFriendsMessage" xml:space="preserve">
+    <value>There are no friends!</value>
+  </data>
+  <data name="NoSearchResultsText" xml:space="preserve">
+    <value>No search results</value>
   </data>
   <data name="NotificationPreference1" xml:space="preserve">
     <value>No notifications</value>
@@ -341,53 +301,23 @@
   <data name="NotificationPreferenceHeader" xml:space="preserve">
     <value>I prefer to receive</value>
   </data>
-  <data name="EnableTransparentTileHeader" xml:space="preserve">
-    <value>Use Transparent Tile</value>
-  </data>
-  <data name="CommentFeedItemActionText" xml:space="preserve">
-    <value>{0} commented on a review:</value>
-  </data>
-  <data name="FriendFeedItemActionText" xml:space="preserve">
-    <value>{0} is now friends with:</value>
-  </data>
-  <data name="ReadStatusFeedItemCurrentlyReadingActionText" xml:space="preserve">
-    <value>{0} started reading:</value>
-  </data>
-  <data name="ReadStatusFeedItemHasReadActionText" xml:space="preserve">
-    <value>{0} has read:</value>
-  </data>
-  <data name="ReviewFeedItemNStarRatingActionText" xml:space="preserve">
-    <value>{0} gave {1} stars to:</value>
-  </data>
-  <data name="ReviewFeedItemOneStarRatingActionText" xml:space="preserve">
-    <value>{0} gave 1 star to: </value>
-  </data>
-  <data name="ReadStatusFeedItemToReadActionText" xml:space="preserve">
-    <value>{0} wants to read:</value>
-  </data>
-  <data name="UserStatusFeedItemActionText" xml:space="preserve">
-    <value>{0} is on page {1} of {2} of:</value>
-  </data>
-  <data name="UserStatusFeedItemFinishedActionText" xml:space="preserve">
-    <value>{0} has finished reading:</value>
-  </data>
-  <data name="AboutNHoursAgoText" xml:space="preserve">
-    <value>about {0} hours ago</value>
-  </data>
-  <data name="JustAMomentAgoText" xml:space="preserve">
-    <value>just a moment ago</value>
-  </data>
-  <data name="NDaysAgoText" xml:space="preserve">
-    <value>{0} days ago</value>
-  </data>
-  <data name="NMinutesAgoText" xml:space="preserve">
-    <value>{0} minutes ago</value>
-  </data>
-  <data name="NMonthsAgoText" xml:space="preserve">
-    <value>{0} months ago</value>
+  <data name="NoUpdatesMessage" xml:space="preserve">
+    <value>There are no updates!</value>
   </data>
   <data name="NSecondsAgoText" xml:space="preserve">
     <value>{0} seconds ago</value>
+  </data>
+  <data name="NumberedItemFriendPlural" xml:space="preserve">
+    <value>friends</value>
+  </data>
+  <data name="NumberedItemFriendSingular" xml:space="preserve">
+    <value>friend</value>
+  </data>
+  <data name="NumberedItemGroupPlural" xml:space="preserve">
+    <value>groups</value>
+  </data>
+  <data name="NumberedItemGroupSingular" xml:space="preserve">
+    <value>group</value>
   </data>
   <data name="NYearsAgoText" xml:space="preserve">
     <value>{0} years ago</value>
@@ -407,10 +337,84 @@
   <data name="OneYearAgoText" xml:space="preserve">
     <value>1 year ago</value>
   </data>
-  <data name="CommentText" xml:space="preserve">
-    <value>Comment</value>
+  <data name="PendingApprovalText" xml:space="preserve">
+    <value>pending approval</value>
   </data>
-  <data name="NoFeedMessage" xml:space="preserve">
-    <value>Add some friends on Goodreads to see your friend updates here!</value>
+  <data name="ProfileAboutTitle" xml:space="preserve">
+    <value>profile</value>
+  </data>
+  <data name="ProfileBookshelvesTitle" xml:space="preserve">
+    <value>bookshelves</value>
+  </data>
+  <data name="ProfileUpdatesTitle" xml:space="preserve">
+    <value>updates</value>
+  </data>
+  <data name="RateButtonText" xml:space="preserve">
+    <value>rate the app</value>
+  </data>
+  <data name="ReadStatusFeedItemCurrentlyReadingActionText" xml:space="preserve">
+    <value>{0} started reading:</value>
+  </data>
+  <data name="ReadStatusFeedItemHasReadActionText" xml:space="preserve">
+    <value>{0} has read:</value>
+  </data>
+  <data name="ReadStatusFeedItemToReadActionText" xml:space="preserve">
+    <value>{0} wants to read:</value>
+  </data>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+  </data>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>en-US</value>
+    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  </data>
+  <data name="RetryLoginButtonText" xml:space="preserve">
+    <value>retry</value>
+  </data>
+  <data name="ReviewFeedItemNStarRatingActionText" xml:space="preserve">
+    <value>{0} gave {1} stars to:</value>
+  </data>
+  <data name="ReviewFeedItemOneStarRatingActionText" xml:space="preserve">
+    <value>{0} gave 1 star to: </value>
+  </data>
+  <data name="SearchTextBoxHint" xml:space="preserve">
+    <value>find books by title,author</value>
+  </data>
+  <data name="SearchTitle" xml:space="preserve">
+    <value>search</value>
+  </data>
+  <data name="SearchTypeFullModeHeader" xml:space="preserve">
+    <value>pick a search type</value>
+  </data>
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>settings</value>
+  </data>
+  <data name="SigningInStuckMessage" xml:space="preserve">
+    <value>This is taking longer than expected. This could be due to a slow network connection.</value>
+  </data>
+  <data name="UsernameText" xml:space="preserve">
+    <value>username</value>
+  </data>
+  <data name="UserStatusFeedItemActionText" xml:space="preserve">
+    <value>{0} is on page {1} of {2} of:</value>
+  </data>
+  <data name="UserStatusFeedItemFinishedActionText" xml:space="preserve">
+    <value>{0} has finished reading:</value>
+  </data>
+  <data name="VersionString" xml:space="preserve">
+    <value>Version: 2.5</value>
+  </data>
+  <data name="ViewFriendsText" xml:space="preserve">
+    <value>view friends</value>
+  </data>
+  <data name="ViewGroupsText" xml:space="preserve">
+    <value>view groups</value>
+  </data>
+  <data name="ViewInGoodreadsText" xml:space="preserve">
+    <value>view in goodreads</value>
+  </data>
+  <data name="WhatsNewHeader" xml:space="preserve">
+    <value>What's New</value>
   </data>
 </root>

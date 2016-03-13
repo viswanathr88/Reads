@@ -123,7 +123,6 @@
     <Compile Include="Converters\TimeToNowConverter.cs" />
     <Compile Include="Converters\UpperCaseConverter.cs" />
     <Compile Include="Controls\DeferredContentPresenter.cs" />
-    <Compile Include="Resources\LocalizedStrings.cs" />
     <Compile Include="Services\AppRateService.cs" />
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\DebugLog.cs" />
@@ -176,11 +175,6 @@
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\AppResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.resx</DependentUpon>
-    </Compile>
     <Compile Include="View\ProfilePage.xaml.cs">
       <DependentUpon>ProfilePage.xaml</DependentUpon>
     </Compile>
@@ -321,12 +315,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\AppResources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Epiphany.DesignData\Epiphany.DesignData.csproj">
       <Project>{c48c7089-9962-4628-b96b-6bbaaaea1e9a}</Project>
       <Name>Epiphany.DesignData</Name>
@@ -334,6 +322,10 @@
     <ProjectReference Include="..\Epiphany.Model\Epiphany.Model.csproj">
       <Project>{d4ededd9-ccd4-43d9-821b-9731c187802e}</Project>
       <Name>Epiphany.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epiphany.Strings\Epiphany.Strings.csproj">
+      <Project>{879404da-bfc5-490f-89c0-56251f88b5f5}</Project>
+      <Name>Epiphany.Strings</Name>
     </ProjectReference>
     <ProjectReference Include="..\Epiphany.ViewModel\Epiphany.ViewModel.csproj">
       <Project>{50f37359-1dea-47ab-9249-ea864608911c}</Project>
@@ -358,9 +350,7 @@
     </Reference>
     <Reference Include="System.Windows.Interactivity, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DesignData\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

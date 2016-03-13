@@ -3,6 +3,11 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Epiphany.Universal"
+    xmlns:strings="using:Epiphany.Strings"
     RequestedTheme="Light">
+
+    <Application.Resources>
+        <strings:LocalizedStrings x:Key="LocalizedStrings" />
+    </Application.Resources>
 
 </Application>
