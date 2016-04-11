@@ -52,6 +52,7 @@
     <Compile Include="DesignBookItemViewModel.cs" />
     <Compile Include="DesignBookshelfItemViewModel.cs" />
     <Compile Include="DesignBookshelvesViewModel.cs" />
+    <Compile Include="DesignBookViewModel.cs" />
     <Compile Include="DesignEventsViewModel.cs" />
     <Compile Include="DesignFeedItemViewModel.cs" />
     <Compile Include="DesignFeedViewModel.cs" />

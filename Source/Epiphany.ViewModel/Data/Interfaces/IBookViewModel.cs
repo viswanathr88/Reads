@@ -1,4 +1,7 @@
 ﻿
+using System.Collections;
+using System.Collections.Generic;
+
 namespace Epiphany.ViewModel
 {
     public interface IBookViewModel : IDataViewModel
@@ -13,6 +16,26 @@ namespace Epiphany.ViewModel
         {
             get;
             set;
+        }
+
+        IList<IAuthorViewModel> Authors
+        {
+            get;
+        }
+
+        string ImageUrl
+        {
+            get;
+        }
+
+        string Description
+        {
+            get;
+        }
+
+        double AverageRating
+        {
+            get;
         }
     }
 }

@@ -80,5 +80,10 @@ namespace Epiphany.View.Services
         {
             get { throw new NotImplementedException(); }
         }
+
+        public IBookViewModel Book
+        {
+            get { return new DesignBookViewModel(); }
+        }
     }
 }

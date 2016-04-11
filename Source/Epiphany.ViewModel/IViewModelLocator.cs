@@ -25,6 +25,8 @@ namespace Epiphany.View.Services
 
         IAuthorViewModel Author { get; }
 
+        IBookViewModel Book { get; }
+
         IBookshelvesViewModel Bookshelves { get; }
 
         ISettingsViewModel Settings { get; }

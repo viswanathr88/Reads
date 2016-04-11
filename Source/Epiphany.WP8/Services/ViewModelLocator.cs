@@ -1,4 +1,5 @@
-﻿using Epiphany.ViewModel;
+﻿using System;
+using Epiphany.ViewModel;
 
 namespace Epiphany.View.Services
 {
@@ -106,6 +107,11 @@ namespace Epiphany.View.Services
         public ISettingsViewModel Settings
         {
             get { return this.locatorImpl.Settings; }
+        }
+
+        public IBookViewModel Book
+        {
+            get { return this.locatorImpl.Book; }
         }
     }
 }

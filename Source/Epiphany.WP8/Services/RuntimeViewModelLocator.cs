@@ -1,4 +1,5 @@
-﻿using Epiphany.Model.Services;
+﻿using System;
+using Epiphany.Model.Services;
 using Epiphany.Settings;
 using Epiphany.ViewModel;
 using Epiphany.ViewModel.Services;
@@ -131,6 +132,11 @@ namespace Epiphany.View.Services
         public ISettingsViewModel Settings
         {
             get { return new SettingsViewModel(this.appSettings); }
+        }
+
+        public IBookViewModel Book
+        {
+            get { return new BookViewModel(); }
         }
 
         public void Dispose()
