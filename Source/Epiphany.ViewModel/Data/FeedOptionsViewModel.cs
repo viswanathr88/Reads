@@ -3,10 +3,11 @@ using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System;
 using System.Windows.Input;
+using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
-    sealed class FeedOptionsViewModel : DataViewModel, IFeedOptionsViewModel
+    sealed class FeedOptionsViewModel : DataViewModel<VoidType>, IFeedOptionsViewModel
     {
         private readonly IAppSettings appSettings;
         private FeedOptions feedOptions;
@@ -94,25 +95,17 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public void Load()
-        {
-            if (!IsLoaded)
-            {
-                CurrentUpdateType = appSettings.UpdateType;
-                CurrentUpdateFilter = appSettings.UpdateFilter;
-                CreateFeedOptions();
-                IsLoaded = true;
-            }
-        }
-
         private void CreateFeedOptions()
         {
             FeedOptions = new FeedOptions(CurrentUpdateType, CurrentUpdateFilter);
         }
 
-        public override System.Threading.Tasks.Task LoadAsync()
+        public override async Task LoadAsync(VoidType parameter)
         {
-            throw new NotImplementedException();
+            CurrentUpdateType = appSettings.UpdateType;
+            CurrentUpdateFilter = appSettings.UpdateFilter;
+            CreateFeedOptions();
+            IsLoaded = true;
         }
     }
 }

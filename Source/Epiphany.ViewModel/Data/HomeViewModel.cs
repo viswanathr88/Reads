@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class HomeViewModel : DataViewModel, IHomeViewModel
+    public sealed class HomeViewModel : DataViewModel<VoidType>, IHomeViewModel
     {
         private readonly IUserService userService;
         private readonly INavigationService navigationService;
@@ -88,21 +88,21 @@ namespace Epiphany.ViewModel
             get { return this.showSettingsCommand; }
         }
 
-        public override async Task LoadAsync()
+        public override async Task LoadAsync(VoidType parameter)
         {
-            if (!Feed.IsLoaded && Feed.FetchFeed.CanExecute(VoidType.Empty))
+            if (!Feed.IsLoaded && Feed.FetchFeed.CanExecute(parameter))
             {
-                await Feed.FetchFeed.ExecuteAsync(VoidType.Empty);
+                await Feed.FetchFeed.ExecuteAsync(parameter);
             }
         }
 
         private void OnChildVMPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == "IsLoading")
+            if (e.PropertyName == nameof(IsLoading))
             {
                 IsLoading = Feed.IsLoading;
             }
-            else if (e.PropertyName == "IsLoaded")
+            else if (e.PropertyName == nameof(IsLoaded))
             {
                 IsLoaded = Feed.IsLoaded;
             }

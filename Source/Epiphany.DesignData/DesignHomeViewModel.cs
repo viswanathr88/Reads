@@ -4,7 +4,7 @@ using System.Windows.Input;
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignHomeViewModel : DataViewModel, IHomeViewModel
+    public sealed class DesignHomeViewModel : DesignBaseViewModel, IHomeViewModel
     {
         public IFeedViewModel Feed
         {
@@ -34,11 +34,6 @@ namespace Epiphany.View.DesignData
         public ICommand ShowSettings
         {
             get { return null; }
-        }
-
-        public override System.Threading.Tasks.Task LoadAsync()
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignAuthorViewModel : DataViewModel, IAuthorViewModel
+    public sealed class DesignAuthorViewModel : DesignBaseViewModel, IAuthorViewModel
     {
 
         public DesignAuthorViewModel()
@@ -90,11 +90,6 @@ namespace Epiphany.View.DesignData
         public ICommand GoHome
         {
             get { return null; }
-        }
-
-        public override System.Threading.Tasks.Task LoadAsync()
-        {
-            throw new System.NotImplementedException();
         }
 
         private void PopulateAttributes()

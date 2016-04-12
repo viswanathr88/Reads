@@ -30,6 +30,10 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\DataPage.cs" />
+    <Compile Include="View\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -56,8 +60,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Epiphany.Model\Epiphany.Model.csproj">
+      <Project>{d4ededd9-ccd4-43d9-821b-9731c187802e}</Project>
+      <Name>Epiphany.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Epiphany.Strings\Epiphany.Strings.csproj">
       <Project>{879404da-bfc5-490f-89c0-56251f88b5f5}</Project>
       <Name>Epiphany.Strings</Name>

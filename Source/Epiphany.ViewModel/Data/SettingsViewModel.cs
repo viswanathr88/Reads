@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class SettingsViewModel : DataViewModel, ISettingsViewModel
+    public sealed class SettingsViewModel : DataViewModel<VoidType>, ISettingsViewModel
     {
         private readonly IAppSettings settings;
 
@@ -12,7 +12,7 @@ namespace Epiphany.ViewModel
         {
             if (settings == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(nameof(settings));
             }
 
             this.settings = settings;
@@ -92,6 +92,7 @@ namespace Epiphany.ViewModel
             set
             {
                 this.settings.SortOrder = value;
+                RaisePropertyChanged();
             }
         }
 
@@ -121,7 +122,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override async Task LoadAsync()
+        public override async Task LoadAsync(VoidType parameter)
         {
             //
             // Nothing to do here

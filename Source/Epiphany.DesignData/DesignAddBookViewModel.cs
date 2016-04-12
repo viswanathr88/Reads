@@ -3,10 +3,11 @@ using Epiphany.ViewModel;
 using Epiphany.ViewModel.Commands;
 using System;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignAddBookViewModel : DataViewModel, IAddBookViewModel
+    public sealed class DesignAddBookViewModel : DesignBaseViewModel, IAddBookViewModel
     {
         public DesignAddBookViewModel()
         {
@@ -90,11 +91,6 @@ namespace Epiphany.View.DesignData
         {
             get;
             private set;
-        }
-
-        public override System.Threading.Tasks.Task LoadAsync()
-        {
-            throw new NotImplementedException();
         }
     }
 }

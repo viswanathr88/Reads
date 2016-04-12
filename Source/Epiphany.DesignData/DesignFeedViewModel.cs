@@ -4,14 +4,12 @@ using Epiphany.ViewModel.Items;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignFeedViewModel : DataViewModel, IFeedViewModel
+    public sealed class DesignFeedViewModel : DesignBaseViewModel, IFeedViewModel
     {
         public DesignFeedViewModel()
         {
@@ -130,11 +128,6 @@ namespace Epiphany.View.DesignData
         public IAsyncCommand<IEnumerable<FeedItemModel>, VoidType> FetchFeed
         {
             get { return null; }
-        }
-
-        public override Task LoadAsync()
-        {
-            return Task.FromResult(true);
         }
     }
 }

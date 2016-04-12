@@ -11,13 +11,13 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
-    public class SearchViewModel : DataViewModel, ISearchViewModel
+    public class SearchViewModel : DataViewModel<VoidType>, ISearchViewModel
     {
         private IList<BookSearchType> searchFilters;
         private IList<ISearchResultItemViewModel> searchResults;
         private BookSearchType selectedFilter;
         private SearchQuery previousQuery;
-        private bool hasResults = true;        
+        private bool hasResults = true;
         private ISearchResultItemViewModel selectedResult;
         private SearchQuery query;
         private string searchTerm;
@@ -35,13 +35,12 @@ namespace Epiphany.ViewModel
             SearchFilters = Enum.GetValues(typeof(BookSearchType)).Cast<BookSearchType>().ToList();
 
             this.searchCommand = new SearchCommand(bookService, itemsCount);
-            this.searchCommand.Executing += OnCommandExecuting;
-            this.searchCommand.Executed += OnCommandExecuted;
+            RegisterCommand(this.searchCommand, OnCommandExecuted);
 
             this.showBookCommand = new ShowBookFromItemCommand(navService);
 
             this.selectedFilter = BookSearchType.All;
-            query = new SearchQuery(this.searchTerm, this.selectedFilter);
+            Query = new SearchQuery(this.searchTerm, this.selectedFilter);
         }
 
         public string SearchTerm
@@ -136,7 +135,7 @@ namespace Epiphany.ViewModel
             get { return this.searchCommand; }
         }
 
-        public override async Task LoadAsync()
+        public override async Task LoadAsync(VoidType parameter)
         {
             if (this.searchCommand.CanExecute(Query))
             {
@@ -144,7 +143,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        private void OnCommandExecuted(object sender, ExecutedEventArgs e)
+        private void OnCommandExecuted(ExecutedEventArgs e)
         {
             IsLoading = false;
             previousQuery = query;
@@ -166,14 +165,22 @@ namespace Epiphany.ViewModel
             }
         }
 
-        private void OnCommandExecuting(object sender, CancelEventArgs e)
+        protected override void OnCmdExecuting(object sender, CancelEventArgs e)
         {
-            IsLoading = true;
+            base.OnCmdExecuting(sender, e);
+
             HasResults = true;
             if (previousQuery != query)
             {
                 SearchResults.Clear();
             }
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+
+            DeregisterCommand(this.searchCommand);
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignFriendsViewModel : DataViewModel, IFriendsViewModel
+    public sealed class DesignFriendsViewModel : DesignBaseViewModel, IFriendsViewModel
     {
         public DesignFriendsViewModel()
         {
@@ -64,11 +64,6 @@ namespace Epiphany.View.DesignData
         {
             get;
             private set;
-        }
-
-        public override Task LoadAsync()
-        {
-            return Task.FromResult(true);
         }
     }
 }

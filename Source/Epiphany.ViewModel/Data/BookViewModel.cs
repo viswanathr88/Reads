@@ -1,12 +1,11 @@
-﻿using System;
+﻿using Epiphany.Model;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class BookViewModel : DataViewModel, IBookViewModel
+    public sealed class BookViewModel : DataViewModel<BookModel>, IBookViewModel
     {
         public IList<IAuthorViewModel> Authors
         {
@@ -66,7 +65,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override Task LoadAsync()
+        public override Task LoadAsync(BookModel parameter)
         {
             throw new NotImplementedException();
         }

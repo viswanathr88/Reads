@@ -6,14 +6,12 @@ using System.Windows.Input;
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignEventsViewModel : DataViewModel, IEventsViewModel
+    public sealed class DesignEventsViewModel : DesignBaseViewModel, IEventsViewModel
     {
         public DesignEventsViewModel()
         {
             IsLoading = true;
             Events = new List<LiteraryEventModel>();
-
-            
         }
 
         public IList<LiteraryEventModel> Events
@@ -36,11 +34,6 @@ namespace Epiphany.View.DesignData
         {
             get;
             set;
-        }
-
-        public override Task LoadAsync()
-        {
-            return Task.FromResult(true);
         }
     }
 }

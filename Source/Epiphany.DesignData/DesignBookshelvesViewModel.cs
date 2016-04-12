@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignBookshelvesViewModel : DataViewModel, IBookshelvesViewModel
+    public sealed class DesignBookshelvesViewModel : DesignBaseViewModel, IBookshelvesViewModel
     {
 
         public DesignBookshelvesViewModel()
@@ -61,11 +61,6 @@ namespace Epiphany.View.DesignData
         public ICommand GoHome
         {
             get { return null; }
-        }
-
-        public override Task LoadAsync()
-        {
-            return Task.FromResult(true);
         }
     }
 }

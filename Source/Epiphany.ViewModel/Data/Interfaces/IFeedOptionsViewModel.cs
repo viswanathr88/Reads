@@ -3,7 +3,7 @@ using Epiphany.ViewModel.Commands;
 using System.Windows.Input;
 namespace Epiphany.ViewModel
 {
-    public interface IFeedOptionsViewModel : IDataViewModel
+    public interface IFeedOptionsViewModel
     {
         /// <summary>
         /// Close the options and do not save preferences

@@ -4,11 +4,10 @@ using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class LogonViewModel : DataViewModel, ILogonViewModel
+    public sealed class LogonViewModel : DataViewModel<VoidType>, ILogonViewModel
     {
         private bool isWaitingForUserInteraction;
         private Uri currentUri;
@@ -37,19 +36,17 @@ namespace Epiphany.ViewModel
             this.navigationService = navigationService;
 
             this.verifyLoginCommand = new VerifyLoginCommand(logonService);
+            RegisterCommand(this.verifyLoginCommand, OnVerifyLoginExecuted);
             this.verifyLoginCommand.Executing += OnVerifyLoginExecuting;
-            this.verifyLoginCommand.Executed += OnVerifyLoginExecuted;
 
             this.loginCommand = new LoginCommand(logonService);
-            this.loginCommand.Executing += OnCommandExecuting;
-            this.loginCommand.Executed += OnLoginExecuted;
+            RegisterCommand(this.loginCommand, OnLoginExecuted);
 
             this.checkUriCommand = new CheckUriCommand(logonService.Configuration.CallbackUri);
             this.checkUriCommand.Executed += OnCheckUriExecuted;
 
             this.finishLoginCommand = new FinishLoginCommand(logonService);
-            this.finishLoginCommand.Executing += OnCommandExecuting;
-            this.finishLoginCommand.Executed += OnFinishLoginExecuted;
+            RegisterCommand(this.finishLoginCommand, OnFinishLoginExecuted);
 
             this.timer = timerService.CreateTimer(() => IsSignInTakingLonger = true);
             this.timer.Interval = new TimeSpan(0, 0, 7);
@@ -138,24 +135,23 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public async override Task LoadAsync()
+        public override async Task LoadAsync(VoidType parameter)
         {
             Log.Instance.Debug(IsLoaded.ToString());
 
             if (!IsLoaded)
             {
-                await this.verifyLoginCommand.ExecuteAsync(VoidType.Empty);
+                await this.verifyLoginCommand.ExecuteAsync(parameter);
             }
         }
 
         private void OnVerifyLoginExecuting(object sender, CancelEventArgs e)
         {
-            IsLoading = true;
             Error = null;
             StartTimer();
         }
 
-        private async void OnVerifyLoginExecuted(object sender, ExecutedEventArgs e)
+        private async void OnVerifyLoginExecuted(ExecutedEventArgs e)
         {
             StopTimer();
             if (e.State == CommandExecutionState.Success)
@@ -175,7 +171,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        private void OnLoginExecuted(object sender, ExecutedEventArgs e)
+        private void OnLoginExecuted(ExecutedEventArgs e)
         {
             StopTimer();
             if (e.State == CommandExecutionState.Success)
@@ -209,7 +205,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        private void OnFinishLoginExecuted(object sender, ExecutedEventArgs e)
+        private void OnFinishLoginExecuted(ExecutedEventArgs e)
         {
             StopTimer();
             if (e.State == CommandExecutionState.Success)
@@ -224,12 +220,6 @@ namespace Epiphany.ViewModel
             }
 
             IsLoading = false;
-        }
-
-        private void OnCommandExecuting(object sender, CancelEventArgs e)
-        {
-            IsLoading = true;
-            Error = null;
         }
 
         private void StartTimer()
@@ -260,16 +250,11 @@ namespace Epiphany.ViewModel
         {
             base.Dispose();
 
+            DeregisterCommand(this.verifyLoginCommand);
             this.verifyLoginCommand.Executing -= OnVerifyLoginExecuting;
-            this.verifyLoginCommand.Executed -= OnVerifyLoginExecuted;
-
-            this.loginCommand.Executing -= OnCommandExecuting;
-            this.loginCommand.Executed -= OnLoginExecuted;
-
+            DeregisterCommand(this.loginCommand);
             this.checkUriCommand.Executed -= OnCheckUriExecuted;
-
-            this.finishLoginCommand.Executing -= OnCommandExecuting;
-            this.finishLoginCommand.Executed -= OnFinishLoginExecuted;
+            DeregisterCommand(this.finishLoginCommand);
 
             if (this.timer != null)
             {

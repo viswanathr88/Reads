@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class LauncherViewModel : DataViewModel, ILauncherViewModel
+    public sealed class LauncherViewModel : DataViewModel<VoidType>, ILauncherViewModel
     {
         private readonly INavigationService navService;
         private readonly ILogonService logonService;
@@ -85,9 +85,9 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override Task LoadAsync()
+        public override Task LoadAsync(VoidType parameter)
         {
-            return Task.FromResult(true);
+            throw new NotImplementedException();
         }
     }
 }

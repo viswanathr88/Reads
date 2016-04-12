@@ -4,6 +4,7 @@ using Epiphany.Model.Services;
 using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -11,7 +12,10 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
-    public class AddBookViewModel : DataViewModel, IAddBookViewModel
+    /// <summary>
+    /// ViewModel for adding a book to shelf
+    /// </summary>
+    public class AddBookViewModel : DataViewModel<BookModel>, IAddBookViewModel
     {
         private ICommand<IEnumerable<BookshelfModel>, IAsyncEnumerator<BookshelfModel>> fetchBookshelvesCommand;
         private ObservableCollection<CustomBookshelfItemViewModel> customShelves;
@@ -36,32 +40,45 @@ namespace Epiphany.ViewModel
         private readonly string toReadShelf = "to-read";
         private readonly string readShelf = "read";
 
+        /// <summary>
+        /// Create an instance of AddBookViewModel
+        /// </summary>
+        /// <param name="logonService">logon service</param>
+        /// <param name="bookService">book service</param>
+        /// <param name="bookshelfService">bookshelf service</param>
+        /// <param name="navigationService">navigation service</param>
         public AddBookViewModel(ILogonService logonService, 
             IBookService bookService, 
             IBookshelfService bookshelfService, 
             INavigationService navigationService)
         {
+            if (logonService == null || 
+                bookService == null || 
+                bookshelfService == null || 
+                navigationService == null)
+            {
+                throw new ArgumentNullException("service");
+            }
+
             this.logonService = logonService;
             this.bookshelfService = bookshelfService;
             this.navigationService = navigationService;
             
             this.fetchBookCommand = new FetchBookCommand(bookService);
-            this.fetchBookCommand.Executing += OnCommandExecuting;
-            this.fetchBookCommand.Executed += OnFetchBookExecuted;
+            RegisterCommand(this.fetchBookCommand, OnFetchBookExecuted);
 
             this.fetchBookshelvesCommand = new EnumeratorCommand<BookshelfModel>(10);
-            this.fetchBookshelvesCommand.Executing += OnCommandExecuting;
-            this.fetchBookshelvesCommand.Executed += OnFetchBookshelvesExecuted;
+            RegisterCommand(this.fetchBookshelvesCommand, OnFetchBookshelvesExecuted);
 
             this.addToShelvesCommand = new AddToShelvesCommand(bookService);
-            this.addToShelvesCommand.Executing += OnCommandExecuting;
-            this.addToShelvesCommand.Executed += OnCloseNeeded;
+            RegisterCommand(this.addToShelvesCommand, OnCloseNeeded);
 
             this.createShelfCommand = new AddShelfCommand(bookshelfService);
-            this.createShelfCommand.Executing += OnCommandExecuting;
-            this.createShelfCommand.Executed += OnCreateShelfExecuted;
+            RegisterCommand(this.createShelfCommand, OnCreateShelfExecuted);
         }
-
+        /// <summary>
+        /// Gets the id of the book
+        /// </summary>
         public int Id
         {
             get
@@ -75,7 +92,9 @@ namespace Epiphany.ViewModel
                 RaisePropertyChanged();
             }
         }
-        
+        /// <summary>
+        /// Gets the title of the book
+        /// </summary>
         public string Title
         {
             get { return this.title; }
@@ -86,7 +105,9 @@ namespace Epiphany.ViewModel
                 RaisePropertyChanged();
             }
         }
-
+        /// <summary>
+        /// Gets the name of the shelf
+        /// </summary>
         public string ShelfName
         {
             get { return this.shelfName; }
@@ -97,7 +118,9 @@ namespace Epiphany.ViewModel
                 RaisePropertyChanged();
             }
         }
-
+        /// <summary>
+        /// Gets whether the read shelf is selected
+        /// </summary>
         public bool IsReadSelected
         {
             get { return this.isReadSelected; }
@@ -112,6 +135,9 @@ namespace Epiphany.ViewModel
                 RaisePropertyChanged();
             }
         }
+        /// <summary>
+        /// Gets whether the currently reading shelf is selected
+        /// </summary>
         public bool IsCurrentlyReadingSelected
         {
             get { return this.isCurrentlyReadingSelected; }
@@ -126,6 +152,9 @@ namespace Epiphany.ViewModel
                 RaisePropertyChanged();
             }
         }
+        /// <summary>
+        /// Gets whether the to-read shelf is selected
+        /// </summary>
         public bool IsToReadSelected
         {
             get { return this.isToReadSelected; }
@@ -140,7 +169,9 @@ namespace Epiphany.ViewModel
                 RaisePropertyChanged();
             }
         }
-
+        /// <summary>
+        /// Gets the collection of custom shelves
+        /// </summary>
         public ObservableCollection<CustomBookshelfItemViewModel> CustomShelves
         {
             get { return this.customShelves; }
@@ -151,7 +182,9 @@ namespace Epiphany.ViewModel
                 RaisePropertyChanged();
             }
         }
-
+        /// <summary>
+        /// Gets the model
+        /// </summary>
         public BookModel Book
         {
             get { return this.book; }
@@ -162,7 +195,9 @@ namespace Epiphany.ViewModel
                 RaisePropertyChanged();
             }
         }
-
+        /// <summary>
+        /// Gets the args for AddToShelves command
+        /// </summary>
         public AddToShelvesCommandArgs AddToShelvesArgs
         {
             get { return this.addToShelvesCommandArgs; }
@@ -173,19 +208,31 @@ namespace Epiphany.ViewModel
                 RaisePropertyChanged();
             }
         }
-
+        /// <summary>
+        /// Gets the add to shelves command
+        /// </summary>
         public ICommand<AddToShelvesCommandArgs> AddToShelves
         {
             get { return this.addToShelvesCommand; }
         }
-
+        /// <summary>
+        /// Gets the create shelf command
+        /// </summary>
         public ICommand<string> CreateShelf
         {
             get { return this.createShelfCommand; }
         }
-
-        public void Load()
+        /// <summary>
+        /// Load the VM
+        /// </summary>
+        /// <param name="book">model</param>
+        /// <returns></returns>
+        public override async Task LoadAsync(BookModel book)
         {
+            if (this.fetchBookCommand.CanExecute(book.Id))
+            {
+                await this.fetchBookCommand.ExecuteAsync(book.Id);
+            }
         }
 
         private void OnCommandExecuting(object sender, ViewModel.Commands.CancelEventArgs e)
@@ -193,7 +240,7 @@ namespace Epiphany.ViewModel
             IsLoading = true;
         }
 
-        private void OnFetchBookExecuted(object sender, ExecutedEventArgs e)
+        private void OnFetchBookExecuted(ExecutedEventArgs e)
         {
             IsLoading = false;
             if (e.State == CommandExecutionState.Success)
@@ -217,7 +264,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        private void OnFetchBookshelvesExecuted(object sender, ExecutedEventArgs e)
+        private void OnFetchBookshelvesExecuted(ExecutedEventArgs e)
         {
             IsLoading = false;
             if (e.State == CommandExecutionState.Success)
@@ -228,7 +275,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        private void OnCloseNeeded(object sender, ExecutedEventArgs e)
+        private void OnCloseNeeded(ExecutedEventArgs e)
         {
             IsLoading = false;
             if (e.State == CommandExecutionState.Success)
@@ -241,7 +288,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        private void OnCreateShelfExecuted(object sender, ExecutedEventArgs e)
+        private void OnCreateShelfExecuted(ExecutedEventArgs e)
         {
             IsLoading = false;
             if (e.State == CommandExecutionState.Success)
@@ -308,29 +355,14 @@ namespace Epiphany.ViewModel
         public override void Dispose()
         {
             base.Dispose();
-            this.addToShelvesCommand.Executing -= OnCommandExecuting;
-            this.addToShelvesCommand.Executed -= OnCloseNeeded;
-
-            this.createShelfCommand.Executing -= OnCommandExecuting;
-            this.createShelfCommand.Executed -= OnCreateShelfExecuted;
-
-            this.fetchBookCommand.Executing -= OnCommandExecuting;
-            this.fetchBookCommand.Executed -= OnFetchBookExecuted;
-
-            this.fetchBookshelvesCommand.Executing -= OnCommandExecuting;
-            this.fetchBookshelvesCommand.Executed -= OnFetchBookshelvesExecuted;
+            DeregisterCommand(this.addToShelvesCommand);
+            DeregisterCommand(this.createShelfCommand);
+            DeregisterCommand(fetchBookCommand);
+            DeregisterCommand(fetchBookshelvesCommand);
 
             foreach (CustomBookshelfItemViewModel vm in CustomShelves)
             {
                 vm.PropertyChanged -= OnBookshelfItemPropertyChanged;
-            }
-        }
-
-        public override async Task LoadAsync()
-        {
-            if (this.fetchBookCommand.CanExecute(this.Id))
-            {
-                await this.fetchBookCommand.ExecuteAsync(this.Id);
             }
         }
     }

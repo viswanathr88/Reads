@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignSearchViewModel : DataViewModel, ISearchViewModel
+    public sealed class DesignSearchViewModel : DesignBaseViewModel, ISearchViewModel
     {
         public DesignSearchViewModel()
         {
@@ -98,11 +98,6 @@ namespace Epiphany.View.DesignData
         {
             get;
             set;
-        }
-
-        public override Task LoadAsync()
-        {
-            return Task.FromResult(true);
         }
     }
 }

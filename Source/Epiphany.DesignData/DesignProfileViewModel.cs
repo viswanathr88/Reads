@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignProfileViewModel : DataViewModel, IProfileViewModel
+    public sealed class DesignProfileViewModel : DesignBaseViewModel, IProfileViewModel
     {
         public DesignProfileViewModel()
         {
@@ -97,12 +97,6 @@ namespace Epiphany.View.DesignData
         {
             get { return null; }
         }
-
-        public override Task LoadAsync()
-        {
-            throw new NotImplementedException();
-        }
-
 
         public IList<ProfileItemViewModel> ProfileItems
         {

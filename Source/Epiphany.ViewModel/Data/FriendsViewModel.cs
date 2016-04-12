@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 namespace Epiphany.ViewModel
 {
-    public sealed class FriendsViewModel : DataViewModel, IFriendsViewModel
+    public sealed class FriendsViewModel : DataViewModel<UserModel>, IFriendsViewModel
     {
         private int id;
         private string name;
@@ -107,18 +107,18 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override async Task LoadAsync()
+        public override async Task LoadAsync(UserModel user)
         {
             IsLoading = true;
             IList<UserModel> friends = new List<UserModel>();
-            IAsyncEnumerator<UserModel> enumerator = this.userService.GetFriends(Id).GetEnumerator();
+            IAsyncEnumerator<UserModel> enumerator = this.userService.GetFriends(user.Id).GetEnumerator();
             while (await enumerator.MoveNext())
             {
                 friends.Add(enumerator.Current);
             }
             AreFriendsEmpty = (friends.Count == 0);
             this.FriendList = new ObservableCollection<KeyedList<string, UserModel>>(new AlphabetKeyedList<UserModel>(friends, ((model) => model.Name), resourceLoader));
-            
+
             IsLoading = false;
             IsLoaded = true;
         }

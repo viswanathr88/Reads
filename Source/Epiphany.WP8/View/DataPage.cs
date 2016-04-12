@@ -42,7 +42,7 @@ namespace Epiphany.View
                 return;
             }
 
-            await dataVM.LoadAsync();
+            await dataVM.LoadAsync(VoidType.Empty);
         }
 
         protected override void OnRemovedFromJournal(JournalEntryRemovedEventArgs e)

@@ -12,7 +12,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class ProfileViewModel : DataViewModel, IProfileViewModel
+    public sealed class ProfileViewModel : DataViewModel<UserModel>, IProfileViewModel
     {
         private int id;
         private string name;
@@ -265,11 +265,11 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override async Task LoadAsync()
+        public override async Task LoadAsync(UserModel user)
         {
-            if (!IsLoaded && this.fetchProfileCommand.CanExecute(Id))
+            if (!IsLoaded && this.fetchProfileCommand.CanExecute(user.Id))
             {
-                await this.fetchProfileCommand.ExecuteAsync(Id);
+                await this.fetchProfileCommand.ExecuteAsync(user.Id);
             }
         }
 
@@ -316,8 +316,8 @@ namespace Epiphany.ViewModel
         {
             base.Dispose();
 
-            DeRegisterCommand(this.fetchProfileCommand);
-            DeRegisterCommand(this.fetchBookshelvesCommand);
+            DeregisterCommand(this.fetchProfileCommand);
+            DeregisterCommand(this.fetchBookshelvesCommand);
         }
     }
 }

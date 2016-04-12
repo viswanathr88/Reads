@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public class EventsViewModel : DataViewModel, IEventsViewModel
+    public class EventsViewModel : DataViewModel<VoidType>, IEventsViewModel
     {
         private readonly IEventService eventService;
         private readonly IUrlLauncher urlLauncher;
@@ -26,8 +26,7 @@ namespace Epiphany.ViewModel
             this.locationService = locationService;
 
             this.fetchEventsCommand = new FetchEventsCommand(eventService, locationService);
-            this.fetchEventsCommand.Executing += OnCommandExecuting;
-            this.fetchEventsCommand.Executed += OnCommandExecuted;
+            RegisterCommand(this.fetchEventsCommand, OnCommandExecuted);
         }
 
         public IList<LiteraryEventModel> Events
@@ -54,11 +53,6 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public void Load()
-        {
-            
-        }
-
         public IAsyncCommand<IEnumerable<LiteraryEventModel>, VoidType> FetchEvents
         {
             get { return this.fetchEventsCommand; }
@@ -69,26 +63,21 @@ namespace Epiphany.ViewModel
             get { return this.fetchEventsCommand; }
         }
 
-        private void OnCommandExecuted(object sender, ExecutedEventArgs e)
+        public override async Task LoadAsync(VoidType parameter)
+        {
+            if (this.fetchEventsCommand.CanExecute(parameter))
+            {
+                await this.fetchEventsCommand.ExecuteAsync(parameter);
+            }
+        }
+
+        private void OnCommandExecuted(ExecutedEventArgs e)
         {
             IsLoading = false;
             if (e.State == CommandExecutionState.Success)
             {
                 Events = new ObservableCollection<LiteraryEventModel>(this.fetchEventsCommand.Result);
                 IsLoaded = true;
-            }
-        }
-
-        private void OnCommandExecuting(object sender, CancelEventArgs e)
-        {
-            IsLoading = true;
-        }
-
-        public override async Task LoadAsync()
-        {
-            if (this.fetchEventsCommand.CanExecute(VoidType.Empty))
-            {
-                await this.fetchEventsCommand.ExecuteAsync(VoidType.Empty);
             }
         }
     }

@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    sealed class FeedViewModel : DataViewModel, IFeedViewModel
+    sealed class FeedViewModel : DataViewModel<VoidType>, IFeedViewModel
     {
         //
         // Private Members
@@ -47,8 +47,7 @@ namespace Epiphany.ViewModel
 
             this.Feed = new ObservableCollection<IFeedItemViewModel>();
             this.fetchFeedCommand = new FetchFeedCommand(userService);
-            this.fetchFeedCommand.Executing += OnCommandExecuting;
-            this.fetchFeedCommand.Executed += OnFetchFeedExecuted;
+            RegisterCommand(this.fetchFeedCommand, OnFetchFeedExecuted);
 
             this.showOptionsCommand = new ShowOptionsCommand(navigationService);
 
@@ -123,15 +122,15 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override async Task LoadAsync()
+        public override async Task LoadAsync(VoidType parameter)
         {
-            if (this.fetchFeedCommand.CanExecute(VoidType.Empty))
+            if (this.fetchFeedCommand.CanExecute(parameter))
             {
-                await this.fetchFeedCommand.ExecuteAsync(VoidType.Empty);
+                await this.fetchFeedCommand.ExecuteAsync(parameter);
             }
         }
 
-        private void OnFetchFeedExecuted(object sender, ExecutedEventArgs e)
+        private void OnFetchFeedExecuted(ExecutedEventArgs e)
         {
             if (e.State == CommandExecutionState.Success)
             {

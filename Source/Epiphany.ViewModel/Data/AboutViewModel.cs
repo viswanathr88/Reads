@@ -6,22 +6,31 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class AboutViewModel : DataViewModel, IAboutViewModel
+    /// <summary>
+    /// ViewModel for About
+    /// </summary>
+    public sealed class AboutViewModel : DataViewModel<VoidType>, IAboutViewModel
     {
         private readonly ICommand likeOnFacebookCommand;
         private readonly ICommand rateAppCommand;
-
+        /// <summary>
+        /// Create an instance of AboutViewModel
+        /// </summary>
+        /// <param name="rateService"></param>
+        /// <param name="urlLauncher"></param>
         public AboutViewModel(IAppRateService rateService, IUrlLauncher urlLauncher)
         {
             if (rateService == null || urlLauncher == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(nameof(rateService));
             }
 
             this.likeOnFacebookCommand = new LikeOnFacebookCommand(urlLauncher);
             this.rateAppCommand = new RateAppCommand(rateService);
         }
-
+        /// <summary>
+        /// Like the app on facebook command
+        /// </summary>
         public ICommand LikeOnFacebook
         {
             get
@@ -29,7 +38,9 @@ namespace Epiphany.ViewModel
                 return this.likeOnFacebookCommand;
             }
         }
-
+        /// <summary>
+        /// Rate the app command
+        /// </summary>
         public ICommand RateApp
         {
             get
@@ -37,8 +48,12 @@ namespace Epiphany.ViewModel
                 return this.rateAppCommand;
             }
         }
-
-        public override Task LoadAsync()
+        /// <summary>
+        /// Load the VM
+        /// </summary>
+        /// <param name="parameter">input param</param>
+        /// <returns></returns>
+        public override Task LoadAsync(VoidType parameter)
         {
             // Nothing to load
             IsLoaded = true;

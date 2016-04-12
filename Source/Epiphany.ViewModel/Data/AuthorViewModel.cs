@@ -12,7 +12,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class AuthorViewModel : DataViewModel, IAuthorViewModel
+    public sealed class AuthorViewModel : DataViewModel<AuthorModel>, IAuthorViewModel
     {
         private readonly AuthorAttributeViewModelFactory authorAttributeVMFactory;
         private IBookItemViewModel selectedBook;
@@ -48,13 +48,11 @@ namespace Epiphany.ViewModel
             Books = new ObservableCollection<IBookItemViewModel>();
             this.authorAttributeVMFactory = new AuthorAttributeViewModelFactory();
 
-            this.fetchBooksCommand = new EnumeratorCommand<BookModel>(20);
-            this.fetchBooksCommand.Executing += OnCommandExecuting;
-            this.fetchBooksCommand.Executed += OnFetchBooksExecuted;
-
             this.fetchAuthorCommand = new FetchAuthorCommand(authorService);
-            this.fetchAuthorCommand.Executing += OnCommandExecuting;
-            this.fetchAuthorCommand.Executed += OnFetchAuthorExecuted;
+            RegisterCommand(this.fetchAuthorCommand, OnFetchAuthorExecuted);
+
+            this.fetchBooksCommand = new EnumeratorCommand<BookModel>(20);
+            RegisterCommand(this.fetchBooksCommand, OnFetchBooksExecuted);
             
             this.goHomeCommand = new GoHomeCommand(navService);
         }
@@ -186,20 +184,15 @@ namespace Epiphany.ViewModel
             get { return this.goHomeCommand; }
         }
 
-        public override async Task LoadAsync()
+        public override async Task LoadAsync(AuthorModel author)
         {
-            if (this.fetchAuthorCommand.CanExecute(Id))
+            if (this.fetchAuthorCommand.CanExecute(author.Id))
             {
-                await this.fetchAuthorCommand.ExecuteAsync(Id);
+                await this.fetchAuthorCommand.ExecuteAsync(author.Id);
             }
         }
 
-        private void OnCommandExecuting(object sender, CancelEventArgs e)
-        {
-            IsLoading = true;
-        }
-
-        private void OnFetchAuthorExecuted(object sender, ExecutedEventArgs e)
+        private void OnFetchAuthorExecuted(ExecutedEventArgs e)
         {
             if (e.State == CommandExecutionState.Success)
             {
@@ -213,7 +206,7 @@ namespace Epiphany.ViewModel
             IsLoading = false;
         }
 
-        private void OnFetchBooksExecuted(object sender, ExecutedEventArgs e)
+        private void OnFetchBooksExecuted(ExecutedEventArgs e)
         {
             if (e.State == CommandExecutionState.Success)
             {
@@ -232,12 +225,8 @@ namespace Epiphany.ViewModel
         {
             base.Dispose();
 
-            this.fetchAuthorCommand.Executing -= OnCommandExecuting;
-            this.fetchAuthorCommand.Executed -= OnFetchAuthorExecuted;
-
-            this.fetchBooksCommand.Executing -= OnCommandExecuting;
-            this.fetchBooksCommand.Executed -= OnFetchBooksExecuted;
+            DeregisterCommand(this.fetchAuthorCommand);
+            DeregisterCommand(this.fetchBooksCommand);
         }
-
     }
 }

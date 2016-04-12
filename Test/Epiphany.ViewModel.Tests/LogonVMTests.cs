@@ -56,7 +56,7 @@ namespace Epiphany.ViewModel.Tests
             logonService.PassVerifyLogin = true;
 
             ILogonViewModel vm = new LogonViewModel(logonService, navService, timerService);
-            await vm.LoadAsync();
+            await vm.LoadAsync(VoidType.Empty);
 
             Assert.IsTrue(vm.IsLoaded, "IsLoaded");
             Assert.IsTrue(vm.IsLoginCompleted, "IsLoginCompleted");
@@ -71,7 +71,7 @@ namespace Epiphany.ViewModel.Tests
 
             // VerifyLogin step will fail
             ILogonViewModel vm = new LogonViewModel(logonService, navService, timerService);
-            await vm.LoadAsync();
+            await vm.LoadAsync(VoidType.Empty);
 
             Assert.IsNotNull(vm.CurrentUri, "CurrentUri");
             Assert.AreEqual(vm.CurrentUri, logonService.Configuration.AuthorizeUri, "Authorize URI does not match");
@@ -86,7 +86,7 @@ namespace Epiphany.ViewModel.Tests
 
             // VerifyLogin step will fail
             ILogonViewModel vm = new LogonViewModel(logonService, navService, timerService);
-            await vm.LoadAsync();
+            await vm.LoadAsync(VoidType.Empty);
 
 
 

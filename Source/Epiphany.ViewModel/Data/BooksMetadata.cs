@@ -1,9 +1,6 @@
-﻿
-using System;
-using System.Threading.Tasks;
-namespace Epiphany.ViewModel
+﻿namespace Epiphany.ViewModel
 {
-    public sealed class BooksViewModel : DataViewModel<BooksMetadata>, IBooksViewModel
+    public sealed class BooksMetadata
     {
         private int userId;
         private string userName;
@@ -16,7 +13,6 @@ namespace Epiphany.ViewModel
             {
                 if (this.userId == value) return;
                 this.userId = value;
-                RaisePropertyChanged();
             }
         }
 
@@ -27,7 +23,6 @@ namespace Epiphany.ViewModel
             {
                 if (this.userName == value) return;
                 this.userName = value;
-                RaisePropertyChanged();
             }
         }
 
@@ -38,13 +33,7 @@ namespace Epiphany.ViewModel
             {
                 if (this.shelfName == value) return;
                 this.shelfName = value;
-                RaisePropertyChanged();
             }
-        }
-
-        public override Task LoadAsync(BooksMetadata parameter)
-        {
-            throw new NotImplementedException();
         }
     }
 }

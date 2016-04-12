@@ -4,7 +4,7 @@ using System;
 
 namespace Epiphany.View.DesignData
 {
-    sealed class DesignLogonViewModel : DataViewModel, ILogonViewModel
+    sealed class DesignLogonViewModel : DesignBaseViewModel, ILogonViewModel
     {
         public DesignLogonViewModel()
         {
@@ -46,11 +46,6 @@ namespace Epiphany.View.DesignData
         public ICommand<Uri, VoidType> Login
         {
             get { return null; }
-        }
-
-        public override System.Threading.Tasks.Task LoadAsync()
-        {
-            throw new NotImplementedException();
         }
     }
 }

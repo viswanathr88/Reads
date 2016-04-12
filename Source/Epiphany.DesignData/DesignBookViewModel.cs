@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Epiphany.View.DesignData
 {
-    public class DesignBookViewModel : DataViewModel, IBookViewModel
+    public class DesignBookViewModel : DesignBaseViewModel, IBookViewModel
     {
         public DesignBookViewModel()
         {
@@ -63,11 +63,6 @@ namespace Epiphany.View.DesignData
         {
             get;
             set;
-        }
-
-        public override Task LoadAsync()
-        {
-            throw new NotImplementedException();
         }
     }
 }
