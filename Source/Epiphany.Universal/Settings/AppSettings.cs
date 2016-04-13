@@ -22,7 +22,7 @@ namespace Epiphany.Settings
 
         private AppSettings()
         {
-            this.storage = SettingsStore.Instance;
+            this.storage = null; /*TODO: Set the storage property */
             this.modelSettings = new ModelSettings(this.storage);
         }
         

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Epiphany.Logging;
+using Epiphany.View.Services;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -45,6 +47,8 @@ namespace Epiphany.Universal
             {
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
+
+            Log.SetLogger(new DebugLog());
 #endif
 
             Frame rootFrame = Window.Current.Content as Frame;

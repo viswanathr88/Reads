@@ -1,4 +1,5 @@
 ﻿using Epiphany.Model.Services;
+using Epiphany.Model.Settings;
 using System;
 using System.Threading.Tasks;
 
@@ -6,28 +7,19 @@ namespace Epiphany.ViewModel
 {
     public sealed class SettingsViewModel : DataViewModel<VoidType>, ISettingsViewModel
     {
-        private readonly IAppSettings settings;
-
-        public SettingsViewModel(IAppSettings settings)
-        {
-            if (settings == null)
-            {
-                throw new ArgumentNullException(nameof(settings));
-            }
-
-            this.settings = settings;
-        }
-
         public FeedUpdateType UpdateType
         {
             get
             {
-                return this.settings.UpdateType;
+                return ApplicationSettings.Instance.UpdateType;
             }
             set
             {
-                this.settings.UpdateType = value;
-                RaisePropertyChanged();
+                if (ApplicationSettings.Instance.UpdateType != value)
+                {
+                    ApplicationSettings.Instance.UpdateType = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 
@@ -35,12 +27,15 @@ namespace Epiphany.ViewModel
         {
             get
             {
-                return this.settings.UpdateFilter;
+                return ApplicationSettings.Instance.UpdateFilter;
             }
             set
             {
-                this.settings.UpdateFilter = value;
-                RaisePropertyChanged();
+                if (ApplicationSettings.Instance.UpdateFilter != value)
+                {
+                    ApplicationSettings.Instance.UpdateFilter = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 
@@ -48,12 +43,15 @@ namespace Epiphany.ViewModel
         {
             get
             {
-                return this.settings.EnableLogging;
+                return ApplicationSettings.Instance.EnableLogging;
             }
             set
             {
-                this.settings.EnableLogging = value;
-                RaisePropertyChanged();
+                if (ApplicationSettings.Instance.EnableLogging != value)
+                {
+                    ApplicationSettings.Instance.EnableLogging = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 
@@ -61,12 +59,15 @@ namespace Epiphany.ViewModel
         {
             get
             {
-                return this.settings.UseMyLocation;
+                return ApplicationSettings.Instance.UseMyLocation;
             }
             set
             {
-                this.settings.UseMyLocation = value;
-                RaisePropertyChanged();
+                if (ApplicationSettings.Instance.UseMyLocation != value)
+                {
+                    ApplicationSettings.Instance.UseMyLocation = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 
@@ -74,12 +75,15 @@ namespace Epiphany.ViewModel
         {
             get
             {
-                return this.settings.SortType;
+                return ApplicationSettings.Instance.SortType;
             }
             set
             {
-                this.settings.SortType = value;
-                RaisePropertyChanged();
+                if (ApplicationSettings.Instance.SortType != value)
+                {
+                    ApplicationSettings.Instance.SortType = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 
@@ -87,12 +91,16 @@ namespace Epiphany.ViewModel
         {
             get
             {
-                return this.settings.SortOrder;
+                return ApplicationSettings.Instance.SortOrder;
             }
             set
             {
-                this.settings.SortOrder = value;
-                RaisePropertyChanged();
+                if (ApplicationSettings.Instance.SortOrder != value)
+                {
+                    ApplicationSettings.Instance.SortOrder = value;
+                    RaisePropertyChanged();
+                }
+                
             }
         }
 
@@ -100,12 +108,15 @@ namespace Epiphany.ViewModel
         {
             get
             {
-                return this.settings.SearchType;
+                return ApplicationSettings.Instance.SearchType;
             }
             set
             {
-                this.settings.SearchType = value;
-                RaisePropertyChanged();
+                if (ApplicationSettings.Instance.SearchType != value)
+                {
+                    ApplicationSettings.Instance.SearchType = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 
@@ -113,12 +124,15 @@ namespace Epiphany.ViewModel
         {
             get
             {
-                return this.settings.EnableTransparentTile;
+                return ApplicationSettings.Instance.EnableTransparentTile;
             }
             set
             {
-                this.settings.EnableTransparentTile = value;
-                RaisePropertyChanged();
+                if (ApplicationSettings.Instance.EnableTransparentTile != value)
+                {
+                    ApplicationSettings.Instance.EnableTransparentTile = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 

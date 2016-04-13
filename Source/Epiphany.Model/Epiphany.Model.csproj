@@ -137,9 +137,12 @@
     <Compile Include="Services\StatusService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="ServiceUrls.cs" />
+    <Compile Include="Settings\ApplicationSettings.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApplicationSettings.xml</DependentUpon>
+    </Compile>
     <Compile Include="Settings\ISettingStorage.cs" />
-    <Compile Include="Settings\ModelSettings.cs" />
-    <Compile Include="Settings\SettingTags.cs" />
     <Compile Include="Web\IWebClient.cs" />
     <Compile Include="Web\WebRequest.cs" />
     <Compile Include="Web\WebResponse.cs" />
@@ -150,6 +153,17 @@
       <Project>{0cbd2a4b-b8ed-466b-8e12-ad66e984467b}</Project>
       <Name>Epiphany.Xml</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Settings\Settings.tt" />
+    <Content Include="Settings\ApplicationSettings.xml">
+      <Generator>T4Toolbox.TemplatedFileGenerator</Generator>
+      <LastGenOutput>ApplicationSettings.cs</LastGenOutput>
+      <Template>Settings.tt</Template>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

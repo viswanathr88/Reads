@@ -11,7 +11,6 @@ namespace Epiphany.ViewModel
     {
         private readonly IUserService userService;
         private readonly INavigationService navigationService;
-        private readonly IAppSettings appSettings;
         private readonly ILogonService logonService;
         private readonly IResourceLoader resourceLoader;
 
@@ -22,17 +21,16 @@ namespace Epiphany.ViewModel
         private readonly ICommand showSettingsCommand;
 
         public HomeViewModel(IUserService userService, ILogonService logonService, 
-            INavigationService navigationService, IAppSettings settings, IResourceLoader resourceLoader)
+            INavigationService navigationService, IResourceLoader resourceLoader)
         {
-            if (userService == null || navigationService == null 
-                || settings == null || logonService == null || resourceLoader == null)
+            if (userService == null || navigationService == null || 
+                logonService == null || resourceLoader == null)
             {
                 throw new ArgumentNullException("services");
             }
 
             this.userService = userService;
             this.navigationService = navigationService;
-            this.appSettings = settings;
             this.logonService = logonService;
             this.resourceLoader = resourceLoader;
 
@@ -53,7 +51,7 @@ namespace Epiphany.ViewModel
             {
                 if (this.feedViewModel == null)
                 {
-                    this.feedViewModel = new FeedViewModel(userService, navigationService, appSettings, resourceLoader);
+                    this.feedViewModel = new FeedViewModel(userService, navigationService, resourceLoader);
                 }
 
                 return this.feedViewModel;
@@ -90,10 +88,15 @@ namespace Epiphany.ViewModel
 
         public override async Task LoadAsync(VoidType parameter)
         {
-            if (!Feed.IsLoaded && Feed.FetchFeed.CanExecute(parameter))
+            if (!Feed.IsLoaded)
+            {
+                await Feed.LoadAsync(parameter);
+            }
+
+            /*if (!Feed.IsLoaded && Feed.FetchFeed.CanExecute(parameter))
             {
                 await Feed.FetchFeed.ExecuteAsync(parameter);
-            }
+            }*/
         }
 
         private void OnChildVMPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)

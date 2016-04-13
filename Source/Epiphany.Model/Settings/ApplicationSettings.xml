@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+  <Setting Name="EnableLogging" Type="bool">true</Setting>
+  <Setting Name="UpdateType" Type="Epiphany.Model.Services.FeedUpdateType">Epiphany.Model.Services.FeedUpdateType.all</Setting>
+  <Setting Name="UpdateFilter" Type="Epiphany.Model.Services.FeedUpdateFilter">Epiphany.Model.Services.FeedUpdateFilter.friends</Setting>
+  <Setting Name="SortType" Type="Epiphany.Model.Services.BookSortType">Epiphany.Model.Services.BookSortType.date_added</Setting>
+  <Setting Name="SortOrder" Type="Epiphany.Model.Services.BookSortOrder">Epiphany.Model.Services.BookSortOrder.a</Setting>
+  <Setting Name="SearchType" Type="Epiphany.Model.Services.BookSearchType">Epiphany.Model.Services.BookSearchType.All</Setting>
+  <Setting Name="ShowAnimations" Type="bool">true</Setting>
+  <Setting Name="EncryptAuthToken" Type="bool">false</Setting>
+  <Setting Name="EnableTransparentTile" Type="bool">true</Setting>
+  <Setting Name="UseMyLocation" Type="bool">false</Setting>
+</Settings>

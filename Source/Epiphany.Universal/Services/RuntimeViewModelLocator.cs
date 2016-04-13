@@ -11,6 +11,7 @@ namespace Epiphany.View.Services
         private readonly ServiceFactory serviceFactory;
         private readonly INavigationService navigationService;
         private readonly ITimerService timerService;
+        private readonly IAppSettings appSettings;
         private readonly IAppRateService appRateService;
         private readonly IUrlLauncher urlLauncher;
         private readonly IResourceLoader resourceLoader;
@@ -26,6 +27,7 @@ namespace Epiphany.View.Services
 
             // Set up services
             this.navigationService = new NavigationService();
+            this.appSettings = AppSettings.Instance;
             this.timerService = new TimerService();
             this.appRateService = new AppRateService();
             this.urlLauncher = new UrlLauncher();
@@ -40,7 +42,7 @@ namespace Epiphany.View.Services
                 if (this.homeVM == null)
                 {
                     this.homeVM = new HomeViewModel(this.serviceFactory.GetUserService(), this.serviceFactory.GetLogonService(), 
-                        this.navigationService, this.resourceLoader);
+                        this.navigationService, this.appSettings, this.resourceLoader);
                 }
 
                 return this.homeVM;
@@ -129,7 +131,7 @@ namespace Epiphany.View.Services
 
         public ISettingsViewModel Settings
         {
-            get { return new SettingsViewModel(); }
+            get { return new SettingsViewModel(this.appSettings); }
         }
 
         public IBookViewModel Book

@@ -4,12 +4,12 @@ using Epiphany.ViewModel.Services;
 using System;
 using System.Windows.Input;
 using System.Threading.Tasks;
+using Epiphany.Model.Settings;
 
 namespace Epiphany.ViewModel
 {
     sealed class FeedOptionsViewModel : DataViewModel<VoidType>, IFeedOptionsViewModel
     {
-        private readonly IAppSettings appSettings;
         private FeedOptions feedOptions;
         private FeedUpdateFilter updateFilter;
         private FeedUpdateType updateType;
@@ -17,15 +17,14 @@ namespace Epiphany.ViewModel
         private readonly ICommand<FeedOptions> saveFeedOptionsCommand;
         private readonly ICommand goBackCommand;
 
-        public FeedOptionsViewModel(IAppSettings appSettings, INavigationService navigationService)
+        public FeedOptionsViewModel(INavigationService navigationService)
         {
-            if (appSettings == null || navigationService == null)
+            if (navigationService == null)
             {
                 throw new ArgumentNullException();
             }
 
-            this.appSettings = appSettings;
-            this.saveFeedOptionsCommand = new SaveFeedOptionsCommand(appSettings, navigationService);
+            this.saveFeedOptionsCommand = new SaveFeedOptionsCommand(navigationService);
             this.goBackCommand = new GoBackCommand(navigationService);
         }
 
@@ -102,8 +101,8 @@ namespace Epiphany.ViewModel
 
         public override async Task LoadAsync(VoidType parameter)
         {
-            CurrentUpdateType = appSettings.UpdateType;
-            CurrentUpdateFilter = appSettings.UpdateFilter;
+            CurrentUpdateType = ApplicationSettings.Instance.UpdateType;
+            CurrentUpdateFilter = ApplicationSettings.Instance.UpdateFilter;
             CreateFeedOptions();
             IsLoaded = true;
         }

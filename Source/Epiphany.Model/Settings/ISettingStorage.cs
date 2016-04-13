@@ -22,4 +22,20 @@ namespace Epiphany.Model.Settings
         /// <returns>True if something was added or updated, false otherwise</returns>
         bool AddOrUpdate(string key, object value);
     }
+
+    /// <summary>
+    /// Storage implementation that does nothing
+    /// </summary>
+    class DefaultSettingsStorage : ISettingStorage
+    {
+        public bool AddOrUpdate(string key, object value)
+        {
+            return false;
+        }
+
+        public T GetValueOrDefault<T>(string key, T defaultValue)
+        {
+            return defaultValue;
+        }
+    }
 }
