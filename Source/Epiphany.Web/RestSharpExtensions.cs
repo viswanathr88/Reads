@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Epiphany.Web
 {
-    public static class RestSharpExtensions
+    static class RestSharpExtensions
     {
         public static Task<IRestResponse> ExecuteAsync(this RestClient @this, IRestRequest request)
         {
