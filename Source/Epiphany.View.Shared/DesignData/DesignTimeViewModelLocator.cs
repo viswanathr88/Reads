@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Epiphany.ViewModel;
+using Epiphany.ViewModel.Services;
 
 namespace Epiphany.View.DesignData
 {
@@ -81,6 +82,14 @@ namespace Epiphany.View.DesignData
                 var vm = new LogonViewModel();
                 vm.SetValue(nameof(LogonViewModel.IsLoginCompleted), true);
                 return vm;
+            }
+        }
+
+        public INavigationService NavigationService
+        {
+            get
+            {
+                return null;
             }
         }
 

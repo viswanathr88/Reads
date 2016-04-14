@@ -1,5 +1,6 @@
 ﻿using Epiphany.ViewModel.Services;
 using System;
+using System.Collections.Generic;
 
 namespace Epiphany.ViewModel.Tests.Mock
 {
@@ -8,6 +9,14 @@ namespace Epiphany.ViewModel.Tests.Mock
         public bool CanGoBack
         {
             get { throw new NotImplementedException(); }
+        }
+
+        public IDictionary<Type, Type> Mapping
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public void GoBack()

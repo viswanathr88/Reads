@@ -1,4 +1,5 @@
-﻿using Epiphany.Model.Services;
+﻿using System;
+using Epiphany.Model.Services;
 using Epiphany.ViewModel;
 using Epiphany.ViewModel.Services;
 using Epiphany.Web;
@@ -122,6 +123,14 @@ namespace Epiphany.View.Services
         public BookViewModel Book
         {
             get { return new BookViewModel(); }
+        }
+
+        public INavigationService NavigationService
+        {
+            get
+            {
+                return this.navigationService;
+            }
         }
 
         public void Dispose()

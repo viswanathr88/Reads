@@ -1,10 +1,13 @@
 ﻿using Epiphany.ViewModel;
+using Epiphany.ViewModel.Services;
 using System;
 
 namespace Epiphany.View.Services
 {
     public interface IViewModelLocator : IDisposable
     {
+        INavigationService NavigationService { get; }
+
         HomeViewModel Home { get; }
 
         LogonViewModel Logon { get; }

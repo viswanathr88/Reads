@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Epiphany.Logging;
+using Epiphany.View;
+using Epiphany.View.Services;
+using Epiphany.ViewModel;
+using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
@@ -41,6 +45,11 @@ namespace Epiphany.WP81
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
+            // Setup logging
+            SetupLogging();
+
+            // Setup ViewMappings
+            SetupViewMapping();
 
             Frame rootFrame = Window.Current.Content as Frame;
 
@@ -92,6 +101,27 @@ namespace Epiphany.WP81
 
             // Ensure the current window is active
             Window.Current.Activate();
+        }
+
+        private void SetupViewMapping()
+        {
+            if (Resources.ContainsKey("VMLocator"))
+            {
+                ViewModelLocator vmLocator = Resources["VMLocator"] as ViewModelLocator;
+                if (vmLocator.NavigationService != null)
+                {
+                    vmLocator.NavigationService.Mapping[typeof(LogonViewModel)] = typeof(LogonPage);
+                }
+            }
+        }
+
+        private void SetupLogging()
+        {
+            if (Logger.Writers.Count == 0)
+            {
+                Logger.Writers.Add(new DebugConsoleWriter());
+                Logger.LogDebug("Logging setup completed");
+            }
         }
 
         /// <summary>
