@@ -41,6 +41,9 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
     <Compile Include="Base\AsyncCommand.cs" />
     <Compile Include="Base\CancelEventArgs.cs" />
     <Compile Include="Base\Command.cs" />

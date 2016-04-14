@@ -10,6 +10,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epiphany.Xml", "Source\Epiphany.Xml\Epiphany.Xml.csproj", "{0CBD2A4B-B8ED-466B-8E12-AD66E984467B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{956701B8-1F1F-455F-B6F8-287E3C0FDA0F}"
+	ProjectSection(SolutionItems) = preProject
+		Source\VersionInfo.cs = Source\VersionInfo.cs
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{6CE2928B-9007-4727-9156-419D85539F97}"
 EndProject

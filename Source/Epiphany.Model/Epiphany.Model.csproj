@@ -37,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
     <Compile Include="Adapter\AuthorAdapter.cs" />
     <Compile Include="Adapter\BookAdapter.cs" />
     <Compile Include="Adapter\BookshelfAdapter.cs" />
