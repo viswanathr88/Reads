@@ -154,3 +154,8 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+/.vs/config
+/packages/BindableApplicationBar.1.1.0.0
+/packages/CompareNETObjects.3.03.0.0
+/packages/WPtoolkit.4.2013.08.16
+/packages/RestSharpSigned.105.1.0
