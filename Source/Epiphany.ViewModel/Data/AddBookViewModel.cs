@@ -15,7 +15,7 @@ namespace Epiphany.ViewModel
     /// <summary>
     /// ViewModel for adding a book to shelf
     /// </summary>
-    public class AddBookViewModel : DataViewModel<BookModel>, IAddBookViewModel
+    public class AddBookViewModel : DataViewModel<BookModel>
     {
         private ICommand<IEnumerable<BookshelfModel>, IAsyncEnumerator<BookshelfModel>> fetchBookshelvesCommand;
         private ObservableCollection<CustomBookshelfItemViewModel> customShelves;

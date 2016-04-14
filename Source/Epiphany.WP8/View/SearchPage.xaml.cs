@@ -4,7 +4,7 @@ using System.Windows;
 
 namespace Epiphany.View
 {
-    [SourceModel(typeof(ISearchViewModel))]
+    [SourceModel(typeof(SearchViewModel))]
     public partial class SearchPage : DataPage
     {
         public SearchPage()
@@ -22,7 +22,7 @@ namespace Epiphany.View
 
             if (this.DataContext != null)
             {
-                ISearchViewModel vm = this.DataContext as ISearchViewModel;
+                SearchViewModel vm = this.DataContext as SearchViewModel;
                 vm.Search.Executing += (s, args) =>
                 {
                     this.Focus();

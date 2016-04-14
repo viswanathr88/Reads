@@ -4,13 +4,13 @@ using System.Linq;
 
 namespace Epiphany.ViewModel.Items
 {
-    public sealed class BookItemViewModel : ItemViewModel<BookModel>, IBookItemViewModel
+    public sealed class BookItemViewModel : ItemViewModel<BookModel>
     {
-        private readonly IList<IAuthorItemViewModel> authors;
+        private readonly IList<AuthorItemViewModel> authors;
 
         public BookItemViewModel(BookModel model) : base(model)
         {
-            this.authors = new List<IAuthorItemViewModel>();
+            this.authors = new List<AuthorItemViewModel>();
             
             foreach (AuthorModel author in Item.Authors)
             {
@@ -39,12 +39,12 @@ namespace Epiphany.ViewModel.Items
         }
 
 
-        public IEnumerable<IAuthorItemViewModel> Authors
+        public IEnumerable<AuthorItemViewModel> Authors
         {
             get { return this.authors; }
         }
 
-        public IAuthorItemViewModel MainAuthor
+        public AuthorItemViewModel MainAuthor
         {
             get { return this.authors.FirstOrDefault(); }
         }

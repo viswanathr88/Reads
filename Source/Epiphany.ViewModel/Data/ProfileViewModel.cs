@@ -12,7 +12,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class ProfileViewModel : DataViewModel<UserModel>, IProfileViewModel
+    public sealed class ProfileViewModel : DataViewModel<UserModel>
     {
         private int id;
         private string name;
@@ -35,7 +35,7 @@ namespace Epiphany.ViewModel
 
         private IList<BookshelfModel> shelves;
         private IList<ProfileItemViewModel> profileItems;
-        private IList<IFeedItemViewModel> recentUpdates;
+        private IList<FeedItemViewModel> recentUpdates;
         private BookshelfModel selectedShelf;
         private ProfileItemViewModel selectedProfileItem;
 
@@ -63,7 +63,7 @@ namespace Epiphany.ViewModel
 
             Shelves = new ObservableCollection<BookshelfModel>();
             ProfileItems = new ObservableCollection<ProfileItemViewModel>();
-            RecentUpdates = new ObservableCollection<IFeedItemViewModel>();
+            RecentUpdates = new ObservableCollection<FeedItemViewModel>();
         }
 
         public int Id
@@ -165,7 +165,7 @@ namespace Epiphany.ViewModel
                 if (this.selectedShelf == value) return;
                 this.selectedShelf = value;
 
-                this.navService.CreateFor<IBooksViewModel>()
+                this.navService.CreateFor<BooksViewModel>()
                     .AddParam<int>((x) => x.UserId, Id)
                     .AddParam<string>((x) => x.UserName, Name)
                     .AddParam<string>((x) => x.ShelfName, this.selectedShelf.Name)
@@ -188,7 +188,7 @@ namespace Epiphany.ViewModel
                 {
                     case ProfileItemType.Friends:
                         {
-                            this.navService.CreateFor<IFriendsViewModel>()
+                            this.navService.CreateFor<FriendsViewModel>()
                                 .AddParam<int>((x) => x.Id, Id)
                                 .AddParam<string>((x) => x.Name, Name)
                                 .Navigate();
@@ -197,10 +197,10 @@ namespace Epiphany.ViewModel
 
                     case ProfileItemType.Groups:
                         {
-                            this.navService.CreateFor<IGroupsViewModel>()
+                            /*this.navService.CreateFor<GroupsViewModel>()
                                 .AddParam<int>((x) => x.Id, Id)
                                 .AddParam<string>((x) => x.Name, Name)
-                                .Navigate();
+                                .Navigate();*/
                             break;
                         }
 
@@ -228,7 +228,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<IFeedItemViewModel> RecentUpdates
+        public IList<FeedItemViewModel> RecentUpdates
         {
             get { return this.recentUpdates; }
             private set
@@ -288,7 +288,7 @@ namespace Epiphany.ViewModel
                 FetchBookshelvesArg = this.bookshelfService.GetBookshelves(Id).GetEnumerator();
                 ProfileItems = this.profileItemFactory.GetProfileItems(Model);
 
-                RecentUpdates = new ObservableCollection<IFeedItemViewModel>();
+                RecentUpdates = new ObservableCollection<FeedItemViewModel>();
                 foreach (FeedItemModel model in Model.RecentUpdates)
                 {
                     RecentUpdates.Add(new FeedItemViewModel(model, navService, resourceLoader));

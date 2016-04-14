@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public class EventsViewModel : DataViewModel<VoidType>, IEventsViewModel
+    public class EventsViewModel : DataViewModel<VoidType>
     {
         private readonly IEventService eventService;
         private readonly IUrlLauncher urlLauncher;

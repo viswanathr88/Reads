@@ -20,14 +20,14 @@ namespace Epiphany.ViewModel.Commands
 
         protected override void Run(BookModel book)
         {
-            this.navService.CreateFor<IBookViewModel>()
+            this.navService.CreateFor<BookViewModel>()
                 .AddParam<int>((x) => x.Id, book.Id)
                 .AddParam<string>((x) => x.Name, book.Title)
                 .Navigate();
         }
     }
 
-    sealed class ShowBookFromItemCommand : Command<IBookItemViewModel>
+    sealed class ShowBookFromItemCommand : Command<BookItemViewModel>
     {
         private readonly INavigationService navService;
 
@@ -36,14 +36,14 @@ namespace Epiphany.ViewModel.Commands
             this.navService = navService;
         }
 
-        public override bool CanExecute(IBookItemViewModel book)
+        public override bool CanExecute(BookItemViewModel book)
         {
             return book.Id >= 0;
         }
 
-        protected override void Run(IBookItemViewModel book)
+        protected override void Run(BookItemViewModel book)
         {
-            this.navService.CreateFor<IBookViewModel>()
+            this.navService.CreateFor<BookViewModel>()
                 .AddParam<int>((x) => x.Id, book.Id)
                 .AddParam<string>((x) => x.Name, book.Title)
                 .Navigate();

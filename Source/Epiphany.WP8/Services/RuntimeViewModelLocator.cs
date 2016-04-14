@@ -16,8 +16,8 @@ namespace Epiphany.View.Services
         private readonly IResourceLoader resourceLoader;
         private readonly ILocationService locationService;
 
-        private ILogonViewModel logonVM;
-        private IHomeViewModel homeVM;
+        private LogonViewModel logonVM;
+        private HomeViewModel homeVM;
 
         public RuntimeViewModelLocator()
         {
@@ -33,7 +33,7 @@ namespace Epiphany.View.Services
             this.locationService = new LocationService();
         }
 
-        public IHomeViewModel Home
+        public HomeViewModel Home
         {
             get
             {
@@ -47,7 +47,7 @@ namespace Epiphany.View.Services
             }
         }
 
-        public ILogonViewModel Logon
+        public LogonViewModel Logon
         {
             get
             {
@@ -60,7 +60,7 @@ namespace Epiphany.View.Services
             }
         }
 
-        public IProfileViewModel Profile
+        public ProfileViewModel Profile
         {
             get
             {
@@ -73,66 +73,58 @@ namespace Epiphany.View.Services
             }
         }
 
-        public IAboutViewModel About
+        public AboutViewModel About
         {
             get
             {
-                IAboutViewModel vm = new AboutViewModel(this.appRateService, this.urlLauncher);
-                return vm;
+                return new AboutViewModel(this.appRateService, this.urlLauncher);
             }
         }
 
-        public IAddBookViewModel AddBook
+        public AddBookViewModel AddBook
         {
             get
             {
-                IAddBookViewModel vm = new AddBookViewModel(
+                return new AddBookViewModel(
                     this.serviceFactory.GetLogonService(),
                     this.serviceFactory.GetBookService(),
                     this.serviceFactory.GetBookshelfService(),
                     this.navigationService
                     );
-
-                return vm;
             }
         }
 
-        public IBooksViewModel Books
+        public BooksViewModel Books
         {
             get { return new BooksViewModel(); }
         }
 
-        public IFriendsViewModel Friends
+        public FriendsViewModel Friends
         {
             get { return new FriendsViewModel(this.serviceFactory.GetUserService(), this.navigationService, this.resourceLoader); }
         }
 
-        public IEventsViewModel Events
+        public EventsViewModel Events
         {
             get { return new EventsViewModel(this.serviceFactory.GetEventService(), this.locationService, this.urlLauncher); }
         }
 
-        public ISearchViewModel Search
+        public SearchViewModel Search
         {
             get { return new SearchViewModel(this.serviceFactory.GetBookService(), this.navigationService); }
         }
 
-        public IAuthorViewModel Author
+        public AuthorViewModel Author
         {
             get { return new AuthorViewModel(this.serviceFactory.GetAuthorService(), this.serviceFactory.GetBookService(), this.navigationService); }
         }
 
-        public IBookshelvesViewModel Bookshelves
-        {
-            get { return null; } //return new BookshelvesViewModel(this.serviceFactory.GetBookshelfService(), this.navigationService, this.serviceFactory.GetLogonService().Session); }
-        }
-
-        public ISettingsViewModel Settings
+        public SettingsViewModel Settings
         {
             get { return new SettingsViewModel(); }
         }
 
-        public IBookViewModel Book
+        public BookViewModel Book
         {
             get { return new BookViewModel(); }
         }

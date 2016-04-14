@@ -7,15 +7,15 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class HomeViewModel : DataViewModel<VoidType>, IHomeViewModel
+    public sealed class HomeViewModel : DataViewModel<VoidType>
     {
         private readonly IUserService userService;
         private readonly INavigationService navigationService;
         private readonly ILogonService logonService;
         private readonly IResourceLoader resourceLoader;
 
-        private IFeedViewModel feedViewModel;
-        private ILauncherViewModel launcherVM;
+        private FeedViewModel feedViewModel;
+        private LauncherViewModel launcherVM;
 
         private readonly ICommand showAboutCommand;
         private readonly ICommand showSettingsCommand;
@@ -45,7 +45,7 @@ namespace Epiphany.ViewModel
             get { throw new NotImplementedException(); }
         }
 
-        public IFeedViewModel Feed
+        public FeedViewModel Feed
         {
             get
             {
@@ -58,7 +58,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public ILauncherViewModel Launcher
+        public LauncherViewModel Launcher
         {
             get
             {

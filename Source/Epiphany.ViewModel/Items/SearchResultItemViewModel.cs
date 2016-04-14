@@ -5,12 +5,12 @@ using System.Linq;
 
 namespace Epiphany.ViewModel.Items
 {
-    public sealed class SearchResultItemViewModel : ViewModelBase, ISearchResultItemViewModel
+    public sealed class SearchResultItemViewModel : ViewModelBase
     {
-        private readonly ICommand<IBookItemViewModel> showBook;
-        private readonly ICommand<IAuthorItemViewModel> showAuthor;
-        private IBookItemViewModel book;
-        private IAuthorItemViewModel author;
+        private readonly ICommand<BookItemViewModel> showBook;
+        private readonly ICommand<AuthorItemViewModel> showAuthor;
+        private BookItemViewModel book;
+        private AuthorItemViewModel author;
 
         public SearchResultItemViewModel(BookModel book, INavigationService navService)
         {
@@ -20,7 +20,7 @@ namespace Epiphany.ViewModel.Items
             Author = new AuthorItemViewModel(book.Authors.FirstOrDefault());
         }
 
-        public IBookItemViewModel Book
+        public BookItemViewModel Book
         {
             get { return this.book; }
             private set
@@ -31,7 +31,7 @@ namespace Epiphany.ViewModel.Items
             }
         }
 
-        public IAuthorItemViewModel Author
+        public AuthorItemViewModel Author
         {
             get { return this.author; }
             private set
@@ -42,12 +42,12 @@ namespace Epiphany.ViewModel.Items
             }
         }
 
-        public ICommand<IBookItemViewModel> ShowBook
+        public ICommand<BookItemViewModel> ShowBook
         {
             get { return this.showBook; }
         }
 
-        public ICommand<IAuthorItemViewModel> ShowAuthor
+        public ICommand<AuthorItemViewModel> ShowAuthor
         {
             get { return this.showAuthor; }
         }

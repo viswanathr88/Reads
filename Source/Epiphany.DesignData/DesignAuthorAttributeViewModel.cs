@@ -2,7 +2,7 @@
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignAuthorAttributeViewModel : IAuthorAttributeViewModel
+    public sealed class DesignAuthorAttributeViewModel
     {
         public AuthorAttribute Type
         {

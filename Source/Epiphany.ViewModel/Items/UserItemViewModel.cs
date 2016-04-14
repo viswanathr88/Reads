@@ -1,13 +1,8 @@
 ﻿using Epiphany.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel.Items
 {
-    public sealed class UserItemViewModel : ItemViewModel<UserModel>, IUserItemViewModel
+    public sealed class UserItemViewModel : ItemViewModel<UserModel>
     {
 
         public UserItemViewModel(UserModel user) :

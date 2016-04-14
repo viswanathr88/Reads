@@ -21,10 +21,10 @@ namespace Epiphany.ViewModel.Commands
         protected override void Run(Session session)
         {
             int userId = int.Parse(session.UserId);
-            this.navService.CreateFor<IBookshelvesViewModel>()
+            /*this.navService.CreateFor<BookshelvesViewModel>()
                 .AddParam<int>((x) => x.Id, userId)
                 .AddParam<string>((x) => x.Name, session.Name)
-                .Navigate();
+                .Navigate();*/
         }
     }
 }

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 namespace Epiphany.ViewModel
 {
-    public sealed class FriendsViewModel : DataViewModel<UserModel>, IFriendsViewModel
+    public sealed class FriendsViewModel : DataViewModel<UserModel>
     {
         private int id;
         private string name;
@@ -80,7 +80,7 @@ namespace Epiphany.ViewModel
                 if (this.selectedUser == value) return;
                 this.selectedUser = value;
 
-                this.navService.CreateFor<IProfileViewModel>()
+                this.navService.CreateFor<ProfileViewModel>()
                     .AddParam<int>((x) => x.Id, this.selectedUser.Id)
                     .AddParam<string>((x) => x.Name, this.selectedUser.Name)
                     .Navigate();

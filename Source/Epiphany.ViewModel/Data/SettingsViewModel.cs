@@ -1,11 +1,10 @@
 ﻿using Epiphany.Model.Services;
 using Epiphany.Model.Settings;
-using System;
 using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class SettingsViewModel : DataViewModel<VoidType>, ISettingsViewModel
+    public sealed class SettingsViewModel : DataViewModel<VoidType>
     {
         public FeedUpdateType UpdateType
         {

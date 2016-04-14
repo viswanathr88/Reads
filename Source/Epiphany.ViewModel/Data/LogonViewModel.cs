@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class LogonViewModel : DataViewModel<VoidType>, ILogonViewModel
+    public sealed class LogonViewModel : DataViewModel<VoidType>
     {
         private bool isWaitingForUserInteraction;
         private Uri currentUri;
@@ -243,7 +243,7 @@ namespace Epiphany.ViewModel
 
         private void NavigateHome()
         {
-            this.navigationService.CreateFor<IHomeViewModel>().Navigate();
+            this.navigationService.CreateFor<HomeViewModel>().Navigate();
         }
 
         public override void Dispose()

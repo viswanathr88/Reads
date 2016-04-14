@@ -1,9 +1,8 @@
 ﻿using Epiphany.Model;
-using System;
 
 namespace Epiphany.ViewModel.Items
 {
-    public sealed class AuthorItemViewModel : ItemViewModel<AuthorModel>, IAuthorItemViewModel
+    public sealed class AuthorItemViewModel : ItemViewModel<AuthorModel>
     {
         public AuthorItemViewModel(AuthorModel model) : base(model)
         {

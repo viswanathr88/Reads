@@ -3,7 +3,7 @@ using Epiphany.ViewModel;
 
 namespace Epiphany.View
 {
-    [SourceModel(typeof(IAddBookViewModel))]
+    [SourceModel(typeof(AddBookViewModel))]
     public partial class AddBookPage : DataPage
     {
         public AddBookPage()

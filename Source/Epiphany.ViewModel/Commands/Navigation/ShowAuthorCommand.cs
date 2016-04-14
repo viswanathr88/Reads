@@ -20,14 +20,14 @@ namespace Epiphany.ViewModel.Commands
 
         protected override void Run(AuthorModel author)
         {
-            this.navService.CreateFor<IAuthorViewModel>()
+            this.navService.CreateFor<AuthorViewModel>()
                 .AddParam<int>((x) => x.Id, author.Id)
                 .AddParam<string>((x) => x.Name, author.Name)
                 .Navigate();
         }
     }
 
-    sealed class ShowAuthorFromItemCommand : Command<IAuthorItemViewModel>
+    sealed class ShowAuthorFromItemCommand : Command<AuthorItemViewModel>
     {
         private readonly INavigationService navService;
 
@@ -36,14 +36,14 @@ namespace Epiphany.ViewModel.Commands
             this.navService = navService;
         }
 
-        public override bool CanExecute(IAuthorItemViewModel author)
+        public override bool CanExecute(AuthorItemViewModel author)
         {
             return author.Id >= 0;
         }
 
-        protected override void Run(IAuthorItemViewModel author)
+        protected override void Run(AuthorItemViewModel author)
         {
-            this.navService.CreateFor<IAuthorViewModel>()
+            this.navService.CreateFor<AuthorViewModel>()
                 .AddParam<int>((x) => x.Id, author.Id)
                 .AddParam<string>((x) => x.Name, author.Name)
                 .Navigate();

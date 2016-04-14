@@ -11,27 +11,27 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
-    public class SearchViewModel : DataViewModel<VoidType>, ISearchViewModel
+    public class SearchViewModel : DataViewModel<VoidType>
     {
         private IList<BookSearchType> searchFilters;
-        private IList<ISearchResultItemViewModel> searchResults;
+        private IList<SearchResultItemViewModel> searchResults;
         private BookSearchType selectedFilter;
         private SearchQuery previousQuery;
         private bool hasResults = true;
-        private ISearchResultItemViewModel selectedResult;
+        private SearchResultItemViewModel selectedResult;
         private SearchQuery query;
         private string searchTerm;
         private const int itemsCount = 20;
 
         private readonly IAsyncCommand<IEnumerable<WorkModel>, SearchQuery> searchCommand;
-        private readonly ICommand<IBookItemViewModel> showBookCommand;
+        private readonly ICommand<BookItemViewModel> showBookCommand;
         private readonly INavigationService navService;
 
         public SearchViewModel(IBookService bookService, INavigationService navService)
         {
             this.navService = navService;
 
-            SearchResults = new ObservableCollection<ISearchResultItemViewModel>();
+            SearchResults = new ObservableCollection<SearchResultItemViewModel>();
             SearchFilters = Enum.GetValues(typeof(BookSearchType)).Cast<BookSearchType>().ToList();
 
             this.searchCommand = new SearchCommand(bookService, itemsCount);
@@ -90,7 +90,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<ISearchResultItemViewModel> SearchResults
+        public IList<SearchResultItemViewModel> SearchResults
         {
             get { return this.searchResults; }
             private set
@@ -101,7 +101,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public ISearchResultItemViewModel SelectedResult
+        public SearchResultItemViewModel SelectedResult
         {
             get { return this.selectedResult; }
             set

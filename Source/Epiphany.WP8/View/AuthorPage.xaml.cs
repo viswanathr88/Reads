@@ -1,10 +1,9 @@
 ﻿using Epiphany.View.Attributes;
 using Epiphany.ViewModel;
-using Microsoft.Phone.Controls;
 
 namespace Epiphany.View
 {
-    [SourceModel(typeof(IAuthorViewModel))]
+    [SourceModel(typeof(AuthorViewModel))]
     public partial class AuthorPage : DataPage
     {
         public AuthorPage()

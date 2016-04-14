@@ -1,5 +1,4 @@
 ﻿using Epiphany.Model;
-using Epiphany.ViewModel;
 using System;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -8,9 +7,9 @@ namespace Epiphany.ViewModel
 {
     class AuthorAttributeViewModelFactory
     {
-        public ObservableCollection<IAuthorAttributeViewModel> GetAuthorAttributeItems(AuthorModel author)
+        public ObservableCollection<AuthorAttributeViewModel> GetAuthorAttributeItems(AuthorModel author)
         {
-            ObservableCollection<IAuthorAttributeViewModel> items = new ObservableCollection<IAuthorAttributeViewModel>();
+            ObservableCollection<AuthorAttributeViewModel> items = new ObservableCollection<AuthorAttributeViewModel>();
 
             if (!string.IsNullOrEmpty(author.About))
             {

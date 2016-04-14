@@ -1,7 +1,20 @@
 ﻿
 namespace Epiphany.ViewModel
 {
-    public class AuthorAttributeViewModel : ViewModelBase, IAuthorAttributeViewModel
+    public enum AuthorAttribute
+    {
+        Gender,
+        Born,
+        Dead,
+        Hometown,
+        NumberOfFans,
+        NumberOfWorks,
+        About,
+        AverageRating,
+        Influences
+    };
+
+    public class AuthorAttributeViewModel : ViewModelBase
     {
         private readonly AuthorAttribute type;
         private readonly string value;

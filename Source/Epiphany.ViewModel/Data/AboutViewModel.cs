@@ -9,7 +9,7 @@ namespace Epiphany.ViewModel
     /// <summary>
     /// ViewModel for About
     /// </summary>
-    public sealed class AboutViewModel : DataViewModel<VoidType>, IAboutViewModel
+    public sealed class AboutViewModel : DataViewModel<VoidType>
     {
         private readonly ICommand likeOnFacebookCommand;
         private readonly ICommand rateAppCommand;

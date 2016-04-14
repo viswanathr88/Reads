@@ -23,7 +23,7 @@ namespace Epiphany.ViewModel.Commands
         protected override void Run(Session session)
         {
             int userId = int.Parse(session.UserId);
-            this.navService.CreateFor<IProfileViewModel>()
+            this.navService.CreateFor<ProfileViewModel>()
                 .AddParam<int>((x) => x.Id, userId)
                 .AddParam<string>((x) => x.Name, session.Name)
                 .Navigate();
@@ -45,14 +45,14 @@ namespace Epiphany.ViewModel.Commands
 
         protected override void Run(UserModel user)
         {
-            this.navService.CreateFor<IProfileViewModel>()
+            this.navService.CreateFor<ProfileViewModel>()
                 .AddParam<int>((x) => x.Id, user.Id)
                 .AddParam<string>((x) => x.Name, user.Name)
                 .Navigate();
         }
     }
 
-    sealed class ShowProfileFromItemCommand : Command<IUserItemViewModel>
+    sealed class ShowProfileFromItemCommand : Command<UserItemViewModel>
     {
         private readonly INavigationService navService;
 
@@ -61,14 +61,14 @@ namespace Epiphany.ViewModel.Commands
             this.navService = navService;
         }
 
-        public override bool CanExecute(IUserItemViewModel user)
+        public override bool CanExecute(UserItemViewModel user)
         {
             return user.Id >= 0;
         }
 
-        protected override void Run(IUserItemViewModel user)
+        protected override void Run(UserItemViewModel user)
         {
-            this.navService.CreateFor<IProfileViewModel>()
+            this.navService.CreateFor<ProfileViewModel>()
                 .AddParam<int>((x) => x.Id, user.Id)
                 .AddParam<string>((x) => x.Name, user.Name)
                 .Navigate();

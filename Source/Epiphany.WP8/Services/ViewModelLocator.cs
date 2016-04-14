@@ -22,7 +22,7 @@ namespace Epiphany.View.Services
 
         }
 
-        public ILogonViewModel Logon
+        public LogonViewModel Logon
         {
             get
             {
@@ -30,7 +30,7 @@ namespace Epiphany.View.Services
             }
         }
 
-        public IHomeViewModel Home
+        public HomeViewModel Home
         {
             get
             {
@@ -38,7 +38,7 @@ namespace Epiphany.View.Services
             }
         }
 
-        public IAboutViewModel About
+        public AboutViewModel About
         {
             get
             {
@@ -46,7 +46,7 @@ namespace Epiphany.View.Services
             }
         }
 
-        public IAddBookViewModel AddBook
+        public AddBookViewModel AddBook
         {
             get
             {
@@ -54,7 +54,7 @@ namespace Epiphany.View.Services
             }
         }
 
-        public IProfileViewModel Profile
+        public ProfileViewModel Profile
         {
             get
             {
@@ -62,7 +62,7 @@ namespace Epiphany.View.Services
             }
         }
 
-        public IBooksViewModel Books
+        public BooksViewModel Books
         {
             get
             {
@@ -70,48 +70,41 @@ namespace Epiphany.View.Services
             }
         }
 
-        public IFriendsViewModel Friends
+        public FriendsViewModel Friends
         {
             get { return this.locatorImpl.Friends; }
         }
 
-        public IEventsViewModel Events
+        public EventsViewModel Events
         {
             get { return this.locatorImpl.Events; }
         }
 
-        public void Dispose()
-        {
-            locatorImpl.Dispose();
-        }
-
-
-        public ISearchViewModel Search
+        public SearchViewModel Search
         {
             get { return this.locatorImpl.Search; }
         }
 
 
-        public IAuthorViewModel Author
+        public AuthorViewModel Author
         {
             get { return this.locatorImpl.Author; }
         }
 
 
-        public IBookshelvesViewModel Bookshelves
-        {
-            get { return this.locatorImpl.Bookshelves; }
-        }
-
-
-        public ISettingsViewModel Settings
+        public SettingsViewModel Settings
         {
             get { return this.locatorImpl.Settings; }
         }
 
-        public IBookViewModel Book
+        public BookViewModel Book
         {
             get { return this.locatorImpl.Book; }
+        }
+
+        public void Dispose()
+        {
+            locatorImpl.Dispose();
         }
     }
 }
