@@ -1,5 +1,4 @@
-﻿using System;
-using Epiphany.ViewModel;
+﻿using Epiphany.ViewModel;
 
 namespace Epiphany.View.Services
 {
@@ -12,7 +11,7 @@ namespace Epiphany.View.Services
             if (System.ComponentModel.DesignerProperties.IsInDesignTool)
             {
                 // Use the DesignViewModelLocator for blendability
-                this.locatorImpl = new DesignTimeViewModelLocator();
+                //this.locatorImpl = new DesignTimeViewModelLocator();
             }
             else
             {

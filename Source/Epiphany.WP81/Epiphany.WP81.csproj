@@ -118,10 +118,6 @@
       <Project>{d4ededd9-ccd4-43d9-821b-9731c187802e}</Project>
       <Name>Epiphany.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Epiphany.SharedView\Epiphany.SharedView.csproj">
-      <Project>{cb853c5d-feb2-4925-9b57-322c872afa86}</Project>
-      <Name>Epiphany.SharedView</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Epiphany.Strings\Epiphany.Strings.csproj">
       <Project>{879404da-bfc5-490f-89c0-56251f88b5f5}</Project>
       <Name>Epiphany.Strings</Name>
