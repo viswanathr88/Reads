@@ -104,13 +104,10 @@
     <Compile Include="Controls\DeferredContentPresenter.cs" />
     <Compile Include="Services\AppRateService.cs" />
     <Compile Include="Services\AuthService.cs" />
-    <Compile Include="Services\DebugLog.cs" />
     <Compile Include="Services\IViewLocator.cs" />
     <Compile Include="Services\LocationService.cs" />
-    <Compile Include="Services\LoggerBase.cs" />
     <Compile Include="Services\NavigationOperation.cs" />
     <Compile Include="Services\NavigationService.cs" />
-    <Compile Include="Services\ReleaseLog.cs" />
     <Compile Include="Services\ResourceLoader.cs" />
     <Compile Include="Services\RuntimeViewModelLocator.cs" />
     <Compile Include="Services\SourceModel.cs" />
