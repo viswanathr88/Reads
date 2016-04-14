@@ -7,17 +7,17 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel.Items
 {
-    public class FeedItemViewModel : ItemViewModel<FeedItemModel>, IFeedItemViewModel
+    public class FeedItemViewModel : ItemViewModel<FeedItemModel>
     {
         private readonly INavigationService navService;
         private readonly IResourceLoader resourceLoader;
-        private IUserItemViewModel friend;
-        private IBookItemViewModel book;
+        private UserItemViewModel friend;
+        private BookItemViewModel book;
         private string actionText;
 
-        private readonly ICommand<IUserItemViewModel> showProfileCommand;
-        private readonly ICommand<IBookItemViewModel> showBookCommand;
-        private readonly ICommand<IAuthorItemViewModel> showAuthorCommand;
+        private readonly ICommand<UserItemViewModel> showProfileCommand;
+        private readonly ICommand<BookItemViewModel> showBookCommand;
+        private readonly ICommand<AuthorItemViewModel> showAuthorCommand;
 
         private const string FriendFeedItemActionTextKey = "FriendFeedItemActionText";
         private const string UserStatusFeedItemActionTextKey = "UserStatusFeedItemActionText";
@@ -57,12 +57,12 @@ namespace Epiphany.ViewModel.Items
             get { return this.Item.ItemType; }
         }
 
-        public IUserItemViewModel User
+        public UserItemViewModel User
         {
             get { return new UserItemViewModel(this.Item.User); }
         }
 
-        public IUserItemViewModel Friend
+        public UserItemViewModel Friend
         {
             get { return this.friend; }
             private set
@@ -73,7 +73,7 @@ namespace Epiphany.ViewModel.Items
             }
         }
 
-        public IBookItemViewModel Book
+        public BookItemViewModel Book
         {
             get { return this.book; }
             private set
@@ -111,17 +111,17 @@ namespace Epiphany.ViewModel.Items
             get { return this.Item.UpdateTime; }
         }
 
-        public ICommand<IUserItemViewModel> ShowProfile
+        public ICommand<UserItemViewModel> ShowProfile
         {
             get { return this.showProfileCommand; }
         }
 
-        public ICommand<IBookItemViewModel> ShowBook
+        public ICommand<BookItemViewModel> ShowBook
         {
             get { return this.showBookCommand; }
         }
 
-        public ICommand<IAuthorItemViewModel> ShowAuthor
+        public ICommand<AuthorItemViewModel> ShowAuthor
         {
             get { return this.showAuthorCommand; }
         }
@@ -170,7 +170,7 @@ namespace Epiphany.ViewModel.Items
                     }
                 default:
                     {
-                        Log.Instance.Warn("Unknown FeedItemType found");
+                        Logger.LogWarn("Unknown FeedItemType found");
                         break;
                     }
             }

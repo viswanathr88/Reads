@@ -10,4 +10,8 @@
   <Setting Name="EncryptAuthToken" Type="bool">false</Setting>
   <Setting Name="EnableTransparentTile" Type="bool">true</Setting>
   <Setting Name="UseMyLocation" Type="bool">false</Setting>
+  <Setting Name="AccessToken" Type="string">string.Empty</Setting>
+  <Setting Name="AccessTokenSecret" Type="string">string.Empty</Setting>
+  <Setting Name="CurrentUserId" Type="int">-1</Setting>
+  <Setting Name="CurrentUsername" Type="string">string.Empty</Setting>
 </Settings>

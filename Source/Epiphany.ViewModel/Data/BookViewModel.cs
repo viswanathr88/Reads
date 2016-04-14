@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class BookViewModel : DataViewModel<BookModel>, IBookViewModel
+    public sealed class BookViewModel : DataViewModel<BookModel>
     {
-        public IList<IAuthorViewModel> Authors
+        public IList<AuthorViewModel> Authors
         {
             get
             {

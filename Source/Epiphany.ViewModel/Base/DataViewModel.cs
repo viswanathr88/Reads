@@ -76,24 +76,24 @@ namespace Epiphany.ViewModel
         {
             if (parameter == null && !(parameter is VoidType))
             {
-                Log.Instance.Error("Parameter is null!");
+                Logger.LogError("Parameter is null!");
             }
 
             if (!(parameter is TParam))
             {
-                Log.Instance.Error("Incorrect type passed to load. Type = " + parameter.GetType());
+                Logger.LogError("Incorrect type passed to load. Type = " + parameter.GetType());
             }
 
             TParam param = (TParam)parameter;
             Parameter = param;
             try
             {
-                Log.Instance.Debug("About to start loading");
+                Logger.LogDebug("About to start loading");
                 await LoadAsync(Parameter);
             }
             catch (Exception ex)
             {
-                Log.Instance.Error(ex.ToString());
+                Logger.LogError(ex.ToString());
                 // TODO: Create ErrorViewModel
             }
         }
@@ -125,11 +125,11 @@ namespace Epiphany.ViewModel
 
             if (this.commands.ContainsKey(command))
             {
-                Log.Instance.Error(string.Format("{0} - {1} already registered", GetType(), command.GetType()));
+                Logger.LogError(string.Format("{0} - {1} already registered", GetType(), command.GetType()));
                 return;
             }
 
-            Log.Instance.Info(string.Format("{0} Registering Command {1}", GetType(), command.GetType()));
+            Logger.LogInfo(string.Format("{0} Registering Command {1}", GetType(), command.GetType()));
 
             command.Executing += OnCmdExecuting;
             command.Executed += OnCommandExecuted;
@@ -149,11 +149,11 @@ namespace Epiphany.ViewModel
 
                 this.commands.Remove(command);
 
-                Log.Instance.Info(string.Format("{0} - Deregistered {1}", GetType(), command.GetType()));
+                Logger.LogInfo(string.Format("{0} - Deregistered {1}", GetType(), command.GetType()));
             }
             else
             {
-                Log.Instance.Warn(string.Format("{0} - Deregistering a command {1} that has not been registered", 
+                Logger.LogWarn(string.Format("{0} - Deregistering a command {1} that has not been registered", 
                     GetType(), command.GetType()));
             }
         }
@@ -175,20 +175,20 @@ namespace Epiphany.ViewModel
         {
             if (sender == null)
             {
-                Log.Instance.Error(string.Format("{0} sender cannot be null", GetType()));
+                Logger.LogError(string.Format("{0} sender cannot be null", GetType()));
                 return;
             }
 
             ICommand command = sender as ICommand;
             if (command == null)
             {
-                Log.Instance.Error(string.Format("{0} - command is null", GetType()));
+                Logger.LogError(string.Format("{0} - command is null", GetType()));
                 return;
             }
 
             if (!commands.ContainsKey(command))
             {
-                Log.Instance.Error(string.Format("{0} - Command {1} not found in collection", GetType(), command.GetType()));
+                Logger.LogError(string.Format("{0} - Command {1} not found in collection", GetType(), command.GetType()));
                 return;
             }
 
@@ -199,7 +199,7 @@ namespace Epiphany.ViewModel
             catch (Exception ex)
             {
                 Error = ex;
-                Log.Instance.Error(string.Format("{0} - {1} - {2} - {3}", GetType(), ex, ex.Message, ex.StackTrace));
+                Logger.LogError(string.Format("{0} - {1} - {2} - {3}", GetType(), ex, ex.Message, ex.StackTrace));
             }
         }
     }

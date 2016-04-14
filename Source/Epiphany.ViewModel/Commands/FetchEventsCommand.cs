@@ -10,17 +10,17 @@ namespace Epiphany.ViewModel.Commands
     sealed class FetchEventsCommand : AsyncCommand<IEnumerable<LiteraryEventModel>, VoidType>
     {
         private readonly IEventService eventService;
-        private readonly ILocationService locationService;
+        private readonly IDeviceServices deviceServices;
 
-        public FetchEventsCommand(IEventService eventService, ILocationService locationService)
+        public FetchEventsCommand(IEventService eventService, IDeviceServices deviceServices)
         {
-            if (eventService == null || locationService == null)
+            if (eventService == null || deviceServices == null)
             {
                 throw new ArgumentNullException("services");
             }
 
             this.eventService = eventService;
-            this.locationService = locationService;
+            this.deviceServices = deviceServices;
         }
         public override bool CanExecute(VoidType param)
         {
@@ -29,7 +29,7 @@ namespace Epiphany.ViewModel.Commands
 
         protected override async Task RunAsync(VoidType param)
         {
-            GeoCoords coords = await this.locationService.GetCoordinatesAsync();
+            GeoCoords coords = await this.deviceServices.GetCoordinatesAsync();
             Result = await this.eventService.GetEvents(coords.Latitude, coords.Longitude);
         }
     }

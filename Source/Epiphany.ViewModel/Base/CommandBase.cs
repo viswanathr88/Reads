@@ -22,7 +22,7 @@ namespace Epiphany.ViewModel.Commands
 
         public void Execute(object parameter)
         {
-            Log.Instance.Info(string.Format("{0} - Parameter = object", GetType()));
+            Logger.LogInfo(string.Format("{0} - Parameter = object", GetType()));
             if (CanExecute(parameter))
             {
                 T param = GetSafeParam(parameter);
@@ -44,7 +44,7 @@ namespace Epiphany.ViewModel.Commands
         {
             if (Executing != null)
             {
-                Log.Instance.Info(GetType().ToString());
+                Logger.LogInfo(GetType().ToString());
                 Executing(this, args);
             }
         }
@@ -53,7 +53,7 @@ namespace Epiphany.ViewModel.Commands
         {
             if (Executed != null)
             {
-                Log.Instance.Info(string.Format("{0} - ExecutionState = {1}", GetType(), state));
+                Logger.LogInfo(string.Format("{0} - ExecutionState = {1}", GetType(), state));
                 Executed(this, new ExecutedEventArgs(state));
             }
         }

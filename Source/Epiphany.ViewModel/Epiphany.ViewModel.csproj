@@ -41,6 +41,9 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
     <Compile Include="Base\AsyncCommand.cs" />
     <Compile Include="Base\CancelEventArgs.cs" />
     <Compile Include="Base\Command.cs" />
@@ -117,40 +120,16 @@
     <Compile Include="Data\FeedViewModel.cs" />
     <Compile Include="Data\FriendsViewModel.cs" />
     <Compile Include="Data\HomeViewModel.cs" />
-    <Compile Include="Data\Interfaces\IAuthorAttributeViewModel.cs" />
-    <Compile Include="Data\Interfaces\IAuthorViewModel.cs" />
-    <Compile Include="Data\Interfaces\IBooksViewModel.cs" />
-    <Compile Include="Data\Interfaces\ILauncherViewModel.cs" />
-    <Compile Include="Data\Interfaces\IAboutViewModel.cs" />
-    <Compile Include="Data\Interfaces\IAddBookViewModel.cs" />
-    <Compile Include="Data\Interfaces\IBookshelvesViewModel.cs" />
-    <Compile Include="Data\Interfaces\IBookViewModel.cs" />
-    <Compile Include="Data\Interfaces\IEventsViewModel.cs" />
-    <Compile Include="Data\Interfaces\IFeedOptionsViewModel.cs" />
-    <Compile Include="Data\Interfaces\IFeedViewModel.cs" />
-    <Compile Include="Data\Interfaces\IFriendsViewModel.cs" />
-    <Compile Include="Data\Interfaces\IGroupsViewModel.cs" />
-    <Compile Include="Data\Interfaces\IHomeViewModel.cs" />
-    <Compile Include="Data\Interfaces\ILogonViewModel.cs" />
-    <Compile Include="Data\Interfaces\IProfileViewModel.cs" />
-    <Compile Include="Data\Interfaces\ISearchViewModel.cs" />
     <Compile Include="Data\LauncherViewModel.cs" />
     <Compile Include="Data\LogonViewModel.cs" />
     <Compile Include="Commands\Navigation\ShowFriendsCommand.cs" />
     <Compile Include="Data\ProfileViewModel.cs" />
     <Compile Include="Data\EventsViewModel.cs" />
-    <Compile Include="Data\Interfaces\ISettingsViewModel.cs" />
     <Compile Include="Items\AuthorItemViewModel.cs" />
     <Compile Include="Items\BookItemViewModel.cs" />
     <Compile Include="Items\BookshelfItemViewModel.cs" />
     <Compile Include="Items\CustomBookshelfItemViewModel.cs" />
     <Compile Include="Items\FeedItemViewModel.cs" />
-    <Compile Include="Items\IAuthorItemViewModel.cs" />
-    <Compile Include="Items\IBookItemViewModel.cs" />
-    <Compile Include="Items\IBookshelfItemViewModel.cs" />
-    <Compile Include="Items\IFeedItemViewModel.cs" />
-    <Compile Include="Items\ISearchResultItemViewModel.cs" />
-    <Compile Include="Items\IUserItemViewModel.cs" />
     <Compile Include="Items\ProfileItemViewModel.cs" />
     <Compile Include="Items\ProfileItemViewModelFactory.cs" />
     <Compile Include="Data\SearchQuery.cs" />
@@ -158,16 +137,14 @@
     <Compile Include="Data\SearchViewModel.cs" />
     <Compile Include="Items\UserItemViewModel.cs" />
     <Compile Include="IViewModelLocator.cs" />
-    <Compile Include="Services\ILocationService.cs" />
+    <Compile Include="Services\IDeviceServices.cs" />
     <Compile Include="Services\IResourceLoader.cs" />
     <Compile Include="Data\SettingsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IAppRateService.cs" />
     <Compile Include="Services\INavigationOperation.cs" />
     <Compile Include="Services\INavigationService.cs" />
     <Compile Include="Services\ITimer.cs" />
     <Compile Include="Services\ITimerService.cs" />
-    <Compile Include="Services\IUrlLauncher.cs" />
     <Compile Include="Base\StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

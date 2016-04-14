@@ -1,5 +1,4 @@
-﻿using Epiphany.ViewModel.Commands;
-using Epiphany.ViewModel.Services;
+﻿using Epiphany.ViewModel.Services;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -9,24 +8,27 @@ namespace Epiphany.ViewModel
     /// <summary>
     /// ViewModel for About
     /// </summary>
-    public sealed class AboutViewModel : DataViewModel<VoidType>, IAboutViewModel
+    public sealed class AboutViewModel : DataViewModel<VoidType>
     {
         private readonly ICommand likeOnFacebookCommand;
         private readonly ICommand rateAppCommand;
+
+        public AboutViewModel() { }
+
         /// <summary>
         /// Create an instance of AboutViewModel
         /// </summary>
         /// <param name="rateService"></param>
         /// <param name="urlLauncher"></param>
-        public AboutViewModel(IAppRateService rateService, IUrlLauncher urlLauncher)
+        public AboutViewModel(IDeviceServices deviceServices)
         {
-            if (rateService == null || urlLauncher == null)
+            if (deviceServices == null)
             {
-                throw new ArgumentNullException(nameof(rateService));
+                throw new ArgumentNullException(nameof(deviceServices));
             }
 
-            this.likeOnFacebookCommand = new LikeOnFacebookCommand(urlLauncher);
-            this.rateAppCommand = new RateAppCommand(rateService);
+            //this.likeOnFacebookCommand = new LikeOnFacebookCommand(urlLauncher);
+            //this.rateAppCommand = new RateAppCommand(rateService);
         }
         /// <summary>
         /// Like the app on facebook command

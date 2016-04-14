@@ -38,7 +38,7 @@ namespace Epiphany.View.Controls
 
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
-            IFeedItemViewModel feedItem = item as IFeedItemViewModel;
+            FeedItemViewModel feedItem = item as FeedItemViewModel;
 
             if (feedItem != null)
             {

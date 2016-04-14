@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignAddBookViewModel : DesignBaseViewModel, IAddBookViewModel
+    public sealed class DesignAddBookViewModel : DesignBaseViewModel
     {
         public DesignAddBookViewModel()
         {

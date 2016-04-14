@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignAuthorViewModel : DesignBaseViewModel, IAuthorViewModel
+    public sealed class DesignAuthorViewModel : DesignBaseViewModel
     {
 
         public DesignAuthorViewModel()
@@ -66,7 +66,7 @@ namespace Epiphany.View.DesignData
             set;
         }
 
-        public IList<IAuthorAttributeViewModel> Attributes
+        public IList<AuthorAttributeViewModel> Attributes
         {
             get;
             set;

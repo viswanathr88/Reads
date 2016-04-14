@@ -1,12 +1,9 @@
 ﻿using Epiphany.View.Attributes;
 using Epiphany.ViewModel;
-using Microsoft.Phone.Controls;
-using System.Windows;
-using System.Windows.Navigation;
 
 namespace Epiphany.View
 {
-    [SourceModel(typeof(IEventsViewModel))]
+    [SourceModel(typeof(EventsViewModel))]
     public partial class EventsPage : DataPage
     {
         public EventsPage()

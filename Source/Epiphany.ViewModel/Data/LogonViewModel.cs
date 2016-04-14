@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class LogonViewModel : DataViewModel<VoidType>, ILogonViewModel
+    public sealed class LogonViewModel : DataViewModel<VoidType>
     {
         private bool isWaitingForUserInteraction;
         private Uri currentUri;
@@ -24,6 +24,11 @@ namespace Epiphany.ViewModel
         private readonly IAsyncCommand<Uri, VoidType> loginCommand;
         private readonly ICommand<bool, Uri> checkUriCommand;
         private readonly IAsyncCommand<VoidType> finishLoginCommand;
+
+        public LogonViewModel()
+        {
+
+        }
 
         public LogonViewModel(ILogonService logonService, INavigationService navigationService, ITimerService timerService)
         {
@@ -137,7 +142,7 @@ namespace Epiphany.ViewModel
 
         public override async Task LoadAsync(VoidType parameter)
         {
-            Log.Instance.Debug(IsLoaded.ToString());
+            Logger.LogDebug(IsLoaded.ToString());
 
             if (!IsLoaded)
             {
@@ -156,7 +161,7 @@ namespace Epiphany.ViewModel
             StopTimer();
             if (e.State == CommandExecutionState.Success)
             {
-                Log.Instance.Info(this.verifyLoginCommand.Result.ToString());
+                Logger.LogInfo(this.verifyLoginCommand.Result.ToString());
                 if (this.verifyLoginCommand.Result)
                 {
                     IsLoginCompleted = this.verifyLoginCommand.Result;
@@ -243,7 +248,7 @@ namespace Epiphany.ViewModel
 
         private void NavigateHome()
         {
-            this.navigationService.CreateFor<IHomeViewModel>().Navigate();
+            this.navigationService.CreateFor<HomeViewModel>().Navigate();
         }
 
         public override void Dispose()

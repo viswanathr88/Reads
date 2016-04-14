@@ -5,9 +5,9 @@ namespace Epiphany.ViewModel.Commands
 {
     sealed class RateAppCommand : Command
     {
-        private readonly IAppRateService service;
+        private readonly IDeviceServices service;
 
-        public RateAppCommand(IAppRateService service)
+        public RateAppCommand(IDeviceServices service)
         {
             this.service = service;
         }

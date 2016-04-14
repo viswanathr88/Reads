@@ -46,7 +46,7 @@ namespace Epiphany.Model.DataSources
             }
             catch (Exception ex)
             {
-                Log.Instance.Error(ex.StackTrace);
+                Logger.LogError(ex.StackTrace);
                 throw new ModelException(ModelExceptionType.ParseError);
             }
         }

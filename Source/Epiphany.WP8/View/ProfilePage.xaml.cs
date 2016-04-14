@@ -3,7 +3,7 @@ using Epiphany.ViewModel;
 
 namespace Epiphany.View
 {
-    [SourceModel(typeof(IProfileViewModel))]
+    [SourceModel(typeof(ProfileViewModel))]
     public partial class ProfilePage : DataPage
     {
         public ProfilePage()

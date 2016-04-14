@@ -13,16 +13,16 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    sealed class FeedViewModel : DataViewModel<VoidType>, IFeedViewModel
+    public sealed class FeedViewModel : DataViewModel<VoidType>
     {
         //
         // Private Members
         //
         private readonly INavigationService navigationService;
-        private IFeedOptionsViewModel feedOptionsViewModel;
+        private FeedOptionsViewModel feedOptionsViewModel;
         private readonly IUserService userService;
         private readonly IResourceLoader resourceLoader;
-        private IList<IFeedItemViewModel> feed;
+        private IList<FeedItemViewModel> feed;
         private bool isFilterEnabled;
         private bool isFeedEmpty;
         //
@@ -44,7 +44,7 @@ namespace Epiphany.ViewModel
 
             ApplicationSettings.Instance.SettingChanged += OnSettingChanged;
 
-            this.Feed = new ObservableCollection<IFeedItemViewModel>();
+            this.Feed = new ObservableCollection<FeedItemViewModel>();
             this.fetchFeedCommand = new FetchFeedCommand(userService);
             RegisterCommand(this.fetchFeedCommand, OnFetchFeedExecuted);
 
@@ -66,7 +66,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<IFeedItemViewModel> Feed
+        public IList<FeedItemViewModel> Feed
         {
             get { return feed; }
             private set
@@ -92,7 +92,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IFeedOptionsViewModel FeedOptionsViewModel
+        public FeedOptionsViewModel FeedOptionsViewModel
         {
             get
             {
@@ -126,13 +126,13 @@ namespace Epiphany.ViewModel
             if (!IsLoaded)
             {
                 IsLoading = true;
-                IEnumerable<IFeedItemViewModel> items = null;
+                IEnumerable<FeedItemViewModel> items = null;
                 try
                 {
                     items = await Task.Run(async ()=>
                     {
                         IEnumerable<FeedItemModel> modelItems = await this.userService.GetFriendUpdatesAsync(FeedUpdateType.all, FeedUpdateFilter.friends);
-                        IList<IFeedItemViewModel> vmItems = new List<IFeedItemViewModel>();
+                        IList<FeedItemViewModel> vmItems = new List<FeedItemViewModel>();
                         foreach (var modelItem in modelItems)
                         {
                             vmItems.Add(new FeedItemViewModel(modelItem, this.navigationService, this.resourceLoader));
@@ -142,12 +142,12 @@ namespace Epiphany.ViewModel
                 }
                 catch (Exception ex)
                 {
-                    Log.Instance.Error(ex.ToString());
+                    Logger.LogError(ex.ToString());
                 }
 
                 if (items != null)
                 {
-                    Feed = new ObservableCollection<IFeedItemViewModel>(items);
+                    Feed = new ObservableCollection<FeedItemViewModel>(items);
                 }
 
                 IsFeedEmpty = Feed.Count > 0 ? true : false;
@@ -166,7 +166,7 @@ namespace Epiphany.ViewModel
             if (e.State == CommandExecutionState.Success)
             {
                 IEnumerable<FeedItemModel> items = this.FetchFeed.Result;
-                Feed = new ObservableCollection<IFeedItemViewModel>();
+                Feed = new ObservableCollection<FeedItemViewModel>();
                 if (items != null)
                 {
                     foreach (FeedItemModel model in items)

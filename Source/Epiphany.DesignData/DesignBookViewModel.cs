@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Epiphany.View.DesignData
 {
-    public class DesignBookViewModel : DesignBaseViewModel, IBookViewModel
+    public class DesignBookViewModel : DesignBaseViewModel
     {
         public DesignBookViewModel()
         {
@@ -18,7 +18,7 @@ namespace Epiphany.View.DesignData
                 lorem ipsum lorem ipsum lorem ipsum lorem ipsum";
             ImageUrl = @"https://upload.wikimedia.org/wikipedia/en/3/33/A_Prisoner_of_Birth_Jeffrey_Archer.jpg";
 
-            Authors = new List<IAuthorViewModel>();
+            Authors = new List<DesignAuthorViewModel>();
             DesignAuthorViewModel author = new DesignAuthorViewModel()
             {
                 Id = 51,
@@ -29,7 +29,7 @@ namespace Epiphany.View.DesignData
             Authors.Add(author);
         }
 
-        public IList<IAuthorViewModel> Authors
+        public IList<DesignAuthorViewModel> Authors
         {
             get;
             set;

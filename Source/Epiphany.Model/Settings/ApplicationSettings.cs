@@ -54,6 +54,10 @@ namespace Epiphany.Model.Settings
 		private bool EncryptAuthTokenDefault = false;
 		private bool EnableTransparentTileDefault = true;
 		private bool UseMyLocationDefault = false;
+		private string AccessTokenDefault = string.Empty;
+		private string AccessTokenSecretDefault = string.Empty;
+		private int CurrentUserIdDefault = -1;
+		private string CurrentUsernameDefault = string.Empty;
 		public event EventHandler<SettingChangedEventArgs> SettingChanged;
 		
 		/// <summary>
@@ -260,6 +264,74 @@ namespace Epiphany.Model.Settings
 				if (storage.AddOrUpdate(@"UseMyLocation", value))
 				{
 					RaiseSettingChanged(@"UseMyLocation");
+				}
+			}
+		}		
+		/// <summary>
+		/// Gets or sets the AccessToken setting
+		/// </summary>
+		public string AccessToken
+		{
+			get 
+			{ 
+				return storage.GetValueOrDefault<string>(@"AccessToken", AccessTokenDefault);
+			}
+			set 
+			{
+				if (storage.AddOrUpdate(@"AccessToken", value))
+				{
+					RaiseSettingChanged(@"AccessToken");
+				}
+			}
+		}		
+		/// <summary>
+		/// Gets or sets the AccessTokenSecret setting
+		/// </summary>
+		public string AccessTokenSecret
+		{
+			get 
+			{ 
+				return storage.GetValueOrDefault<string>(@"AccessTokenSecret", AccessTokenSecretDefault);
+			}
+			set 
+			{
+				if (storage.AddOrUpdate(@"AccessTokenSecret", value))
+				{
+					RaiseSettingChanged(@"AccessTokenSecret");
+				}
+			}
+		}		
+		/// <summary>
+		/// Gets or sets the CurrentUserId setting
+		/// </summary>
+		public int CurrentUserId
+		{
+			get 
+			{ 
+				return storage.GetValueOrDefault<int>(@"CurrentUserId", CurrentUserIdDefault);
+			}
+			set 
+			{
+				if (storage.AddOrUpdate(@"CurrentUserId", value))
+				{
+					RaiseSettingChanged(@"CurrentUserId");
+				}
+			}
+		}		
+		/// <summary>
+		/// Gets or sets the CurrentUsername setting
+		/// </summary>
+		public string CurrentUsername
+		{
+			get 
+			{ 
+				return storage.GetValueOrDefault<string>(@"CurrentUsername", CurrentUsernameDefault);
+			}
+			set 
+			{
+				if (storage.AddOrUpdate(@"CurrentUsername", value))
+				{
+					RaiseSettingChanged(@"CurrentUsername");
 				}
 			}
 		}		

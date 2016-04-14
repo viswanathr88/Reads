@@ -9,23 +9,21 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public class EventsViewModel : DataViewModel<VoidType>, IEventsViewModel
+    public class EventsViewModel : DataViewModel<VoidType>
     {
         private readonly IEventService eventService;
-        private readonly IUrlLauncher urlLauncher;
-        private readonly ILocationService locationService;
+        private readonly IDeviceServices deviceServices;
 
         private LiteraryEventModel selectedEvent;
         private IList<LiteraryEventModel> events;
         private readonly IAsyncCommand<IEnumerable<LiteraryEventModel>, VoidType> fetchEventsCommand;
 
-        public EventsViewModel(IEventService eventService, ILocationService locationService, IUrlLauncher urlLauncher)
+        public EventsViewModel(IEventService eventService, IDeviceServices deviceServices)
         {
             this.eventService = eventService;
-            this.urlLauncher = urlLauncher;
-            this.locationService = locationService;
+            this.deviceServices = deviceServices;
 
-            this.fetchEventsCommand = new FetchEventsCommand(eventService, locationService);
+            //this.fetchEventsCommand = new FetchEventsCommand(eventService, locationService);
             RegisterCommand(this.fetchEventsCommand, OnCommandExecuted);
         }
 
@@ -47,7 +45,7 @@ namespace Epiphany.ViewModel
             {
                 if (this.selectedEvent == value) return;
                 this.selectedEvent = value;
-                this.urlLauncher.Launch(this.selectedEvent.Link);
+                this.deviceServices.LaunchUrl(this.selectedEvent.Link);
                 this.selectedEvent = null;
                 RaisePropertyChanged(() => SelectedEvent);
             }

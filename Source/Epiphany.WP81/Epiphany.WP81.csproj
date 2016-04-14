@@ -7,8 +7,8 @@
     <ProjectGuid>{9F4366F4-8142-447E-A46B-6ECE7B1BD77E}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Epiphany.WP81</RootNamespace>
-    <AssemblyName>Epiphany.WP81.App</AssemblyName>
+    <RootNamespace>Epiphany</RootNamespace>
+    <AssemblyName>Epiphany.WP81</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
@@ -79,13 +79,19 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\LogonPage.xaml.cs">
+      <DependentUpon>LogonPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -109,13 +115,34 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\LogonPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Epiphany.Model\Epiphany.Model.csproj">
+      <Project>{d4ededd9-ccd4-43d9-821b-9731c187802e}</Project>
+      <Name>Epiphany.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Epiphany.Strings\Epiphany.Strings.csproj">
       <Project>{879404da-bfc5-490f-89c0-56251f88b5f5}</Project>
       <Name>Epiphany.Strings</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Epiphany.View.Shared\Epiphany.View.Shared.csproj">
+      <Project>{128a732f-1608-4e56-a86d-911b75ae057c}</Project>
+      <Name>Epiphany.View.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epiphany.ViewModel\Epiphany.ViewModel.csproj">
+      <Project>{50f37359-1dea-47ab-9249-ea864608911c}</Project>
+      <Name>Epiphany.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epiphany.Web\Epiphany.Web.csproj">
+      <Project>{e684381a-fb97-4e20-ab95-2ca4f61bbf0e}</Project>
+      <Name>Epiphany.Web</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>

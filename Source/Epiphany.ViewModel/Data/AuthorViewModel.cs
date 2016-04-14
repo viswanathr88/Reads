@@ -12,10 +12,10 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class AuthorViewModel : DataViewModel<AuthorModel>, IAuthorViewModel
+    public sealed class AuthorViewModel : DataViewModel<AuthorModel>
     {
         private readonly AuthorAttributeViewModelFactory authorAttributeVMFactory;
-        private IBookItemViewModel selectedBook;
+        private BookItemViewModel selectedBook;
         private bool bookLoadingStarted;
         private AuthorModel author;
         private string imageUrl;
@@ -24,8 +24,8 @@ namespace Epiphany.ViewModel
 
         // collections
         private IAsyncEnumerator<BookModel> bookEnumerator;
-        private IList<IBookItemViewModel> books;
-        private IList<IAuthorAttributeViewModel> attributes;
+        private IList<BookItemViewModel> books;
+        private IList<AuthorAttributeViewModel> attributes;
 
         // commands
         private readonly IAsyncCommand<IEnumerable<BookModel>, IAsyncEnumerator<BookModel>> fetchBooksCommand;
@@ -45,7 +45,7 @@ namespace Epiphany.ViewModel
             this.bookService = bookService;
             this.navService = navService;
 
-            Books = new ObservableCollection<IBookItemViewModel>();
+            Books = new ObservableCollection<BookItemViewModel>();
             this.authorAttributeVMFactory = new AuthorAttributeViewModelFactory();
 
             this.fetchAuthorCommand = new FetchAuthorCommand(authorService);
@@ -118,7 +118,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IBookItemViewModel SelectedBook
+        public BookItemViewModel SelectedBook
         {
             get { return this.selectedBook; }
             set
@@ -126,7 +126,7 @@ namespace Epiphany.ViewModel
                 if (this.selectedBook == value) return;
                 this.selectedBook = value;
 
-                this.navService.CreateFor<IBookViewModel>()
+                this.navService.CreateFor<BookViewModel>()
                     .AddParam<int>((x) => (x.Id), value.Id)
                     .AddParam<string>((x) => x.Name, value.Title)
                     .Navigate();
@@ -136,7 +136,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<IBookItemViewModel> Books
+        public IList<BookItemViewModel> Books
         {
             get { return this.books; }
             private set
@@ -158,7 +158,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<IAuthorAttributeViewModel> Attributes
+        public IList<AuthorAttributeViewModel> Attributes
         {
             get { return this.attributes; }
             private set

@@ -10,10 +10,10 @@ namespace Epiphany.View.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (!(value is IAuthorAttributeViewModel))
+            if (!(value is AuthorAttributeViewModel))
                 return value;
 
-            IAuthorAttributeViewModel vm = (IAuthorAttributeViewModel)value;
+            AuthorAttributeViewModel vm = (AuthorAttributeViewModel)value;
             string strValue = string.Empty;
             switch (vm.Type)
             {

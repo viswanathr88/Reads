@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignBookshelvesViewModel : DesignBaseViewModel, IBookshelvesViewModel
+    public sealed class DesignBookshelvesViewModel : DesignBaseViewModel
     {
 
         public DesignBookshelvesViewModel()
@@ -24,7 +24,7 @@ namespace Epiphany.View.DesignData
 
         private void PopulateBookshelves()
         {
-            Bookshelves = new ObservableCollection<IBookshelfItemViewModel>();
+            Bookshelves = new ObservableCollection<BookshelfItemViewModel>();
 
             for (int i = 0; i < 6; i++)
             {

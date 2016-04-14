@@ -69,7 +69,7 @@ namespace Epiphany.WP8
         private void SetupLogging()
         {
 #if DEBUG
-            Log.SetLogger(new DebugLog());
+            Logger.Writers.Add(new DebugConsoleWriter());
 #else
             Log.SetLogger(new ReleaseLog());
 #endif

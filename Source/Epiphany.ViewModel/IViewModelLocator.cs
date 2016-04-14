@@ -1,34 +1,37 @@
 ﻿using Epiphany.ViewModel;
+using Epiphany.ViewModel.Services;
 using System;
 
 namespace Epiphany.View.Services
 {
     public interface IViewModelLocator : IDisposable
     {
-        IHomeViewModel Home { get; }
+        INavigationService NavigationService { get; }
 
-        ILogonViewModel Logon { get; }
+        HomeViewModel Home { get; }
 
-        IAddBookViewModel AddBook { get; }
+        LogonViewModel Logon { get; }
 
-        IAboutViewModel About { get; }
+        AddBookViewModel AddBook { get; }
 
-        IProfileViewModel Profile { get; }
+        AboutViewModel About { get; }
 
-        IBooksViewModel Books { get; }
+        ProfileViewModel Profile { get; }
 
-        IFriendsViewModel Friends { get; }
+        BooksViewModel Books { get; }
 
-        IEventsViewModel Events { get; }
+        FriendsViewModel Friends { get; }
 
-        ISearchViewModel Search { get; }
+        EventsViewModel Events { get; }
 
-        IAuthorViewModel Author { get; }
+        SearchViewModel Search { get; }
 
-        IBookViewModel Book { get; }
+        AuthorViewModel Author { get; }
 
-        IBookshelvesViewModel Bookshelves { get; }
+        BookViewModel Book { get; }
 
-        ISettingsViewModel Settings { get; }
+        //BookshelvesViewModel Bookshelves { get; }
+
+        SettingsViewModel Settings { get; }
     }
 }

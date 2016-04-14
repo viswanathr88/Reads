@@ -37,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
     <Compile Include="Adapter\AuthorAdapter.cs" />
     <Compile Include="Adapter\BookAdapter.cs" />
     <Compile Include="Adapter\BookshelfAdapter.cs" />
@@ -93,9 +96,9 @@
     <Compile Include="Entity\UserStatusFeedItemModel.cs" />
     <Compile Include="Entity\UserStatusModel.cs" />
     <Compile Include="Entity\WorkModel.cs" />
-    <Compile Include="Logging\DummyLogger.cs" />
-    <Compile Include="Logging\ILogger.cs" />
-    <Compile Include="Logging\Log.cs" />
+    <Compile Include="Logging\DebugConsoleWriter.cs" />
+    <Compile Include="Logging\ILogWriter.cs" />
+    <Compile Include="Logging\Logger.cs" />
     <Compile Include="Messaging\AddReviewMessage.cs" />
     <Compile Include="Messaging\Base\IMessage.cs" />
     <Compile Include="Messaging\Base\IMessageSubscription.cs" />

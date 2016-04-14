@@ -3,7 +3,7 @@ using System;
 using System.Threading.Tasks;
 namespace Epiphany.ViewModel
 {
-    public sealed class BooksViewModel : DataViewModel<BooksMetadata>, IBooksViewModel
+    public sealed class BooksViewModel : DataViewModel<BooksMetadata>
     {
         private int userId;
         private string userName;
