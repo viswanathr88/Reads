@@ -25,6 +25,11 @@ namespace Epiphany.ViewModel
         private readonly ICommand<bool, Uri> checkUriCommand;
         private readonly IAsyncCommand<VoidType> finishLoginCommand;
 
+        public LogonViewModel()
+        {
+
+        }
+
         public LogonViewModel(ILogonService logonService, INavigationService navigationService, ITimerService timerService)
         {
             if (logonService == null || navigationService == null || timerService == null)

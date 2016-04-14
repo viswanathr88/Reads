@@ -12,7 +12,7 @@ using System.Xml.Linq;
 
 namespace Epiphany.Web
 {
-    class AuthService : IAuthService
+    public class AuthService : IAuthService
     {
         private readonly AuthConfig config = new AuthConfig();
         private readonly RestClient restClient;

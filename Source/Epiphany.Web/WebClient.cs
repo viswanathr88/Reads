@@ -15,18 +15,10 @@ namespace Epiphany.Web
     /// Represents the WebClient implementation that can send 
     /// authenticated and unauthenticated web requests
     /// </summary>
-    public class WebClient : IWebClient
+    class WebClient : IWebClient
     {
         private readonly IAuthService authService;
         private readonly RestClient restClient;
-        /// <summary>
-        /// Create an instance of WebClient
-        /// </summary>
-        public WebClient()
-        {
-            this.authService = new AuthService();
-            this.restClient = new RestClient(this.authService.Configuration.BaseUri.ToString());
-        }
         /// <summary>
         /// Create an instance of WebClient with the given authentication service
         /// </summary>

@@ -7,8 +7,8 @@
     <ProjectGuid>{9F4366F4-8142-447E-A46B-6ECE7B1BD77E}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Epiphany.WP81</RootNamespace>
-    <AssemblyName>Epiphany.WP81.App</AssemblyName>
+    <RootNamespace>Epiphany</RootNamespace>
+    <AssemblyName>Epiphany.WP81</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
@@ -136,7 +136,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\" />
+    <Folder Include="View\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

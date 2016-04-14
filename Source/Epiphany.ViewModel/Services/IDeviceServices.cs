@@ -9,8 +9,12 @@ namespace Epiphany.ViewModel.Services
         public double Longitude = 0.0;
     }
 
-    public interface ILocationService
+    public interface IDeviceServices
     {
+        Task LaunchUrl(string url);
+
         Task<GeoCoords> GetCoordinatesAsync();
+
+        Task RateApp();
     }
 }

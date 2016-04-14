@@ -6,12 +6,12 @@ namespace Epiphany.ViewModel.Commands
 {
     sealed class LikeOnFacebookCommand : Command
     {
-        private readonly IUrlLauncher urlLauncher;
+        private readonly IDeviceServices deviceServices;
         private readonly string url = "www.facebook.com/epiphanywp";
 
-        public LikeOnFacebookCommand(IUrlLauncher launcher)
+        public LikeOnFacebookCommand(IDeviceServices deviceServices)
         {
-            this.urlLauncher = launcher;
+            this.deviceServices = deviceServices;
         }
 
         protected override bool CanExecute()
@@ -21,7 +21,7 @@ namespace Epiphany.ViewModel.Commands
 
         protected override void Run()
         {
-            this.urlLauncher.Launch(url);
+            this.deviceServices.LaunchUrl(url);
         }
     }
 }

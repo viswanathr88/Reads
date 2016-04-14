@@ -22,7 +22,7 @@ namespace Epiphany.ViewModel
 
         private readonly IBookshelfService bookshelfService;
         private readonly INavigationService navService;
-        private readonly IUrlLauncher urlLauncher;
+        private readonly IDeviceServices deviceServices;
         private readonly IResourceLoader resourceLoader;
 
         private readonly IAsyncCommand<ProfileModel, int> fetchProfileCommand;
@@ -40,7 +40,7 @@ namespace Epiphany.ViewModel
         private ProfileItemViewModel selectedProfileItem;
 
         public ProfileViewModel(IUserService userService, IBookshelfService bookshelfService, 
-            INavigationService navService, IUrlLauncher urlLauncher, IResourceLoader resourceLoader)
+            INavigationService navService, IDeviceServices deviceServices, IResourceLoader resourceLoader)
         {
             if (userService == null || navService == null || bookshelfService == null || resourceLoader == null)
             {
@@ -49,7 +49,7 @@ namespace Epiphany.ViewModel
 
             this.bookshelfService = bookshelfService;
             this.navService = navService;
-            this.urlLauncher = urlLauncher;
+            this.deviceServices = deviceServices;
             this.resourceLoader = resourceLoader;
             this.profileItemFactory = new ProfileItemViewModelFactory();
 
@@ -206,7 +206,7 @@ namespace Epiphany.ViewModel
 
                     case ProfileItemType.ViewInGoodreads:
                         {
-                            this.urlLauncher.Launch(this.selectedProfileItem.Value);
+                            this.deviceServices.LaunchUrl(this.selectedProfileItem.Value);
                             break;
                         }
                     default:

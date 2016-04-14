@@ -19,7 +19,7 @@ namespace Epiphany.ViewModel
         {
             this.name = GetType().ToString();
         }
-        public void SetValue(string propertyName, string value)
+        public void SetValue(string propertyName, object value)
         {
             PropertyInfo info = GetProperty(propertyName);
             

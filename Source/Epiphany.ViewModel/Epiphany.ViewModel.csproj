@@ -137,16 +137,14 @@
     <Compile Include="Data\SearchViewModel.cs" />
     <Compile Include="Items\UserItemViewModel.cs" />
     <Compile Include="IViewModelLocator.cs" />
-    <Compile Include="Services\ILocationService.cs" />
+    <Compile Include="Services\IDeviceServices.cs" />
     <Compile Include="Services\IResourceLoader.cs" />
     <Compile Include="Data\SettingsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IAppRateService.cs" />
     <Compile Include="Services\INavigationOperation.cs" />
     <Compile Include="Services\INavigationService.cs" />
     <Compile Include="Services\ITimer.cs" />
     <Compile Include="Services\ITimerService.cs" />
-    <Compile Include="Services\IUrlLauncher.cs" />
     <Compile Include="Base\StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

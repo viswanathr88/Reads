@@ -43,6 +43,10 @@
       <Project>{50f37359-1dea-47ab-9249-ea864608911c}</Project>
       <Name>Epiphany.ViewModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Epiphany.Web\Epiphany.Web.csproj">
+      <Project>{e684381a-fb97-4e20-ab95-2ca4f61bbf0e}</Project>
+      <Name>Epiphany.Web</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <TargetPlatform Include="Windows, Version=8.1" />
@@ -52,10 +56,15 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="DesignData\DesignTimeViewModelLocator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DeviceServices.cs" />
+    <Compile Include="Services\NavigationService.cs" />
+    <Compile Include="Services\RuntimeViewModelLocator.cs" />
     <Compile Include="Services\SettingStorage.cs" />
     <Compile Include="Services\Timer.cs" />
     <Compile Include="Services\TimerService.cs" />
+    <Compile Include="Services\ViewModelLocator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

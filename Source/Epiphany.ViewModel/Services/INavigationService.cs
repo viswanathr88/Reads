@@ -15,5 +15,7 @@ namespace Epiphany.ViewModel.Services
         INavigationOperation<TViewModel> CreateFor<TViewModel>() where TViewModel : IDataViewModel;
 
         void Navigate(string uri);
+
+        void Navigate<TViewModel>(object parameter) where TViewModel : IDataViewModel;
     }
 }

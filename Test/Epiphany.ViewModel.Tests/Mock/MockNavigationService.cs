@@ -29,5 +29,10 @@ namespace Epiphany.ViewModel.Tests.Mock
         {
             throw new NotImplementedException();
         }
+
+        public void Navigate<TViewModel>(object parameter) where TViewModel : IDataViewModel
+        {
+            throw new NotImplementedException();
+        }
     }
 }
