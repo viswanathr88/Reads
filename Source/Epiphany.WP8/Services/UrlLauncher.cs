@@ -14,7 +14,7 @@ namespace Epiphany.View.Services
                 throw new ArgumentNullException("url");
             }
 
-            Log.Instance.Info(string.Format("Launching url {0}", url));
+            Logger.LogInfo(string.Format("Launching url {0}", url));
 
             WebBrowserTask webTask = new WebBrowserTask();
             webTask.Uri = new Uri(url);

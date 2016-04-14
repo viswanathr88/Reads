@@ -93,8 +93,10 @@
     <Compile Include="Entity\UserStatusFeedItemModel.cs" />
     <Compile Include="Entity\UserStatusModel.cs" />
     <Compile Include="Entity\WorkModel.cs" />
+    <Compile Include="Logging\DebugConsoleWriter.cs" />
     <Compile Include="Logging\DummyLogger.cs" />
     <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\ILogWriter.cs" />
     <Compile Include="Logging\Log.cs" />
     <Compile Include="Messaging\AddReviewMessage.cs" />
     <Compile Include="Messaging\Base\IMessage.cs" />

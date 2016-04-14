@@ -142,7 +142,7 @@ namespace Epiphany.ViewModel
                 }
                 catch (Exception ex)
                 {
-                    Log.Instance.Error(ex.ToString());
+                    Logger.LogError(ex.ToString());
                 }
 
                 if (items != null)

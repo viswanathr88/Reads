@@ -170,7 +170,7 @@ namespace Epiphany.ViewModel.Items
                     }
                 default:
                     {
-                        Log.Instance.Warn("Unknown FeedItemType found");
+                        Logger.LogWarn("Unknown FeedItemType found");
                         break;
                     }
             }

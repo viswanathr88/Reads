@@ -137,7 +137,7 @@ namespace Epiphany.ViewModel
 
         public override async Task LoadAsync(VoidType parameter)
         {
-            Log.Instance.Debug(IsLoaded.ToString());
+            Logger.LogDebug(IsLoaded.ToString());
 
             if (!IsLoaded)
             {
@@ -156,7 +156,7 @@ namespace Epiphany.ViewModel
             StopTimer();
             if (e.State == CommandExecutionState.Success)
             {
-                Log.Instance.Info(this.verifyLoginCommand.Result.ToString());
+                Logger.LogInfo(this.verifyLoginCommand.Result.ToString());
                 if (this.verifyLoginCommand.Result)
                 {
                     IsLoginCompleted = this.verifyLoginCommand.Result;

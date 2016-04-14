@@ -19,14 +19,14 @@ namespace Epiphany.View
 
             if (this.DataContext == null)
             {
-                Log.Instance.Error("There is no DataContext set on the View");
+                Logger.LogError("There is no DataContext set on the View");
                 return;
             }
 
             ViewModelBase vm = this.DataContext as ViewModelBase;
             if (vm == null)
             {
-                Log.Instance.Error("DataContext does not implement ViewModelBase");
+                Logger.LogError("DataContext does not implement ViewModelBase");
                 return;
             }
 
@@ -38,7 +38,7 @@ namespace Epiphany.View
             IDataViewModel dataVM = vm as IDataViewModel;
             if (dataVM == null)
             {
-                Log.Instance.Error("VM does not implement IDataViewModel");
+                Logger.LogError("VM does not implement IDataViewModel");
                 return;
             }
 

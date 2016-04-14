@@ -31,7 +31,7 @@ namespace Epiphany.Model.Services
         }
         public async Task<ProfileModel> GetProfile(int id)
         {
-            Log.Instance.Debug(Environment.CurrentManagedThreadId.ToString());
+            Logger.LogDebug(Environment.CurrentManagedThreadId.ToString());
             //
             // Create the headers
             //

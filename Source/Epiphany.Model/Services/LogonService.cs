@@ -117,7 +117,7 @@ namespace Epiphany.Model.Services
             }
             catch (Exception ex)
             {
-                Log.Instance.Warn(ex.StackTrace);
+                Logger.LogWarn(ex.StackTrace);
             }
             return result;
         }
