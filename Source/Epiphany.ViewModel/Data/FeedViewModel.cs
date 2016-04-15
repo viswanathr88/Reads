@@ -33,11 +33,6 @@ namespace Epiphany.ViewModel
 
         public FeedViewModel(IUserService userService, INavigationService navigationService, IResourceLoader resourceLoader)
         {
-            if (userService == null || navigationService == null || resourceLoader == null)
-            {
-                throw new ArgumentNullException("services");
-            }
-
             this.userService = userService;
             this.navigationService = navigationService;
             this.resourceLoader = resourceLoader;

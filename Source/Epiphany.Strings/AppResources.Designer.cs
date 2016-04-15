@@ -809,7 +809,7 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to retry.
+        ///   Looks up a localized string similar to Try again.
         /// </summary>
         public static string RetryLoginButtonText {
             get {

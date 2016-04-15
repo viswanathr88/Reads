@@ -18,6 +18,10 @@ namespace Epiphany.ViewModel
         private bool isLoading;
         private bool isLoaded;
         private object error;
+
+        public event EventHandler<EventArgs> Done;
+        protected void RaiseDone() => Done?.Invoke(this, EventArgs.Empty);
+
         /// <summary>
         /// Create an instance of DataViewModel
         /// </summary>
@@ -48,7 +52,7 @@ namespace Epiphany.ViewModel
             {
                 if (this.isLoaded == value) return;
                 this.isLoaded = value;
-                RaisePropertyChanged(() => IsLoaded);
+                RaisePropertyChanged();
             }
         }
         /// <summary>
@@ -74,27 +78,35 @@ namespace Epiphany.ViewModel
         /// <returns></returns>
         public async Task LoadAsync(object parameter)
         {
-            if (parameter == null && !(parameter is VoidType))
-            {
-                Logger.LogError("Parameter is null!");
-            }
-
-            if (!(parameter is TParam))
-            {
-                Logger.LogError("Incorrect type passed to load. Type = " + parameter.GetType());
-            }
-
-            TParam param = (TParam)parameter;
-            Parameter = param;
             try
             {
-                Logger.LogDebug("About to start loading");
+                if (typeof(TParam) != typeof(VoidType))
+                {
+                    // Perform parameter validation
+                    if (parameter == null)
+                    {
+                        Logger.LogError("Parameter is null");
+                        throw new ArgumentNullException(nameof(parameter));
+                    }
+
+                    // Check parameter type
+                    if (!(parameter is TParam))
+                    {
+                        Logger.LogError("Incorrect type passed to load. Type = " + parameter.GetType());
+                        throw new ArgumentOutOfRangeException(nameof(parameter));
+                    }
+
+                    TParam param = (TParam)parameter;
+                    Parameter = param;
+                }
+
+                Logger.LogDebug("About to call LoadAsync after parameter validation");
                 await LoadAsync(Parameter);
             }
             catch (Exception ex)
             {
-                Logger.LogError(ex.ToString());
-                // TODO: Create ErrorViewModel
+                Logger.LogException(ex);
+                Error = ex;
             }
         }
         /// <summary>
@@ -198,8 +210,8 @@ namespace Epiphany.ViewModel
             }
             catch (Exception ex)
             {
+                Logger.LogException(ex);
                 Error = ex;
-                Logger.LogError(string.Format("{0} - {1} - {2} - {3}", GetType(), ex, ex.Message, ex.StackTrace));
             }
         }
     }

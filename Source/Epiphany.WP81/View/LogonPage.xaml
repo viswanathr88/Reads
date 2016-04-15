@@ -1,15 +1,63 @@
-﻿<Page
-    x:Class="Epiphany.View.LogonPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Epiphany.View"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    DataContext="{Binding Logon, Source={StaticResource VMLocator}}">
+﻿<local:DataPage x:Class="Epiphany.View.LogonPage"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:local="using:Epiphany.View"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d"
+                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                DataContext="{Binding Logon, Source={StaticResource VMLocator}}">
 
     <Grid>
-        
+        <!-- Web browser control for oauth login -->
+        <WebView Source="{Binding CurrentUri, Mode=TwoWay}"
+                 Visibility="{Binding IsWaitingForUserInteraction, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}"
+                 NavigationStarting="OnWebViewNavigationStarting"
+                 />
+
+        <Grid Visibility="{Binding IsWaitingForUserInteraction, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*" />
+                <RowDefinition Height="4*" />
+            </Grid.RowDefinitions>
+
+            <!-- App Logo -->
+            <Path Height="128"
+                  Width="128"
+                  Stretch="Fill"
+                  Fill="{ThemeResource ApplicationForegroundThemeBrush}"
+                  Data="{StaticResource AppLogoData}"
+                  VerticalAlignment="Bottom" />
+
+            <!-- Footer - Progress ring + sign in message + retry button -->
+            <StackPanel Orientation="Vertical"
+                        Grid.Row="1">
+                <!-- Progress ring -->
+                <ProgressRing IsActive="{Binding IsSignInTakingLonger}"
+                              Background="Transparent"
+                              Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                              HorizontalAlignment="Center"
+                              MinWidth="15"
+                              MinHeight="15"
+                              Margin="0,20,0,20"/>
+
+                <!-- Taking longer to sign in -->
+                <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SigningInStuckMessage}"
+                           TextWrapping="Wrap"
+                           Margin="12,6,12,6"
+                           Style="{StaticResource BodyTextBlockStyle}"
+                           VerticalAlignment="Center"
+                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                           Visibility="{Binding IsSignInTakingLonger, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}" />
+
+                <!-- Retry button -->
+                <Button Content="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.RetryLoginButtonText}"
+                        Width="Auto"
+                        HorizontalAlignment="Center"
+                        Visibility="{Binding Error, Converter={StaticResource NullToVisibilityConverter}}" />
+
+            </StackPanel>
+
+        </Grid>
     </Grid>
-</Page>
+</local:DataPage>

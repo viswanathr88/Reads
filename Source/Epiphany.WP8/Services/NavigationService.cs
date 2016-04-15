@@ -3,6 +3,7 @@ using Epiphany.ViewModel.Services;
 using Microsoft.Phone.Controls;
 using System;
 using System.Windows;
+using System.Collections.Generic;
 
 namespace Epiphany.View.Services
 {
@@ -44,11 +45,24 @@ namespace Epiphany.View.Services
             return operation;
         }
 
+        public void Navigate<TViewModel>(object parameter) where TViewModel : IDataViewModel
+        {
+            throw new NotImplementedException();
+        }
+
         private PhoneApplicationFrame Frame
         {
             get
             {
                 return Application.Current.RootVisual as PhoneApplicationFrame;
+            }
+        }
+
+        public IDictionary<Type, Type> Mapping
+        {
+            get
+            {
+                throw new NotImplementedException();
             }
         }
     }

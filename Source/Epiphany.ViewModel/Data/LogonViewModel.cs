@@ -166,7 +166,7 @@ namespace Epiphany.ViewModel
                 {
                     IsLoginCompleted = this.verifyLoginCommand.Result;
                     IsLoaded = true;
-                    NavigateHome();
+                    RaiseDone();
                 }
                 else
                 {
@@ -217,7 +217,7 @@ namespace Epiphany.ViewModel
             {
                 IsLoginCompleted = true;
                 IsLoaded = true;
-                NavigateHome();
+                RaiseDone();
             }
             else
             {
@@ -244,11 +244,6 @@ namespace Epiphany.ViewModel
             {
                 IsSignInTakingLonger = false;
             }
-        }
-
-        private void NavigateHome()
-        {
-            this.navigationService.CreateFor<HomeViewModel>().Navigate();
         }
 
         public override void Dispose()

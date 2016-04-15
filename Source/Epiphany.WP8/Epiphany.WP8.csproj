@@ -105,10 +105,8 @@
     <Compile Include="Converters\TimeToNowConverter.cs" />
     <Compile Include="Converters\UpperCaseConverter.cs" />
     <Compile Include="Controls\DeferredContentPresenter.cs" />
-    <Compile Include="Services\AppRateService.cs" />
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\IViewLocator.cs" />
-    <Compile Include="Services\LocationService.cs" />
     <Compile Include="Services\NavigationOperation.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Services\ResourceLoader.cs" />
@@ -117,7 +115,6 @@
     <Compile Include="Services\Timer.cs" />
     <Compile Include="Services\TimerService.cs" />
     <Compile Include="Services\TokenParser.cs" />
-    <Compile Include="Services\UrlLauncher.cs" />
     <Compile Include="Services\ViewLocator.cs" />
     <Compile Include="Services\ViewModelLocator.cs" />
     <Compile Include="View\BookPage.xaml.cs">

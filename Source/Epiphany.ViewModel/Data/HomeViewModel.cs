@@ -20,15 +20,11 @@ namespace Epiphany.ViewModel
         private readonly ICommand showAboutCommand;
         private readonly ICommand showSettingsCommand;
 
+        public HomeViewModel() {  }
+
         public HomeViewModel(IUserService userService, ILogonService logonService, 
             INavigationService navigationService, IResourceLoader resourceLoader)
         {
-            if (userService == null || navigationService == null || 
-                logonService == null || resourceLoader == null)
-            {
-                throw new ArgumentNullException("services");
-            }
-
             this.userService = userService;
             this.navigationService = navigationService;
             this.logonService = logonService;

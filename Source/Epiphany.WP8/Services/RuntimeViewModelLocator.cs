@@ -11,10 +11,8 @@ namespace Epiphany.View.Services
         private readonly ServiceFactory serviceFactory;
         private readonly INavigationService navigationService;
         private readonly ITimerService timerService;
-        private readonly IAppRateService appRateService;
-        private readonly IUrlLauncher urlLauncher;
+        private readonly IDeviceServices deviceServices;
         private readonly IResourceLoader resourceLoader;
-        private readonly ILocationService locationService;
 
         private LogonViewModel logonVM;
         private HomeViewModel homeVM;
@@ -27,23 +25,22 @@ namespace Epiphany.View.Services
             // Set up services
             this.navigationService = new NavigationService();
             this.timerService = new TimerService();
-            this.appRateService = new AppRateService();
-            this.urlLauncher = new UrlLauncher();
             this.resourceLoader = new ResourceLoader();
-            this.locationService = new LocationService();
+        }
+
+        public INavigationService NavigationService
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public HomeViewModel Home
         {
             get
             {
-                if (this.homeVM == null)
-                {
-                    this.homeVM = new HomeViewModel(this.serviceFactory.GetUserService(), this.serviceFactory.GetLogonService(), 
-                        this.navigationService, this.resourceLoader);
-                }
-
-                return this.homeVM;
+                throw new NotImplementedException();
             }
         }
 
@@ -51,33 +48,7 @@ namespace Epiphany.View.Services
         {
             get
             {
-                if (this.logonVM == null)
-                {
-                    this.logonVM = new LogonViewModel(this.serviceFactory.GetLogonService(), navigationService, this.timerService);
-                }
-
-                return this.logonVM;
-            }
-        }
-
-        public ProfileViewModel Profile
-        {
-            get
-            {
-                return new ProfileViewModel(
-                    this.serviceFactory.GetUserService(), 
-                    this.serviceFactory.GetBookshelfService(), 
-                    this.navigationService,
-                    this.urlLauncher,
-                    this.resourceLoader);
-            }
-        }
-
-        public AboutViewModel About
-        {
-            get
-            {
-                return new AboutViewModel(this.appRateService, this.urlLauncher);
+                throw new NotImplementedException();
             }
         }
 
@@ -85,53 +56,85 @@ namespace Epiphany.View.Services
         {
             get
             {
-                return new AddBookViewModel(
-                    this.serviceFactory.GetLogonService(),
-                    this.serviceFactory.GetBookService(),
-                    this.serviceFactory.GetBookshelfService(),
-                    this.navigationService
-                    );
+                throw new NotImplementedException();
+            }
+        }
+
+        public AboutViewModel About
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public ProfileViewModel Profile
+        {
+            get
+            {
+                throw new NotImplementedException();
             }
         }
 
         public BooksViewModel Books
         {
-            get { return new BooksViewModel(); }
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public FriendsViewModel Friends
         {
-            get { return new FriendsViewModel(this.serviceFactory.GetUserService(), this.navigationService, this.resourceLoader); }
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public EventsViewModel Events
         {
-            get { return new EventsViewModel(this.serviceFactory.GetEventService(), this.locationService, this.urlLauncher); }
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public SearchViewModel Search
         {
-            get { return new SearchViewModel(this.serviceFactory.GetBookService(), this.navigationService); }
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public AuthorViewModel Author
         {
-            get { return new AuthorViewModel(this.serviceFactory.GetAuthorService(), this.serviceFactory.GetBookService(), this.navigationService); }
-        }
-
-        public SettingsViewModel Settings
-        {
-            get { return new SettingsViewModel(); }
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public BookViewModel Book
         {
-            get { return new BookViewModel(); }
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public SettingsViewModel Settings
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public void Dispose()
         {
-
+            throw new NotImplementedException();
         }
     }
 }

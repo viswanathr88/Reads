@@ -1,4 +1,6 @@
-﻿using Epiphany.ViewModel;
+﻿using System;
+using Epiphany.ViewModel;
+using Epiphany.ViewModel.Services;
 
 namespace Epiphany.View.Services
 {
@@ -99,6 +101,14 @@ namespace Epiphany.View.Services
         public BookViewModel Book
         {
             get { return this.locatorImpl.Book; }
+        }
+
+        public INavigationService NavigationService
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public void Dispose()

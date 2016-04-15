@@ -36,6 +36,11 @@ namespace Epiphany.ViewModel
         {
             get;
         }
+        /// <summary>
+        /// Event that is fired when the ViewModel has finished doing what
+        /// it needs to do
+        /// </summary>
+        event EventHandler<EventArgs> Done;
     }
     /// <summary>
     /// DataViewModel interface with a typesafe Param

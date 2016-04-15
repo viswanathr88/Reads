@@ -3,11 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="using:Epiphany.WP81"
              xmlns:strings="using:Epiphany.Strings"
-             xmlns:design="using:Epiphany.View.DesignData">
+             xmlns:services="using:Epiphany.View.Services"
+             xmlns:converters="using:Epiphany.View.Converters">
 
     <Application.Resources>
-        <strings:LocalizedStrings x:Key="LocalizedStrings" />
-        <design:DesignTimeViewModelLocator x:Key="VMLocator" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Epiphany.View.Shared/Icons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <strings:LocalizedStrings x:Key="LocalizedStrings" />
+            <services:ViewModelLocator x:Key="VMLocator" />
+
+            <!-- Converters -->
+            <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <converters:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter" />
+            <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+
+        </ResourceDictionary>
+
     </Application.Resources>
 
 

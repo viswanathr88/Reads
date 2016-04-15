@@ -71,7 +71,9 @@ namespace Epiphany.View.DesignData
         {
             get
             {
-                throw new NotImplementedException();
+                var vm = new HomeViewModel();
+                vm.SetValue(nameof(HomeViewModel.IsLoading), true);
+                return vm;
             }
         }
 
@@ -80,7 +82,8 @@ namespace Epiphany.View.DesignData
             get
             {
                 var vm = new LogonViewModel();
-                vm.SetValue(nameof(LogonViewModel.IsLoginCompleted), true);
+                vm.SetValue(nameof(LogonViewModel.IsWaitingForUserInteraction), false);
+                vm.SetValue(nameof(LogonViewModel.IsSignInTakingLonger), true);
                 return vm;
             }
         }
