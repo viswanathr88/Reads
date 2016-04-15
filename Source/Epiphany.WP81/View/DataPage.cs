@@ -26,6 +26,7 @@ namespace Epiphany.View
             }
 
             await vm.LoadAsync(e.Parameter);
+            Logger.LogDebug("LoadAsync returned");
         }
 
         protected void RegisterDoneEvent()

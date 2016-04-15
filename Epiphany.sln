@@ -31,6 +31,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design", "Design", "{5D88BF
 		Design\EpiphanyLogo300px.design = Design\EpiphanyLogo300px.design
 		Design\EpiphanyLogo358px.design = Design\EpiphanyLogo358px.design
 		Design\EpiphanyLogo358x173px.design = Design\EpiphanyLogo358x173px.design
+		Design\SplashScreen.scale-100.design = Design\SplashScreen.scale-100.design
+		Design\SplashScreen.scale-140.design = Design\SplashScreen.scale-140.design
+		Design\SplashScreen.scale-240.design = Design\SplashScreen.scale-240.design
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{7AA3DD0B-91E3-448B-A4D7-0E73D0FAA1C1}"

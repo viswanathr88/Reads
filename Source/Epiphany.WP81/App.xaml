@@ -14,7 +14,9 @@
 
             <strings:LocalizedStrings x:Key="LocalizedStrings" />
             <services:ViewModelLocator x:Key="VMLocator" />
-
+            
+            <!-- Colors & Brushes -->
+            <SolidColorBrush x:Key="EpiphanyBackgroundBrush">#FF232B36</SolidColorBrush>
             <!-- Converters -->
             <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
             <converters:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter" />

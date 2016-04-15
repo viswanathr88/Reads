@@ -20,20 +20,16 @@ namespace Epiphany.ViewModel.Tests
             LogonViewModel vm = null;
             Assert.ThrowsException<ArgumentNullException>(() =>
             {
-                vm = new LogonViewModel(null, navService, timerService);
+                vm = new LogonViewModel(null, timerService);
             });
+            
             
             Assert.ThrowsException<ArgumentNullException>(() =>
             {
-                vm = new LogonViewModel(logonService, null, timerService);
-            });
-            
-            Assert.ThrowsException<ArgumentNullException>(() =>
-            {
-                vm = new LogonViewModel(logonService, navService, null);
+                vm = new LogonViewModel(logonService, null);
             });
 
-            vm = new LogonViewModel(logonService, navService, timerService);
+            vm = new LogonViewModel(logonService, timerService);
             Assert.IsNotNull(vm, "VM is null");
             Assert.IsFalse(vm.IsLoading, "IsLoading");
             Assert.IsFalse(vm.IsLoaded, "IsLoaded");
@@ -41,8 +37,6 @@ namespace Epiphany.ViewModel.Tests
             Assert.IsFalse(vm.IsWaitingForUserInteraction, "IsWaitingForUserInteraction");
             Assert.IsNull(vm.Error, "Error");
             Assert.IsFalse(vm.IsSignInTakingLonger, "IsSignInTakingLonger");
-            Assert.IsNotNull(vm.CheckUriForLoginCompletion, "CheckUriForLoginCompletion");
-            Assert.IsNotNull(vm.Login, "Login");
             Assert.IsNull(vm.CurrentUri, "CurrentUri");
         }
 
@@ -55,7 +49,7 @@ namespace Epiphany.ViewModel.Tests
 
             logonService.PassVerifyLogin = true;
 
-            LogonViewModel vm = new LogonViewModel(logonService, navService, timerService);
+            LogonViewModel vm = new LogonViewModel(logonService, timerService);
             await vm.LoadAsync(VoidType.Empty);
 
             Assert.IsTrue(vm.IsLoaded, "IsLoaded");
@@ -70,7 +64,7 @@ namespace Epiphany.ViewModel.Tests
             ILogonService logonService = new MockLogonService();
 
             // VerifyLogin step will fail
-            LogonViewModel vm = new LogonViewModel(logonService, navService, timerService);
+            LogonViewModel vm = new LogonViewModel(logonService, timerService);
             await vm.LoadAsync(VoidType.Empty);
 
             Assert.IsNotNull(vm.CurrentUri, "CurrentUri");
@@ -85,7 +79,7 @@ namespace Epiphany.ViewModel.Tests
             ILogonService logonService = new MockLogonService();
 
             // VerifyLogin step will fail
-            LogonViewModel vm = new LogonViewModel(logonService, navService, timerService);
+            LogonViewModel vm = new LogonViewModel(logonService, timerService);
             await vm.LoadAsync(VoidType.Empty);
 
 

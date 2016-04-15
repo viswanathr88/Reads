@@ -1,5 +1,6 @@
 ﻿using Epiphany.Logging;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -31,6 +32,14 @@ namespace Epiphany.ViewModel
             info.SetValue(this, typedValue, null);
         }
 
+        public void SetProperty<T>(ref T field, T value, [CallerMemberName] string member = null)
+        {
+            if (!EqualityComparer<T>.Default.Equals(field, value))
+            {
+                field = value;
+                RaisePropertyChanged(member);
+            }
+        }
         protected string GetName()
         {
             return this.name;

@@ -49,7 +49,7 @@ namespace Epiphany.View.Services
             {
                 if (this.logonVM == null)
                 {
-                    this.logonVM = new LogonViewModel(this.serviceFactory.GetLogonService(), navigationService, this.timerService);
+                    this.logonVM = new LogonViewModel(this.serviceFactory.GetLogonService(), this.timerService);
                 }
 
                 return this.logonVM;

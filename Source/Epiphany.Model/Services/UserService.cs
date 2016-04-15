@@ -91,7 +91,7 @@ namespace Epiphany.Model.Services
             // Create the headers
             //
             IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["readStatus"] = type.ToString();
+            headers["update"] = type.ToString();
             headers["update_filter"] = filter.ToString();
             headers["v"] = 2;
             //

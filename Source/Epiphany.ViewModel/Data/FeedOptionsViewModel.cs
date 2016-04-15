@@ -99,12 +99,13 @@ namespace Epiphany.ViewModel
             FeedOptions = new FeedOptions(CurrentUpdateType, CurrentUpdateFilter);
         }
 
-        public override async Task LoadAsync(VoidType parameter)
+        public override Task LoadAsync(VoidType parameter)
         {
             CurrentUpdateType = ApplicationSettings.Instance.UpdateType;
             CurrentUpdateFilter = ApplicationSettings.Instance.UpdateFilter;
             CreateFeedOptions();
             IsLoaded = true;
+            return Task.FromResult<bool>(true);
         }
     }
 }

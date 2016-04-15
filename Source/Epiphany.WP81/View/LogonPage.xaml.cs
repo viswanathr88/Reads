@@ -1,6 +1,7 @@
 ﻿using Epiphany.Logging;
 using Epiphany.ViewModel;
 using System;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
@@ -15,6 +16,11 @@ namespace Epiphany.View
         public LogonPage()
         {
             this.InitializeComponent();
+            Loaded += (object sender, RoutedEventArgs e) =>
+            {
+                PageBackgroundColorAnimation.Begin();
+            };
+
             RegisterDoneEvent();
         }
 
@@ -22,18 +28,14 @@ namespace Epiphany.View
         {
             base.OnViewModelDone(sender, e);
             Logger.LogDebug("Navigating to HomePage");
-            Frame.Navigate(typeof(HomePage));
+            //Frame.Navigate(typeof(HomePage));
         }
 
-        private void OnWebViewNavigationStarting(object sender, WebViewNavigationStartingEventArgs e)
+        private async void OnWebViewNavigationStarting(object sender, WebViewNavigationStartingEventArgs e)
         {
             Logger.LogDebug(e.Uri.ToString());
             LogonViewModel vm = DataContext as LogonViewModel;
-            if (vm.CheckUriForLoginCompletion.CanExecute(e.Uri))
-            {
-                vm.CheckUriForLoginCompletion.Execute(e.Uri);
-            }
+            await vm.CheckUriAsync(e.Uri);
         }
-
     }
 }

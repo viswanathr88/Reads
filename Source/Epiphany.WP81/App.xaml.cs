@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
@@ -136,7 +137,7 @@ namespace Epiphany.WP81
         private void RootFrame_FirstNavigated(object sender, NavigationEventArgs e)
         {
             var rootFrame = sender as Frame;
-            rootFrame.ContentTransitions = this.transitions ?? new TransitionCollection() { new NavigationThemeTransition() };
+            //rootFrame.ContentTransitions = this.transitions ?? new TransitionCollection() { new EdgeUIThemeTransition() { Edge = EdgeTransitionLocation.Right } };
             rootFrame.Navigated -= this.RootFrame_FirstNavigated;
         }
 

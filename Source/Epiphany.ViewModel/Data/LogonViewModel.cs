@@ -1,6 +1,5 @@
 ﻿using Epiphany.Logging;
 using Epiphany.Model.Services;
-using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System;
 using System.Threading.Tasks;
@@ -17,45 +16,23 @@ namespace Epiphany.ViewModel
 
         // Services
         private readonly ILogonService logonService;
-        private readonly INavigationService navigationService;
-
-        // Commands
-        private readonly IAsyncCommand<bool, VoidType> verifyLoginCommand;
-        private readonly IAsyncCommand<Uri, VoidType> loginCommand;
-        private readonly ICommand<bool, Uri> checkUriCommand;
-        private readonly IAsyncCommand<VoidType> finishLoginCommand;
 
         public LogonViewModel()
         {
 
         }
 
-        public LogonViewModel(ILogonService logonService, INavigationService navigationService, ITimerService timerService)
+        public LogonViewModel(ILogonService logonService, ITimerService timerService)
         {
-            if (logonService == null || navigationService == null || timerService == null)
+            if (logonService == null || timerService == null)
             {
                 throw new ArgumentNullException();
             }
 
             this.logonService = logonService;
-            this.navigationService = navigationService;
-
-            this.verifyLoginCommand = new VerifyLoginCommand(logonService);
-            RegisterCommand(this.verifyLoginCommand, OnVerifyLoginExecuted);
-            this.verifyLoginCommand.Executing += OnVerifyLoginExecuting;
-
-            this.loginCommand = new LoginCommand(logonService);
-            RegisterCommand(this.loginCommand, OnLoginExecuted);
-
-            this.checkUriCommand = new CheckUriCommand(logonService.Configuration.CallbackUri);
-            this.checkUriCommand.Executed += OnCheckUriExecuted;
-
-            this.finishLoginCommand = new FinishLoginCommand(logonService);
-            RegisterCommand(this.finishLoginCommand, OnFinishLoginExecuted);
 
             this.timer = timerService.CreateTimer(() => IsSignInTakingLonger = true);
             this.timer.Interval = new TimeSpan(0, 0, 7);
-
         }
 
         public bool IsWaitingForUserInteraction
@@ -66,11 +43,9 @@ namespace Epiphany.ViewModel
             }
             private set
             {
-                if (this.isWaitingForUserInteraction != value)
-                {
-                    this.isWaitingForUserInteraction = value;
-                    RaisePropertyChanged();
-                }
+                if (this.isWaitingForUserInteraction == value) return;
+                this.isWaitingForUserInteraction = value;
+                RaisePropertyChanged();
             }
         }
 
@@ -82,11 +57,9 @@ namespace Epiphany.ViewModel
             }
             set
             {
-                if (this.currentUri != value)
-                {
-                    this.currentUri = value;
-                    RaisePropertyChanged();
-                }
+                if (this.currentUri == value) return;
+                this.currentUri = value;
+                RaisePropertyChanged();
             }
         }
 
@@ -98,11 +71,7 @@ namespace Epiphany.ViewModel
             }
             private set
             {
-                if (this.isSignInTakingLonger == value)
-                {
-                    return;
-                }
-
+                if (this.isSignInTakingLonger == value) return;
                 this.isSignInTakingLonger = value;
                 RaisePropertyChanged();
             }
@@ -123,108 +92,63 @@ namespace Epiphany.ViewModel
             }
         }
 
-
-        public ICommand<Uri, VoidType> Login
-        {
-            get
-            {
-                return this.loginCommand;
-            }
-        }
-
-        public ICommand<bool, Uri> CheckUriForLoginCompletion
-        {
-            get
-            {
-                return this.checkUriCommand;
-            }
-        }
-
         public override async Task LoadAsync(VoidType parameter)
         {
-            Logger.LogDebug(IsLoaded.ToString());
-
-            if (!IsLoaded)
-            {
-                await this.verifyLoginCommand.ExecuteAsync(parameter);
-            }
-        }
-
-        private void OnVerifyLoginExecuting(object sender, CancelEventArgs e)
-        {
+            Logger.LogDebug("IsLoaded = " + IsLoaded.ToString());
             Error = null;
+
+            if (IsLoaded)
+            {
+                Logger.LogInfo("LogonVM already loaded");
+                return;
+            }
+
+            // First verify if we are already logged in
             StartTimer();
-        }
-
-        private async void OnVerifyLoginExecuted(ExecutedEventArgs e)
-        {
+            bool fLoggedIn = await Task.Run(async () => await this.logonService.TryVerifyLogin());
             StopTimer();
-            if (e.State == CommandExecutionState.Success)
-            {
-                Logger.LogInfo(this.verifyLoginCommand.Result.ToString());
-                if (this.verifyLoginCommand.Result)
-                {
-                    IsLoginCompleted = this.verifyLoginCommand.Result;
-                    IsLoaded = true;
-                    RaiseDone();
-                }
-                else
-                {
-                    StartTimer();
-                    await this.loginCommand.ExecuteAsync(VoidType.Empty);
-                }
-            }
-        }
+            Logger.LogDebug("TryVerifyLogin result = " + fLoggedIn);
 
-        private void OnLoginExecuted(ExecutedEventArgs e)
-        {
-            StopTimer();
-            if (e.State == CommandExecutionState.Success)
+            if (fLoggedIn)
             {
-                CurrentUri = this.loginCommand.Result;
-                IsWaitingForUserInteraction = true;
-            }
-            else
-            {
-                Error = this.loginCommand.Error;
-                IsLoading = false;
-            }
-        }
-
-        private async void OnCheckUriExecuted(object sender, ExecutedEventArgs e)
-        {
-            if (e.State == CommandExecutionState.Success)
-            {
-                if (this.checkUriCommand.Result)
-                {
-                    IsWaitingForUserInteraction = false;
-                    IsLoading = true;
-                    StartTimer();
-                    await finishLoginCommand.ExecuteAsync(VoidType.Empty);
-                }
-            }
-            else
-            {
-                Error = this.checkUriCommand.Error;
-                IsLoading = false;
-            }
-        }
-
-        private void OnFinishLoginExecuted(ExecutedEventArgs e)
-        {
-            StopTimer();
-            if (e.State == CommandExecutionState.Success)
-            {
+                // Login was successfully verified
                 IsLoginCompleted = true;
                 IsLoaded = true;
                 RaiseDone();
             }
             else
             {
-                Error = this.finishLoginCommand.Error;
+                // Need to login
+                Logger.LogDebug("Starting login");
+                StartTimer();
+                CurrentUri = await Task.Run(async () => await this.logonService.StartLogin());
+                StopTimer();
+                IsWaitingForUserInteraction = true;
             }
+        }
 
-            IsLoading = false;
+        public async Task CheckUriAsync(Uri uri)
+        {
+            if (uri.ToString().StartsWith(logonService.Configuration.CallbackUri.ToString()))
+            {
+                if (uri.ToString().Contains("authorize=1"))
+                {
+                    // Goodreads authorization has succeeded
+                    IsWaitingForUserInteraction = false;
+                    IsLoading = true;
+                    
+                    // Complete the login process
+                    StartTimer();
+                    await Task.Run(async () => await this.logonService.FinishLogin());
+                    StopTimer();
+
+                    // Set properties
+                    IsLoginCompleted = true;
+                    IsLoading = false;
+                    IsLoaded = true;
+                    RaiseDone();
+                }
+            }
         }
 
         private void StartTimer()
@@ -249,12 +173,6 @@ namespace Epiphany.ViewModel
         public override void Dispose()
         {
             base.Dispose();
-
-            DeregisterCommand(this.verifyLoginCommand);
-            this.verifyLoginCommand.Executing -= OnVerifyLoginExecuting;
-            DeregisterCommand(this.loginCommand);
-            this.checkUriCommand.Executed -= OnCheckUriExecuted;
-            DeregisterCommand(this.finishLoginCommand);
 
             if (this.timer != null)
             {

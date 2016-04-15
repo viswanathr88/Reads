@@ -5,29 +5,44 @@
                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                 mc:Ignorable="d"
-                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-                DataContext="{Binding Logon, Source={StaticResource VMLocator}}">
+                Background="{ThemeResource EpiphanyBackgroundBrush}"
+                DataContext="{Binding Logon, Source={StaticResource VMLocator}}"
+                x:Name="logonPage">
+    <local:DataPage.Resources>
+        <Storyboard x:Name="PageBackgroundColorAnimation">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="logonPage"
+                                          Storyboard.TargetProperty="(Page.Background).(SolidColorBrush.Color)"
+                                          Duration="0:0:1">
+                <ColorAnimationUsingKeyFrames.KeyFrames>
+                    <!-- Go from green to red in the first 2 seconds. LinearColorKeyFrame creates
+                  a smooth, linear animation between values. -->
+                    <LinearColorKeyFrame Value="White"
+                                         KeyTime="0:0:1" />
+                </ColorAnimationUsingKeyFrames.KeyFrames>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </local:DataPage.Resources>
 
     <Grid>
         <!-- Web browser control for oauth login -->
         <WebView Source="{Binding CurrentUri, Mode=TwoWay}"
                  Visibility="{Binding IsWaitingForUserInteraction, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}"
-                 NavigationStarting="OnWebViewNavigationStarting"
-                 />
+                 NavigationStarting="OnWebViewNavigationStarting" />
 
         <Grid Visibility="{Binding IsWaitingForUserInteraction, Converter={StaticResource InverseBooleanToVisibilityConverter}}">
             <Grid.RowDefinitions>
-                <RowDefinition Height="6*" />
-                <RowDefinition Height="4*" />
+                <RowDefinition Height="52*" />
+                <RowDefinition Height="47*" />
             </Grid.RowDefinitions>
 
             <!-- App Logo -->
-            <Path Height="128"
-                  Width="128"
+            <Path Height="105"
+                  Width="105"
                   Stretch="Fill"
                   Fill="{ThemeResource ApplicationForegroundThemeBrush}"
                   Data="{StaticResource AppLogoData}"
-                  VerticalAlignment="Bottom" />
+                  VerticalAlignment="Bottom"
+                  UseLayoutRounding="False" />
 
             <!-- Footer - Progress ring + sign in message + retry button -->
             <StackPanel Orientation="Vertical"
