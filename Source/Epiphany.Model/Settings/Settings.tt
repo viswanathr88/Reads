@@ -18,6 +18,7 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.Collections.Generic;
 
 namespace Epiphany.Model.Settings
 {
@@ -43,6 +44,69 @@ namespace Epiphany.Model.Settings
 			}
 		}
 	}
+
+	/// <summary>
+    /// Represents an enum for the storage container
+    /// </summary>
+	public enum SettingContainer
+	{
+<# foreach (var container in GetContainers())
+{
+#>		<#= container #>,
+<# } #>
+	}
+
+	/// <summary>
+    /// Represents a setting entry
+    /// </summary>
+	public class Setting
+	{
+		private SettingContainer container;
+		private string name;
+		/// <summary>
+		/// Create an instance of Setting
+		/// </summary>
+		internal Setting(SettingContainer container, string name)
+		{
+			if (string.IsNullOrEmpty(name))
+			{
+				throw new ArgumentNullException(nameof(name));
+			}
+
+			Container = container;
+			Name = name;
+		}
+		/// <summary>
+		/// Gets the setting container
+		/// </summary>
+		public SettingContainer Container
+		{
+			get
+			{
+				return container;
+			}
+			private set
+			{
+				if (this.container == value) return;
+				this.container = value;
+			}
+		}
+		/// <summary>
+		/// Gets the setting Name
+		/// </summary>
+		public string Name
+		{
+			get 
+			{
+				return this.name;
+			}
+			private set
+			{
+				if (this.name == value) return;
+				this.name = value;
+			}
+		}
+	}
 	
 	/// <summary>
     /// Represents a strongly-typed settings class
@@ -51,12 +115,34 @@ namespace Epiphany.Model.Settings
 	{
 		private static ApplicationSettings _instance;
 		private static object syncRoot = new object();
-		private Model.Settings.ISettingStorage storage = new DefaultSettingsStorage();
+		
+		private IDictionary<string, Setting> settings;
+		private ISettingStore store;
+
 <#  foreach (var entry in this.ReadSettings())
 	{
 #>		private <#= entry.Type #> <#= entry.Name #>Default = <#= entry.DefaultValue #>;
 <#	} #>
+		
 		public event EventHandler<SettingChangedEventArgs> SettingChanged;
+		/// <summary>
+		/// Raise the setting changed event
+		/// </summary>
+		public void RaiseSettingChanged(string name) => SettingChanged?.Invoke(this, new SettingChangedEventArgs(name));
+
+		/// <summary>
+		/// Create an instance of ApplicationSettings
+		/// </summary>
+		public ApplicationSettings()
+		{
+			this.settings = new Dictionary<string, Setting>();
+
+			// Populate all settings
+<# foreach (var setting in this.ReadSettings())
+	{
+#>			this.settings["<#= setting.Name #>"] = new Setting(SettingContainer.<#= setting.Container #>, "<#= setting.Name #>");
+<#	} #>
+		}
 		
 		/// <summary>
 		/// Gets the settings instance
@@ -78,21 +164,21 @@ namespace Epiphany.Model.Settings
 				return _instance;
 			}
 		}
-		/// <summary>
-		/// Raise the setting changed event
-		/// </summary>
-		public void RaiseSettingChanged(string name) => SettingChanged?.Invoke(this, new SettingChangedEventArgs(name));
+
 		/// <summary>
 		/// Set the backing store for the settings
 		/// </summary>
-		public void SetBackingStore(Model.Settings.ISettingStorage store)
+		public ISettingStore Store
 		{
-			if (store == null)
+			get 
 			{
-				throw new ArgumentNullException(nameof(store));
+				return this.store;
 			}
-
-			storage = store;
+			set 
+			{
+				if (this.store == value) return;
+				this.store = value;
+			}
 		}
 
 <#	foreach (var entry in this.ReadSettings()) { #>
@@ -102,14 +188,16 @@ namespace Epiphany.Model.Settings
 		public <#= entry.Type #> <#= entry.Name #>
 		{
 			get 
-			{ 
-				return storage.GetValueOrDefault<<#= entry.Type #>>(@"<#= entry.Name #>", <#= entry.Name #>Default);
+			{
+				var setting = this.settings["<#= entry.Name #>"];
+				return Store.GetValueOrDefault<<#= entry.Type #>>(setting, <#= entry.Name #>Default);
 			}
 			set 
 			{
-				if (storage.AddOrUpdate(@"<#= entry.Name #>", value))
+				var setting = this.settings["<#= entry.Name #>"];
+				if (Store.AddOrUpdate(setting, value))
 				{
-					RaiseSettingChanged(@"<#= entry.Name #>");
+					RaiseSettingChanged("<#= entry.Name #>");
 				}
 			}
 		}		
@@ -126,27 +214,52 @@ namespace Epiphany.Model.Settings
 		public string Type;
 
 		public string DefaultValue;
+
+		public string Container;
 	}
 
 	public IList<SettingEntry> ReadSettings()
 	{
 		List<SettingEntry> settings = new List<SettingEntry>();
-		XmlDocument document = new XmlDocument();
 		string absolutePath = Host.ResolvePath(@"ApplicationSettings.xml");
+		XmlDocument document = new XmlDocument();
 		document.Load(absolutePath);
-		foreach (XmlNode node in document.SelectNodes("/Settings/Setting"))
-		{
-			SettingEntry entry = new SettingEntry()
-			{
-				Name = node.Attributes["Name"].Value,
-				Type = node.Attributes["Type"].Value,
-				DefaultValue = node.InnerText
-			};
 
-			settings.Add(entry);
+		foreach (XmlNode containerNode in document.SelectNodes("/Settings/SettingContainer"))
+		{
+			string containerName = containerNode.Attributes["Name"].Value;
+
+			foreach (XmlNode node in containerNode.SelectNodes("Setting"))
+			{
+				SettingEntry entry = new SettingEntry()
+				{
+					Name = node.Attributes["Name"].Value,
+					Type = node.Attributes["Type"].Value,
+					DefaultValue = node.InnerText,
+					Container = containerName
+				};
+
+				settings.Add(entry);
+			}
 		}
 
 		return settings;
+	}
+
+	public IList<string> GetContainers()
+	{
+		List<string> containers = new List<string>();
+		string absolutePath = Host.ResolvePath(@"ApplicationSettings.xml");
+		XmlDocument document = new XmlDocument();
+		document.Load(absolutePath);
+
+		foreach (XmlNode containerNode in document.SelectNodes("/Settings/SettingContainer"))
+		{
+			string containerName = containerNode.Attributes["Name"].Value;
+			containers.Add(containerName);
+		}
+
+		return containers;
 	}
 
 #>

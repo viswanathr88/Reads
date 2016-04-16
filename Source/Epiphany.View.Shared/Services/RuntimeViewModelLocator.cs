@@ -3,6 +3,8 @@ using Epiphany.Model.Services;
 using Epiphany.ViewModel;
 using Epiphany.ViewModel.Services;
 using Epiphany.Web;
+using Epiphany.Model.Settings;
+using Epiphany.Logging;
 
 namespace Epiphany.View.Services
 {
@@ -19,6 +21,12 @@ namespace Epiphany.View.Services
 
         public RuntimeViewModelLocator()
         {
+            // Setup logging
+            SetupLogging();
+
+            // Set SettingStore as the backing store for AppSettings
+            ApplicationSettings.Instance.Store = new SettingStorage();
+
             IAuthService authService = new AuthService();
             this.serviceFactory = new ServiceFactory(authService);
 
@@ -130,6 +138,18 @@ namespace Epiphany.View.Services
             get
             {
                 return this.navigationService;
+            }
+        }
+
+        /// <summary>
+        /// Setup logging
+        /// </summary>
+        private void SetupLogging()
+        {
+            if (Logger.Writers.Count == 0)
+            {
+                Logger.Writers.Add(new DebugConsoleWriter());
+                Logger.LogDebug("Logging setup completed");
             }
         }
 

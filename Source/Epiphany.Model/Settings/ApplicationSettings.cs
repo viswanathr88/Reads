@@ -10,6 +10,7 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.Collections.Generic;
 
 namespace Epiphany.Model.Settings
 {
@@ -35,6 +36,67 @@ namespace Epiphany.Model.Settings
 			}
 		}
 	}
+
+	/// <summary>
+    /// Represents an enum for the storage container
+    /// </summary>
+	public enum SettingContainer
+	{
+		Local,
+		Roaming,
+	}
+
+	/// <summary>
+    /// Represents a setting entry
+    /// </summary>
+	public class Setting
+	{
+		private SettingContainer container;
+		private string name;
+		/// <summary>
+		/// Create an instance of Setting
+		/// </summary>
+		internal Setting(SettingContainer container, string name)
+		{
+			if (string.IsNullOrEmpty(name))
+			{
+				throw new ArgumentNullException(nameof(name));
+			}
+
+			Container = container;
+			Name = name;
+		}
+		/// <summary>
+		/// Gets the setting container
+		/// </summary>
+		public SettingContainer Container
+		{
+			get
+			{
+				return container;
+			}
+			private set
+			{
+				if (this.container == value) return;
+				this.container = value;
+			}
+		}
+		/// <summary>
+		/// Gets the setting Name
+		/// </summary>
+		public string Name
+		{
+			get 
+			{
+				return this.name;
+			}
+			private set
+			{
+				if (this.name == value) return;
+				this.name = value;
+			}
+		}
+	}
 	
 	/// <summary>
     /// Represents a strongly-typed settings class
@@ -43,22 +105,54 @@ namespace Epiphany.Model.Settings
 	{
 		private static ApplicationSettings _instance;
 		private static object syncRoot = new object();
-		private Model.Settings.ISettingStorage storage = new DefaultSettingsStorage();
+		
+		private IDictionary<string, Setting> settings;
+		private ISettingStore store;
+
+		private string AccessTokenDefault = string.Empty;
+		private string AccessTokenSecretDefault = string.Empty;
+		private int CurrentUserIdDefault = -1;
+		private string CurrentUsernameDefault = string.Empty;
+		private bool ShowAnimationsDefault = true;
+		private bool EncryptAuthTokenDefault = false;
+		private bool UseMyLocationDefault = false;
 		private bool EnableLoggingDefault = true;
 		private Epiphany.Model.Services.FeedUpdateType UpdateTypeDefault = Epiphany.Model.Services.FeedUpdateType.all;
 		private Epiphany.Model.Services.FeedUpdateFilter UpdateFilterDefault = Epiphany.Model.Services.FeedUpdateFilter.friends;
 		private Epiphany.Model.Services.BookSortType SortTypeDefault = Epiphany.Model.Services.BookSortType.date_added;
 		private Epiphany.Model.Services.BookSortOrder SortOrderDefault = Epiphany.Model.Services.BookSortOrder.a;
 		private Epiphany.Model.Services.BookSearchType SearchTypeDefault = Epiphany.Model.Services.BookSearchType.All;
-		private bool ShowAnimationsDefault = true;
-		private bool EncryptAuthTokenDefault = false;
 		private bool EnableTransparentTileDefault = true;
-		private bool UseMyLocationDefault = false;
-		private string AccessTokenDefault = string.Empty;
-		private string AccessTokenSecretDefault = string.Empty;
-		private int CurrentUserIdDefault = -1;
-		private string CurrentUsernameDefault = string.Empty;
+		
 		public event EventHandler<SettingChangedEventArgs> SettingChanged;
+		/// <summary>
+		/// Raise the setting changed event
+		/// </summary>
+		public void RaiseSettingChanged(string name) => SettingChanged?.Invoke(this, new SettingChangedEventArgs(name));
+
+		/// <summary>
+		/// Create an instance of ApplicationSettings
+		/// </summary>
+		public ApplicationSettings()
+		{
+			this.settings = new Dictionary<string, Setting>();
+
+			// Populate all settings
+			this.settings["AccessToken"] = new Setting(SettingContainer.Local, "AccessToken");
+			this.settings["AccessTokenSecret"] = new Setting(SettingContainer.Local, "AccessTokenSecret");
+			this.settings["CurrentUserId"] = new Setting(SettingContainer.Local, "CurrentUserId");
+			this.settings["CurrentUsername"] = new Setting(SettingContainer.Local, "CurrentUsername");
+			this.settings["ShowAnimations"] = new Setting(SettingContainer.Local, "ShowAnimations");
+			this.settings["EncryptAuthToken"] = new Setting(SettingContainer.Local, "EncryptAuthToken");
+			this.settings["UseMyLocation"] = new Setting(SettingContainer.Local, "UseMyLocation");
+			this.settings["EnableLogging"] = new Setting(SettingContainer.Roaming, "EnableLogging");
+			this.settings["UpdateType"] = new Setting(SettingContainer.Roaming, "UpdateType");
+			this.settings["UpdateFilter"] = new Setting(SettingContainer.Roaming, "UpdateFilter");
+			this.settings["SortType"] = new Setting(SettingContainer.Roaming, "SortType");
+			this.settings["SortOrder"] = new Setting(SettingContainer.Roaming, "SortOrder");
+			this.settings["SearchType"] = new Setting(SettingContainer.Roaming, "SearchType");
+			this.settings["EnableTransparentTile"] = new Setting(SettingContainer.Roaming, "EnableTransparentTile");
+		}
 		
 		/// <summary>
 		/// Gets the settings instance
@@ -80,207 +174,39 @@ namespace Epiphany.Model.Settings
 				return _instance;
 			}
 		}
-		/// <summary>
-		/// Raise the setting changed event
-		/// </summary>
-		public void RaiseSettingChanged(string name) => SettingChanged?.Invoke(this, new SettingChangedEventArgs(name));
+
 		/// <summary>
 		/// Set the backing store for the settings
 		/// </summary>
-		public void SetBackingStore(Model.Settings.ISettingStorage store)
+		public ISettingStore Store
 		{
-			if (store == null)
+			get 
 			{
-				throw new ArgumentNullException(nameof(store));
+				return this.store;
 			}
-
-			storage = store;
+			set 
+			{
+				if (this.store == value) return;
+				this.store = value;
+			}
 		}
 
-		/// <summary>
-		/// Gets or sets the EnableLogging setting
-		/// </summary>
-		public bool EnableLogging
-		{
-			get 
-			{ 
-				return storage.GetValueOrDefault<bool>(@"EnableLogging", EnableLoggingDefault);
-			}
-			set 
-			{
-				if (storage.AddOrUpdate(@"EnableLogging", value))
-				{
-					RaiseSettingChanged(@"EnableLogging");
-				}
-			}
-		}		
-		/// <summary>
-		/// Gets or sets the UpdateType setting
-		/// </summary>
-		public Epiphany.Model.Services.FeedUpdateType UpdateType
-		{
-			get 
-			{ 
-				return storage.GetValueOrDefault<Epiphany.Model.Services.FeedUpdateType>(@"UpdateType", UpdateTypeDefault);
-			}
-			set 
-			{
-				if (storage.AddOrUpdate(@"UpdateType", value))
-				{
-					RaiseSettingChanged(@"UpdateType");
-				}
-			}
-		}		
-		/// <summary>
-		/// Gets or sets the UpdateFilter setting
-		/// </summary>
-		public Epiphany.Model.Services.FeedUpdateFilter UpdateFilter
-		{
-			get 
-			{ 
-				return storage.GetValueOrDefault<Epiphany.Model.Services.FeedUpdateFilter>(@"UpdateFilter", UpdateFilterDefault);
-			}
-			set 
-			{
-				if (storage.AddOrUpdate(@"UpdateFilter", value))
-				{
-					RaiseSettingChanged(@"UpdateFilter");
-				}
-			}
-		}		
-		/// <summary>
-		/// Gets or sets the SortType setting
-		/// </summary>
-		public Epiphany.Model.Services.BookSortType SortType
-		{
-			get 
-			{ 
-				return storage.GetValueOrDefault<Epiphany.Model.Services.BookSortType>(@"SortType", SortTypeDefault);
-			}
-			set 
-			{
-				if (storage.AddOrUpdate(@"SortType", value))
-				{
-					RaiseSettingChanged(@"SortType");
-				}
-			}
-		}		
-		/// <summary>
-		/// Gets or sets the SortOrder setting
-		/// </summary>
-		public Epiphany.Model.Services.BookSortOrder SortOrder
-		{
-			get 
-			{ 
-				return storage.GetValueOrDefault<Epiphany.Model.Services.BookSortOrder>(@"SortOrder", SortOrderDefault);
-			}
-			set 
-			{
-				if (storage.AddOrUpdate(@"SortOrder", value))
-				{
-					RaiseSettingChanged(@"SortOrder");
-				}
-			}
-		}		
-		/// <summary>
-		/// Gets or sets the SearchType setting
-		/// </summary>
-		public Epiphany.Model.Services.BookSearchType SearchType
-		{
-			get 
-			{ 
-				return storage.GetValueOrDefault<Epiphany.Model.Services.BookSearchType>(@"SearchType", SearchTypeDefault);
-			}
-			set 
-			{
-				if (storage.AddOrUpdate(@"SearchType", value))
-				{
-					RaiseSettingChanged(@"SearchType");
-				}
-			}
-		}		
-		/// <summary>
-		/// Gets or sets the ShowAnimations setting
-		/// </summary>
-		public bool ShowAnimations
-		{
-			get 
-			{ 
-				return storage.GetValueOrDefault<bool>(@"ShowAnimations", ShowAnimationsDefault);
-			}
-			set 
-			{
-				if (storage.AddOrUpdate(@"ShowAnimations", value))
-				{
-					RaiseSettingChanged(@"ShowAnimations");
-				}
-			}
-		}		
-		/// <summary>
-		/// Gets or sets the EncryptAuthToken setting
-		/// </summary>
-		public bool EncryptAuthToken
-		{
-			get 
-			{ 
-				return storage.GetValueOrDefault<bool>(@"EncryptAuthToken", EncryptAuthTokenDefault);
-			}
-			set 
-			{
-				if (storage.AddOrUpdate(@"EncryptAuthToken", value))
-				{
-					RaiseSettingChanged(@"EncryptAuthToken");
-				}
-			}
-		}		
-		/// <summary>
-		/// Gets or sets the EnableTransparentTile setting
-		/// </summary>
-		public bool EnableTransparentTile
-		{
-			get 
-			{ 
-				return storage.GetValueOrDefault<bool>(@"EnableTransparentTile", EnableTransparentTileDefault);
-			}
-			set 
-			{
-				if (storage.AddOrUpdate(@"EnableTransparentTile", value))
-				{
-					RaiseSettingChanged(@"EnableTransparentTile");
-				}
-			}
-		}		
-		/// <summary>
-		/// Gets or sets the UseMyLocation setting
-		/// </summary>
-		public bool UseMyLocation
-		{
-			get 
-			{ 
-				return storage.GetValueOrDefault<bool>(@"UseMyLocation", UseMyLocationDefault);
-			}
-			set 
-			{
-				if (storage.AddOrUpdate(@"UseMyLocation", value))
-				{
-					RaiseSettingChanged(@"UseMyLocation");
-				}
-			}
-		}		
 		/// <summary>
 		/// Gets or sets the AccessToken setting
 		/// </summary>
 		public string AccessToken
 		{
 			get 
-			{ 
-				return storage.GetValueOrDefault<string>(@"AccessToken", AccessTokenDefault);
+			{
+				var setting = this.settings["AccessToken"];
+				return Store.GetValueOrDefault<string>(setting, AccessTokenDefault);
 			}
 			set 
 			{
-				if (storage.AddOrUpdate(@"AccessToken", value))
+				var setting = this.settings["AccessToken"];
+				if (Store.AddOrUpdate(setting, value))
 				{
-					RaiseSettingChanged(@"AccessToken");
+					RaiseSettingChanged("AccessToken");
 				}
 			}
 		}		
@@ -290,14 +216,16 @@ namespace Epiphany.Model.Settings
 		public string AccessTokenSecret
 		{
 			get 
-			{ 
-				return storage.GetValueOrDefault<string>(@"AccessTokenSecret", AccessTokenSecretDefault);
+			{
+				var setting = this.settings["AccessTokenSecret"];
+				return Store.GetValueOrDefault<string>(setting, AccessTokenSecretDefault);
 			}
 			set 
 			{
-				if (storage.AddOrUpdate(@"AccessTokenSecret", value))
+				var setting = this.settings["AccessTokenSecret"];
+				if (Store.AddOrUpdate(setting, value))
 				{
-					RaiseSettingChanged(@"AccessTokenSecret");
+					RaiseSettingChanged("AccessTokenSecret");
 				}
 			}
 		}		
@@ -307,14 +235,16 @@ namespace Epiphany.Model.Settings
 		public int CurrentUserId
 		{
 			get 
-			{ 
-				return storage.GetValueOrDefault<int>(@"CurrentUserId", CurrentUserIdDefault);
+			{
+				var setting = this.settings["CurrentUserId"];
+				return Store.GetValueOrDefault<int>(setting, CurrentUserIdDefault);
 			}
 			set 
 			{
-				if (storage.AddOrUpdate(@"CurrentUserId", value))
+				var setting = this.settings["CurrentUserId"];
+				if (Store.AddOrUpdate(setting, value))
 				{
-					RaiseSettingChanged(@"CurrentUserId");
+					RaiseSettingChanged("CurrentUserId");
 				}
 			}
 		}		
@@ -324,14 +254,206 @@ namespace Epiphany.Model.Settings
 		public string CurrentUsername
 		{
 			get 
-			{ 
-				return storage.GetValueOrDefault<string>(@"CurrentUsername", CurrentUsernameDefault);
+			{
+				var setting = this.settings["CurrentUsername"];
+				return Store.GetValueOrDefault<string>(setting, CurrentUsernameDefault);
 			}
 			set 
 			{
-				if (storage.AddOrUpdate(@"CurrentUsername", value))
+				var setting = this.settings["CurrentUsername"];
+				if (Store.AddOrUpdate(setting, value))
 				{
-					RaiseSettingChanged(@"CurrentUsername");
+					RaiseSettingChanged("CurrentUsername");
+				}
+			}
+		}		
+		/// <summary>
+		/// Gets or sets the ShowAnimations setting
+		/// </summary>
+		public bool ShowAnimations
+		{
+			get 
+			{
+				var setting = this.settings["ShowAnimations"];
+				return Store.GetValueOrDefault<bool>(setting, ShowAnimationsDefault);
+			}
+			set 
+			{
+				var setting = this.settings["ShowAnimations"];
+				if (Store.AddOrUpdate(setting, value))
+				{
+					RaiseSettingChanged("ShowAnimations");
+				}
+			}
+		}		
+		/// <summary>
+		/// Gets or sets the EncryptAuthToken setting
+		/// </summary>
+		public bool EncryptAuthToken
+		{
+			get 
+			{
+				var setting = this.settings["EncryptAuthToken"];
+				return Store.GetValueOrDefault<bool>(setting, EncryptAuthTokenDefault);
+			}
+			set 
+			{
+				var setting = this.settings["EncryptAuthToken"];
+				if (Store.AddOrUpdate(setting, value))
+				{
+					RaiseSettingChanged("EncryptAuthToken");
+				}
+			}
+		}		
+		/// <summary>
+		/// Gets or sets the UseMyLocation setting
+		/// </summary>
+		public bool UseMyLocation
+		{
+			get 
+			{
+				var setting = this.settings["UseMyLocation"];
+				return Store.GetValueOrDefault<bool>(setting, UseMyLocationDefault);
+			}
+			set 
+			{
+				var setting = this.settings["UseMyLocation"];
+				if (Store.AddOrUpdate(setting, value))
+				{
+					RaiseSettingChanged("UseMyLocation");
+				}
+			}
+		}		
+		/// <summary>
+		/// Gets or sets the EnableLogging setting
+		/// </summary>
+		public bool EnableLogging
+		{
+			get 
+			{
+				var setting = this.settings["EnableLogging"];
+				return Store.GetValueOrDefault<bool>(setting, EnableLoggingDefault);
+			}
+			set 
+			{
+				var setting = this.settings["EnableLogging"];
+				if (Store.AddOrUpdate(setting, value))
+				{
+					RaiseSettingChanged("EnableLogging");
+				}
+			}
+		}		
+		/// <summary>
+		/// Gets or sets the UpdateType setting
+		/// </summary>
+		public Epiphany.Model.Services.FeedUpdateType UpdateType
+		{
+			get 
+			{
+				var setting = this.settings["UpdateType"];
+				return Store.GetValueOrDefault<Epiphany.Model.Services.FeedUpdateType>(setting, UpdateTypeDefault);
+			}
+			set 
+			{
+				var setting = this.settings["UpdateType"];
+				if (Store.AddOrUpdate(setting, value))
+				{
+					RaiseSettingChanged("UpdateType");
+				}
+			}
+		}		
+		/// <summary>
+		/// Gets or sets the UpdateFilter setting
+		/// </summary>
+		public Epiphany.Model.Services.FeedUpdateFilter UpdateFilter
+		{
+			get 
+			{
+				var setting = this.settings["UpdateFilter"];
+				return Store.GetValueOrDefault<Epiphany.Model.Services.FeedUpdateFilter>(setting, UpdateFilterDefault);
+			}
+			set 
+			{
+				var setting = this.settings["UpdateFilter"];
+				if (Store.AddOrUpdate(setting, value))
+				{
+					RaiseSettingChanged("UpdateFilter");
+				}
+			}
+		}		
+		/// <summary>
+		/// Gets or sets the SortType setting
+		/// </summary>
+		public Epiphany.Model.Services.BookSortType SortType
+		{
+			get 
+			{
+				var setting = this.settings["SortType"];
+				return Store.GetValueOrDefault<Epiphany.Model.Services.BookSortType>(setting, SortTypeDefault);
+			}
+			set 
+			{
+				var setting = this.settings["SortType"];
+				if (Store.AddOrUpdate(setting, value))
+				{
+					RaiseSettingChanged("SortType");
+				}
+			}
+		}		
+		/// <summary>
+		/// Gets or sets the SortOrder setting
+		/// </summary>
+		public Epiphany.Model.Services.BookSortOrder SortOrder
+		{
+			get 
+			{
+				var setting = this.settings["SortOrder"];
+				return Store.GetValueOrDefault<Epiphany.Model.Services.BookSortOrder>(setting, SortOrderDefault);
+			}
+			set 
+			{
+				var setting = this.settings["SortOrder"];
+				if (Store.AddOrUpdate(setting, value))
+				{
+					RaiseSettingChanged("SortOrder");
+				}
+			}
+		}		
+		/// <summary>
+		/// Gets or sets the SearchType setting
+		/// </summary>
+		public Epiphany.Model.Services.BookSearchType SearchType
+		{
+			get 
+			{
+				var setting = this.settings["SearchType"];
+				return Store.GetValueOrDefault<Epiphany.Model.Services.BookSearchType>(setting, SearchTypeDefault);
+			}
+			set 
+			{
+				var setting = this.settings["SearchType"];
+				if (Store.AddOrUpdate(setting, value))
+				{
+					RaiseSettingChanged("SearchType");
+				}
+			}
+		}		
+		/// <summary>
+		/// Gets or sets the EnableTransparentTile setting
+		/// </summary>
+		public bool EnableTransparentTile
+		{
+			get 
+			{
+				var setting = this.settings["EnableTransparentTile"];
+				return Store.GetValueOrDefault<bool>(setting, EnableTransparentTileDefault);
+			}
+			set 
+			{
+				var setting = this.settings["EnableTransparentTile"];
+				if (Store.AddOrUpdate(setting, value))
+				{
+					RaiseSettingChanged("EnableTransparentTile");
 				}
 			}
 		}		

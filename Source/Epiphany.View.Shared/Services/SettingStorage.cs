@@ -1,15 +1,16 @@
 ﻿using Epiphany.Logging;
 using Epiphany.Model.Settings;
 using System;
+using Windows.Foundation.Collections;
 using Windows.Storage;
 
 namespace Epiphany.View.Services
 {
-    public class SettingStorage : ISettingStorage
+    public class SettingStorage : ISettingStore
     {
         private readonly object syncRoot = new object();
 
-        public bool AddOrUpdate(string key, object value)
+        public bool AddOrUpdate(Setting setting, object value)
         {
             bool valueUpdated = false;
 
@@ -17,10 +18,13 @@ namespace Epiphany.View.Services
             {
                 try
                 {
-                    if (!ApplicationData.Current.LocalSettings.Values.ContainsKey(key) ||
-                        ApplicationData.Current.LocalSettings.Values[key] != value)
+                    IPropertySet values = (setting.Container == SettingContainer.Local) ? ApplicationData.Current.LocalSettings.Values :
+                        ApplicationData.Current.RoamingSettings.Values;
+
+                    if (!values.ContainsKey(setting.Name) ||
+                        values[setting.Name] != value)
                     {
-                        ApplicationData.Current.LocalSettings.Values[key] = value;
+                        values[setting.Name] = value;
                         valueUpdated = true;
                     }
                 }
@@ -34,15 +38,26 @@ namespace Epiphany.View.Services
             return valueUpdated;
         }
 
-        public T GetValueOrDefault<T>(string key, T defaultValue)
+        public bool Contains(Setting setting)
+        {
+            IPropertySet values = (setting.Container == SettingContainer.Local) ? ApplicationData.Current.LocalSettings.Values :
+                        ApplicationData.Current.RoamingSettings.Values;
+
+            return values.ContainsKey(setting.Name);
+        }
+
+        public T GetValueOrDefault<T>(Setting setting, T defaultValue)
         {
             T value = defaultValue;
 
             try
             {
-                if (ApplicationData.Current.LocalSettings.Values.ContainsKey(key))
+                IPropertySet values = (setting.Container == SettingContainer.Local) ? ApplicationData.Current.LocalSettings.Values :
+                        ApplicationData.Current.RoamingSettings.Values;
+
+                if (values.ContainsKey(setting.Name))
                 {
-                    value = (T)ApplicationData.Current.LocalSettings.Values[key];
+                    value = (T)values[setting.Name];
                 }
             }
             catch (Exception ex)

@@ -145,7 +145,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ApplicationSettings.xml</DependentUpon>
     </Compile>
-    <Compile Include="Settings\ISettingStorage.cs" />
+    <Compile Include="Settings\ISettingStore.cs" />
     <Compile Include="Web\IWebClient.cs" />
     <Compile Include="Web\WebRequest.cs" />
     <Compile Include="Web\WebResponse.cs" />

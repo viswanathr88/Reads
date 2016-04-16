@@ -26,7 +26,12 @@ namespace Epiphany.Web
             this.restClient = new RestClient(config.BaseUri.ToString());
             this.tokenParser = new TokenParser();
             this.permanentToken = ReadTokensFromStorage();
-            this.cachedCredential = ReadCredentialFromStorage();
+
+            if (this.permanentToken != null)
+            {
+                // Read credentials from storage only if we have a token
+                this.cachedCredential = ReadCredentialFromStorage();
+            }
         }
         public AuthConfig Configuration
         {
@@ -191,11 +196,15 @@ namespace Epiphany.Web
         {
             Token accessToken = null;
             string token = ApplicationSettings.Instance.AccessToken;
-            string tokenSecret = ApplicationSettings.Instance.AccessTokenSecret;
 
-            if (!string.IsNullOrEmpty(token) && !string.IsNullOrEmpty(tokenSecret))
+            if (!string.IsNullOrEmpty(token))
             {
-                accessToken = new Token(token, tokenSecret);
+                // Read the secret only if token is valid
+                string tokenSecret = ApplicationSettings.Instance.AccessTokenSecret;
+                if (!string.IsNullOrEmpty(tokenSecret))
+                {
+                    accessToken = new Token(token, tokenSecret);
+                }
             }
 
             return accessToken;
