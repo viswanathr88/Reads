@@ -1,4 +1,5 @@
-﻿using Epiphany.ViewModel.Services;
+﻿using Epiphany.ViewModel.Commands;
+using Epiphany.ViewModel.Services;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -27,8 +28,8 @@ namespace Epiphany.ViewModel
                 throw new ArgumentNullException(nameof(deviceServices));
             }
 
-            //this.likeOnFacebookCommand = new LikeOnFacebookCommand(urlLauncher);
-            //this.rateAppCommand = new RateAppCommand(rateService);
+            this.likeOnFacebookCommand = new LikeOnFacebookCommand(deviceServices);
+            this.rateAppCommand = new RateAppCommand(deviceServices);
         }
         /// <summary>
         /// Like the app on facebook command

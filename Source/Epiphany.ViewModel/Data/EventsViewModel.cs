@@ -23,7 +23,7 @@ namespace Epiphany.ViewModel
             this.eventService = eventService;
             this.deviceServices = deviceServices;
 
-            //this.fetchEventsCommand = new FetchEventsCommand(eventService, locationService);
+            this.fetchEventsCommand = new FetchEventsCommand(eventService, deviceServices);
             RegisterCommand(this.fetchEventsCommand, OnCommandExecuted);
         }
 
