@@ -84,6 +84,7 @@ namespace Epiphany.View.DesignData
                 var vm = new LogonViewModel();
                 vm.SetValue(nameof(LogonViewModel.IsWaitingForUserInteraction), false);
                 vm.SetValue(nameof(LogonViewModel.IsSignInTakingLonger), true);
+                vm.SetValue(nameof(LogonViewModel.Error), new object());
                 return vm;
             }
         }

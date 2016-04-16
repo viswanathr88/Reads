@@ -16,11 +16,6 @@ namespace Epiphany.View
         public LogonPage()
         {
             this.InitializeComponent();
-            Loaded += (object sender, RoutedEventArgs e) =>
-            {
-                PageBackgroundColorAnimation.Begin();
-            };
-
             RegisterDoneEvent();
         }
 
@@ -28,7 +23,7 @@ namespace Epiphany.View
         {
             base.OnViewModelDone(sender, e);
             Logger.LogDebug("Navigating to HomePage");
-            //Frame.Navigate(typeof(HomePage));
+            Frame.Navigate(typeof(HomePage));
         }
 
         private async void OnWebViewNavigationStarting(object sender, WebViewNavigationStartingEventArgs e)
