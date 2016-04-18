@@ -1,4 +1,4 @@
-﻿using Epiphany.Model.Web;
+﻿using Epiphany.Web;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

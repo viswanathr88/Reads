@@ -1,5 +1,5 @@
 ﻿using Epiphany.Model.Authentication;
-using Epiphany.Model.Web;
+using Epiphany.Web;
 using System;
 using System.Threading.Tasks;
 

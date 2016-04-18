@@ -2,7 +2,7 @@
 using Epiphany.Model.Authentication;
 using Epiphany.Model.Services;
 using Epiphany.Model.Settings;
-using Epiphany.Model.Web;
+using Epiphany.Web;
 using RestSharp.Portable;
 using RestSharp.Portable.Authenticators;
 using RestSharp.Portable.HttpClient;

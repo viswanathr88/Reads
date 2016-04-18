@@ -1,5 +1,5 @@
 ﻿using Epiphany.Model.Messaging;
-using Epiphany.Model.Web;
+using Epiphany.Web;
 using System;
 
 namespace Epiphany.Model.Services
@@ -8,7 +8,7 @@ namespace Epiphany.Model.Services
     {
         private readonly IWebClient webClient;
         private readonly IMessenger messenger;
-        private readonly IAuthService authService;
+        private readonly IAuthenticatorFactory authFactory;
 
         private ILogonService logonService;
         private IAuthorService authorService;
@@ -21,38 +21,37 @@ namespace Epiphany.Model.Services
         private IUserService userService;
         private IStatusService statusService;
 
-        public ServiceFactory(IAuthService authService)
+        public ServiceFactory(IAuthenticatorFactory authenticatorFactory)
         {
-            if (authService == null)
+            if (authenticatorFactory == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(nameof(authenticatorFactory));
             }
 
-            this.authService = authService;
-
-            if ((this.webClient = authService.GetAuthCapableWebClient()) == null)
-            {
-                throw new ArgumentNullException("webClient");
-            }
-
+            this.authFactory = authenticatorFactory;
+            this.webClient = new WebClient(this.authFactory);
             this.messenger = Messenger.Instance;
-            //
-            // set up all the services
-            //
-            this.logonService = new LogonService(this.authService, this.messenger);
             
+            // set up all the services
+            SetupServices();
+        }
+
+        private void SetupServices()
+        {
+            this.logonService = new LogonService(this.webClient, this.messenger);
+
             IAuthorService authorService = new AuthorService(this.webClient, this.messenger);
             this.authorService = new CachedAuthorService(authorService, this.messenger);
-            
-            IBookService bookService = new BookService(this.webClient, messenger);
+
+            IBookService bookService = new BookService( this.webClient, messenger);
             this.bookService = new CachedBookService(bookService, messenger);
-            
+
             IBookshelfService bookshelfService = new BookshelfService(this.webClient, this.messenger);
             this.bookshelfService = new CachedBookshelfService(bookshelfService, messenger);
-            
+
             IReviewService reviewService = new ReviewService(this.webClient, this.messenger);
             this.reviewService = new CachedReviewService(reviewService, messenger);
-            
+
             IUserService userService = new UserService(this.webClient, this.messenger);
             this.userService = new CachedUserService(userService, messenger);
 

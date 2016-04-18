@@ -1,5 +1,5 @@
 ﻿using Epiphany.Logging;
-using Epiphany.Model.Web;
+using Epiphany.Web;
 using Epiphany.Xml;
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ namespace Epiphany.Model.DataSources
 
         public async Task<T> GetAsync()
         {
-            WebRequest request = new WebRequest(url, WebMethod.AuthenticatedGet);
+            WebRequest request = new WebRequest(url, WebMethod.Get);
             AddHeaders(request);
             //
             // Execute the request and check for errors in the response
@@ -56,9 +56,9 @@ namespace Epiphany.Model.DataSources
             request.Headers["format"] = "xml";
             if (headers != null)
             {
-                foreach (KeyValuePair<string, object> header in headers)
+                foreach (var header in headers)
                 {
-                    request.Headers.Add(header);
+                    //TODO: request.Headers.Add(header);
                 }
             }
         }

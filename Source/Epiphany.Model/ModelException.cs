@@ -10,7 +10,8 @@ namespace Epiphany.Model
         UnexpectedError,
         NoTokens,
         NoUserId,
-        SignOutFailure
+        SignOutFailure,
+        TokenRequestError
     };
 
     public class ModelException : Exception

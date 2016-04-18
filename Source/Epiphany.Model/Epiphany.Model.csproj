@@ -60,6 +60,7 @@
     <Compile Include="Authentication\Session.cs" />
     <Compile Include="Authentication\SessionChangedEventArgs.cs" />
     <Compile Include="Authentication\Token.cs" />
+    <Compile Include="Authentication\TokenChangedEventArgs.cs" />
     <Compile Include="Collections\IAsyncEnumerable.cs" />
     <Compile Include="Collections\IAsyncEnumerator.cs" />
     <Compile Include="Collections\INotifyCollectionReset.cs" />
@@ -146,7 +147,12 @@
       <DependentUpon>ApplicationSettings.xml</DependentUpon>
     </Compile>
     <Compile Include="Settings\ISettingStore.cs" />
+    <Compile Include="Web\IAuthenticator.cs" />
+    <Compile Include="Web\IAuthenticatorFactory.cs" />
     <Compile Include="Web\IWebClient.cs" />
+    <Compile Include="Web\TokenParser.cs" />
+    <Compile Include="Web\WebClient.cs" />
+    <Compile Include="Web\WebExtensions.cs" />
     <Compile Include="Web\WebRequest.cs" />
     <Compile Include="Web\WebResponse.cs" />
     <Compile Include="Web\WebResponseValidator.cs" />

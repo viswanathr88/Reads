@@ -1,7 +1,9 @@
 ﻿
 using System.Net;
 using System.Text;
-namespace Epiphany.Model.Web
+using System.Threading.Tasks;
+
+namespace Epiphany.Web
 {
     /// <summary>
     /// Interface for author WebResponse

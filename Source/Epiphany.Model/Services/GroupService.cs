@@ -1,7 +1,7 @@
 ﻿using Epiphany.Model.Adapter;
 using Epiphany.Model.Collections;
 using Epiphany.Model.DataSources;
-using Epiphany.Model.Web;
+using Epiphany.Web;
 using Epiphany.Xml;
 using System;
 using System.Collections.Generic;
@@ -134,7 +134,8 @@ namespace Epiphany.Model.Services
             //
             // Create web request and execute it
             //
-            WebRequest request = new WebRequest(ServiceUrls.CreateTopicUrl, WebMethod.AuthenticatedPost);
+            WebRequest request = new WebRequest(ServiceUrls.CreateTopicUrl, WebMethod.Post);
+            request.Authenticate = true;
             WebResponse response = await this.webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.Created);
         }
@@ -150,7 +151,8 @@ namespace Epiphany.Model.Services
             //
             // Create the web request and execute it
             //
-            WebRequest request = new WebRequest(ServiceUrls.CommentCreateUrl, WebMethod.AuthenticatedPost);
+            WebRequest request = new WebRequest(ServiceUrls.CommentCreateUrl, WebMethod.Post);
+            request.Authenticate = true;
             WebResponse response = await this.webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.Created);
         }
@@ -165,7 +167,8 @@ namespace Epiphany.Model.Services
             //
             // Create the web request and execute it
             //
-            WebRequest request = new WebRequest(ServiceUrls.JoinGroupUrl, WebMethod.AuthenticatedPost);
+            WebRequest request = new WebRequest(ServiceUrls.JoinGroupUrl, WebMethod.Post);
+            request.Authenticate = true;
             WebResponse response = await this.webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.OK);
         }

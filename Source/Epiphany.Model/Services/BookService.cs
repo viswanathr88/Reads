@@ -2,7 +2,7 @@
 using Epiphany.Model.Collections;
 using Epiphany.Model.DataSources;
 using Epiphany.Model.Messaging;
-using Epiphany.Model.Web;
+using Epiphany.Web;
 using Epiphany.Xml;
 using System;
 using System.Collections.Generic;
@@ -130,7 +130,7 @@ namespace Epiphany.Model.Services
             //
             // Create and execute the web request
             //
-            WebRequest request = new WebRequest(ServiceUrls.AddBookUrl, WebMethod.AuthenticatedPost);
+            WebRequest request = new WebRequest(ServiceUrls.AddBookUrl, WebMethod.Post);
             WebResponse response = await webClient.ExecuteAsync(request);
             //
             // Validate the response
@@ -150,7 +150,7 @@ namespace Epiphany.Model.Services
             //
             // Create and execute the web request
             //
-            WebRequest request = new WebRequest(ServiceUrls.AddBookUrl, WebMethod.AuthenticatedPost);
+            WebRequest request = new WebRequest(ServiceUrls.AddBookUrl, WebMethod.Post);
             WebResponse response = await webClient.ExecuteAsync(request);
             //
             // Validate the response

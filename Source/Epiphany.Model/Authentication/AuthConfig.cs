@@ -11,6 +11,7 @@ namespace Epiphany.Model.Authentication
         private string consumerKey;
         private string consumerKeySecret;
         private Uri baseUri;
+        private Uri baseHttpsUri;
         private Uri requestTokenUri;
         private Uri authorizeUri;
         private Uri accessTokenUri;
@@ -49,6 +50,13 @@ namespace Epiphany.Model.Authentication
             this.accessTokenUri = accessTokenUri;
             if (callbackUri != null)
                 this.callbackUri = callbackUri;
+
+            var uriBuilder = new UriBuilder(BaseUri)
+            {
+                Scheme = "https",
+                Port = -1 // default port
+            };
+            this.baseHttpsUri = uriBuilder.Uri;
         }
 
         public AuthConfig()
@@ -60,6 +68,13 @@ namespace Epiphany.Model.Authentication
             this.authorizeUri = new Uri("http://www.goodreads.com/oauth/authorize");
             this.accessTokenUri = new Uri("http://www.goodreads.com/oauth/access_token");
             this.callbackUri = new Uri("http://myepiphanyapp.com/goodreads_oauth_callback");
+
+            var uriBuilder = new UriBuilder(BaseUri)
+            {
+                Scheme = "https",
+                Port = -1 // default port
+            };
+            this.baseHttpsUri = uriBuilder.Uri;
         }
         /// <summary>
         /// Gets the consumer key
@@ -107,6 +122,13 @@ namespace Epiphany.Model.Authentication
         public Uri BaseUri
         {
             get { return this.baseUri; }
+        }
+        /// <summary>
+        /// Gets the HTTPS version of the Base Uri
+        /// </summary>
+        public Uri SecureBaseUri
+        {
+            get { return this.baseHttpsUri; }
         }
     }
 }

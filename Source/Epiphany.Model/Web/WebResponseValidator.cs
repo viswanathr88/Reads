@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Epiphany.Logging;
+using Epiphany.Model;
+using System;
 using System.Net;
 
-namespace Epiphany.Model.Web
+namespace Epiphany.Web
 {
     static class WebResponseValidator
     {
@@ -9,16 +11,19 @@ namespace Epiphany.Model.Web
         {
             if (response == null)
             {
-                throw new ArgumentNullException("response");
+                Logger.LogError("WebResponse is null");
+                throw new ArgumentNullException(nameof(response));
             }
 
             if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
             {
+                Logger.LogError("StatusCode =  " + response.StatusCode);
                 throw new ModelException(ModelExceptionType.ServerUnreachable);
             }
 
             else if (response.StatusCode != expectedCode)
             {
+                Logger.LogError(string.Format("Expected Code = {0}, Status Code = {1}", expectedCode, response.StatusCode));
                 throw new ModelException(ModelExceptionType.UnexpectedError);
             }
 
@@ -26,6 +31,7 @@ namespace Epiphany.Model.Web
             {
                 if (string.IsNullOrEmpty(response.Content))
                 {
+                    Logger.LogError("Server returned an empty response");
                     throw new ModelException(ModelExceptionType.EmptyServerResponse);
                 }
             }

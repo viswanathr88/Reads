@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>true</authentication>
+    <key><![CDATA[fDfi6rdiIgfTp49R0xj8MQ]]></key>
+    <method><![CDATA[api_auth_user]]></method>
+  </Request>
+  <user id="8320965">
+    <name>Viswanath Ramanan</name>
+    <link><![CDATA[http://www.goodreads.com/user/show/8320965-viswanath?utm_medium=api]]></link>
+  </user>
+
+</GoodreadsResponse>

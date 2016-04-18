@@ -3,6 +3,14 @@ namespace Epiphany.Model
 {
     internal sealed class ServiceUrls
     {
+        public static string AuthUserUrl
+        {
+            get
+            {
+                return "api/auth_user";
+            }
+        }
+
         public static string BookUrl
         {
             get

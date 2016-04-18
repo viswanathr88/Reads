@@ -1,5 +1,4 @@
 ﻿using Epiphany.Model.Authentication;
-using Epiphany.Model.Web;
 using System;
 using System.Threading.Tasks;
 
@@ -34,6 +33,13 @@ namespace Epiphany.Model.Services
             get;
         }
         /// <summary>
+        /// Get the current token used for authentication
+        /// </summary>
+        Token ActiveToken
+        {
+            get;
+        }
+        /// <summary>
         /// Get the auth state
         /// </summary>
         LogonState State
@@ -64,5 +70,9 @@ namespace Epiphany.Model.Services
         /// Event that is raised when the session changes
         /// </summary>
         event EventHandler<SessionChangedEventArgs> SessionChanged;
+        /// <summary>
+        /// Event that is raised when the token changes
+        /// </summary>
+        event EventHandler<TokenChangedEventArgs> TokenChanged;
     }
 }

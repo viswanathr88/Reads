@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Epiphany.Logging;
+using Epiphany.Model.Authentication;
 using Epiphany.Model.Services;
+using Epiphany.Model.Settings;
 using Epiphany.ViewModel;
 using Epiphany.ViewModel.Services;
 using Epiphany.Web;
-using Epiphany.Model.Settings;
-using Epiphany.Logging;
 
 namespace Epiphany.View.Services
 {
@@ -27,8 +27,20 @@ namespace Epiphany.View.Services
             // Set SettingStore as the backing store for AppSettings
             ApplicationSettings.Instance.Store = new SettingStorage();
 
-            IAuthService authService = new AuthService();
-            this.serviceFactory = new ServiceFactory(authService);
+            AuthenticatorFactory factory = new AuthenticatorFactory();
+            this.serviceFactory = new ServiceFactory(factory);
+
+            // Get the Logon service
+            ILogonService logonService = this.serviceFactory.GetLogonService();
+
+            // Register Authentication factory for TokenChanged events
+            logonService.TokenChanged += factory.OnTokenChanged;
+
+            // If token is already available, call OnTokenChanged on AuthenticatorFactory
+            if (logonService.ActiveToken != null)
+            {
+                factory.OnTokenChanged(logonService, new TokenChangedEventArgs(logonService.ActiveToken, null));
+            }
 
             // Set up services
             this.navigationService = new NavigationService();

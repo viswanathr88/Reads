@@ -1,7 +1,7 @@
 ﻿using Epiphany.Model;
 using Epiphany.Model.Authentication;
 using Epiphany.Model.Services;
-using Epiphany.Model.Web;
+using Epiphany.Web;
 using RestSharp.Portable;
 using RestSharp.Portable.Authenticators;
 using RestSharp.Portable.HttpClient;
@@ -15,10 +15,11 @@ namespace Epiphany.Web
     /// Represents the WebClient implementation that can send 
     /// authenticated and unauthenticated web requests
     /// </summary>
-    class WebClient : IWebClient
+    public class WebClient : IWebClient
     {
         private readonly IAuthService authService;
         private readonly RestClient restClient;
+
         /// <summary>
         /// Create an instance of WebClient with the given authentication service
         /// </summary>
@@ -50,14 +51,7 @@ namespace Epiphany.Web
                     return await DoHttpOperation(request.Url, Method.PUT, request.Headers);
                 case WebMethod.Delete:
                     return await DoHttpOperation(request.Url, Method.DELETE, request.Headers);
-                case WebMethod.AuthenticatedGet:
-                    return await DoAuthenticatedHttpOperation(request.Url, Method.GET, request.Headers);
-                case WebMethod.AuthenticatedPost:
-                    return await DoAuthenticatedHttpOperation(request.Url, Method.POST, request.Headers);
-                case WebMethod.AuthenticatedPut:
-                    return await DoAuthenticatedHttpOperation(request.Url, Method.PUT, request.Headers);
-                case WebMethod.AuthenticatedDelete:
-                    return await DoAuthenticatedHttpOperation(request.Url, Method.DELETE, request.Headers);
+
                 default:
                     throw new NotSupportedException(request.Method.ToString());
             }
@@ -69,10 +63,10 @@ namespace Epiphany.Web
         /// <param name="method">Http method</param>
         /// <param name="parameters">parameters to the request</param>
         /// <returns></returns>
-        private async Task<WebResponse> DoHttpOperation(string url, Method method, IDictionary<string, object> parameters)
+        private async Task<WebResponse> DoHttpOperation(string url, Method method, IDictionary<string, string> parameters)
         {
             var request = new RestRequest(url, method);
-            foreach (KeyValuePair<string, object> paramater in parameters)
+            foreach (var paramater in parameters)
             {
                 request.AddParameter(paramater.Key, paramater.Value);
             }
@@ -88,7 +82,7 @@ namespace Epiphany.Web
         /// <param name="method"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        private async Task<WebResponse> DoAuthenticatedHttpOperation(string url, Method method, IDictionary<string, object> parameters)
+        private async Task<WebResponse> DoAuthenticatedHttpOperation(string url, Method method, IDictionary<string, string> parameters)
         {
             var request = new RestRequest(url, method);
             Token token = await this.authService.GetToken();
@@ -102,7 +96,7 @@ namespace Epiphany.Web
             this.restClient.Authenticator = OAuth1Authenticator.ForProtectedResource(
                 this.authService.Configuration.ConsumerKey, this.authService.Configuration.ConsumerKeySecret,
                 token.AuthToken, token.TokenSecret);
-            foreach (KeyValuePair<string, object> paramater in parameters)
+            foreach (var paramater in parameters)
             {
                 request.AddParameter(paramater.Key, paramater.Value);
             }

@@ -35,6 +35,14 @@ namespace Epiphany.ViewModel
             this.timer.Interval = new TimeSpan(0, 0, 7);
         }
 
+        public Uri CallbackUri
+        {
+            get
+            {
+                return this.logonService.Configuration.CallbackUri;
+            }
+        }
+
         public bool IsWaitingForUserInteraction
         {
             get

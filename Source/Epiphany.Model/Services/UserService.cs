@@ -3,7 +3,7 @@ using Epiphany.Model.Adapter;
 using Epiphany.Model.Collections;
 using Epiphany.Model.DataSources;
 using Epiphany.Model.Messaging;
-using Epiphany.Model.Web;
+using Epiphany.Web;
 using Epiphany.Xml;
 using System;
 using System.Collections.Generic;
@@ -80,7 +80,8 @@ namespace Epiphany.Model.Services
             //
             // Create the web request and execute it
             //
-            WebRequest request = new WebRequest(ServiceUrls.AddFriendUrl, WebMethod.AuthenticatedPost);
+            WebRequest request = new WebRequest(ServiceUrls.AddFriendUrl, WebMethod.Post);
+            request.Authenticate = true;
             WebResponse response = await this.webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.Created);
         }

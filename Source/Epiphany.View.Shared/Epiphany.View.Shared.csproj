@@ -43,10 +43,6 @@
       <Project>{50f37359-1dea-47ab-9249-ea864608911c}</Project>
       <Name>Epiphany.ViewModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Epiphany.Web\Epiphany.Web.csproj">
-      <Project>{e684381a-fb97-4e20-ab95-2ca4f61bbf0e}</Project>
-      <Name>Epiphany.Web</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <TargetPlatform Include="Windows, Version=8.1" />
@@ -68,6 +64,9 @@
     <Compile Include="Services\Timer.cs" />
     <Compile Include="Services\TimerService.cs" />
     <Compile Include="Services\ViewModelLocator.cs" />
+    <Compile Include="Web\AuthenticatorFactory.cs" />
+    <Compile Include="Web\OAuth1Authenticator.cs" />
+    <Compile Include="Web\OAuth1Authenticator2.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons.xaml">

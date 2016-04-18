@@ -1,5 +1,4 @@
 ﻿using Epiphany.Model.Collections;
-using Epiphany.Model.DataSources;
 using Epiphany.Xml;
 using System;
 using System.Threading.Tasks;

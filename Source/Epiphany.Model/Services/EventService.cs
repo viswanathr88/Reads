@@ -1,6 +1,6 @@
 ﻿using Epiphany.Model.Adapter;
 using Epiphany.Model.DataSources;
-using Epiphany.Model.Web;
+using Epiphany.Web;
 using Epiphany.Xml;
 using System.Collections.Generic;
 using System.Threading.Tasks;

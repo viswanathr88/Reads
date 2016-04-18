@@ -3,6 +3,7 @@ using Epiphany.ViewModel;
 using System;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using System.ComponentModel;
 
 namespace Epiphany.View
 {
@@ -39,6 +40,22 @@ namespace Epiphany.View
             }
 
             vm.Done += OnViewModelDone;
+        }
+
+        protected void RegisterPropertyChanged()
+        {
+            IDataViewModel vm = DataContext as IDataViewModel;
+            if (vm == null)
+            {
+                Logger.LogError("DataContext does not implement IDataViewModel");
+                return;
+            }
+            vm.PropertyChanged += OnViewModelPropertyChanged;
+        }
+
+        protected virtual void OnViewModelPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            // Nothing to do here
         }
 
         protected virtual void OnViewModelDone(object sender, EventArgs e)

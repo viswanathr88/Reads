@@ -2,7 +2,7 @@
 using Epiphany.Model.Collections;
 using Epiphany.Model.DataSources;
 using Epiphany.Model.Messaging;
-using Epiphany.Model.Web;
+using Epiphany.Web;
 using Epiphany.Xml;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -85,7 +85,8 @@ namespace Epiphany.Model.Services
             //
             // Create the web request and execute it
             //
-            WebRequest request = new WebRequest(ServiceUrls.AddReviewUrl, WebMethod.AuthenticatedPost);
+            WebRequest request = new WebRequest(ServiceUrls.AddReviewUrl, WebMethod.Post);
+            request.Authenticate = true;
             WebResponse response = await this.webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.Created);
         }
@@ -103,7 +104,8 @@ namespace Epiphany.Model.Services
             //
             // Create the web request and execute it
             //
-            WebRequest request = new WebRequest(ServiceUrls.AddReviewUrl, WebMethod.AuthenticatedPost);
+            WebRequest request = new WebRequest(ServiceUrls.AddReviewUrl, WebMethod.Post);
+            request.Authenticate = true;
             WebResponse response = await this.webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.OK);
         }
@@ -120,7 +122,8 @@ namespace Epiphany.Model.Services
             //
             // Create the web request and execute it
             //
-            WebRequest request = new WebRequest(ServiceUrls.LikeUrl, WebMethod.AuthenticatedPut);
+            WebRequest request = new WebRequest(ServiceUrls.LikeUrl, WebMethod.Put);
+            request.Authenticate = true;
             WebResponse response = await webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.Created);
         }
@@ -135,7 +138,8 @@ namespace Epiphany.Model.Services
             //
             // Create the web request and execute it
             //
-            WebRequest request = new WebRequest(ServiceUrls.LikeUrl, WebMethod.AuthenticatedDelete);
+            WebRequest request = new WebRequest(ServiceUrls.LikeUrl, WebMethod.Delete);
+            request.Authenticate = true;
             WebResponse response = await webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.OK);
         }
@@ -151,7 +155,8 @@ namespace Epiphany.Model.Services
             //
             // Create the web request and execute it
             //
-            WebRequest request = new WebRequest(ServiceUrls.CommentCreateUrl, WebMethod.AuthenticatedPost);
+            WebRequest request = new WebRequest(ServiceUrls.CommentCreateUrl, WebMethod.Post);
+            request.Authenticate = true;
             WebResponse response = await this.webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.Created);
         }
