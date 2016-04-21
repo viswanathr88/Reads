@@ -6,9 +6,11 @@ using Epiphany.ViewModel;
 using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
@@ -39,7 +41,7 @@ namespace Epiphany.WP81
         /// search results, and so forth.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected async override void OnLaunched(LaunchActivatedEventArgs e)
         {
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
@@ -90,11 +92,17 @@ namespace Epiphany.WP81
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                if (!rootFrame.Navigate(typeof(LogonPage), e.Arguments))
+                if (!rootFrame.Navigate(typeof(HomePage), e.Arguments))
                 {
                     throw new Exception("Failed to create initial page");
                 }
             }
+
+            var statusBar = StatusBar.GetForCurrentView();
+            statusBar.BackgroundColor = (App.Current.Resources["PhoneChromeBrush"] as SolidColorBrush).Color;
+            statusBar.BackgroundOpacity = 1;
+            statusBar.ProgressIndicator.ProgressValue = 1;
+            await statusBar.ShowAsync();
 
             // Ensure the current window is active
             Window.Current.Activate();
@@ -108,7 +116,7 @@ namespace Epiphany.WP81
         private void RootFrame_FirstNavigated(object sender, NavigationEventArgs e)
         {
             var rootFrame = sender as Frame;
-            rootFrame.ContentTransitions = this.transitions ?? new TransitionCollection() { new NavigationThemeTransition() };
+            rootFrame.ContentTransitions = this.transitions ?? new TransitionCollection() { new EdgeUIThemeTransition() { Edge = EdgeTransitionLocation.Right } };
             rootFrame.Navigated -= this.RootFrame_FirstNavigated;
         }
 

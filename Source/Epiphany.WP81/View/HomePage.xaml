@@ -1,50 +1,86 @@
-﻿<local:DataPage
-    x:Class="Epiphany.View.HomePage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Epiphany.View"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    DataContext="{Binding Source={StaticResource VMLocator}, Path=Home}"
-    xmlns:controls="using:Epiphany.View.Controls">
+﻿<local:DataPage x:Class="Epiphany.View.HomePage"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:local="using:Epiphany.View"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d"
+                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                DataContext="{Binding Source={StaticResource VMLocator}, Path=Home}"
+                xmlns:controls="using:Epiphany.View.Controls">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="120" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <!-- Tab headers -->
         <ListView SelectedIndex="{Binding SelectedIndex, ElementName=contentPivot, Mode=TwoWay}"
-                  Background="{StaticResource PhoneChromeBrush}">
+                  Background="{StaticResource PhoneChromeBrush}"
+                  VerticalContentAlignment="Stretch"
+                  HorizontalContentAlignment="Stretch"
+                  ItemContainerStyle="{StaticResource HeaderListViewItemStyle}"
+                  SelectionMode="Single">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" />
+                    <controls:HorizontalStretchPanel />
+                    <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                />-->
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
 
-            <ListViewItem>
-                <controls:TabHeader HeaderText="Books" Glyph="&#xE1D3;"/>
+            <ListViewItem VerticalContentAlignment="Bottom"
+                          HorizontalContentAlignment="Stretch"
+                          Margin="0,0,0,15">
+                <controls:TabHeader HeaderText="Books"
+                                    Glyph="&#xE1D3;" />
             </ListViewItem>
-            <ListViewItem>
-                <controls:TabHeader HeaderText="Scan" Glyph="&#xE1D3;" />
+            <ListViewItem VerticalContentAlignment="Bottom"
+                          HorizontalContentAlignment="Stretch"
+                          Margin="0,0,0,15">
+                <controls:TabHeader HeaderText="Scan"
+                                    Glyph="&#xE114;" />
             </ListViewItem>
-            <ListViewItem>
-                <controls:TabHeader HeaderText="Explore" Glyph="&#xE1D3;" />
+            <ListViewItem VerticalContentAlignment="Bottom"
+                          HorizontalContentAlignment="Stretch"
+                          Margin="0,0,0,15">
+                <controls:TabHeader HeaderText="Explore"
+                                    Glyph="&#xE1CB;" />
             </ListViewItem>
-            <ListViewItem>
-                <controls:TabHeader HeaderText="More" Glyph="&#xE1D3;" />
+            <ListViewItem VerticalContentAlignment="Bottom"
+                          HorizontalContentAlignment="Stretch"
+                          Margin="0,0,0,15">
+                <controls:TabHeader HeaderText="More"
+                                    Glyph="&#xE179;" />
             </ListViewItem>
 
         </ListView>
-        
-        <!-- Tab content -->
+
         <Pivot x:Name="contentPivot"
-               Grid.Row="1"
-               CommonNavigationTransitionInfo.IsStaggerElement="True">
-            
+               Grid.Row="1">
+            <Pivot.TitleTemplate>
+                <DataTemplate>
+                    <Grid />
+                </DataTemplate>
+            </Pivot.TitleTemplate>
+            <PivotItem>
+                <TextBlock Text="Books"
+                           Style="{StaticResource BodyTextBlockStyle}"/>
+            </PivotItem>
+            <PivotItem>
+                <TextBlock Text="San"
+                           Style="{StaticResource BodyTextBlockStyle}" />
+            </PivotItem>
+            <PivotItem>
+                <TextBlock Text="Explore"
+                           Style="{StaticResource BodyTextBlockStyle}" />
+            </PivotItem>
+            <PivotItem>
+                <TextBlock Text="More"
+                           Style="{StaticResource BodyTextBlockStyle}" />
+            </PivotItem>
         </Pivot>
 
     </Grid>

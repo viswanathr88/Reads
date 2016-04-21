@@ -2,7 +2,7 @@
     x:Class="Epiphany.View.Controls.TabHeader"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Epiphany.Controls"
+    xmlns:local="using:Epiphany.View.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -11,8 +11,7 @@
     x:Name="tabHeader">
 
     <Grid Background="{Binding ElementName=tabHeader,Path=Background}"
-          MinWidth="64"
-          MinHeight="64">
+          VerticalAlignment="Center">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -20,21 +19,21 @@
 
         <!-- Icon -->
         <FontIcon FontFamily="{Binding FontFamily, ElementName=tabHeader}"
-                  FontSize="{Binding FontSize, ElementName=tabHeader}"
+                  FontSize="{Binding IconSize, ElementName=tabHeader}"
                   FontStyle="{Binding FontStyle, ElementName=tabHeader}"
                   FontWeight="{Binding FontWeight, ElementName=tabHeader}"
                   Glyph="{Binding Glyph, ElementName=tabHeader}"
                   Foreground="{Binding Foreground, ElementName=tabHeader}"
-                  HorizontalAlignment="Center"/>
+                  HorizontalAlignment="Center" />
 
         <!-- Content -->
         <TextBlock Grid.Row="1"
                    Text="{Binding HeaderText, ElementName=tabHeader}"
                    TextWrapping="WrapWholeWords"
                    Foreground="{Binding Foreground, ElementName=tabHeader}"
-                   Margin="0,12,0,12"
-                   HorizontalAlignment="Center"/>
-
+                   HorizontalAlignment="Center"
+                   Style="{StaticResource BodyTextBlockStyle}"
+                   Margin="0,3,0,0"/>
 
     </Grid>
 </UserControl>
