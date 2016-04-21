@@ -1,10 +1,7 @@
 ﻿using Epiphany.Logging;
 using Epiphany.ViewModel;
 using System;
-using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using System.ComponentModel;
-using Windows.Security.Authentication.Web;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 

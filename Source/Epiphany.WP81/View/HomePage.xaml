@@ -7,9 +7,45 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    DataContext="{Binding Source={StaticResource VMLocator}, Path=Home}">
+    DataContext="{Binding Source={StaticResource VMLocator}, Path=Home}"
+    xmlns:controls="using:Epiphany.View.Controls">
 
     <Grid>
-        <ProgressBar IsIndeterminate="{Binding IsLoading}" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Tab headers -->
+        <ListView SelectedIndex="{Binding SelectedIndex, ElementName=contentPivot, Mode=TwoWay}"
+                  Background="{StaticResource PhoneChromeBrush}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListViewItem>
+                <controls:TabHeader HeaderText="Books" Glyph="&#xE1D3;"/>
+            </ListViewItem>
+            <ListViewItem>
+                <controls:TabHeader HeaderText="Scan" Glyph="&#xE1D3;" />
+            </ListViewItem>
+            <ListViewItem>
+                <controls:TabHeader HeaderText="Explore" Glyph="&#xE1D3;" />
+            </ListViewItem>
+            <ListViewItem>
+                <controls:TabHeader HeaderText="More" Glyph="&#xE1D3;" />
+            </ListViewItem>
+
+        </ListView>
+        
+        <!-- Tab content -->
+        <Pivot x:Name="contentPivot"
+               Grid.Row="1"
+               CommonNavigationTransitionInfo.IsStaggerElement="True">
+            
+        </Pivot>
+
     </Grid>
 </local:DataPage>
