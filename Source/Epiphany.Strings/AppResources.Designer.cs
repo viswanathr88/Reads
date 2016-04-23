@@ -431,7 +431,7 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to my books.
+        ///   Looks up a localized string similar to My Books.
         /// </summary>
         public static string HomeMyBooksTitle {
             get {
@@ -877,6 +877,42 @@ namespace Epiphany.Strings {
         public static string SigningInStuckMessage {
             get {
                 return ResourceManager.GetString("SigningInStuckMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Community.
+        /// </summary>
+        public static string TabHeaderCommunity {
+            get {
+                return ResourceManager.GetString("TabHeaderCommunity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string TabHeaderHome {
+            get {
+                return ResourceManager.GetString("TabHeaderHome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to More.
+        /// </summary>
+        public static string TabHeaderMore {
+            get {
+                return ResourceManager.GetString("TabHeaderMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My Books.
+        /// </summary>
+        public static string TabHeaderMyBooks {
+            get {
+                return ResourceManager.GetString("TabHeaderMyBooks", resourceCulture);
             }
         }
         

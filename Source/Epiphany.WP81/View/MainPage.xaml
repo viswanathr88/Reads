@@ -1,0 +1,77 @@
+﻿<local:DataPage x:Class="Epiphany.View.MainPage"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:local="using:Epiphany.View"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:controls="using:Epiphany.View.Controls"
+                mc:Ignorable="d"
+                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                DataContext="{Binding Source={StaticResource VMLocator}, Path=Home}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Tab headers -->
+        <ListView SelectedIndex="{Binding SelectedIndex, ElementName=contentPivot, Mode=TwoWay}"
+                  Background="{StaticResource PhoneChromeBrush}"
+                  ItemContainerStyle="{StaticResource HeaderListViewItemStyle}"
+                  SelectionMode="Single"
+                  VerticalContentAlignment="Stretch">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <controls:MagneticEdgePanel Margin="12,0,12,0" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <!-- Home Tab -->
+            <ListViewItem VerticalContentAlignment="Stretch">
+                <controls:TabHeader HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabHeaderHome}"
+                                    Glyph="&#xE10F;" />
+            </ListViewItem>
+
+            <!-- My Books Tab-->
+            <ListViewItem VerticalContentAlignment="Center">
+                <controls:TabHeader HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabHeaderMyBooks}"
+                                    Glyph="&#xE1D3;" />
+            </ListViewItem>
+            
+            <!-- Community Tab -->
+            <ListViewItem VerticalContentAlignment="Center">
+                <controls:TabHeader HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabHeaderCommunity}"
+                                    Glyph="&#xE125;" />
+            </ListViewItem>
+            
+            <!-- More Tab -->
+            <ListViewItem VerticalContentAlignment="Center">
+                <controls:TabHeader HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabHeaderMore}"
+                                    Glyph="&#xE179;" />
+            </ListViewItem>
+        </ListView>
+
+        <Pivot Grid.Row="1"
+               x:Name="contentPivot">
+            <!-- Home Pivot -->
+            <PivotItem>
+                <TextBlock Text="Books" />
+            </PivotItem>
+
+            <!-- My Books Pivot -->
+            <PivotItem>
+                <TextBlock Text="Scan" />
+            </PivotItem>
+
+            <!-- Community Pivot-->
+            <PivotItem>
+                <TextBlock Text="Explore" />
+            </PivotItem>
+
+            <!-- More Pivot -->
+            <PivotItem>
+                <TextBlock Text="More" />
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</local:DataPage>

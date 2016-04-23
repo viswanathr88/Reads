@@ -242,7 +242,7 @@
     <value>groups</value>
   </data>
   <data name="HomeMyBooksTitle" xml:space="preserve">
-    <value>my books</value>
+    <value>My Books</value>
   </data>
   <data name="HomeMyProfileTitle" xml:space="preserve">
     <value>my profile</value>
@@ -416,5 +416,17 @@
   </data>
   <data name="WhatsNewHeader" xml:space="preserve">
     <value>What's New</value>
+  </data>
+  <data name="TabHeaderCommunity" xml:space="preserve">
+    <value>Community</value>
+  </data>
+  <data name="TabHeaderHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="TabHeaderMore" xml:space="preserve">
+    <value>More</value>
+  </data>
+  <data name="TabHeaderMyBooks" xml:space="preserve">
+    <value>My Books</value>
   </data>
 </root>
