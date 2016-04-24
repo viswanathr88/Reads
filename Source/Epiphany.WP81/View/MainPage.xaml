@@ -17,7 +17,7 @@
 
         <!-- Tab headers -->
         <ListView SelectedIndex="{Binding SelectedIndex, ElementName=contentPivot, Mode=TwoWay}"
-                  Background="{StaticResource PhoneChromeBrush}"
+                  Background="{ThemeResource PhoneChromeBrush}"
                   ItemContainerStyle="{StaticResource HeaderListViewItemStyle}"
                   SelectionMode="Single"
                   VerticalContentAlignment="Stretch">

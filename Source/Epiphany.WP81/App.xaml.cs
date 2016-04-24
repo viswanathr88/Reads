@@ -74,6 +74,7 @@ namespace Epiphany.WP81
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
+                Window.Current.Activated += Window_Activated;
             }
 
             if (rootFrame.Content == null)
@@ -100,12 +101,6 @@ namespace Epiphany.WP81
                 }
             }
 
-            var statusBar = StatusBar.GetForCurrentView();
-            statusBar.BackgroundColor = (App.Current.Resources["PhoneChromeBrush"] as SolidColorBrush).Color;
-            statusBar.BackgroundOpacity = 1;
-            statusBar.ProgressIndicator.ProgressValue = 1;
-            await statusBar.ShowAsync();
-
             // Ensure the current window is active
             Window.Current.Activate();
         }
@@ -120,6 +115,20 @@ namespace Epiphany.WP81
             var rootFrame = sender as Frame;
             rootFrame.ContentTransitions = this.transitions ?? new TransitionCollection() { new EdgeUIThemeTransition() { Edge = EdgeTransitionLocation.Right } };
             rootFrame.Navigated -= this.RootFrame_FirstNavigated;
+        }
+        /// <summary>
+        /// Callback when the current window is activated
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void Window_Activated(object sender, Windows.UI.Core.WindowActivatedEventArgs e)
+        {
+            var statusBar = StatusBar.GetForCurrentView();
+            statusBar.BackgroundColor = (App.Current.Resources["PhoneChromeBrush"] as SolidColorBrush).Color;
+            statusBar.ForegroundColor = (App.Current.Resources["ApplicationForegroundThemeBrush"] as SolidColorBrush).Color;
+            statusBar.BackgroundOpacity = 1;
+            statusBar.ProgressIndicator.ProgressValue = 1;
+            await statusBar.ShowAsync();
         }
 
         /// <summary>
