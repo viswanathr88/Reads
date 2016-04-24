@@ -447,4 +447,22 @@
   <data name="TabMyBooksSignInText" xml:space="preserve">
     <value>By logging in with your Goodreads account, you can personalize and organize your books. You can view all your bookshelves and you can update books that you are currently reading. You can also add or remove books from your shelves.</value>
   </data>
+  <data name="BookSearchTypeAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="BookSearchTypeAuthor" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="BookSearchTypeTitle" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="SearchBoxPlaceholderText" xml:space="preserve">
+    <value>Find books, authors</value>
+  </data>
+  <data name="SearchFilterHeader" xml:space="preserve">
+    <value>Refine:</value>
+  </data>
+  <data name="SearchNoResultsMessage" xml:space="preserve">
+    <value>Search did not return any results</value>
+  </data>
 </root>

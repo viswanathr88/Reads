@@ -20,17 +20,14 @@ namespace Epiphany.Model.Services
 
         public async Task<IEnumerable<LiteraryEventModel>> GetEvents(double lat, double lon)
         {
-            //
             // Create headers
-            //
-            IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["lat"] = lat;
-            headers["lng"] = lon;
-            headers["search[postal_code]"] = "'GPS_QUERY'";
-            //
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["lat"] = lat.ToString();
+            parameters["lng"] = lon.ToString();
+            parameters["search[postal_code]"] = "'GPS_QUERY'";
+
             // Create the data source and get the events
-            //
-            IDataSource<GoodreadsEvents> ds = new DataSource<GoodreadsEvents>(webClient, headers, ServiceUrls.EventsUrl);
+            IDataSource<GoodreadsEvents> ds = new DataSource<GoodreadsEvents>(webClient, parameters, ServiceUrls.EventsUrl);
             GoodreadsEvents events = await ds.GetAsync();
             
             IList<LiteraryEventModel> result = new List<LiteraryEventModel>();
@@ -43,15 +40,12 @@ namespace Epiphany.Model.Services
 
         public async Task<IEnumerable<LiteraryEventModel>> GetEvents(int postalCode)
         {
-            //
-            // Create headers
-            //
-            IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["search[postal_code]"] = postalCode;
-            //
+            // Create parameters
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["search[postal_code]"] = postalCode.ToString();
+
             // Create the data source and get the events
-            //
-            IDataSource<GoodreadsEvents> ds = new DataSource<GoodreadsEvents>(webClient, headers, ServiceUrls.EventsUrl);
+            IDataSource<GoodreadsEvents> ds = new DataSource<GoodreadsEvents>(webClient, parameters, ServiceUrls.EventsUrl);
             GoodreadsEvents events = await ds.GetAsync();
 
             IList<LiteraryEventModel> result = new List<LiteraryEventModel>();

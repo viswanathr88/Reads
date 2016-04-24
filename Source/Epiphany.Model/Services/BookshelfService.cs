@@ -32,12 +32,12 @@ namespace Epiphany.Model.Services
             //
             // Create the headers
             //
-            IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["user_id"] = userId;
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["user_id"] = userId.ToString();
             //
             // Create the data source for the collection
             //
-            IPagedDataSource<GoodreadsShelves> ds = new PagedDataSource<GoodreadsShelves>(webClient, headers, ServiceUrls.ShelvesUrl);
+            IPagedDataSource<GoodreadsShelves> ds = new PagedDataSource<GoodreadsShelves>(webClient, parameters, ServiceUrls.ShelvesUrl);
             //
             // Create the collection
             //
@@ -57,15 +57,9 @@ namespace Epiphany.Model.Services
 
         public async Task AddShelf(BookshelfModel shelf)
         {
-            //
-            // Create the headers
-            //
-            IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["user_shelf[name]"] = shelf.Name;
-            //
             // Create the request, execute it and validate the response
-            //
             WebRequest request = new WebRequest(ServiceUrls.AddShelfUrl, WebMethod.Post);
+            request.Parameters["user_shelf[name]"] = shelf.Name;
             request.Authenticate = true;
             WebResponse response = await this.webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.Created);
@@ -73,15 +67,9 @@ namespace Epiphany.Model.Services
 
         public async Task RemoveShelf(BookshelfModel shelf)
         {
-            //
-            // Create the headers
-            //
-            IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["user_shelf[name]"] = shelf.Name;
-            //
             // Create the request, execute it and validate the response
-            //
             WebRequest request = new WebRequest(ServiceUrls.AddShelfUrl, WebMethod.Post);
+            request.Parameters["user_shelf[name]"] = shelf.Name;
             request.Authenticate = true;
             WebResponse response = await this.webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.OK);

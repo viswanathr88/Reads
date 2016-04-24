@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Epiphany.ViewModel;
 using Epiphany.ViewModel.Services;
+using Epiphany.ViewModel.Items;
+using Epiphany.Model;
 
 namespace Epiphany.View.DesignData
 {
@@ -111,7 +113,10 @@ namespace Epiphany.View.DesignData
         {
             get
             {
-                throw new NotImplementedException();
+                var vm = new SearchViewModel();
+                vm.SetValue(nameof(SearchViewModel.HasResults), true);
+
+                return vm;
             }
         }
 

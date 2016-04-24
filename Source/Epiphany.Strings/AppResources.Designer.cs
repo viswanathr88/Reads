@@ -350,6 +350,33 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All.
+        /// </summary>
+        public static string BookSearchTypeAll {
+            get {
+                return ResourceManager.GetString("BookSearchTypeAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Author.
+        /// </summary>
+        public static string BookSearchTypeAuthor {
+            get {
+                return ResourceManager.GetString("BookSearchTypeAuthor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string BookSearchTypeTitle {
+            get {
+                return ResourceManager.GetString("BookSearchTypeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to bookshelves.
         /// </summary>
         public static string BooksTitle {
@@ -868,6 +895,33 @@ namespace Epiphany.Strings {
         public static string ReviewFeedItemOneStarRatingActionText {
             get {
                 return ResourceManager.GetString("ReviewFeedItemOneStarRatingActionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Find books, authors.
+        /// </summary>
+        public static string SearchBoxPlaceholderText {
+            get {
+                return ResourceManager.GetString("SearchBoxPlaceholderText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refine:.
+        /// </summary>
+        public static string SearchFilterHeader {
+            get {
+                return ResourceManager.GetString("SearchFilterHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search did not return any results.
+        /// </summary>
+        public static string SearchNoResultsMessage {
+            get {
+                return ResourceManager.GetString("SearchNoResultsMessage", resourceCulture);
             }
         }
         

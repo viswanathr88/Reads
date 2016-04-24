@@ -27,6 +27,8 @@ namespace Epiphany.ViewModel
         private readonly ICommand<BookItemViewModel> showBookCommand;
         private readonly INavigationService navService;
 
+        public SearchViewModel() { }
+
         public SearchViewModel(IBookService bookService, INavigationService navService)
         {
             this.navService = navService;
@@ -73,9 +75,9 @@ namespace Epiphany.ViewModel
             get { return this.query; }
             private set
             {
-                if (this.query.Equals(value)) return;
+                if (this.query != null && this.query.Equals(value)) return;
                 this.query = value;
-                RaisePropertyChanged(() => Query);
+                RaisePropertyChanged();
             }
         }
 

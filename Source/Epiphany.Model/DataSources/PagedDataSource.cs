@@ -6,11 +6,11 @@ namespace Epiphany.Model.DataSources
 {
     internal class PagedDataSource<T> : IPagedDataSource<T>
     {
-        private readonly IDictionary<string, object> headers;
+        private readonly IDictionary<string, string> headers;
         private readonly IWebClient webClient;
         private readonly string url;
 
-        public PagedDataSource(IWebClient webClient, IDictionary<string, object> headers, string url)
+        public PagedDataSource(IWebClient webClient, IDictionary<string, string> headers, string url)
         {
             this.webClient = webClient;
             this.headers = headers;
@@ -19,8 +19,8 @@ namespace Epiphany.Model.DataSources
 
         public async Task<T> GetAsync(int page, int pageSize)
         {
-            headers["page"] = page;
-            headers["per_page"] = pageSize;
+            headers["page"] = page.ToString();
+            headers["per_page"] = pageSize.ToString();
 
             IDataSource<T> ds = new DataSource<T>(webClient, headers, url);
             return await ds.GetAsync();

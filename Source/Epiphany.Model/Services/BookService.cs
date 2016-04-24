@@ -1,4 +1,5 @@
 ﻿using Epiphany.Model.Adapter;
+using Epiphany.Model.Authentication;
 using Epiphany.Model.Collections;
 using Epiphany.Model.DataSources;
 using Epiphany.Model.Messaging;
@@ -24,7 +25,7 @@ namespace Epiphany.Model.Services
         {
             if (webClient == null)
             {
-                throw new ArgumentNullException("webClient");
+                throw new ArgumentNullException(nameof(webClient));
             }
 
             this.webClient = webClient;
@@ -41,12 +42,12 @@ namespace Epiphany.Model.Services
             //
             // Create the headers
             //
-            IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["id"] = id;
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["id"] = id.ToString();
             //
             // Get the parsed author
             //
-            IDataSource<GoodreadsBook> ds = new DataSource<GoodreadsBook>(webClient, headers, ServiceUrls.AuthorUrl);
+            IDataSource<GoodreadsBook> ds = new DataSource<GoodreadsBook>(webClient, parameters, ServiceUrls.AuthorUrl);
             GoodreadsBook book = await ds.GetAsync();
             //
             // Send a message for listeners
@@ -74,8 +75,8 @@ namespace Epiphany.Model.Services
             //
             // Create headers
             //
-            IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["id"] = author.Id;
+            IDictionary<string, string> headers = new Dictionary<string, string>();
+            headers["id"] = author.Id.ToString();
             //
             // Create the data source for the collection
             //
@@ -103,16 +104,16 @@ namespace Epiphany.Model.Services
             //
             // Create headers
             //
-            IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["id"] = userId;
-            headers["v"] = "2";
-            headers["shelf"] = shelfName;
-            headers["sort"] = sortType;
-            headers["order"] = order;
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["id"] = userId.ToString();
+            parameters["v"] = "2";
+            parameters["shelf"] = shelfName;
+            parameters["sort"] = sortType.ToString();
+            parameters["order"] = order.ToString();
             //
             // Create the data source for the collection
             //
-            IPagedDataSource<GoodreadsBooks> ds = new PagedDataSource<GoodreadsBooks>(webClient, headers, ServiceUrls.BooksInShelfUrl);
+            IPagedDataSource<GoodreadsBooks> ds = new PagedDataSource<GoodreadsBooks>(webClient, parameters, ServiceUrls.BooksInShelfUrl);
             //
             // Create the collection
             //
@@ -121,40 +122,27 @@ namespace Epiphany.Model.Services
 
         public async Task AddBook(BookshelfModel shelf, BookModel book)
         {
-            //
-            // Create headers
-            //
-            IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["name"] = shelf.Name;
-            headers["book_id"] = book.Id;
-            //
             // Create and execute the web request
-            //
             WebRequest request = new WebRequest(ServiceUrls.AddBookUrl, WebMethod.Post);
+            request.Parameters["name"] = shelf.Name;
+            request.Parameters["book_id"] = book.Id.ToString();
             WebResponse response = await webClient.ExecuteAsync(request);
-            //
+
             // Validate the response
-            //
             response.Validate(System.Net.HttpStatusCode.Created);
         }
 
         public async Task RemoveBook(BookshelfModel shelf, BookModel book)
         {
-            //
-            // Create headers
-            //
-            IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["name"] = shelf.Name;
-            headers["book_id"] = book.Id;
-            headers["a"] = "remove";
-            //
+
             // Create and execute the web request
-            //
             WebRequest request = new WebRequest(ServiceUrls.AddBookUrl, WebMethod.Post);
+            request.Parameters["name"] = shelf.Name;
+            request.Parameters["book_id"] = book.Id.ToString();
+            request.Parameters["a"] = "remove";
             WebResponse response = await webClient.ExecuteAsync(request);
-            //
+
             // Validate the response
-            //
             response.Validate(System.Net.HttpStatusCode.OK);
         }
 
@@ -163,13 +151,14 @@ namespace Epiphany.Model.Services
             //
             // Create the headers
             //
-            IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["q"] = term;
-            headers["search[field]"] = type.ToString().ToLower();
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["format"] = "xml";
+            parameters["q"] = term;
+            parameters["search[field]"] = type.ToString().ToLower();
             //
             // Create the data source for the collection
             //
-            IPagedDataSource<GoodreadsSearch> ds = new PagedDataSource<GoodreadsSearch>(webClient, headers, ServiceUrls.SearchUrl);
+            IPagedDataSource<GoodreadsSearch> ds = new PagedDataSource<GoodreadsSearch>(webClient, parameters, ServiceUrls.SearchUrl);
             return new PagedCollection<WorkModel, GoodreadsWork, GoodreadsSearch>(ds, WorkAdapter, pageSize);
         }
 

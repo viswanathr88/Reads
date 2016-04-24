@@ -19,7 +19,6 @@ namespace Epiphany.Model.Services
 
         private LogonState state;
         private Session session;
-        private AuthConfig authConfig;
 
         private Token temporaryToken;
         private Token permanentToken;
@@ -38,7 +37,6 @@ namespace Epiphany.Model.Services
 
             this.webClient = webClient;
             this.messenger = messenger;
-            this.authConfig = new AuthConfig();
             State = LogonState.NotConnected;
 
             // Rehydrate the session if token and credentials are already available
@@ -52,7 +50,7 @@ namespace Epiphany.Model.Services
         {
             get
             {
-                return this.authConfig;
+                return AuthConfig.Default;
             }
         }
         /// <summary>

@@ -16,6 +16,17 @@ namespace Epiphany.Model.Authentication
         private Uri authorizeUri;
         private Uri accessTokenUri;
         private Uri callbackUri;
+
+        private static AuthConfig _instance = new AuthConfig();
+
+        public static AuthConfig Default
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
         /// <summary>
         /// Creates an instance of Auth Config
         /// </summary>

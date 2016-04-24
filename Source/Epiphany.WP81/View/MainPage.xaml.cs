@@ -13,5 +13,10 @@ namespace Epiphany.View
         {
             this.InitializeComponent();
         }
+
+        private void OnSearchButtonClicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(SearchPage));
+        }
     }
 }

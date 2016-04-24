@@ -1,4 +1,5 @@
 ﻿using Epiphany.Logging;
+using Epiphany.Model.Authentication;
 using Epiphany.Web;
 using Epiphany.Xml;
 using System;
@@ -10,18 +11,18 @@ namespace Epiphany.Model.DataSources
 {
     internal class DataSource<T> : IDataSource<T>
     {
-        private readonly IDictionary<string, object> headers;
+        private readonly IDictionary<string, string> parameters;
         private readonly IWebClient webClient;
         private readonly string url;
 
-        public DataSource(IWebClient webClient, IDictionary<string, object> headers, string url)
+        public DataSource(IWebClient webClient, IDictionary<string, string> parameters, string url)
         {
             if (webClient == null || string.IsNullOrEmpty(url))
             {
                 throw new ArgumentNullException();
             }
 
-            this.headers = headers;
+            this.parameters = parameters;
             this.webClient = webClient;
             this.url = url;
         }
@@ -29,7 +30,7 @@ namespace Epiphany.Model.DataSources
         public async Task<T> GetAsync()
         {
             WebRequest request = new WebRequest(url, WebMethod.Get);
-            AddHeaders(request);
+            AddParameters(request);
             //
             // Execute the request and check for errors in the response
             //
@@ -51,14 +52,16 @@ namespace Epiphany.Model.DataSources
             }
         }
 
-        private void AddHeaders(WebRequest request)
+        private void AddParameters(WebRequest request)
         {
-            request.Headers["format"] = "xml";
-            if (headers != null)
+            request.Parameters["format"] = "xml";
+            request.Parameters["key"] = AuthConfig.Default.ConsumerKey;
+
+            if (parameters != null)
             {
-                foreach (var header in headers)
+                foreach (var parameter in parameters)
                 {
-                    //TODO: request.Headers.Add(header);
+                    request.Parameters[parameter.Key] = parameter.Value;
                 }
             }
         }

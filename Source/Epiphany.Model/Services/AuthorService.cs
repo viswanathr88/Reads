@@ -25,8 +25,8 @@ namespace Epiphany.Model.Services
             //
             // Create the headers
             //
-            IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["id"] = id;
+            IDictionary<string, string> headers = new Dictionary<string, string>();
+            headers["id"] = id.ToString();
             //
             // Get the parsed author
             //

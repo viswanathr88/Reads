@@ -20,7 +20,8 @@
                 shell:SystemTray.BackgroundColor="{StaticResource PhoneBackgroundColor}"
                 shell:SystemTray.ForegroundColor="{StaticResource PhoneForegroundColor}"
                 shell:SystemTray.Opacity="0"
-                DataContext="{Binding Search, Source={StaticResource VMLocator}}">
+                DataContext="{Binding Search, Source={StaticResource VMLocator}}"
+                Orientation="Portrait">
 
     <toolkit:TransitionService.NavigationInTransition>
         <toolkit:NavigationInTransition>

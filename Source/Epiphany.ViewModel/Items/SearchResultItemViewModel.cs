@@ -12,6 +12,8 @@ namespace Epiphany.ViewModel.Items
         private BookItemViewModel book;
         private AuthorItemViewModel author;
 
+        public SearchResultItemViewModel() {  }
+
         public SearchResultItemViewModel(BookModel book, INavigationService navService)
         {
             this.showBook = new ShowBookFromItemCommand(navService);

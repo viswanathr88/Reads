@@ -26,34 +26,26 @@ namespace Epiphany.Model.Services
 
         public async Task<UserStatusModel> GetUserStatus(int id)
         {
-            //
-            // Create headers
-            //
-            IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["id"] = id;
-            //
+            // Create parameters
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+            parameters["id"] = id.ToString();
+
             // Create the data source
-            //
-            IDataSource<GoodreadsUserStatus> ds = new DataSource<GoodreadsUserStatus>(webClient, headers, ServiceUrls.UserStatusUrl);
+            IDataSource<GoodreadsUserStatus> ds = new DataSource<GoodreadsUserStatus>(webClient, parameters, ServiceUrls.UserStatusUrl);
             GoodreadsUserStatus status = await ds.GetAsync();
             return this.adapter.Convert(status);
         }
 
         public async Task UpdateUserStatus(UserStatusModel status)
         {
-            //
-            // Create the headers
-            //
-            IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["user_status[book_id]"] = status.Book.Id;
-            headers["user_status[page]"] = status.Page;
-            headers["user_status[percent]"] = status.Percentage;
-            headers["user_status[body]"] = status.Body;
-            //
             // Create the web request and execute it
-            //
             WebRequest request = new WebRequest(ServiceUrls.UpdateUserStatusUrl, WebMethod.Post);
             request.Authenticate = true;
+            request.Parameters["user_status[book_id]"] = status.Book.Id.ToString();
+            request.Parameters["user_status[page]"] = status.Page.ToString();
+            request.Parameters["user_status[percent]"] = status.Percentage.ToString();
+            request.Parameters["user_status[body]"] = status.Body;
+
             WebResponse response = await this.webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.OK);
         }
@@ -61,51 +53,37 @@ namespace Epiphany.Model.Services
 
         public async Task LikeStatus(UserStatusModel status)
         {
-            //
-            // Create the headers
-            //
-            IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["rating[rating]"] = 1;
-            headers["rating[resource_id]"] = status.Id;
-            headers["rating[resource_type]"] = "UserStatus";
-            //
             // Create the web request and execute it
-            //
             WebRequest request = new WebRequest(ServiceUrls.LikeUrl, WebMethod.Put);
             request.Authenticate = true;
+            request.Parameters["rating[rating]"] = "1";
+            request.Parameters["rating[resource_id]"] = status.Id.ToString();
+            request.Parameters["rating[resource_type]"] = "UserStatus";
+
             WebResponse response = await webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.Created);
         }
 
         public async Task UnlikeStatus(UserStatusModel status)
         {
-            //
-            // Create the headers
-            //
-            IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["id"] = status.Id;
-            //
+
             // Create the web request and execute it
-            //
             WebRequest request = new WebRequest(ServiceUrls.LikeUrl, WebMethod.Delete);
             request.Authenticate = true;
+            request.Parameters["id"] = status.Id.ToString();
+
             WebResponse response = await webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.OK);
         }
 
         public async Task AddComment(UserStatusModel status, CommentModel comment)
         {
-            //
-            // Create headers
-            //
-            IDictionary<string, object> headers = new Dictionary<string, object>();
-            headers["type"] = "user_status";
-            headers["id"] = status.Id;
-            //
             // Create the web request and execute it
-            //
             WebRequest request = new WebRequest(ServiceUrls.CommentCreateUrl, WebMethod.Post);
             request.Authenticate = true;
+            request.Parameters["type"] = "user_status";
+            request.Parameters["id"] = status.Id.ToString();
+
             WebResponse response = await this.webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.Created);
         }

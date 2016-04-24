@@ -91,7 +91,8 @@
         <CommandBar>
             <CommandBar.PrimaryCommands>
                 <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonSearchText}"
-                              Icon="Find" />
+                              Icon="Find"
+                              Click="OnSearchButtonClicked"/>
                 <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonScanText}"
                               Icon="Camera" />
             </CommandBar.PrimaryCommands>

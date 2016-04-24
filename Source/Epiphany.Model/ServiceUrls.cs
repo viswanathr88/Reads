@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Epiphany.Model
 {
     internal sealed class ServiceUrls
@@ -167,7 +169,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "search";
+                return @"http://www.goodreads.com/search";
             }
         }
 

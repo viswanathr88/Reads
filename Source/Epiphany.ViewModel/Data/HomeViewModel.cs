@@ -1,7 +1,9 @@
-﻿using Epiphany.Model.Services;
+﻿using Epiphany.Model.Authentication;
+using Epiphany.Model.Services;
 using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -44,6 +46,8 @@ namespace Epiphany.ViewModel
 
             IsLoggedIn = (this.logonService.Session != null);
             Opacity = IsLoggedIn ? 0 : 0.15;
+
+            this.logonService.SessionChanged += LogonService_SessionChanged;
         }
 
         public int NewNotificationCount
@@ -137,7 +141,7 @@ namespace Epiphany.ViewModel
             }*/
         }
 
-        private void OnChildVMPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        private void OnChildVMPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == nameof(IsLoading))
             {
@@ -146,6 +150,16 @@ namespace Epiphany.ViewModel
             else if (e.PropertyName == nameof(IsLoaded))
             {
                 IsLoaded = Feed.IsLoaded;
+            }
+        }
+
+        private void LogonService_SessionChanged(object sender, SessionChangedEventArgs e)
+        {
+            if (e.Session != null)
+            {
+                IsLoggedIn = true;
+                IsLoaded = false;
+                Opacity = 0;
             }
         }
     }

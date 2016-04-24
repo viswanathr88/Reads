@@ -1,0 +1,123 @@
+﻿<local:DataPage x:Class="Epiphany.View.SearchPage"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:local="using:Epiphany.View"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d"
+                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                DataContext="{Binding Source={StaticResource VMLocator}, Path=Search}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="125" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0"
+                    Background="{ThemeResource PhoneChromeBrush}"
+                    Orientation="Vertical">
+
+            <!-- Search box -->
+            <AutoSuggestBox Margin="19,19,19,0"
+                            PlaceholderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchBoxPlaceholderText}"
+                            Text="{Binding SearchTerm, Mode=TwoWay}"
+                            SuggestionChosen="AutoSuggestBox_SuggestionChosen"
+                            KeyUp="AutoSuggestBox_KeyUp" />
+
+            <!-- Refine list -->
+            <StackPanel Orientation="Horizontal"
+                        Margin="19,19,19,0">
+                <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchFilterHeader}"
+                           Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
+                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"/>
+
+                <TextBlock Text="{Binding SelectedFilter}"
+                           Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
+                           Margin="15,0,0,0"
+                           Foreground="{StaticResource PhoneAccentBrush}"
+                           Tapped="OnSearchFilterTapped">
+                    <FlyoutBase.AttachedFlyout>
+                        <ListPickerFlyout ItemsSource="{Binding SearchFilters}"
+                                          SelectedItem="{Binding SelectedFilter, Mode=TwoWay}"
+                                          Placement="Top" />
+                    </FlyoutBase.AttachedFlyout>
+                </TextBlock>
+            </StackPanel>
+
+        </StackPanel>
+
+        <!-- Search results -->
+        <Grid Grid.Row="1"
+              Margin="19,19,19,0">
+
+            <!-- No results message -->
+            <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchNoResultsMessage}"
+                       Visibility="{Binding HasResults, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
+                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                       Style="{StaticResource ListViewEmptyStaticTextBlockStyle}" />
+
+            <!-- Search results -->
+            <ListView ItemsSource="{Binding SearchResults}"
+                      SelectionMode="Single">
+                <ListView.ItemContainerTransitions>
+                    <TransitionCollection>
+                        <EntranceThemeTransition IsStaggeringEnabled="True" />
+                    </TransitionCollection>
+                </ListView.ItemContainerTransitions>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,0,0,17">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Book image -->
+                            <Border Width="96"
+                                    Height="128"
+                                    Background="{ThemeResource PhoneChromeBrush}">
+                                <Image Source="{Binding Path=Book.ImageUrl}"
+                                       Grid.Column="0"
+                                       Stretch="UniformToFill"
+                                       VerticalAlignment="Top">
+                                    <Image.Transitions>
+                                        <TransitionCollection>
+                                            <PopupThemeTransition />
+                                        </TransitionCollection>
+                                    </Image.Transitions>
+                                </Image>
+                            </Border>
+                            
+
+                            <!-- Book Details -->
+                            <StackPanel Margin="19,0,0,0"
+                                        VerticalAlignment="Top"
+                                        Orientation="Vertical"
+                                        Grid.Column="1">
+
+                                <TextBlock Style="{StaticResource SubheaderTextBlockStyle}"
+                                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                           Text="{Binding Path=Book.Title}"
+                                           MaxLines="2"
+                                           TextTrimming="CharacterEllipsis"
+                                           Margin="0,0,0,10"
+                                           VerticalAlignment="Top" />
+                                <TextBlock Style="{StaticResource ListViewItemContentTextBlockStyle}"
+                                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                           Text="{Binding Path=Author.Name}"
+                                           MaxLines="2"
+                                           TextTrimming="CharacterEllipsis"
+                                           Grid.Row="1" />
+                            </StackPanel>
+
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </Grid>
+
+    </Grid>
+</local:DataPage>
