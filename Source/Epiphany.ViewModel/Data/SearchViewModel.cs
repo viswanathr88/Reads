@@ -1,5 +1,6 @@
 ﻿using Epiphany.Model;
 using Epiphany.Model.Services;
+using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
@@ -15,34 +16,29 @@ namespace Epiphany.ViewModel
     {
         private IList<BookSearchType> searchFilters;
         private IList<SearchResultItemViewModel> searchResults;
+        private IList<SearchResultItemViewModel> searchResults2;
         private BookSearchType selectedFilter;
-        private SearchQuery previousQuery;
         private bool hasResults = true;
         private SearchResultItemViewModel selectedResult;
-        private SearchQuery query;
         private string searchTerm;
         private const int itemsCount = 20;
 
-        private readonly IAsyncCommand<IEnumerable<WorkModel>, SearchQuery> searchCommand;
         private readonly ICommand<BookItemViewModel> showBookCommand;
         private readonly INavigationService navService;
+        private readonly IBookService bookService;
 
         public SearchViewModel() { }
 
         public SearchViewModel(IBookService bookService, INavigationService navService)
         {
             this.navService = navService;
+            this.bookService = bookService;
 
             SearchResults = new ObservableCollection<SearchResultItemViewModel>();
             SearchFilters = Enum.GetValues(typeof(BookSearchType)).Cast<BookSearchType>().ToList();
 
-            this.searchCommand = new SearchCommand(bookService, itemsCount);
-            RegisterCommand(this.searchCommand, OnCommandExecuted);
-
             this.showBookCommand = new ShowBookFromItemCommand(navService);
-
             this.selectedFilter = BookSearchType.All;
-            Query = new SearchQuery(this.searchTerm, this.selectedFilter);
         }
 
         public string SearchTerm
@@ -52,7 +48,7 @@ namespace Epiphany.ViewModel
             {
                 if (this.searchTerm == value) return;
                 this.searchTerm = value;
-                Query = new SearchQuery(searchTerm, this.selectedFilter);
+                RaisePropertyChanged();
             }
         }
 
@@ -63,20 +59,7 @@ namespace Epiphany.ViewModel
             {
                 if (this.selectedFilter == value) return;
                 this.selectedFilter = value;
-                Query = new SearchQuery(searchTerm, this.selectedFilter);
-                if (searchCommand.CanExecute(Query))
-                    searchCommand.Execute(Query);
-                RaisePropertyChanged(() => SelectedFilter);
-            }
-        }
-
-        public SearchQuery Query
-        {
-            get { return this.query; }
-            private set
-            {
-                if (this.query != null && this.query.Equals(value)) return;
-                this.query = value;
+                CreateSearchResultCollection();
                 RaisePropertyChanged();
             }
         }
@@ -99,6 +82,17 @@ namespace Epiphany.ViewModel
             {
                 if (this.searchResults == value) return;
                 this.searchResults = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public IList<SearchResultItemViewModel> SearchResults2
+        {
+            get { return this.searchResults2; }
+            private set
+            {
+                if (this.searchResults2 == value) return;
+                this.searchResults2 = value;
                 RaisePropertyChanged();
             }
         }
@@ -132,57 +126,24 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IAsyncCommand<IEnumerable<WorkModel>, SearchQuery> Search
-        {
-            get { return this.searchCommand; }
-        }
-
         public override async Task LoadAsync(VoidType parameter)
         {
-            if (this.searchCommand.CanExecute(Query))
+            CreateSearchResultCollection();
+        }
+
+        private void CreateSearchResultCollection()
+        {
+            if (!string.IsNullOrEmpty(SearchTerm))
             {
-                await this.searchCommand.ExecuteAsync(Query);
+                var collection = this.bookService.Find(SelectedFilter, SearchTerm);
+                SearchResults2 = new ObservablePagedCollection<SearchResultItemViewModel, WorkModel>
+                    (collection, ConvertToVM);
             }
         }
 
-        private void OnCommandExecuted(ExecutedEventArgs e)
+        private SearchResultItemViewModel ConvertToVM(WorkModel arg)
         {
-            IsLoading = false;
-            previousQuery = query;
-            if (SearchResults.Count != 0)
-            {
-                HasResults = true;
-            }
-            if (e.State == CommandExecutionState.Success)
-            {
-                IEnumerable<WorkModel> results = this.searchCommand.Result;
-                foreach (WorkModel work in results)
-                {
-                    SearchResults.Add(new SearchResultItemViewModel(work.Book, navService));
-                }
-                if (SearchResults.Count == 0)
-                {
-                    HasResults = false;
-                }
-            }
-        }
-
-        protected override void OnCmdExecuting(object sender, CancelEventArgs e)
-        {
-            base.OnCmdExecuting(sender, e);
-
-            HasResults = true;
-            if (previousQuery != query)
-            {
-                SearchResults.Clear();
-            }
-        }
-
-        public override void Dispose()
-        {
-            base.Dispose();
-
-            DeregisterCommand(this.searchCommand);
+            return new SearchResultItemViewModel(arg.Book, this.navService);
         }
     }
 }

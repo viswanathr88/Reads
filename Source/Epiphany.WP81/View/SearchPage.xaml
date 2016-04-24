@@ -59,8 +59,9 @@
                        Style="{StaticResource ListViewEmptyStaticTextBlockStyle}" />
 
             <!-- Search results -->
-            <ListView ItemsSource="{Binding SearchResults}"
-                      SelectionMode="Single">
+            <ListView ItemsSource="{Binding SearchResults2}"
+                      SelectionMode="Single"
+                      x:Name="searchResultsList">
                 <ListView.ItemContainerTransitions>
                     <TransitionCollection>
                         <EntranceThemeTransition IsStaggeringEnabled="True" />

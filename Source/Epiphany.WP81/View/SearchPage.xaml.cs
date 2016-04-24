@@ -41,9 +41,7 @@ namespace Epiphany.View
                 {
                     // Dismiss keyboard
                     LoseFocus(sender);
-
-                    // Search
-                    await searchVM.Search.ExecuteAsync(searchVM.Query);
+                    await searchVM.LoadAsync(VoidType.Empty);
                 }
             }
         }
