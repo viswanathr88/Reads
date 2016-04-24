@@ -23,7 +23,7 @@
                   VerticalContentAlignment="Stretch">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <controls:MagneticEdgePanel Margin="12,0,12,0" />
+                    <controls:MagneticEdgePanel Margin="19,0,19,0" />
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <!-- Home Tab -->
@@ -37,13 +37,13 @@
                 <controls:TabHeader HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabHeaderMyBooks}"
                                     Glyph="&#xE1D3;" />
             </ListViewItem>
-            
+
             <!-- Community Tab -->
             <ListViewItem VerticalContentAlignment="Center">
                 <controls:TabHeader HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabHeaderCommunity}"
                                     Glyph="&#xE125;" />
             </ListViewItem>
-            
+
             <!-- More Tab -->
             <ListViewItem VerticalContentAlignment="Center">
                 <controls:TabHeader HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabHeaderMore}"
@@ -53,14 +53,26 @@
 
         <Pivot Grid.Row="1"
                x:Name="contentPivot">
+            <Pivot.Background>
+                <ImageBrush ImageSource="/Assets/PageBackground.png"
+                            Opacity="{Binding Opacity}" />
+            </Pivot.Background>
             <!-- Home Pivot -->
             <PivotItem>
-                <TextBlock Text="Books" />
+                <!-- Sign in control -->
+                <controls:SignInControl Margin="19,20,19,20"
+                                        VerticalAlignment="Center"
+                                        Visibility="{Binding IsLoggedIn, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
+                                        Message="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabHomeSignInText}" />
             </PivotItem>
 
             <!-- My Books Pivot -->
             <PivotItem>
-                <TextBlock Text="Scan" />
+                <!-- Sign in control -->
+                <controls:SignInControl Margin="19,20,19,20"
+                                        VerticalAlignment="Center"
+                                        Visibility="{Binding IsLoggedIn, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
+                                        Message="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabMyBooksSignInText}" />
             </PivotItem>
 
             <!-- Community Pivot-->
@@ -74,4 +86,19 @@
             </PivotItem>
         </Pivot>
     </Grid>
+
+    <local:DataPage.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonSearchText}"
+                              Icon="Find" />
+                <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonScanText}"
+                              Icon="Camera" />
+            </CommandBar.PrimaryCommands>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonSettingsText}" />
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </local:DataPage.BottomAppBar>
+
 </local:DataPage>

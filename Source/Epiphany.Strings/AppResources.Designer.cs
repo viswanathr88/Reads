@@ -125,6 +125,33 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to scan.
+        /// </summary>
+        public static string AppBarButtonScanText {
+            get {
+                return ResourceManager.GetString("AppBarButtonScanText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to search.
+        /// </summary>
+        public static string AppBarButtonSearchText {
+            get {
+                return ResourceManager.GetString("AppBarButtonSearchText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to settings.
+        /// </summary>
+        public static string AppBarButtonSettingsText {
+            get {
+                return ResourceManager.GetString("AppBarButtonSettingsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to add.
         /// </summary>
         public static string AppBarButtonText {
@@ -328,6 +355,15 @@ namespace Epiphany.Strings {
         public static string BooksTitle {
             get {
                 return ResourceManager.GetString("BooksTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log in with Goodreads.
+        /// </summary>
+        public static string ButtonSignIn {
+            get {
+                return ResourceManager.GetString("ButtonSignIn", resourceCulture);
             }
         }
         
@@ -913,6 +949,24 @@ namespace Epiphany.Strings {
         public static string TabHeaderMyBooks {
             get {
                 return ResourceManager.GetString("TabHeaderMyBooks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reads works best when you sign in to Goodreads to show you updates from your friends and people you follow..
+        /// </summary>
+        public static string TabHomeSignInText {
+            get {
+                return ResourceManager.GetString("TabHomeSignInText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to By logging in with your Goodreads account, you can personalize and organize your books. You can view all your bookshelves and you can update books that you are currently reading. You can also add or remove books from your shelves..
+        /// </summary>
+        public static string TabMyBooksSignInText {
+            get {
+                return ResourceManager.GetString("TabMyBooksSignInText", resourceCulture);
             }
         }
         

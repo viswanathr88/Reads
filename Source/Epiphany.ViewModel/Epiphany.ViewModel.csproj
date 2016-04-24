@@ -125,6 +125,8 @@
     <Compile Include="Commands\Navigation\ShowFriendsCommand.cs" />
     <Compile Include="Data\ProfileViewModel.cs" />
     <Compile Include="Data\EventsViewModel.cs" />
+    <Compile Include="Data\SpotlightItemViewModel.cs" />
+    <Compile Include="Data\SpotlightViewModel.cs" />
     <Compile Include="Items\AuthorItemViewModel.cs" />
     <Compile Include="Items\BookItemViewModel.cs" />
     <Compile Include="Items\BookshelfItemViewModel.cs" />

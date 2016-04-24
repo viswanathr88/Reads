@@ -429,4 +429,22 @@
   <data name="TabHeaderMyBooks" xml:space="preserve">
     <value>My Books</value>
   </data>
+  <data name="ButtonSignIn" xml:space="preserve">
+    <value>Log in with Goodreads</value>
+  </data>
+  <data name="TabHomeSignInText" xml:space="preserve">
+    <value>Reads works best when you sign in to Goodreads to show you updates from your friends and people you follow.</value>
+  </data>
+  <data name="AppBarButtonScanText" xml:space="preserve">
+    <value>scan</value>
+  </data>
+  <data name="AppBarButtonSearchText" xml:space="preserve">
+    <value>search</value>
+  </data>
+  <data name="AppBarButtonSettingsText" xml:space="preserve">
+    <value>settings</value>
+  </data>
+  <data name="TabMyBooksSignInText" xml:space="preserve">
+    <value>By logging in with your Goodreads account, you can personalize and organize your books. You can view all your bookshelves and you can update books that you are currently reading. You can also add or remove books from your shelves.</value>
+  </data>
 </root>

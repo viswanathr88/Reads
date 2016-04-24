@@ -56,7 +56,7 @@ namespace Epiphany.View.Services
                 if (this.homeVM == null)
                 {
                     this.homeVM = new HomeViewModel(this.serviceFactory.GetUserService(), this.serviceFactory.GetLogonService(), 
-                        this.navigationService, this.resourceLoader);
+                        this.navigationService, this.resourceLoader, this.timerService);
                 }
 
                 return this.homeVM;

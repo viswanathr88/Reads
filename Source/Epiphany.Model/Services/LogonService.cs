@@ -325,6 +325,8 @@ namespace Epiphany.Model.Services
             }
 
             this.credential = new Credential(username, userid);
+            Session = new Session(credential, permanentToken);
+            State = LogonState.Connected;
         }
 
         private void StoreToken(Token token)

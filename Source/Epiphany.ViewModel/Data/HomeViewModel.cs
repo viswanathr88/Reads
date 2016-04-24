@@ -13,32 +13,66 @@ namespace Epiphany.ViewModel
         private readonly INavigationService navigationService;
         private readonly ILogonService logonService;
         private readonly IResourceLoader resourceLoader;
+        private readonly ITimerService timerService;
 
         private FeedViewModel feedViewModel;
         private LauncherViewModel launcherVM;
+        private SpotlightViewModel spotlightVM;
 
         private readonly ICommand showAboutCommand;
         private readonly ICommand showSettingsCommand;
 
+        private bool isLoggedIn;
+        private double opacity = 0;
+
         public HomeViewModel() {  }
 
         public HomeViewModel(IUserService userService, ILogonService logonService, 
-            INavigationService navigationService, IResourceLoader resourceLoader)
+            INavigationService navigationService, IResourceLoader resourceLoader,
+            ITimerService timerService)
         {
             this.userService = userService;
             this.navigationService = navigationService;
             this.logonService = logonService;
             this.resourceLoader = resourceLoader;
+            this.timerService = timerService;
 
             this.showAboutCommand = new ShowAboutCommand(navigationService);
             this.showSettingsCommand = new ShowSettingsCommand(navigationService);
 
             Feed.PropertyChanged += OnChildVMPropertyChanged;
+
+            IsLoggedIn = (this.logonService.Session != null);
+            Opacity = IsLoggedIn ? 0 : 0.15;
         }
 
         public int NewNotificationCount
         {
             get { throw new NotImplementedException(); }
+        }
+
+        public bool IsLoggedIn
+        {
+            get
+            {
+                return this.isLoggedIn;
+            }
+            private set
+            {
+                SetProperty(ref this.isLoggedIn, value);
+            }
+        }
+
+        public double Opacity
+        {
+            get
+            {
+                return this.opacity;
+            }
+            private set
+            {
+                SetProperty(ref this.opacity, value);
+            }
         }
 
         public FeedViewModel Feed
@@ -64,6 +98,19 @@ namespace Epiphany.ViewModel
                 }
 
                 return this.launcherVM;
+            }
+        }
+
+        public SpotlightViewModel Spotlight
+        {
+            get
+            {
+                if (this.spotlightVM == null)
+                {
+                    this.spotlightVM = new SpotlightViewModel(this.timerService);
+                }
+
+                return this.spotlightVM;
             }
         }
 

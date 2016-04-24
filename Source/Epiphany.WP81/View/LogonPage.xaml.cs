@@ -21,8 +21,12 @@ namespace Epiphany.View
         protected override void OnViewModelDone(object sender, EventArgs e)
         {
             base.OnViewModelDone(sender, e);
-            Logger.LogDebug("Navigating to HomePage");
-            Frame.Navigate(typeof(HomePage));
+            Logger.LogDebug("Navigating Back");
+            
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
         }
 
         private async void OnWebViewNavigationStarting(object sender, WebViewNavigationStartingEventArgs e)

@@ -386,7 +386,7 @@
             <x:Int32 x:Key="PivotHeaderItemCharacterSpacing">0</x:Int32>
             <!--Use 19,16,19,0 thickness if you prefer the default left/right margins-->
             <!--<Thickness x:Key="PivotItemMargin">19,16,19,0</Thickness>-->
-            <Thickness x:Key="PivotItemMargin">12,16,0,0</Thickness>
+            <Thickness x:Key="PivotItemMargin">0,0,0,0</Thickness>
             <Thickness x:Key="PivotHeaderItemMargin">19,-6.5,5,0</Thickness>
 
             <Style TargetType="Pivot">

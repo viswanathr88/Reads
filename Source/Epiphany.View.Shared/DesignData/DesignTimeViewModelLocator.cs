@@ -73,6 +73,8 @@ namespace Epiphany.View.DesignData
             {
                 var vm = new HomeViewModel();
                 vm.SetValue(nameof(HomeViewModel.IsLoading), true);
+                vm.SetValue(nameof(HomeViewModel.IsLoggedIn), false);
+                vm.SetValue(nameof(HomeViewModel.Opacity), 0.15);
                 return vm;
             }
         }
