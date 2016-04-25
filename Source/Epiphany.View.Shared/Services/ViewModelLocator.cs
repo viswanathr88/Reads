@@ -112,6 +112,14 @@ namespace Epiphany.View.Services
             get { return this.locatorImpl.Book; }
         }
 
+        public ScanViewModel Scanner
+        {
+            get
+            {
+                return this.locatorImpl.Scanner;
+            }
+        }
+
         public void Dispose()
         {
             locatorImpl.Dispose();

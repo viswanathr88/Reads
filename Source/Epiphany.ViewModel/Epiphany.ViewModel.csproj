@@ -38,10 +38,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-    <None Include="project.json" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
@@ -127,6 +123,7 @@
     <Compile Include="Commands\Navigation\ShowFriendsCommand.cs" />
     <Compile Include="Data\ProfileViewModel.cs" />
     <Compile Include="Data\EventsViewModel.cs" />
+    <Compile Include="Data\ScanViewModel.cs" />
     <Compile Include="Data\SpotlightItemViewModel.cs" />
     <Compile Include="Data\SpotlightViewModel.cs" />
     <Compile Include="Items\AuthorItemViewModel.cs" />

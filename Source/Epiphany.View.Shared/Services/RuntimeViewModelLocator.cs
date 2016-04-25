@@ -1,4 +1,5 @@
-﻿using Epiphany.Logging;
+﻿using System;
+using Epiphany.Logging;
 using Epiphany.Model.Authentication;
 using Epiphany.Model.Services;
 using Epiphany.Model.Settings;
@@ -150,6 +151,14 @@ namespace Epiphany.View.Services
             get
             {
                 return this.navigationService;
+            }
+        }
+
+        public ScanViewModel Scanner
+        {
+            get
+            {
+                return new ScanViewModel();
             }
         }
 

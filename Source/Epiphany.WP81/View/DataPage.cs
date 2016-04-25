@@ -32,8 +32,33 @@ namespace Epiphany.View
                 return;
             }
 
+            Logger.LogInfo("Loading ViewModel for " + GetType().ToString());
             await vm.LoadAsync(e.Parameter);
-            Logger.LogDebug("LoadAsync returned");
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+
+            if (e.NavigationMode == NavigationMode.Back)
+            {
+                if (DataContext == null)
+                {
+                    Logger.LogWarn("DataContext is null");
+                    return;
+                }
+
+                IDisposable vm = DataContext as IDisposable;
+
+                if (vm == null)
+                {
+                    Logger.LogWarn("VM does not implement IDisposable");
+                    return;
+                }
+
+                Logger.LogInfo("Disposing ViewModel for " + GetType().ToString());
+                vm.Dispose();
+            }
         }
 
         protected void RegisterDoneEvent()

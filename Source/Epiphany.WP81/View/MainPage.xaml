@@ -94,7 +94,8 @@
                               Icon="Find"
                               Click="OnSearchButtonClicked"/>
                 <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonScanText}"
-                              Icon="Camera" />
+                              Icon="Camera"
+                              Click="OnScanButtonClicked"/>
             </CommandBar.PrimaryCommands>
             <CommandBar.SecondaryCommands>
                 <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonSettingsText}" />

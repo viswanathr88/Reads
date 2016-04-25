@@ -30,6 +30,8 @@ namespace Epiphany.View.Services
 
         BookViewModel Book { get; }
 
+        ScanViewModel Scanner { get; }
+
         //BookshelvesViewModel Bookshelves { get; }
 
         SettingsViewModel Settings { get; }

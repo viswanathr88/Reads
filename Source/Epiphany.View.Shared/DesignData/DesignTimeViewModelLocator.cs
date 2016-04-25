@@ -109,6 +109,16 @@ namespace Epiphany.View.DesignData
             }
         }
 
+        public ScanViewModel Scanner
+        {
+            get
+            {
+                var vm = new ScanViewModel();
+                vm.LoadAsync(VoidType.Empty);
+                return vm;
+            }
+        }
+
         public SearchViewModel Search
         {
             get

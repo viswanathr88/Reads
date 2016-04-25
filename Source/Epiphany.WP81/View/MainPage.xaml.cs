@@ -18,5 +18,10 @@ namespace Epiphany.View
         {
             Frame.Navigate(typeof(SearchPage));
         }
+
+        private void OnScanButtonClicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(ScanPage));
+        }
     }
 }
