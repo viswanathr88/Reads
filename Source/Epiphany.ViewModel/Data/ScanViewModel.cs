@@ -13,8 +13,6 @@ namespace Epiphany.ViewModel
         private MediaCapture mediaCapture;
         private CaptureElement captureElement;
 
-        private bool isInitialized = false; 
-
         public ScanViewModel()
         {
             CaptureElement = new CaptureElement()
@@ -103,7 +101,6 @@ namespace Epiphany.ViewModel
             try
             {
                 await mediaCapture.InitializeAsync(settings);
-                isInitialized = true;
             }
             catch (UnauthorizedAccessException ex)
             {
@@ -140,8 +137,6 @@ namespace Epiphany.ViewModel
                 MediaCapture.Dispose();
                 MediaCapture = null;
             }
-
-            isInitialized = false;
         }
 
         public override void Dispose()

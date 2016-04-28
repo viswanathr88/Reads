@@ -59,7 +59,7 @@
                        Style="{StaticResource ListViewEmptyStaticTextBlockStyle}" />
 
             <!-- Search results -->
-            <ListView ItemsSource="{Binding SearchResults2}"
+            <ListView ItemsSource="{Binding SearchResults}"
                       SelectionMode="Single"
                       x:Name="searchResultsList">
                 <ListView.ItemContainerTransitions>

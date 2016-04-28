@@ -1,34 +1,72 @@
-﻿using Epiphany.View.DesignData;
+﻿using Epiphany.Logging;
+using Epiphany.Model.Authentication;
+using Epiphany.Model.Services;
+using Epiphany.Model.Settings;
 using Epiphany.ViewModel;
 using Epiphany.ViewModel.Services;
+using Epiphany.Web;
 using Windows.ApplicationModel;
 
 namespace Epiphany.View.Services
 {
-    public sealed class ViewModelLocator : IViewModelLocator
+    public sealed class ViewModelLocator
     {
-        private readonly IViewModelLocator locatorImpl;
+        private readonly ServiceFactory serviceFactory;
+        private readonly INavigationService navigationService;
+        private readonly ITimerService timerService;
+        private readonly IDeviceServices deviceServices;
+        private readonly IResourceLoader resourceLoader;
+
+        private LogonViewModel logonVM;
+        private HomeViewModel homeVM;
 
         public ViewModelLocator()
         {
+
             if (DesignMode.DesignModeEnabled)
             {
-                // Use the DesignViewModelLocator for blendability
-                this.locatorImpl = new DesignTimeViewModelLocator();
-            }
-            else
-            {
-                // Use the RuntimeViewModelLocator
-                this.locatorImpl = new RuntimeViewModelLocator();
+                return;
             }
 
+            // Setup logging
+            SetupLogging();
+
+            // Set SettingStore as the backing store for AppSettings
+            ApplicationSettings.Instance.Store = new SettingStorage();
+
+            AuthenticatorFactory factory = new AuthenticatorFactory();
+            this.serviceFactory = new ServiceFactory(factory);
+
+            // Get the Logon service
+            ILogonService logonService = this.serviceFactory.GetLogonService();
+
+            // Register Authentication factory for TokenChanged events
+            logonService.TokenChanged += factory.OnTokenChanged;
+
+            // If token is already available, call OnTokenChanged on AuthenticatorFactory
+            if (logonService.ActiveToken != null)
+            {
+                factory.OnTokenChanged(logonService, new TokenChangedEventArgs(logonService.ActiveToken, null));
+            }
+
+            // Set up services
+            this.navigationService = new NavigationService();
+            this.timerService = new TimerService();
+            this.deviceServices = new DeviceServices();
+            //this.resourceLoader = new ResourceLoader();
         }
 
-        public INavigationService NavigationService
+        public HomeViewModel Home
         {
             get
             {
-                return this.locatorImpl.NavigationService;
+                if (this.homeVM == null)
+                {
+                    this.homeVM = new HomeViewModel(this.serviceFactory.GetUserService(), this.serviceFactory.GetLogonService(), 
+                        this.navigationService, this.resourceLoader, this.timerService);
+                }
+
+                return this.homeVM;
             }
         }
 
@@ -36,31 +74,12 @@ namespace Epiphany.View.Services
         {
             get
             {
-                return this.locatorImpl.Logon;
-            }
-        }
+                if (this.logonVM == null)
+                {
+                    this.logonVM = new LogonViewModel(this.serviceFactory.GetLogonService(), this.timerService);
+                }
 
-        public HomeViewModel Home
-        {
-            get
-            {
-                return this.locatorImpl.Home;
-            }
-        }
-
-        public AboutViewModel About
-        {
-            get
-            {
-                return this.locatorImpl.About;
-            }
-        }
-
-        public AddBookViewModel AddBook
-        {
-            get
-            {
-                return this.locatorImpl.AddBook;
+                return this.logonVM;
             }
         }
 
@@ -68,61 +87,102 @@ namespace Epiphany.View.Services
         {
             get
             {
-                return this.locatorImpl.Profile;
+                return new ProfileViewModel(
+                    this.serviceFactory.GetUserService(), 
+                    this.serviceFactory.GetBookshelfService(), 
+                    this.navigationService,
+                    this.deviceServices,
+                    this.resourceLoader);
+            }
+        }
+
+        public AboutViewModel About
+        {
+            get
+            {
+                return new AboutViewModel(this.deviceServices);
+            }
+        }
+
+        public AddBookViewModel AddBook
+        {
+            get
+            {
+                return new AddBookViewModel(
+                    this.serviceFactory.GetLogonService(),
+                    this.serviceFactory.GetBookService(),
+                    this.serviceFactory.GetBookshelfService(),
+                    this.navigationService
+                    );
             }
         }
 
         public BooksViewModel Books
         {
-            get
-            {
-                return this.locatorImpl.Books;
-            }
+            get { return new BooksViewModel(); }
         }
 
         public FriendsViewModel Friends
         {
-            get { return this.locatorImpl.Friends; }
+            get { return new FriendsViewModel(this.serviceFactory.GetUserService(), this.navigationService, this.resourceLoader); }
         }
 
         public EventsViewModel Events
         {
-            get { return this.locatorImpl.Events; }
+            get { return new EventsViewModel(this.serviceFactory.GetEventService(), this.deviceServices); }
         }
 
         public SearchViewModel Search
         {
-            get { return this.locatorImpl.Search; }
+            get { return new SearchViewModel(this.serviceFactory.GetBookService(), this.navigationService); }
         }
-
 
         public AuthorViewModel Author
         {
-            get { return this.locatorImpl.Author; }
+            get { return new AuthorViewModel(this.serviceFactory.GetAuthorService(), this.serviceFactory.GetBookService(), this.navigationService); }
         }
-
 
         public SettingsViewModel Settings
         {
-            get { return this.locatorImpl.Settings; }
+            get { return new SettingsViewModel(); }
         }
 
         public BookViewModel Book
         {
-            get { return this.locatorImpl.Book; }
+            get { return new BookViewModel(); }
+        }
+
+        public INavigationService NavigationService
+        {
+            get
+            {
+                return this.navigationService;
+            }
         }
 
         public ScanViewModel Scanner
         {
             get
             {
-                return this.locatorImpl.Scanner;
+                return new ScanViewModel();
+            }
+        }
+
+        /// <summary>
+        /// Setup logging
+        /// </summary>
+        private void SetupLogging()
+        {
+            if (Logger.Writers.Count == 0)
+            {
+                Logger.Writers.Add(new DebugConsoleWriter());
+                Logger.LogDebug("Logging setup completed");
             }
         }
 
         public void Dispose()
         {
-            locatorImpl.Dispose();
+
         }
     }
 }

@@ -16,7 +16,6 @@ namespace Epiphany.ViewModel
     {
         private IList<BookSearchType> searchFilters;
         private IList<SearchResultItemViewModel> searchResults;
-        private IList<SearchResultItemViewModel> searchResults2;
         private BookSearchType selectedFilter;
         private bool hasResults = true;
         private SearchResultItemViewModel selectedResult;
@@ -26,8 +25,6 @@ namespace Epiphany.ViewModel
         private readonly ICommand<BookItemViewModel> showBookCommand;
         private readonly INavigationService navService;
         private readonly IBookService bookService;
-
-        public SearchViewModel() { }
 
         public SearchViewModel(IBookService bookService, INavigationService navService)
         {
@@ -86,17 +83,6 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<SearchResultItemViewModel> SearchResults2
-        {
-            get { return this.searchResults2; }
-            private set
-            {
-                if (this.searchResults2 == value) return;
-                this.searchResults2 = value;
-                RaisePropertyChanged();
-            }
-        }
-
         public SearchResultItemViewModel SelectedResult
         {
             get { return this.selectedResult; }
@@ -136,7 +122,7 @@ namespace Epiphany.ViewModel
             if (!string.IsNullOrEmpty(SearchTerm))
             {
                 var collection = this.bookService.Find(SelectedFilter, SearchTerm);
-                SearchResults2 = new ObservablePagedCollection<SearchResultItemViewModel, WorkModel>
+                SearchResults = new ObservablePagedCollection<SearchResultItemViewModel, WorkModel>
                     (collection, ConvertToVM);
             }
         }
