@@ -87,6 +87,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Epiphany.DesignData\Epiphany.DesignData.csproj">
+      <Project>{c48c7089-9962-4628-b96b-6bbaaaea1e9a}</Project>
+      <Name>Epiphany.DesignData</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Epiphany.Model\Epiphany.Model.csproj">
       <Project>{d4ededd9-ccd4-43d9-821b-9731c187802e}</Project>
       <Name>Epiphany.Model</Name>
