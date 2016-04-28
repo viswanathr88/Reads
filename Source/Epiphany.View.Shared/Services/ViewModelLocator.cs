@@ -1,6 +1,5 @@
 ﻿using Epiphany.View.DesignData;
 using Epiphany.ViewModel;
-using Epiphany.ViewModel.Services;
 using Windows.ApplicationModel;
 
 namespace Epiphany.View.Services
@@ -22,14 +21,6 @@ namespace Epiphany.View.Services
                 this.locatorImpl = new RuntimeViewModelLocator();
             }
 
-        }
-
-        public INavigationService NavigationService
-        {
-            get
-            {
-                return this.locatorImpl.NavigationService;
-            }
         }
 
         public LogonViewModel Logon

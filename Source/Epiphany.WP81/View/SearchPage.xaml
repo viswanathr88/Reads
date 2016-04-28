@@ -6,7 +6,8 @@
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                 mc:Ignorable="d"
                 Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-                DataContext="{Binding Source={StaticResource VMLocator}, Path=Search}">
+                DataContext="{Binding Source={StaticResource VMLocator}, Path=Search}"
+                d:DataContext="{d:DesignData /SampleData/SearchViewModelSampleData.xaml}">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -32,7 +33,7 @@
                 <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchFilterHeader}"
                            Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
                            Foreground="{ThemeResource ApplicationForegroundThemeBrush}"/>
-
+                
                 <TextBlock Text="{Binding SelectedFilter}"
                            Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
                            Margin="15,0,0,0"

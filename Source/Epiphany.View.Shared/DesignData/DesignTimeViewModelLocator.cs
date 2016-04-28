@@ -1,13 +1,6 @@
 ﻿using Epiphany.View.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Epiphany.ViewModel;
-using Epiphany.ViewModel.Services;
-using Epiphany.ViewModel.Items;
-using Epiphany.Model;
+using System;
 
 namespace Epiphany.View.DesignData
 {
@@ -17,7 +10,7 @@ namespace Epiphany.View.DesignData
         {
             get
             {
-                return new AboutViewModel();
+                return null;
             }
         }
 
@@ -25,7 +18,7 @@ namespace Epiphany.View.DesignData
         {
             get
             {
-                throw new NotImplementedException();
+                return null;
             }
         }
 
@@ -33,7 +26,7 @@ namespace Epiphany.View.DesignData
         {
             get
             {
-                throw new NotImplementedException();
+                return null;
             }
         }
 
@@ -73,11 +66,7 @@ namespace Epiphany.View.DesignData
         {
             get
             {
-                var vm = new HomeViewModel();
-                vm.SetValue(nameof(HomeViewModel.IsLoading), true);
-                vm.SetValue(nameof(HomeViewModel.IsLoggedIn), false);
-                vm.SetValue(nameof(HomeViewModel.Opacity), 0.15);
-                return vm;
+                throw new NotImplementedException();
             }
         }
 
@@ -85,19 +74,7 @@ namespace Epiphany.View.DesignData
         {
             get
             {
-                var vm = new LogonViewModel();
-                vm.SetValue(nameof(LogonViewModel.IsWaitingForUserInteraction), false);
-                vm.SetValue(nameof(LogonViewModel.IsSignInTakingLonger), true);
-                vm.SetValue(nameof(LogonViewModel.Error), new object());
-                return vm;
-            }
-        }
-
-        public INavigationService NavigationService
-        {
-            get
-            {
-                return null;
+                throw new NotImplementedException();
             }
         }
 
@@ -113,9 +90,7 @@ namespace Epiphany.View.DesignData
         {
             get
             {
-                var vm = new ScanViewModel();
-                vm.LoadAsync(VoidType.Empty);
-                return vm;
+                throw new NotImplementedException();
             }
         }
 
@@ -123,10 +98,7 @@ namespace Epiphany.View.DesignData
         {
             get
             {
-                var vm = new SearchViewModel();
-                vm.SetValue(nameof(SearchViewModel.HasResults), true);
-
-                return vm;
+                return null;
             }
         }
 

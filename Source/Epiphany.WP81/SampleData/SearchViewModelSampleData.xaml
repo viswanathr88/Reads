@@ -1,0 +1,430 @@
+﻿<ViewModel:SearchViewModel xmlns:ViewModel="using:Epiphany.ViewModel" xmlns:Items="using:Epiphany.ViewModel.Items" xmlns:Model="using:Epiphany.Model" xmlns:Services="using:Epiphany.Model.Services" HasResults="True" IsLoaded="True" IsLoading="False" SelectedFilter="Author" SearchTerm="Class vestibulum adipiscing cras aliquam">
+	<ViewModel:SearchViewModel.Parameter>
+		<ViewModel:VoidType>
+			<ViewModel:VoidType.Empty>
+				<ViewModel:VoidType>
+					<ViewModel:VoidType.Empty>
+						<ViewModel:VoidType/>
+					</ViewModel:VoidType.Empty>
+				</ViewModel:VoidType>
+			</ViewModel:VoidType.Empty>
+		</ViewModel:VoidType>
+	</ViewModel:SearchViewModel.Parameter>
+	<ViewModel:SearchViewModel.SearchResults>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="61" IsSelected="False" Name="Bibendum dictumst">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="719.83" About="Faucibus habitant" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="91" Gender="Proin inceptos ligula" Hometown="Fringilla augue elit adipiscing" Id="95" ImageUrl="Morbi facilisi" Influences="Feugiat nulla" Link="Eleifend lorem est vestibulum fermentum" Name="Lectus facilisis libero" RatingsCount="14" TextReviewsCount="66" WorksCount="21"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="924.06" Id="92" ImageUrl="Nunc nam vivamus phasellus" IsSelected="True" Title="Duis integer quisque aenean curabitur">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="820.77" Description="Vestibulum etiam" EditionInformation="Dis egestas euismod congue" Format="Vestibulum dictum" ISBN13="Blandit commodo conubia cubilia" Id="77" ISBN="Auctor sed maecenas convallis parturient" IsEbook="False" ImageUrl="Dapibus donec dignissim ante arcu" Link="Adipiscing fusce parturient" NumberOfPages="71" Publisher="Diam elementum" PublicationDate="04/27/2016 19:12:34" RatingsCount="52" TextReviewsCount="83" Title="Aptent amet curae consequat aliquet" Url="Cursus eget vestibulum praesent accumsan"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="82" IsSelected="True" Name="Mauris aliquam nullam"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="23" IsSelected="False" Name="Montes imperdiet nunc malesuada">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="779.21" About="Sed sem porttitor orci" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="26" Gender="Pede massa tincidunt" Hometown="Potenti tristique" Id="50" ImageUrl="Lorem posuere odio penatibus" Influences="Magna sit torquent" Link="Nostra lacus suscipit" Name="Natoque per sociosqu parturient" RatingsCount="60" TextReviewsCount="67" WorksCount="54"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="521.56" Id="43" ImageUrl="Dolor habitasse lobortis" IsSelected="True" Title="Parturient interdum litora vestibulum">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="834.48" Description="Pulvinar sagittis" EditionInformation="Mollis nisi" Format="Ipsum justo" ISBN13="Felis erat hac adipiscing" Id="20" ISBN="Nascetur magnis" IsEbook="False" ImageUrl="Pharetra hendrerit eros placerat mattis" Link="Laoreet nisl nec himenaeos non" NumberOfPages="25" Publisher="Nibh leo mauris" PublicationDate="04/27/2016 19:12:34" RatingsCount="45" TextReviewsCount="89" Title="Enim luctus" Url="Mus lacinia senectus"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="15" IsSelected="True" Name="Fames gravida iaculis vestibulum"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="17" IsSelected="False" Name="Rutrum aliquam">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="211.02" About="Risus non velit sociis" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="23" Gender="Aliquet blandit" Hometown="Dictumst commodo ante vestibulum arcu" Id="75" ImageUrl="Vestibulum dignissim nec quisque nunc" Influences="Amet vivamus per aliquam elementum" Link="Porta integer purus semper" Name="Sapien mus" RatingsCount="91" TextReviewsCount="11" WorksCount="35"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="612.7" Id="77" ImageUrl="Nam pretium morbi" IsSelected="True" Title="Vel quam metus ornare">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="916.36" Description="Curabitur praesent" EditionInformation="Adipiscing hac" Format="Consequat duis convallis" ISBN13="Sed sodales" Id="42" ISBN="Volutpat quis urna rhoncus venenatis" IsEbook="False" ImageUrl="Maecenas cras vestibulum dis" Link="Leo phasellus bibendum" NumberOfPages="30" Publisher="Vulputate est netus" PublicationDate="04/27/2016 19:12:34" RatingsCount="72" TextReviewsCount="80" Title="Vestibulum ultricies" Url="Parturient nulla viverra accumsan"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="14" IsSelected="True" Name="Neque platea primis ultrices vehicula"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="12" IsSelected="False" Name="Est lorem">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="950.05" About="Laoreet lobortis natoque" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="55" Gender="Nascetur mus" Hometown="Nec non vestibulum malesuada pharetra" Id="80" ImageUrl="Nulla parturient proin hendrerit himenaeos" Influences="Imperdiet mauris vestibulum erat" Link="Lacinia morbi varius leo aenean" Name="Hac turpis" RatingsCount="86" TextReviewsCount="31" WorksCount="48"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="144.1" Id="68" ImageUrl="Class conubia cubilia" IsSelected="True" Title="Vitae facilisis adipiscing parturient fermentum">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="666.57" Description="Vel habitasse tempus faucibus" EditionInformation="Donec etiam fusce" Format="Interdum gravida iaculis dis" ISBN13="Diam eget egestas" Id="45" ISBN="Sem tellus" IsEbook="False" ImageUrl="Fringilla tempor euismod elit" Link="Sed feugiat" NumberOfPages="64" Publisher="Sit enim facilisi" PublicationDate="04/27/2016 19:12:34" RatingsCount="70" TextReviewsCount="45" Title="Curae eleifend sed" Url="Habitant adipiscing nam inceptos tortor"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="52" IsSelected="True" Name="Vestibulum dapibus taciti vestibulum"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="51" IsSelected="False" Name="Magna aptent curabitur parturient">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="256.94" About="Torquent aliquam congue integer" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="41" Gender="Nec metus quis vestibulum dictum" Hometown="Elementum non" Id="79" ImageUrl="Sociosqu suscipit auctor quam viverra" Influences="Quisque dignissim massa cursus" Link="Pede mus" Name="Phasellus consequat hac leo convallis" RatingsCount="31" TextReviewsCount="74" WorksCount="24"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="432.23" Id="19" ImageUrl="Sem sit vestibulum posuere potenti" IsSelected="True" Title="Eros per sed adipiscing parturient">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="153.96" Description="Sagittis tincidunt ipsum justo adipiscing" EditionInformation="Lacus tristique" Format="Venenatis vulputate est" ISBN13="Dolor vel vestibulum nam" Id="74" ISBN="Placerat nunc porttitor parturient" IsEbook="False" ImageUrl="Pulvinar vestibulum fames" Link="Sodales lorem senectus" NumberOfPages="52" Publisher="Odio sed felis pretium nullam" PublicationDate="04/27/2016 19:12:34" RatingsCount="20" TextReviewsCount="28" Title="Vestibulum adipiscing penatibus" Url="Ultricies rhoncus orci dis"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="73" IsSelected="True" Name="Nibh nisi nisl augue"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="69" IsSelected="False" Name="Accumsan hac">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="203.64" About="Feugiat risus vestibulum" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="51" Gender="Iaculis erat mus" Hometown="Penatibus vestibulum class nec" Id="46" ImageUrl="Malesuada purus" Influences="Ligula bibendum velit gravida vitae" Link="Enim leo" Name="Lectus euismod elit libero" RatingsCount="50" TextReviewsCount="76" WorksCount="13"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="458.32" Id="57" ImageUrl="Vestibulum fermentum aliquam fringilla" IsSelected="True" Title="Urna vivamus per facilisis">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="893.32" Description="Nam volutpat sed dis himenaeos" EditionInformation="Est dapibus" Format="Nulla diam porta egestas eget" ISBN13="Neque amet" Id="52" ISBN="Vehicula habitasse parturient aliquet sit" IsEbook="False" ImageUrl="Blandit commodo" Link="Arcu praesent" NumberOfPages="21" Publisher="Vel netus hendrerit conubia cubilia" PublicationDate="04/27/2016 19:12:34" RatingsCount="78" TextReviewsCount="97" Title="Ultrices sem adipiscing" Url="Maecenas ante imperdiet"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="88" IsSelected="True" Name="Sed morbi cras duis nunc"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="12" IsSelected="False" Name="Nostra ornare morbi">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="540.25" About="Adipiscing parturient quam quis augue" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="90" Gender="Sed laoreet" Hometown="Urna dis vestibulum rutrum cras" Id="17" ImageUrl="Pede vestibulum" Influences="Primis dignissim elementum facilisis" Link="Convallis nulla proin habitant" Name="Platea nam" RatingsCount="50" TextReviewsCount="63" WorksCount="82"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="233.74" Id="55" ImageUrl="Adipiscing non nibh" IsSelected="True" Title="Lacinia eros litora curae">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="264.82" Description="Mattis sit" EditionInformation="Vulputate vel nunc mauris" Format="Montes parturient consequat vestibulum orci" ISBN13="Eleifend vestibulum donec etiam" Id="21" ISBN="Tristique sed sem" IsEbook="False" ImageUrl="Fusce luctus" Link="Lorem mollis" NumberOfPages="81" Publisher="Magnis ultricies adipiscing venenatis" PublicationDate="04/27/2016 19:12:34" RatingsCount="18" TextReviewsCount="57" Title="Porttitor nisi per tincidunt nisl" Url="Facilisi odio curabitur faucibus phasellus"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="52" IsSelected="True" Name="Parturient vestibulum dictumst"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="60" IsSelected="False" Name="Vestibulum turpis penatibus porttitor sed">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="506.87" About="Mauris nullam diam aptent" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="47" Gender="Auctor lacus" Hometown="Adipiscing vel" Id="56" ImageUrl="Arcu aenean sit justo" Influences="Eget elit sagittis" Link="Ultricies sem pulvinar varius" Name="Ante tincidunt tristique" RatingsCount="85" TextReviewsCount="23" WorksCount="78"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="604.88" Id="89" ImageUrl="Posuere dolor" IsSelected="True" Title="Sapien natoque vestibulum semper sociis">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="673.55" Description="Adipiscing nec non per amet" EditionInformation="Parturient felis ipsum" Format="Pharetra malesuada placerat" ISBN13="Fringilla habitasse tempor duis" Id="69" ISBN="Hac leo fermentum" IsEbook="False" ImageUrl="Hendrerit inceptos interdum" Link="Nascetur imperdiet pretium tortor" NumberOfPages="95" Publisher="Nunc mus" PublicationDate="04/27/2016 19:12:34" RatingsCount="61" TextReviewsCount="50" Title="Tellus est" Url="Tempus potenti lobortis vestibulum himenaeos"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="97" IsSelected="True" Name="Fames taciti"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="76" IsSelected="False" Name="Odio neque vehicula volutpat netus">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="306.23" About="Praesent parturient mauris accumsan phasellus" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="69" Gender="Convallis conubia nulla porta" Hometown="Bibendum pede dignissim elementum" Id="75" ImageUrl="Nec aliquet blandit commodo" Influences="Consequat vestibulum" Link="Maecenas aliquam" Name="Vivamus mus orci" RatingsCount="16" TextReviewsCount="64" WorksCount="96"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="774.56" Id="34" ImageUrl="Parturient cursus erat" IsSelected="True" Title="Enim rhoncus senectus congue nam">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="140.31" Description="Venenatis vulputate litora luctus nisi" EditionInformation="Dis suscipit nisl est" Format="Quisque hac leo mattis" ISBN13="Metus sociosqu ligula sodales" Id="79" ISBN="Massa vestibulum" IsEbook="False" ImageUrl="Viverra nibh adipiscing" Link="Curabitur nunc" NumberOfPages="58" Publisher="Aliquam morbi integer" PublicationDate="04/27/2016 19:12:34" RatingsCount="95" TextReviewsCount="27" Title="Sed vestibulum eros lectus libero" Url="Torquent ultrices magnis"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="34" IsSelected="True" Name="Dictum lorem magna"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="96" IsSelected="False" Name="Duis parturient fusce sed platea">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="424.32" About="Adipiscing leo rutrum" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="16" Gender="Parturient posuere" Hometown="Potenti mus nec vestibulum" Id="10" ImageUrl="Morbi himenaeos hac" Influences="Facilisi imperdiet faucibus amet natoque" Link="Dis vestibulum vestibulum lorem est" Name="Primis nunc hendrerit laoreet" RatingsCount="13" TextReviewsCount="89" WorksCount="35"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="729.47" Id="93" ImageUrl="Non dapibus purus" IsSelected="True" Title="Quam vestibulum cubilia">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="803.44" Description="Habitasse ornare vitae dictumst" EditionInformation="Class curae donec" Format="Vel cras eleifend nam etiam" ISBN13="Sed sem egestas" Id="83" ISBN="Montes vestibulum nostra" IsEbook="False" ImageUrl="Sit quis fermentum vestibulum fringilla" Link="Iaculis lacinia" NumberOfPages="84" Publisher="Adipiscing urna risus euismod velit" PublicationDate="04/27/2016 19:12:34" RatingsCount="12" TextReviewsCount="28" Title="Per mollis parturient" Url="Feugiat gravida"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="42" IsSelected="True" Name="Adipiscing facilisis"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+	</ViewModel:SearchViewModel.SearchResults>
+	<ViewModel:SearchViewModel.SelectedResult>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="59" IsSelected="False" Name="Accumsan per">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="786.7" About="Vestibulum malesuada eleifend sed facilisi" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="77" Gender="Sem euismod sit class" Hometown="Vestibulum ante" Id="72" ImageUrl="Nullam dictumst" Influences="Risus aptent velit vitae amet" Link="Dapibus mauris egestas" Name="Purus imperdiet nunc bibendum" RatingsCount="72" TextReviewsCount="35" WorksCount="97"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="883.23" Id="36" ImageUrl="Torquent dis aliquam neque adipiscing" IsSelected="True" Title="Tempor pede tempus morbi">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="212.92" Description="Nulla adipiscing aliquet turpis maecenas" EditionInformation="Urna porta varius praesent himenaeos" Format="Duis cubilia" ISBN13="Fermentum fringilla vestibulum habitasse mus" Id="48" ISBN="Facilisis quis vestibulum ultrices" IsEbook="False" ImageUrl="Nec vehicula" Link="Parturient cras conubia" NumberOfPages="24" Publisher="Volutpat hendrerit" PublicationDate="04/27/2016 19:12:34" RatingsCount="58" TextReviewsCount="96" Title="Hac tortor netus leo" Url="Non aenean blandit commodo"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="58" IsSelected="True" Name="Parturient quam est elementum"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+	</ViewModel:SearchViewModel.SelectedResult>
+	<ViewModel:SearchViewModel.SearchResults2>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="68" IsSelected="False" Name="Nibh pharetra vestibulum turpis">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="355.04" About="Nam sagittis sed justo" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="70" Gender="Venenatis blandit nisl" Hometown="Senectus nunc lacus" Id="33" ImageUrl="Nisi ultricies varius" Influences="Aliquam aliquet" Link="Placerat pulvinar" Name="Ipsum vel" RatingsCount="34" TextReviewsCount="84" WorksCount="39"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="172.16" Id="57" ImageUrl="Vestibulum semper adipiscing sociis arcu" IsSelected="True" Title="Ante malesuada sapien penatibus nulla">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="238.24" Description="Parturient quisque inceptos tempus sed" EditionInformation="Interdum erat porttitor fames" Format="Eros nascetur tortor tristique" ISBN13="Sodales viverra" Id="39" ISBN="Eget habitant per elit" IsEbook="False" ImageUrl="Aliquam tellus" Link="Sit lobortis felis" NumberOfPages="11" Publisher="Dolor enim tempor integer" PublicationDate="04/27/2016 19:12:34" RatingsCount="44" TextReviewsCount="90" Title="Augue taciti diam rhoncus" Url="Sem tincidunt vivamus"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="18" IsSelected="True" Name="Pretium non proin"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="21" IsSelected="False" Name="Phasellus lectus cubilia">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="751.83" About="Maecenas ante egestas praesent" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="83" Gender="Risus adipiscing parturient vestibulum" Hometown="Dignissim velit nec" Id="17" ImageUrl="Amet convallis mus luctus volutpat" Influences="Arcu purus magnis" Link="Dapibus nulla porta litora" Name="Libero ligula nunc consequat" RatingsCount="29" TextReviewsCount="67" WorksCount="42"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="917.23" Id="63" ImageUrl="Commodo orci adipiscing" IsSelected="True" Title="Lorem odio vestibulum">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="114.39" Description="Torquent neque leo" EditionInformation="Quis urna vestibulum auctor" Format="Vestibulum dictum vehicula duis netus" ISBN13="Nullam morbi dis vestibulum est" Id="93" ISBN="Metus vulputate vestibulum pede mauris" IsEbook="False" ImageUrl="Adipiscing parturient hac aptent" Link="Congue cursus conubia curabitur" NumberOfPages="73" Publisher="Suscipit quam" PublicationDate="04/27/2016 19:12:34" RatingsCount="12" TextReviewsCount="74" Title="Parturient massa" Url="Ultrices cras"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="17" IsSelected="True" Name="Magna aenean sociosqu"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="31" IsSelected="False" Name="Parturient lorem iaculis">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="647.8" About="Augue vestibulum dolor fringilla fames" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="30" Gender="Est laoreet natoque hac" Hometown="Vestibulum adipiscing habitasse" Id="18" ImageUrl="Lacinia proin orci" Influences="Semper sociis taciti" Link="Odio nulla" Name="Interdum morbi fermentum sapien" RatingsCount="58" TextReviewsCount="47" WorksCount="45"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="689.32" Id="85" ImageUrl="Dictumst eget euismod vitae" IsSelected="True" Title="Accumsan diam elementum bibendum">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="527.21" Description="Nibh vel nisi donec faucibus" EditionInformation="Nisl ornare nam platea" Format="Rutrum dis" ISBN13="Sem enim erat" Id="16" ISBN="Facilisi mattis sed" IsEbook="False" ImageUrl="Sit mauris eros mollis" Link="Habitant fusce gravida inceptos" NumberOfPages="28" Publisher="Adipiscing curae montes nostra" PublicationDate="04/27/2016 19:12:34" RatingsCount="94" TextReviewsCount="88" Title="Eleifend non elit per" Url="Nunc sed primis etiam"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="57" IsSelected="True" Name="Facilisis vestibulum class feugiat"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="45" IsSelected="False" Name="Aenean adipiscing arcu parturient mauris">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="455.81" About="Eget vel magna vestibulum" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="68" Gender="Massa nam vivamus pharetra metus" Hometown="Placerat sed ultricies" Id="21" ImageUrl="Aptent auctor viverra" Influences="Aliquam integer congue quisque" Link="Lorem tristique nullam diam" Name="Sem tincidunt vestibulum sit" RatingsCount="60" TextReviewsCount="49" WorksCount="58"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="703.99" Id="78" ImageUrl="Himenaeos potenti" IsSelected="True" Title="Hendrerit felis pede posuere">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="450.28" Description="Justo adipiscing non" EditionInformation="Lacus malesuada sodales penatibus tortor" Format="Ante vestibulum" ISBN13="Duis vestibulum" Id="94" ISBN="Urna leo cras tempus" IsEbook="False" ImageUrl="Imperdiet rhoncus mus" Link="Turpis nascetur sed varius amet" NumberOfPages="79" Publisher="Vestibulum nec nunc" PublicationDate="04/27/2016 19:12:34" RatingsCount="66" TextReviewsCount="47" Title="Quis pretium ipsum parturient tempor" Url="Parturient lobortis porttitor per vestibulum"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="41" IsSelected="True" Name="Quam tellus"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="67" IsSelected="False" Name="Nec praesent vitae fringilla commodo">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="481.8" About="Nisl vestibulum litora vestibulum bibendum" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="37" Gender="Imperdiet nunc" Hometown="Malesuada class" Id="42" ImageUrl="Cubilia libero nisi ligula" Influences="Hendrerit himenaeos" Link="Parturient habitasse per" Name="Non conubia accumsan" RatingsCount="93" TextReviewsCount="59" WorksCount="50"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="128.3" Id="20" ImageUrl="Morbi vulputate elit curabitur sagittis" IsSelected="True" Title="Pulvinar dis venenatis">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="556.04" Description="Purus vestibulum ultrices" EditionInformation="Hac vehicula eros elementum leo" Format="Velit fermentum maecenas adipiscing mus" ISBN13="Enim nulla dignissim dictum suscipit" Id="15" ISBN="Parturient est vestibulum cursus convallis" IsEbook="False" ImageUrl="Aliquet lectus" Link="Risus facilisis" NumberOfPages="42" Publisher="Blandit erat torquent porta" PublicationDate="04/27/2016 19:12:34" RatingsCount="41" TextReviewsCount="92" Title="Sociosqu consequat netus adipiscing aliquam" Url="Nibh volutpat"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="94" IsSelected="True" Name="Senectus phasellus neque"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="88" IsSelected="False" Name="Platea nam">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="802.89" About="Dolor sed duis interdum fames" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="14" Gender="Potenti nunc pretium" Hometown="Est lobortis rhoncus nascetur curabitur" Id="42" ImageUrl="Augue cras" Influences="Posuere sapien dis" Link="Rutrum inceptos urna vestibulum proin" Name="Natoque primis nulla" RatingsCount="65" TextReviewsCount="33" WorksCount="69"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="866.24" Id="20" ImageUrl="Egestas dictumst parturient euismod" IsSelected="True" Title="Odio adipiscing dapibus">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="314.42" Description="Vestibulum lorem" EditionInformation="Venenatis lacinia" Format="Vulputate ornare habitant vel laoreet" ISBN13="Mollis tincidunt montes tristique" Id="63" ISBN="Curae porttitor" IsEbook="False" ImageUrl="Iaculis donec nostra facilisi etiam" Link="Adipiscing sit faucibus parturient" NumberOfPages="81" Publisher="Fusce pede ultricies sed" PublicationDate="04/27/2016 19:12:34" RatingsCount="33" TextReviewsCount="13" Title="Eleifend vestibulum orci mauris penatibus" Url="Quam morbi quis sem"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="74" IsSelected="True" Name="Luctus magnis feugiat mattis gravida"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="59" IsSelected="False" Name="Nec non aliquam elit himenaeos">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="528.02" About="Penatibus aliquet suscipit vestibulum" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="34" Gender="Neque erat" Hometown="Adipiscing torquent" Id="94" ImageUrl="Tempus sociosqu" Influences="Vestibulum porttitor per" Link="Metus tempor morbi enim" Name="Imperdiet malesuada" RatingsCount="17" TextReviewsCount="83" WorksCount="17"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="199.25" Id="24" ImageUrl="Dignissim elementum" IsSelected="True" Title="Phasellus consequat vestibulum convallis pharetra">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="730.05" Description="Aliquam taciti fringilla habitasse" EditionInformation="Sagittis adipiscing lacus eget lorem" Format="Vivamus hendrerit" ISBN13="Pulvinar vestibulum viverra ipsum sociis" Id="99" ISBN="Adipiscing parturient" IsEbook="False" ImageUrl="Fermentum justo leo" Link="Mus massa senectus parturient" NumberOfPages="45" Publisher="Vestibulum diam" PublicationDate="04/27/2016 19:12:34" RatingsCount="48" TextReviewsCount="84" Title="Ante semper arcu hac" Url="Integer quisque tellus magna"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="54" IsSelected="True" Name="Amet felis placerat sodales facilisis"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="68" IsSelected="False" Name="Bibendum dapibus vestibulum">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="744.93" About="Euismod nam consequat velit facilisi" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="85" Gender="Dictum convallis dignissim vitae" Hometown="Lectus adipiscing class" Id="73" ImageUrl="Vel pede" Influences="Sed quam quis feugiat gravida" Link="Sit egestas congue cursus eleifend" Name="Phasellus orci dictumst risus" RatingsCount="46" TextReviewsCount="56" WorksCount="82"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="200.84" Id="73" ImageUrl="Ultrices turpis parturient tincidunt" IsSelected="True" Title="Tortor netus nulla">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="284.41" Description="Nisl aenean commodo ultricies" EditionInformation="Sem venenatis" Format="Aptent vestibulum auctor" ISBN13="Tristique adipiscing nisi sed" Id="20" ISBN="Porta parturient vestibulum vestibulum volutpat" IsEbook="False" ImageUrl="Parturient blandit" Link="Vulputate cubilia nullam odio curabitur" NumberOfPages="37" Publisher="Maecenas purus varius praesent" PublicationDate="04/27/2016 19:12:34" RatingsCount="39" TextReviewsCount="90" Title="Vestibulum nibh adipiscing" Url="Accumsan mauris conubia nunc"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="89" IsSelected="True" Name="Vestibulum vehicula eros"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="52" IsSelected="False" Name="Imperdiet pretium amet vestibulum">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="247.22" About="Interdum vestibulum" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="55" Gender="Lobortis nostra" Hometown="Penatibus porttitor parturient" Id="48" ImageUrl="Montes malesuada" Influences="Adipiscing mus" Link="Inceptos proin augue arcu" Name="Ante rhoncus mollis" RatingsCount="10" TextReviewsCount="27" WorksCount="70"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="512.47" Id="22" ImageUrl="Iaculis elementum facilisis" IsSelected="True" Title="Libero faucibus urna">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="419.18" Description="Habitasse lorem laoreet dis morbi" EditionInformation="Magnis mattis" Format="Potenti habitant nulla mauris leo" ISBN13="Duis lacinia adipiscing" Id="44" ISBN="Parturient cras etiam vestibulum vestibulum" IsEbook="False" ImageUrl="Fusce litora" Link="Hac parturient himenaeos" NumberOfPages="64" Publisher="Luctus fringilla" PublicationDate="04/27/2016 19:12:34" RatingsCount="94" TextReviewsCount="72" Title="Fermentum ligula" Url="Hendrerit est natoque posuere nunc"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="21" IsSelected="True" Name="Curae donec"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+		<Items:SearchResultItemViewModel>
+			<Items:SearchResultItemViewModel.Author>
+				<Items:AuthorItemViewModel Id="34" IsSelected="False" Name="Sapien phasellus">
+					<Items:AuthorItemViewModel.Item>
+						<Model:AuthorModel AverageRating="572.97" About="Nisl nunc" BornAt="04/27/2016 19:12:34" DiedAt="04/27/2016 19:12:34" FansCount="13" Gender="Nam sed" Hometown="Odio vestibulum orci tellus" Id="23" ImageUrl="Dignissim sociis taciti" Influences="Massa metus vel" Link="Convallis suscipit" Name="Consequat semper" RatingsCount="87" TextReviewsCount="60" WorksCount="90"/>
+					</Items:AuthorItemViewModel.Item>
+				</Items:AuthorItemViewModel>
+			</Items:SearchResultItemViewModel.Author>
+			<Items:SearchResultItemViewModel.Book>
+				<Items:BookItemViewModel AverageRating="312.95" Id="69" ImageUrl="Nascetur diam vestibulum vestibulum fames" IsSelected="True" Title="Ornare dolor">
+					<Items:BookItemViewModel.Item>
+						<Model:BookModel AverageRating="794.17" Description="Eros adipiscing justo parturient integer" EditionInformation="Quisque lacus lorem nibh" Format="Vulputate sociosqu curabitur nisi" ISBN13="Primis enim felis" Id="34" ISBN="Pharetra vestibulum placerat viverra pulvinar" IsEbook="False" ImageUrl="Ipsum sed tincidunt aliquam" Link="Venenatis senectus vestibulum vivamus" NumberOfPages="53" Publisher="Sem tristique sagittis erat ultricies" PublicationDate="04/27/2016 19:12:34" RatingsCount="50" TextReviewsCount="44" Title="Parturient elit per sodales vestibulum" Url="Sit rutrum magna"/>
+					</Items:BookItemViewModel.Item>
+					<Items:BookItemViewModel.MainAuthor>
+						<Items:AuthorItemViewModel Id="29" IsSelected="True" Name="Adipiscing eget nec non platea"/>
+					</Items:BookItemViewModel.MainAuthor>
+				</Items:BookItemViewModel>
+			</Items:SearchResultItemViewModel.Book>
+		</Items:SearchResultItemViewModel>
+	</ViewModel:SearchViewModel.SearchResults2>
+	<ViewModel:SearchViewModel.SearchFilters>
+		<Services:BookSearchType>Author</Services:BookSearchType>
+		<Services:BookSearchType>Author</Services:BookSearchType>
+		<Services:BookSearchType>Author</Services:BookSearchType>
+		<Services:BookSearchType>Author</Services:BookSearchType>
+		<Services:BookSearchType>Author</Services:BookSearchType>
+		<Services:BookSearchType>All</Services:BookSearchType>
+		<Services:BookSearchType>All</Services:BookSearchType>
+		<Services:BookSearchType>Title</Services:BookSearchType>
+		<Services:BookSearchType>All</Services:BookSearchType>
+		<Services:BookSearchType>Author</Services:BookSearchType>
+	</ViewModel:SearchViewModel.SearchFilters>
+</ViewModel:SearchViewModel>
