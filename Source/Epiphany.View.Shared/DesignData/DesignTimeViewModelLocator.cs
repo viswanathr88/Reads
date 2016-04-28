@@ -6,7 +6,7 @@ namespace Epiphany.View.DesignData
 {
     public sealed class DesignTimeViewModelLocator : IViewModelLocator
     {
-        public AboutViewModel About
+        public AppResources About
         {
             get
             {
@@ -66,7 +66,7 @@ namespace Epiphany.View.DesignData
         {
             get
             {
-                throw new NotImplementedException();
+                return null;
             }
         }
 

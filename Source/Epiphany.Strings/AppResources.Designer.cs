@@ -926,6 +926,24 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to share.
+        /// </summary>
+        public static string SearchResultItemFlyoutShare {
+            get {
+                return ResourceManager.GetString("SearchResultItemFlyoutShare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to view author.
+        /// </summary>
+        public static string SearchResultItemFlyoutViewAuthor {
+            get {
+                return ResourceManager.GetString("SearchResultItemFlyoutViewAuthor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to find books by title,author.
         /// </summary>
         public static string SearchTextBoxHint {
@@ -958,6 +976,24 @@ namespace Epiphany.Strings {
         public static string SettingsTitle {
             get {
                 return ResourceManager.GetString("SettingsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A book has been shared with you.
+        /// </summary>
+        public static string ShareBookTitle {
+            get {
+                return ResourceManager.GetString("ShareBookTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to start sharing. Please try again later.
+        /// </summary>
+        public static string SharingFailedMessage {
+            get {
+                return ResourceManager.GetString("SharingFailedMessage", resourceCulture);
             }
         }
         

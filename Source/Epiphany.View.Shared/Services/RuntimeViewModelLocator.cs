@@ -1,5 +1,4 @@
-﻿using System;
-using Epiphany.Logging;
+﻿using Epiphany.Logging;
 using Epiphany.Model.Authentication;
 using Epiphany.Model.Services;
 using Epiphany.Model.Settings;
@@ -90,11 +89,11 @@ namespace Epiphany.View.Services
             }
         }
 
-        public AboutViewModel About
+        public AppResources About
         {
             get
             {
-                return new AboutViewModel(this.deviceServices);
+                return new AppResources(this.deviceServices);
             }
         }
 
@@ -128,7 +127,7 @@ namespace Epiphany.View.Services
 
         public SearchViewModel Search
         {
-            get { return new SearchViewModel(this.serviceFactory.GetBookService(), this.navigationService); }
+            get { return new SearchViewModel(this.serviceFactory.GetBookService()); }
         }
 
         public AuthorViewModel Author

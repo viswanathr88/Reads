@@ -21,7 +21,7 @@
                     Orientation="Vertical">
 
             <!-- Search box -->
-            <AutoSuggestBox Margin="19,19,19,0"
+            <AutoSuggestBox Margin="19,15,19,0"
                             PlaceholderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchBoxPlaceholderText}"
                             Text="{Binding SearchTerm, Mode=TwoWay}"
                             SuggestionChosen="AutoSuggestBox_SuggestionChosen"
@@ -63,6 +63,7 @@
             <!-- Search results -->
             <ListView ItemsSource="{Binding SearchResults}"
                       SelectionMode="Single"
+                      SelectionChanged="SearchResultsList_SelectionChanged"
                       x:Name="searchResultsList"
                       Visibility="{Binding HasResults, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}">
                 <ListView.ItemContainerTransitions>
@@ -72,11 +73,20 @@
                 </ListView.ItemContainerTransitions>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Grid Margin="0,0,0,17">
+                        <Grid Margin="0,0,0,17" Holding="SearchResult_Holding">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
+
+                            <FlyoutBase.AttachedFlyout>
+                                <MenuFlyout>
+                                    <MenuFlyoutItem Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchResultItemFlyoutViewAuthor}"/>
+                                    <MenuFlyoutItem Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchResultItemFlyoutShare}"
+                                                    Click="ShowShareUI"
+                                                    DataContext="{Binding}"/>
+                                </MenuFlyout>
+                            </FlyoutBase.AttachedFlyout>
 
                             <!-- Book image -->
                             <Border Width="96"
@@ -106,8 +116,10 @@
                                            Text="{Binding Path=Book.Title}"
                                            TextTrimming="CharacterEllipsis"
                                            TextWrapping="Wrap"
+                                           TextLineBounds="TrimToCapHeight"
                                            MaxLines="2"
-                                           Margin="0,0,0,7"
+                                           Margin="0,-2,0,7"
+                                           OpticalMarginAlignment="TrimSideBearings"
                                            LineStackingStrategy="BlockLineHeight"
                                            VerticalAlignment="Top" />
                                 <TextBlock Style="{StaticResource ListViewItemContentTextBlockStyle}"
@@ -122,6 +134,16 @@
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+                
+                <!-- Footer -->
+                <ListView.Footer>
+                    <ProgressRing IsActive="{Binding IsLoading}"
+                                  HorizontalAlignment="Center"
+                                  Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                  MinHeight="45"
+                                  MinWidth="45"/>
+                </ListView.Footer>
+                
             </ListView>
 
         </Grid>

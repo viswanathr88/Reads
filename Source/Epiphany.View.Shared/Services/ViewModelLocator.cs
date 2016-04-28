@@ -39,7 +39,7 @@ namespace Epiphany.View.Services
             }
         }
 
-        public AboutViewModel About
+        public AppResources About
         {
             get
             {

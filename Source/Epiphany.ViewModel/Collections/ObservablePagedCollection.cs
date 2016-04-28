@@ -48,6 +48,12 @@ namespace Epiphany.ViewModel.Collections
         private bool hasMoreItems = true;
         private int pageSize = 15;
 
+        public event EventHandler<EventArgs> Loading;
+        private void RaiseLoading() => Loading?.Invoke(this, EventArgs.Empty);
+
+        public event EventHandler<EventArgs> Loaded;
+        private void RaiseLoaded() => Loaded?.Invoke(this, EventArgs.Empty);
+
         public ObservablePagedCollection(IPagedCollection<TModel> pagedCollection,
             Func<TModel, TViewModel> adapterMethod)
         {
@@ -78,6 +84,8 @@ namespace Epiphany.ViewModel.Collections
         {
             CoreDispatcher dispatcher = Window.Current.Dispatcher;
 
+            RaiseLoading();
+
             return Task.Run(async () =>
             {
                 bool fMoveNext = false;
@@ -99,6 +107,7 @@ namespace Epiphany.ViewModel.Collections
                         {
                             Add(this.adapterMethod.Invoke(model));
                         }
+                        RaiseLoaded();
                     });
 
                 return new LoadMoreItemsResult() { Count = Convert.ToUInt32(loadedCount) };

@@ -465,4 +465,16 @@
   <data name="SearchNoResultsMessage" xml:space="preserve">
     <value>Search did not return any results</value>
   </data>
+  <data name="SearchResultItemFlyoutShare" xml:space="preserve">
+    <value>share</value>
+  </data>
+  <data name="SearchResultItemFlyoutViewAuthor" xml:space="preserve">
+    <value>view author</value>
+  </data>
+  <data name="SharingFailedMessage" xml:space="preserve">
+    <value>Failed to start sharing. Please try again later</value>
+  </data>
+  <data name="ShareBookTitle" xml:space="preserve">
+    <value>A book has been shared with you</value>
+  </data>
 </root>

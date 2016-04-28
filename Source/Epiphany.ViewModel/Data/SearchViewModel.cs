@@ -6,7 +6,6 @@ using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,28 +14,20 @@ namespace Epiphany.ViewModel
     public class SearchViewModel : DataViewModel<VoidType>
     {
         private IList<BookSearchType> searchFilters;
-        private IList<SearchResultItemViewModel> searchResults;
+        private ObservablePagedCollection<SearchResultItemViewModel, WorkModel> searchResults;
         private BookSearchType selectedFilter;
         private bool hasResults = true;
-        private SearchResultItemViewModel selectedResult;
         private string searchTerm;
         private const int itemsCount = 20;
 
-        private readonly ICommand<BookItemViewModel> showBookCommand;
-        private readonly INavigationService navService;
         private readonly IBookService bookService;
 
-        public SearchViewModel() { }
-
-        public SearchViewModel(IBookService bookService, INavigationService navService)
+        public SearchViewModel(IBookService bookService)
         {
-            this.navService = navService;
             this.bookService = bookService;
 
-            SearchResults = new ObservableCollection<SearchResultItemViewModel>();
             SearchFilters = Enum.GetValues(typeof(BookSearchType)).Cast<BookSearchType>().ToList();
 
-            this.showBookCommand = new ShowBookFromItemCommand(navService);
             this.selectedFilter = BookSearchType.All;
         }
 
@@ -45,9 +36,7 @@ namespace Epiphany.ViewModel
             get { return this.searchTerm; }
             set
             {
-                if (this.searchTerm == value) return;
-                this.searchTerm = value;
-                RaisePropertyChanged();
+                SetProperty(ref this.searchTerm, value);
             }
         }
 
@@ -56,10 +45,10 @@ namespace Epiphany.ViewModel
             get { return this.selectedFilter; }
             set
             {
-                if (this.selectedFilter == value) return;
-                this.selectedFilter = value;
+                SetProperty(ref this.selectedFilter, value);
+
                 CreateSearchResultCollection();
-                RaisePropertyChanged();
+
             }
         }
 
@@ -68,39 +57,13 @@ namespace Epiphany.ViewModel
             get { return this.searchFilters; }
             private set
             {
-                if (this.searchFilters == value) return;
-                this.searchFilters = value;
-                RaisePropertyChanged();
+                SetProperty(ref this.searchFilters, value);
             }
         }
 
         public IList<SearchResultItemViewModel> SearchResults
         {
             get { return this.searchResults; }
-            private set
-            {
-                if (this.searchResults == value) return;
-                this.searchResults = value;
-                RaisePropertyChanged();
-            }
-        }
-
-        public SearchResultItemViewModel SelectedResult
-        {
-            get { return this.selectedResult; }
-            set
-            {
-                if (this.selectedResult == value) return;
-                this.selectedResult = value;
-                
-                if (this.showBookCommand.CanExecute(value.Book))
-                {
-                    this.showBookCommand.Execute(value.Book);
-                }
-
-                this.selectedResult = null;
-                RaisePropertyChanged();
-            }
         }
 
         public bool HasResults
@@ -117,7 +80,13 @@ namespace Epiphany.ViewModel
         public override async Task LoadAsync(VoidType parameter)
         {
             CreateSearchResultCollection();
-            await Task.Delay(1);
+
+            if (this.searchResults != null)
+            {
+                // Bug: When the collection is cleared, ISupportIncrementalLoading
+                // does not call the initial load. So we will call it explicitly here
+                await this.searchResults.LoadMoreItemsAsync(1);
+            }
         }
 
         private void CreateSearchResultCollection()
@@ -125,14 +94,46 @@ namespace Epiphany.ViewModel
             if (!string.IsNullOrEmpty(SearchTerm))
             {
                 var collection = this.bookService.Find(SelectedFilter, SearchTerm);
-                SearchResults = new ObservablePagedCollection<SearchResultItemViewModel, WorkModel>
-                    (collection, ConvertToVM);
+                CreateObservableCollection(collection);
             }
+        }
+
+        private void CreateObservableCollection(Model.Collections.IPagedCollection<WorkModel> collection)
+        {
+            if (this.searchResults != null)
+            {
+                this.searchResults.Loading -= SearchResults_Loading;
+                this.searchResults.Loaded -= SearchResults_Loaded;
+                this.searchResults = null;
+                RaisePropertyChanged(nameof(SearchResults));
+            }
+
+            this.searchResults = new ObservablePagedCollection<SearchResultItemViewModel, WorkModel>(collection, ConvertToVM);
+            this.searchResults.Loading += SearchResults_Loading;
+            this.searchResults.Loaded += SearchResults_Loaded;
+            RaisePropertyChanged(nameof(SearchResults));
+
+            HasResults = true;
+        }
+
+        private void SearchResults_Loaded(object sender, EventArgs e)
+        {
+            IsLoading = false;
+            IsLoaded = true;
+            if (SearchResults.Count == 0)
+            {
+                HasResults = false;
+            }
+        }
+
+        private void SearchResults_Loading(object sender, EventArgs e)
+        {
+            IsLoading = true;
         }
 
         private SearchResultItemViewModel ConvertToVM(WorkModel arg)
         {
-            return new SearchResultItemViewModel(arg.Book, this.navService);
+            return new SearchResultItemViewModel(arg);
         }
     }
 }

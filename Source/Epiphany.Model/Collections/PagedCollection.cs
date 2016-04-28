@@ -1,4 +1,5 @@
-﻿using Epiphany.Model.Adapter;
+﻿using Epiphany.Logging;
+using Epiphany.Model.Adapter;
 using Epiphany.Model.DataSources;
 using Epiphany.Xml;
 using System;
@@ -114,7 +115,21 @@ namespace Epiphany.Model.Collections
             // Get the next page from data source
             //
             page++;
-            TSourceCollection collection = await this.source.GetAsync(page, pageSize);
+
+
+            TSourceCollection collection = default(TSourceCollection);
+
+            try
+            {
+                collection = await this.source.GetAsync(page, pageSize);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.LogException(ex);
+                collection = default(TSourceCollection);
+            }
+
             if (collection == null)
             {
                 isLoaded = true;

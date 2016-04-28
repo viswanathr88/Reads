@@ -1,25 +1,17 @@
 ﻿using Epiphany.Model;
-using Epiphany.ViewModel.Commands;
-using Epiphany.ViewModel.Services;
 using System.Linq;
 
 namespace Epiphany.ViewModel.Items
 {
     public sealed class SearchResultItemViewModel : ViewModelBase
     {
-        private readonly ICommand<BookItemViewModel> showBook;
-        private readonly ICommand<AuthorItemViewModel> showAuthor;
         private BookItemViewModel book;
         private AuthorItemViewModel author;
 
-        public SearchResultItemViewModel() {  }
-
-        public SearchResultItemViewModel(BookModel book, INavigationService navService)
+        public SearchResultItemViewModel(WorkModel work)
         {
-            this.showBook = new ShowBookFromItemCommand(navService);
-            this.showAuthor = new ShowAuthorFromItemCommand(navService);
-            Book = new BookItemViewModel(book);
-            Author = new AuthorItemViewModel(book.Authors.FirstOrDefault());
+            Book = new BookItemViewModel(work.Book);
+            Author = new AuthorItemViewModel(work.Book.Authors.FirstOrDefault());
         }
 
         public BookItemViewModel Book
@@ -42,16 +34,6 @@ namespace Epiphany.ViewModel.Items
                 this.author = value;
                 RaisePropertyChanged();
             }
-        }
-
-        public ICommand<BookItemViewModel> ShowBook
-        {
-            get { return this.showBook; }
-        }
-
-        public ICommand<AuthorItemViewModel> ShowAuthor
-        {
-            get { return this.showAuthor; }
         }
     }
 }

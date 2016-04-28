@@ -12,7 +12,7 @@ namespace Epiphany.View.Services
 
         AddBookViewModel AddBook { get; }
 
-        AboutViewModel About { get; }
+        AppResources About { get; }
 
         ProfileViewModel Profile { get; }
 

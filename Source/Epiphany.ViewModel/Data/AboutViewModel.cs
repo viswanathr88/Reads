@@ -9,19 +9,19 @@ namespace Epiphany.ViewModel
     /// <summary>
     /// ViewModel for About
     /// </summary>
-    public sealed class AboutViewModel : DataViewModel<VoidType>
+    public sealed class AppResources : DataViewModel<VoidType>
     {
         private readonly ICommand likeOnFacebookCommand;
         private readonly ICommand rateAppCommand;
 
-        public AboutViewModel() { }
+        public AppResources() { }
 
         /// <summary>
         /// Create an instance of AboutViewModel
         /// </summary>
         /// <param name="rateService"></param>
         /// <param name="urlLauncher"></param>
-        public AboutViewModel(IDeviceServices deviceServices)
+        public AppResources(IDeviceServices deviceServices)
         {
             if (deviceServices == null)
             {
