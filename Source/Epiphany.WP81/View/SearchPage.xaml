@@ -32,13 +32,14 @@
                         Margin="19,19,19,0">
                 <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchFilterHeader}"
                            Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
-                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"/>
-                
+                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
+
                 <TextBlock Text="{Binding SelectedFilter}"
                            Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
                            Margin="15,0,0,0"
                            Foreground="{StaticResource PhoneAccentBrush}"
-                           Tapped="OnSearchFilterTapped">
+                           Tapped="OnSearchFilterTapped"
+                           LineStackingStrategy="BaselineToBaseline">
                     <FlyoutBase.AttachedFlyout>
                         <ListPickerFlyout ItemsSource="{Binding SearchFilters}"
                                           SelectedItem="{Binding SelectedFilter, Mode=TwoWay}"
@@ -60,9 +61,10 @@
                        Style="{StaticResource ListViewEmptyStaticTextBlockStyle}" />
 
             <!-- Search results -->
-            <ListView ItemsSource="{Binding SearchResults2}"
+            <ListView ItemsSource="{Binding SearchResults}"
                       SelectionMode="Single"
-                      x:Name="searchResultsList">
+                      x:Name="searchResultsList"
+                      Visibility="{Binding HasResults, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}">
                 <ListView.ItemContainerTransitions>
                     <TransitionCollection>
                         <EntranceThemeTransition IsStaggeringEnabled="True" />
@@ -99,16 +101,19 @@
                                         Orientation="Vertical"
                                         Grid.Column="1">
 
-                                <TextBlock Style="{StaticResource SubheaderTextBlockStyle}"
+                                <TextBlock Style="{StaticResource ListViewItemTextBlockStyle}"
                                            Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
                                            Text="{Binding Path=Book.Title}"
-                                           MaxLines="2"
                                            TextTrimming="CharacterEllipsis"
-                                           Margin="0,0,0,10"
+                                           TextWrapping="Wrap"
+                                           MaxLines="2"
+                                           Margin="0,0,0,7"
+                                           LineStackingStrategy="BlockLineHeight"
                                            VerticalAlignment="Top" />
                                 <TextBlock Style="{StaticResource ListViewItemContentTextBlockStyle}"
-                                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                           Foreground="{ThemeResource PhoneMidBrush}"
                                            Text="{Binding Path=Author.Name}"
+                                           TextWrapping="Wrap"
                                            MaxLines="2"
                                            TextTrimming="CharacterEllipsis"
                                            Grid.Row="1" />

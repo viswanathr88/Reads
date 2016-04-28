@@ -16,7 +16,6 @@ namespace Epiphany.ViewModel
     {
         private IList<BookSearchType> searchFilters;
         private IList<SearchResultItemViewModel> searchResults;
-        private IList<SearchResultItemViewModel> searchResults2;
         private BookSearchType selectedFilter;
         private bool hasResults = true;
         private SearchResultItemViewModel selectedResult;
@@ -86,17 +85,6 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<SearchResultItemViewModel> SearchResults2
-        {
-            get { return this.searchResults2; }
-            private set
-            {
-                if (this.searchResults2 == value) return;
-                this.searchResults2 = value;
-                RaisePropertyChanged();
-            }
-        }
-
         public SearchResultItemViewModel SelectedResult
         {
             get { return this.selectedResult; }
@@ -129,6 +117,7 @@ namespace Epiphany.ViewModel
         public override async Task LoadAsync(VoidType parameter)
         {
             CreateSearchResultCollection();
+            await Task.Delay(1);
         }
 
         private void CreateSearchResultCollection()
@@ -136,7 +125,7 @@ namespace Epiphany.ViewModel
             if (!string.IsNullOrEmpty(SearchTerm))
             {
                 var collection = this.bookService.Find(SelectedFilter, SearchTerm);
-                SearchResults2 = new ObservablePagedCollection<SearchResultItemViewModel, WorkModel>
+                SearchResults = new ObservablePagedCollection<SearchResultItemViewModel, WorkModel>
                     (collection, ConvertToVM);
             }
         }

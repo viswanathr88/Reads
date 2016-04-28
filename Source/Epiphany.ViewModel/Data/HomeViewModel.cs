@@ -135,6 +135,7 @@ namespace Epiphany.ViewModel
 
         public override async Task LoadAsync(VoidType parameter)
         {
+            await Task.Delay(1);
             /*if (!Feed.IsLoaded)
             {
                 await Feed.LoadAsync(parameter);
