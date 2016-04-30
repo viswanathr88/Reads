@@ -22,11 +22,12 @@
                     Orientation="Vertical">
 
             <!-- Search box -->
-            <AutoSuggestBox Margin="19,15,19,0"
-                            PlaceholderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchBoxPlaceholderText}"
-                            Text="{Binding SearchTerm, Mode=TwoWay}"
-                            SuggestionChosen="AutoSuggestBox_SuggestionChosen"
-                            KeyUp="AutoSuggestBox_KeyUp" />
+            <TextBox Margin="19,20,19,0"
+                     PlaceholderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchBoxPlaceholderText}"
+                     Text="{Binding SearchTerm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     KeyUp="AutoSuggestBox_KeyUp"
+                     Height="50"
+                     Padding="7"/>
 
             <!-- Refine list -->
             <StackPanel Orientation="Horizontal"
@@ -74,7 +75,8 @@
                 </ListView.ItemContainerTransitions>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Grid Margin="0,0,0,17" Holding="SearchResult_Holding">
+                        <Grid Margin="0,0,0,17"
+                              Holding="SearchResult_Holding">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
@@ -104,7 +106,6 @@
                                     </Image.Transitions>
                                 </Image>
                             </Border>
-                            
 
                             <!-- Book Details -->
                             <StackPanel Margin="19,0,0,0"
@@ -135,16 +136,16 @@
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-                
+
                 <!-- Footer -->
                 <ListView.Footer>
                     <ProgressRing IsActive="{Binding IsLoading}"
                                   HorizontalAlignment="Center"
                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
                                   MinHeight="45"
-                                  MinWidth="45"/>
+                                  MinWidth="45" />
                 </ListView.Footer>
-                
+
             </ListView>
 
         </Grid>
