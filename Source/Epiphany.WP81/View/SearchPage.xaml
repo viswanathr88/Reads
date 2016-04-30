@@ -17,9 +17,12 @@
         </Grid.RowDefinitions>
 
         <!-- Header -->
-        <StackPanel Grid.Row="0"
-                    Background="{ThemeResource PhoneChromeBrush}"
-                    Orientation="Vertical">
+        <Grid Grid.Row="0"
+              Background="{ThemeResource PhoneChromeBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
             <!-- Search box -->
             <TextBox Margin="19,20,19,0"
@@ -27,30 +30,37 @@
                      Text="{Binding SearchTerm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      KeyUp="AutoSuggestBox_KeyUp"
                      Height="50"
-                     Padding="7"/>
+                     Padding="7" />
 
             <!-- Refine list -->
-            <StackPanel Orientation="Horizontal"
-                        Margin="19,19,19,0">
-                <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchFilterHeader}"
-                           Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
-                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
 
-                <TextBlock Text="{Binding SelectedFilter}"
-                           Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
-                           Margin="15,0,0,0"
-                           Foreground="{StaticResource PhoneAccentBrush}"
-                           Tapped="OnSearchFilterTapped"
-                           LineStackingStrategy="BaselineToBaseline">
-                    <FlyoutBase.AttachedFlyout>
-                        <ListPickerFlyout ItemsSource="{Binding SearchFilters}"
-                                          SelectedItem="{Binding SelectedFilter, Mode=TwoWay}"
-                                          Placement="Top" />
-                    </FlyoutBase.AttachedFlyout>
-                </TextBlock>
-            </StackPanel>
+            <Button Margin="19,0,19,0"
+                    Style="{StaticResource TextButtonStyle}"
+                    Grid.Row="1"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch"
+                    VerticalContentAlignment="Center">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchFilterHeader}"
+                                   Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
+                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
 
-        </StackPanel>
+                        <TextBlock Text="{Binding SelectedFilter}"
+                                   Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
+                                   Foreground="{StaticResource PhoneAccentBrush}"
+                                   Tapped="OnSearchFilterTapped"
+                                   LineStackingStrategy="BaselineToBaseline"
+                                   Margin="15,0,0,0" />
+                    </StackPanel>
+                </Button.Content>
+                <Button.Flyout>
+                    <ListPickerFlyout ItemsSource="{Binding SearchFilters}"
+                                      SelectedItem="{Binding SelectedFilter, Mode=TwoWay}"
+                                      Placement="Top" />
+                </Button.Flyout>
+            </Button>
+        </Grid>
 
         <!-- Search results -->
         <Grid Grid.Row="1"
@@ -75,7 +85,7 @@
                 </ListView.ItemContainerTransitions>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Grid Margin="0,0,0,17"
+                        <Grid Margin="0,5,5,17"
                               Holding="SearchResult_Holding">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />

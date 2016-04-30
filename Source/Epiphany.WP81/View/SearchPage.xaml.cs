@@ -37,11 +37,11 @@ namespace Epiphany.View
         private void OnSearchFilterTapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
             // Show Search Filter picker
-            FrameworkElement element = sender as FrameworkElement;
+            /*FrameworkElement element = sender as FrameworkElement;
             if (element != null)
             {
                 FlyoutBase.ShowAttachedFlyout(element);
-            }
+            }*/
         }
 
         private void AutoSuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
