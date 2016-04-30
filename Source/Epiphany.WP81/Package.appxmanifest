@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="9718b597-9f7c-4e87-8197-a2d90a7c2d6c" Publisher="CN=Viswa" Version="1.0.0.0" />
+  <Identity Name="9718b597-9f7c-4e87-8197-a2d90a7c2d6c" Publisher="CN=Viswa" Version="3.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="9718b597-9f7c-4e87-8197-a2d90a7c2d6c" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>Epiphany.WP81</DisplayName>
-    <PublisherDisplayName>Viswa</PublisherDisplayName>
+    <DisplayName>Reads</DisplayName>
+    <PublisherDisplayName>Viswanath Ramanan</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>

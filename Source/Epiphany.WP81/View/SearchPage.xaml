@@ -5,6 +5,7 @@
                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                 mc:Ignorable="d"
+                IsTabStop="True"
                 Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
                 DataContext="{Binding Source={StaticResource VMLocator}, Path=Search}"
                 d:DataContext="{d:DesignData /SampleData/SearchViewModelSampleData.xaml}">
@@ -81,10 +82,10 @@
 
                             <FlyoutBase.AttachedFlyout>
                                 <MenuFlyout>
-                                    <MenuFlyoutItem Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchResultItemFlyoutViewAuthor}"/>
+                                    <MenuFlyoutItem Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchResultItemFlyoutViewAuthor}" />
                                     <MenuFlyoutItem Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchResultItemFlyoutShare}"
                                                     Click="ShowShareUI"
-                                                    DataContext="{Binding}"/>
+                                                    DataContext="{Binding}" />
                                 </MenuFlyout>
                             </FlyoutBase.AttachedFlyout>
 

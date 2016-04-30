@@ -1,8 +1,5 @@
 ﻿using Epiphany.Logging;
-using Epiphany.Model.Settings;
 using Epiphany.View;
-using Epiphany.View.Services;
-using Epiphany.ViewModel;
 using System;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -49,8 +46,11 @@ namespace Epiphany.WP81
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
-
+            // Setup logging
             Logger.Writers.Add(new DebugConsoleWriter());
+
+            // Inject the WinRT ResourceLoader wrapper onto the PCL ResourceManager
+            WindowsRuntimeResourceManager.InjectIntoResxGeneratedApplicationResourcesClass(typeof(Epiphany.Strings.AppStrings));
 
             Frame rootFrame = Window.Current.Content as Frame;
 

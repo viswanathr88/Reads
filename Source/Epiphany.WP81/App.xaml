@@ -13,8 +13,8 @@
                 <ResourceDictionary Source="ms-appx:///Epiphany.View.Shared/Icons.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <strings:LocalizedStrings x:Key="LocalizedStrings" />
             <services:ViewModelLocator x:Key="VMLocator" />
+            <strings:LocalizedStrings x:Key="LocalizedStrings" />
 
             <!-- Colors & Brushes -->
             <SolidColorBrush x:Key="EpiphanyBackgroundBrush">#FF232B36</SolidColorBrush>

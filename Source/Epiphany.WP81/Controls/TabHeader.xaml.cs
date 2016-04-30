@@ -31,7 +31,7 @@ namespace Epiphany.View.Controls
 
         // Using a DependencyProperty as the backing store for HeaderText.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty HeaderTextProperty =
-            DependencyProperty.Register("HeaderText", typeof(string), typeof(TabHeader), new PropertyMetadata(string.Empty));
+            DependencyProperty.Register("HeaderText", typeof(string), typeof(TabHeader), new PropertyMetadata(""));
 
         public double IconSize
         {

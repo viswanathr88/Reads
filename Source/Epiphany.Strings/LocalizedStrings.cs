@@ -8,9 +8,9 @@ namespace Epiphany.Strings
 {
     public class LocalizedStrings
     {
-        private static AppResources appResources = new AppResources();
+        private static AppStrings appResources = new AppStrings();
 
-        public AppResources LocalizedResources
+        public AppStrings LocalizedResources
         {
             get
             {

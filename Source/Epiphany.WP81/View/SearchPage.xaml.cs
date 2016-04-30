@@ -8,6 +8,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Navigation;
 using Epiphany.ViewModel.Items;
 using Epiphany.Strings;
+using Windows.UI.ViewManagement;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -56,20 +57,11 @@ namespace Epiphany.View
                 if (searchVM != null)
                 {
                     // Dismiss keyboard
-                    LoseFocus(sender);
+                    this.Focus(FocusState.Programmatic);
+
                     await searchVM.LoadAsync(VoidType.Empty);
                 }
             }
-        }
-
-        private void LoseFocus(object sender)
-        {
-            var control = sender as Control;
-            var isTabStop = control.IsTabStop;
-            control.IsTabStop = false;
-            control.IsEnabled = false;
-            control.IsEnabled = true;
-            control.IsTabStop = isTabStop;
         }
 
         private void SearchResult_Holding(object sender, Windows.UI.Xaml.Input.HoldingRoutedEventArgs e)
@@ -119,7 +111,7 @@ namespace Epiphany.View
 
                 if (this.selectedMenuItem == null)
                 {
-                    request.FailWithDisplayText(Strings.AppResources.SharingFailedMessage);
+                    request.FailWithDisplayText(Strings.AppStrings.SharingFailedMessage);
                     Logger.LogError("There is no sender, Cannot share...");
                     deferral.Complete();
                     return;
@@ -127,7 +119,7 @@ namespace Epiphany.View
 
                 if (this.selectedMenuItem.DataContext == null)
                 {
-                    request.FailWithDisplayText(Strings.AppResources.SharingFailedMessage);
+                    request.FailWithDisplayText(Strings.AppStrings.SharingFailedMessage);
                     Logger.LogError("No Datacontext on sender. Cannot share...");
                     deferral.Complete();
                     return;
@@ -138,13 +130,13 @@ namespace Epiphany.View
                 var searchResultItem = this.selectedMenuItem.DataContext as SearchResultItemViewModel;
                 if (searchResultItem == null)
                 {
-                    request.FailWithDisplayText(Strings.AppResources.SharingFailedMessage);
+                    request.FailWithDisplayText(Strings.AppStrings.SharingFailedMessage);
                     Logger.LogError("DataContext is not of expected type. Cannot share...");
                     deferral.Complete();
                     return;
                 }
 
-                request.Data.Properties.Title = Strings.AppResources.ShareBookTitle;
+                request.Data.Properties.Title = Strings.AppStrings.ShareBookTitle;
                 request.Data.Properties.Description = searchResultItem.Author.Name;
                 request.Data.SetText(searchResultItem.Book.Title);
                 request.Data.SetWebLink(new Uri(@"http://www.goodreads.com/book/show/" + searchResultItem.Book.Id));

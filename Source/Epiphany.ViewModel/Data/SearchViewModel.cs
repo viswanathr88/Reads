@@ -85,7 +85,7 @@ namespace Epiphany.ViewModel
             {
                 // Bug: When the collection is cleared, ISupportIncrementalLoading
                 // does not call the initial load. So we will call it explicitly here
-                await this.searchResults.LoadMoreItemsAsync(1);
+                //await this.searchResults.LoadMoreItemsAsync(1);
             }
         }
 

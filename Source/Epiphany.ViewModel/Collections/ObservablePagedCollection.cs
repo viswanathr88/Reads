@@ -1,8 +1,10 @@
-﻿using Epiphany.Model.Collections;
+﻿using Epiphany.Logging;
+using Epiphany.Model.Collections;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Threading;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.UI.Core;
