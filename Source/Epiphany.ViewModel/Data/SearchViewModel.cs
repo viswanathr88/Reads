@@ -1,9 +1,7 @@
 ﻿using Epiphany.Model;
 using Epiphany.Model.Services;
 using Epiphany.ViewModel.Collections;
-using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Items;
-using Epiphany.ViewModel.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +19,8 @@ namespace Epiphany.ViewModel
         private const int itemsCount = 20;
 
         private readonly IBookService bookService;
+
+        public SearchViewModel() { }
 
         public SearchViewModel(IBookService bookService)
         {
@@ -71,22 +71,13 @@ namespace Epiphany.ViewModel
             get { return this.hasResults; }
             private set
             {
-                if (this.hasResults == value) return;
-                this.hasResults = value;
-                RaisePropertyChanged();
+                SetProperty(ref this.hasResults, value);
             }
         }
 
         public override async Task LoadAsync(VoidType parameter)
         {
             CreateSearchResultCollection();
-
-            if (this.searchResults != null)
-            {
-                // Bug: When the collection is cleared, ISupportIncrementalLoading
-                // does not call the initial load. So we will call it explicitly here
-                //await this.searchResults.LoadMoreItemsAsync(1);
-            }
         }
 
         private void CreateSearchResultCollection()

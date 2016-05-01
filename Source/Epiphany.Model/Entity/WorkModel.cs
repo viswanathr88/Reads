@@ -1,39 +1,28 @@
 ﻿
+using Epiphany.Xml;
+using System;
+
 namespace Epiphany.Model
 {
     public class WorkModel : Entity<int>
     {
-        private readonly int id;
-        private string originalTitle;
-        private BookModel book; 
+        private readonly GoodreadsWork work;
 
-        public WorkModel(int id)
+        public WorkModel(GoodreadsWork work)
         {
-            this.id = id;
+            if (work == null)
+            {
+                throw new ArgumentNullException(nameof(work));
+            }
+
+            this.work = work;
         }
 
         public override int Id
         {
             get
             {
-                return this.id;
-            }
-        }
-
-        public string OriginalTitle
-        {
-            get
-            {
-                return this.originalTitle;
-            }
-            set
-            {
-                if (this.originalTitle == value)
-                {
-                    return;
-                }
-
-                this.originalTitle = value;
+                return this.work.Id;
             }
         }
 
@@ -41,16 +30,42 @@ namespace Epiphany.Model
         {
             get
             {
-                return this.book;
+                return new BookModel(work.BestBook);
             }
-            set
-            {
-                if (this.book == value)
-                {
-                    return;
-                }
+        }
 
-                this.book = value;
+        public DateTime? OriginalPublicationDate
+        {
+            get
+            {
+                int day = Converter.ToInt(work.OriginalPublicationDay, 1);
+                int month = Converter.ToInt(work.OriginalPublicationMonth, 1);
+                int year = Converter.ToInt(work.OriginalPublicationYear, 0);
+
+                if (year == 0)
+                {
+                    return null;
+                }
+                else
+                {
+                    return new DateTime(day, month, year);
+                }
+            }
+        }
+
+        public double AverageRating
+        {
+            get
+            {
+                return Converter.ToDouble(this.work.AverageRating, 0);
+            }
+        }
+
+        public int RatingsCount
+        {
+            get
+            {
+                return Converter.ToInt(this.work.RatingsCount, 0);
             }
         }
     }

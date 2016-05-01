@@ -3,12 +3,13 @@ using System.Linq;
 
 namespace Epiphany.ViewModel.Items
 {
-    public sealed class SearchResultItemViewModel : ViewModelBase
+    public sealed class SearchResultItemViewModel : ItemViewModel<WorkModel>
     {
         private BookItemViewModel book;
         private AuthorItemViewModel author;
 
         public SearchResultItemViewModel(WorkModel work)
+            : base(work)
         {
             Book = new BookItemViewModel(work.Book);
             Author = new AuthorItemViewModel(work.Book.Authors.FirstOrDefault());
@@ -33,6 +34,30 @@ namespace Epiphany.ViewModel.Items
                 if (this.author == value) return;
                 this.author = value;
                 RaisePropertyChanged();
+            }
+        }
+
+        public double AverageRating
+        {
+            get
+            {
+                return Item.AverageRating;
+            }
+        }
+
+        public int RatingsCount
+        {
+            get
+            {
+                return Item.RatingsCount;
+            }
+        }
+
+        public bool Reviewed
+        {
+            get
+            {
+                return (Item.Book != null && Item.Book.UserReview != null);
             }
         }
     }

@@ -149,5 +149,19 @@ namespace Epiphany.View
                 Logger.LogException(ex);
             }
         }
+
+        private void ScrollToTop(object sender, RoutedEventArgs e)
+        {
+            if (this.searchResultsList == null)
+            {
+                Logger.LogDebug("Search results is null");
+                return;
+            }
+
+            if (this.searchResultsList.Items.Count > 0)
+            {
+                this.searchResultsList.ScrollIntoView(this.searchResultsList.Items[0]);
+            }
+        }
     }
 }

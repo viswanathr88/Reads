@@ -13,11 +13,7 @@ namespace Epiphany.Model.Adapter
 
         public WorkModel Convert(GoodreadsWork item)
         {
-            WorkModel workModel = new WorkModel(item.Id)
-            {
-                OriginalTitle = item.OriginalTitle,
-                Book = this.bookAdapter.Convert(item.BestBook)
-            };
+            WorkModel workModel = new WorkModel(item);
 
             return workModel;
         }

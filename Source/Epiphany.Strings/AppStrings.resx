@@ -477,4 +477,7 @@
   <data name="ShareBookTitle" xml:space="preserve">
     <value>A book has been shared with you</value>
   </data>
+  <data name="TopButtonText" xml:space="preserve">
+    <value>Top</value>
+  </data>
 </root>

@@ -1061,6 +1061,15 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Top.
+        /// </summary>
+        public static string TopButtonText {
+            get {
+                return ResourceManager.GetString("TopButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to username.
         /// </summary>
         public static string UsernameText {

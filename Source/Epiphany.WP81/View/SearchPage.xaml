@@ -4,11 +4,11 @@
                 xmlns:local="using:Epiphany.View"
                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:rating="using:JISoft.RatingControl"
                 mc:Ignorable="d"
                 IsTabStop="True"
                 Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-                DataContext="{Binding Source={StaticResource VMLocator}, Path=Search}"
-                d:DataContext="{d:DesignData /SampleData/SearchViewModelSampleData.xaml}">
+                DataContext="{Binding Source={StaticResource VMLocator}, Path=Search}">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -33,33 +33,55 @@
                      Padding="7" />
 
             <!-- Refine list -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="75" />
+                </Grid.ColumnDefinitions>
 
-            <Button Margin="19,0,19,0"
-                    Style="{StaticResource TextButtonStyle}"
-                    Grid.Row="1"
-                    VerticalAlignment="Stretch"
-                    HorizontalAlignment="Stretch"
-                    VerticalContentAlignment="Center">
-                <Button.Content>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchFilterHeader}"
-                                   Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
-                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
+                <Button Margin="19,0,19,0"
+                        Style="{StaticResource TextButtonStyle}"
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchFilterHeader}"
+                                       Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
+                                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
 
-                        <TextBlock Text="{Binding SelectedFilter}"
+                            <TextBlock Text="{Binding SelectedFilter}"
+                                       Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
+                                       Foreground="{StaticResource PhoneAccentBrush}"
+                                       Tapped="OnSearchFilterTapped"
+                                       LineStackingStrategy="BaselineToBaseline"
+                                       Margin="15,0,0,0" />
+                        </StackPanel>
+                    </Button.Content>
+                    <Button.Flyout>
+                        <ListPickerFlyout ItemsSource="{Binding SearchFilters}"
+                                          SelectedItem="{Binding SelectedFilter, Mode=TwoWay}"
+                                          Placement="Top" />
+                    </Button.Flyout>
+                </Button>
+
+                <!-- Top button -->
+                <Button Margin="19,0,19,0"
+                        Style="{StaticResource TextButtonStyle}"
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        Grid.Column="1"
+                        Click="ScrollToTop">
+                    <Button.Content>
+                        <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TopButtonText}"
                                    Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
-                                   Foreground="{StaticResource PhoneAccentBrush}"
-                                   Tapped="OnSearchFilterTapped"
-                                   LineStackingStrategy="BaselineToBaseline"
-                                   Margin="15,0,0,0" />
-                    </StackPanel>
-                </Button.Content>
-                <Button.Flyout>
-                    <ListPickerFlyout ItemsSource="{Binding SearchFilters}"
-                                      SelectedItem="{Binding SelectedFilter, Mode=TwoWay}"
-                                      Placement="Top" />
-                </Button.Flyout>
-            </Button>
+                                   Foreground="{ThemeResource PhoneAccentBrush}" />
+                    </Button.Content>
+                </Button>
+
+            </Grid>
+
         </Grid>
 
         <!-- Search results -->
@@ -130,17 +152,57 @@
                                            TextWrapping="Wrap"
                                            TextLineBounds="TrimToCapHeight"
                                            MaxLines="2"
-                                           Margin="0,-2,0,7"
+                                           Margin="0,-2,0,0"
                                            OpticalMarginAlignment="TrimSideBearings"
                                            LineStackingStrategy="BlockLineHeight"
                                            VerticalAlignment="Top" />
-                                <TextBlock Style="{StaticResource ListViewItemContentTextBlockStyle}"
+                                <TextBlock Style="{StaticResource ListViewItemSubheaderTextBlockStyle}"
                                            Foreground="{ThemeResource PhoneMidBrush}"
                                            Text="{Binding Path=Author.Name}"
                                            TextWrapping="Wrap"
                                            MaxLines="2"
-                                           TextTrimming="CharacterEllipsis"
-                                           Grid.Row="1" />
+                                           TextTrimming="CharacterEllipsis" />
+                                <StackPanel Orientation="Horizontal"
+                                            VerticalAlignment="Stretch"
+                                            Margin="0,5,0,0">
+                                    <!-- Rating control -->
+                                    <rating:Rating RatingItemCount="5"
+                                                   Value="{Binding AverageRating}"
+                                                   ReadOnly="True"
+                                                   Background="Transparent"
+                                                   Height="15"
+                                                   Width="75">
+                                        <rating:Rating.FilledItemStyle>
+                                            <Style TargetType="rating:RatingItem">
+                                                <Setter Property="Background"
+                                                        Value="{ThemeResource ApplicationForegroundThemeBrush}" />
+                                                <Setter Property="Padding"
+                                                        Value="0" />
+                                                <Setter Property="Margin"
+                                                        Value="0" />
+                                            </Style>
+                                        </rating:Rating.FilledItemStyle>
+                                        <rating:Rating.UnfilledItemStyle>
+                                            <Style TargetType="rating:RatingItem">
+                                                <Setter Property="Background"
+                                                        Value="{ThemeResource PhoneMidBrush}" />
+                                                <Setter Property="Padding"
+                                                        Value="0" />
+                                                <Setter Property="Margin"
+                                                        Value="0" />
+                                            </Style>
+                                        </rating:Rating.UnfilledItemStyle>
+                                    </rating:Rating>
+                                    <TextBlock Style="{StaticResource ListViewItemContentTextBlockStyle}"
+                                               Foreground="{ThemeResource PhoneLowBrush}"
+                                               TextWrapping="NoWrap"
+                                               TextTrimming="CharacterEllipsis"
+                                               VerticalAlignment="Center"
+                                               Margin="15,0,0,0">
+                                        <Run Text="{Binding RatingsCount}" />
+                                        <Run Text="ratings" />
+                                    </TextBlock>
+                                </StackPanel>
                             </StackPanel>
 
                         </Grid>
