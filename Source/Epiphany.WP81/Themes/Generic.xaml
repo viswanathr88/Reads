@@ -44,13 +44,27 @@
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="rightContentPresenter"
                                                                            Storyboard.TargetProperty="(UIElement.Visibility)">
                                                 <DiscreteObjectKeyFrame Value="Collapsed"
-                                                                        KeyTime="0"/>
+                                                                        KeyTime="00:00:0.25"/>
                                             </ObjectAnimationUsingKeyFrames>
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="leftContentPresenter"
                                                                            Storyboard.TargetProperty="(UIElement.Visibility)">
                                                 <DiscreteObjectKeyFrame Value="Collapsed"
-                                                                        KeyTime="0"/>
+                                                                        KeyTime="00:00:0.25"/>
                                             </ObjectAnimationUsingKeyFrames>
+                                            <DoubleAnimation Storyboard.TargetName="contentPresenter"
+                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                                                             To="0"
+                                                             Duration="00:00:0.25"/>
+                                            <DoubleAnimation Storyboard.TargetName="leftContentPresenter"
+                                                             Storyboard.TargetProperty="Width"
+                                                             To="0"
+                                                             Duration="00:00:0.25"
+                                                             EnableDependentAnimation="True"/>
+                                            <DoubleAnimation Storyboard.TargetName="rightContentPresenter"
+                                                             Storyboard.TargetProperty="Width"
+                                                             To="0"
+                                                             Duration="00:00:0.25"
+                                                             EnableDependentAnimation="True"/>
                                         </Storyboard>
                                     </VisualState.Storyboard>
                                 </VisualState>

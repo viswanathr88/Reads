@@ -77,7 +77,7 @@ namespace Epiphany.Controls
         private void SwipableContent_ManipulationCompleted(object sender, ManipulationCompletedRoutedEventArgs e)
         {
             VisualStateManager.GoToState(this, "Default", true);
-            TranslateContent(0);
+            //TranslateContent(0);
         }
 
         private void SwipableContent_ManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
