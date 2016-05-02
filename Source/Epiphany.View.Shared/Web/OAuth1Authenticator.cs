@@ -175,7 +175,7 @@ namespace Epiphany.Web
 
             foreach (var parameter in parameters)
             {
-                paramBuilder.Append(parameter.Key);
+                paramBuilder.Append(Uri.EscapeDataString(parameter.Key));
                 paramBuilder.Append(separator);
                 paramBuilder.Append(Uri.EscapeDataString(parameter.Value));
 

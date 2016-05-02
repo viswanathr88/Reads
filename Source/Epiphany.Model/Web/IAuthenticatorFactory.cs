@@ -15,5 +15,10 @@
         /// </summary>
         /// <returns></returns>
         bool IsTokenAvailable();
+
+        string ConsumerKey
+        {
+            get;
+        }
     }
 }

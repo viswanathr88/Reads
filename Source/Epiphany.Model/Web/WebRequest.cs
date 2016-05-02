@@ -173,9 +173,9 @@ namespace Epiphany.Web
 
             foreach (var parameter in Parameters)
             {
-                parameterStringBuilder.Append(parameter.Key);
+                parameterStringBuilder.Append(Uri.EscapeDataString(parameter.Key));
                 parameterStringBuilder.Append("=");
-                parameterStringBuilder.Append(parameter.Value);
+                parameterStringBuilder.Append(Uri.EscapeDataString(parameter.Value));
 
                 count++;
                 if (count < total)

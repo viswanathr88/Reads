@@ -11,6 +11,15 @@ namespace Epiphany.Web
     {
         private AuthConfig config = new AuthConfig();
         private Token currentToken;
+
+        public string ConsumerKey
+        {
+            get
+            {
+                return config.ConsumerKey;
+            }
+        }
+
         /// <summary>
         /// Create an oauth authenticator
         /// </summary>

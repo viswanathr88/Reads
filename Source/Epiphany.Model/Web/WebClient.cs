@@ -41,6 +41,11 @@ namespace Epiphany.Web
                 throw new ArgumentNullException(nameof(request.Url));
             }
 
+            if (request.Method == WebMethod.Get)
+            {
+                request.Parameters["key"] = this.authFactory.ConsumerKey;
+            }
+
             // If token is available, then we should send an authenticated request always
             if (request.Authenticate || this.authFactory.IsTokenAvailable())
             {
