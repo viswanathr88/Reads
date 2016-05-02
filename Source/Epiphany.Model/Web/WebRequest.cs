@@ -20,6 +20,8 @@ namespace Epiphany.Web
         private readonly IDictionary<string, string> headers;
         private readonly IDictionary<string, string> parameters;
         private WebMethod method;
+        private byte[] body;
+        private string contentType;
         /// <summary>
         /// Create an instance of WebRequest
         /// </summary>
@@ -36,6 +38,11 @@ namespace Epiphany.Web
             this.method = method;
             this.parameters = new Dictionary<string, string>();
             this.headers = new Dictionary<string, string>();
+
+            if (this.method == WebMethod.Post || this.method == WebMethod.Put)
+            {
+                this.contentType = "application/x-www-form-urlencoded";
+            }
         }
         /// <summary>
         /// Gets the request url
@@ -89,6 +96,42 @@ namespace Epiphany.Web
                 this.method = value;
             }
         }
+
+        public byte[] Body
+        {
+            get
+            {
+                UpdateBodyIfNeeded();
+                return this.body;
+            }
+            set
+            {
+                if (this.body == value) return;
+                this.body = value;
+            }
+        }
+
+        public string ContentType
+        {
+            get
+            {
+                return this.contentType;
+            }
+        }
+
+        private void UpdateBodyIfNeeded()
+        {
+            if (Method == WebMethod.Post || 
+                Method == WebMethod.Put)
+            {
+                if (Parameters.Count > 0)
+                {
+                    string paramString = StringifyParameters();
+                    this.body = System.Text.Encoding.UTF8.GetBytes(paramString);
+                }
+            }
+        }
+
         /// <summary>
         /// Gets the request information
         /// </summary>
@@ -101,6 +144,10 @@ namespace Epiphany.Web
             {
                 builder.AppendLine(string.Format("Key={0}, Value={1}", header.Key, header.Value));
             }
+            if (Body != null && Body.Length > 0)
+            {
+                builder.AppendLine("Body = " + System.Text.Encoding.UTF8.GetString(Body, 0, Body.Length));
+            }
 
             return builder.ToString();
         }
@@ -109,24 +156,35 @@ namespace Epiphany.Web
         {
             StringBuilder urlBuilder = new StringBuilder();
             urlBuilder.Append(this.url);
-            urlBuilder.Append("?");
 
+            if (Method != WebMethod.Post && Method != WebMethod.Put)
+            {
+                urlBuilder.Append("?");
+                urlBuilder.Append(StringifyParameters());
+            }
+            return urlBuilder.ToString();
+        }
+
+        private string StringifyParameters()
+        {
+            StringBuilder parameterStringBuilder = new StringBuilder();
             int total = Parameters.Count;
             int count = 0;
 
             foreach (var parameter in Parameters)
             {
-                urlBuilder.Append(parameter.Key);
-                urlBuilder.Append("=");
-                urlBuilder.Append(parameter.Value);
+                parameterStringBuilder.Append(parameter.Key);
+                parameterStringBuilder.Append("=");
+                parameterStringBuilder.Append(parameter.Value);
 
                 count++;
                 if (count < total)
                 {
-                    urlBuilder.Append("&");
+                    parameterStringBuilder.Append("&");
                 }
             }
-            return urlBuilder.ToString();
+
+            return parameterStringBuilder.ToString();
         }
     }
 }

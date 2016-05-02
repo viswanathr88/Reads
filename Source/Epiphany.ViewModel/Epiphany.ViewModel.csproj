@@ -67,6 +67,7 @@
     <Compile Include="Commands\AddShelfCommand.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Commands\AddToReadingListCommand.cs" />
     <Compile Include="Commands\AddToShelfCommandArgs.cs" />
     <Compile Include="Commands\AddToShelvesCommand.cs" />
     <Compile Include="Commands\EnumeratorCommand.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Commands\Navigation\ShowSearchCommand.cs" />
     <Compile Include="Commands\Navigation\ShowSettingsCommand.cs" />
     <Compile Include="Commands\RateAppCommand.cs" />
+    <Compile Include="Commands\RemoveFromReadingListCommand.cs" />
     <Compile Include="Commands\SaveFeedOptionsCommand.cs" />
     <Compile Include="Commands\SearchCommand.cs" />
     <Compile Include="Data\AboutViewModel.cs" />

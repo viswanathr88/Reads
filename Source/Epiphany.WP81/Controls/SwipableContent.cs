@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Input;
 using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -17,6 +18,24 @@ namespace Epiphany.Controls
         RightSwipe,
         Default
     };
+
+    public class SwipeEventArgs : EventArgs
+    {
+        private SwipeDirection direction;
+
+        public SwipeEventArgs(SwipeDirection direction)
+        {
+            this.direction = direction;
+        }
+
+        public SwipeDirection Direction
+        {
+            get
+            {
+                return this.direction;
+            }
+        }
+    }
 
     [ContentProperty(Name = "Content")]
     public sealed class SwipableContent : Control
@@ -65,6 +84,51 @@ namespace Epiphany.Controls
         public static readonly DependencyProperty RightContentProperty =
             DependencyProperty.Register("RightContent", typeof(object), typeof(SwipableContent), new PropertyMetadata(null));
 
+        public ICommand LeftCommand
+        {
+            get { return (ICommand)GetValue(LeftCommandProperty); }
+            set { SetValue(LeftCommandProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for LeftCommand.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty LeftCommandProperty =
+            DependencyProperty.Register("LeftCommand", typeof(ICommand), typeof(SwipableContent), new PropertyMetadata(null));
+
+
+        public ICommand RightCommand
+        {
+            get { return (ICommand)GetValue(RightCommandProperty); }
+            set { SetValue(RightCommandProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for RightCommand.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty RightCommandProperty =
+            DependencyProperty.Register("RightCommand", typeof(ICommand), typeof(SwipableContent), new PropertyMetadata(null));
+
+
+        public object CommandParameter
+        {
+            get { return (object)GetValue(CommandParameterProperty); }
+            set { SetValue(CommandParameterProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for CommandParameter.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CommandParameterProperty =
+            DependencyProperty.Register("CommandParameter", typeof(object), typeof(SwipableContent), new PropertyMetadata(null));
+
+        public bool SwipeEnabled
+        {
+            get { return (bool)GetValue(SwipeEnabledProperty); }
+            set { SetValue(SwipeEnabledProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for SwipeEnabled.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty SwipeEnabledProperty =
+            DependencyProperty.Register("SwipeEnabled", typeof(bool), typeof(SwipableContent), new PropertyMetadata(true));
+
+        public event EventHandler<SwipeEventArgs> SwipeCompleted;
+        private void RaiseSwipeCompleted(SwipeDirection direction) => SwipeCompleted?.Invoke(this, new SwipeEventArgs(direction));
+
 
         protected override void OnApplyTemplate()
         {
@@ -77,13 +141,36 @@ namespace Epiphany.Controls
         private void SwipableContent_ManipulationCompleted(object sender, ManipulationCompletedRoutedEventArgs e)
         {
             VisualStateManager.GoToState(this, "Default", true);
-            //TranslateContent(0);
+            
+            if (Math.Abs(e.Cumulative.Translation.X) > 50)
+            {
+                SwipeDirection direction = DirectionOfManipulation(e.Cumulative.Translation);
+                RaiseSwipeCompleted(direction);
+
+                if (direction == SwipeDirection.RightSwipe)
+                {
+                    if (LeftCommand != null && LeftCommand.CanExecute(CommandParameter))
+                    {
+                        LeftCommand.Execute(CommandParameter);
+                    }
+                }
+                else
+                {
+                    if (RightCommand != null && RightCommand.CanExecute(CommandParameter))
+                    {
+                        RightCommand.Execute(CommandParameter);
+                    }
+                }
+            }
         }
 
         private void SwipableContent_ManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
         {
-            SetVisualStateForManipulation(e.Cumulative.Translation);
-            TranslateContent(e.Cumulative.Translation.X);
+            if (SwipeEnabled)
+            {
+                SetVisualStateForManipulation(e.Cumulative.Translation);
+                TranslateContent(e.Cumulative.Translation.X);
+            }
         }
 
         void SetVisualStateForManipulation(Point p)

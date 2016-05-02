@@ -19,10 +19,18 @@ namespace Epiphany.Model
 
         public static bool operator ==(Entity<TKey> e1, Entity<TKey> e2)
         {
-            if (object.ReferenceEquals(null, e1))
+            if (object.ReferenceEquals(null, e1) && object.ReferenceEquals(null, e2))
+            {
+                return true;
+            }
+            else if (object.ReferenceEquals(null, e1))
+            {
                 return false;
-
-            return e1.Equals(e2);
+            }
+            else
+            {
+                return e1.Equals(e2);
+            }
         }
 
         public static bool operator !=(Entity<TKey> e1, Entity<TKey> e2)

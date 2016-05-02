@@ -41,8 +41,10 @@ namespace Epiphany.Web
                 throw new ArgumentNullException(nameof(request.Url));
             }
 
-            if (request.Authenticate)
+            // If token is available, then we should send an authenticated request always
+            if (request.Authenticate || this.authFactory.IsTokenAvailable())
             {
+                Logger.LogInfo("Authenticating Request...");
                 // We should authenticate if the request says it should be
                 IAuthenticator authenticator = this.authFactory.CreateOAuthAuthenticator();
                 authenticator.Authenticate(request);
@@ -52,12 +54,29 @@ namespace Epiphany.Web
 
             // Translate Method
             httpWebRequest.Method = request.Method.ToString().ToUpperInvariant();
+
+            // Copy over Content Type
+            if (!string.IsNullOrEmpty(request.ContentType))
+            {
+                httpWebRequest.ContentType = request.ContentType;
+            }
+
+            // Copy over request body
+            if (request.Body != null && request.Body.Length > 0)
+            {
+                using (Stream stream = await httpWebRequest.GetRequestStreamAsync())
+                {
+                    stream.Write(request.Body, 0, request.Body.Length);
+                }
+            }
             
             // Copy over the headers
             foreach (var header in request.Headers)
             {
                 httpWebRequest.Headers[header.Key] = header.Value;
             }
+
+            Logger.LogDebug(request.ToString());
 
             WebResponse response = null;
             try
@@ -70,6 +89,7 @@ namespace Epiphany.Web
                     {
                         content = await reader.ReadToEndAsync();
                         response = new WebResponse(httpWebResponse.StatusCode, content);
+                        Logger.LogDebug(response.ToString());
                     }
                 }
                 else

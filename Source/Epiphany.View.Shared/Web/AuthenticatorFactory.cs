@@ -1,4 +1,5 @@
-﻿using Epiphany.Logging;
+﻿using System;
+using Epiphany.Logging;
 using Epiphany.Model.Authentication;
 
 namespace Epiphany.Web
@@ -29,6 +30,12 @@ namespace Epiphany.Web
 
             return authenticator;
         }
+
+        public bool IsTokenAvailable()
+        {
+            return this.currentToken != null;
+        }
+
         /// <summary>
         /// Callback when the current token changes
         /// </summary>

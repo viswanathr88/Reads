@@ -61,6 +61,17 @@ namespace Epiphany.View
             }
         }
 
+        protected T GetViewModel<T>()
+        {
+            T vm = default(T);
+            if (DataContext != null && DataContext is T)
+            {
+                vm = (T)DataContext;
+            }
+
+            return vm;
+        }
+
         protected void RegisterDoneEvent()
         {
             IDataViewModel vm = DataContext as IDataViewModel;

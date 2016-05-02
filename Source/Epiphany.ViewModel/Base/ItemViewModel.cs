@@ -6,11 +6,12 @@ namespace Epiphany.ViewModel
     {
         private T item;
         private bool isSelected;
+        private bool isLoading;
 
         public ItemViewModel(T item)
         {
             if (item == null)
-                throw new ArgumentNullException("item");
+                throw new ArgumentNullException(nameof(item));
 
             this.item = item;
         }
@@ -30,9 +31,19 @@ namespace Epiphany.ViewModel
             }
             set
             {
-                if (this.isSelected == value) return;
-                this.isSelected = value;
-                RaisePropertyChanged();
+                SetProperty(ref this.isLoading, value);
+            }
+        }
+
+        public bool IsLoading
+        {
+            get
+            {
+                return this.isLoading;
+            }
+            protected set
+            {
+                SetProperty(ref this.isLoading, value);
             }
         }
     }

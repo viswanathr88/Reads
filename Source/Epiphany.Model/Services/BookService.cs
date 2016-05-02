@@ -124,19 +124,20 @@ namespace Epiphany.Model.Services
         {
             // Create and execute the web request
             WebRequest request = new WebRequest(ServiceUrls.AddBookUrl, WebMethod.Post);
+            request.Authenticate = true;
             request.Parameters["name"] = shelf.Name;
             request.Parameters["book_id"] = book.Id.ToString();
             WebResponse response = await webClient.ExecuteAsync(request);
 
             // Validate the response
-            response.Validate(System.Net.HttpStatusCode.Created);
+            response.Validate(System.Net.HttpStatusCode.OK);
         }
 
         public async Task RemoveBook(BookshelfModel shelf, BookModel book)
         {
-
             // Create and execute the web request
             WebRequest request = new WebRequest(ServiceUrls.AddBookUrl, WebMethod.Post);
+            request.Authenticate = true;
             request.Parameters["name"] = shelf.Name;
             request.Parameters["book_id"] = book.Id.ToString();
             request.Parameters["a"] = "remove";

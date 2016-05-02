@@ -10,5 +10,10 @@
         /// /// </summary>
         /// <returns></returns>
         IAuthenticator CreateOAuthAuthenticator();
+        /// <summary>
+        /// Returns true if a token is available
+        /// </summary>
+        /// <returns></returns>
+        bool IsTokenAvailable();
     }
 }

@@ -17,5 +17,11 @@ namespace Epiphany.Web
             return Task.Factory.FromAsync<System.Net.WebResponse>(
                 request.BeginGetResponse, request.EndGetResponse, null);
         }
+
+        public static Task<System.IO.Stream> GetRequestStreamAsync(this System.Net.HttpWebRequest request)
+        {
+            return Task.Factory.FromAsync<System.IO.Stream>(
+                request.BeginGetRequestStream, request.EndGetRequestStream, null);
+        }
     }
 }

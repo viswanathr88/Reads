@@ -127,7 +127,7 @@ namespace Epiphany.View.Services
 
         public SearchViewModel Search
         {
-            get { return new SearchViewModel(this.serviceFactory.GetBookService()); }
+            get { return new SearchViewModel(this.serviceFactory.GetBookService(), Home.IsLoggedIn); }
         }
 
         public AuthorViewModel Author

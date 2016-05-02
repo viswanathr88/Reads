@@ -105,7 +105,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "shelf/add_to_shelf";
+                return "https://www.goodreads.com/shelf/add_to_shelf";
             }
         }
 
@@ -113,7 +113,8 @@ namespace Epiphany.Model
         {
             get
             {
-                return "shelf/add_to_shelf";
+                // Same as add book url
+                return AddBookUrl;
             }
         }
 

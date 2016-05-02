@@ -29,7 +29,7 @@
             <TextBox Margin="19,20,19,0"
                      PlaceholderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchBoxPlaceholderText}"
                      Text="{Binding SearchTerm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                     KeyUp="AutoSuggestBox_KeyUp"
+                     KeyUp="SearchInput_KeyUp"
                      Height="50"
                      Padding="7" />
 
@@ -54,7 +54,6 @@
                             <TextBlock Text="{Binding SelectedFilter}"
                                        Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
                                        Foreground="{StaticResource PhoneAccentBrush}"
-                                       Tapped="OnSearchFilterTapped"
                                        LineStackingStrategy="BaselineToBaseline"
                                        Margin="15,0,0,0" />
                         </StackPanel>
@@ -116,9 +115,13 @@
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <mycontrols:SwipableContent>
+                        <mycontrols:SwipableContent SwipeCompleted="SwipableContent_SwipeCompleted"
+                                                    SwipeEnabled="{Binding ElementName=searchResultsList, Path=DataContext.IsLoggedIn}"
+                                                    LeftCommand="{Binding AddToReadingList}"
+                                                    RightCommand="{Binding RemoveFromReadingList}"
+                                                    CommandParameter="{Binding Path=Book.Item}">
                             <mycontrols:SwipableContent.LeftContent>
-                                <Grid Background="Blue"
+                                <Grid Background="SkyBlue"
                                       Margin="0,5,5,17">
                                     <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.WantToReadButtonText}"
                                                Style="{StaticResource MessageDialogContentStyle}"
@@ -150,6 +153,7 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto" />
                                         <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
 
                                     <FlyoutBase.AttachedFlyout>
@@ -242,6 +246,16 @@
                                             </TextBlock>
                                         </StackPanel>
                                     </StackPanel>
+                                    
+                                    <!-- Spinner when adding or removing book -->
+                                    <ProgressRing IsActive="{Binding IsLoading}"
+                                                  HorizontalAlignment="Center"
+                                                  Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                                  MinHeight="45"
+                                                  MinWidth="45"
+                                                  Grid.Column="2"
+                                                  Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
                                 </Grid>
                             </mycontrols:SwipableContent.Content>
 

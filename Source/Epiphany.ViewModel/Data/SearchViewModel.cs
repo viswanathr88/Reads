@@ -15,20 +15,29 @@ namespace Epiphany.ViewModel
         private ObservablePagedCollection<SearchResultItemViewModel, WorkModel> searchResults;
         private BookSearchType selectedFilter;
         private bool hasResults = true;
+        private bool isLoggedIn = false;
         private string searchTerm;
-        private const int itemsCount = 20;
 
         private readonly IBookService bookService;
 
-        public SearchViewModel() { }
-
-        public SearchViewModel(IBookService bookService)
+        public SearchViewModel(IBookService bookService, bool isLoggedIn)
         {
             this.bookService = bookService;
-
+            IsLoggedIn = isLoggedIn;
             SearchFilters = Enum.GetValues(typeof(BookSearchType)).Cast<BookSearchType>().ToList();
-
             this.selectedFilter = BookSearchType.All;
+        }
+
+        public bool IsLoggedIn
+        {
+            get
+            {
+                return this.isLoggedIn;
+            }
+            private set
+            {
+                SetProperty(ref this.isLoggedIn, value);
+            }
         }
 
         public string SearchTerm
@@ -46,9 +55,7 @@ namespace Epiphany.ViewModel
             set
             {
                 SetProperty(ref this.selectedFilter, value);
-
                 CreateSearchResultCollection();
-
             }
         }
 
@@ -78,6 +85,7 @@ namespace Epiphany.ViewModel
         public override async Task LoadAsync(VoidType parameter)
         {
             CreateSearchResultCollection();
+            await Task.Delay(1);
         }
 
         private void CreateSearchResultCollection()
@@ -124,7 +132,7 @@ namespace Epiphany.ViewModel
 
         private SearchResultItemViewModel ConvertToVM(WorkModel arg)
         {
-            return new SearchResultItemViewModel(arg);
+            return new SearchResultItemViewModel(this.bookService, arg);
         }
     }
 }

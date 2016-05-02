@@ -1,4 +1,7 @@
 ﻿using Epiphany.Model;
+using Epiphany.Model.Services;
+using Epiphany.ViewModel.Commands;
+using System;
 using System.Linq;
 
 namespace Epiphany.ViewModel.Items
@@ -8,9 +11,29 @@ namespace Epiphany.ViewModel.Items
         private BookItemViewModel book;
         private AuthorItemViewModel author;
 
-        public SearchResultItemViewModel(WorkModel work)
+        private readonly IBookService bookService;
+        private readonly IAsyncCommand<BookModel> addToReadingListCommand;
+        private readonly IAsyncCommand<BookModel> removeFromReadingList;
+
+        public SearchResultItemViewModel(IBookService bookService, WorkModel work)
             : base(work)
         {
+
+            if (bookService == null)
+            {
+                throw new ArgumentNullException(nameof(bookService));
+            }
+
+            this.bookService = bookService;
+
+            this.addToReadingListCommand = new AddToReadingListCommand(bookService);
+            this.addToReadingListCommand.Executing += OnCommandExecuting;
+            this.addToReadingListCommand.Executed += AddToReadingListCommand_Executed;
+
+            this.removeFromReadingList = new RemoveFromReadingListCommand(bookService);
+            this.removeFromReadingList.Executing += OnCommandExecuting;
+            this.removeFromReadingList.Executed += RemoveFromReadingList_Executed;
+
             Book = new BookItemViewModel(work.Book);
             Author = new AuthorItemViewModel(work.Book.Authors.FirstOrDefault());
         }
@@ -20,9 +43,7 @@ namespace Epiphany.ViewModel.Items
             get { return this.book; }
             private set
             {
-                if (this.book == value) return;
-                this.book = value;
-                RaisePropertyChanged();
+                SetProperty(ref this.book, value);
             }
         }
 
@@ -31,9 +52,7 @@ namespace Epiphany.ViewModel.Items
             get { return this.author; }
             private set
             {
-                if (this.author == value) return;
-                this.author = value;
-                RaisePropertyChanged();
+                SetProperty(ref this.author, value);
             }
         }
 
@@ -59,6 +78,37 @@ namespace Epiphany.ViewModel.Items
             {
                 return (Item.Book != null && Item.Book.UserReview != null);
             }
+        }
+
+        public IAsyncCommand<BookModel> AddToReadingList
+        {
+            get
+            {
+                return this.addToReadingListCommand;
+            }
+        }
+
+        public IAsyncCommand<BookModel> RemoveFromReadingList
+        {
+            get
+            {
+                return this.removeFromReadingList;
+            }
+        }
+
+        private void OnCommandExecuting(object sender, CancelEventArgs e)
+        {
+            IsLoading = true;
+        }
+
+        private void AddToReadingListCommand_Executed(object sender, ExecutedEventArgs e)
+        {
+            IsLoading = false;
+        }
+
+        private void RemoveFromReadingList_Executed(object sender, ExecutedEventArgs e)
+        {
+            IsLoading = false;
         }
     }
 }

@@ -1,14 +1,14 @@
-﻿using System;
+﻿using Epiphany.Controls;
 using Epiphany.Logging;
 using Epiphany.ViewModel;
+using Epiphany.ViewModel.Items;
+using System;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
-using Epiphany.ViewModel.Items;
-using Epiphany.Strings;
-using Windows.UI.ViewManagement;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -34,22 +34,7 @@ namespace Epiphany.View
             base.OnNavigatedTo(e);
         }
 
-        private void OnSearchFilterTapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
-        {
-            // Show Search Filter picker
-            /*FrameworkElement element = sender as FrameworkElement;
-            if (element != null)
-            {
-                FlyoutBase.ShowAttachedFlyout(element);
-            }*/
-        }
-
-        private void AutoSuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
-        {
-
-        }
-
-        private async void AutoSuggestBox_KeyUp(object sender, Windows.UI.Xaml.Input.KeyRoutedEventArgs e)
+        private async void SearchInput_KeyUp(object sender, KeyRoutedEventArgs e)
         {
             if (e.Key == Windows.System.VirtualKey.Enter)
             {
@@ -64,7 +49,7 @@ namespace Epiphany.View
             }
         }
 
-        private void SearchResult_Holding(object sender, Windows.UI.Xaml.Input.HoldingRoutedEventArgs e)
+        private void SearchResult_Holding(object sender, HoldingRoutedEventArgs e)
         {
             FrameworkElement element = sender as FrameworkElement;
             if (element == null)
@@ -161,6 +146,21 @@ namespace Epiphany.View
             if (this.searchResultsList.Items.Count > 0)
             {
                 this.searchResultsList.ScrollIntoView(this.searchResultsList.Items[0]);
+            }
+        }
+
+        private void SwipableContent_SwipeCompleted(object sender, SwipeEventArgs e)
+        {
+            FrameworkElement element = sender as FrameworkElement;
+            if (element == null)
+            {
+                Logger.LogError("Sender is not a framework element!");
+                return;
+            }
+
+            if (element.DataContext == null)
+            {
+                Logger.LogError("Sender does not have a data context set");
             }
         }
     }
