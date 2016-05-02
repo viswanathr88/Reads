@@ -477,7 +477,13 @@
   <data name="ShareBookTitle" xml:space="preserve">
     <value>A book has been shared with you</value>
   </data>
+  <data name="RemoveFromShelfButtonText" xml:space="preserve">
+    <value>Remove from shelf</value>
+  </data>
   <data name="TopButtonText" xml:space="preserve">
     <value>Top</value>
+  </data>
+  <data name="WantToReadButtonText" xml:space="preserve">
+    <value>Want to read</value>
   </data>
 </root>

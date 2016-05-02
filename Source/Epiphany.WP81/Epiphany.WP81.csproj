@@ -92,6 +92,7 @@
     </Compile>
     <Compile Include="Controls\HorizontalStretchPanel.cs" />
     <Compile Include="Controls\MagneticEdgePanel.cs" />
+    <Compile Include="Controls\SwipableContent.cs" />
     <Compile Include="Controls\TabHeader.xaml.cs">
       <DependentUpon>TabHeader.xaml</DependentUpon>
     </Compile>
@@ -140,6 +141,10 @@
     <Page Include="Controls\TabHeader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\LogonPage.xaml">
       <SubType>Designer</SubType>

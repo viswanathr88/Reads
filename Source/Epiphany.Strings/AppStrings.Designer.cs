@@ -854,6 +854,15 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remove from shelf.
+        /// </summary>
+        public static string RemoveFromShelfButtonText {
+            get {
+                return ResourceManager.GetString("RemoveFromShelfButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to LeftToRight.
         /// </summary>
         public static string ResourceFlowDirection {
@@ -1129,6 +1138,15 @@ namespace Epiphany.Strings {
         public static string ViewInGoodreadsText {
             get {
                 return ResourceManager.GetString("ViewInGoodreadsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Want to read.
+        /// </summary>
+        public static string WantToReadButtonText {
+            get {
+                return ResourceManager.GetString("WantToReadButtonText", resourceCulture);
             }
         }
         
