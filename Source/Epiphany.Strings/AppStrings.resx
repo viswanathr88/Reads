@@ -486,4 +486,7 @@
   <data name="WantToReadButtonText" xml:space="preserve">
     <value>Want to read</value>
   </data>
+  <data name="InShelfText" xml:space="preserve">
+    <value>This book is in your shelf</value>
+  </data>
 </root>

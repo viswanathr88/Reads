@@ -7,7 +7,7 @@ namespace Epiphany.Model
 {
     public sealed class BookModel : Entity<int>
     {
-        private readonly GoodreadsBook book;
+        private GoodreadsBook book;
         private readonly GoodreadsReview review;
 
         internal BookModel(GoodreadsBook book)
@@ -25,6 +25,12 @@ namespace Epiphany.Model
 
             this.review = review;
             this.book = review.Book;
+        }
+
+        internal GoodreadsBook Inner
+        {
+            get { return this.book; }
+            set { this.book = value; }
         }
 
         public override int Id

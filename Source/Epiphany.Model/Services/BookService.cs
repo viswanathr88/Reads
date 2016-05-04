@@ -1,5 +1,4 @@
 ﻿using Epiphany.Model.Adapter;
-using Epiphany.Model.Authentication;
 using Epiphany.Model.Collections;
 using Epiphany.Model.DataSources;
 using Epiphany.Model.Messaging;
@@ -131,6 +130,23 @@ namespace Epiphany.Model.Services
 
             // Validate the response
             response.Validate(System.Net.HttpStatusCode.OK);
+
+            // Create a dummy Review object and set it. Goodreads doesn't have an api
+            // to refresh in place without making another request
+            GoodreadsReview review = new GoodreadsReview()
+            {
+                Shelves = new List<GoodreadsShelf>()
+                {
+                    new GoodreadsShelf()
+                    {
+                        Name = shelf.Name
+                    }
+                }
+            };
+            if (book.Inner != null)
+            {
+                book.Inner.UserReview = review;
+            }
         }
 
         public async Task RemoveBook(BookshelfModel shelf, BookModel book)
@@ -145,6 +161,16 @@ namespace Epiphany.Model.Services
 
             // Validate the response
             response.Validate(System.Net.HttpStatusCode.OK);
+
+            // If to-read is the only shelf for this remove, empty it
+            if (book.Inner != null && book.Inner.UserReview != null)
+            {
+                if (book.Inner.UserReview.Shelves.Count == 1 &&
+                    book.Inner.UserReview.Shelves[0].Name == "to-read")
+                {
+                    book.Inner.UserReview = null;
+                }
+            }
         }
 
         public IPagedCollection<WorkModel> Find(BookSearchType type, string term)

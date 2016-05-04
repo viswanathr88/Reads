@@ -104,11 +104,13 @@ namespace Epiphany.ViewModel.Items
         private void AddToReadingListCommand_Executed(object sender, ExecutedEventArgs e)
         {
             IsLoading = false;
+            RaisePropertyChanged(nameof(Reviewed));
         }
 
         private void RemoveFromReadingList_Executed(object sender, ExecutedEventArgs e)
         {
             IsLoading = false;
+            RaisePropertyChanged(nameof(Reviewed));
         }
     }
 }

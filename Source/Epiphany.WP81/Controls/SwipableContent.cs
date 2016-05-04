@@ -141,6 +141,11 @@ namespace Epiphany.Controls
         private void SwipableContent_ManipulationCompleted(object sender, ManipulationCompletedRoutedEventArgs e)
         {
             VisualStateManager.GoToState(this, "Default", true);
+
+            if (!SwipeEnabled)
+            {
+                return;
+            }
             
             if (Math.Abs(e.Cumulative.Translation.X) > 50)
             {

@@ -121,30 +121,38 @@
                                                     RightCommand="{Binding RemoveFromReadingList}"
                                                     CommandParameter="{Binding Path=Book.Item}">
                             <mycontrols:SwipableContent.LeftContent>
-                                <Grid Background="SkyBlue"
-                                      Margin="0,5,5,17">
+                                <StackPanel Background="{ThemeResource PhoneAccentBrush}"
+                                      Margin="0,5,5,17"
+                                            Orientation="Horizontal">
+                                    <FontIcon Margin="10,0,0,0"
+                                              Glyph="&#xE1CF;"
+                                              FontSize="18" />
                                     <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.WantToReadButtonText}"
-                                               Style="{StaticResource MessageDialogContentStyle}"
-                                               Foreground="White"
-                                               HorizontalAlignment="Right"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="NoWrap"
-                                               TextTrimming="Clip"
-                                               Margin="10,0,15,0"/>
-                                </Grid>
-                            </mycontrols:SwipableContent.LeftContent>
-                            <mycontrols:SwipableContent.RightContent>
-                                <Grid Background="Red"
-                                      Margin="0,5,5,17">
-                                    <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.RemoveFromShelfButtonText}"
                                                Style="{StaticResource MessageDialogContentStyle}"
                                                Foreground="White"
                                                HorizontalAlignment="Left"
                                                VerticalAlignment="Center"
                                                TextWrapping="NoWrap"
                                                TextTrimming="Clip"
+                                               Margin="10,0,15,0" />
+                                </StackPanel>
+                            </mycontrols:SwipableContent.LeftContent>
+                            <mycontrols:SwipableContent.RightContent>
+                                <StackPanel Background="Red"
+                                            Margin="0,5,5,17"
+                                            Orientation="Horizontal">
+                                    <FontIcon Margin="10,0,0,0"
+                                              Glyph="&#xE107;"
+                                              FontSize="18" />
+                                    <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.RemoveFromShelfButtonText}"
+                                               Style="{StaticResource MessageDialogContentStyle}"
+                                               Foreground="White"
+                                               HorizontalAlignment="Right"
+                                               VerticalAlignment="Center"
+                                               TextWrapping="NoWrap"
+                                               TextTrimming="Clip"
                                                Margin="15,0,10,0" />
-                                </Grid>
+                                </StackPanel>
                             </mycontrols:SwipableContent.RightContent>
 
                             <mycontrols:SwipableContent.Content>
@@ -245,8 +253,13 @@
                                         <Run Text="ratings" />
                                             </TextBlock>
                                         </StackPanel>
+                                        <!-- Extra comments about book if reviewed -->
+                                        <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.InShelfText}"
+                                                   Foreground="{ThemeResource PhoneAccentBrush}"
+                                                   Style="{StaticResource ListViewItemContentTextBlockStyle}"
+                                                   Visibility="{Binding Reviewed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                     </StackPanel>
-                                    
+
                                     <!-- Spinner when adding or removing book -->
                                     <ProgressRing IsActive="{Binding IsLoading}"
                                                   HorizontalAlignment="Center"
@@ -254,8 +267,7 @@
                                                   MinHeight="45"
                                                   MinWidth="45"
                                                   Grid.Column="2"
-                                                  Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-
+                                                  Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                 </Grid>
                             </mycontrols:SwipableContent.Content>
 

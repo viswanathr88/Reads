@@ -512,6 +512,15 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This book is in your shelf.
+        /// </summary>
+        public static string InShelfText {
+            get {
+                return ResourceManager.GetString("InShelfText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to interests.
         /// </summary>
         public static string InterestsText {
