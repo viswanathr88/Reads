@@ -2,7 +2,7 @@
 
 namespace Epiphany.ViewModel.Items
 {
-    public sealed class AuthorItemViewModel : ItemViewModel<AuthorModel>
+    public sealed class AuthorItemViewModel : ItemViewModel<AuthorModel>, IAuthorItemViewModel
     {
         public AuthorItemViewModel(AuthorModel model) : base(model)
         {

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 namespace Epiphany.ViewModel
 {
-    public sealed class FriendsViewModel : DataViewModel<UserModel>
+    public sealed class FriendsViewModel : DataViewModel<UserModel>, IFriendsViewModel
     {
         private int id;
         private string name;

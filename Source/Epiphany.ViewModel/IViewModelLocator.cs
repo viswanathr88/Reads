@@ -6,32 +6,32 @@ namespace Epiphany.View.Services
 {
     public interface IViewModelLocator : IDisposable
     {
-        HomeViewModel Home { get; }
+        IHomeViewModel Home { get; }
 
-        LogonViewModel Logon { get; }
+        ILogonViewModel Logon { get; }
 
-        AddBookViewModel AddBook { get; }
+        IAddBookViewModel AddBook { get; }
 
-        AppResources About { get; }
+        IAboutViewModel About { get; }
 
-        ProfileViewModel Profile { get; }
+        IProfileViewModel Profile { get; }
 
-        BooksViewModel Books { get; }
+        IBooksViewModel Books { get; }
 
-        FriendsViewModel Friends { get; }
+        IFriendsViewModel Friends { get; }
 
-        EventsViewModel Events { get; }
+        IEventsViewModel Events { get; }
 
-        SearchViewModel Search { get; }
+        ISearchViewModel Search { get; }
 
-        AuthorViewModel Author { get; }
+        IAuthorViewModel Author { get; }
 
-        BookViewModel Book { get; }
+        IBookViewModel Book { get; }
 
-        ScanViewModel Scanner { get; }
+        IScanViewModel Scanner { get; }
 
         //BookshelvesViewModel Bookshelves { get; }
 
-        SettingsViewModel Settings { get; }
+        ISettingsViewModel Settings { get; }
     }
 }

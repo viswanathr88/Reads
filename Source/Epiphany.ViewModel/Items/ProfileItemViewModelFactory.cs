@@ -22,12 +22,12 @@ namespace Epiphany.ViewModel
 
     class ProfileItemViewModelFactory
     {
-        public ObservableCollection<ProfileItemViewModel> GetProfileItems(ProfileModel profile)
+        public ObservableCollection<IProfileItemViewModel> GetProfileItems(ProfileModel profile)
         {
             if (profile == null)
                 throw new ArgumentNullException("profile", "profile cannot be null");
 
-            ObservableCollection<ProfileItemViewModel> profileItems = new ObservableCollection<ProfileItemViewModel>();
+            ObservableCollection<IProfileItemViewModel> profileItems = new ObservableCollection<IProfileItemViewModel>();
             if (profile.FriendsCount > 0)
                 profileItems.Add(new ProfileItemViewModel(ProfileItemType.Friends, profile.FriendsCount.ToString(), true));
             if (profile.GroupsCount > 0)

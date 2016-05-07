@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class LogonViewModel : DataViewModel<VoidType>
+    public sealed class LogonViewModel : DataViewModel<VoidType>, ILogonViewModel
     {
         private bool isWaitingForUserInteraction;
         private Uri currentUri;

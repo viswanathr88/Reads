@@ -24,7 +24,7 @@ namespace Epiphany.View.DesignData
 
         private void PopulateBookshelves()
         {
-            Bookshelves = new ObservableCollection<BookshelfItemViewModel>();
+            /*Bookshelves = new ObservableCollection<IBookshelfItemViewModel>();
 
             for (int i = 0; i < 6; i++)
             {
@@ -35,7 +35,7 @@ namespace Epiphany.View.DesignData
                 });
             }
 
-            SelectedBookshelf = Bookshelves[0];
+            SelectedBookshelf = Bookshelves[0];*/
         }
 
         public int Id { get; set; }

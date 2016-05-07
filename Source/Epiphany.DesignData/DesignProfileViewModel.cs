@@ -5,7 +5,6 @@ using Epiphany.ViewModel.Items;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 
 namespace Epiphany.View.DesignData
 {
@@ -20,7 +19,7 @@ namespace Epiphany.View.DesignData
             IsLoaded = true;
             //ImageUrl = "http://www.viscofoods.com/wp-content/themes/456market/assets/img/placeholder.png";
 
-            ProfileItems = new List<ProfileItemViewModel>();
+            ProfileItems = new List<IProfileItemViewModel>();
             ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.Age, "25", false));
             ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.Username, "testuser", false));
             ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.ViewInGoodreads, "www.goodreads.com", true));
@@ -45,63 +44,63 @@ namespace Epiphany.View.DesignData
         public int Id
         {
             get;
-            private set;
+            set;
         }
 
         public string Name
         {
             get;
-            private set;
+            set;
         }
 
         public ProfileModel Model
         {
             get;
-            private set;
+            set;
         }
 
         public bool AreShelvesEmpty
         {
             get;
-            private set;
+            set;
         }
 
         public bool AreUpdatesEmpty
         {
             get;
-            private set;
+            set;
         }
 
         public string ImageUrl
         {
             get;
-            private set;
+            set;
         }
 
         public System.Windows.Input.ICommand GoHome
         {
-            get { return null; }
+            get;
         }
 
         public IAsyncCommand<Model.ProfileModel, int> FetchProfile
         {
-            get { return null; }
+            get;
         }
 
         public IAsyncCommand<IEnumerable<BookshelfModel>, IAsyncEnumerator<BookshelfModel>> FetchBookshelves
         {
-            get { return null; }
+            get;
         }
 
         public IAsyncEnumerator<BookshelfModel> FetchBookshelvesArg
         {
-            get { return null; }
+            get;
         }
 
-        public IList<ProfileItemViewModel> ProfileItems
+        public IList<IProfileItemViewModel> ProfileItems
         {
             get;
-            private set;
+            set;
         }
 
         public IList<IFeedItemViewModel> RecentUpdates
@@ -122,7 +121,7 @@ namespace Epiphany.View.DesignData
             set;
         }
 
-        public ProfileItemViewModel SelectedProfileItem
+        public IProfileItemViewModel SelectedProfileItem
         {
             get;
             set;
@@ -131,7 +130,8 @@ namespace Epiphany.View.DesignData
 
         public BookshelfModel SelectedShelf
         {
-            get { return null; }
+            get;
+            set;
         }
     }
 }

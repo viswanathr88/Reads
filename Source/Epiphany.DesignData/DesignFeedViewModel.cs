@@ -4,7 +4,6 @@ using Epiphany.ViewModel.Items;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Epiphany.View.DesignData
@@ -14,9 +13,9 @@ namespace Epiphany.View.DesignData
         public DesignFeedViewModel()
         {
             IsFeedEmpty = false;
-            Feed = new ObservableCollection<IFeedItemViewModel>();
+            Items = new ObservableCollection<IFeedItemViewModel>();
 
-            /*Feed.Add(new DesignFeedItemViewModel()
+            /*Items.Add(new DesignFeedItemViewModel()
             {
                 Type = FeedItemType.Friend,
                 ActionText = "MyNameIsX is now friends with:",
@@ -33,7 +32,7 @@ namespace Epiphany.View.DesignData
                 }
             });
 
-            Feed.Add(new DesignFeedItemViewModel()
+            Items.Add(new DesignFeedItemViewModel()
             {
                 Type = FeedItemType.UserStatus,
                 ActionText = "X is on page 15 of 50 of:",
@@ -53,7 +52,7 @@ namespace Epiphany.View.DesignData
                 }
             });*/
 
-            Feed.Add(new DesignFeedItemViewModel()
+            Items.Add(new DesignFeedItemViewModel()
             {
                 Type = FeedItemType.ReadStatus,
                 ActionText = "X is currently reading:",
@@ -74,7 +73,7 @@ namespace Epiphany.View.DesignData
                 }
             });
 
-            Feed.Add(new DesignFeedItemViewModel()
+            Items.Add(new DesignFeedItemViewModel()
             {
                 Type = FeedItemType.Review,
                 ActionText = "X gave 4 stars to:",
@@ -97,7 +96,7 @@ namespace Epiphany.View.DesignData
             });
 
         }
-        public IList<IFeedItemViewModel> Feed
+        public IList<IFeedItemViewModel> Items
         {
             get;
             set;

@@ -8,7 +8,7 @@ using Windows.UI.Xaml.Controls;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class ScanViewModel : DataViewModel<VoidType>
+    public sealed class ScanViewModel : DataViewModel<VoidType>, IScanViewModel
     {
         private MediaCapture mediaCapture;
         private CaptureElement captureElement;

@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
-    public class SearchViewModel : DataViewModel<string>
+    public class SearchViewModel : DataViewModel<string>, ISearchViewModel
     {
         private IList<BookSearchType> searchFilters;
-        private ObservablePagedCollection<SearchResultItemViewModel, WorkModel> searchResults;
+        private ObservablePagedCollection<ISearchResultItemViewModel, WorkModel> searchResults;
         private BookSearchType selectedFilter;
         private bool hasResults = true;
         private bool isLoggedIn = false;
@@ -68,7 +68,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<SearchResultItemViewModel> SearchResults
+        public IList<ISearchResultItemViewModel> SearchResults
         {
             get { return this.searchResults; }
         }
@@ -108,7 +108,7 @@ namespace Epiphany.ViewModel
                 RaisePropertyChanged(nameof(SearchResults));
             }
 
-            this.searchResults = new ObservablePagedCollection<SearchResultItemViewModel, WorkModel>(collection, ConvertToVM);
+            this.searchResults = new ObservablePagedCollection<ISearchResultItemViewModel, WorkModel>(collection, ConvertToVM);
             this.searchResults.Loading += SearchResults_Loading;
             this.searchResults.Loaded += SearchResults_Loaded;
             RaisePropertyChanged(nameof(SearchResults));

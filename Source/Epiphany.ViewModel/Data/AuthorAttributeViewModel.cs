@@ -14,7 +14,7 @@ namespace Epiphany.ViewModel
         Influences
     };
 
-    public class AuthorAttributeViewModel : ViewModelBase
+    public sealed class AuthorAttributeViewModel : ViewModelBase, IAuthorAttributeViewModel
     {
         private readonly AuthorAttribute type;
         private readonly string value;

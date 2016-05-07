@@ -5,13 +5,14 @@ using Epiphany.ViewModel.Items;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 using System.Linq;
 
 namespace Epiphany.View.DesignData
 {
     public sealed class DesignSearchViewModel : DesignBaseViewModel, ISearchViewModel
     {
+        private Random random = new Random();
+
         public DesignSearchViewModel()
         {
             SearchTerm = "Archer";
@@ -43,7 +44,10 @@ namespace Epiphany.View.DesignData
                     {
                         Id = 250,
                         Name = "Test Author " + i
-                    }
+                    },
+                    AverageRating = random.NextDouble() * 5,
+                    RatingsCount = random.Next(50, 1000000),
+                    Reviewed = (random.NextDouble()> 0.5)
                 };
                 SearchResults.Add(itemVM);
             }
@@ -98,6 +102,14 @@ namespace Epiphany.View.DesignData
         {
             get;
             set;
+        }
+
+        public bool IsLoggedIn
+        {
+            get
+            {
+                return false;
+            }
         }
     }
 }

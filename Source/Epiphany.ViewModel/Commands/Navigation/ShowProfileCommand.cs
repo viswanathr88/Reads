@@ -52,7 +52,7 @@ namespace Epiphany.ViewModel.Commands
         }
     }
 
-    sealed class ShowProfileFromItemCommand : Command<UserItemViewModel>
+    sealed class ShowProfileFromItemCommand : Command<IUserItemViewModel>
     {
         private readonly INavigationService navService;
 
@@ -61,12 +61,12 @@ namespace Epiphany.ViewModel.Commands
             this.navService = navService;
         }
 
-        public override bool CanExecute(UserItemViewModel user)
+        public override bool CanExecute(IUserItemViewModel user)
         {
             return user.Id >= 0;
         }
 
-        protected override void Run(UserItemViewModel user)
+        protected override void Run(IUserItemViewModel user)
         {
             this.navService.CreateFor<ProfileViewModel>()
                 .AddParam<int>((x) => x.Id, user.Id)

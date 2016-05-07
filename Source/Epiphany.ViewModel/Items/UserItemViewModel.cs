@@ -2,7 +2,7 @@
 
 namespace Epiphany.ViewModel.Items
 {
-    public sealed class UserItemViewModel : ItemViewModel<UserModel>
+    public sealed class UserItemViewModel : ItemViewModel<UserModel>, IUserItemViewModel
     {
 
         public UserItemViewModel(UserModel user) :

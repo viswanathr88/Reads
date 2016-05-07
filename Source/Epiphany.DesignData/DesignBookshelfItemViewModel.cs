@@ -1,5 +1,4 @@
 ﻿using Epiphany.ViewModel;
-using Epiphany.ViewModel.Items;
 
 namespace Epiphany.View.DesignData
 {

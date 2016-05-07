@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class LauncherViewModel : DataViewModel<VoidType>
+    public sealed class LauncherViewModel : DataViewModel<VoidType>, ILauncherViewModel
     {
         private readonly INavigationService navService;
         private readonly ILogonService logonService;

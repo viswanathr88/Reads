@@ -6,10 +6,10 @@ using System.Linq;
 
 namespace Epiphany.ViewModel.Items
 {
-    public sealed class SearchResultItemViewModel : ItemViewModel<WorkModel>
+    public sealed class SearchResultItemViewModel : ItemViewModel<WorkModel>, ISearchResultItemViewModel
     {
-        private BookItemViewModel book;
-        private AuthorItemViewModel author;
+        private IBookItemViewModel book;
+        private IAuthorItemViewModel author;
 
         private readonly IBookService bookService;
         private readonly IAsyncCommand<BookModel> addToReadingListCommand;
@@ -38,7 +38,7 @@ namespace Epiphany.ViewModel.Items
             Author = new AuthorItemViewModel(work.Book.Authors.FirstOrDefault());
         }
 
-        public BookItemViewModel Book
+        public IBookItemViewModel Book
         {
             get { return this.book; }
             private set
@@ -47,7 +47,7 @@ namespace Epiphany.ViewModel.Items
             }
         }
 
-        public AuthorItemViewModel Author
+        public IAuthorItemViewModel Author
         {
             get { return this.author; }
             private set

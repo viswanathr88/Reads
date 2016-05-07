@@ -60,11 +60,26 @@
             </Pivot.Background>
             <!-- Home Pivot -->
             <PivotItem>
-                <!-- Sign in control -->
-                <controls:SignInControl Margin="19,20,19,20"
-                                        VerticalAlignment="Center"
-                                        Visibility="{Binding IsLoggedIn, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
-                                        Message="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabHomeSignInText}" />
+                <Grid>
+                    <!-- Sign in control -->
+                    <controls:SignInControl Margin="19,20,19,20"
+                                            VerticalAlignment="Center"
+                                            Visibility="{Binding IsLoggedIn, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
+                                            Message="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabHomeSignInText}" />
+                    
+                    <!-- Feed -->
+                    <ListView ItemsSource="{Binding Path=Feed.Feed}"
+                              Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <ListView.Header>
+                            <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.NoFeedMessage}"
+                                       Visibility="{Binding Path=Feed.Feed.Count, Converter={StaticResource VisibleWhenZeroConverter}}"
+                                       Style="{StaticResource ListViewEmptyStaticTextBlockStyle}"/>
+                        </ListView.Header>
+                        
+                    </ListView>
+                </Grid>
+                
+
             </PivotItem>
 
             <!-- My Books Pivot -->

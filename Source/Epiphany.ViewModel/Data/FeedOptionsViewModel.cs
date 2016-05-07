@@ -8,7 +8,7 @@ using Epiphany.Model.Settings;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class FeedOptionsViewModel : DataViewModel<VoidType>
+    public sealed class FeedOptionsViewModel : DataViewModel<VoidType>, IFeedOptionsViewModel
     {
         private FeedOptions feedOptions;
         private FeedUpdateFilter updateFilter;

@@ -7,17 +7,17 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel.Items
 {
-    public class FeedItemViewModel : ItemViewModel<FeedItemModel>
+    public sealed class FeedItemViewModel : ItemViewModel<FeedItemModel>, IFeedItemViewModel
     {
         private readonly INavigationService navService;
         private readonly IResourceLoader resourceLoader;
-        private UserItemViewModel friend;
-        private BookItemViewModel book;
+        private IUserItemViewModel friend;
+        private IBookItemViewModel book;
         private string actionText;
 
-        private readonly ICommand<UserItemViewModel> showProfileCommand;
-        private readonly ICommand<BookItemViewModel> showBookCommand;
-        private readonly ICommand<AuthorItemViewModel> showAuthorCommand;
+        private readonly ICommand<IUserItemViewModel> showProfileCommand;
+        private readonly ICommand<IBookItemViewModel> showBookCommand;
+        private readonly ICommand<IAuthorItemViewModel> showAuthorCommand;
 
         private const string FriendFeedItemActionTextKey = "FriendFeedItemActionText";
         private const string UserStatusFeedItemActionTextKey = "UserStatusFeedItemActionText";
@@ -57,12 +57,12 @@ namespace Epiphany.ViewModel.Items
             get { return this.Item.ItemType; }
         }
 
-        public UserItemViewModel User
+        public IUserItemViewModel User
         {
             get { return new UserItemViewModel(this.Item.User); }
         }
 
-        public UserItemViewModel Friend
+        public IUserItemViewModel Friend
         {
             get { return this.friend; }
             private set
@@ -73,7 +73,7 @@ namespace Epiphany.ViewModel.Items
             }
         }
 
-        public BookItemViewModel Book
+        public IBookItemViewModel Book
         {
             get { return this.book; }
             private set
@@ -111,17 +111,17 @@ namespace Epiphany.ViewModel.Items
             get { return this.Item.UpdateTime; }
         }
 
-        public ICommand<UserItemViewModel> ShowProfile
+        public ICommand<IUserItemViewModel> ShowProfile
         {
             get { return this.showProfileCommand; }
         }
 
-        public ICommand<BookItemViewModel> ShowBook
+        public ICommand<IBookItemViewModel> ShowBook
         {
             get { return this.showBookCommand; }
         }
 
-        public ICommand<AuthorItemViewModel> ShowAuthor
+        public ICommand<IAuthorItemViewModel> ShowAuthor
         {
             get { return this.showAuthorCommand; }
         }

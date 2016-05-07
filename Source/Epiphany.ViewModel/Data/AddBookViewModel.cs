@@ -15,10 +15,10 @@ namespace Epiphany.ViewModel
     /// <summary>
     /// ViewModel for adding a book to shelf
     /// </summary>
-    public class AddBookViewModel : DataViewModel<BookModel>
+    public sealed class AddBookViewModel : DataViewModel<BookModel>, IAddBookViewModel
     {
         private ICommand<IEnumerable<BookshelfModel>, IAsyncEnumerator<BookshelfModel>> fetchBookshelvesCommand;
-        private ObservableCollection<CustomBookshelfItemViewModel> customShelves;
+        private ObservableCollection<ICustomBookshelfItemViewModel> customShelves;
         private ICommand<AddToShelvesCommandArgs> addToShelvesCommand;
         private AddToShelvesCommandArgs addToShelvesCommandArgs;        
         private IAsyncCommand<BookModel, int> fetchBookCommand;
@@ -172,7 +172,7 @@ namespace Epiphany.ViewModel
         /// <summary>
         /// Gets the collection of custom shelves
         /// </summary>
-        public ObservableCollection<CustomBookshelfItemViewModel> CustomShelves
+        public ObservableCollection<ICustomBookshelfItemViewModel> CustomShelves
         {
             get { return this.customShelves; }
             private set
@@ -318,7 +318,7 @@ namespace Epiphany.ViewModel
                 IsReadSelected = true;
 
             // Process custom shelves
-            CustomShelves = new ObservableCollection<CustomBookshelfItemViewModel>();
+            CustomShelves = new ObservableCollection<ICustomBookshelfItemViewModel>();
             foreach (BookshelfModel shelf in shelves)
             {                
                 if (!IsStandardShelf(shelf.Name))

@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class HomeViewModel : DataViewModel<VoidType>
+    public sealed class HomeViewModel : DataViewModel<VoidType>, IHomeViewModel
     {
         private readonly IUserService userService;
         private readonly INavigationService navigationService;
@@ -17,17 +17,14 @@ namespace Epiphany.ViewModel
         private readonly IResourceLoader resourceLoader;
         private readonly ITimerService timerService;
 
-        private FeedViewModel feedViewModel;
-        private LauncherViewModel launcherVM;
-        private SpotlightViewModel spotlightVM;
+        private IFeedViewModel feedViewModel;
+        private ILauncherViewModel launcherVM;
 
         private readonly ICommand showAboutCommand;
         private readonly ICommand showSettingsCommand;
 
         private bool isLoggedIn;
         private double opacity = 0;
-
-        public HomeViewModel() {  }
 
         public HomeViewModel(IUserService userService, ILogonService logonService, 
             INavigationService navigationService, IResourceLoader resourceLoader,
@@ -79,7 +76,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public FeedViewModel Feed
+        public IFeedViewModel Feed
         {
             get
             {
@@ -92,7 +89,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public LauncherViewModel Launcher
+        public ILauncherViewModel Launcher
         {
             get
             {
@@ -102,19 +99,6 @@ namespace Epiphany.ViewModel
                 }
 
                 return this.launcherVM;
-            }
-        }
-
-        public SpotlightViewModel Spotlight
-        {
-            get
-            {
-                if (this.spotlightVM == null)
-                {
-                    this.spotlightVM = new SpotlightViewModel(this.timerService);
-                }
-
-                return this.spotlightVM;
             }
         }
 
@@ -136,9 +120,9 @@ namespace Epiphany.ViewModel
         public override async Task LoadAsync(VoidType parameter)
         {
             await Task.Delay(1);
-            /*if (!Feed.IsLoaded)
+            /*if (!Items.IsLoaded)
             {
-                await Feed.LoadAsync(parameter);
+                await Items.LoadAsync(parameter);
             }*/
         }
 

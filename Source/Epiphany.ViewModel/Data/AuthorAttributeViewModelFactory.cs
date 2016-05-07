@@ -7,9 +7,9 @@ namespace Epiphany.ViewModel
 {
     class AuthorAttributeViewModelFactory
     {
-        public ObservableCollection<AuthorAttributeViewModel> GetAuthorAttributeItems(AuthorModel author)
+        public ObservableCollection<IAuthorAttributeViewModel> GetAuthorAttributeItems(AuthorModel author)
         {
-            ObservableCollection<AuthorAttributeViewModel> items = new ObservableCollection<AuthorAttributeViewModel>();
+            ObservableCollection<IAuthorAttributeViewModel> items = new ObservableCollection<IAuthorAttributeViewModel>();
 
             if (!string.IsNullOrEmpty(author.About))
             {

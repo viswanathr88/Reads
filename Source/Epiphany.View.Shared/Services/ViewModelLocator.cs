@@ -1,5 +1,4 @@
-﻿using Epiphany.View.DesignData;
-using Epiphany.ViewModel;
+﻿using Epiphany.ViewModel;
 using Windows.ApplicationModel;
 
 namespace Epiphany.View.Services
@@ -20,95 +19,72 @@ namespace Epiphany.View.Services
                 // Use the RuntimeViewModelLocator
                 this.locatorImpl = new RuntimeViewModelLocator();
             }
-
         }
 
-        public LogonViewModel Logon
+        public ILogonViewModel Logon
         {
-            get
-            {
-                return this.locatorImpl.Logon;
-            }
+            get { return this.locatorImpl.Logon; }
         }
 
-        public HomeViewModel Home
+        public IHomeViewModel Home
         {
-            get
-            {
-                return this.locatorImpl.Home;
-            }
+            get { return this.locatorImpl.Home; }
         }
 
-        public AppResources About
+        public IAboutViewModel About
         {
-            get
-            {
-                return this.locatorImpl.About;
-            }
+            get { return this.locatorImpl.About; }
         }
 
-        public AddBookViewModel AddBook
+        public IAddBookViewModel AddBook
         {
-            get
-            {
-                return this.locatorImpl.AddBook;
-            }
+            get { return this.locatorImpl.AddBook; }
         }
 
-        public ProfileViewModel Profile
+        public IProfileViewModel Profile
         {
-            get
-            {
-                return this.locatorImpl.Profile;
-            }
+            get { return this.locatorImpl.Profile; }
         }
 
-        public BooksViewModel Books
+        public IBooksViewModel Books
         {
-            get
-            {
-                return this.locatorImpl.Books;
-            }
+            get { return this.locatorImpl.Books; }
         }
 
-        public FriendsViewModel Friends
+        public IFriendsViewModel Friends
         {
             get { return this.locatorImpl.Friends; }
         }
 
-        public EventsViewModel Events
+        public IEventsViewModel Events
         {
             get { return this.locatorImpl.Events; }
         }
 
-        public SearchViewModel Search
+        public ISearchViewModel Search
         {
             get { return this.locatorImpl.Search; }
         }
 
-
-        public AuthorViewModel Author
+        public IAuthorViewModel Author
         {
             get { return this.locatorImpl.Author; }
         }
 
 
-        public SettingsViewModel Settings
+        public ISettingsViewModel Settings
         {
             get { return this.locatorImpl.Settings; }
         }
 
-        public BookViewModel Book
+        public IBookViewModel Book
         {
             get { return this.locatorImpl.Book; }
         }
 
-        public ScanViewModel Scanner
+        public IScanViewModel Scanner
         {
-            get
-            {
-                return this.locatorImpl.Scanner;
-            }
+            get { return this.locatorImpl.Scanner; }
         }
 
         public void Dispose()

@@ -49,7 +49,7 @@ namespace Epiphany.View.Services
             //this.resourceLoader = new ResourceLoader();
         }
 
-        public HomeViewModel Home
+        public IHomeViewModel Home
         {
             get
             {
@@ -63,7 +63,7 @@ namespace Epiphany.View.Services
             }
         }
 
-        public LogonViewModel Logon
+        public ILogonViewModel Logon
         {
             get
             {
@@ -76,7 +76,7 @@ namespace Epiphany.View.Services
             }
         }
 
-        public ProfileViewModel Profile
+        public IProfileViewModel Profile
         {
             get
             {
@@ -89,15 +89,15 @@ namespace Epiphany.View.Services
             }
         }
 
-        public AppResources About
+        public IAboutViewModel About
         {
             get
             {
-                return new AppResources(this.deviceServices);
+                return new AboutViewModel(this.deviceServices);
             }
         }
 
-        public AddBookViewModel AddBook
+        public IAddBookViewModel AddBook
         {
             get
             {
@@ -110,37 +110,37 @@ namespace Epiphany.View.Services
             }
         }
 
-        public BooksViewModel Books
+        public IBooksViewModel Books
         {
             get { return new BooksViewModel(); }
         }
 
-        public FriendsViewModel Friends
+        public IFriendsViewModel Friends
         {
             get { return new FriendsViewModel(this.serviceFactory.GetUserService(), this.navigationService, this.resourceLoader); }
         }
 
-        public EventsViewModel Events
+        public IEventsViewModel Events
         {
             get { return new EventsViewModel(this.serviceFactory.GetEventService(), this.deviceServices); }
         }
 
-        public SearchViewModel Search
+        public ISearchViewModel Search
         {
             get { return new SearchViewModel(this.serviceFactory.GetBookService(), Home.IsLoggedIn); }
         }
 
-        public AuthorViewModel Author
+        public IAuthorViewModel Author
         {
             get { return new AuthorViewModel(this.serviceFactory.GetAuthorService(), this.serviceFactory.GetBookService(), this.navigationService); }
         }
 
-        public SettingsViewModel Settings
+        public ISettingsViewModel Settings
         {
             get { return new SettingsViewModel(); }
         }
 
-        public BookViewModel Book
+        public IBookViewModel Book
         {
             get { return new BookViewModel(); }
         }
@@ -153,7 +153,7 @@ namespace Epiphany.View.Services
             }
         }
 
-        public ScanViewModel Scanner
+        public IScanViewModel Scanner
         {
             get
             {

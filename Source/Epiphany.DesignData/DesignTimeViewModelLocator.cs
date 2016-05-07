@@ -1,5 +1,4 @@
 ﻿using Epiphany.View.DesignData;
-using Epiphany.View.Services;
 using Epiphany.ViewModel;
 using System;
 
@@ -14,10 +13,7 @@ namespace Epiphany.View.Services
 
         public ILogonViewModel Logon
         {
-            get
-            {
-                return new DesignLogonViewModel();
-            }
+            get { return new DesignLogonViewModel(); }
         }
 
         public IAboutViewModel About
@@ -32,17 +28,13 @@ namespace Epiphany.View.Services
 
         public IAddBookViewModel AddBook
         {
-            get
-            {
-                return new DesignAddBookViewModel();
-            }
+            get { return new DesignAddBookViewModel(); }
         }
 
         public IBooksViewModel Books
         {
             get { throw new NotImplementedException(); }
         }
-
 
         public IFriendsViewModel Friends
         {
@@ -64,18 +56,6 @@ namespace Epiphany.View.Services
             get { return new DesignAuthorViewModel(); }
         }
 
-        public void Dispose()
-        {
-
-        }
-
-
-        public IBookshelvesViewModel Bookshelves
-        {
-            get { return new DesignBookshelvesViewModel(); }
-        }
-
-
         public ISettingsViewModel Settings
         {
             get { throw new NotImplementedException(); }
@@ -84,6 +64,16 @@ namespace Epiphany.View.Services
         public IBookViewModel Book
         {
             get { return new DesignBookViewModel(); }
+        }
+
+        public IScanViewModel Scanner
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public void Dispose()
+        {
+
         }
     }
 }

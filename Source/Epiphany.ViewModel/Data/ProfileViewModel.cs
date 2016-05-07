@@ -12,7 +12,7 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class ProfileViewModel : DataViewModel<UserModel>
+    public sealed class ProfileViewModel : DataViewModel<UserModel>, IProfileViewModel
     {
         private int id;
         private string name;
@@ -34,10 +34,10 @@ namespace Epiphany.ViewModel
         private bool shelvesLoaded;
 
         private IList<BookshelfModel> shelves;
-        private IList<ProfileItemViewModel> profileItems;
-        private IList<FeedItemViewModel> recentUpdates;
+        private IList<IProfileItemViewModel> profileItems;
+        private IList<IFeedItemViewModel> recentUpdates;
         private BookshelfModel selectedShelf;
-        private ProfileItemViewModel selectedProfileItem;
+        private IProfileItemViewModel selectedProfileItem;
 
         public ProfileViewModel(IUserService userService, IBookshelfService bookshelfService, 
             INavigationService navService, IDeviceServices deviceServices, IResourceLoader resourceLoader)
@@ -62,8 +62,8 @@ namespace Epiphany.ViewModel
             this.goHomeCommand = new GoHomeCommand(navService);
 
             Shelves = new ObservableCollection<BookshelfModel>();
-            ProfileItems = new ObservableCollection<ProfileItemViewModel>();
-            RecentUpdates = new ObservableCollection<FeedItemViewModel>();
+            ProfileItems = new ObservableCollection<IProfileItemViewModel>();
+            RecentUpdates = new ObservableCollection<IFeedItemViewModel>();
         }
 
         public int Id
@@ -176,7 +176,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public ProfileItemViewModel SelectedProfileItem
+        public IProfileItemViewModel SelectedProfileItem
         {
             get { return this.selectedProfileItem; }
             set
@@ -217,7 +217,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<ProfileItemViewModel> ProfileItems
+        public IList<IProfileItemViewModel> ProfileItems
         {
             get { return this.profileItems; }
             set
@@ -228,7 +228,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<FeedItemViewModel> RecentUpdates
+        public IList<IFeedItemViewModel> RecentUpdates
         {
             get { return this.recentUpdates; }
             private set
@@ -288,7 +288,7 @@ namespace Epiphany.ViewModel
                 FetchBookshelvesArg = this.bookshelfService.GetBookshelves(Id).GetEnumerator();
                 ProfileItems = this.profileItemFactory.GetProfileItems(Model);
 
-                RecentUpdates = new ObservableCollection<FeedItemViewModel>();
+                RecentUpdates = new ObservableCollection<IFeedItemViewModel>();
                 foreach (FeedItemModel model in Model.RecentUpdates)
                 {
                     RecentUpdates.Add(new FeedItemViewModel(model, navService, resourceLoader));

@@ -1,7 +1,7 @@
 ﻿
 namespace Epiphany.ViewModel.Items
 {
-    public class ProfileItemViewModel
+    public sealed class ProfileItemViewModel : IProfileItemViewModel
     {
         private readonly ProfileItemType type;
         private readonly string value;

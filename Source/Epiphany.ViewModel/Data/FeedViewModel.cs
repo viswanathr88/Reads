@@ -13,22 +13,22 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class FeedViewModel : DataViewModel<VoidType>
+    public sealed class FeedViewModel : DataViewModel<VoidType>, IFeedViewModel
     {
         //
         // Private Members
         //
         private readonly INavigationService navigationService;
-        private FeedOptionsViewModel feedOptionsViewModel;
+        private IFeedOptionsViewModel feedOptionsViewModel;
         private readonly IUserService userService;
         private readonly IResourceLoader resourceLoader;
-        private IList<FeedItemViewModel> feed;
+        private IList<IFeedItemViewModel> items;
         private bool isFilterEnabled;
         private bool isFeedEmpty;
         //
         // Commands
         //
-        private readonly IAsyncCommand<IEnumerable<FeedItemModel>, VoidType> fetchFeedCommand;
+        private readonly IAsyncCommand<IEnumerable<FeedItemModel>, VoidType> fetchFeedItemsCommand;
         private readonly ICommand showOptionsCommand;
 
         public FeedViewModel(IUserService userService, INavigationService navigationService, IResourceLoader resourceLoader)
@@ -39,9 +39,9 @@ namespace Epiphany.ViewModel
 
             ApplicationSettings.Instance.SettingChanged += OnSettingChanged;
 
-            this.Feed = new ObservableCollection<FeedItemViewModel>();
-            this.fetchFeedCommand = new FetchFeedCommand(userService);
-            RegisterCommand(this.fetchFeedCommand, OnFetchFeedExecuted);
+            this.Items = new ObservableCollection<IFeedItemViewModel>();
+            this.fetchFeedItemsCommand = new FetchFeedCommand(userService);
+            RegisterCommand(this.fetchFeedItemsCommand, OnFetchFeedExecuted);
 
             this.showOptionsCommand = new ShowOptionsCommand(navigationService);
 
@@ -61,15 +61,15 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<FeedItemViewModel> Feed
+        public IList<IFeedItemViewModel> Items
         {
-            get { return feed; }
+            get { return items; }
             private set
             {
-                if (feed != value)
+                if (items != value)
                 {
-                    feed = value;
-                    RaisePropertyChanged(() => Feed);
+                    items = value;
+                    RaisePropertyChanged(() => Items);
                 }
             }
         }
@@ -87,7 +87,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public FeedOptionsViewModel FeedOptionsViewModel
+        public IFeedOptionsViewModel FeedOptionsViewModel
         {
             get
             {
@@ -104,7 +104,7 @@ namespace Epiphany.ViewModel
         {
             get
             {
-                return this.fetchFeedCommand;
+                return this.fetchFeedItemsCommand;
             }
         }
 
@@ -142,10 +142,10 @@ namespace Epiphany.ViewModel
 
                 if (items != null)
                 {
-                    Feed = new ObservableCollection<FeedItemViewModel>(items);
+                    Items = new ObservableCollection<IFeedItemViewModel>(items);
                 }
 
-                IsFeedEmpty = Feed.Count > 0 ? true : false;
+                IsFeedEmpty = Items.Count > 0 ? true : false;
                 IsLoaded = true;
                 IsLoading = false;
             }
@@ -161,16 +161,16 @@ namespace Epiphany.ViewModel
             if (e.State == CommandExecutionState.Success)
             {
                 IEnumerable<FeedItemModel> items = this.FetchFeed.Result;
-                Feed = new ObservableCollection<FeedItemViewModel>();
+                Items = new ObservableCollection<IFeedItemViewModel>();
                 if (items != null)
                 {
                     foreach (FeedItemModel model in items)
                     {
-                        Feed.Add(new FeedItemViewModel(model, this.navigationService, this.resourceLoader)); 
+                        Items.Add(new FeedItemViewModel(model, this.navigationService, this.resourceLoader)); 
                     }
                 }
 
-                if (this.Feed.Count == 0)
+                if (this.Items.Count == 0)
                 {
                     IsFeedEmpty = true;
                 }

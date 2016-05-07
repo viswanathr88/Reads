@@ -11,6 +11,12 @@ namespace Epiphany.View.DesignData
             get { return new DesignFeedViewModel(); }
         }
 
+        public bool IsLoggedIn
+        {
+            get;
+            set;
+        }
+
         public ILauncherViewModel Launcher
         {
             get { return null; }
@@ -19,6 +25,14 @@ namespace Epiphany.View.DesignData
         public int NewNotificationCount
         {
             get { return 0; }
+        }
+
+        public double Opacity
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public ICommand ShowAbout

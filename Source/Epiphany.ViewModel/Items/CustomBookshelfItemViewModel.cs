@@ -2,7 +2,7 @@
 using Epiphany.Model;
 namespace Epiphany.ViewModel
 {
-    public class CustomBookshelfItemViewModel : ViewModelBase
+    public sealed class CustomBookshelfItemViewModel : ViewModelBase, ICustomBookshelfItemViewModel
     {
         private bool isEnabled;
         private BookshelfModel bookshelf;

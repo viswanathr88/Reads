@@ -1,13 +1,11 @@
 ﻿using Epiphany.Model;
 using Epiphany.ViewModel;
 using Epiphany.ViewModel.Commands;
-using System;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignAddBookViewModel : DesignBaseViewModel
+    public sealed class DesignAddBookViewModel : DesignBaseViewModel, IAddBookViewModel
     {
         public DesignAddBookViewModel()
         {
@@ -20,7 +18,7 @@ namespace Epiphany.View.DesignData
 
         private void PopulateCustomShelves()
         {
-            CustomShelves = new ObservableCollection<CustomBookshelfItemViewModel>();
+            CustomShelves = new ObservableCollection<ICustomBookshelfItemViewModel>();
 
             for (int i = 0; i < 5; i++)
             {
@@ -31,36 +29,37 @@ namespace Epiphany.View.DesignData
 
         }
 
-        public ICommand<ViewModel.Commands.AddToShelvesCommandArgs> AddToShelves
+        public ICommand<AddToShelvesCommandArgs> AddToShelves
         {
-            get { throw new NotImplementedException(); }
+            get;
         }
 
         public AddToShelvesCommandArgs AddToShelvesArgs
         {
-            get { throw new NotImplementedException(); }
+            get;
         }
 
         public BookModel Book
         {
-            get { throw new NotImplementedException(); }
+            get;
+            set;
         }
 
-        public ViewModel.Commands.ICommand<string> CreateShelf
-        {
-            get { throw new NotImplementedException(); }
-        }
-
-        public ObservableCollection<CustomBookshelfItemViewModel> CustomShelves
+        public ICommand<string> CreateShelf
         {
             get;
-            private set;
+        }
+
+        public ObservableCollection<ICustomBookshelfItemViewModel> CustomShelves
+        {
+            get;
+            set;
         }
 
         public int Id
         {
             get;
-            private set;
+            set;
         }
 
         public bool IsCurrentlyReadingSelected
@@ -90,7 +89,7 @@ namespace Epiphany.View.DesignData
         public string Title
         {
             get;
-            private set;
+            set;
         }
     }
 }

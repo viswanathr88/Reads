@@ -22,6 +22,8 @@
             <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
             <converters:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter" />
             <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+            <converters:VisibleWhenZeroConverter x:Key="VisibleWhenZeroConverter" />
+
             <FontFamily x:Key="ContentControlThemeFontFamily">Segoe WP</FontFamily>
             <x:Double x:Key="ControlContentThemeFontSize">12</x:Double>
             <Thickness x:Key="ListViewItemMargin">0</Thickness>

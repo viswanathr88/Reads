@@ -35,6 +35,10 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <ProjectReference Include="..\Epiphany.DesignData\Epiphany.DesignData.csproj">
+      <Project>{C48C7089-9962-4628-B96B-6BBAAAEA1E9A}</Project>
+      <Name>Epiphany.DesignData</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Epiphany.Model\Epiphany.Model.csproj">
       <Project>{d4ededd9-ccd4-43d9-821b-9731c187802e}</Project>
       <Name>Epiphany.Model</Name>
@@ -55,7 +59,7 @@
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\InverseBooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\NullToVisibilityConverter.cs" />
-    <Compile Include="DesignData\DesignTimeViewModelLocator.cs" />
+    <Compile Include="Converters\VisibleWhenZeroConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DeviceServices.cs" />
     <Compile Include="Services\NavigationService.cs" />

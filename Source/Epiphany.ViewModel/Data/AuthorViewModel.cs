@@ -12,10 +12,10 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class AuthorViewModel : DataViewModel<AuthorModel>
+    public sealed class AuthorViewModel : DataViewModel<AuthorModel>, IAuthorViewModel
     {
         private readonly AuthorAttributeViewModelFactory authorAttributeVMFactory;
-        private BookItemViewModel selectedBook;
+        private IBookItemViewModel selectedBook;
         private bool bookLoadingStarted;
         private AuthorModel author;
         private string imageUrl;
@@ -24,8 +24,8 @@ namespace Epiphany.ViewModel
 
         // collections
         private IAsyncEnumerator<BookModel> bookEnumerator;
-        private IList<BookItemViewModel> books;
-        private IList<AuthorAttributeViewModel> attributes;
+        private IList<IBookItemViewModel> books;
+        private IList<IAuthorAttributeViewModel> attributes;
 
         // commands
         private readonly IAsyncCommand<IEnumerable<BookModel>, IAsyncEnumerator<BookModel>> fetchBooksCommand;
@@ -45,7 +45,7 @@ namespace Epiphany.ViewModel
             this.bookService = bookService;
             this.navService = navService;
 
-            Books = new ObservableCollection<BookItemViewModel>();
+            Books = new ObservableCollection<IBookItemViewModel>();
             this.authorAttributeVMFactory = new AuthorAttributeViewModelFactory();
 
             this.fetchAuthorCommand = new FetchAuthorCommand(authorService);
@@ -118,7 +118,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public BookItemViewModel SelectedBook
+        public IBookItemViewModel SelectedBook
         {
             get { return this.selectedBook; }
             set
@@ -136,7 +136,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<BookItemViewModel> Books
+        public IList<IBookItemViewModel> Books
         {
             get { return this.books; }
             private set
@@ -158,7 +158,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<AuthorAttributeViewModel> Attributes
+        public IList<IAuthorAttributeViewModel> Attributes
         {
             get { return this.attributes; }
             private set

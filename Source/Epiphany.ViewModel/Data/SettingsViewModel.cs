@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class SettingsViewModel : DataViewModel<VoidType>
+    public sealed class SettingsViewModel : DataViewModel<VoidType>, ISettingsViewModel
     {
         public FeedUpdateType UpdateType
         {

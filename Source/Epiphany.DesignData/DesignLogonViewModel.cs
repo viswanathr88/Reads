@@ -1,6 +1,7 @@
 ﻿using Epiphany.ViewModel;
 using Epiphany.ViewModel.Commands;
 using System;
+using System.Threading.Tasks;
 
 namespace Epiphany.View.DesignData
 {
@@ -12,6 +13,14 @@ namespace Epiphany.View.DesignData
             IsWaitingForUserInteraction = false;
             IsSignInTakingLonger = true;
             Error = new object();
+        }
+
+        public Uri CallbackUri
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public ICommand<bool, Uri> CheckUriForLoginCompletion
@@ -46,6 +55,11 @@ namespace Epiphany.View.DesignData
         public ICommand<Uri, VoidType> Login
         {
             get { return null; }
+        }
+
+        public Task CheckUriAsync(Uri uri)
+        {
+            throw new NotImplementedException();
         }
     }
 }

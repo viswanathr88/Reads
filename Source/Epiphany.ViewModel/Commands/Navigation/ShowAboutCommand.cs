@@ -18,7 +18,7 @@ namespace Epiphany.ViewModel.Commands
 
         protected override void Run()
         {
-            this.navigationService.CreateFor<AppResources>().Navigate();
+            this.navigationService.CreateFor<AboutViewModel>().Navigate();
         }
     }
 }
