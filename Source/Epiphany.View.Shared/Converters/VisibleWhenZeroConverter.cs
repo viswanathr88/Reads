@@ -7,7 +7,7 @@ namespace Epiphany.View.Converters
     public class VisibleWhenZeroConverter : IValueConverter
     {
         public object Convert(object v, Type t, object p, string l) =>
-            Equals(0d, (double)v) ? Visibility.Visible : Visibility.Collapsed;
+            Equals(0, (int)v) ? Visibility.Visible : Visibility.Collapsed;
 
         public object ConvertBack(object v, Type t, object p, string l) => null;
     }

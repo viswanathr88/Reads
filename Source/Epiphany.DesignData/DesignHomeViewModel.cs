@@ -6,6 +6,12 @@ namespace Epiphany.View.DesignData
 {
     public sealed class DesignHomeViewModel : DesignBaseViewModel, IHomeViewModel
     {
+        public DesignHomeViewModel()
+        {
+            IsLoggedIn = true;
+            Opacity = 0;
+        }
+
         public IFeedViewModel Feed
         {
             get { return new DesignFeedViewModel(); }
@@ -19,35 +25,33 @@ namespace Epiphany.View.DesignData
 
         public ILauncherViewModel Launcher
         {
-            get { return null; }
+            get;
         }
 
         public int NewNotificationCount
         {
-            get { return 0; }
+            get;
         }
 
         public double Opacity
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
+            set;
         }
 
         public ICommand ShowAbout
         {
-            get { return null; }
+            get;
         }
 
         public ICommand ShowNotifications
         {
-            get { return null; }
+            get;
         }
 
         public ICommand ShowSettings
         {
-            get { return null; }
+            get;
         }
     }
 }

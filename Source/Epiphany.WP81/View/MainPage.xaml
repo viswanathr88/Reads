@@ -68,11 +68,11 @@
                                             Message="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabHomeSignInText}" />
                     
                     <!-- Feed -->
-                    <ListView ItemsSource="{Binding Path=Feed.Feed}"
+                    <ListView ItemsSource="{Binding Path=Feed.Items}"
                               Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}">
                         <ListView.Header>
                             <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.NoFeedMessage}"
-                                       Visibility="{Binding Path=Feed.Feed.Count, Converter={StaticResource VisibleWhenZeroConverter}}"
+                                       Visibility="{Binding Path=Feed.Items.Count, Converter={StaticResource VisibleWhenZeroConverter}}"
                                        Style="{StaticResource ListViewEmptyStaticTextBlockStyle}"/>
                         </ListView.Header>
                         

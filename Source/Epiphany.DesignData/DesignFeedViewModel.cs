@@ -104,7 +104,7 @@ namespace Epiphany.View.DesignData
 
         public IFeedOptionsViewModel FeedOptionsViewModel
         {
-            get { throw new NotImplementedException(); }
+            get;
         }
 
         public bool IsFeedEmpty
@@ -121,12 +121,12 @@ namespace Epiphany.View.DesignData
 
         public ICommand ShowOptions
         {
-            get { return null; }
+            get;
         }
 
         public IAsyncCommand<IEnumerable<FeedItemModel>, VoidType> FetchFeed
         {
-            get { return null; }
+            get;
         }
     }
 }
