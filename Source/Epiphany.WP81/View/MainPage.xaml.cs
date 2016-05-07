@@ -16,7 +16,7 @@ namespace Epiphany.View
 
         private void OnSearchButtonClicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(SearchPage));
+            Frame.Navigate(typeof(SearchPage), string.Empty);
         }
 
         private void OnScanButtonClicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)

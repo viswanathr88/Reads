@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
-    public class SearchViewModel : DataViewModel<VoidType>
+    public class SearchViewModel : DataViewModel<string>
     {
         private IList<BookSearchType> searchFilters;
         private ObservablePagedCollection<SearchResultItemViewModel, WorkModel> searchResults;
@@ -82,8 +82,9 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override async Task LoadAsync(VoidType parameter)
+        public override async Task LoadAsync(string parameter)
         {
+            SearchTerm = parameter;
             CreateSearchResultCollection();
             await Task.Delay(1);
         }

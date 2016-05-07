@@ -1,8 +1,11 @@
 ﻿using Epiphany.Logging;
 using Epiphany.View;
 using System;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.Media.SpeechRecognition;
+using Windows.Storage;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -38,7 +41,7 @@ namespace Epiphany.WP81
         /// search results, and so forth.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected async override void OnLaunched(LaunchActivatedEventArgs e)
         {
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
@@ -101,6 +104,12 @@ namespace Epiphany.WP81
                 }
             }
 
+            // Install Voice commands
+            if (!await InitializeVoiceCommands())
+            {
+                Logger.LogError("Failed to initialize voice commands");
+            }
+
             // Ensure the current window is active
             Window.Current.Activate();
         }
@@ -144,6 +153,33 @@ namespace Epiphany.WP81
 
             // TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        private async Task<bool> InitializeVoiceCommands()
+        {
+            bool commandSetsInstalled = true;
+
+            try
+            {
+                Uri vcdUri = new Uri("ms-appx:///VoiceCommands.xml", UriKind.Absolute);
+
+                //load the VCD file from local storage 
+                StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(vcdUri);
+
+                //register the voice command definitions        
+                await VoiceCommandManager.InstallCommandSetsFromStorageFileAsync(file);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.LogException(ex);
+                //voice command file not found or language not supported or file is 
+                //invalid format (missing stuff), or capabilities not selected, etc etc
+                commandSetsInstalled = false;
+            }
+
+
+            return commandSetsInstalled;
         }
     }
 }

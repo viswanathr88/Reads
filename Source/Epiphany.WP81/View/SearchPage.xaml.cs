@@ -44,7 +44,7 @@ namespace Epiphany.View
                     // Dismiss keyboard
                     this.Focus(FocusState.Programmatic);
 
-                    await searchVM.LoadAsync(VoidType.Empty);
+                    await searchVM.LoadAsync(searchVM.SearchTerm);
                 }
             }
         }
