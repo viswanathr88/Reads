@@ -180,7 +180,7 @@
                                     <StackPanel Orientation="Horizontal">
                                         <Border Height="64"
                                                 Width="64"
-                                                Background="{StaticResource PhoneChromeBrush}"
+                                                Background="{ThemeResource PhoneChromeBrush}"
                                                 Margin="0,0,15,15">
                                             <TextBlock HorizontalAlignment="Right"
                                                        VerticalAlignment="Bottom"
