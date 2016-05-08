@@ -1,6 +1,9 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using Epiphany.ViewModel.Items;
+
 namespace Epiphany.ViewModel
 {
     public sealed class BooksViewModel : DataViewModel<BooksMetadata>, IBooksViewModel
@@ -39,6 +42,14 @@ namespace Epiphany.ViewModel
                 if (this.shelfName == value) return;
                 this.shelfName = value;
                 RaisePropertyChanged();
+            }
+        }
+
+        public IList<IBookItemViewModel> Books
+        {
+            get
+            {
+                throw new NotImplementedException();
             }
         }
 

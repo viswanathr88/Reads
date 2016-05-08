@@ -377,6 +377,15 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BOOKSHELVES.
+        /// </summary>
+        public static string BookshelvesSectionTitle {
+            get {
+                return ResourceManager.GetString("BookshelvesSectionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to bookshelves.
         /// </summary>
         public static string BooksTitle {
@@ -409,6 +418,15 @@ namespace Epiphany.Strings {
         public static string CommentText {
             get {
                 return ResourceManager.GetString("CommentText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CURRENTLY READING.
+        /// </summary>
+        public static string CurrentlyReadingSectionTitle {
+            get {
+                return ResourceManager.GetString("CurrentlyReadingSectionTitle", resourceCulture);
             }
         }
         

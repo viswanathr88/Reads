@@ -1,13 +1,11 @@
-﻿namespace Epiphany.ViewModel
+﻿namespace Epiphany.ViewModel.Items
 {
     public interface IBookshelfItemViewModel
     {
-        int ShelfId { get; set; }
+        int ShelfId { get; }
 
-        int UserId { get; set; }
+        string Name { get; }
 
-        string Name { get; set; }
-
-        int NumberOfBooks { get; set; }
+        int NumberOfBooks { get; }
     }
 }

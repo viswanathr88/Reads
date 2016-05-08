@@ -16,9 +16,12 @@ namespace Epiphany.ViewModel
         private readonly ILogonService logonService;
         private readonly IResourceLoader resourceLoader;
         private readonly ITimerService timerService;
+        private readonly IBookshelfService bookshelfService;
+        private readonly IBookService bookService;
 
         private IFeedViewModel feedViewModel;
         private ILauncherViewModel launcherVM;
+        private IBookshelvesViewModel bookshelvesVM;
 
         private readonly ICommand showAboutCommand;
         private readonly ICommand showSettingsCommand;
@@ -28,13 +31,15 @@ namespace Epiphany.ViewModel
 
         public HomeViewModel(IUserService userService, ILogonService logonService, 
             INavigationService navigationService, IResourceLoader resourceLoader,
-            ITimerService timerService)
+            ITimerService timerService, IBookshelfService bookshelfService, IBookService bookService)
         {
             this.userService = userService;
             this.navigationService = navigationService;
             this.logonService = logonService;
             this.resourceLoader = resourceLoader;
             this.timerService = timerService;
+            this.bookshelfService = bookshelfService;
+            this.bookService = bookService;
 
             this.showAboutCommand = new ShowAboutCommand(navigationService);
             this.showSettingsCommand = new ShowSettingsCommand(navigationService);
@@ -117,13 +122,24 @@ namespace Epiphany.ViewModel
             get { return this.showSettingsCommand; }
         }
 
+        public IBookshelvesViewModel Books
+        {
+            get
+            {
+                if (this.bookshelvesVM == null)
+                {
+                    this.bookshelvesVM = new BookshelvesViewModel(bookshelfService, bookService, logonService);
+                }
+                return this.bookshelvesVM;
+            }
+        }
+
         public override async Task LoadAsync(VoidType parameter)
         {
-            await Task.Delay(1);
-            /*if (!Items.IsLoaded)
+            if (IsLoggedIn)
             {
-                await Items.LoadAsync(parameter);
-            }*/
+                await Task.Run(async () => await Books.LoadAsync(int.Parse(this.logonService.Session.UserId)));
+            }
         }
 
         private void OnChildVMPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -145,6 +161,11 @@ namespace Epiphany.ViewModel
                 IsLoggedIn = true;
                 IsLoaded = false;
                 Opacity = 0;
+            }
+            else
+            {
+                IsLoggedIn = false;
+                Opacity = 0.15;
             }
         }
     }

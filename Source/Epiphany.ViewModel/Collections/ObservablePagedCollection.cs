@@ -1,10 +1,7 @@
-﻿using Epiphany.Logging;
-using Epiphany.Model.Collections;
+﻿using Epiphany.Model.Collections;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.UI.Core;
@@ -13,36 +10,7 @@ using Windows.UI.Xaml.Data;
 
 namespace Epiphany.ViewModel.Collections
 {
-    public sealed class ObservablePagedCollection<T> : ObservableCollection<T>, ISupportIncrementalLoading
-    {
-        private readonly IPagedCollection<T> collection;
-
-        public ObservablePagedCollection(IPagedCollection<T> pagedCollection)
-        {
-            if (pagedCollection == null)
-            {
-                throw new ArgumentNullException(nameof(pagedCollection));
-            }
-
-            this.collection = pagedCollection;
-        }
-
-
-        public bool HasMoreItems
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public IAsyncOperation<LoadMoreItemsResult> LoadMoreItemsAsync(uint count)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public sealed class ObservablePagedCollection<TViewModel, TModel> : ObservableCollection<TViewModel>, ISupportIncrementalLoading
+    public sealed class ObservablePagedCollection<TViewModel, TModel> : ObservableCollection<TViewModel>, IObservablePagedCollection<TViewModel>
     {
         private readonly IPagedCollection<TModel> pagedCollection;
         private readonly IAsyncEnumerator<TModel> enumerator;
@@ -107,7 +75,11 @@ namespace Epiphany.ViewModel.Collections
                     {
                         foreach (TModel model in items)
                         {
-                            Add(this.adapterMethod.Invoke(model));
+                            var item = this.adapterMethod.Invoke(model);
+                            if (item != null)
+                            {
+                                Add(this.adapterMethod.Invoke(model));
+                            }
                         }
                         RaiseLoaded();
                     });

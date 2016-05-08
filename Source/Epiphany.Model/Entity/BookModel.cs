@@ -1,5 +1,4 @@
-﻿using Epiphany.Model.Collections;
-using Epiphany.Xml;
+﻿using Epiphany.Xml;
 using System;
 using System.Collections.Generic;
 
@@ -10,12 +9,15 @@ namespace Epiphany.Model
         private GoodreadsBook book;
         private readonly GoodreadsReview review;
 
+        private string imageUrl;
+
         internal BookModel(GoodreadsBook book)
         {
             if (book == null)
                 throw new ArgumentNullException("book", "book cannot be null");
 
             this.book = book;
+            PopulateImageUrl();
         }
 
         internal BookModel(GoodreadsReview review)
@@ -25,6 +27,8 @@ namespace Epiphany.Model
 
             this.review = review;
             this.book = review.Book;
+
+            PopulateImageUrl();
         }
 
         internal GoodreadsBook Inner
@@ -69,7 +73,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return string.IsNullOrEmpty(book.ImageUrl) ? book.SmallImageUrl : book.ImageUrl;
+                return this.imageUrl;
             }
         }
 
@@ -276,6 +280,24 @@ namespace Epiphany.Model
                     }
                 }
                 return books;
+            }
+        }
+
+        private void PopulateImageUrl()
+        {
+            this.imageUrl = !string.IsNullOrEmpty(this.book.ImageUrl) ? this.book.ImageUrl :
+                            this.book.SmallImageUrl;
+
+            if (string.IsNullOrEmpty(this.imageUrl) || this.imageUrl.Contains("nophoto"))
+            {
+                if (!string.IsNullOrEmpty(this.book.ISBN))
+                {
+                    this.imageUrl = $"http://covers.openlibrary.org/b/isbn/{this.book.ISBN}-M.jpg?default=false";
+                }
+                else
+                {
+                    this.imageUrl = string.Empty;
+                }
             }
         }
     }

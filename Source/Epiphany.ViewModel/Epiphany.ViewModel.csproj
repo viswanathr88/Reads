@@ -60,6 +60,7 @@
     <Compile Include="Collections\DeltaListItem.cs" />
     <Compile Include="Collections\Group.cs" />
     <Compile Include="Collections\IGroup.cs" />
+    <Compile Include="Collections\IObservablePagedCollection.cs" />
     <Compile Include="Collections\KeyedList.cs" />
     <Compile Include="Collections\ObservablePagedCollection.cs" />
     <Compile Include="Collections\ObservableSortedGroup.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="Data\AuthorAttributeViewModel.cs" />
     <Compile Include="Data\AuthorAttributeViewModelFactory.cs" />
     <Compile Include="Data\AuthorViewModel.cs" />
+    <Compile Include="Data\BookshelvesViewModel.cs" />
     <Compile Include="Data\BooksMetadata.cs" />
     <Compile Include="Data\BooksViewModel.cs" />
     <Compile Include="Data\BookViewModel.cs" />
@@ -125,6 +127,7 @@
     <Compile Include="Data\IAuthorAttributeViewModel.cs" />
     <Compile Include="Data\IAuthorViewModel.cs" />
     <Compile Include="Data\IBookshelfItemViewModel.cs" />
+    <Compile Include="Data\IBookshelvesViewModel.cs" />
     <Compile Include="Data\IBooksViewModel.cs" />
     <Compile Include="Data\IBookViewModel.cs" />
     <Compile Include="Data\IEventsViewModel.cs" />
@@ -161,6 +164,7 @@
     <Compile Include="Items\ProfileItemViewModel.cs" />
     <Compile Include="Items\ProfileItemViewModelFactory.cs" />
     <Compile Include="Data\SearchQuery.cs" />
+    <Compile Include="Items\ReviewItemViewModel.cs" />
     <Compile Include="Items\SearchResultItemViewModel.cs" />
     <Compile Include="Data\SearchViewModel.cs" />
     <Compile Include="Items\UserItemViewModel.cs" />

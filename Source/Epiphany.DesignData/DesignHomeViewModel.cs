@@ -1,5 +1,4 @@
 ﻿using Epiphany.ViewModel;
-using System;
 using System.Windows.Input;
 
 namespace Epiphany.View.DesignData
@@ -10,6 +9,14 @@ namespace Epiphany.View.DesignData
         {
             IsLoggedIn = true;
             Opacity = 0;
+        }
+
+        public IBookshelvesViewModel Books
+        {
+            get
+            {
+                return new DesignBookshelvesViewModel();
+            }
         }
 
         public IFeedViewModel Feed

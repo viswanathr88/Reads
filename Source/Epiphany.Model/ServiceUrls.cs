@@ -5,6 +5,8 @@ namespace Epiphany.Model
 {
     internal sealed class ServiceUrls
     {
+        private static string baseUrl = @"https://www.goodreads.com/";
+
         public static string AuthUserUrl
         {
             get
@@ -73,7 +75,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "review/list";
+                return baseUrl + "review/list";
             }
         }
 
@@ -89,7 +91,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "shelf/list";
+                return baseUrl + "shelf/list";
             }
         }
 

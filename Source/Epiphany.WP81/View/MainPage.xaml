@@ -60,35 +60,160 @@
             </Pivot.Background>
             <!-- Home Pivot -->
             <PivotItem>
-                <Grid>
+                <Grid Margin="19,0,19,0">
                     <!-- Sign in control -->
                     <controls:SignInControl Margin="19,20,19,20"
                                             VerticalAlignment="Center"
                                             Visibility="{Binding IsLoggedIn, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
                                             Message="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabHomeSignInText}" />
-                    
+
                     <!-- Feed -->
                     <ListView ItemsSource="{Binding Path=Feed.Items}"
                               Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}">
                         <ListView.Header>
                             <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.NoFeedMessage}"
                                        Visibility="{Binding Path=Feed.Items.Count, Converter={StaticResource VisibleWhenZeroConverter}}"
-                                       Style="{StaticResource ListViewEmptyStaticTextBlockStyle}"/>
+                                       Style="{StaticResource ListViewEmptyStaticTextBlockStyle}" />
                         </ListView.Header>
-                        
+
                     </ListView>
                 </Grid>
-                
 
             </PivotItem>
 
             <!-- My Books Pivot -->
             <PivotItem>
-                <!-- Sign in control -->
-                <controls:SignInControl Margin="19,20,19,20"
-                                        VerticalAlignment="Center"
-                                        Visibility="{Binding IsLoggedIn, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
-                                        Message="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabMyBooksSignInText}" />
+                <Grid Margin="19,0,19,0">
+                    <!-- Sign in control -->
+                    <controls:SignInControl Margin="0,20,0,20"
+                                            VerticalAlignment="Center"
+                                            Visibility="{Binding IsLoggedIn, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
+                                            Message="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabMyBooksSignInText}" />
+
+                    <!-- Books -->
+                    <Grid Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.CurrentlyReadingSectionTitle}"
+                                   Style="{StaticResource GroupHeaderTextBlockStyle}"
+                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                   Grid.Row="0" />
+
+                        <!-- Currently reading list -->
+                        <ListView Grid.Row="1"
+                                  ItemsSource="{Binding Path=Books.CurrentlyReadingList}"
+                                  Margin="0,30,0,30"
+                                  ScrollViewer.IsHorizontalScrollChainingEnabled="False"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                                  ScrollViewer.HorizontalScrollMode="Enabled">
+
+                            <ListView.ItemContainerTransitions>
+                                <TransitionCollection>
+                                    <EntranceThemeTransition IsStaggeringEnabled="True" />
+                                </TransitionCollection>
+                            </ListView.ItemContainerTransitions>
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Width="128" Margin="0,0,30,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="195" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Border Background="{ThemeResource PhoneChromeBrush}">
+                                            <Image Source="{Binding ImageUrl}"
+                                                   Stretch="UniformToFill"
+                                                   HorizontalAlignment="Center"
+                                                   Grid.Row="0" />
+                                        </Border>
+                                        
+                                        <TextBlock Text="{Binding Title}"
+                                                   Style="{StaticResource ListViewItemContentTextBlockStyle}"
+                                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                                   TextWrapping="Wrap"
+                                                   MaxLines="2"
+                                                   TextTrimming="CharacterEllipsis"
+                                                   Margin="0,10,0,0"
+                                                   HorizontalAlignment="Center"
+                                                   Grid.Row="1"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <ItemsStackPanel Orientation="Horizontal"  />
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+
+                            <ListView.Footer>
+                                <ProgressRing IsActive="{Binding Path=Books.IsCurrentlyReadingListLoading}"
+                                              Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            </ListView.Footer>
+
+                        </ListView>
+
+                        <!-- Shelves list -->
+                        <ListView Grid.Row="2"
+                                  ItemsSource="{Binding Path=Books.Shelves}"
+                                  Margin="0,0,0,0">
+
+                            <ListView.Header>
+                                <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.BookshelvesSectionTitle}"
+                                           Style="{StaticResource GroupHeaderTextBlockStyle}"
+                                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                           Margin="0,0,0,30" />
+                            </ListView.Header>
+
+                            <ListView.ItemContainerTransitions>
+                                <TransitionCollection>
+                                    <EntranceThemeTransition IsStaggeringEnabled="True" />
+                                </TransitionCollection>
+                            </ListView.ItemContainerTransitions>
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Border Height="64"
+                                                Width="64"
+                                                Background="{StaticResource PhoneChromeBrush}"
+                                                Margin="0,0,15,15">
+                                            <TextBlock HorizontalAlignment="Right"
+                                                       VerticalAlignment="Bottom"
+                                                       Text="{Binding NumberOfBooks}"
+                                                       Style="{StaticResource TitleTextBlockStyle}"
+                                                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                                       FontWeight="Thin"
+                                                       FontSize="28"
+                                                       FontStretch="UltraCondensed"
+                                                       Margin="0,0,5,0"
+                                                       Opacity="0.5" />
+                                        </Border>
+
+                                        <TextBlock Text="{Binding Name}"
+                                                   Style="{StaticResource ListViewItemTextBlockStyle}"
+                                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                                   HorizontalAlignment="Left"
+                                                   VerticalAlignment="Center"
+                                                   LineStackingStrategy="BlockLineHeight" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+
+                            <ListView.Footer>
+                                <ProgressRing IsActive="{Binding Path=Books.IsBookshelvesLoading}"
+                                              Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            </ListView.Footer>
+                            
+                        </ListView>
+
+                    </Grid>
+                </Grid>
+
             </PivotItem>
 
             <!-- Community Pivot-->
@@ -108,10 +233,10 @@
             <CommandBar.PrimaryCommands>
                 <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonSearchText}"
                               Icon="Find"
-                              Click="OnSearchButtonClicked"/>
+                              Click="OnSearchButtonClicked" />
                 <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonScanText}"
                               Icon="Camera"
-                              Click="OnScanButtonClicked"/>
+                              Click="OnScanButtonClicked" />
             </CommandBar.PrimaryCommands>
             <CommandBar.SecondaryCommands>
                 <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonSettingsText}" />

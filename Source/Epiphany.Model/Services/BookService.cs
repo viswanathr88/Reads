@@ -17,6 +17,7 @@ namespace Epiphany.Model.Services
         private readonly int pageSize = 20;
         private IAdapter<BookModel, GoodreadsBook> adapter;
         private IAdapter<WorkModel, GoodreadsWork> workAdapter;
+        private IAdapter<BookModel, GoodreadsReview> reviewToBookAdapter;
 
         private GoodreadsAuthor recentAuthor;
 
@@ -112,11 +113,11 @@ namespace Epiphany.Model.Services
             //
             // Create the data source for the collection
             //
-            IPagedDataSource<GoodreadsBooks> ds = new PagedDataSource<GoodreadsBooks>(webClient, parameters, ServiceUrls.BooksInShelfUrl);
+            IPagedDataSource<GoodreadsReviews> ds = new PagedDataSource<GoodreadsReviews>(webClient, parameters, ServiceUrls.BooksInShelfUrl);
             //
             // Create the collection
             //
-            return new PagedCollection<BookModel, GoodreadsBook, GoodreadsBooks>(ds, BookAdapter, pageSize);
+            return new PagedCollection<BookModel, GoodreadsReview, GoodreadsReviews>(ds, ReviewToBookAdapter, pageSize);
         }
 
         public async Task AddBook(BookshelfModel shelf, BookModel book)
@@ -221,6 +222,18 @@ namespace Epiphany.Model.Services
                 }
 
                 return this.workAdapter;
+            }
+        }
+
+        private IAdapter<BookModel, GoodreadsReview> ReviewToBookAdapter
+        {
+            get
+            {
+                if (this.reviewToBookAdapter == null)
+                {
+                    this.reviewToBookAdapter = new ReviewToBookAdapter();
+                }
+                return this.reviewToBookAdapter;
             }
         }
     }

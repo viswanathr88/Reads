@@ -489,4 +489,10 @@
   <data name="InShelfText" xml:space="preserve">
     <value>This book is in your shelf</value>
   </data>
+  <data name="CurrentlyReadingSectionTitle" xml:space="preserve">
+    <value>CURRENTLY READING</value>
+  </data>
+  <data name="BookshelvesSectionTitle" xml:space="preserve">
+    <value>BOOKSHELVES</value>
+  </data>
 </root>
