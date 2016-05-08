@@ -62,15 +62,6 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to about {0} hours ago.
-        /// </summary>
-        public static string AboutNHoursAgoText {
-            get {
-                return ResourceManager.GetString("AboutNHoursAgoText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to add.
         /// </summary>
         public static string AddBookshelfButtonText {
@@ -557,15 +548,6 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to just a moment ago.
-        /// </summary>
-        public static string JustAMomentAgoText {
-            get {
-                return ResourceManager.GetString("JustAMomentAgoText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to like on facebook.
         /// </summary>
         public static string LikeonFBButtonText {
@@ -602,7 +584,7 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} days ago.
+        ///   Looks up a localized string similar to {0}d.
         /// </summary>
         public static string NDaysAgoText {
             get {
@@ -611,7 +593,16 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} minutes ago.
+        ///   Looks up a localized string similar to {0}h.
+        /// </summary>
+        public static string NHoursAgoText {
+            get {
+                return ResourceManager.GetString("NHoursAgoText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}m.
         /// </summary>
         public static string NMinutesAgoText {
             get {
@@ -620,7 +611,7 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} months ago.
+        ///   Looks up a localized string similar to {0}mon.
         /// </summary>
         public static string NMonthsAgoText {
             get {
@@ -710,7 +701,7 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} seconds ago.
+        ///   Looks up a localized string similar to {0}s.
         /// </summary>
         public static string NSecondsAgoText {
             get {
@@ -755,56 +746,11 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} years ago.
+        ///   Looks up a localized string similar to {0}y.
         /// </summary>
         public static string NYearsAgoText {
             get {
                 return ResourceManager.GetString("NYearsAgoText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 1 day ago.
-        /// </summary>
-        public static string OneDayAgoText {
-            get {
-                return ResourceManager.GetString("OneDayAgoText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 1 hour ago.
-        /// </summary>
-        public static string OneHourAgoText {
-            get {
-                return ResourceManager.GetString("OneHourAgoText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 1 minute ago.
-        /// </summary>
-        public static string OneMinuteAgoText {
-            get {
-                return ResourceManager.GetString("OneMinuteAgoText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 1 month ago.
-        /// </summary>
-        public static string OneMonthAgoText {
-            get {
-                return ResourceManager.GetString("OneMonthAgoText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 1 year ago.
-        /// </summary>
-        public static string OneYearAgoText {
-            get {
-                return ResourceManager.GetString("OneYearAgoText", resourceCulture);
             }
         }
         
@@ -917,20 +863,11 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} gave {1} stars to:.
+        ///   Looks up a localized string similar to {0} rated a book.
         /// </summary>
-        public static string ReviewFeedItemNStarRatingActionText {
+        public static string ReviewFeedItemActionText {
             get {
-                return ResourceManager.GetString("ReviewFeedItemNStarRatingActionText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} gave 1 star to: .
-        /// </summary>
-        public static string ReviewFeedItemOneStarRatingActionText {
-            get {
-                return ResourceManager.GetString("ReviewFeedItemOneStarRatingActionText", resourceCulture);
+                return ResourceManager.GetString("ReviewFeedItemActionText", resourceCulture);
             }
         }
         

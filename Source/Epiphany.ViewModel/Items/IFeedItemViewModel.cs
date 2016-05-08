@@ -20,5 +20,7 @@ namespace Epiphany.ViewModel.Items
         FeedItemType Type { get; }
         DateTime UpdateTime { get; }
         IUserItemViewModel User { get; }
+        int PercentageCompleted { get; }
+        int Rating { get; }
     }
 }

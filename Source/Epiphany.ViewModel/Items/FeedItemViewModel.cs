@@ -14,6 +14,8 @@ namespace Epiphany.ViewModel.Items
         private IUserItemViewModel friend;
         private IBookItemViewModel book;
         private string actionText;
+        private int percentageCompleted = -1;
+        private int rating = -1;
 
         private readonly ICommand<IUserItemViewModel> showProfileCommand;
         private readonly ICommand<IBookItemViewModel> showBookCommand;
@@ -22,8 +24,7 @@ namespace Epiphany.ViewModel.Items
         private const string FriendFeedItemActionTextKey = "FriendFeedItemActionText";
         private const string UserStatusFeedItemActionTextKey = "UserStatusFeedItemActionText";
         private const string UserStatusFeedItemFinishedActionTextKey = "UserStatusFeedItemFinishedActionText";
-        private const string ReviewFeedItemOneStarRatingActionTextKey = "ReviewFeedItemOneStarRatingActionText";
-        private const string ReviewFeedItemNStarRatingActionTextKey = "ReviewFeedItemNStarRatingActionText";
+        private const string ReviewFeedItemActionTextKey = "ReviewFeedItemActionText";
         private const string ReadStatusFeedItemToReadActionTextKey = "ReadStatusFeedItemToReadActionText";
         private const string ReadStatusFeedItemHasReadActionTextKey = "ReadStatusFeedItemHasReadActionText";
         private const string ReadStatusFeedItemCurrentlyReadingActionTextKey = "ReadStatusFeedItemCurrentlyReadingActionText";
@@ -67,9 +68,7 @@ namespace Epiphany.ViewModel.Items
             get { return this.friend; }
             private set
             {
-                if (this.friend == value) return;
-                this.friend = value;
-                RaisePropertyChanged();
+                SetProperty(ref this.friend, value);
             }
         }
 
@@ -78,9 +77,7 @@ namespace Epiphany.ViewModel.Items
             get { return this.book; }
             private set
             {
-                if (this.book == value) return;
-                this.book = value;
-                RaisePropertyChanged();
+                SetProperty(ref this.book, value);
             }
 
         }
@@ -90,9 +87,7 @@ namespace Epiphany.ViewModel.Items
             get { return this.actionText; }
             private set
             {
-                if (this.actionText == value) return;
-                this.actionText = value;
-                RaisePropertyChanged();
+                SetProperty(ref this.actionText, value);
             }
         }
 
@@ -129,6 +124,30 @@ namespace Epiphany.ViewModel.Items
         public ICommand ShowReview
         {
             get { return null; }
+        }
+
+        public int PercentageCompleted
+        {
+            get
+            {
+                return this.percentageCompleted;
+            }
+            private set
+            {
+                SetProperty(ref this.percentageCompleted, value);
+            }
+        }
+
+        public int Rating
+        {
+            get
+            {
+                return this.rating;
+            }
+            private set
+            {
+                SetProperty(ref this.rating, value);
+            }
         }
 
         private void InitializeProperties()
@@ -185,14 +204,9 @@ namespace Epiphany.ViewModel.Items
                 throw new ArgumentOutOfRangeException("reviewFeedItem.Rating");
             }
 
-            if (reviewFeedItem.Rating == 1)
-            {
-                actionText = string.Format(resourceLoader.GetString(ReviewFeedItemOneStarRatingActionTextKey), User.Name);
-            }
-            else
-            {
-                actionText = string.Format(resourceLoader.GetString(ReviewFeedItemNStarRatingActionTextKey), User.Name, reviewFeedItem.Rating);
-            }
+            actionText = string.Format(resourceLoader.GetString(ReviewFeedItemActionTextKey), User.Name, reviewFeedItem.Rating);
+
+            Rating = reviewFeedItem.Rating;
 
             return actionText;
         }
@@ -210,6 +224,8 @@ namespace Epiphany.ViewModel.Items
                 actionText = string.Format(resourceLoader.GetString(UserStatusFeedItemActionTextKey), User.Name, 
                     userStatusFeedItem.Page, userStatusFeedItem.Book.NumberOfPages);
             }
+
+            PercentageCompleted = userStatusFeedItem.Percentage;
 
             return actionText;
         }

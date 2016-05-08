@@ -62,6 +62,18 @@ namespace Epiphany.View.DesignData
             set;
         }
 
+        public int PercentageCompleted
+        {
+            get;
+            set;
+        }
+
+        public int Rating
+        {
+            get;
+            set;
+        }
+
         public ICommand<IUserItemViewModel> ShowProfile
         {
             get { return null; }

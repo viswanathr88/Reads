@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutNHoursAgoText" xml:space="preserve">
-    <value>about {0} hours ago</value>
+  <data name="NHoursAgoText" xml:space="preserve">
+    <value>{0}h</value>
   </data>
   <data name="AddBookshelfButtonText" xml:space="preserve">
     <value>add</value>
@@ -253,9 +253,6 @@
   <data name="JoinDateText" xml:space="preserve">
     <value>join date</value>
   </data>
-  <data name="JustAMomentAgoText" xml:space="preserve">
-    <value>just a moment ago</value>
-  </data>
   <data name="LikeonFBButtonText" xml:space="preserve">
     <value>like on facebook</value>
   </data>
@@ -269,13 +266,13 @@
     <value>Menu</value>
   </data>
   <data name="NDaysAgoText" xml:space="preserve">
-    <value>{0} days ago</value>
+    <value>{0}d</value>
   </data>
   <data name="NMinutesAgoText" xml:space="preserve">
-    <value>{0} minutes ago</value>
+    <value>{0}m</value>
   </data>
   <data name="NMonthsAgoText" xml:space="preserve">
-    <value>{0} months ago</value>
+    <value>{0}mon</value>
   </data>
   <data name="NoBookshelvesMessage" xml:space="preserve">
     <value>There are no bookshelves!</value>
@@ -305,7 +302,7 @@
     <value>There are no updates!</value>
   </data>
   <data name="NSecondsAgoText" xml:space="preserve">
-    <value>{0} seconds ago</value>
+    <value>{0}s</value>
   </data>
   <data name="NumberedItemFriendPlural" xml:space="preserve">
     <value>friends</value>
@@ -320,22 +317,7 @@
     <value>group</value>
   </data>
   <data name="NYearsAgoText" xml:space="preserve">
-    <value>{0} years ago</value>
-  </data>
-  <data name="OneDayAgoText" xml:space="preserve">
-    <value>1 day ago</value>
-  </data>
-  <data name="OneHourAgoText" xml:space="preserve">
-    <value>1 hour ago</value>
-  </data>
-  <data name="OneMinuteAgoText" xml:space="preserve">
-    <value>1 minute ago</value>
-  </data>
-  <data name="OneMonthAgoText" xml:space="preserve">
-    <value>1 month ago</value>
-  </data>
-  <data name="OneYearAgoText" xml:space="preserve">
-    <value>1 year ago</value>
+    <value>{0}y</value>
   </data>
   <data name="PendingApprovalText" xml:space="preserve">
     <value>pending approval</value>
@@ -372,11 +354,8 @@
   <data name="RetryLoginButtonText" xml:space="preserve">
     <value>Try again</value>
   </data>
-  <data name="ReviewFeedItemNStarRatingActionText" xml:space="preserve">
-    <value>{0} gave {1} stars to:</value>
-  </data>
-  <data name="ReviewFeedItemOneStarRatingActionText" xml:space="preserve">
-    <value>{0} gave 1 star to: </value>
+  <data name="ReviewFeedItemActionText" xml:space="preserve">
+    <value>{0} rated a book</value>
   </data>
   <data name="SearchTextBoxHint" xml:space="preserve">
     <value>find books by title,author</value>
