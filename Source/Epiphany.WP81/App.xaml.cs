@@ -53,7 +53,7 @@ namespace Epiphany.WP81
             Logger.Writers.Add(new DebugConsoleWriter());
 
             // Inject the WinRT ResourceLoader wrapper onto the PCL ResourceManager
-            WindowsRuntimeResourceManager.InjectIntoResxGeneratedApplicationResourcesClass(typeof(Epiphany.Strings.AppStrings));
+            //WindowsRuntimeResourceManager.InjectIntoResxGeneratedApplicationResourcesClass(typeof(Epiphany.Strings.AppStrings));
 
             Frame rootFrame = Window.Current.Content as Frame;
 

@@ -149,11 +149,6 @@ namespace Epiphany.ViewModel
                 IsLoaded = true;
                 IsLoading = false;
             }
-
-            /*if (this.fetchFeedCommand.CanExecute(parameter))
-            {
-                await this.fetchFeedCommand.ExecuteAsync(parameter);
-            }*/
         }
 
         private void OnFetchFeedExecuted(ExecutedEventArgs e)

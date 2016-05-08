@@ -80,7 +80,7 @@ namespace Epiphany.Model.Services
             parameters["v"] = "2";
             
             // Create the data source and get the feed
-            IDataSource<GoodreadsUpdates> ds = new DataSource<GoodreadsUpdates>(webClient, parameters, ServiceUrls.FeedUrl);
+            IDataSource<GoodreadsUpdates> ds = new DataSource<GoodreadsUpdates>(webClient, parameters, ServiceUrls.FeedUrl, true);
             GoodreadsUpdates updates = await ds.GetAsync();
             
             // Iterate the updates and create feed items

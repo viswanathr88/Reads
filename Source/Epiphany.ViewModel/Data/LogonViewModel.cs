@@ -147,7 +147,7 @@ namespace Epiphany.ViewModel
                     
                     // Complete the login process
                     StartTimer();
-                    await Task.Run(async () => await this.logonService.FinishLogin());
+                    await this.logonService.FinishLogin();
                     StopTimer();
 
                     // Set properties

@@ -14,8 +14,9 @@ namespace Epiphany.Model.DataSources
         private readonly IDictionary<string, string> parameters;
         private readonly IWebClient webClient;
         private readonly string url;
+        private readonly bool fAuthenticate = false;
 
-        public DataSource(IWebClient webClient, IDictionary<string, string> parameters, string url)
+        public DataSource(IWebClient webClient, IDictionary<string, string> parameters, string url, bool fAuthenticate = false)
         {
             if (webClient == null || string.IsNullOrEmpty(url))
             {
@@ -25,11 +26,13 @@ namespace Epiphany.Model.DataSources
             this.parameters = parameters;
             this.webClient = webClient;
             this.url = url;
+            this.fAuthenticate = fAuthenticate;
         }
 
         public async Task<T> GetAsync()
         {
             WebRequest request = new WebRequest(url, WebMethod.Get);
+            request.Authenticate = fAuthenticate;
             AddParameters(request);
             //
             // Execute the request and check for errors in the response

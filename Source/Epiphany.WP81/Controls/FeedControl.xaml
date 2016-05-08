@@ -1,0 +1,196 @@
+﻿<UserControl
+    x:Class="Epiphany.View.Controls.FeedControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Epiphany.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    x:Name="feedControl">
+
+    <Grid>
+        <ListView ItemsSource="{Binding ElementName=feedControl, Path=Items}">
+            <ListView.ItemContainerTransitions>
+                <TransitionCollection>
+                    <EdgeUIThemeTransition Edge="Right" />
+                </TransitionCollection>
+            </ListView.ItemContainerTransitions>
+            
+            <!-- Item template -->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,0,0,30">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <!-- Image -->
+                        <Border Height="64"
+                                Width="64"
+                                BorderBrush="{ThemeResource PhoneChromeBrush}"
+                                Grid.Column="0"
+                                BorderThickness="2"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top">
+                            <Image Source="{Binding Path=User.ImageUrl}"
+                                   Height="60"
+                                   Width="60"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"/>
+                        </Border>
+                        
+                        <!-- Content -->
+                        <StackPanel Grid.Column="1"
+                                    Orientation="Vertical">
+                            <TextBlock Text="{Binding Path=User.Name}"
+                                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                       Style="{StaticResource BodyTextBlockStyle}"
+                                       LineStackingStrategy="BlockLineHeight"
+                                       OpticalMarginAlignment="TrimSideBearings"
+                                       TextLineBounds="TrimToCapHeight"
+                                       TextWrapping="NoWrap"
+                                       TextTrimming="CharacterEllipsis"
+                                       VerticalAlignment="Top"
+                                       Margin="0,-2,0,0"
+                                       FontWeight="Bold"/>
+                            <TextBlock Text="{Binding UpdateTime}"
+                                       Foreground="{ThemeResource PhoneMidBrush}"
+                                       Style="{ThemeResource ListViewItemContentTextBlockStyle}"
+                                       LineStackingStrategy="BlockLineHeight"
+                                       OpticalMarginAlignment="TrimSideBearings"
+                                       TextLineBounds="TrimToCapHeight"
+                                       TextWrapping="NoWrap"
+                                       TextTrimming="CharacterEllipsis"
+                                       VerticalAlignment="Top" />
+                            <TextBlock Text="{Binding ActionText}"
+                                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                       Style="{StaticResource BodyTextBlockStyle}"
+                                       TextWrapping="Wrap"
+                                       TextTrimming="CharacterEllipsis"
+                                       MaxLines="2"
+                                       Margin="0,5,0,10"/>
+                            <!-- Friend area -->
+                            <Grid Visibility="{Binding Friend, Converter={StaticResource NullToVisibilityConverter}}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Image -->
+                                <Border Height="64"
+                                        Width="64"
+                                        BorderBrush="{ThemeResource PhoneChromeBrush}"
+                                        Grid.Column="0"
+                                        BorderThickness="2"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top">
+                                    <Image Source="{Binding Path=Friend.ImageUrl}"
+                                           Height="60"
+                                           Width="60"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center" />
+                                </Border>
+                                
+                                <!-- Name -->
+                                <TextBlock Text="{Binding Path=User.Name}"
+                                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                           Style="{StaticResource BodyTextBlockStyle}"
+                                           LineStackingStrategy="BlockLineHeight"
+                                           OpticalMarginAlignment="TrimSideBearings"
+                                           TextLineBounds="TrimToCapHeight"
+                                           TextWrapping="Wrap"
+                                           TextTrimming="CharacterEllipsis"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Left"
+                                           MaxLines="2"
+                                           Margin="0,-2,0,0"
+                                           FontWeight="ExtraBold"
+                                           Grid.Column="1"/>
+
+                            </Grid>
+                            
+                            <!-- Book Area -->
+                            <Grid Visibility="{Binding Book, Converter={StaticResource NullToVisibilityConverter}}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="110" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <!-- Book Image -->
+                                    <Border Height="128"
+                                            Width="96"
+                                            Grid.Column="0"
+                                            Background="{ThemeResource PhoneChromeBrush}"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Top">
+                                        <Image Source="{Binding Path=Book.ImageUrl}"
+                                               Height="128"
+                                               Width="96"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center" />
+                                    </Border>
+
+                                    <!-- Title , author, want to read button -->
+                                    <StackPanel Orientation="Vertical"
+                                                Grid.Column="1">
+                                        <TextBlock Text="{Binding Path=Book.Title}"
+                                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                                   Style="{StaticResource BodyTextBlockStyle}"
+                                                   LineStackingStrategy="BlockLineHeight"
+                                                   OpticalMarginAlignment="TrimSideBearings"
+                                                   TextLineBounds="TrimToCapHeight"
+                                                   TextWrapping="Wrap"
+                                                   TextTrimming="CharacterEllipsis"
+                                                   VerticalAlignment="Top"
+                                                   Margin="0,-2,0,0"
+                                                   FontWeight="ExtraBold"
+                                                   MaxLines="2" />
+                                        <TextBlock Text="{Binding Path=Book.MainAuthor.Name}"
+                                                   Foreground="{ThemeResource PhoneMidBrush}"
+                                                   Style="{ThemeResource ListViewItemContentTextBlockStyle}"
+                                                   LineStackingStrategy="BlockLineHeight"
+                                                   OpticalMarginAlignment="TrimSideBearings"
+                                                   TextLineBounds="TrimToCapHeight"
+                                                   TextWrapping="Wrap"
+                                                   TextTrimming="CharacterEllipsis"
+                                                   VerticalAlignment="Top"
+                                                   FontWeight="Bold"
+                                                   MaxLines="2"
+                                                   Margin="0,5,0,5" />
+                                        <Button Content="Want to Read"
+                                                MinWidth="120" />
+                                    </StackPanel>
+                                </Grid>
+
+                                <!-- Review text -->
+                                <TextBlock Text="{Binding Body}"
+                                           Visibility="{Binding Body, Converter={StaticResource NullToVisibilityConverter}}"
+                                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                           TextWrapping="Wrap"
+                                           MaxLines="15"
+                                           Style="{StaticResource MessageDialogContentStyle}"
+                                           TextTrimming="WordEllipsis"
+                                           LineStackingStrategy="BlockLineHeight"
+                                           OpticalMarginAlignment="TrimSideBearings"
+                                           TextLineBounds="TrimToCapHeight"
+                                           Grid.Row="1"
+                                           Margin="0,10,0,5"/>
+                            </Grid>
+
+                        </StackPanel>
+                        
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+    </Grid>
+</UserControl>

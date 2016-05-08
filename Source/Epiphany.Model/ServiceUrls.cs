@@ -140,7 +140,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "updates/friends";
+                return baseUrl + "updates/friends.xml";
             }
         }
 

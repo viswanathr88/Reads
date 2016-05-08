@@ -42,11 +42,14 @@ namespace Epiphany.View.Services
                 factory.OnTokenChanged(logonService, new TokenChangedEventArgs(logonService.ActiveToken, null));
             }
 
+            // Inject the WinRT ResourceLoader wrapper onto the PCL ResourceManager
+            WindowsRuntimeResourceManager.InjectIntoResxGeneratedApplicationResourcesClass(typeof(Epiphany.Strings.AppStrings));
+
             // Set up services
             this.navigationService = new NavigationService();
             this.timerService = new TimerService();
             this.deviceServices = new DeviceServices();
-            //this.resourceLoader = new ResourceLoader();
+            this.resourceLoader = WindowsRuntimeResourceManager.Instance;
         }
 
         public IHomeViewModel Home

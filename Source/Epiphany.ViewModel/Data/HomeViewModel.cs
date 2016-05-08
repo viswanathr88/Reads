@@ -136,9 +136,21 @@ namespace Epiphany.ViewModel
 
         public override async Task LoadAsync(VoidType parameter)
         {
-            if (IsLoggedIn)
+            if (IsLoggedIn && !IsLoaded)
             {
-                await Task.Run(async () => await Books.LoadAsync(int.Parse(this.logonService.Session.UserId)));
+                IsLoading = true;
+
+                // Start loading your feed but not await
+                Task feedLoadTask = Feed.LoadAsync(parameter);
+
+                // This should finish quickly as it is just creating the collection
+                await Books.LoadAsync(int.Parse(this.logonService.Session.UserId));
+
+                // Wait for the feed task to finish
+                await feedLoadTask;
+
+                IsLoading = false;
+                IsLoaded = true;
             }
         }
 

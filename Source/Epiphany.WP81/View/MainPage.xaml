@@ -68,15 +68,8 @@
                                             Message="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabHomeSignInText}" />
 
                     <!-- Feed -->
-                    <ListView ItemsSource="{Binding Path=Feed.Items}"
-                              Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}">
-                        <ListView.Header>
-                            <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.NoFeedMessage}"
-                                       Visibility="{Binding Path=Feed.Items.Count, Converter={StaticResource VisibleWhenZeroConverter}}"
-                                       Style="{StaticResource ListViewEmptyStaticTextBlockStyle}" />
-                        </ListView.Header>
-
-                    </ListView>
+                    <controls:FeedControl Items="{Binding Path=Feed.Items}"
+                                          Margin="0,19,0,0"/>
                 </Grid>
 
             </PivotItem>
