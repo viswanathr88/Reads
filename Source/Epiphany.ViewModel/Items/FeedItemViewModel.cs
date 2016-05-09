@@ -130,7 +130,6 @@ namespace Epiphany.ViewModel.Items
         {
             get
             {
-                Logger.LogDebug($"ActionText = {ActionText}, Percentage = {this.percentageCompleted}");
                 return this.percentageCompleted;
             }
             private set
