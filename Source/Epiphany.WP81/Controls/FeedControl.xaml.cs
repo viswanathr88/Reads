@@ -1,19 +1,6 @@
-﻿using Epiphany.ViewModel.Items;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+﻿using System.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -46,6 +33,46 @@ namespace Epiphany.View.Controls
         public static readonly DependencyProperty FrameProperty =
             DependencyProperty.Register("Frame", typeof(Frame), typeof(FeedControl), new PropertyMetadata(null));
 
+
+        public bool IsLoading
+        {
+            get { return (bool)GetValue(IsLoadingProperty); }
+            set { SetValue(IsLoadingProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for IsLoading.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IsLoadingProperty =
+            DependencyProperty.Register("IsLoading", typeof(bool), typeof(FeedControl), new PropertyMetadata(false));
+
+        public bool IsEmpty
+        {
+            get { return (bool)GetValue(IsEmptyProperty); }
+            set { SetValue(IsEmptyProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for IsEmpty.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IsEmptyProperty =
+            DependencyProperty.Register("IsEmpty", typeof(bool), typeof(FeedControl), new PropertyMetadata(false));
+
+        public string EmptyFeedMessage
+        {
+            get { return (string)GetValue(EmptyFeedMessageProperty); }
+            set { SetValue(EmptyFeedMessageProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for EmptyFeedMessage.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty EmptyFeedMessageProperty =
+            DependencyProperty.Register("EmptyFeedMessage", typeof(string), typeof(FeedControl), new PropertyMetadata(string.Empty));
+
+        public object Header
+        {
+            get { return (object)GetValue(HeaderProperty); }
+            set { SetValue(HeaderProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Header.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty HeaderProperty =
+            DependencyProperty.Register("Header", typeof(object), typeof(FeedControl), new PropertyMetadata(null));
 
     }
 

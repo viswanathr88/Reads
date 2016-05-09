@@ -1,6 +1,7 @@
 ﻿using Epiphany.Logging;
 using Epiphany.Model.Settings;
 using System;
+using System.Reflection;
 using Windows.Foundation.Collections;
 using Windows.Storage;
 

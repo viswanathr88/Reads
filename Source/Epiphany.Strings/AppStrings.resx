@@ -474,4 +474,37 @@
   <data name="BookshelvesSectionTitle" xml:space="preserve">
     <value>BOOKSHELVES</value>
   </data>
+  <data name="FeedOptionsShowUpdatesForHeader" xml:space="preserve">
+    <value>show updates for</value>
+  </data>
+  <data name="FeedOptionsShowUpdatesFromHeader" xml:space="preserve">
+    <value>show updates from</value>
+  </data>
+  <data name="FeedOptionsHeaderText" xml:space="preserve">
+    <value>FEED OPTIONS</value>
+  </data>
+  <data name="FeedOptionsShowUpdatesForAllText" xml:space="preserve">
+    <value>all</value>
+  </data>
+  <data name="FeedOptionsShowUpdatesForBooksText" xml:space="preserve">
+    <value>books</value>
+  </data>
+  <data name="FeedOptionsShowUpdatesForReviewsText" xml:space="preserve">
+    <value>reviews</value>
+  </data>
+  <data name="FeedOptionsShowUpdatesForStatusesText" xml:space="preserve">
+    <value>statuses</value>
+  </data>
+  <data name="FeedOptionsShowUpdatesFromFollowersText" xml:space="preserve">
+    <value>followers</value>
+  </data>
+  <data name="FeedOptionsShowUpdatesFromFriendsText" xml:space="preserve">
+    <value>friends</value>
+  </data>
+  <data name="FeedOptionsShowUpdatesFromTopFriendsText" xml:space="preserve">
+    <value>top friends</value>
+  </data>
+  <data name="FeedOptionsSummaryText" xml:space="preserve">
+    <value>showing {0} from {1}</value>
+  </data>
 </root>

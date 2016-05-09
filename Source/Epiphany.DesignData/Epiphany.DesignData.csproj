@@ -60,6 +60,7 @@
     <Compile Include="DesignBookViewModel.cs" />
     <Compile Include="DesignEventsViewModel.cs" />
     <Compile Include="DesignFeedItemViewModel.cs" />
+    <Compile Include="DesignFeedOptionsViewModel.cs" />
     <Compile Include="DesignFeedViewModel.cs" />
     <Compile Include="DesignFriendsViewModel.cs" />
     <Compile Include="DesignHomeViewModel.cs" />

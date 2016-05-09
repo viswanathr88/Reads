@@ -6,6 +6,8 @@ using System.Reflection;
 using System.Resources;
 using Windows.ApplicationModel.Resources;
 using System.Collections.Generic;
+using Epiphany.Model.Services;
+using Epiphany.Strings;
 
 namespace Epiphany.View
 {
@@ -14,6 +16,8 @@ namespace Epiphany.View
         private readonly ResourceLoader resourceLoader;
         private static WindowsRuntimeResourceManager instance;
 
+        private IDictionary<object, string> stringMapping = new Dictionary<object, string>();
+
         protected WindowsRuntimeResourceManager(string baseName, Assembly assembly) : base(baseName, assembly)
         {
             this.resourceLoader = ResourceLoader.GetForViewIndependentUse(baseName);
@@ -21,9 +25,13 @@ namespace Epiphany.View
 
         public static void InjectIntoResxGeneratedApplicationResourcesClass(Type resxGeneratedApplicationResourcesClass)
         {
+            instance = new WindowsRuntimeResourceManager(resxGeneratedApplicationResourcesClass.FullName, resxGeneratedApplicationResourcesClass.GetTypeInfo().Assembly);
+
             resxGeneratedApplicationResourcesClass.GetRuntimeFields()
               .First(m => m.Name == "resourceMan")
-              .SetValue(null, instance = new WindowsRuntimeResourceManager(resxGeneratedApplicationResourcesClass.FullName, resxGeneratedApplicationResourcesClass.GetTypeInfo().Assembly));
+              .SetValue(null, instance);
+
+            instance.BuildStringMapping();
         }
 
         public static WindowsRuntimeResourceManager Instance
@@ -49,5 +57,28 @@ namespace Epiphany.View
             return this.resourceLoader.GetString(name);
         }
 
+        public string GetString(object key)
+        {
+            string result = string.Empty;
+
+            if (stringMapping.ContainsKey(key))
+            {
+                result = stringMapping[key];
+            }
+
+            return result;
+        }
+
+        private void BuildStringMapping()
+        {
+            stringMapping[FeedUpdateType.all] = AppStrings.FeedOptionsShowUpdatesForAllText;
+            stringMapping[FeedUpdateType.books] = AppStrings.FeedOptionsShowUpdatesForBooksText;
+            stringMapping[FeedUpdateType.reviews] = AppStrings.FeedOptionsShowUpdatesForReviewsText;
+            stringMapping[FeedUpdateType.statuses] = AppStrings.FeedOptionsShowUpdatesForStatusesText;
+
+            stringMapping[FeedUpdateFilter.following] = AppStrings.FeedOptionsShowUpdatesFromFollowersText;
+            stringMapping[FeedUpdateFilter.friends] = AppStrings.FeedOptionsShowUpdatesFromFriendsText;
+            stringMapping[FeedUpdateFilter.top_friends] = AppStrings.FeedOptionsShowUpdatesFromTopFriendsText;
+        }
     }
 }

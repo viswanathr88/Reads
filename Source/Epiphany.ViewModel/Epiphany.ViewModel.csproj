@@ -46,10 +46,12 @@
     <Compile Include="Base\Command.cs" />
     <Compile Include="Base\CommandBase.cs" />
     <Compile Include="Base\DataViewModel.cs" />
+    <Compile Include="Base\DelegateCommand.cs" />
     <Compile Include="Base\ExecutedEventArgs.cs" />
     <Compile Include="Base\IAsyncCommand.cs" />
     <Compile Include="Base\ICommand.cs" />
     <Compile Include="Base\IDataViewModel.cs" />
+    <Compile Include="Base\IItemViewModel.cs" />
     <Compile Include="Base\ItemViewModel.cs" />
     <Compile Include="Base\UriBuilder.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
@@ -106,7 +108,6 @@
     <Compile Include="Commands\Navigation\ShowSettingsCommand.cs" />
     <Compile Include="Commands\RateAppCommand.cs" />
     <Compile Include="Commands\RemoveFromReadingListCommand.cs" />
-    <Compile Include="Commands\SaveFeedOptionsCommand.cs" />
     <Compile Include="Commands\SearchCommand.cs" />
     <Compile Include="Data\AboutViewModel.cs" />
     <Compile Include="Data\AddBookViewModel.cs" />

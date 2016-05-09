@@ -1,18 +1,20 @@
-﻿using System.Threading.Tasks;
+﻿using Epiphany.Model.Services;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Input;
-using Epiphany.Model.Services;
-using Epiphany.ViewModel.Commands;
 
 namespace Epiphany.ViewModel
 {
-    public interface IFeedOptionsViewModel
+    public interface IFeedOptionsViewModel : INotifyPropertyChanged
     {
+        IList<ItemViewModel<FeedUpdateFilter>> UpdateFilters { get; }
+        IList<ItemViewModel<FeedUpdateType>> UpdateTypes { get; }
+        FeedUpdateFilter CurrentUpdateFilter { get; }
+        FeedUpdateType CurrentUpdateType { get; }
+        string OptionsSummary { get; }
+        bool OptionsChanged { get; }
+        ICommand Refresh { get; }
+        ICommand Save { get; }
         ICommand Cancel { get; }
-        FeedUpdateFilter CurrentUpdateFilter { get; set; }
-        FeedUpdateType CurrentUpdateType { get; set; }
-        FeedOptions FeedOptions { get; }
-        ICommand<FeedOptions> SaveOptions { get; }
-
-        Task LoadAsync(VoidType parameter);
     }
 }

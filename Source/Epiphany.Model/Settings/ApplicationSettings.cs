@@ -117,11 +117,11 @@ namespace Epiphany.Model.Settings
 		private bool EncryptAuthTokenDefault = false;
 		private bool UseMyLocationDefault = false;
 		private bool EnableLoggingDefault = true;
-		private Epiphany.Model.Services.FeedUpdateType UpdateTypeDefault = Epiphany.Model.Services.FeedUpdateType.all;
-		private Epiphany.Model.Services.FeedUpdateFilter UpdateFilterDefault = Epiphany.Model.Services.FeedUpdateFilter.friends;
-		private Epiphany.Model.Services.BookSortType SortTypeDefault = Epiphany.Model.Services.BookSortType.date_added;
-		private Epiphany.Model.Services.BookSortOrder SortOrderDefault = Epiphany.Model.Services.BookSortOrder.a;
-		private Epiphany.Model.Services.BookSearchType SearchTypeDefault = Epiphany.Model.Services.BookSearchType.All;
+		private string UpdateTypeDefault = "all";
+		private string UpdateFilterDefault = "friends";
+		private string SortTypeDefault = "date_added";
+		private string SortOrderDefault = "a";
+		private string SearchTypeDefault = "All";
 		private bool EnableTransparentTileDefault = true;
 		
 		public event EventHandler<SettingChangedEventArgs> SettingChanged;
@@ -346,12 +346,12 @@ namespace Epiphany.Model.Settings
 		/// <summary>
 		/// Gets or sets the UpdateType setting
 		/// </summary>
-		public Epiphany.Model.Services.FeedUpdateType UpdateType
+		public string UpdateType
 		{
 			get 
 			{
 				var setting = this.settings["UpdateType"];
-				return Store.GetValueOrDefault<Epiphany.Model.Services.FeedUpdateType>(setting, UpdateTypeDefault);
+				return Store.GetValueOrDefault<string>(setting, UpdateTypeDefault);
 			}
 			set 
 			{
@@ -365,12 +365,12 @@ namespace Epiphany.Model.Settings
 		/// <summary>
 		/// Gets or sets the UpdateFilter setting
 		/// </summary>
-		public Epiphany.Model.Services.FeedUpdateFilter UpdateFilter
+		public string UpdateFilter
 		{
 			get 
 			{
 				var setting = this.settings["UpdateFilter"];
-				return Store.GetValueOrDefault<Epiphany.Model.Services.FeedUpdateFilter>(setting, UpdateFilterDefault);
+				return Store.GetValueOrDefault<string>(setting, UpdateFilterDefault);
 			}
 			set 
 			{
@@ -384,12 +384,12 @@ namespace Epiphany.Model.Settings
 		/// <summary>
 		/// Gets or sets the SortType setting
 		/// </summary>
-		public Epiphany.Model.Services.BookSortType SortType
+		public string SortType
 		{
 			get 
 			{
 				var setting = this.settings["SortType"];
-				return Store.GetValueOrDefault<Epiphany.Model.Services.BookSortType>(setting, SortTypeDefault);
+				return Store.GetValueOrDefault<string>(setting, SortTypeDefault);
 			}
 			set 
 			{
@@ -403,12 +403,12 @@ namespace Epiphany.Model.Settings
 		/// <summary>
 		/// Gets or sets the SortOrder setting
 		/// </summary>
-		public Epiphany.Model.Services.BookSortOrder SortOrder
+		public string SortOrder
 		{
 			get 
 			{
 				var setting = this.settings["SortOrder"];
-				return Store.GetValueOrDefault<Epiphany.Model.Services.BookSortOrder>(setting, SortOrderDefault);
+				return Store.GetValueOrDefault<string>(setting, SortOrderDefault);
 			}
 			set 
 			{
@@ -422,12 +422,12 @@ namespace Epiphany.Model.Settings
 		/// <summary>
 		/// Gets or sets the SearchType setting
 		/// </summary>
-		public Epiphany.Model.Services.BookSearchType SearchType
+		public string SearchType
 		{
 			get 
 			{
 				var setting = this.settings["SearchType"];
-				return Store.GetValueOrDefault<Epiphany.Model.Services.BookSearchType>(setting, SearchTypeDefault);
+				return Store.GetValueOrDefault<string>(setting, SearchTypeDefault);
 			}
 			set 
 			{

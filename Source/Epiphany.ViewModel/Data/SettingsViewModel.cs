@@ -6,38 +6,6 @@ namespace Epiphany.ViewModel
 {
     public sealed class SettingsViewModel : DataViewModel<VoidType>, ISettingsViewModel
     {
-        public FeedUpdateType UpdateType
-        {
-            get
-            {
-                return ApplicationSettings.Instance.UpdateType;
-            }
-            set
-            {
-                if (ApplicationSettings.Instance.UpdateType != value)
-                {
-                    ApplicationSettings.Instance.UpdateType = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
-        public FeedUpdateFilter UpdateFilter
-        {
-            get
-            {
-                return ApplicationSettings.Instance.UpdateFilter;
-            }
-            set
-            {
-                if (ApplicationSettings.Instance.UpdateFilter != value)
-                {
-                    ApplicationSettings.Instance.UpdateFilter = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
         public bool EnableLogging
         {
             get
@@ -65,55 +33,6 @@ namespace Epiphany.ViewModel
                 if (ApplicationSettings.Instance.UseMyLocation != value)
                 {
                     ApplicationSettings.Instance.UseMyLocation = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
-        public BookSortType SortType
-        {
-            get
-            {
-                return ApplicationSettings.Instance.SortType;
-            }
-            set
-            {
-                if (ApplicationSettings.Instance.SortType != value)
-                {
-                    ApplicationSettings.Instance.SortType = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
-        public BookSortOrder SortOrder
-        {
-            get
-            {
-                return ApplicationSettings.Instance.SortOrder;
-            }
-            set
-            {
-                if (ApplicationSettings.Instance.SortOrder != value)
-                {
-                    ApplicationSettings.Instance.SortOrder = value;
-                    RaisePropertyChanged();
-                }
-                
-            }
-        }
-
-        public BookSearchType SearchType
-        {
-            get
-            {
-                return ApplicationSettings.Instance.SearchType;
-            }
-            set
-            {
-                if (ApplicationSettings.Instance.SearchType != value)
-                {
-                    ApplicationSettings.Instance.SearchType = value;
                     RaisePropertyChanged();
                 }
             }

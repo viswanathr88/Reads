@@ -2,7 +2,7 @@
 
 namespace Epiphany.ViewModel
 {
-    public abstract class ItemViewModel<T> : ViewModelBase
+    public class ItemViewModel<T> : ViewModelBase, IItemViewModel
     {
         private T item;
         private bool isSelected;
@@ -31,7 +31,7 @@ namespace Epiphany.ViewModel
             }
             set
             {
-                SetProperty(ref this.isLoading, value);
+                SetProperty(ref this.isSelected, value);
             }
         }
 

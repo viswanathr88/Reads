@@ -440,6 +440,105 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FEED OPTIONS.
+        /// </summary>
+        public static string FeedOptionsHeaderText {
+            get {
+                return ResourceManager.GetString("FeedOptionsHeaderText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to all.
+        /// </summary>
+        public static string FeedOptionsShowUpdatesForAllText {
+            get {
+                return ResourceManager.GetString("FeedOptionsShowUpdatesForAllText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to books.
+        /// </summary>
+        public static string FeedOptionsShowUpdatesForBooksText {
+            get {
+                return ResourceManager.GetString("FeedOptionsShowUpdatesForBooksText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to show updates for.
+        /// </summary>
+        public static string FeedOptionsShowUpdatesForHeader {
+            get {
+                return ResourceManager.GetString("FeedOptionsShowUpdatesForHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to reviews.
+        /// </summary>
+        public static string FeedOptionsShowUpdatesForReviewsText {
+            get {
+                return ResourceManager.GetString("FeedOptionsShowUpdatesForReviewsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to statuses.
+        /// </summary>
+        public static string FeedOptionsShowUpdatesForStatusesText {
+            get {
+                return ResourceManager.GetString("FeedOptionsShowUpdatesForStatusesText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to followers.
+        /// </summary>
+        public static string FeedOptionsShowUpdatesFromFollowersText {
+            get {
+                return ResourceManager.GetString("FeedOptionsShowUpdatesFromFollowersText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to friends.
+        /// </summary>
+        public static string FeedOptionsShowUpdatesFromFriendsText {
+            get {
+                return ResourceManager.GetString("FeedOptionsShowUpdatesFromFriendsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to show updates from.
+        /// </summary>
+        public static string FeedOptionsShowUpdatesFromHeader {
+            get {
+                return ResourceManager.GetString("FeedOptionsShowUpdatesFromHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to top friends.
+        /// </summary>
+        public static string FeedOptionsShowUpdatesFromTopFriendsText {
+            get {
+                return ResourceManager.GetString("FeedOptionsShowUpdatesFromTopFriendsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to showing {0} from {1}.
+        /// </summary>
+        public static string FeedOptionsSummaryText {
+            get {
+                return ResourceManager.GetString("FeedOptionsSummaryText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} is now friends with:.
         /// </summary>
         public static string FriendFeedItemActionText {

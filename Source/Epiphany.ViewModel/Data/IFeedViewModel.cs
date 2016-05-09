@@ -8,10 +8,9 @@ namespace Epiphany.ViewModel
     public interface IFeedViewModel : IDataViewModel
     {
         IList<IFeedItemViewModel> Items { get; }
-        IFeedOptionsViewModel FeedOptionsViewModel { get; }
+        IFeedOptionsViewModel FeedOptions { get; }
         IAsyncCommand<IEnumerable<FeedItemModel>, VoidType> FetchFeed { get; }
         bool IsFeedEmpty { get; }
         bool IsFilterEnabled { get; }
-        ICommand ShowOptions { get; }
     }
 }

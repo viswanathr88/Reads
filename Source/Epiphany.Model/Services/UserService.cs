@@ -77,7 +77,7 @@ namespace Epiphany.Model.Services
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             parameters["update"] = type.ToString();
             parameters["update_filter"] = filter.ToString();
-            parameters["v"] = "2";
+            //parameters["v"] = "2";
             
             // Create the data source and get the feed
             IDataSource<GoodreadsUpdates> ds = new DataSource<GoodreadsUpdates>(webClient, parameters, ServiceUrls.FeedUrl, true);

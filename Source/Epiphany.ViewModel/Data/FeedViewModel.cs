@@ -1,7 +1,6 @@
 ﻿using Epiphany.Logging;
 using Epiphany.Model;
 using Epiphany.Model.Services;
-using Epiphany.Model.Settings;
 using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
@@ -9,7 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
@@ -29,7 +27,6 @@ namespace Epiphany.ViewModel
         // Commands
         //
         private readonly IAsyncCommand<IEnumerable<FeedItemModel>, VoidType> fetchFeedItemsCommand;
-        private readonly ICommand showOptionsCommand;
 
         public FeedViewModel(IUserService userService, INavigationService navigationService, IResourceLoader resourceLoader)
         {
@@ -37,15 +34,24 @@ namespace Epiphany.ViewModel
             this.navigationService = navigationService;
             this.resourceLoader = resourceLoader;
 
-            ApplicationSettings.Instance.SettingChanged += OnSettingChanged;
-
             this.Items = new ObservableCollection<IFeedItemViewModel>();
             this.fetchFeedItemsCommand = new FetchFeedCommand(userService);
             RegisterCommand(this.fetchFeedItemsCommand, OnFetchFeedExecuted);
 
-            this.showOptionsCommand = new ShowOptionsCommand(navigationService);
+            this.feedOptionsViewModel = new FeedOptionsViewModel(resourceLoader);
+            this.feedOptionsViewModel.PropertyChanged += FeedOptions_PropertyChanged;
+        }
 
-            IsFilterEnabled = ComputeIsFilterEnabled();
+        private async void FeedOptions_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(this.feedOptionsViewModel.OptionsChanged))
+            {
+                if (this.feedOptionsViewModel.OptionsChanged)
+                {
+                    IsLoaded = false;
+                    await LoadAsync(null);
+                }
+            }
         }
 
         public bool IsFeedEmpty
@@ -53,11 +59,7 @@ namespace Epiphany.ViewModel
             get { return isFeedEmpty; }
             private set
             {
-                if (isFeedEmpty != value)
-                {
-                    isFeedEmpty = value;
-                    RaisePropertyChanged(() => IsFeedEmpty);
-                }
+                SetProperty(ref this.isFeedEmpty, value);
             }
         }
 
@@ -66,11 +68,7 @@ namespace Epiphany.ViewModel
             get { return items; }
             private set
             {
-                if (items != value)
-                {
-                    items = value;
-                    RaisePropertyChanged(() => Items);
-                }
+                SetProperty(ref this.items, value);
             }
         }
 
@@ -79,23 +77,14 @@ namespace Epiphany.ViewModel
             get { return isFilterEnabled; }
             private set
             {
-                if (isFilterEnabled != value)
-                {
-                    isFilterEnabled = value;
-                    RaisePropertyChanged(() => IsFilterEnabled);
-                }
+                SetProperty(ref this.isFilterEnabled, value);
             }
         }
 
-        public IFeedOptionsViewModel FeedOptionsViewModel
+        public IFeedOptionsViewModel FeedOptions
         {
             get
             {
-                if (this.feedOptionsViewModel == null)
-                {
-                    this.feedOptionsViewModel = new FeedOptionsViewModel(this.navigationService);
-                }
-
                 return this.feedOptionsViewModel;
             }
         }
@@ -108,25 +97,18 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public ICommand ShowOptions
-        {
-            get
-            {
-                return this.showOptionsCommand;
-            }
-        }
-
         public override async Task LoadAsync(VoidType parameter)
         {
             if (!IsLoaded)
             {
                 IsLoading = true;
+
                 IEnumerable<FeedItemViewModel> items = null;
                 try
                 {
                     items = await Task.Run(async ()=>
                     {
-                        IEnumerable<FeedItemModel> modelItems = await this.userService.GetFriendUpdatesAsync(FeedUpdateType.all, FeedUpdateFilter.friends);
+                        IEnumerable<FeedItemModel> modelItems = await this.userService.GetFriendUpdatesAsync(FeedOptions.CurrentUpdateType, FeedOptions.CurrentUpdateFilter);
                         IList<FeedItemViewModel> vmItems = new List<FeedItemViewModel>();
                         foreach (var modelItem in modelItems)
                         {
@@ -145,7 +127,7 @@ namespace Epiphany.ViewModel
                     Items = new ObservableCollection<IFeedItemViewModel>(items);
                 }
 
-                IsFeedEmpty = Items.Count > 0 ? true : false;
+                IsFeedEmpty = Items.Count <= 0 ? true : false;
                 IsLoaded = true;
                 IsLoading = false;
             }
@@ -178,21 +160,6 @@ namespace Epiphany.ViewModel
         private void OnCommandExecuting(object sender, CancelEventArgs e)
         {
             IsLoading = true;
-        }
-
-        private void OnSettingChanged(object sender, SettingChangedEventArgs e)
-        {
-            if (e.SettingName == nameof(ApplicationSettings.Instance.UpdateType) || 
-                e.SettingName == nameof(ApplicationSettings.Instance.UpdateFilter))
-            {
-                IsFilterEnabled = ComputeIsFilterEnabled();
-            }
-        }
-
-        private bool ComputeIsFilterEnabled()
-        {
-            return !(ApplicationSettings.Instance.UpdateFilter == FeedUpdateFilter.friends &&
-                ApplicationSettings.Instance.UpdateType == FeedUpdateType.all);
         }
     }
 }

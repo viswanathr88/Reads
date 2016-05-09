@@ -1,88 +1,70 @@
 ﻿using Epiphany.Model.Services;
-using Epiphany.ViewModel.Commands;
+using Epiphany.Model.Settings;
 using Epiphany.ViewModel.Services;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
-using System.Threading.Tasks;
-using Epiphany.Model.Settings;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class FeedOptionsViewModel : DataViewModel<VoidType>, IFeedOptionsViewModel
+    public sealed class FeedOptionsViewModel : ViewModelBase, IFeedOptionsViewModel
     {
-        private FeedOptions feedOptions;
-        private FeedUpdateFilter updateFilter;
-        private FeedUpdateType updateType;
+        private IList<ItemViewModel<FeedUpdateFilter>> updateFilters;
+        private IList<ItemViewModel<FeedUpdateType>> updateTypes;
+        private string optionsSummary;
+        private bool optionsChanged;
+        private ICommand refreshCommand;
+        private ICommand saveCommand;
+        private ICommand cancelCommand;
 
-        private readonly ICommand<FeedOptions> saveFeedOptionsCommand;
-        private readonly ICommand goBackCommand;
+        private readonly IResourceLoader resourceLoader;
+        private readonly string optionsSummaryStringKey = "FeedOptionsSummaryText";
 
-        public FeedOptionsViewModel(INavigationService navigationService)
+        public FeedOptionsViewModel(IResourceLoader resourceLoader)
         {
-            if (navigationService == null)
+            if (resourceLoader == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(nameof(resourceLoader));
             }
 
-            this.saveFeedOptionsCommand = new SaveFeedOptionsCommand(navigationService);
-            this.goBackCommand = new GoBackCommand(navigationService);
+            this.resourceLoader = resourceLoader;
+            this.refreshCommand = new DelegateCommand(PopulateOptionsList);
+            this.saveCommand = new DelegateCommand(SaveOptions);
+            this.cancelCommand = new DelegateCommand(CancelOptions);
+            PopulateOptionsList();
         }
 
-        public FeedUpdateType CurrentUpdateType
+        public IList<ItemViewModel<FeedUpdateFilter>> UpdateFilters
         {
             get
             {
-                return this.updateType;
-            }
-            set
-            {
-                if (this.updateType != value)
-                {
-                    this.updateType = value;
-                    CreateFeedOptions();
-                    RaisePropertyChanged(() => CurrentUpdateType);
-                }
-            }
-        }
-
-        public FeedUpdateFilter CurrentUpdateFilter
-        {
-            get
-            {
-                return this.updateFilter;
-            }
-            set
-            {
-                if (this.updateFilter != value)
-                {
-                    this.updateFilter = value;
-                    CreateFeedOptions();
-                    RaisePropertyChanged(() => CurrentUpdateFilter);
-                }
-            }
-        }
-
-        public FeedOptions FeedOptions
-        {
-            get
-            {
-                return this.feedOptions;
+                return this.updateFilters;
             }
             private set
             {
-                if (this.feedOptions != value)
-                {
-                    this.feedOptions = value;
-                    RaisePropertyChanged(() => FeedOptions);
-                }
+                SetProperty(ref this.updateFilters, value);
             }
         }
 
-        public ICommand<FeedOptions> SaveOptions
+        public IList<ItemViewModel<FeedUpdateType>> UpdateTypes
         {
             get
             {
-                return this.saveFeedOptionsCommand;
+                return this.updateTypes;
+            }
+            private set
+            {
+                SetProperty(ref this.updateTypes, value);
+            }
+        }
+
+        public ICommand Save
+        {
+            get
+            {
+                return this.saveCommand;
             }
         }
 
@@ -90,22 +72,111 @@ namespace Epiphany.ViewModel
         {
             get
             {
-                return this.goBackCommand;
+                return this.cancelCommand;
             }
         }
 
-        private void CreateFeedOptions()
+        public ICommand Refresh
         {
-            FeedOptions = new FeedOptions(CurrentUpdateType, CurrentUpdateFilter);
+            get
+            {
+                return refreshCommand;
+            }
         }
 
-        public override Task LoadAsync(VoidType parameter)
+        public string OptionsSummary
         {
-            CurrentUpdateType = ApplicationSettings.Instance.UpdateType;
-            CurrentUpdateFilter = ApplicationSettings.Instance.UpdateFilter;
-            CreateFeedOptions();
-            IsLoaded = true;
-            return Task.FromResult<bool>(true);
+            get
+            {
+                return this.optionsSummary;
+            }
+            private set
+            {
+                SetProperty(ref this.optionsSummary, value);
+            }
+        }
+
+        public bool OptionsChanged
+        {
+            get
+            {
+                return this.optionsChanged;
+            }
+            private set
+            {
+                SetProperty(ref this.optionsChanged, value);
+            }
+        }
+
+        public FeedUpdateFilter CurrentUpdateFilter
+        {
+            get
+            {
+                FeedUpdateFilter defaultFilter = FeedUpdateFilter.friends;
+                string filter = ApplicationSettings.Instance.UpdateFilter;
+                Enum.TryParse<FeedUpdateFilter>(filter, out defaultFilter);
+                return defaultFilter;
+            }
+        }
+
+        public FeedUpdateType CurrentUpdateType
+        {
+            get
+            {
+                FeedUpdateType defaultType = FeedUpdateType.all;
+                string type = ApplicationSettings.Instance.UpdateType;
+                Enum.TryParse<FeedUpdateType>(type, out defaultType);
+                return defaultType;
+            }
+        }
+
+        private void PopulateOptionsList()
+        {
+            UpdateFilters = new ObservableCollection<ItemViewModel<FeedUpdateFilter>>();
+            FeedUpdateFilter currentFilter = CurrentUpdateFilter;
+            foreach (var item in Enum.GetValues(typeof(FeedUpdateFilter)).Cast<FeedUpdateFilter>())
+            {
+                UpdateFilters.Add(new ItemViewModel<FeedUpdateFilter>(item)
+                {
+                    IsSelected = (item == currentFilter)
+                });
+            }
+
+            UpdateTypes = new ObservableCollection<ItemViewModel<FeedUpdateType>>();
+            FeedUpdateType currentType = CurrentUpdateType;
+            foreach (var item in Enum.GetValues(typeof(FeedUpdateType)).Cast<FeedUpdateType>())
+            {
+                UpdateTypes.Add(new ItemViewModel<FeedUpdateType>(item)
+                {
+                    IsSelected = (item == currentType)
+                });
+            }
+
+            OptionsSummary = string.Format(this.resourceLoader.GetString(optionsSummaryStringKey), 
+                this.resourceLoader.GetString(currentType), 
+                this.resourceLoader.GetString(currentFilter));
+        }
+
+        private void SaveOptions()
+        {
+            var currentFilter = (from filter in UpdateFilters
+                                 where filter.IsSelected == true
+                                 select filter.Item).First();
+
+            var currentType = (from type in UpdateTypes
+                               where type.IsSelected == true
+                               select type.Item).First();
+
+            ApplicationSettings.Instance.UpdateFilter = currentFilter.ToString();
+            ApplicationSettings.Instance.UpdateType = currentType.ToString();
+
+            OptionsChanged = true;
+        }
+
+        private void CancelOptions()
+        {
+            OptionsChanged = false;
+            PopulateOptionsList();
         }
     }
 }

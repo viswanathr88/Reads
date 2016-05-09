@@ -9,5 +9,7 @@ namespace Epiphany.ViewModel.Services
         IEnumerable<string> GetLocaleGroupHeaders();
 
         int GetLocaleGroupIndex(string item);
+
+        string GetString(object key);
     }
 }

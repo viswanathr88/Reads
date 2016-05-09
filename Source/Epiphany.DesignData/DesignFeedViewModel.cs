@@ -4,7 +4,6 @@ using Epiphany.ViewModel.Items;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
 
 namespace Epiphany.View.DesignData
 {
@@ -14,6 +13,8 @@ namespace Epiphany.View.DesignData
         {
             IsFeedEmpty = false;
             Items = new ObservableCollection<IFeedItemViewModel>();
+
+            FeedOptions = new DesignFeedOptionsViewModel();
 
             /*Items.Add(new DesignFeedItemViewModel()
             {
@@ -102,7 +103,7 @@ namespace Epiphany.View.DesignData
             set;
         }
 
-        public IFeedOptionsViewModel FeedOptionsViewModel
+        public IFeedOptionsViewModel FeedOptions
         {
             get;
         }
@@ -117,11 +118,6 @@ namespace Epiphany.View.DesignData
         {
             get;
             set;
-        }
-
-        public ICommand ShowOptions
-        {
-            get;
         }
 
         public IAsyncCommand<IEnumerable<FeedItemModel>, VoidType> FetchFeed

@@ -11,11 +11,11 @@
   </SettingContainer>
   <SettingContainer Name="Roaming">
       <Setting Name="EnableLogging" Type="bool">true</Setting>
-      <Setting Name="UpdateType" Type="Epiphany.Model.Services.FeedUpdateType">Epiphany.Model.Services.FeedUpdateType.all</Setting>
-      <Setting Name="UpdateFilter" Type="Epiphany.Model.Services.FeedUpdateFilter">Epiphany.Model.Services.FeedUpdateFilter.friends</Setting>
-      <Setting Name="SortType" Type="Epiphany.Model.Services.BookSortType">Epiphany.Model.Services.BookSortType.date_added</Setting>
-      <Setting Name="SortOrder" Type="Epiphany.Model.Services.BookSortOrder">Epiphany.Model.Services.BookSortOrder.a</Setting>
-      <Setting Name="SearchType" Type="Epiphany.Model.Services.BookSearchType">Epiphany.Model.Services.BookSearchType.All</Setting>
+      <Setting Name="UpdateType" Type="string">"all"</Setting>
+      <Setting Name="UpdateFilter" Type="string">"friends"</Setting>
+      <Setting Name="SortType" Type="string">"date_added"</Setting>
+      <Setting Name="SortOrder" Type="string">"a"</Setting>
+      <Setting Name="SearchType" Type="string">"All"</Setting>
       <Setting Name="EnableTransparentTile" Type="bool">true</Setting>
   </SettingContainer>
 </Settings>

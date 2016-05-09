@@ -1,4 +1,5 @@
-﻿using Windows.UI.Xaml.Navigation;
+﻿using Epiphany.ViewModel;
+using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -22,6 +23,16 @@ namespace Epiphany.View
         private void OnScanButtonClicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             Frame.Navigate(typeof(ScanPage));
+        }
+
+        private void PickerFlyout_Confirmed(Windows.UI.Xaml.Controls.PickerFlyout sender, Windows.UI.Xaml.Controls.PickerConfirmedEventArgs args)
+        {
+            GetViewModel<HomeViewModel>().Feed.FeedOptions.Save.Execute(null);
+        }
+
+        private void PickerFlyout_Closed(object sender, object e)
+        {
+            GetViewModel<HomeViewModel>().Feed.FeedOptions.Cancel.Execute(null);
         }
     }
 }
