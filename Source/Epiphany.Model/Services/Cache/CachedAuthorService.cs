@@ -1,5 +1,4 @@
 ﻿using Epiphany.Model.Messaging;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -33,6 +32,11 @@ namespace Epiphany.Model.Services
         public async Task FlipFanshipAsync(AuthorModel author)
         {
             await this.service.FlipFanshipAsync(author);
+        }
+
+        public async Task FollowAuthor(AuthorModel author)
+        {
+            await this.service.FollowAuthor(author);
         }
     }
 }

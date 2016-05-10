@@ -4,6 +4,7 @@ using Epiphany.Model.Messaging;
 using Epiphany.Web;
 using Epiphany.Xml;
 using System.Threading.Tasks;
+using System;
 
 namespace Epiphany.Model.Services
 {
@@ -39,6 +40,17 @@ namespace Epiphany.Model.Services
         public Task FlipFanshipAsync(AuthorModel author)
         {
             throw new System.NotImplementedException();
+        }
+
+        public async Task FollowAuthor(AuthorModel author)
+        {
+            WebRequest request = new WebRequest(ServiceUrls.FollowAuthorUrl, WebMethod.Post);
+            request.Authenticate = true;
+            request.Parameters["id"] = author.Id.ToString();
+            request.Parameters["format"] = "xml";
+
+            var webResponse = await this.webClient.ExecuteAsync(request);
+            webResponse.Validate(System.Net.HttpStatusCode.OK);
         }
 
         private IAdapter<AuthorModel, GoodreadsAuthor> Adapter

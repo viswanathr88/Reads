@@ -76,7 +76,7 @@ namespace Epiphany.Model.Services
             ds.SourceUrl = ServiceUrls.BooksByAuthorUrl;
             ds.Parameters["id"] = author.Id.ToString();
             ds.RequiresAuthentication = false;
-            // TODO: Add Returns here
+            ds.Returns = (response) => response.Author.BookCollection;
             
             // Create the collection
             IPagedCollection<BookModel> books = null;

@@ -31,6 +31,14 @@ namespace Epiphany.Model
             }
         }
 
+        public static string FollowAuthorUrl
+        {
+            get
+            {
+                return baseUrl + "author_followings";
+            }
+        }
+
         public static string ProfileUrl
         {
             get
