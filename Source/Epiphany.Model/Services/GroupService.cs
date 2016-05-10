@@ -39,7 +39,7 @@ namespace Epiphany.Model.Services
             ds.SourceUrl = ServiceUrls.GroupsUrl;
             ds.Parameters["id"] = user.Id.ToString();
             ds.RequiresAuthentication = false;
-            // TODO: ds.Returns = (response) => response.G
+            ds.Returns = (response) => response.Groups.GroupList;
             
             // Create the collection
             return new PagedCollection<GroupModel, GoodreadsGroup, GoodreadsGroupList>(ds, adapter, pageSize);
@@ -95,7 +95,7 @@ namespace Epiphany.Model.Services
             var ds = new PagedDataSource<GoodreadsComments>(webClient);
             ds.SourceUrl = ServiceUrls.TopicUrl;
             ds.Parameters["id"] = topic.Id.ToString();
-            //TODO: ds.Returns = (response) => response.;
+            ds.Returns = (response) => response.Topic.Comments;
             
             IPagedCollection<CommentModel> collection = null;
             if (currentTopic != null && currentTopic.Comments != null)
@@ -154,7 +154,7 @@ namespace Epiphany.Model.Services
             var ds = new PagedDataSource<GoodreadsGroupList>(webClient);
             ds.SourceUrl = ServiceUrls.FindGroupUrl;
             ds.Parameters["q"] = term;
-            // TODO: ds.Returns = (response)
+            ds.Returns = (response) => response.Groups.GroupList;
 
             // Create the collection
             return new PagedCollection<GroupModel, GoodreadsGroup, GoodreadsGroupList>(ds, adapter, pageSize);
