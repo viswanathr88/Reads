@@ -29,32 +29,31 @@ namespace Epiphany.Model.Services
         }
         public async Task<ProfileModel> GetProfile(int id)
         {
-            // Create the parameters
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["id"] = id.ToString();
-
             // Create the data source and get the profile
-            IDataSource<GoodreadsProfile> ds = new DataSource<GoodreadsProfile>(webClient, parameters, ServiceUrls.ProfileUrl);
+            var ds = new DataSource<GoodreadsProfile>(webClient);
+            ds.SourceUrl = ServiceUrls.ProfileUrl;
+            ds.Parameters["id"] = id.ToString();
+            ds.RequiresAuthentication = false;
+            ds.Returns = (response) => response.Profile;
+            
             GoodreadsProfile profile = await ds.GetAsync();
 
             // Send a message to all listeners
             GenericMessage<GoodreadsProfile> msg = new GenericMessage<GoodreadsProfile>(this, profile);
             this.messenger.SendMessage<GenericMessage<GoodreadsProfile>>(this, msg);
 
-            //
             // Convert and return the profile model
-            //
             return this.profileAdapter.Convert(profile);
         }
 
         public IPagedCollection<UserModel> GetFriends(int id)
         {
-            // Create the parameters
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["id"] = id.ToString();
-            
             // Create the data source for the collection
-            IPagedDataSource<GoodreadsFriends> ds = new PagedDataSource<GoodreadsFriends>(webClient, parameters, ServiceUrls.FriendsUrl);
+            var ds = new PagedDataSource<GoodreadsFriends>(webClient);
+            ds.SourceUrl = ServiceUrls.FriendsUrl;
+            ds.Parameters["id"] = id.ToString();
+            ds.RequiresAuthentication = false;
+            ds.Returns = (response) => response.Friends;
             
             // create the paged collection and return
             return new PagedCollection<UserModel, GoodreadsUser, GoodreadsFriends>(ds, this.userAdapter, friendCollectionSize);
@@ -73,14 +72,13 @@ namespace Epiphany.Model.Services
 
         public async Task<IEnumerable<FeedItemModel>> GetFriendUpdatesAsync(FeedUpdateType type, FeedUpdateFilter filter)
         {
-            // Create the parameters
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["update"] = type.ToString();
-            parameters["update_filter"] = filter.ToString();
-            //parameters["v"] = "2";
-            
             // Create the data source and get the feed
-            IDataSource<GoodreadsUpdates> ds = new DataSource<GoodreadsUpdates>(webClient, parameters, ServiceUrls.FeedUrl, true);
+            var ds = new DataSource<GoodreadsUpdates>(webClient);
+            ds.SourceUrl = ServiceUrls.FeedUrl;
+            ds.Parameters["update"] = type.ToString();
+            ds.Parameters["update_filter"] = filter.ToString();
+            ds.Parameters["v"] = "2";
+            
             GoodreadsUpdates updates = await ds.GetAsync();
             
             // Iterate the updates and create feed items

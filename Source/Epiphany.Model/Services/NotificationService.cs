@@ -20,12 +20,13 @@ namespace Epiphany.Model.Services
 
         public async Task<IEnumerable<NotificationModel>> GetNotifications()
         {
-            // Create the parameters
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["body_format"] = "plain";
-
             // Create the data source and get the notifications
-            IDataSource<GoodreadsNotifications> ds = new DataSource<GoodreadsNotifications>(webClient, parameters, ServiceUrls.NotificationsUrl);
+            var ds = new DataSource<GoodreadsNotifications>(webClient);
+            ds.SourceUrl = ServiceUrls.NotificationsUrl;
+            ds.Parameters["body_format"] = "plain";
+            ds.RequiresAuthentication = true;
+            ds.Returns = (response) => response.Notifications;
+            
             GoodreadsNotifications notifications = await ds.GetAsync();
 
             // Iterate over the notifications and convert to model

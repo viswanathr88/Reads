@@ -27,7 +27,14 @@ namespace Epiphany.Model.Services
             parameters["search[postal_code]"] = "'GPS_QUERY'";
 
             // Create the data source and get the events
-            IDataSource<GoodreadsEvents> ds = new DataSource<GoodreadsEvents>(webClient, parameters, ServiceUrls.EventsUrl);
+            var ds = new DataSource<GoodreadsEvents>(webClient);
+            ds.SourceUrl = ServiceUrls.EventsUrl;
+            ds.Parameters["lat"] = lat.ToString();
+            ds.Parameters["lng"] = lon.ToString();
+            ds.Parameters["search[postal_code]"] = "'GPS_QUERY'";
+            ds.RequiresAuthentication = false;
+            ds.Returns = (response) => response.Events;
+            
             GoodreadsEvents events = await ds.GetAsync();
             
             IList<LiteraryEventModel> result = new List<LiteraryEventModel>();
@@ -45,7 +52,11 @@ namespace Epiphany.Model.Services
             parameters["search[postal_code]"] = postalCode.ToString();
 
             // Create the data source and get the events
-            IDataSource<GoodreadsEvents> ds = new DataSource<GoodreadsEvents>(webClient, parameters, ServiceUrls.EventsUrl);
+            var ds = new DataSource<GoodreadsEvents>(webClient);
+            ds.SourceUrl = ServiceUrls.EventsUrl;
+            ds.Parameters["search[postal_code]"] = postalCode.ToString();
+            ds.Returns = (response) => response.Events;
+            
             GoodreadsEvents events = await ds.GetAsync();
 
             IList<LiteraryEventModel> result = new List<LiteraryEventModel>();

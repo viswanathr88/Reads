@@ -34,23 +34,26 @@ namespace Epiphany.Model.Services
 
         public IPagedCollection<GroupModel> GetGroups(UserModel user)
         {
-            // Create parameters
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["id"] = user.Id.ToString();
-            
             // Create the data source
-            IPagedDataSource<GoodreadsGroupList> ds = new PagedDataSource<GoodreadsGroupList>(webClient, parameters, ServiceUrls.GroupsUrl);
+            var ds = new PagedDataSource<GoodreadsGroupList>(webClient);
+            ds.SourceUrl = ServiceUrls.GroupsUrl;
+            ds.Parameters["id"] = user.Id.ToString();
+            ds.RequiresAuthentication = false;
+            // TODO: ds.Returns = (response) => response.G
+            
+            // Create the collection
             return new PagedCollection<GroupModel, GoodreadsGroup, GoodreadsGroupList>(ds, adapter, pageSize);
         }
 
         public async Task<GroupModel> GetGroup(int groupId)
         {
-            // Create parameters
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["id"] = groupId.ToString();
-
             // Create the data source
-            IDataSource<GoodreadsGroup> ds = new DataSource<GoodreadsGroup>(webClient, parameters, ServiceUrls.GroupUrl);
+            var ds = new DataSource<GoodreadsGroup>(webClient);
+            ds.SourceUrl = ServiceUrls.GroupUrl;
+            ds.Parameters["id"] = groupId.ToString();
+            ds.RequiresAuthentication = false;
+            ds.Returns = (response) => response.Group;
+            
             GoodreadsGroup group = await ds.GetAsync();
 
             // Convert to model and return
@@ -59,48 +62,41 @@ namespace Epiphany.Model.Services
 
         public IPagedCollection<TopicModel> GetTopics(int groupId, int groupFolderId)
         {
-            //
-            // Create parameters
-            //
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["id"] = groupFolderId.ToString();
-            parameters["group_id"] = groupId.ToString();
-            //
             // Create the data source
-            //
-            IPagedDataSource<GoodreadsTopics> ds = new PagedDataSource<GoodreadsTopics>(webClient, parameters, ServiceUrls.GroupFolderUrl);
+            var ds = new PagedDataSource<GoodreadsTopics>(webClient);
+            ds.SourceUrl = ServiceUrls.GroupFolderUrl;
+            ds.Parameters["id"] = groupFolderId.ToString();
+            ds.Parameters["group_id"] = groupId.ToString();
+
+            // Create the collection
             return new PagedCollection<TopicModel, GoodreadsTopic, GoodreadsTopics>(ds, topicAdapter, pageSize);
         }
 
         public async Task<TopicModel> GetTopic(int topicId)
         {
-            //
-            // Create parameters
-            //
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["id"] = topicId.ToString();
-            //
             // Create data source
-            //
-            IDataSource<GoodreadsTopic> ds = new DataSource<GoodreadsTopic>(webClient, parameters, ServiceUrls.TopicUrl);
+            var ds = new DataSource<GoodreadsTopic>(webClient);
+            ds.SourceUrl = ServiceUrls.TopicUrl;
+            ds.Parameters["id"] = topicId.ToString();
+
             this.currentTopic = await ds.GetAsync();
-            //
+            
             // Create the model and return
-            //
             return this.topicAdapter.Convert(this.currentTopic);
         }
 
         public IPagedCollection<CommentModel> GetComments(TopicModel topic)
         {
-            //
             // Create parameters
-            //
             IDictionary<string, string> parameters = new Dictionary<string, string>();
             parameters["id"] = topic.Id.ToString();
-            //
+
             // Create data source
-            //
-            IPagedDataSource<GoodreadsComments> ds = new PagedDataSource<GoodreadsComments>(webClient, parameters, ServiceUrls.TopicUrl);
+            var ds = new PagedDataSource<GoodreadsComments>(webClient);
+            ds.SourceUrl = ServiceUrls.TopicUrl;
+            ds.Parameters["id"] = topic.Id.ToString();
+            //TODO: ds.Returns = (response) => response.;
+            
             IPagedCollection<CommentModel> collection = null;
             if (currentTopic != null && currentTopic.Comments != null)
             {
@@ -133,6 +129,7 @@ namespace Epiphany.Model.Services
             // Create the web request and execute it
             WebRequest request = new WebRequest(ServiceUrls.CommentCreateUrl, WebMethod.Post);
             request.Authenticate = true;
+            request.Parameters["format"] = "xml";
             request.Parameters["type"] = "topic";
             request.Parameters["id"] = topic.Id.ToString();
 
@@ -142,9 +139,6 @@ namespace Epiphany.Model.Services
 
         public async Task JoinGroup(GroupModel group)
         {
-            // Create parameters
-            IDictionary<string, object> headers = new Dictionary<string, object>();
-
             // Create the web request and execute it
             WebRequest request = new WebRequest(ServiceUrls.JoinGroupUrl, WebMethod.Post);
             request.Authenticate = true;
@@ -156,12 +150,13 @@ namespace Epiphany.Model.Services
 
         public IPagedCollection<GroupModel> Find(string term)
         {
-            // Create parameters
-            IDictionary<string, string> headers = new Dictionary<string, string>();
-            headers["q"] = term;
-
             // Create the data source
-            IPagedDataSource<GoodreadsGroupList> ds = new PagedDataSource<GoodreadsGroupList>(webClient, headers, ServiceUrls.FindGroupUrl);
+            var ds = new PagedDataSource<GoodreadsGroupList>(webClient);
+            ds.SourceUrl = ServiceUrls.FindGroupUrl;
+            ds.Parameters["q"] = term;
+            // TODO: ds.Returns = (response)
+
+            // Create the collection
             return new PagedCollection<GroupModel, GoodreadsGroup, GoodreadsGroupList>(ds, adapter, pageSize);
         }
     }

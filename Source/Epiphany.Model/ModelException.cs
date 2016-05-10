@@ -11,7 +11,9 @@ namespace Epiphany.Model
         NoTokens,
         NoUserId,
         SignOutFailure,
-        TokenRequestError
+        TokenRequestError,
+        NoUrlForDataSource,
+        NoReturnsForDataSource
     };
 
     public class ModelException : Exception

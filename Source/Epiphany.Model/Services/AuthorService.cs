@@ -3,7 +3,6 @@ using Epiphany.Model.DataSources;
 using Epiphany.Model.Messaging;
 using Epiphany.Web;
 using Epiphany.Xml;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Epiphany.Model.Services
@@ -22,24 +21,18 @@ namespace Epiphany.Model.Services
 
         public async Task<AuthorModel> GetAuthorAsync(int id)
         {
-            //
-            // Create the headers
-            //
-            IDictionary<string, string> headers = new Dictionary<string, string>();
-            headers["id"] = id.ToString();
-            //
-            // Get the parsed author
-            //
-            IDataSource<GoodreadsAuthor> ds = new DataSource<GoodreadsAuthor>(webClient, headers, ServiceUrls.AuthorUrl);
+            // Create the data source
+            var ds = new DataSource<GoodreadsAuthor>(webClient);
+            ds.SourceUrl = ServiceUrls.AuthorUrl;
+            ds.Parameters["id"] = id.ToString();
+
             GoodreadsAuthor author = await ds.GetAsync();
-            //
+            
             // Send a message to listeners
-            //
             GenericMessage<GoodreadsAuthor> msg = new GenericMessage<GoodreadsAuthor>(this, author);
             this.messenger.SendMessage<GenericMessage<GoodreadsAuthor>>(this, msg);
-            //
+            
             // Create the model
-            //
             return Adapter.Convert(author);
         }
 
