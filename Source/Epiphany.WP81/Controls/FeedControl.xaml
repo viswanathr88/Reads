@@ -191,7 +191,7 @@
                                         VerticalContentAlignment="Center">
                                     <Button.Content>
                                         <!-- Name -->
-                                        <TextBlock Text="{Binding Path=User.Name}"
+                                        <TextBlock Text="{Binding Path=Friend.Name}"
                                                    Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
                                                    Style="{StaticResource BodyTextBlockStyle}"
                                                    LineStackingStrategy="BlockLineHeight"
