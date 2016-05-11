@@ -149,20 +149,5 @@ namespace Epiphany.View
                 this.searchResultsList.ScrollIntoView(this.searchResultsList.Items[0]);
             }
         }
-
-        private void SwipableContent_SwipeCompleted(object sender, SwipeEventArgs e)
-        {
-            FrameworkElement element = sender as FrameworkElement;
-            if (element == null)
-            {
-                Logger.LogError("Sender is not a framework element!");
-                return;
-            }
-
-            if (element.DataContext == null)
-            {
-                Logger.LogError("Sender does not have a data context set");
-            }
-        }
     }
 }

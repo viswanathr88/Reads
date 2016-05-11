@@ -115,14 +115,13 @@
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <mycontrols:SwipableContent SwipeCompleted="SwipableContent_SwipeCompleted"
-                                                    SwipeEnabled="{Binding ElementName=searchResultsList, Path=DataContext.IsLoggedIn}"
+                        <mycontrols:SwipableContent SwipeEnabled="{Binding ElementName=searchResultsList, Path=DataContext.IsLoggedIn}"
                                                     LeftCommand="{Binding AddToReadingList}"
                                                     RightCommand="{Binding RemoveFromReadingList}"
                                                     CommandParameter="{Binding Path=Book.Item}">
                             <mycontrols:SwipableContent.LeftContent>
                                 <StackPanel Background="{ThemeResource PhoneAccentBrush}"
-                                      Margin="0,5,5,17"
+                                            Margin="0,5,5,17"
                                             Orientation="Horizontal">
                                     <FontIcon Margin="10,0,0,0"
                                               Glyph="&#xE1CF;"
