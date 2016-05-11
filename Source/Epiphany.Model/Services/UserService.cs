@@ -78,6 +78,8 @@ namespace Epiphany.Model.Services
             ds.Parameters["update"] = type.ToString();
             ds.Parameters["update_filter"] = filter.ToString();
             ds.Parameters["v"] = "2";
+            ds.RequiresAuthentication = true;
+            ds.Returns = (response) => response.Updates;
             
             GoodreadsUpdates updates = await ds.GetAsync();
             

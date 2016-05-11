@@ -49,6 +49,7 @@
     <Compile Include="Adapter\GroupAdapter.cs" />
     <Compile Include="Adapter\IAdapter.cs" />
     <Compile Include="Adapter\NotificationAdapter.cs" />
+    <Compile Include="Adapter\OwnedBookAdapter.cs" />
     <Compile Include="Adapter\ProfileAdapter.cs" />
     <Compile Include="Adapter\ReviewAdapter.cs" />
     <Compile Include="Adapter\TopicAdapter.cs" />

@@ -66,12 +66,7 @@ namespace Epiphany.Model.Services
                 throw new ArgumentOutOfRangeException("Id");
             }
 
-            // Create headers
-            IDictionary<string, string> headers = new Dictionary<string, string>();
-            headers["id"] = author.Id.ToString();
-            //
             // Create the data source for the collection
-            //
             var ds = new PagedDataSource<GoodreadsBooks>(webClient);
             ds.SourceUrl = ServiceUrls.BooksByAuthorUrl;
             ds.Parameters["id"] = author.Id.ToString();
@@ -103,7 +98,7 @@ namespace Epiphany.Model.Services
             ds.Parameters["sort"] = sortType.ToString();
             ds.Parameters["order"] = order.ToString();
             ds.RequiresAuthentication = false;
-            ds.Returns = (response) => response.BooksInShelf;
+            ds.Returns = (response) => response.Reviews;
             
             // Create the collection
             return new PagedCollection<BookModel, GoodreadsReview, GoodreadsReviews>(ds, ReviewToBookAdapter, pageSize);
@@ -111,27 +106,28 @@ namespace Epiphany.Model.Services
 
         public IPagedCollection<BookModel> GetBooksByYear(int userId, int year)
         {
-            var ds = new PagedDataSource<GoodreadsReviews>(webClient);
+            var ds = new PagedDataSource<GoodreadsBooks>(webClient);
             ds.SourceUrl = ServiceUrls.BooksInShelfUrl;
             ds.Parameters["id"] = userId.ToString();
             ds.Parameters["read_at"] = year.ToString();
             ds.RequiresAuthentication = false;
-            ds.Returns = (response) => response.BooksInShelf;
+            ds.Returns = (response) => response.Books;
 
             // Create the collection
-            return new PagedCollection<BookModel, GoodreadsReview, GoodreadsReviews>(ds, ReviewToBookAdapter, pageSize);
+            return new PagedCollection<BookModel, GoodreadsBook, GoodreadsBooks>(ds, BookAdapter, pageSize);
         }
 
         public IPagedCollection<BookModel> GetOwnedBooks(int userId)
         {
-            var ds = new PagedDataSource<GoodreadsReviews>(webClient);
+            var ds = new PagedDataSource<GoodreadsOwnedBooks>(webClient);
             ds.SourceUrl = ServiceUrls.OwnedBooksUrl;
             ds.Parameters["id"] = userId.ToString();
-            ds.RequiresAuthentication = false;
-            // TODO: ds.Returns = (response) => response;
+            ds.RequiresAuthentication = true;
+            ds.Returns = (response) => response.OwnedBooks;
+            ds.PerPageSupported = false;
 
             // Create the collection
-            return new PagedCollection<BookModel, GoodreadsReview, GoodreadsReviews>(ds, ReviewToBookAdapter, pageSize);
+            return new PagedCollection<BookModel, GoodreadsOwnedBook, GoodreadsOwnedBooks>(ds, OwnedBookAdapter, pageSize);
         }
 
         public async Task AddBook(BookshelfModel shelf, BookModel book)
@@ -246,6 +242,14 @@ namespace Epiphany.Model.Services
                     this.reviewToBookAdapter = new ReviewToBookAdapter();
                 }
                 return this.reviewToBookAdapter;
+            }
+        }
+
+        private IAdapter<BookModel, GoodreadsOwnedBook> OwnedBookAdapter
+        {
+            get
+            {
+                return new OwnedBookAdapter();
             }
         }
     }

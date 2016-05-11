@@ -3,7 +3,7 @@
     public interface IHomeViewModel : IDataViewModel
     {
         IFeedViewModel Feed { get; }
-        IBookshelvesViewModel Books { get; }
+        IMyBooksViewModel Books { get; }
         ILauncherViewModel Launcher { get; }
         ICommunityViewModel Community { get; }
         bool IsLoggedIn { get; }

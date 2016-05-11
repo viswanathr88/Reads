@@ -51,6 +51,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Responses", "Responses", "{
 		Documents\Responses\GroupMembers.xml = Documents\Responses\GroupMembers.xml
 		Documents\Responses\Groups.xml = Documents\Responses\Groups.xml
 		Documents\Responses\Notification.xml = Documents\Responses\Notification.xml
+		Documents\Responses\OwnedBooks.xml = Documents\Responses\OwnedBooks.xml
 		Documents\Responses\Profile.xml = Documents\Responses\Profile.xml
 		Documents\Responses\RecentReviews.xml = Documents\Responses\RecentReviews.xml
 		Documents\Responses\RecentUserStasuses.xml = Documents\Responses\RecentUserStasuses.xml

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>true</authentication>
+    <key><![CDATA[fDfi6rdiIgfTp49R0xj8MQ]]></key>
+    <method><![CDATA[owned_books_user]]></method>
+  </Request>
+  <owned_books>
+    <owned_book>
+      <id type="integer">41399971</id>
+      <current_owner_id type="integer">8320965</current_owner_id>
+      <original_purchase_date type="datetime" nil="true"/>
+      <original_purchase_location nil="true"/>
+      <condition>unspecified</condition>
+      <traded_count>0</traded_count>
+      <link>https://www.goodreads.com/owned_books/41399971</link>
+      <book>
+        <id type="integer">2094</id>
+        <isbn>0553804367</isbn>
+        <isbn13>9780553804362</isbn13>
+        <text_reviews_count type="integer">590</text_reviews_count>
+        <title>A Briefer History of Time</title>
+        <image_url>https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png</image_url>
+        <small_image_url>https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png</small_image_url>
+        <large_image_url/>
+        <link>https://www.goodreads.com/book/show/2094.A_Briefer_History_of_Time</link>
+        <num_pages>176</num_pages>
+        <format>Hardcover</format>
+        <edition_information/>
+        <publisher>Bantam</publisher>
+        <publication_day>27</publication_day>
+        <publication_year>2005</publication_year>
+        <publication_month>9</publication_month>
+        <average_rating>4.17</average_rating>
+        <ratings_count>19450</ratings_count>
+        <description>&lt;strong&gt;FROM ONE OF THE MOST BRILLIANT MINDS OF OUR TIME COMES A BOOK THAT CLARIFIES HIS MOST IMPORTANT IDEAS&lt;/strong&gt;&lt;br&gt;&lt;strong&gt; &lt;/strong&gt;&lt;br&gt; Stephen Hawking’s worldwide bestseller &lt;em&gt;A Brief History of Time&lt;/em&gt; remains a landmark volume in scientific writing. But for readers who have asked for a more accessible formulation of its key concepts—the nature of space and time, the role of God in creation, and the history and future of the universe—&lt;em&gt;A Briefer History of Time&lt;/em&gt; is Professor Hawking’s response.&lt;br&gt;  &lt;br&gt; Although “briefer,” this book is much more than a mere explanation of Hawking’s earlier work. &lt;em&gt;A Briefer History of Time&lt;/em&gt; both clarifies and expands on the great subjects of the original, and records the latest developments in the field—from string theory to the search for a unified theory of all the forces of physics. Thirty-seven full-color illustrations enhance the text and make &lt;em&gt;A Briefer History of Time&lt;/em&gt; an exhilarating and must-have addition in its own right to the great literature of science and ideas.</description>
+        <authors>
+          <author>
+            <id>1401</id>
+            <name>Stephen Hawking</name>
+            <role></role>
+            <image_url nophoto='false'>
+              <![CDATA[https://d.gr-assets.com/authors/1197404653p5/1401.jpg]]>
+            </image_url>
+            <small_image_url nophoto='false'>
+              <![CDATA[https://d.gr-assets.com/authors/1197404653p2/1401.jpg]]>
+            </small_image_url>
+            <link><![CDATA[https://www.goodreads.com/author/show/1401.Stephen_Hawking]]></link>
+            <average_rating>4.08</average_rating>
+            <ratings_count>283785</ratings_count>
+            <text_reviews_count>9291</text_reviews_count>
+          </author>
+        </authors>
+        <published>2005</published>
+      </book>
+
+      <review>
+        <id>1634293107</id>
+        <rating>4</rating>
+        <votes>0</votes>
+        <spoiler_flag>false</spoiler_flag>
+        <spoilers_state>none</spoilers_state>
+
+
+        <shelves>
+          <shelf name="read" exclusive="true" />
+
+        </shelves>
+        <recommended_for></recommended_for>
+        <recommended_by></recommended_by>
+        <started_at>Tue Oct 13 00:00:00 -0700 2015</started_at>
+        <read_at>Fri Feb 05 00:00:00 -0800 2016</read_at>
+        <date_added>Tue May 10 10:49:58 -0700 2016</date_added>
+        <date_updated>Tue May 10 10:50:24 -0700 2016</date_updated>
+        <read_count></read_count>
+        <body>
+        </body>
+        <comments_count>0</comments_count>
+        <url><![CDATA[https://www.goodreads.com/review/show/1634293107]]></url>
+        <link><![CDATA[https://www.goodreads.com/review/show/1634293107]]></link>
+        <owned>1</owned>
+      </review>
+    </owned_book>
+
+
+  </owned_books>
+</GoodreadsResponse>

@@ -70,15 +70,6 @@ namespace Epiphany.ViewModel
             {
                 IsLoading = true;
 
-                IList<FeedItemModel> items = await Task.Run(() => this.userService.GetRecentUserStatusesAsync());
-
-                Items = new ObservableCollection<IFeedItemViewModel>();
-                foreach (var item in items)
-                {
-                    Items.Add(new FeedItemViewModel(item, this.resourceLoader));
-                }
-
-                IsEmpty = (Items.Count == 0);
                 IsLoading = false;
                 IsLoaded = true;
             }

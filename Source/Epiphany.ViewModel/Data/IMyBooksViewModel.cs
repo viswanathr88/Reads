@@ -4,8 +4,14 @@ using Epiphany.ViewModel.Items;
 
 namespace Epiphany.ViewModel
 {
-    public interface IMyBooksViewModel
+    public interface IMyBooksViewModel : IDataViewModel
     {
-        IList<IObservablePagedCollection<IBookItemViewModel>> GroupedItems { get; }
+        IList<IBookItemViewModel> CurrentlyReadingBooks { get; }
+        IList<IBookItemViewModel> ReadingChallengeBooks { get; }
+        IList<IBookItemViewModel> OwnedBooks { get; }
+
+        bool IsCurrentlyReadingBooksLoading { get; }
+        bool IsReadingChallengeBooksLoading { get; }
+        bool IsOwnedBooksLoading { get; }
     }
 }

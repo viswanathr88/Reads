@@ -66,6 +66,8 @@
     <Compile Include="GoodreadsNotification.cs" />
     <Compile Include="GoodreadsNotificationBody.cs" />
     <Compile Include="GoodreadsNotifications.cs" />
+    <Compile Include="GoodreadsOwnedBook.cs" />
+    <Compile Include="GoodreadsOwnedBooks.cs" />
     <Compile Include="GoodreadsProfile.cs" />
     <Compile Include="GoodreadsReadStatus.cs" />
     <Compile Include="GoodreadsReview.cs" />

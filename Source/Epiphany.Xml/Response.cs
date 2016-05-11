@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 namespace Epiphany.Xml
@@ -26,6 +25,13 @@ namespace Epiphany.Xml
 
         [XmlElement("book")]
         public GoodreadsBook Book
+        {
+            get;
+            set;
+        }
+
+        [XmlElement("books")]
+        public GoodreadsBooks Books
         {
             get;
             set;
@@ -118,6 +124,13 @@ namespace Epiphany.Xml
 
         [XmlElement("notifications")]
         public GoodreadsNotifications Notifications
+        {
+            get;
+            set;
+        }
+
+        [XmlElement("owned_books")]
+        public GoodreadsOwnedBooks OwnedBooks
         {
             get;
             set;

@@ -12,17 +12,17 @@ namespace Epiphany.ViewModel
 
         private IFeedViewModel feedViewModel;
         private ILauncherViewModel launcherVM;
-        private IBookshelvesViewModel bookshelvesVM;
+        private IMyBooksViewModel booksVM;
         private ICommunityViewModel communityVM;
 
         private bool isLoggedIn;
         private double opacity = 0;
 
-        public HomeViewModel(IFeedViewModel feedVM, IBookshelvesViewModel shelvesVM, 
+        public HomeViewModel(IFeedViewModel feedVM, IMyBooksViewModel booksVm, 
             ICommunityViewModel communityVM, ILogonService logonService)
         {
             Feed = feedVM;
-            Books = shelvesVM;
+            Books = booksVm;
             Community = communityVM;
             Launcher = new LauncherViewModel(null, logonService);
             this.logonService = logonService;
@@ -87,15 +87,15 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IBookshelvesViewModel Books
+        public IMyBooksViewModel Books
         {
             get
             {
-                return this.bookshelvesVM;
+                return this.booksVM;
             }
             private set
             {
-                SetProperty(ref this.bookshelvesVM, value);
+                SetProperty(ref this.booksVM, value);
             }
         }
 

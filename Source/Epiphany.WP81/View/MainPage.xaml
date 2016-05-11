@@ -159,9 +159,7 @@
                                               IsEmpty="{Binding Path=Feed.IsFeedEmpty}"
                                               EmptyFeedMessage="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.NoFeedMessage}" />
                     </Grid>
-
                 </Grid>
-
             </PivotItem>
 
             <!-- My Books Pivot -->
@@ -173,75 +171,46 @@
                                             Visibility="{Binding IsLoggedIn, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
                                             Message="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabMyBooksSignInText}" />
 
-                    <!-- Books -->
-                    <Grid Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
+                    <ScrollViewer>
+                        <!-- Books -->
+                        <StackPanel Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                    Orientation="Vertical"
+                                    HorizontalAlignment="Stretch">
 
-                        <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.CurrentlyReadingSectionTitle}"
-                                   Style="{StaticResource GroupHeaderTextBlockStyle}"
-                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                                   Grid.Row="0" />
+                            <!-- Currently reading list -->
+                            <controls:BookStack Items="{Binding Path=Books.CurrentlyReadingBooks}"
+                                                IsLoading="{Binding Path=Books.IsCurrentlyReadingBooksLoading}"
+                                                Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.CurrentlyReadingSectionTitle}" />
 
-                        <!-- Currently reading list -->
-                        <ListView Grid.Row="1"
-                                  ItemsSource="{Binding Path=Books.CurrentlyReadingList}"
-                                  Margin="0,30,0,30"
-                                  ScrollViewer.IsHorizontalScrollChainingEnabled="False"
-                                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                                  ScrollViewer.HorizontalScrollMode="Enabled">
+                            <!-- Reading challenge list -->
+                            <controls:BookStack Items="{Binding Path=Books.ReadingChallengeBooks}"
+                                                IsLoading="{Binding Path=Books.IsReadingChallengeBooksLoading}"
+                                                Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ReadingChallengeSectionTitle}" />
 
-                            <ListView.ItemContainerTransitions>
-                                <TransitionCollection>
-                                    <EntranceThemeTransition IsStaggeringEnabled="True" />
-                                </TransitionCollection>
-                            </ListView.ItemContainerTransitions>
+                            <!-- Owned Books list -->
+                            <!--<controls:BookStack Items="{Binding Path=Books.OwnedBooks}"
+                                                IsLoading="{Binding Path=Books.IsOwnedBooksLoading}"
+                                                Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.OwnedBooksSectionTitle}" />-->
+                            
+                            <!-- View all books button -->
+                            <Button Background="{ThemeResource PhoneChromeBrush}"
+                                    BorderThickness="0"
+                                    Content="View all books"
+                                    HorizontalAlignment="Center"
+                                    Margin="0,5,0,10"
+                                    MinWidth="200">
+                                <interactivity:Interaction.Behaviors>
+                                    <core:EventTriggerBehavior EventName="Click">
+                                        <core:NavigateToPageAction TargetPage="Epiphany.View.BooksPage" />
+                                    </core:EventTriggerBehavior>
+                                </interactivity:Interaction.Behaviors>
+                            </Button>
+                        </StackPanel>
 
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid Width="128" Margin="0,0,30,0">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="195" />
-                                            <RowDefinition Height="*" />
-                                        </Grid.RowDefinitions>
-                                        <Border Background="{ThemeResource PhoneChromeBrush}">
-                                            <Image Source="{Binding ImageUrl}"
-                                                   Stretch="UniformToFill"
-                                                   HorizontalAlignment="Center"
-                                                   Grid.Row="0" />
-                                        </Border>
-                                        
-                                        <TextBlock Text="{Binding Title}"
-                                                   Style="{StaticResource ListViewItemContentTextBlockStyle}"
-                                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                                                   TextWrapping="Wrap"
-                                                   MaxLines="2"
-                                                   TextTrimming="CharacterEllipsis"
-                                                   Margin="0,10,0,0"
-                                                   HorizontalAlignment="Center"
-                                                   Grid.Row="1"/>
-                                    </Grid>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-
-                            <ListView.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <ItemsStackPanel Orientation="Horizontal"  />
-                                </ItemsPanelTemplate>
-                            </ListView.ItemsPanel>
-
-                            <ListView.Footer>
-                                <ProgressRing IsActive="{Binding Path=Books.IsCurrentlyReadingListLoading}"
-                                              Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
-                            </ListView.Footer>
-
-                        </ListView>
-
+                    </ScrollViewer>
+                    
                         <!-- Shelves list -->
-                        <ListView Grid.Row="2"
+                        <!--<ListView Grid.Row="2"
                                   ItemsSource="{Binding Path=Books.Shelves}"
                                   Margin="0,0,0,0">
 
@@ -292,9 +261,7 @@
                                               Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
                             </ListView.Footer>
                             
-                        </ListView>
-
-                    </Grid>
+                        </ListView>-->
                 </Grid>
 
             </PivotItem>

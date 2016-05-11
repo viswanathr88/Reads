@@ -65,6 +65,7 @@
     <Compile Include="DesignFriendsViewModel.cs" />
     <Compile Include="DesignHomeViewModel.cs" />
     <Compile Include="DesignLogonViewModel.cs" />
+    <Compile Include="DesignMyBooksViewModel.cs" />
     <Compile Include="DesignProfileViewModel.cs" />
     <Compile Include="DesignSearchItemViewModel.cs" />
     <Compile Include="DesignSearchViewModel.cs" />

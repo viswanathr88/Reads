@@ -138,7 +138,7 @@ namespace Epiphany.Model.Collections
             //
             // Get the size of the collection
             //
-            Size = Converter.ToInt(collection.Total, 0);
+            Size = Converter.ToInt(collection.Total, collection.Items.Length);
             //
             // Add the new items to the internal list
             //

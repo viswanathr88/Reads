@@ -1,4 +1,5 @@
-﻿using Epiphany.ViewModel;
+﻿using System;
+using Epiphany.ViewModel;
 
 namespace Epiphany.View.DesignData
 {
@@ -10,14 +11,14 @@ namespace Epiphany.View.DesignData
             Opacity = 0;
         }
 
-        public IBookshelvesViewModel Books
+        public IMyBooksViewModel Books
         {
-            get { return new DesignBookshelvesViewModel(); }
+            get { return new DesignMyBooksViewModel(); }
         }
 
         public ICommunityViewModel Community
         {
-            get { return null; }
+            get;
         }
 
         public IFeedViewModel Feed

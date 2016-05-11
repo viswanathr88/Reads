@@ -413,7 +413,7 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CURRENTLY READING.
+        ///   Looks up a localized string similar to BOOKS YOU ARE READING.
         /// </summary>
         public static string CurrentlyReadingSectionTitle {
             get {
@@ -854,6 +854,15 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BOOKS YOU OWN.
+        /// </summary>
+        public static string OwnedBooksSectionTitle {
+            get {
+                return ResourceManager.GetString("OwnedBooksSectionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to pending approval.
         /// </summary>
         public static string PendingApprovalText {
@@ -895,6 +904,15 @@ namespace Epiphany.Strings {
         public static string RateButtonText {
             get {
                 return ResourceManager.GetString("RateButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BOOKS YOU READ THIS YEAR.
+        /// </summary>
+        public static string ReadingChallengeSectionTitle {
+            get {
+                return ResourceManager.GetString("ReadingChallengeSectionTitle", resourceCulture);
             }
         }
         

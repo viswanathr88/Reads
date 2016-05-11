@@ -52,7 +52,7 @@ namespace Epiphany.Model.Services
             ds.SourceUrl = ServiceUrls.BookUrl;
             ds.Parameters["id"] = book.Id.ToString();
             ds.RequiresAuthentication = false;
-            ds.Returns = (response) => response.BooksInShelf;
+            ds.Returns = (response) => response.Reviews;
             
             // Create the collection
             IPagedCollection<ReviewModel> reviews = null;

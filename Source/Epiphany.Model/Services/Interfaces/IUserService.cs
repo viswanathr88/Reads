@@ -47,10 +47,5 @@ namespace Epiphany.Model.Services
         /// </summary>
         /// <param name="profile">profile of the user to be added</param>
         Task AddFriend(ProfileModel profile);
-        /// <summary>
-        /// Gets the recent user statuses from Goodreads
-        /// </summary>
-        /// <returns></returns>
-        Task<IList<FeedItemModel>> GetRecentUserStatusesAsync();
     }
 }
