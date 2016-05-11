@@ -67,7 +67,7 @@ namespace Epiphany.ViewModel
 
         public override Task LoadAsync(BookModel parameter)
         {
-            throw new NotImplementedException();
+            return Task.FromResult<bool>(true);
         }
     }
 }

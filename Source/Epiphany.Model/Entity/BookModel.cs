@@ -294,10 +294,6 @@ namespace Epiphany.Model
                 {
                     this.imageUrl = $"http://covers.openlibrary.org/b/isbn/{this.book.ISBN}-M.jpg?default=false";
                 }
-                else
-                {
-                    this.imageUrl = string.Empty;
-                }
             }
         }
     }

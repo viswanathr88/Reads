@@ -13,6 +13,7 @@ namespace Epiphany.View
         public MainPage()
         {
             this.InitializeComponent();
+            NavigationCacheMode = NavigationCacheMode.Required;
         }
 
         private void OnSearchButtonClicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)

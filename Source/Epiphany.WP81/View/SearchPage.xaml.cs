@@ -24,6 +24,7 @@ namespace Epiphany.View
         public SearchPage()
         {
             this.InitializeComponent();
+            NavigationCacheMode = NavigationCacheMode.Required;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

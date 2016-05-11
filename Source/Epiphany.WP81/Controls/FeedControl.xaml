@@ -108,7 +108,8 @@
                                                    TextTrimming="CharacterEllipsis"
                                                    VerticalAlignment="Top"
                                                    Margin="0,-2,0,0"
-                                                   FontWeight="Bold" />
+                                                   FontWeight="Bold"
+                                                   Pivot.SlideInAnimationGroup="GroupOne"/>
                                     </Button.Content>
 
                                     <interactivity:Interaction.Behaviors>
@@ -147,7 +148,8 @@
                                            TextWrapping="Wrap"
                                            TextTrimming="CharacterEllipsis"
                                            MaxLines="2"
-                                           Margin="0,5,5,10" />
+                                           Margin="0,5,5,10"
+                                           Pivot.SlideInAnimationGroup="GroupTwo"/>
 
                                 <rating:Rating Value="{Binding Rating, Mode=TwoWay}"
                                                RatingItemCount="5"
@@ -236,7 +238,8 @@
                                                    MaxLines="2"
                                                    Margin="0,-2,0,0"
                                                    FontWeight="Bold"
-                                                   Grid.Column="1" />
+                                                   Grid.Column="1"
+                                                   Pivot.SlideInAnimationGroup="GroupThree"/>
                                     </Button.Content>
 
                                     <interactivity:Interaction.Behaviors>
@@ -297,7 +300,8 @@
                                                        VerticalAlignment="Top"
                                                        Margin="0,-2,0,0"
                                                        FontWeight="ExtraBold"
-                                                       MaxLines="2" />
+                                                       MaxLines="2"
+                                                       Pivot.SlideInAnimationGroup="GroupThree"/>
                                         </Button>
 
                                         <Button Style="{StaticResource TextButtonStyle}"
