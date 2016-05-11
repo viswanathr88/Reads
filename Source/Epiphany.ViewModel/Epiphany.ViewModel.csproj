@@ -138,6 +138,7 @@
     <Compile Include="Data\IHomeViewModel.cs" />
     <Compile Include="Data\ILauncherViewModel.cs" />
     <Compile Include="Data\ILogonViewModel.cs" />
+    <Compile Include="Data\IMyBooksViewModel.cs" />
     <Compile Include="Data\IProfileViewModel.cs" />
     <Compile Include="Data\IScanViewModel.cs" />
     <Compile Include="Data\ISearchViewModel.cs" />
@@ -145,6 +146,7 @@
     <Compile Include="Data\LauncherViewModel.cs" />
     <Compile Include="Data\LogonViewModel.cs" />
     <Compile Include="Commands\Navigation\ShowFriendsCommand.cs" />
+    <Compile Include="Data\MyBooksViewModel.cs" />
     <Compile Include="Data\ProfileViewModel.cs" />
     <Compile Include="Data\EventsViewModel.cs" />
     <Compile Include="Data\ScanViewModel.cs" />

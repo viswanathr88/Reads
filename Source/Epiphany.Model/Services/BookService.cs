@@ -109,6 +109,31 @@ namespace Epiphany.Model.Services
             return new PagedCollection<BookModel, GoodreadsReview, GoodreadsReviews>(ds, ReviewToBookAdapter, pageSize);
         }
 
+        public IPagedCollection<BookModel> GetBooksByYear(int userId, int year)
+        {
+            var ds = new PagedDataSource<GoodreadsReviews>(webClient);
+            ds.SourceUrl = ServiceUrls.BooksInShelfUrl;
+            ds.Parameters["id"] = userId.ToString();
+            ds.Parameters["read_at"] = year.ToString();
+            ds.RequiresAuthentication = false;
+            ds.Returns = (response) => response.BooksInShelf;
+
+            // Create the collection
+            return new PagedCollection<BookModel, GoodreadsReview, GoodreadsReviews>(ds, ReviewToBookAdapter, pageSize);
+        }
+
+        public IPagedCollection<BookModel> GetOwnedBooks(int userId)
+        {
+            var ds = new PagedDataSource<GoodreadsReviews>(webClient);
+            ds.SourceUrl = ServiceUrls.OwnedBooksUrl;
+            ds.Parameters["id"] = userId.ToString();
+            ds.RequiresAuthentication = false;
+            // TODO: ds.Returns = (response) => response;
+
+            // Create the collection
+            return new PagedCollection<BookModel, GoodreadsReview, GoodreadsReviews>(ds, ReviewToBookAdapter, pageSize);
+        }
+
         public async Task AddBook(BookshelfModel shelf, BookModel book)
         {
             // Create and execute the web request

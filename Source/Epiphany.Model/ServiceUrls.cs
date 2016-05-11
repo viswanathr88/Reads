@@ -23,6 +23,14 @@ namespace Epiphany.Model
             }
         }
 
+        public static string OwnedBooksUrl
+        {
+            get
+            {
+                return baseUrl + "owned_books/user";
+            }
+        }
+
         public static string AuthorUrl
         {
             get

@@ -10,7 +10,8 @@ using Windows.UI.Xaml.Data;
 
 namespace Epiphany.ViewModel.Collections
 {
-    public sealed class ObservablePagedCollection<TViewModel, TModel> : ObservableCollection<TViewModel>, IObservablePagedCollection<TViewModel>
+    public sealed class ObservablePagedCollection<TViewModel, TModel> : ObservableCollection<TViewModel>, 
+        IGroup<string, TViewModel>, IObservablePagedCollection<TViewModel>
     {
         private readonly IPagedCollection<TModel> pagedCollection;
         private readonly IAsyncEnumerator<TModel> enumerator;
@@ -48,6 +49,12 @@ namespace Epiphany.ViewModel.Collections
                 if (this.hasMoreItems == value) return;
                 this.hasMoreItems = value;
             }
+        }
+
+        public string Key
+        {
+            get;
+            set;
         }
 
         public IAsyncOperation<LoadMoreItemsResult> LoadMoreItemsAsync(uint count)
