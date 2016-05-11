@@ -1,4 +1,5 @@
 ﻿using Epiphany.Model.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Epiphany.Model.Services
@@ -48,5 +49,10 @@ namespace Epiphany.Model.Services
         /// <param name="review">review to comment on</param>
         /// <param name="comment">comment to add</param>
         Task AddComment(ReviewModel review, CommentModel comment);
+        /// <summary>
+        /// Gets the recent reviews from Goodreads
+        /// </summary>
+        /// <returns></returns>
+        Task<IList<FeedItemModel>> GetRecentReviewsAsync();
     }
 }

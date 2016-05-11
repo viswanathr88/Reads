@@ -1,6 +1,8 @@
 ﻿using Epiphany.Model.Collections;
 using Epiphany.Model.Messaging;
 using System.Threading.Tasks;
+using System;
+using System.Collections.Generic;
 
 namespace Epiphany.Model.Services
 {
@@ -59,6 +61,11 @@ namespace Epiphany.Model.Services
         public async Task AddComment(ReviewModel review, CommentModel comment)
         {
             await this.baseService.AddComment(review, comment);
+        }
+
+        public async Task<IList<FeedItemModel>> GetRecentReviewsAsync()
+        {
+            return await this.baseService.GetRecentReviewsAsync();
         }
     }
 }

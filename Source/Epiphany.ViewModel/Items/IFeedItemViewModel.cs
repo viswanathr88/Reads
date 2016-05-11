@@ -1,7 +1,5 @@
-﻿using System;
-using System.Windows.Input;
-using Epiphany.Model;
-using Epiphany.ViewModel.Commands;
+﻿using Epiphany.Model;
+using System;
 
 namespace Epiphany.ViewModel.Items
 {
@@ -13,10 +11,6 @@ namespace Epiphany.ViewModel.Items
         IUserItemViewModel Friend { get; }
         int Id { get; }
         string ImageUrl { get; }
-        ICommand<IAuthorItemViewModel> ShowAuthor { get; }
-        ICommand<IBookItemViewModel> ShowBook { get; }
-        ICommand<IUserItemViewModel> ShowProfile { get; }
-        ICommand ShowReview { get; }
         FeedItemType Type { get; }
         DateTime UpdateTime { get; }
         IUserItemViewModel User { get; }

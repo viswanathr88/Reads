@@ -1,18 +1,13 @@
-﻿using System.Threading.Tasks;
-using System.Windows.Input;
-
-namespace Epiphany.ViewModel
+﻿namespace Epiphany.ViewModel
 {
     public interface IHomeViewModel : IDataViewModel
     {
         IFeedViewModel Feed { get; }
         IBookshelvesViewModel Books { get; }
-        bool IsLoggedIn { get; }
         ILauncherViewModel Launcher { get; }
+        ICommunityViewModel Community { get; }
+        bool IsLoggedIn { get; }
         int NewNotificationCount { get; }
         double Opacity { get; }
-        ICommand ShowAbout { get; }
-        ICommand ShowNotifications { get; }
-        ICommand ShowSettings { get; }
     }
 }

@@ -1,19 +1,27 @@
 ﻿using Epiphany.Xml;
 using System;
+using System.Text.RegularExpressions;
 
 namespace Epiphany.Model
 {
     public class UserStatusFeedItemModel : FeedItemModel
     {
-        private readonly GoodreadsUserStatus userStatus;
+        private GoodreadsUserStatus userStatus;
 
         internal UserStatusFeedItemModel(GoodreadsUpdate update) 
             : base(update)
         {
-            this.userStatus = update.Object.UserStatus;
-            if (this.userStatus == null)
+            if (update.Object == null)
             {
-                this.userStatus = new GoodreadsUserStatus();
+                throw new ArgumentNullException(nameof(update.Object));
+            }
+            else
+            {
+                this.userStatus = update.Object.UserStatus;
+                if (this.userStatus == null)
+                {
+                    this.userStatus = new GoodreadsUserStatus();
+                }
             }
         }
 

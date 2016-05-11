@@ -6,6 +6,8 @@ using Epiphany.Web;
 using Epiphany.Xml;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System;
+using Epiphany.Logging;
 
 namespace Epiphany.Model.Services
 {
@@ -75,14 +77,45 @@ namespace Epiphany.Model.Services
         {
             // Create the parameters
             IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["update"] = type.ToString();
-            parameters["update_filter"] = filter.ToString();
+            //parameters["update"] = type.ToString();
+            //parameters["update_filter"] = filter.ToString();
+            parameters["max_updates"] = "100";
             //parameters["v"] = "2";
             
             // Create the data source and get the feed
             IDataSource<GoodreadsUpdates> ds = new DataSource<GoodreadsUpdates>(webClient, parameters, ServiceUrls.FeedUrl, true);
             GoodreadsUpdates updates = await ds.GetAsync();
             
+            // Iterate the updates and create feed items
+            IList<FeedItemModel> items = new List<FeedItemModel>();
+            foreach (GoodreadsUpdate update in updates.Updates)
+            {
+                try
+                {
+                    FeedItemModel model = this.feedItemAdapter.Convert(update);
+                    if (model != null)
+                    {
+                        items.Add(model);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Logger.LogException(ex);
+                }
+                
+            }
+            return items;
+        }
+
+        public async Task<IList<FeedItemModel>> GetRecentUserStatusesAsync()
+        {
+            // Create the parameters
+            IDictionary<string, string> parameters = new Dictionary<string, string>();
+
+            // Create the data source and get the feed
+            IDataSource<GoodreadsUpdates> ds = new DataSource<GoodreadsUpdates>(webClient, parameters, ServiceUrls.RecentUserStatusesUrl);
+            GoodreadsUpdates updates = await ds.GetAsync();
+
             // Iterate the updates and create feed items
             IList<FeedItemModel> items = new List<FeedItemModel>();
             foreach (GoodreadsUpdate update in updates.Updates)

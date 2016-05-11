@@ -35,7 +35,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "user/show";
+                return baseUrl + "user/show";
             }
         }
 
@@ -44,6 +44,22 @@ namespace Epiphany.Model
             get 
             {
                 return "group/show";
+            }
+        }
+
+        public static string RecentReviewsUrl
+        {
+            get
+            {
+                return baseUrl + "review/recent_reviews.xml";
+            }
+        }
+
+        public static string RecentUserStatusesUrl
+        {
+            get
+            {
+                return baseUrl + "user_status/index.xml";
             }
         }
 

@@ -291,7 +291,7 @@ namespace Epiphany.ViewModel
                 RecentUpdates = new ObservableCollection<IFeedItemViewModel>();
                 foreach (FeedItemModel model in Model.RecentUpdates)
                 {
-                    RecentUpdates.Add(new FeedItemViewModel(model, navService, resourceLoader));
+                    RecentUpdates.Add(new FeedItemViewModel(model, resourceLoader));
                 }
                 AreUpdatesEmpty = (RecentUpdates.Count == 0);
 

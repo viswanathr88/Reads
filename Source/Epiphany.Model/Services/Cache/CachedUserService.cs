@@ -70,5 +70,10 @@ namespace Epiphany.Model.Services
                 friendsCache.Remove(profile.Id);
             }
         }
+
+        public async Task<IList<FeedItemModel>> GetRecentUserStatusesAsync()
+        {
+            return await this.baseService.GetRecentUserStatusesAsync();
+        }
     }
 }

@@ -60,7 +60,7 @@ namespace Epiphany.Xml
         }
 
         [XmlElement("reviews")]
-        public GoodreadsReviews BooksInShelf
+        public GoodreadsReviews Reviews
         {
             get;
             set;

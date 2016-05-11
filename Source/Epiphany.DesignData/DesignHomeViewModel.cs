@@ -1,5 +1,4 @@
 ﻿using Epiphany.ViewModel;
-using System.Windows.Input;
 
 namespace Epiphany.View.DesignData
 {
@@ -13,10 +12,12 @@ namespace Epiphany.View.DesignData
 
         public IBookshelvesViewModel Books
         {
-            get
-            {
-                return new DesignBookshelvesViewModel();
-            }
+            get { return new DesignBookshelvesViewModel(); }
+        }
+
+        public ICommunityViewModel Community
+        {
+            get { return null; }
         }
 
         public IFeedViewModel Feed
@@ -24,15 +25,15 @@ namespace Epiphany.View.DesignData
             get { return new DesignFeedViewModel(); }
         }
 
+        public ILauncherViewModel Launcher
+        {
+            get;
+        }
+
         public bool IsLoggedIn
         {
             get;
             set;
-        }
-
-        public ILauncherViewModel Launcher
-        {
-            get;
         }
 
         public int NewNotificationCount
@@ -44,21 +45,6 @@ namespace Epiphany.View.DesignData
         {
             get;
             set;
-        }
-
-        public ICommand ShowAbout
-        {
-            get;
-        }
-
-        public ICommand ShowNotifications
-        {
-            get;
-        }
-
-        public ICommand ShowSettings
-        {
-            get;
         }
     }
 }

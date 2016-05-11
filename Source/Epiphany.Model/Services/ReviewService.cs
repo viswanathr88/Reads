@@ -6,6 +6,7 @@ using Epiphany.Web;
 using Epiphany.Xml;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System;
 
 namespace Epiphany.Model.Services
 {
@@ -131,6 +132,19 @@ namespace Epiphany.Model.Services
 
             WebResponse response = await this.webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.Created);
+        }
+
+        public async Task<IList<FeedItemModel>> GetRecentReviewsAsync()
+        {
+            WebRequest request = new WebRequest(ServiceUrls.RecentReviewsUrl, WebMethod.Get);
+            request.Parameters["format"] = "xml";
+
+            WebResponse response = await this.webClient.ExecuteAsync(request);
+            WebResponseValidator.Validate(response, System.Net.HttpStatusCode.OK, true);
+
+            var xmlResponse = Parser.GetResponse(response.Content);
+
+            return null;
         }
 
         private void HandleBookRetrieved(object sender, GenericMessage<GoodreadsBook> msg)

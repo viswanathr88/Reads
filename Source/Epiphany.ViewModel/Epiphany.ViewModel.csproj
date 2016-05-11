@@ -118,6 +118,7 @@
     <Compile Include="Data\BooksMetadata.cs" />
     <Compile Include="Data\BooksViewModel.cs" />
     <Compile Include="Data\BookViewModel.cs" />
+    <Compile Include="Data\CommunityViewModel.cs" />
     <Compile Include="Data\FeedOptions.cs" />
     <Compile Include="Data\FeedOptionsViewModel.cs" />
     <Compile Include="Data\FeedViewModel.cs" />
@@ -131,6 +132,7 @@
     <Compile Include="Data\IBookshelvesViewModel.cs" />
     <Compile Include="Data\IBooksViewModel.cs" />
     <Compile Include="Data\IBookViewModel.cs" />
+    <Compile Include="Data\ICommunityViewModel.cs" />
     <Compile Include="Data\IEventsViewModel.cs" />
     <Compile Include="Data\IFeedOptionsViewModel.cs" />
     <Compile Include="Data\IFeedViewModel.cs" />

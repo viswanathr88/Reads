@@ -58,9 +58,16 @@ namespace Epiphany.View.Services
             {
                 if (this.homeVM == null)
                 {
-                    this.homeVM = new HomeViewModel(this.serviceFactory.GetUserService(), this.serviceFactory.GetLogonService(), 
-                        this.navigationService, this.resourceLoader, this.timerService, this.serviceFactory.GetBookshelfService(),
-                        this.serviceFactory.GetBookService());
+                    var feedVM = new FeedViewModel(this.serviceFactory.GetUserService(), this.resourceLoader);
+
+                    var bookshelvesVM = new BookshelvesViewModel(this.serviceFactory.GetBookshelfService(),
+                        this.serviceFactory.GetBookService(),
+                        this.serviceFactory.GetLogonService());
+
+                    var communityVM = new CommunityViewModel(this.serviceFactory.GetUserService(), this.serviceFactory.GetReviewService(), 
+                        this.resourceLoader);
+
+                    this.homeVM = new HomeViewModel(feedVM, bookshelvesVM, communityVM, this.serviceFactory.GetLogonService());
                 }
 
                 return this.homeVM;

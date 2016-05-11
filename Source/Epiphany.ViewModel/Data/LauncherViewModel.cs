@@ -15,10 +15,10 @@ namespace Epiphany.ViewModel
 
         public LauncherViewModel(INavigationService navService, ILogonService logonService)
         {
-            if (navService == null)
+            /*if (navService == null)
             {
                 throw new ArgumentNullException("navService");
-            }
+            }*/
 
             if (logonService == null)
             {

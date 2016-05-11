@@ -1,54 +1,36 @@
 ﻿using Epiphany.Model.Authentication;
 using Epiphany.Model.Services;
-using Epiphany.ViewModel.Commands;
-using Epiphany.ViewModel.Services;
 using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
     public sealed class HomeViewModel : DataViewModel<VoidType>, IHomeViewModel
     {
-        private readonly IUserService userService;
-        private readonly INavigationService navigationService;
         private readonly ILogonService logonService;
-        private readonly IResourceLoader resourceLoader;
-        private readonly ITimerService timerService;
-        private readonly IBookshelfService bookshelfService;
-        private readonly IBookService bookService;
 
         private IFeedViewModel feedViewModel;
         private ILauncherViewModel launcherVM;
         private IBookshelvesViewModel bookshelvesVM;
-
-        private readonly ICommand showAboutCommand;
-        private readonly ICommand showSettingsCommand;
+        private ICommunityViewModel communityVM;
 
         private bool isLoggedIn;
         private double opacity = 0;
 
-        public HomeViewModel(IUserService userService, ILogonService logonService, 
-            INavigationService navigationService, IResourceLoader resourceLoader,
-            ITimerService timerService, IBookshelfService bookshelfService, IBookService bookService)
+        public HomeViewModel(IFeedViewModel feedVM, IBookshelvesViewModel shelvesVM, 
+            ICommunityViewModel communityVM, ILogonService logonService)
         {
-            this.userService = userService;
-            this.navigationService = navigationService;
+            Feed = feedVM;
+            Books = shelvesVM;
+            Community = communityVM;
+            Launcher = new LauncherViewModel(null, logonService);
             this.logonService = logonService;
-            this.resourceLoader = resourceLoader;
-            this.timerService = timerService;
-            this.bookshelfService = bookshelfService;
-            this.bookService = bookService;
-
-            this.showAboutCommand = new ShowAboutCommand(navigationService);
-            this.showSettingsCommand = new ShowSettingsCommand(navigationService);
-
-            Feed.PropertyChanged += OnChildVMPropertyChanged;
 
             IsLoggedIn = (this.logonService.Session != null);
             Opacity = IsLoggedIn ? 0 : 0.15;
 
+            Feed.PropertyChanged += OnChildVMPropertyChanged;
             this.logonService.SessionChanged += LogonService_SessionChanged;
         }
 
@@ -85,12 +67,11 @@ namespace Epiphany.ViewModel
         {
             get
             {
-                if (this.feedViewModel == null)
-                {
-                    this.feedViewModel = new FeedViewModel(userService, navigationService, resourceLoader);
-                }
-
                 return this.feedViewModel;
+            }
+            private set
+            {
+                SetProperty(ref this.feedViewModel, value);
             }
         }
 
@@ -98,39 +79,35 @@ namespace Epiphany.ViewModel
         {
             get
             {
-                if (this.launcherVM == null)
-                {
-                    this.launcherVM = new LauncherViewModel(this.navigationService, this.logonService);
-                }
-
                 return this.launcherVM;
             }
-        }
-
-        public ICommand ShowNotifications
-        {
-            get { throw new NotImplementedException(); }
-        }
-
-        public ICommand ShowAbout
-        {
-            get { return this.showAboutCommand; }
-        }
-
-        public ICommand ShowSettings
-        {
-            get { return this.showSettingsCommand; }
+            private set
+            {
+                SetProperty(ref this.launcherVM, value);
+            }
         }
 
         public IBookshelvesViewModel Books
         {
             get
             {
-                if (this.bookshelvesVM == null)
-                {
-                    this.bookshelvesVM = new BookshelvesViewModel(bookshelfService, bookService, logonService);
-                }
                 return this.bookshelvesVM;
+            }
+            private set
+            {
+                SetProperty(ref this.bookshelvesVM, value);
+            }
+        }
+
+        public ICommunityViewModel Community
+        {
+            get
+            {
+                return this.communityVM;
+            }
+            private set
+            {
+                SetProperty(ref this.communityVM, value);
             }
         }
 

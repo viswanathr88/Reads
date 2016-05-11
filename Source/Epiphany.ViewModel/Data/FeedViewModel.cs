@@ -13,25 +13,19 @@ namespace Epiphany.ViewModel
 {
     public sealed class FeedViewModel : DataViewModel<VoidType>, IFeedViewModel
     {
-        //
-        // Private Members
-        //
-        private readonly INavigationService navigationService;
         private IFeedOptionsViewModel feedOptionsViewModel;
         private readonly IUserService userService;
         private readonly IResourceLoader resourceLoader;
         private IList<IFeedItemViewModel> items;
         private bool isFilterEnabled;
         private bool isFeedEmpty;
-        //
+        
         // Commands
-        //
         private readonly IAsyncCommand<IEnumerable<FeedItemModel>, VoidType> fetchFeedItemsCommand;
 
-        public FeedViewModel(IUserService userService, INavigationService navigationService, IResourceLoader resourceLoader)
+        public FeedViewModel(IUserService userService, IResourceLoader resourceLoader)
         {
             this.userService = userService;
-            this.navigationService = navigationService;
             this.resourceLoader = resourceLoader;
 
             this.Items = new ObservableCollection<IFeedItemViewModel>();
@@ -112,7 +106,7 @@ namespace Epiphany.ViewModel
                         IList<FeedItemViewModel> vmItems = new List<FeedItemViewModel>();
                         foreach (var modelItem in modelItems)
                         {
-                            vmItems.Add(new FeedItemViewModel(modelItem, this.navigationService, this.resourceLoader));
+                            vmItems.Add(new FeedItemViewModel(modelItem, this.resourceLoader));
                         }
                         return vmItems;
                     });
@@ -143,7 +137,7 @@ namespace Epiphany.ViewModel
                 {
                     foreach (FeedItemModel model in items)
                     {
-                        Items.Add(new FeedItemViewModel(model, this.navigationService, this.resourceLoader)); 
+                        Items.Add(new FeedItemViewModel(model, this.resourceLoader)); 
                     }
                 }
 

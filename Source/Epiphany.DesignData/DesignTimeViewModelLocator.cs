@@ -71,6 +71,11 @@ namespace Epiphany.View.Services
             get { throw new NotImplementedException(); }
         }
 
+        public ICommunityViewModel Community
+        {
+            get { return null; }
+        }
+
         public void Dispose()
         {
 

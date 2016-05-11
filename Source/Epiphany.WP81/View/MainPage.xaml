@@ -301,7 +301,14 @@
 
             <!-- Community Pivot-->
             <PivotItem>
-                <TextBlock Text="Explore" />
+                <Grid Margin="19,0,19,0">
+                    <controls:FeedControl Items="{Binding Path=Community.Items}"
+                                          Margin="0,5,0,0"
+                                          Grid.Row="1"
+                                          IsLoading="{Binding Path=Community.IsLoading}"
+                                          IsEmpty="{Binding Path=Community.IsEmpty}"
+                                          EmptyFeedMessage="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.NoFeedMessage}" />
+                </Grid>
             </PivotItem>
 
             <!-- More Pivot -->

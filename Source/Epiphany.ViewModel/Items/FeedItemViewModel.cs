@@ -1,25 +1,18 @@
 ﻿using Epiphany.Logging;
 using Epiphany.Model;
-using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System;
-using System.Windows.Input;
 
 namespace Epiphany.ViewModel.Items
 {
     public sealed class FeedItemViewModel : ItemViewModel<FeedItemModel>, IFeedItemViewModel
     {
-        private readonly INavigationService navService;
         private readonly IResourceLoader resourceLoader;
         private IUserItemViewModel friend;
         private IBookItemViewModel book;
         private string actionText;
         private int percentageCompleted = -1;
         private int rating = -1;
-
-        private readonly ICommand<IUserItemViewModel> showProfileCommand;
-        private readonly ICommand<IBookItemViewModel> showBookCommand;
-        private readonly ICommand<IAuthorItemViewModel> showAuthorCommand;
 
         private const string FriendFeedItemActionTextKey = "FriendFeedItemActionText";
         private const string UserStatusFeedItemActionTextKey = "UserStatusFeedItemActionText";
@@ -30,20 +23,15 @@ namespace Epiphany.ViewModel.Items
         private const string ReadStatusFeedItemCurrentlyReadingActionTextKey = "ReadStatusFeedItemCurrentlyReadingActionText";
         private const string CommentFeedItemActionTextKey = "CommentFeedItemActionText";
 
-        public FeedItemViewModel(FeedItemModel model, INavigationService navService, IResourceLoader resourceLoader) 
+        public FeedItemViewModel(FeedItemModel model, IResourceLoader resourceLoader) 
             : base (model)
         {
-            if (navService == null || resourceLoader == null)
+            if (resourceLoader == null)
             {
                 throw new ArgumentNullException("services");
             }
 
-            this.navService = navService;
             this.resourceLoader = resourceLoader;
-
-            this.showProfileCommand = new ShowProfileFromItemCommand(this.navService);
-            this.showBookCommand = new ShowBookFromItemCommand(this.navService);
-            this.showAuthorCommand = new ShowAuthorFromItemCommand(this.navService);
             
             InitializeProperties();
         }
@@ -104,26 +92,6 @@ namespace Epiphany.ViewModel.Items
         public DateTime UpdateTime
         {
             get { return this.Item.UpdateTime; }
-        }
-
-        public ICommand<IUserItemViewModel> ShowProfile
-        {
-            get { return this.showProfileCommand; }
-        }
-
-        public ICommand<IBookItemViewModel> ShowBook
-        {
-            get { return this.showBookCommand; }
-        }
-
-        public ICommand<IAuthorItemViewModel> ShowAuthor
-        {
-            get { return this.showAuthorCommand; }
-        }
-
-        public ICommand ShowReview
-        {
-            get { return null; }
         }
 
         public int PercentageCompleted

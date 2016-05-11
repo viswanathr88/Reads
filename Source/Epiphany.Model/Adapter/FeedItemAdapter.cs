@@ -7,7 +7,7 @@ namespace Epiphany.Model.Adapter
         public FeedItemModel Convert(GoodreadsUpdate item)
         {
             FeedItemModel model = null;
-            switch (item.Type)
+            switch (item.Type.ToLower())
             {
                 case "friend":
                     model = new FriendFeedItemModel(item);
