@@ -35,30 +35,26 @@ namespace Epiphany.Model.Services
         //
         public async Task<ReviewModel> GetReviewAsync(int id)
         {
-            //
-            // Create headers
-            //
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["id"] = id.ToString();
-            //
             // Create a data source
-            //
-            IDataSource<GoodreadsReview> ds = new DataSource<GoodreadsReview>(webClient, parameters, ServiceUrls.ReviewUrl);
+            var ds = new DataSource<GoodreadsReview>(webClient);
+            ds.SourceUrl = ServiceUrls.ReviewUrl;
+            ds.Parameters["id"] = id.ToString();
+            ds.Returns = (response) => response.Review;
+            
             GoodreadsReview review = await ds.GetAsync();
             return this.adapter.Convert(review);
         }
 
         public IPagedCollection<ReviewModel> GetReviewsAsync(BookModel book)
         {
-            //
-            // Create the parameters
-            //
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["id"] = book.Id.ToString();
-            //
             // Create a data source and the collection
-            //
-            IPagedDataSource<GoodreadsReviews> ds = new PagedDataSource<GoodreadsReviews>(webClient, parameters, ServiceUrls.BookUrl);
+            var ds = new PagedDataSource<GoodreadsReviews>(webClient);
+            ds.SourceUrl = ServiceUrls.BookUrl;
+            ds.Parameters["id"] = book.Id.ToString();
+            ds.RequiresAuthentication = false;
+            ds.Returns = (response) => response.BooksInShelf;
+            
+            // Create the collection
             IPagedCollection<ReviewModel> reviews = null;
             if (recentBook != null && book.Id == this.recentBook.Id && recentBook.PublicReviews != null)
             {

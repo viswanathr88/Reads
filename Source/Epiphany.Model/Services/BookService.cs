@@ -31,32 +31,26 @@ namespace Epiphany.Model.Services
             this.webClient = webClient;
             this.messenger = messenger;
 
-            //
             // Listen to Author message
-            //
             this.messenger.Subscribe<GenericMessage<GoodreadsAuthor>>(this, HandleAuthorRetrieved);
         }
 
         public async Task<BookModel> GetBook(int id)
         {
-            //
-            // Create the headers
-            //
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["id"] = id.ToString();
-            //
-            // Get the parsed author
-            //
-            IDataSource<GoodreadsBook> ds = new DataSource<GoodreadsBook>(webClient, parameters, ServiceUrls.AuthorUrl);
+            // Create the data source
+            var ds = new DataSource<GoodreadsBook>(webClient);
+            ds.SourceUrl = ServiceUrls.BookUrl;
+            ds.Parameters["id"] = id.ToString();
+            ds.RequiresAuthentication = false;
+            ds.Returns = (response) => response.Book;
+
             GoodreadsBook book = await ds.GetAsync();
-            //
+            
             // Send a message for listeners
-            //
             GenericMessage<GoodreadsBook> msg = new GenericMessage<GoodreadsBook>(this, book);
             this.messenger.SendMessage<GenericMessage<GoodreadsBook>>(this, msg);
-            //
+            
             // Create the model
-            //
             return BookAdapter.Convert(book);
         }
 
@@ -72,24 +66,23 @@ namespace Epiphany.Model.Services
                 throw new ArgumentOutOfRangeException("Id");
             }
 
-            //
             // Create headers
-            //
             IDictionary<string, string> headers = new Dictionary<string, string>();
             headers["id"] = author.Id.ToString();
             //
             // Create the data source for the collection
             //
-            IPagedDataSource<GoodreadsBooks> ds = new PagedDataSource<GoodreadsBooks>(webClient, headers, ServiceUrls.BooksByAuthorUrl);
-            //
+            var ds = new PagedDataSource<GoodreadsBooks>(webClient);
+            ds.SourceUrl = ServiceUrls.BooksByAuthorUrl;
+            ds.Parameters["id"] = author.Id.ToString();
+            ds.RequiresAuthentication = false;
+            ds.Returns = (response) => response.Author.BookCollection;
+            
             // Create the collection
-            //
             IPagedCollection<BookModel> books = null;
             if (recentAuthor != null && author.Id == this.recentAuthor.Id && recentAuthor.BookCollection != null)
             {
-                //
                 // Leverage the books that were fetched as part of the author instead of retrieving it again
-                //
                 books = new PagedCollection<BookModel, GoodreadsBook, GoodreadsBooks>(ds, BookAdapter, recentAuthor.BookCollection.Items);
             }
             else
@@ -101,22 +94,43 @@ namespace Epiphany.Model.Services
 
         public IPagedCollection<BookModel> GetBooks(int userId, string shelfName, BookSortType sortType, BookSortOrder order)
         {
-            //
-            // Create headers
-            //
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["id"] = userId.ToString();
-            parameters["v"] = "2";
-            parameters["shelf"] = shelfName;
-            parameters["sort"] = sortType.ToString();
-            parameters["order"] = order.ToString();
-            //
             // Create the data source for the collection
-            //
-            IPagedDataSource<GoodreadsReviews> ds = new PagedDataSource<GoodreadsReviews>(webClient, parameters, ServiceUrls.BooksInShelfUrl);
-            //
+            var ds = new PagedDataSource<GoodreadsReviews>(webClient);
+            ds.SourceUrl = ServiceUrls.BooksInShelfUrl;
+            ds.Parameters["id"] = userId.ToString();
+            ds.Parameters["v"] = "2";
+            ds.Parameters["shelf"] = shelfName;
+            ds.Parameters["sort"] = sortType.ToString();
+            ds.Parameters["order"] = order.ToString();
+            ds.RequiresAuthentication = false;
+            ds.Returns = (response) => response.BooksInShelf;
+            
             // Create the collection
-            //
+            return new PagedCollection<BookModel, GoodreadsReview, GoodreadsReviews>(ds, ReviewToBookAdapter, pageSize);
+        }
+
+        public IPagedCollection<BookModel> GetBooksByYear(int userId, int year)
+        {
+            var ds = new PagedDataSource<GoodreadsReviews>(webClient);
+            ds.SourceUrl = ServiceUrls.BooksInShelfUrl;
+            ds.Parameters["id"] = userId.ToString();
+            ds.Parameters["read_at"] = year.ToString();
+            ds.RequiresAuthentication = false;
+            ds.Returns = (response) => response.BooksInShelf;
+
+            // Create the collection
+            return new PagedCollection<BookModel, GoodreadsReview, GoodreadsReviews>(ds, ReviewToBookAdapter, pageSize);
+        }
+
+        public IPagedCollection<BookModel> GetOwnedBooks(int userId)
+        {
+            var ds = new PagedDataSource<GoodreadsReviews>(webClient);
+            ds.SourceUrl = ServiceUrls.OwnedBooksUrl;
+            ds.Parameters["id"] = userId.ToString();
+            ds.RequiresAuthentication = false;
+            // TODO: ds.Returns = (response) => response;
+
+            // Create the collection
             return new PagedCollection<BookModel, GoodreadsReview, GoodreadsReviews>(ds, ReviewToBookAdapter, pageSize);
         }
 
@@ -176,17 +190,15 @@ namespace Epiphany.Model.Services
 
         public IPagedCollection<WorkModel> Find(BookSearchType type, string term)
         {
-            //
-            // Create the headers
-            //
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["format"] = "xml";
-            parameters["q"] = term;
-            parameters["search[field]"] = type.ToString().ToLower();
-            //
             // Create the data source for the collection
-            //
-            IPagedDataSource<GoodreadsSearch> ds = new PagedDataSource<GoodreadsSearch>(webClient, parameters, ServiceUrls.SearchUrl);
+            var ds = new PagedDataSource<GoodreadsSearch>(webClient);
+            ds.SourceUrl = ServiceUrls.SearchUrl;
+            ds.Parameters["q"] = term;
+            ds.Parameters["search[field]"] = type.ToString().ToLower();
+            ds.RequiresAuthentication = false;
+            ds.Returns = (response) => response.Search;
+
+            // Create the collection
             return new PagedCollection<WorkModel, GoodreadsWork, GoodreadsSearch>(ds, WorkAdapter, pageSize);
         }
 

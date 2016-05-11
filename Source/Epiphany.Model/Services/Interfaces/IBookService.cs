@@ -52,12 +52,25 @@ namespace Epiphany.Model.Services
         /// <returns>collection of books</returns>
         IPagedCollection<BookModel> GetBooks(AuthorModel author);
         /// <summary>
+        /// Gets books by year for a user
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="year"></param>
+        /// <returns></returns>
+        IPagedCollection<BookModel> GetBooksByYear(int userId, int year);
+        /// <summary>
         /// Gets all the books in a bookshelf
         /// </summary>
         /// <param name="userId">id of the user</param>
         /// <param name="shelfName">name of the bookshelf</param>
         /// <returns>book collection</returns>
         IPagedCollection<BookModel> GetBooks(int userId, string shelfName, BookSortType sortType, BookSortOrder order);
+        /// <summary>
+        /// Gets the books owned by a user
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        IPagedCollection<BookModel> GetOwnedBooks(int userId);
         /// <summary>
         /// Adds a book to the given shelf
         /// </summary>

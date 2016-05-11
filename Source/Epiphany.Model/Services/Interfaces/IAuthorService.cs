@@ -18,5 +18,11 @@ namespace Epiphany.Model.Services
         /// </summary>
         /// <param name="author">author model</param>
         Task FlipFanshipAsync(AuthorModel author);
+        /// <summary>
+        /// Follow an author
+        /// </summary>
+        /// <param name="author"></param>
+        /// <returns></returns>
+        Task FollowAuthor(AuthorModel author);
     }
 }

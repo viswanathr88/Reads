@@ -1,0 +1,69 @@
+﻿<ViewModel:SearchViewModel xmlns:ViewModel="using:Epiphany.ViewModel" xmlns:Items="using:Epiphany.ViewModel.Items" xmlns:Model="using:Epiphany.Model" xmlns:Services="using:Epiphany.Model.Services" HasResults="True" IsLoaded="True" IsLoading="False" SelectedFilter="Title" SearchTerm="Jeffrey archer">
+
+    <ViewModel:SearchViewModel.SearchResults>
+        <Items:SearchResultItemViewModel>
+            <Items:SearchResultItemViewModel.Author>
+                <Items:AuthorItemViewModel Id="49" IsSelected="False" Name="Aaberg, Jesper">
+                    <Items:AuthorItemViewModel.Item>
+                        <Model:AuthorModel AverageRating="659.89" About="Congue habitasse cursus" BornAt="04/27/2016 13:46:19" DiedAt="04/27/2016 13:46:19" FansCount="86" Gender="Augue dolor adipiscing" Hometown="Fames felis" Id="85" ImageUrl="Fringilla diam vivamus" Influences="Nam faucibus" Link="Quisque facilisi proin vestibulum" Name="Jeffrey Archer" RatingsCount="79" TextReviewsCount="19" WorksCount="70"/>
+                    </Items:AuthorItemViewModel.Item>
+                </Items:AuthorItemViewModel>
+            </Items:SearchResultItemViewModel.Author>
+            <Items:SearchResultItemViewModel.Book>
+                <Items:BookItemViewModel AverageRating="708.03" Id="19" ImageUrl="http://d.gr-assets.com/books/1388965561l/78983.jpg" IsSelected="False" Title="Curabitur class sed parturient" RatingsCount="1902 ratings">
+                    <Items:BookItemViewModel.Item>
+                        <Model:BookModel AverageRating="206.24" Description="Vestibulum vestibulum non" EditionInformation="Duis nunc" Format="Ante parturient" ISBN13="Bibendum dignissim adipiscing" Id="36" ISBN="Vestibulum integer consequat convallis etiam" IsEbook="False" ImageUrl="Aptent mus" Link="Morbi adipiscing nulla dictumst amet" NumberOfPages="57" Publisher="Nec auctor fusce lorem parturient" PublicationDate="04/27/2016 13:46:19" RatingsCount="80" TextReviewsCount="60" Title="Donec mauris hac nullam leo" Url="Elementum per facilisis sed"/>
+                    </Items:BookItemViewModel.Item>
+                    <Items:BookItemViewModel.MainAuthor>
+                        <Items:AuthorItemViewModel Id="31" IsSelected="True" Name="Adams, Ellen"/>
+                    </Items:BookItemViewModel.MainAuthor>
+                </Items:BookItemViewModel>
+            </Items:SearchResultItemViewModel.Book>
+        </Items:SearchResultItemViewModel>
+        <Items:SearchResultItemViewModel>
+            <Items:SearchResultItemViewModel.Author>
+                <Items:AuthorItemViewModel Id="25" IsSelected="False" Name="Adams, Terry">
+                    <Items:AuthorItemViewModel.Item>
+                        <Model:AuthorModel AverageRating="924.44" About="Mollis curabitur" BornAt="04/27/2016 13:46:19" DiedAt="04/27/2016 13:46:19" FansCount="31" Gender="Montes porta" Hometown="Nunc phasellus nostra iaculis ornare" Id="88" ImageUrl="Nec netus mattis nulla mauris" Influences="Vestibulum gravida" Link="Luctus nascetur neque magnis feugiat" Name="Morbi ligula litora lobortis mus" RatingsCount="75" TextReviewsCount="59" WorksCount="73"/>
+                    </Items:AuthorItemViewModel.Item>
+                </Items:AuthorItemViewModel>
+            </Items:SearchResultItemViewModel.Author>
+            <Items:SearchResultItemViewModel.Book>
+                <Items:BookItemViewModel AverageRating="482.31" Id="65" ImageUrl="https://leadinglight.files.wordpress.com/2010/01/kane-and-abel.jpeg" IsSelected="True" Title="Parturient habitant hendrerit aliquam ipsum" RatingsCount="200 ratings">
+                    <Items:BookItemViewModel.Item>
+                        <Model:BookModel AverageRating="925.36" Description="Lorem lectus nisi" EditionInformation="Magna hac" Format="Euismod ultricies vestibulum" ISBN13="Conubia dictum penatibus est" Id="81" ISBN="Vestibulum malesuada eros" IsEbook="False" ImageUrl="Porttitor cubilia dapibus vestibulum interdum" Link="Nisl metus leo" NumberOfPages="97" Publisher="Adipiscing parturient tincidunt tristique nibh" PublicationDate="04/27/2016 13:46:19" RatingsCount="92" TextReviewsCount="77" Title="Dis himenaeos imperdiet blandit commodo" Url="Massa egestas"/>
+                    </Items:BookItemViewModel.Item>
+                    <Items:BookItemViewModel.MainAuthor>
+                        <Items:AuthorItemViewModel Id="39" IsSelected="True" Name="Adams, Terry"/>
+                    </Items:BookItemViewModel.MainAuthor>
+                </Items:BookItemViewModel>
+            </Items:SearchResultItemViewModel.Book>
+        </Items:SearchResultItemViewModel>
+        <Items:SearchResultItemViewModel>
+            <Items:SearchResultItemViewModel.Author>
+                <Items:AuthorItemViewModel Id="25" IsSelected="False" Name="Adams, Terry">
+                    <Items:AuthorItemViewModel.Item>
+                        <Model:AuthorModel AverageRating="924.44" About="Mollis curabitur" BornAt="04/27/2016 13:46:19" DiedAt="04/27/2016 13:46:19" FansCount="31" Gender="Montes porta" Hometown="Nunc phasellus nostra iaculis ornare" Id="88" ImageUrl="Nec netus mattis nulla mauris" Influences="Vestibulum gravida" Link="Luctus nascetur neque magnis feugiat" Name="Morbi ligula litora lobortis mus" RatingsCount="75" TextReviewsCount="59" WorksCount="73"/>
+                    </Items:AuthorItemViewModel.Item>
+                </Items:AuthorItemViewModel>
+            </Items:SearchResultItemViewModel.Author>
+            <Items:SearchResultItemViewModel.Book>
+                <Items:BookItemViewModel AverageRating="482.31" Id="65" ImageUrl="Justo eget inceptos elit" IsSelected="True" Title="Parturient habitant hendrerit aliquam ipsum">
+                    <Items:BookItemViewModel.Item>
+                        <Model:BookModel AverageRating="925.36" Description="Lorem lectus nisi" EditionInformation="Magna hac" Format="Euismod ultricies vestibulum" ISBN13="Conubia dictum penatibus est" Id="81" ISBN="Vestibulum malesuada eros" IsEbook="False" ImageUrl="Porttitor cubilia dapibus vestibulum interdum" Link="Nisl metus leo" NumberOfPages="97" Publisher="Adipiscing parturient tincidunt tristique nibh" PublicationDate="04/27/2016 13:46:19" RatingsCount="92" TextReviewsCount="77" Title="Dis himenaeos imperdiet blandit commodo" Url="Massa egestas"/>
+                    </Items:BookItemViewModel.Item>
+                    <Items:BookItemViewModel.MainAuthor>
+                        <Items:AuthorItemViewModel Id="39" IsSelected="True" Name="Adams, Terry"/>
+                    </Items:BookItemViewModel.MainAuthor>
+                </Items:BookItemViewModel>
+            </Items:SearchResultItemViewModel.Book>
+        </Items:SearchResultItemViewModel>
+    </ViewModel:SearchViewModel.SearchResults>
+    <ViewModel:SearchViewModel.SelectedResult>
+    </ViewModel:SearchViewModel.SelectedResult>
+    <ViewModel:SearchViewModel.SearchFilters>
+        <Services:BookSearchType>All</Services:BookSearchType>
+        <Services:BookSearchType>Author</Services:BookSearchType>
+        <Services:BookSearchType>Title</Services:BookSearchType>
+    </ViewModel:SearchViewModel.SearchFilters>
+</ViewModel:SearchViewModel>

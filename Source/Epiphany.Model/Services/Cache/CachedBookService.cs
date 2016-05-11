@@ -2,6 +2,7 @@
 using Epiphany.Model.Messaging;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System;
 
 namespace Epiphany.Model.Services
 {
@@ -77,6 +78,16 @@ namespace Epiphany.Model.Services
         public IPagedCollection<WorkModel> Find(BookSearchType type, string term)
         {
             return this.baseService.Find(type, term);
+        }
+
+        public IPagedCollection<BookModel> GetBooksByYear(int userId, int year)
+        {
+            return this.baseService.GetBooksByYear(userId, year);
+        }
+
+        public IPagedCollection<BookModel> GetOwnedBooks(int userId)
+        {
+            return this.baseService.GetOwnedBooks(userId);
         }
 
         private void HandleReviewAddedOrEdited(object sender, ReviewAddedOrEditedMessage msg)

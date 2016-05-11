@@ -29,18 +29,14 @@ namespace Epiphany.Model.Services
 
         public IPagedCollection<BookshelfModel> GetBookshelves(int userId)
         {
-            //
-            // Create the headers
-            //
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["user_id"] = userId.ToString();
-            //
             // Create the data source for the collection
-            //
-            IPagedDataSource<GoodreadsShelves> ds = new PagedDataSource<GoodreadsShelves>(webClient, parameters, ServiceUrls.ShelvesUrl);
-            //
+            var ds = new PagedDataSource<GoodreadsShelves>(webClient);
+            ds.SourceUrl = ServiceUrls.ShelvesUrl;
+            ds.Parameters["user_id"] = userId.ToString();
+            ds.RequiresAuthentication = false;
+            ds.Returns = (response) => response.ShelfCollection;
+            
             // Create the collection
-            //
             IPagedCollection<BookshelfModel> collection = null;
             if (this.recentProfile != null && this.recentProfile.Id == userId && this.recentProfile.Shelves != null)
             {
@@ -50,7 +46,6 @@ namespace Epiphany.Model.Services
             {
                 collection = new PagedCollection<BookshelfModel, GoodreadsUserShelf, GoodreadsShelves>(ds, adapter, itemsCount);
             }
-
 
             return collection;
         }

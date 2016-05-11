@@ -3,7 +3,6 @@ using Epiphany.Model.DataSources;
 using Epiphany.Web;
 using Epiphany.Xml;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Epiphany.Model.Services
@@ -26,12 +25,12 @@ namespace Epiphany.Model.Services
 
         public async Task<UserStatusModel> GetUserStatus(int id)
         {
-            // Create parameters
-            IDictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["id"] = id.ToString();
-
             // Create the data source
-            IDataSource<GoodreadsUserStatus> ds = new DataSource<GoodreadsUserStatus>(webClient, parameters, ServiceUrls.UserStatusUrl);
+            var ds = new DataSource<GoodreadsUserStatus>(webClient);
+            ds.SourceUrl = ServiceUrls.UserStatusUrl;
+            ds.Parameters["id"] = id.ToString();
+            // TODO: ds.Returns = (response) =>
+
             GoodreadsUserStatus status = await ds.GetAsync();
             return this.adapter.Convert(status);
         }
@@ -66,7 +65,6 @@ namespace Epiphany.Model.Services
 
         public async Task UnlikeStatus(UserStatusModel status)
         {
-
             // Create the web request and execute it
             WebRequest request = new WebRequest(ServiceUrls.LikeUrl, WebMethod.Delete);
             request.Authenticate = true;
