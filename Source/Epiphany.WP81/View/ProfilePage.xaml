@@ -17,7 +17,6 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -107,10 +106,13 @@
                                Style="{StaticResource GroupHeaderTextBlockStyle}"
                                Margin="10,0,10,5" />
                 </Border>
-                <ListView ItemsSource="{Binding FavoriteAuthors}">
+                <ListView ItemsSource="{Binding FavoriteAuthors}"
+                          ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                          Margin="0,10,0,10">
+
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <controls:WrapPanel HorizontalAlignment="Center" />
+                            <controls:WrapPanel  />
                         </ItemsPanelTemplate>
                     </ListView.ItemsPanel>
 
@@ -119,28 +121,27 @@
                             <Button BorderThickness="0"
                                     Content="{Binding Name}"
                                     Background="{ThemeResource PhoneChromeBrush}"
-                                    Margin="0,15,15,0"
+                                    Margin="0,0,15,0"
                                     Height="60" />
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
 
+                <Border BorderThickness="0,0,0,2"
+                        BorderBrush="{ThemeResource PhoneMidBrush}"
+                        HorizontalAlignment="Center"
+                        Margin="0,5,0,10">
+                    <TextBlock Text="POSTS"
+                               Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                               HorizontalAlignment="Center"
+                               Style="{StaticResource GroupHeaderTextBlockStyle}"
+                               Margin="10,0,10,5" />
+                </Border>
+
                 <!-- Content -->
                 <controls:FeedControl Items="{Binding RecentUpdates}"
                                       IsLoading="{Binding IsLoading}"
-                                      Margin="0,10,0,0">
-                    <controls:FeedControl.Header>
-                        <Border BorderThickness="0,0,0,2"
-                                BorderBrush="{ThemeResource PhoneMidBrush}"
-                                HorizontalAlignment="Center">
-                            <TextBlock Text="POSTS"
-                                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                                       HorizontalAlignment="Center"
-                                       Style="{StaticResource GroupHeaderTextBlockStyle}"
-                                       Margin="10,0,10,5"/>
-                        </Border>
-                    </controls:FeedControl.Header>
-                </controls:FeedControl>
+                                      Margin="0,10,0,10" />
             </StackPanel>
         </ScrollViewer>
 
