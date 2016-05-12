@@ -1,0 +1,1362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GoodreadsResponse>
+  <Request>
+    <authentication>true</authentication>
+    <key><![CDATA[fDfi6rdiIgfTp49R0xj8MQ]]></key>
+    <method><![CDATA[api/v3/updates_newsfeed]]></method>
+  </Request>
+  <newsfeed_meta>
+    <rate_books_count>19</rate_books_count>
+    <fb_connected>true</fb_connected>
+    <friends_count>110</friends_count>
+    <min_ratings_for_recs>20</min_ratings_for_recs>
+    <ctas type='array'>
+      <cta>
+        <id>choice_awards_2015_winners_announced</id>
+        <cta_title>Best Books of 2015</cta_title>
+        <cta_text><![CDATA[Announcing the winners of the 2015 Goodreads Choice Awards! View results in 20 categories �]]></cta_text>
+        <background_color>#990C21</background_color>
+        <text_color>#FFFFFF</text_color>
+        <link>https://www.goodreads.com/choiceawards/best-books-2015</link>
+        <large_image_url>https://www.goodreads.com/assets/award/2015/api/gca_cta_logo@3x.png</large_image_url>
+        <image_url>https://www.goodreads.com/assets/award/2015/api/gca_cta_logo@2x.png</image_url>
+        <small_image_url>https://www.goodreads.com/assets/award/2015/api/gca_cta_logo.png</small_image_url>
+      </cta>
+
+    </ctas>
+
+  </newsfeed_meta>
+  <updates community='false' length='23' maxUpdatedAt='1462911131' type='array'>
+    <update type='book_inspiration'>
+      <id>7807810452</id>
+      <action_text><![CDATA[Trending This Week in <a href="https://www.goodreads.com/book/list/genres.xml?id=history">History</a>]]></action_text>
+      <link>https://www.goodreads.com/book/list/genres.xml?id=history</link>
+      <image_url></image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+      <updated_at>2016-05-11T11:00:18-07:00</updated_at>
+      <object>
+        <book_inspiration type='genre_book_inspiration'>
+          <book>
+            <id>25013067</id>
+            <title><![CDATA[SPQR: A History of Ancient Rome]]></title>
+            <title_without_series><![CDATA[SPQR: A History of Ancient Rome]]></title_without_series>
+            <link><![CDATA[https://www.goodreads.com/book/show/25013067-spqr]]></link>
+            <small_image_url><![CDATA[https://d.gr-assets.com/books/1433127211s/25013067.jpg]]></small_image_url>
+            <image_url><![CDATA[https://d.gr-assets.com/books/1433127211m/25013067.jpg]]></image_url>
+            <work>
+              <id>44684882</id>
+            </work>
+            <isbn>0871404230</isbn>
+            <isbn13>9780871404237</isbn13>
+            <average_rating>4.11</average_rating>
+            <ratings_count>1944</ratings_count>
+            <publication_year>2015</publication_year>
+            <publication_month>11</publication_month>
+            <publication_day>9</publication_day>
+            <authors>
+              <author>
+                <id>97783</id>
+                <name>Mary Beard</name>
+                <link><![CDATA[https://www.goodreads.com/author/show/97783.Mary_Beard]]></link>
+              </author>
+            </authors>
+            <description><![CDATA[By 63 BCE the city of Rome was a sprawling, imperial metropolis of more than a million inhabitants. But how did this massive city�the seat of power for an empire that spanned from Spain to Syria�emerge from what was once an insignificant village in central Italy? In S.P.Q.R., Beard changes our historical perspective, exploring how the Romans themselves challenged the idea of imperial rule, how they responded to terrorism and revolution, and how they invented a new idea of citizenship and nation, while also keeping her eye open for those overlooked in traditional histories: women, slaves and ex-slaves, conspirators, and losers. Like the best detectives, Beard separates fact from fiction, myth and propaganda from historical record. She introduces the familiar characters of Julius Caesar, Cicero, and Nero as well as the untold, the loud women, the shrewd bakers, and the brave jokers. S.P.Q.R. promises to shape our view of Roman history for decades to come. 100 illustrations; 16 pages of color; 5 maps]]></description>
+
+          </book>
+
+        </book_inspiration>
+
+
+      </object>
+
+    </update>
+
+    <update type='book_inspiration'>
+      <id>7807308893</id>
+      <action_text><![CDATA[New Releases in <a href="https://www.goodreads.com/book/list/genres.xml?id=fantasy">Fantasy</a>]]></action_text>
+      <link>https://www.goodreads.com/book/list/genres.xml?id=fantasy</link>
+      <image_url></image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+      <updated_at>2016-05-11T10:15:22-07:00</updated_at>
+      <object>
+        <book_inspiration type='genre_book_inspiration'>
+          <book>
+            <id>27267703</id>
+            <title><![CDATA[Golden Age (The Shifting Tides Book 1)]]></title>
+            <title_without_series>Golden Age</title_without_series>
+            <link><![CDATA[https://www.goodreads.com/book/show/27267703-golden-age]]></link>
+            <small_image_url><![CDATA[https://d.gr-assets.com/books/1455174517s/27267703.jpg]]></small_image_url>
+            <image_url><![CDATA[https://d.gr-assets.com/books/1455174517m/27267703.jpg]]></image_url>
+            <work>
+              <id>47320148</id>
+            </work>
+            <isbn></isbn>
+            <isbn13></isbn13>
+            <average_rating>3.93</average_rating>
+            <ratings_count>510</ratings_count>
+            <publication_year>2016</publication_year>
+            <publication_month>5</publication_month>
+            <publication_day>1</publication_day>
+            <authors>
+              <author>
+                <id>6535367</id>
+                <name>James   Maxwell</name>
+                <link><![CDATA[https://www.goodreads.com/author/show/6535367.James_Maxwell]]></link>
+              </author>
+            </authors>
+            <description><![CDATA[The discovery of a strange and superior warship sends Dion, youngest son of the king of Xanthos, and Chloe, a Phalesian princess, on a journey across the sea, where they are confronted by a kingdom far more powerful than they could ever have imagined.<br><br>But they also find a place in turmoil, for the ruthless sun king, Solon, is dying. In order to gain entrance to heaven, Solon is building a tomb�a pyramid clad in gold�and has scoured his own empire for gold until there�s no more to be found.<br><br>Now Solon�s gaze turns to Chloe�s homeland, Phalesia, and its famous sacred ark, made of solid gold. The legends say it must never be opened, but Solon has no fear of foreigners� legends or even their armies. And he isn�t afraid of the eldren, an ancient race of shape-shifters, long ago driven into the Wilds.<br><br>For when he gets the gold, Solon knows he will live forever.]]></description>
+
+          </book>
+
+        </book_inspiration>
+
+
+      </object>
+
+    </update>
+
+    <update type='book_inspiration'>
+      <id>7807142785</id>
+      <action_text><![CDATA[Trending This Week in <a href="https://www.goodreads.com/book/list/genres.xml?id=fiction">Fiction</a>]]></action_text>
+      <link>https://www.goodreads.com/book/list/genres.xml?id=fiction</link>
+      <image_url></image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+      <updated_at>2016-05-11T10:00:09-07:00</updated_at>
+      <object>
+        <book_inspiration type='genre_book_inspiration'>
+          <book>
+            <id>25526969</id>
+            <title>Ask Him Why</title>
+            <title_without_series>Ask Him Why</title_without_series>
+            <link><![CDATA[https://www.goodreads.com/book/show/25526969-ask-him-why]]></link>
+            <small_image_url><![CDATA[https://d.gr-assets.com/books/1439364297s/25526969.jpg]]></small_image_url>
+            <image_url><![CDATA[https://d.gr-assets.com/books/1439364297m/25526969.jpg]]></image_url>
+            <work>
+              <id>45313986</id>
+            </work>
+            <isbn></isbn>
+            <isbn13></isbn13>
+            <average_rating>4.10</average_rating>
+            <ratings_count>2948</ratings_count>
+            <publication_year>2015</publication_year>
+            <publication_month>12</publication_month>
+            <publication_day>15</publication_day>
+            <authors>
+              <author>
+                <id>126447</id>
+                <name>Catherine Ryan Hyde</name>
+                <link><![CDATA[https://www.goodreads.com/author/show/126447.Catherine_Ryan_Hyde]]></link>
+              </author>
+            </authors>
+            <description><![CDATA[<strong>From the bestselling author of <em>Pay It Forward</em> comes the stunning and emotional story of a young soldier�s unthinkable act�and the bonds of a sister and brother�s love.</strong><br><br>Ruth and her little brother, Aubrey, are just teenagers when their older brother ships off to Iraq. When Joseph returns, uninjured, only three and a half months later, Ruth is happy he is safe but also deeply worried. How can it be that her courageous big brother has been dishonorably discharged for refusing to go out on duty? Aubrey can�t believe that his hero doesn�t have very good reasons.<br><br>Yet as the horrifying details of the incident emerge, Joseph disappears. In their attempts to find him, Ruth and Aubrey discover he has a past far darker than either of them could imagine. But even as they learn more about their brother, important questions remain unanswered�why did he betray his unit, his country, and now his family? Joseph�s refusal to speak ignites a fire in young Aubrey that results in a disastrous, and public, act of rebellion.<br><br>The impact of Joseph�s fateful decision one night in Baghdad will echo for years to come, with his siblings caught between their love for him and the media�s engulfing frenzy of judgment. Will their family ever make their way back to each other and find a way to forgive?]]></description>
+
+          </book>
+
+        </book_inspiration>
+
+
+      </object>
+
+    </update>
+
+    <update type='book_inspiration'>
+      <id>7806805606</id>
+      <action_text><![CDATA[Popular on Goodreads in <a href="https://www.goodreads.com/book/list/genres.xml?id=non-fiction">Non Fiction</a>]]></action_text>
+      <link>https://www.goodreads.com/book/list/genres.xml?id=non-fiction</link>
+      <image_url></image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+      <updated_at>2016-05-11T09:30:08-07:00</updated_at>
+      <object>
+        <book_inspiration type='genre_book_inspiration'>
+          <book>
+            <id>10335308</id>
+            <title><![CDATA[Is Everyone Hanging Out Without Me? (And Other Concerns)]]></title>
+            <title_without_series><![CDATA[Is Everyone Hanging Out Without Me?]]></title_without_series>
+            <link><![CDATA[https://www.goodreads.com/book/show/10335308-is-everyone-hanging-out-without-me]]></link>
+            <small_image_url><![CDATA[https://d.gr-assets.com/books/1443264638s/10335308.jpg]]></small_image_url>
+            <image_url><![CDATA[https://d.gr-assets.com/books/1443264638m/10335308.jpg]]></image_url>
+            <work>
+              <id>15237902</id>
+            </work>
+            <isbn>0307886263</isbn>
+            <isbn13>9780307886262</isbn13>
+            <average_rating>3.83</average_rating>
+            <ratings_count>235351</ratings_count>
+            <publication_year>2011</publication_year>
+            <publication_month>11</publication_month>
+            <publication_day>1</publication_day>
+            <authors>
+              <author>
+                <id>194416</id>
+                <name>Mindy Kaling</name>
+                <link><![CDATA[https://www.goodreads.com/author/show/194416.Mindy_Kaling]]></link>
+              </author>
+            </authors>
+            <description><![CDATA[Mindy Kaling has lived many lives: the obedient child of immigrant professionals, a timid chubster afraid of her own bike, a Ben Affleck�impersonating Off-Broadway performer and playwright, and, finally, a comedy writer and actress prone to starting fights with her friends and coworkers with the sentence �Can I just say one last thing about this, and then I swear I�ll shut up about it?� <br>�<br>Perhaps you want to know what Mindy thinks makes a great best friend (someone who will fill your prescription in the middle of the night), or what makes a great guy (one who is aware of all elderly people in any room at any time and acts accordingly), or what is the perfect amount of fame (so famous you can never get convicted of murder in a court of law), or how to maintain a trim figure (you will not find that information in these pages). If so, you�ve come to the right book, mostly!<br>�<br>In <em>Is Everyone Hanging Out Without Me?, </em>Mindy invites readers on a tour of her life and her unscientific observations on romance, friendship, and Hollywood, with several conveniently placed stopping points for you to run errands and make phone calls. Mindy Kaling really is just a Girl Next Door�not so much literally anywhere in the continental United States, but definitely if you live in India or Sri Lanka.]]></description>
+
+          </book>
+
+        </book_inspiration>
+
+
+      </object>
+
+    </update>
+
+    <update type='friend'>
+      <id>3104050852</id>
+      <action_text><![CDATA[<a href="https://www.goodreads.com/user/show/31176611-santhosh-kumar">Santhosh Kumar</a> is now friends with <a href="https://www.goodreads.com/user/show/55754481-shajil-vazhakkalil">Shajil Vazhakkalil</a>]]></action_text>
+      <link>https://www.goodreads.com/friend/show/499081110</link>
+      <image_url>https://d.gr-assets.com/users/1462960496p2/55754481.jpg</image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+
+      <user>
+        <id>31176611</id>
+        <name>Santhosh</name>
+
+        <location>India</location>
+
+        <link><![CDATA[https://www.goodreads.com/user/show/31176611-santhosh-kumar]]></link>
+
+        <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1399470219i/31176611.jpg]]></image_url>
+        <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1399470219i/31176611._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+      </user>
+
+      <updated_at>2016-05-11T02:55:02-07:00</updated_at>
+      <object>
+        <friend>
+          <id>499081110</id>
+          <likes_count>0</likes_count>
+          <comments_count>0</comments_count>
+          <liked>false</liked>
+          <created_at>2016-05-11T02:55:02-07:00</created_at>
+
+          <user>
+            <id>31176611</id>
+            <name>Santhosh</name>
+
+            <location>India</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/31176611-santhosh-kumar]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1399470219i/31176611.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1399470219i/31176611._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+          </user>
+
+
+          <friend_user>
+            <id>55754481</id>
+            <name>Shajil</name>
+
+            <location>Chennai, 25, India</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/55754481-shajil-vazhakkalil]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462960496i/55754481._UX60_CR0,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462960496i/55754481._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+          </friend_user>
+
+        </friend>
+
+      </object>
+
+    </update>
+
+    <update type='user_following'>
+      <id>3103686200</id>
+      <action_text><![CDATA[<a href="https://www.goodreads.com/user/show/7915589-shrikanth">Shrikanth</a> is now following <a href="https://www.goodreads.com/user/show/31691922-rohit-menon">Rohit Menon</a>]]></action_text>
+      <link>https://www.goodreads.com/user_following/55342675</link>
+      <image_url>https://d.gr-assets.com/users/1446814583p2/31691922.jpg</image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+
+      <user>
+        <id>7915589</id>
+        <name>Shrikanth</name>
+
+        <location>India</location>
+
+        <link><![CDATA[https://www.goodreads.com/user/show/7915589-shrikanth]]></link>
+
+        <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1330165372i/7915589._UX60_CR0,15,60,60_.jpg]]></image_url>
+        <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1330165372i/7915589._UX30_CR0,7,30,30_.jpg]]></small_image_url>
+
+      </user>
+
+      <updated_at>2016-05-10T21:33:27-07:00</updated_at>
+      <object>
+        <user_following>
+          <id>55342675</id>
+          <likes_count>0</likes_count>
+          <comments_count>0</comments_count>
+          <liked>false</liked>
+          <created_at>2016-05-10T21:33:27-07:00</created_at>
+
+          <user>
+            <id>31691922</id>
+            <name>Rohit Menon</name>
+
+            <location>India</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/31691922-rohit-menon]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1446814583i/31691922._UY60_CR4,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1446814583i/31691922._UY30_CR2,0,30,30_.jpg]]></small_image_url>
+
+          </user>
+
+          <follower>
+
+            <user>
+              <id>7915589</id>
+              <name>Shrikanth</name>
+
+              <location>India</location>
+
+              <link><![CDATA[https://www.goodreads.com/user/show/7915589-shrikanth]]></link>
+
+              <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1330165372i/7915589._UX60_CR0,15,60,60_.jpg]]></image_url>
+              <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1330165372i/7915589._UX30_CR0,7,30,30_.jpg]]></small_image_url>
+
+            </user>
+
+          </follower>
+        </user_following>
+
+      </object>
+
+    </update>
+
+    <update type='book_inspiration'>
+      <id>7798683031</id>
+      <action_text><![CDATA[Popular on Goodreads in <a href="https://www.goodreads.com/book/list/genres.xml?id=politics">Politics</a>]]></action_text>
+      <link>https://www.goodreads.com/book/list/genres.xml?id=politics</link>
+      <image_url></image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+      <updated_at>2016-05-10T18:00:06-07:00</updated_at>
+      <object>
+        <book_inspiration type='genre_book_inspiration'>
+          <book>
+            <id>5641414</id>
+            <title><![CDATA[Liberty and Tyranny: A Conservative Manifesto]]></title>
+            <title_without_series><![CDATA[Liberty and Tyranny: A Conservative Manifesto]]></title_without_series>
+            <link><![CDATA[https://www.goodreads.com/book/show/5641414-liberty-and-tyranny]]></link>
+            <small_image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png]]></small_image_url>
+            <image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png]]></image_url>
+            <work>
+              <id>5812861</id>
+            </work>
+            <isbn>1416562850</isbn>
+            <isbn13>9781416562856</isbn13>
+            <average_rating>4.14</average_rating>
+            <ratings_count>5177</ratings_count>
+            <publication_year>2009</publication_year>
+            <publication_month>3</publication_month>
+            <publication_day>24</publication_day>
+            <authors>
+              <author>
+                <id>311467</id>
+                <name>Mark R. Levin</name>
+                <link><![CDATA[https://www.goodreads.com/author/show/311467.Mark_R_Levin]]></link>
+              </author>
+            </authors>
+            <description><![CDATA[Conservative talk radio's fastest-growing superstar is also a <em>New York Times</em> bestselling phenomenon: the author of the groundbreaking critique of the Supreme Court, <em>Men in Black</em>, and the deeply personal dog lover's memoir <em>Rescuing Sprite</em>, Mark R. Levin now delivers the book that characterizes both his devotion to his more than 5 million listeners and his love of our country and the legacy of our Founding Fathers: <em>Liberty and Tyranny</em> is Mark R. Levin's clarion call to conservative America, a new manifesto for the conservative movement for the 21st century.<p>In the face of the modern liberal assault on Constitution-based values, an attack that has steadily snowballed since President Roosevelt's New Deal of the 1930s and resulted in a federal government that is a massive, unaccountable conglomerate, the time for re-enforcing the intellectual and practical case for conservatism is <em>now</em>. Conservative beliefs in individual freedoms do in the end stand for liberty for all Americans, while liberal dictates lead to the breakdown of civilized society -- in short, tyranny. Looking back to look to the future, Levin writes "conservatism is the antidote to tyranny precisely because its principles <em>are</em> our founding principles." And in a series of powerful essays, Levin lays out how conservatives can counter the liberal corrosion that has filtered into every timely issue affecting our daily lives, from the economy to health care, global warming, immigration, and more -- and illustrates how change, as seen through the conservative lens, is always prudent, and always an enhancement to individual freedom.</p><p>As provocative, well-reasoned, robust, and informed as his on-air commentary, Levin's narrative will galvanize readers to begin a new era in conservative thinking and action. <em>Liberty and Tyranny</em> provides a philosophical, historical, and practical framework for revitalizing the conservative vision and ensuring the preservation of American society.</p>]]></description>
+
+          </book>
+
+        </book_inspiration>
+
+
+      </object>
+
+    </update>
+
+    <update type='book_inspiration'>
+      <id>7798272239</id>
+      <action_text><![CDATA[Trending This Week in <a href="https://www.goodreads.com/book/list/genres.xml?id=book-club">Book Club</a>]]></action_text>
+      <link>https://www.goodreads.com/book/list/genres.xml?id=book-club</link>
+      <image_url></image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+      <updated_at>2016-05-10T17:30:28-07:00</updated_at>
+      <object>
+        <book_inspiration type='genre_book_inspiration'>
+          <book>
+            <id>16130291</id>
+            <title>The Silver Star</title>
+            <title_without_series>The Silver Star</title_without_series>
+            <link><![CDATA[https://www.goodreads.com/book/show/16130291-the-silver-star]]></link>
+            <small_image_url><![CDATA[https://d.gr-assets.com/books/1379313690s/16130291.jpg]]></small_image_url>
+            <image_url><![CDATA[https://d.gr-assets.com/books/1379313690m/16130291.jpg]]></image_url>
+            <work>
+              <id>21955595</id>
+            </work>
+            <isbn>1451661509</isbn>
+            <isbn13>9781451661507</isbn13>
+            <average_rating>3.64</average_rating>
+            <ratings_count>37991</ratings_count>
+            <publication_year>2013</publication_year>
+            <publication_month>6</publication_month>
+            <publication_day>11</publication_day>
+            <authors>
+              <author>
+                <id>3275</id>
+                <name>Jeannette Walls</name>
+                <link><![CDATA[https://www.goodreads.com/author/show/3275.Jeannette_Walls]]></link>
+              </author>
+            </authors>
+            <description><![CDATA[It is 1970 in a small town in California. �Bean� Holladay is twelve and her sister, Liz, is fifteen when their artistic mother, Charlotte, takes off to find herself, leaving her girls enough money to last a month or two. When Bean returns from school one day and sees a police car outside the house, she and Liz decide to take the bus to Virginia, where their widowed Uncle Tinsley lives in the decaying mansion that�s been in Charlotte�s family for generations. <br><br>An impetuous optimist, Bean soon discovers who her father was, and hears stories about why their mother left Virginia in the first place. Money is tight, and the sisters start babysitting and doing office work for Jerry Maddox, foreman of the mill in town, who bullies his workers, his tenants, his children, and his wife. Liz is whip-smart--an inventor of word games, reader of Edgar Allan Poe, nonconformist, but when school starts in the fall, it�s Bean who easily adjusts, and Liz who becomes increasingly withdrawn. And then something happens to Liz in the car with Maddox.<br><br>Jeannette Walls has written a deeply moving novel about triumph over adversity and about people who find a way to love each other and the world, despite its flaws and injustices.]]></description>
+
+          </book>
+
+        </book_inspiration>
+
+
+      </object>
+
+    </update>
+
+    <update type='book_inspiration'>
+      <id>7774297343</id>
+      <action_text><![CDATA[Because you read <a href="https://www.goodreads.com/book/show/2122.The_Fountainhead">The Fountainhead</a>, Goodreads recommends]]></action_text>
+      <link>https://www.goodreads.com/book/list/genres.xml?id=classics</link>
+      <image_url></image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+      <updated_at>2016-05-08T23:21:28-07:00</updated_at>
+      <object>
+        <book_inspiration type='recommendation_book_inspiration'>
+          <book>
+            <id>299215</id>
+            <title>The Road to Serfdom</title>
+            <title_without_series>The Road to Serfdom</title_without_series>
+            <link><![CDATA[https://www.goodreads.com/book/show/299215.The_Road_to_Serfdom]]></link>
+            <small_image_url><![CDATA[https://d.gr-assets.com/books/1327787673s/299215.jpg]]></small_image_url>
+            <image_url><![CDATA[https://d.gr-assets.com/books/1327787673m/299215.jpg]]></image_url>
+            <work>
+              <id>217623</id>
+            </work>
+            <isbn>0226320618</isbn>
+            <isbn13>9780226320618</isbn13>
+            <average_rating>4.16</average_rating>
+            <ratings_count>9769</ratings_count>
+            <publication_year>1994</publication_year>
+            <publication_month>10</publication_month>
+            <publication_day>15</publication_day>
+            <authors>
+              <author>
+                <id>670307</id>
+                <name>Friedrich Hayek</name>
+                <link><![CDATA[https://www.goodreads.com/author/show/670307.Friedrich_Hayek]]></link>
+              </author>
+            </authors>
+            <description><![CDATA[A classic work in political philosophy, intellectual and cultural history, and economics, <em>The Road to Serfdom</em> has inspired and infuriated politicians, scholars, and general readers for half a century. Originally published in England in the spring of 1944�when Eleanor Roosevelt supported the efforts of Stalin, and Albert Einstein subscribed lock, stock, and barrel to the socialist program�<em>The Road to Serfdom</em> was seen as heretical for its passionate warning against the dangers of state control over the means of production. For F. A. Hayek, the collectivist idea of empowering government with increasing economic control would inevitably lead not to a utopia but to the horrors of nazi Germany and fascist Italy.<br><br>First published by the University of Chicago Press on September 18, 1944, <em>The Road to Serfdom</em> garnered immediate attention from the public, politicians, and scholars alike. The first printing of 2,000 copies was exhausted instantly, and within six months more than 30,000 were sold. In April of 1945, <em>Reader's Digest</em> published a condensed version of the book, and soon thereafter the Book-of-the-Month Club distributed this condensation to more than 600,000 readers. A perennial best-seller, the book has sold over a quarter of a million copies in the United States, not including the British edition or the nearly twenty translations into such languages as German, French, Dutch, Swedish, and Japanese, and not to mention the many underground editions produced in Eastern Europe before the fall of the iron curtain.<br><br>After thirty-two printings in the United States, <em>The Road to Serfdom</em> has established itself alongside the works of Alexis de Tocqueville, John Stuart Mill, and George Orwell for its timeless meditation on the relation between individual liberty and government authority. This fiftieth anniversary edition, with a new introduction by Milton Friedman, commemorates the enduring influence of <em>The Road to Serfdom</em> on the ever-changing political and social climates of the twentieth century, from the rise of socialism after World War II to the Reagan and Thatcher "revolutions" in the 1980s and the transitions in Eastern Europe from communism to capitalism in the 1990s.<br><br>F. A. Hayek (1899-1992), recipient of the Medal of Freedom in 1991 and co-winner of the Nobel Memorial Prize in Economics in 1974, was a pioneer in monetary theory and the principal proponent of libertarianism in the twentieth century.<br><br>On the first American edition of <em>The Road to Serfdom</em>:<br>"One of the most important books of our generation. . . . It restates for our time the issue between liberty and authority with the power and rigor of reasoning with which John Stuart Mill stated the issue for his own generation in his great essay <em>On Liberty.</em> . . . It is an arresting call to all well-intentioned planners and socialists, to all those who are sincere democrats and liberals at heart to stop, look and listen."�Henry Hazlitt, <em>New York Times Book Review,</em> September 1944<br><br>"In the negative part of Professor Hayek's thesis there is a great deal of truth. It cannot be said too often�at any rate, it is not being said nearly often enough�that collectivism is not inherently democratic, but, on the contrary, gives to a tyrannical minority such powers as the Spanish Inquisitors never dreamt of."�George Orwell, <em>Collected Essays</em>]]></description>
+
+          </book>
+
+        </book_inspiration>
+
+
+      </object>
+
+    </update>
+
+    <update type='book_inspiration'>
+      <id>7795595319</id>
+      <action_text><![CDATA[Trending This Week in <a href="https://www.goodreads.com/book/list/genres.xml?id=romance">Romance</a>]]></action_text>
+      <link>https://www.goodreads.com/book/list/genres.xml?id=romance</link>
+      <image_url></image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+      <updated_at>2016-05-10T13:45:28-07:00</updated_at>
+      <object>
+        <book_inspiration type='genre_book_inspiration'>
+          <book>
+            <id>24473763</id>
+            <title>Radiance (Wraith Kings, #1)</title>
+            <title_without_series>Radiance</title_without_series>
+            <link><![CDATA[https://www.goodreads.com/book/show/24473763-radiance]]></link>
+            <small_image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/50x75-a91bf249278a81aabab721ef782c4a74.png]]></small_image_url>
+            <image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png]]></image_url>
+            <work>
+              <id>40780371</id>
+            </work>
+            <isbn></isbn>
+            <isbn13></isbn13>
+            <average_rating>4.15</average_rating>
+            <ratings_count>6996</ratings_count>
+            <publication_year>2015</publication_year>
+            <publication_month>1</publication_month>
+            <publication_day>13</publication_day>
+            <authors>
+              <author>
+                <id>2759153</id>
+                <name>Grace Draven</name>
+                <link><![CDATA[https://www.goodreads.com/author/show/2759153.Grace_Draven]]></link>
+              </author>
+            </authors>
+            <description><![CDATA[THE PRINCE OF NO VALUE<br><br>Brishen Khaskem, prince of the Kai, has lived content as the nonessential spare heir to a throne secured many times over. A trade and political alliance between the human kingdom of Gaur and the Kai kingdom of Bast-Haradis requires that he marry a Gauri woman to seal the treaty. Always a dutiful son, Brishen agrees to the marriage and discovers his bride is as ugly as he expected and more beautiful than he could have imagined. <br><br>THE NOBLEWOMAN OF NO IMPORTANCE <br><br>Ildiko, niece of the Gauri king, has always known her only worth to the royal family lay in a strategic marriage. Resigned to her fate, she is horrified to learn that her intended groom isn�t just a foreign aristocrat but the younger prince of a people neither familiar nor human. Bound to her new husband, Ildiko will leave behind all she�s known to embrace a man shrouded in darkness but with a soul forged by light. <br><br>Two people brought together by the trappings of duty and politics will discover they are destined for each other, even as the powers of a hostile kingdom scheme to tear them apart.]]></description>
+
+          </book>
+
+        </book_inspiration>
+
+
+      </object>
+
+    </update>
+
+    <update type='friend'>
+      <id>3102802204</id>
+      <action_text><![CDATA[<a href="https://www.goodreads.com/user/show/18384856-vinayak-iyer">Vinayak Iyer</a> is now friends with <a href="https://www.goodreads.com/user/show/55736388-venkataramana-putcha">Venkataramana Putcha</a>]]></action_text>
+      <link>https://www.goodreads.com/friend/show/498857451</link>
+      <image_url>https://d.gr-assets.com/users/1462911127p2/55736388.jpg</image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+
+      <user>
+        <id>18384856</id>
+        <name>Vinayak</name>
+
+        <location>San Diego, CA</location>
+
+        <link><![CDATA[https://www.goodreads.com/user/show/18384856-vinayak-iyer]]></link>
+
+        <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1363336266i/18384856._UY60_CR15,0,60,60_.jpg]]></image_url>
+        <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1363336266i/18384856._UY30_CR7,0,30,30_.jpg]]></small_image_url>
+
+      </user>
+
+      <updated_at>2016-05-10T13:12:46-07:00</updated_at>
+      <object>
+        <friend>
+          <id>498857451</id>
+          <likes_count>0</likes_count>
+          <comments_count>0</comments_count>
+          <liked>false</liked>
+          <created_at>2016-05-10T13:12:46-07:00</created_at>
+
+          <user>
+            <id>18384856</id>
+            <name>Vinayak</name>
+
+            <location>San Diego, CA</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/18384856-vinayak-iyer]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1363336266i/18384856._UY60_CR15,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1363336266i/18384856._UY30_CR7,0,30,30_.jpg]]></small_image_url>
+
+          </user>
+
+
+          <friend_user>
+            <id>55736388</id>
+            <name>Venkataramana</name>
+
+            <location>State College, PA</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/55736388-venkataramana-putcha]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX60_CR0,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+          </friend_user>
+
+        </friend>
+
+      </object>
+
+    </update>
+
+    <update type='friend'>
+      <id>3102801886</id>
+      <action_text><![CDATA[<a href="https://www.goodreads.com/user/show/40164845-shanmuga-sundaram">Shanmuga Sundaram</a> is now friends with <a href="https://www.goodreads.com/user/show/55736388-venkataramana-putcha">Venkataramana Putcha</a>]]></action_text>
+      <link>https://www.goodreads.com/friend/show/498857345</link>
+      <image_url>https://d.gr-assets.com/users/1462911127p2/55736388.jpg</image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+
+      <user>
+        <id>40164845</id>
+        <name>Shanmuga</name>
+
+        <location>Cochin, 13, India</location>
+
+        <link><![CDATA[https://www.goodreads.com/user/show/40164845-shanmuga-sundaram]]></link>
+
+        <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1423647221i/40164845._UX60_CR0,3,60,60_.jpg]]></image_url>
+        <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1423647221i/40164845._UX30_CR0,1,30,30_.jpg]]></small_image_url>
+
+      </user>
+
+      <updated_at>2016-05-10T13:12:38-07:00</updated_at>
+      <object>
+        <friend>
+          <id>498857345</id>
+          <likes_count>0</likes_count>
+          <comments_count>0</comments_count>
+          <liked>false</liked>
+          <created_at>2016-05-10T13:12:38-07:00</created_at>
+
+          <user>
+            <id>40164845</id>
+            <name>Shanmuga</name>
+
+            <location>Cochin, 13, India</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/40164845-shanmuga-sundaram]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1423647221i/40164845._UX60_CR0,3,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1423647221i/40164845._UX30_CR0,1,30,30_.jpg]]></small_image_url>
+
+          </user>
+
+
+          <friend_user>
+            <id>55736388</id>
+            <name>Venkataramana</name>
+
+            <location>State College, PA</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/55736388-venkataramana-putcha]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX60_CR0,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+          </friend_user>
+
+        </friend>
+
+      </object>
+
+    </update>
+
+    <update type='friend'>
+      <id>3102801799</id>
+      <action_text><![CDATA[<a href="https://www.goodreads.com/user/show/10283397-s-navin">S Navin</a> is now friends with <a href="https://www.goodreads.com/user/show/55736388-venkataramana-putcha">Venkataramana Putcha</a>]]></action_text>
+      <link>https://www.goodreads.com/friend/show/498857309</link>
+      <image_url>https://d.gr-assets.com/users/1462911127p2/55736388.jpg</image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+
+      <user>
+        <id>10283397</id>
+        <name>S</name>
+
+        <location>Madras, 25, India</location>
+
+        <link><![CDATA[https://www.goodreads.com/user/show/10283397-s-navin]]></link>
+
+        <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1339953521i/10283397._UY60_CR10,0,60,60_.jpg]]></image_url>
+        <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1339953521i/10283397._UY30_CR5,0,30,30_.jpg]]></small_image_url>
+
+      </user>
+
+      <updated_at>2016-05-10T13:12:36-07:00</updated_at>
+      <object>
+        <friend>
+          <id>498857309</id>
+          <likes_count>0</likes_count>
+          <comments_count>0</comments_count>
+          <liked>false</liked>
+          <created_at>2016-05-10T13:12:36-07:00</created_at>
+
+          <user>
+            <id>10283397</id>
+            <name>S</name>
+
+            <location>Madras, 25, India</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/10283397-s-navin]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1339953521i/10283397._UY60_CR10,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1339953521i/10283397._UY30_CR5,0,30,30_.jpg]]></small_image_url>
+
+          </user>
+
+
+          <friend_user>
+            <id>55736388</id>
+            <name>Venkataramana</name>
+
+            <location>State College, PA</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/55736388-venkataramana-putcha]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX60_CR0,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+          </friend_user>
+
+        </friend>
+
+      </object>
+
+    </update>
+
+    <update type='friend'>
+      <id>3102801726</id>
+      <action_text><![CDATA[<a href="https://www.goodreads.com/user/show/13379382-rahul-govindan">Rahul Govindan</a> is now friends with <a href="https://www.goodreads.com/user/show/55736388-venkataramana-putcha">Venkataramana Putcha</a>]]></action_text>
+      <link>https://www.goodreads.com/friend/show/498857273</link>
+      <image_url>https://d.gr-assets.com/users/1462911127p2/55736388.jpg</image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+
+      <user>
+        <id>13379382</id>
+        <name>Rahul</name>
+
+        <location>Bangalore, 19, India</location>
+
+        <link><![CDATA[https://www.goodreads.com/user/show/13379382-rahul-govindan]]></link>
+
+        <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1349360982i/13379382._UY60_CR23,0,60,60_.jpg]]></image_url>
+        <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1349360982i/13379382._UY30_CR11,0,30,30_.jpg]]></small_image_url>
+
+      </user>
+
+      <updated_at>2016-05-10T13:12:35-07:00</updated_at>
+      <object>
+        <friend>
+          <id>498857273</id>
+          <likes_count>0</likes_count>
+          <comments_count>0</comments_count>
+          <liked>false</liked>
+          <created_at>2016-05-10T13:12:35-07:00</created_at>
+
+          <user>
+            <id>13379382</id>
+            <name>Rahul</name>
+
+            <location>Bangalore, 19, India</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/13379382-rahul-govindan]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1349360982i/13379382._UY60_CR23,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1349360982i/13379382._UY30_CR11,0,30,30_.jpg]]></small_image_url>
+
+          </user>
+
+
+          <friend_user>
+            <id>55736388</id>
+            <name>Venkataramana</name>
+
+            <location>State College, PA</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/55736388-venkataramana-putcha]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX60_CR0,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+          </friend_user>
+
+        </friend>
+
+      </object>
+
+    </update>
+
+    <update type='friend'>
+      <id>3102801693</id>
+      <action_text><![CDATA[<a href="https://www.goodreads.com/user/show/41750419-priya-jeyaprakash">Priya Jeyaprakash</a> is now friends with <a href="https://www.goodreads.com/user/show/55736388-venkataramana-putcha">Venkataramana Putcha</a>]]></action_text>
+      <link>https://www.goodreads.com/friend/show/498857256</link>
+      <image_url>https://d.gr-assets.com/users/1462911127p2/55736388.jpg</image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+
+      <user>
+        <id>41750419</id>
+        <name>Priya</name>
+
+        <location>Bangalore, 19, India</location>
+
+        <link><![CDATA[https://www.goodreads.com/user/show/41750419-priya-jeyaprakash]]></link>
+
+        <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1427856765i/41750419.jpg]]></image_url>
+        <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1427856765i/41750419._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+      </user>
+
+      <updated_at>2016-05-10T13:12:34-07:00</updated_at>
+      <object>
+        <friend>
+          <id>498857256</id>
+          <likes_count>0</likes_count>
+          <comments_count>0</comments_count>
+          <liked>false</liked>
+          <created_at>2016-05-10T13:12:34-07:00</created_at>
+
+          <user>
+            <id>41750419</id>
+            <name>Priya</name>
+
+            <location>Bangalore, 19, India</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/41750419-priya-jeyaprakash]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1427856765i/41750419.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1427856765i/41750419._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+          </user>
+
+
+          <friend_user>
+            <id>55736388</id>
+            <name>Venkataramana</name>
+
+            <location>State College, PA</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/55736388-venkataramana-putcha]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX60_CR0,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+          </friend_user>
+
+        </friend>
+
+      </object>
+
+    </update>
+
+    <update type='friend'>
+      <id>3102801634</id>
+      <action_text><![CDATA[<a href="https://www.goodreads.com/user/show/40212933-piyush-warrier">Piyush Warrier</a> is now friends with <a href="https://www.goodreads.com/user/show/55736388-venkataramana-putcha">Venkataramana Putcha</a>]]></action_text>
+      <link>https://www.goodreads.com/friend/show/498857236</link>
+      <image_url>https://d.gr-assets.com/users/1462911127p2/55736388.jpg</image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+
+      <user>
+        <id>40212933</id>
+        <name>Piyush</name>
+
+        <location><![CDATA[Abu Dhabi, 01, The United Arab Emirates]]></location>
+
+        <link><![CDATA[https://www.goodreads.com/user/show/40212933-piyush-warrier]]></link>
+
+        <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1423765091i/40212933._UX60_CR0,0,60,60_.jpg]]></image_url>
+        <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1423765091i/40212933._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+      </user>
+
+      <updated_at>2016-05-10T13:12:33-07:00</updated_at>
+      <object>
+        <friend>
+          <id>498857236</id>
+          <likes_count>0</likes_count>
+          <comments_count>0</comments_count>
+          <liked>false</liked>
+          <created_at>2016-05-10T13:12:33-07:00</created_at>
+
+          <user>
+            <id>40212933</id>
+            <name>Piyush</name>
+
+            <location><![CDATA[Abu Dhabi, 01, The United Arab Emirates]]></location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/40212933-piyush-warrier]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1423765091i/40212933._UX60_CR0,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1423765091i/40212933._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+          </user>
+
+
+          <friend_user>
+            <id>55736388</id>
+            <name>Venkataramana</name>
+
+            <location>State College, PA</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/55736388-venkataramana-putcha]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX60_CR0,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+          </friend_user>
+
+        </friend>
+
+      </object>
+
+    </update>
+
+    <update type='friend'>
+      <id>3102801508</id>
+      <action_text><![CDATA[<a href="https://www.goodreads.com/user/show/10283981-manoj">Manoj</a> is now friends with <a href="https://www.goodreads.com/user/show/55736388-venkataramana-putcha">Venkataramana Putcha</a>]]></action_text>
+      <link>https://www.goodreads.com/friend/show/498857194</link>
+      <image_url>https://d.gr-assets.com/users/1462911127p2/55736388.jpg</image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+
+      <user>
+        <id>10283981</id>
+        <name>Manoj</name>
+
+        <location>Singapore, Singapore</location>
+
+        <link><![CDATA[https://www.goodreads.com/user/show/10283981-manoj]]></link>
+
+        <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1409389689i/10283981._UY60_CR10,0,60,60_.jpg]]></image_url>
+        <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1409389689i/10283981._UY30_CR5,0,30,30_.jpg]]></small_image_url>
+
+      </user>
+
+      <updated_at>2016-05-10T13:12:29-07:00</updated_at>
+      <object>
+        <friend>
+          <id>498857194</id>
+          <likes_count>0</likes_count>
+          <comments_count>0</comments_count>
+          <liked>false</liked>
+          <created_at>2016-05-10T13:12:28-07:00</created_at>
+
+          <user>
+            <id>10283981</id>
+            <name>Manoj</name>
+
+            <location>Singapore, Singapore</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/10283981-manoj]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1409389689i/10283981._UY60_CR10,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1409389689i/10283981._UY30_CR5,0,30,30_.jpg]]></small_image_url>
+
+          </user>
+
+
+          <friend_user>
+            <id>55736388</id>
+            <name>Venkataramana</name>
+
+            <location>State College, PA</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/55736388-venkataramana-putcha]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX60_CR0,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+          </friend_user>
+
+        </friend>
+
+      </object>
+
+    </update>
+
+    <update type='friend'>
+      <id>3102801168</id>
+      <action_text><![CDATA[<a href="https://www.goodreads.com/user/show/24130201-bharath-ramaswamy">Bharath Ramaswamy</a> is now friends with <a href="https://www.goodreads.com/user/show/55736388-venkataramana-putcha">Venkataramana Putcha</a>]]></action_text>
+      <link>https://www.goodreads.com/friend/show/498857105</link>
+      <image_url>https://d.gr-assets.com/users/1462911127p2/55736388.jpg</image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+
+      <user>
+        <id>24130201</id>
+        <name>Bharath</name>
+
+        <location>College Park, MD</location>
+
+        <link><![CDATA[https://www.goodreads.com/user/show/24130201-bharath-ramaswamy]]></link>
+
+        <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1379784203i/24130201._UX60_CR0,11,60,60_.jpg]]></image_url>
+        <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1379784203i/24130201._UX30_CR0,5,30,30_.jpg]]></small_image_url>
+
+      </user>
+
+      <updated_at>2016-05-10T13:12:19-07:00</updated_at>
+      <object>
+        <friend>
+          <id>498857105</id>
+          <likes_count>0</likes_count>
+          <comments_count>0</comments_count>
+          <liked>false</liked>
+          <created_at>2016-05-10T13:12:19-07:00</created_at>
+
+          <user>
+            <id>24130201</id>
+            <name>Bharath</name>
+
+            <location>College Park, MD</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/24130201-bharath-ramaswamy]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1379784203i/24130201._UX60_CR0,11,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1379784203i/24130201._UX30_CR0,5,30,30_.jpg]]></small_image_url>
+
+          </user>
+
+
+          <friend_user>
+            <id>55736388</id>
+            <name>Venkataramana</name>
+
+            <location>State College, PA</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/55736388-venkataramana-putcha]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX60_CR0,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+          </friend_user>
+
+        </friend>
+
+      </object>
+
+    </update>
+
+    <update type='friend'>
+      <id>3102801137</id>
+      <action_text><![CDATA[<a href="https://www.goodreads.com/user/show/11536401-balakrishnan">Balakrishnan</a> is now friends with <a href="https://www.goodreads.com/user/show/55736388-venkataramana-putcha">Venkataramana Putcha</a>]]></action_text>
+      <link>https://www.goodreads.com/friend/show/498857099</link>
+      <image_url>https://d.gr-assets.com/users/1462911127p2/55736388.jpg</image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+
+      <user>
+        <id>11536401</id>
+        <name>Balakrishnan</name>
+
+        <location>Houston, TX</location>
+
+        <link><![CDATA[https://www.goodreads.com/user/show/11536401-balakrishnan]]></link>
+
+        <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1344017650i/11536401._UX60_CR0,12,60,60_.jpg]]></image_url>
+        <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1344017650i/11536401._UX30_CR0,6,30,30_.jpg]]></small_image_url>
+
+      </user>
+
+      <updated_at>2016-05-10T13:12:18-07:00</updated_at>
+      <object>
+        <friend>
+          <id>498857099</id>
+          <likes_count>0</likes_count>
+          <comments_count>0</comments_count>
+          <liked>false</liked>
+          <created_at>2016-05-10T13:12:18-07:00</created_at>
+
+          <user>
+            <id>11536401</id>
+            <name>Balakrishnan</name>
+
+            <location>Houston, TX</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/11536401-balakrishnan]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1344017650i/11536401._UX60_CR0,12,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1344017650i/11536401._UX30_CR0,6,30,30_.jpg]]></small_image_url>
+
+          </user>
+
+
+          <friend_user>
+            <id>55736388</id>
+            <name>Venkataramana</name>
+
+            <location>State College, PA</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/55736388-venkataramana-putcha]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX60_CR0,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+          </friend_user>
+
+        </friend>
+
+      </object>
+
+    </update>
+
+    <update type='friend'>
+      <id>3102801034</id>
+      <action_text><![CDATA[<a href="https://www.goodreads.com/user/show/19606938-ankur-saxena">Ankur Saxena</a> is now friends with <a href="https://www.goodreads.com/user/show/55736388-venkataramana-putcha">Venkataramana Putcha</a>]]></action_text>
+      <link>https://www.goodreads.com/friend/show/498857075</link>
+      <image_url>https://d.gr-assets.com/users/1462911127p2/55736388.jpg</image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+
+      <user>
+        <id>19606938</id>
+        <name>Ankur</name>
+
+        <location>Kanpur, 36, India</location>
+
+        <link><![CDATA[https://www.goodreads.com/user/show/19606938-ankur-saxena]]></link>
+
+        <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1366467119p8/19606938._SX60_SY60_.jpg]]></image_url>
+        <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1366467119p8/19606938._SX30_SY30_.jpg]]></small_image_url>
+
+      </user>
+
+      <updated_at>2016-05-10T13:12:15-07:00</updated_at>
+      <object>
+        <friend>
+          <id>498857075</id>
+          <likes_count>0</likes_count>
+          <comments_count>0</comments_count>
+          <liked>false</liked>
+          <created_at>2016-05-10T13:12:14-07:00</created_at>
+
+          <user>
+            <id>19606938</id>
+            <name>Ankur</name>
+
+            <location>Kanpur, 36, India</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/19606938-ankur-saxena]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1366467119p8/19606938._SX60_SY60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1366467119p8/19606938._SX30_SY30_.jpg]]></small_image_url>
+
+          </user>
+
+
+          <friend_user>
+            <id>55736388</id>
+            <name>Venkataramana</name>
+
+            <location>State College, PA</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/55736388-venkataramana-putcha]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX60_CR0,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+          </friend_user>
+
+        </friend>
+
+      </object>
+
+    </update>
+
+    <update type='friend'>
+      <id>3102801021</id>
+      <action_text><![CDATA[<a href="https://www.goodreads.com/user/show/9494327-ankit">Ankit</a> is now friends with <a href="https://www.goodreads.com/user/show/55736388-venkataramana-putcha">Venkataramana Putcha</a>]]></action_text>
+      <link>https://www.goodreads.com/friend/show/498857071</link>
+      <image_url>https://d.gr-assets.com/users/1462911127p2/55736388.jpg</image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+
+      <user>
+        <id>9494327</id>
+        <name>Ankit</name>
+
+        <location>The United States</location>
+
+        <link><![CDATA[https://www.goodreads.com/user/show/9494327-ankit]]></link>
+
+        <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1336931795i/9494327._UX60_CR0,0,60,60_.jpg]]></image_url>
+        <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1336931795i/9494327._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+      </user>
+
+      <updated_at>2016-05-10T13:12:14-07:00</updated_at>
+      <object>
+        <friend>
+          <id>498857071</id>
+          <likes_count>0</likes_count>
+          <comments_count>0</comments_count>
+          <liked>false</liked>
+          <created_at>2016-05-10T13:12:14-07:00</created_at>
+
+          <user>
+            <id>9494327</id>
+            <name>Ankit</name>
+
+            <location>The United States</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/9494327-ankit]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1336931795i/9494327._UX60_CR0,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1336931795i/9494327._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+          </user>
+
+
+          <friend_user>
+            <id>55736388</id>
+            <name>Venkataramana</name>
+
+            <location>State College, PA</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/55736388-venkataramana-putcha]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX60_CR0,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+          </friend_user>
+
+        </friend>
+
+      </object>
+
+    </update>
+
+    <update type='friend'>
+      <id>3102800985</id>
+      <action_text><![CDATA[<a href="https://www.goodreads.com/user/show/38452045-anand">Anand</a> is now friends with <a href="https://www.goodreads.com/user/show/55736388-venkataramana-putcha">Venkataramana Putcha</a>]]></action_text>
+      <link>https://www.goodreads.com/friend/show/498857063</link>
+      <image_url>https://d.gr-assets.com/users/1462911127p2/55736388.jpg</image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+
+      <user>
+        <id>38452045</id>
+        <name>Anand</name>
+
+        <location>Chennai, 25, India</location>
+
+        <link><![CDATA[https://www.goodreads.com/user/show/38452045-anand]]></link>
+
+        <image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/user/m_60x60-06aafa817c2c019edbc27120e9df7106.png]]></image_url>
+        <small_image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/user/m_30x30-7a89da78bdd344bd67d8c3a4a6451403.png]]></small_image_url>
+
+      </user>
+
+      <updated_at>2016-05-10T13:12:13-07:00</updated_at>
+      <object>
+        <friend>
+          <id>498857063</id>
+          <likes_count>0</likes_count>
+          <comments_count>0</comments_count>
+          <liked>false</liked>
+          <created_at>2016-05-10T13:12:13-07:00</created_at>
+
+          <user>
+            <id>38452045</id>
+            <name>Anand</name>
+
+            <location>Chennai, 25, India</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/38452045-anand]]></link>
+
+            <image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/user/m_60x60-06aafa817c2c019edbc27120e9df7106.png]]></image_url>
+            <small_image_url><![CDATA[https://s.gr-assets.com/assets/nophoto/user/m_30x30-7a89da78bdd344bd67d8c3a4a6451403.png]]></small_image_url>
+
+          </user>
+
+
+          <friend_user>
+            <id>55736388</id>
+            <name>Venkataramana</name>
+
+            <location>State College, PA</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/55736388-venkataramana-putcha]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX60_CR0,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+          </friend_user>
+
+        </friend>
+
+      </object>
+
+    </update>
+
+    <update type='friend'>
+      <id>3102800918</id>
+      <action_text><![CDATA[<a href="https://www.goodreads.com/user/show/15065951-adithya-sundar">Adithya Sundar</a> is now friends with <a href="https://www.goodreads.com/user/show/55736388-venkataramana-putcha">Venkataramana Putcha</a>]]></action_text>
+      <link>https://www.goodreads.com/friend/show/498857043</link>
+      <image_url>https://d.gr-assets.com/users/1462911127p2/55736388.jpg</image_url>
+      <likes_count>0</likes_count>
+      <comments_count>0</comments_count>
+      <liked>false</liked>
+
+      <user>
+        <id>15065951</id>
+        <name>Adithya</name>
+
+        <location>Le Relecq, A2, France</location>
+
+        <link><![CDATA[https://www.goodreads.com/user/show/15065951-adithya-sundar]]></link>
+
+        <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1354337694i/15065951._UY60_CR20,0,60,60_.jpg]]></image_url>
+        <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1354337694i/15065951._UY30_CR10,0,30,30_.jpg]]></small_image_url>
+
+      </user>
+
+      <updated_at>2016-05-10T13:12:12-07:00</updated_at>
+      <object>
+        <friend>
+          <id>498857043</id>
+          <likes_count>0</likes_count>
+          <comments_count>0</comments_count>
+          <liked>false</liked>
+          <created_at>2016-05-10T13:12:12-07:00</created_at>
+
+          <user>
+            <id>15065951</id>
+            <name>Adithya</name>
+
+            <location>Le Relecq, A2, France</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/15065951-adithya-sundar]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1354337694i/15065951._UY60_CR20,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1354337694i/15065951._UY30_CR10,0,30,30_.jpg]]></small_image_url>
+
+          </user>
+
+
+          <friend_user>
+            <id>55736388</id>
+            <name>Venkataramana</name>
+
+            <location>State College, PA</location>
+
+            <link><![CDATA[https://www.goodreads.com/user/show/55736388-venkataramana-putcha]]></link>
+
+            <image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX60_CR0,0,60,60_.jpg]]></image_url>
+            <small_image_url><![CDATA[https://i.gr-assets.com/images/S/photo.goodreads.com/users/1462911127i/55736388._UX30_CR0,0,30,30_.jpg]]></small_image_url>
+
+          </friend_user>
+
+        </friend>
+
+      </object>
+
+    </update>
+
+  </updates>
+
+</GoodreadsResponse>

@@ -1,4 +1,5 @@
-﻿using Epiphany.Model.Adapter;
+﻿using Epiphany.Logging;
+using Epiphany.Model.Adapter;
 using Epiphany.Xml;
 using System;
 using System.Collections.Generic;
@@ -120,6 +121,11 @@ namespace Epiphany.Model
             get { return Converter.ToInt(profile.GroupsCount, 0); }
         }
 
+        public int ReviewsCount
+        {
+            get { return Converter.ToInt(profile.ReviewsCount, 0); }
+        }
+
         public DateTime JoinDate
         {
             get { return Converter.ToDateTime(profile.JoinDate); }
@@ -142,9 +148,34 @@ namespace Epiphany.Model
                 IList<FeedItemModel> updates = new List<FeedItemModel>();
                 foreach (GoodreadsUpdate update in this.profile.Updates)
                 {
-                    updates.Add(this.feedItemAdapter.Convert(update));
+                    try
+                    {
+                        var model = this.feedItemAdapter.Convert(update);
+                        if (model != null)
+                        {
+                            updates.Add(model);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Logger.LogException(ex);
+                    }
                 }
                 return updates;
+            }
+        }
+
+        public IList<AuthorModel> FavoriteAuthors
+        {
+            get
+            {
+                IList<AuthorModel> authors = new List<AuthorModel>();
+                foreach (var author in this.profile.FavoriteAuthors)
+                {
+                    authors.Add(new AuthorModel(author, null));
+                }
+
+                return authors;
             }
         }
     }

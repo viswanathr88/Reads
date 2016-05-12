@@ -12,7 +12,8 @@ namespace Epiphany.Model
         Comment,
         UserStatus,
         Friend,
-        ReadStatus
+        ReadStatus,
+        UserChallenge
     };
 
     public abstract class FeedItemModel : Entity<int>
@@ -55,6 +56,10 @@ namespace Epiphany.Model
             get
             {
                 return this.update.ActionText;
+            }
+            protected set
+            {
+                this.update.ActionText = value;
             }
         }
 

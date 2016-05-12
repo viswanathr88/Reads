@@ -513,4 +513,22 @@
   <data name="OwnedBooksSectionTitle" xml:space="preserve">
     <value>BOOKS YOU OWN</value>
   </data>
+  <data name="ProfileButtonFriendsLabel" xml:space="preserve">
+    <value>FRIENDS</value>
+  </data>
+  <data name="ProfileButtonGroupsLabel" xml:space="preserve">
+    <value>GROUPS</value>
+  </data>
+  <data name="ProfileButtonReviewsLabel" xml:space="preserve">
+    <value>REVIEWS</value>
+  </data>
+  <data name="ProfilePivotHeaderAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="ProfilePivotHeaderBooks" xml:space="preserve">
+    <value>Books</value>
+  </data>
+  <data name="ProfilePivotHeaderPosts" xml:space="preserve">
+    <value>Posts</value>
+  </data>
 </root>

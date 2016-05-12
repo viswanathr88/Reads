@@ -14,16 +14,39 @@ namespace Epiphany.View.DesignData
         {
             Id = 50;
             Name = "Test User";
+            Username = "viswanathr";
+            MemberSinceString = "Jan 2010";
+            Location = "Chennai, 20, India";
             AreUpdatesEmpty = true;
             IsLoading = false;
             IsLoaded = true;
-            //ImageUrl = "http://www.viscofoods.com/wp-content/themes/456market/assets/img/placeholder.png";
+            FriendsCount = 25;
+            GroupsCount = 50;
+            ReviewsCount = 75;
+            ImageUrl = "http://www.viscofoods.com/wp-content/themes/456market/assets/img/placeholder.png";
 
             ProfileItems = new List<IProfileItemViewModel>();
             ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.Age, "25", false));
             ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.Username, "testuser", false));
             ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.ViewInGoodreads, "www.goodreads.com", true));
             ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.JoinDate, DateTime.Now.ToString(), false));
+
+            FavoriteAuthors = new List<IAuthorItemViewModel>();
+            FavoriteAuthors.Add(new DesignAuthorItemViewModel()
+            {
+                Id = 50,
+                Name = "Jeffrey Archer"
+            });
+            FavoriteAuthors.Add(new DesignAuthorItemViewModel()
+            {
+                Id = 51,
+                Name = "Sidney Sheldon"
+            });
+            FavoriteAuthors.Add(new DesignAuthorItemViewModel()
+            {
+                Id = 52,
+                Name = "George R. R. Martin"
+            });
 
             SelectedProfileItem = ProfileItems[0];
 
@@ -129,6 +152,48 @@ namespace Epiphany.View.DesignData
 
 
         public BookshelfModel SelectedShelf
+        {
+            get;
+            set;
+        }
+
+        public string Username
+        {
+            get;
+            set;
+        }
+
+        public string MemberSinceString
+        {
+            get;
+            set;
+        }
+
+        public string Location
+        {
+            get;
+            set;
+        }
+
+        public int FriendsCount
+        {
+            get;
+            set;
+        }
+
+        public int GroupsCount
+        {
+            get;
+            set;
+        }
+
+        public int ReviewsCount
+        {
+            get;
+            set;
+        }
+
+        public IList<IAuthorItemViewModel> FavoriteAuthors
         {
             get;
             set;

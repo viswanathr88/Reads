@@ -1,5 +1,4 @@
-﻿using Epiphany.Controls;
-using Epiphany.Logging;
+﻿using Epiphany.Logging;
 using Epiphany.ViewModel;
 using Epiphany.ViewModel.Items;
 using System;

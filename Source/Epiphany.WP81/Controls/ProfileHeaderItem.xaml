@@ -1,0 +1,35 @@
+﻿<UserControl
+    x:Class="Epiphany.View.Controls.ProfileHeaderItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Epiphany.View.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    x:Name="profileHeaderItemControl">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="24" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <FontIcon Grid.Column="0"
+                  Glyph="{Binding ElementName=profileHeaderItemControl, Path=IconGlyph}"
+                  Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
+
+        <TextBlock Text="{Binding ElementName=profileHeaderItemControl, Path=Text}"
+                   Foreground="{ThemeResource PhoneMidBrush}"
+                   Style="{StaticResource BaseTextBlockStyle}"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="5,0,5,0"
+                   TextWrapping="NoWrap"
+                   TextTrimming="CharacterEllipsis"
+                   Grid.Column="1" />
+
+    </Grid>
+</UserControl>

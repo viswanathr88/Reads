@@ -25,6 +25,7 @@ namespace Epiphany.View
         public ProfilePage()
         {
             this.InitializeComponent();
+            NavigationCacheMode = NavigationCacheMode.Disabled;
         }
     }
 }

@@ -94,6 +94,7 @@
     <Compile Include="Entity\ReviewModel.cs" />
     <Compile Include="Entity\ShelfInformation.cs" />
     <Compile Include="Entity\TopicModel.cs" />
+    <Compile Include="Entity\UserChallengeFeedItemModel.cs" />
     <Compile Include="Entity\UserModel.cs" />
     <Compile Include="Entity\UserStatusFeedItemModel.cs" />
     <Compile Include="Entity\UserStatusModel.cs" />

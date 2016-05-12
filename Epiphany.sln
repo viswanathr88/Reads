@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
+# Blend for Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epiphany.Model", "Source\Epiphany.Model\Epiphany.Model.csproj", "{D4EDEDD9-CCD4-43D9-821B-9731C187802E}"
@@ -46,6 +46,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Responses", "Responses", "{
 		Documents\Responses\Compare.xml = Documents\Responses\Compare.xml
 		Documents\Responses\Events.xml = Documents\Responses\Events.xml
 		Documents\Responses\Feed.xml = Documents\Responses\Feed.xml
+		Documents\Responses\Feedv3.xml = Documents\Responses\Feedv3.xml
 		Documents\Responses\Friends.xml = Documents\Responses\Friends.xml
 		Documents\Responses\Group.xml = Documents\Responses\Group.xml
 		Documents\Responses\GroupMembers.xml = Documents\Responses\GroupMembers.xml

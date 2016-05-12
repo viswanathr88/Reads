@@ -155,9 +155,15 @@ namespace Epiphany.ViewModel.Items
                         ActionText = GetActionText(userStatusFeedItem);
                         break;
                     }
+                case FeedItemType.UserChallenge:
+                    {
+                        var userChallengeFeedItem = Item as UserChallengeFeedItemModel;
+                        ActionText = $"{userChallengeFeedItem.User.Name} {userChallengeFeedItem.ActionText}";
+                        break;
+                    }
                 default:
                     {
-                        Logger.LogWarn("Unknown FeedItemType found");
+                        Logger.LogWarn($"Unknown FeedItemType {Item.ItemType} found");
                         break;
                     }
             }

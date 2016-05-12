@@ -890,6 +890,60 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FRIENDS.
+        /// </summary>
+        public static string ProfileButtonFriendsLabel {
+            get {
+                return ResourceManager.GetString("ProfileButtonFriendsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GROUPS.
+        /// </summary>
+        public static string ProfileButtonGroupsLabel {
+            get {
+                return ResourceManager.GetString("ProfileButtonGroupsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REVIEWS.
+        /// </summary>
+        public static string ProfileButtonReviewsLabel {
+            get {
+                return ResourceManager.GetString("ProfileButtonReviewsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string ProfilePivotHeaderAbout {
+            get {
+                return ResourceManager.GetString("ProfilePivotHeaderAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Books.
+        /// </summary>
+        public static string ProfilePivotHeaderBooks {
+            get {
+                return ResourceManager.GetString("ProfilePivotHeaderBooks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Posts.
+        /// </summary>
+        public static string ProfilePivotHeaderPosts {
+            get {
+                return ResourceManager.GetString("ProfilePivotHeaderPosts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to updates.
         /// </summary>
         public static string ProfileUpdatesTitle {

@@ -1,4 +1,5 @@
-﻿using Epiphany.Xml;
+﻿using Epiphany.Logging;
+using Epiphany.Xml;
 
 namespace Epiphany.Model.Adapter
 {
@@ -21,7 +22,11 @@ namespace Epiphany.Model.Adapter
                 case "readstatus":
                     model = new ReadStatusFeedItemModel(item);
                     break;
+                case "userchallenge":
+                    model = new UserChallengeFeedItemModel(item);
+                    break;
                 default:
+                    Logger.LogWarn($"Unknown Type {item.Type} received");
                     model = null;
                     break;
             }

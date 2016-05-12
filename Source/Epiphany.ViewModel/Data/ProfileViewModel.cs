@@ -16,7 +16,13 @@ namespace Epiphany.ViewModel
     {
         private int id;
         private string name;
+        private string username;
         private string imageUrl;
+        private string location;
+        private string memberSinceString;
+        private int friendsCount;
+        private int groupsCount;
+        private int reviewsCount;
         private ProfileModel profileModel;
         private readonly ProfileItemViewModelFactory profileItemFactory;
 
@@ -36,6 +42,7 @@ namespace Epiphany.ViewModel
         private IList<BookshelfModel> shelves;
         private IList<IProfileItemViewModel> profileItems;
         private IList<IFeedItemViewModel> recentUpdates;
+        private IList<IAuthorItemViewModel> favoriteAuthors;
         private BookshelfModel selectedShelf;
         private IProfileItemViewModel selectedProfileItem;
 
@@ -64,6 +71,7 @@ namespace Epiphany.ViewModel
             Shelves = new ObservableCollection<BookshelfModel>();
             ProfileItems = new ObservableCollection<IProfileItemViewModel>();
             RecentUpdates = new ObservableCollection<IFeedItemViewModel>();
+            FavoriteAuthors = new ObservableCollection<IAuthorItemViewModel>();
         }
 
         public int Id
@@ -176,47 +184,6 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IProfileItemViewModel SelectedProfileItem
-        {
-            get { return this.selectedProfileItem; }
-            set
-            {
-                if (this.selectedProfileItem == value) return;
-                this.selectedProfileItem = value;
-
-                switch (this.selectedProfileItem.Type)
-                {
-                    case ProfileItemType.Friends:
-                        {
-                            this.navService.CreateFor<FriendsViewModel>()
-                                .AddParam<int>((x) => x.Id, Id)
-                                .AddParam<string>((x) => x.Name, Name)
-                                .Navigate();
-                            break;
-                        }
-
-                    case ProfileItemType.Groups:
-                        {
-                            /*this.navService.CreateFor<GroupsViewModel>()
-                                .AddParam<int>((x) => x.Id, Id)
-                                .AddParam<string>((x) => x.Name, Name)
-                                .Navigate();*/
-                            break;
-                        }
-
-                    case ProfileItemType.ViewInGoodreads:
-                        {
-                            this.deviceServices.LaunchUrl(this.selectedProfileItem.Value);
-                            break;
-                        }
-                    default:
-                        break;
-                }
-                this.selectedProfileItem = null;
-                RaisePropertyChanged(() => SelectedProfileItem);
-            }
-        }
-
         public IList<IProfileItemViewModel> ProfileItems
         {
             get { return this.profileItems; }
@@ -265,10 +232,100 @@ namespace Epiphany.ViewModel
             }
         }
 
+        public string Username
+        {
+            get
+            {
+                return this.username;
+            }
+
+            set
+            {
+                SetProperty(ref this.username, value);
+            }
+        }
+
+        public string MemberSinceString
+        {
+            get
+            {
+                return this.memberSinceString;
+            }
+            private set
+            {
+                SetProperty(ref this.memberSinceString, value);
+            }
+        }
+
+        public string Location
+        {
+            get
+            {
+                return this.location;
+            }
+            private set
+            {
+                SetProperty(ref this.location, value);
+            }
+        }
+
+        public int FriendsCount
+        {
+            get
+            {
+                return this.friendsCount;
+            }
+            private set
+            {
+                SetProperty(ref this.friendsCount, value);
+            }
+        }
+
+        public int GroupsCount
+        {
+            get
+            {
+                return this.groupsCount;
+            }
+            private set
+            {
+                SetProperty(ref this.groupsCount, value);
+            }
+        }
+
+        public int ReviewsCount
+        {
+            get
+            {
+                return this.reviewsCount;
+            }
+            private set
+            {
+                SetProperty(ref this.reviewsCount, value);
+            }
+        }
+
+        public IList<IAuthorItemViewModel> FavoriteAuthors
+        {
+            get
+            {
+                return this.favoriteAuthors;
+            }
+
+            set
+            {
+                SetProperty(ref this.favoriteAuthors, value);
+            }
+        }
+
         public override async Task LoadAsync(UserModel user)
         {
             if (!IsLoaded && this.fetchProfileCommand.CanExecute(user.Id))
             {
+                Id = user.Id;
+                Name = user.Name;
+                ImageUrl = user.ImageUrl;
+
                 await this.fetchProfileCommand.ExecuteAsync(user.Id);
             }
         }
@@ -284,7 +341,15 @@ namespace Epiphany.ViewModel
             if (e.State == CommandExecutionState.Success)
             {
                 Model = this.fetchProfileCommand.Result;
+                Name = Model.Name;
+                Username = Model.Username;
                 ImageUrl = Model.ImageUrl;
+                FriendsCount = Model.FriendsCount;
+                GroupsCount = Model.GroupsCount;
+                ReviewsCount = Model.ReviewsCount;
+                Location = Model.Location;
+                ConstructMemberSinceString();
+
                 FetchBookshelvesArg = this.bookshelfService.GetBookshelves(Id).GetEnumerator();
                 ProfileItems = this.profileItemFactory.GetProfileItems(Model);
 
@@ -293,11 +358,26 @@ namespace Epiphany.ViewModel
                 {
                     RecentUpdates.Add(new FeedItemViewModel(model, resourceLoader));
                 }
+
+                FavoriteAuthors = new ObservableCollection<IAuthorItemViewModel>();
+                foreach (var author in Model.FavoriteAuthors)
+                {
+                    FavoriteAuthors.Add(new AuthorItemViewModel(author));
+                }
                 AreUpdatesEmpty = (RecentUpdates.Count == 0);
 
                 IsLoaded = true;
             }
         }
+
+        private void ConstructMemberSinceString()
+        {
+            if (Model.JoinDate != DateTime.MinValue)
+            {
+                MemberSinceString = string.Format("{0:MMM yyyy}", Model.JoinDate);
+            }
+        }
+
         private void OnBookshelvesFetched(ExecutedEventArgs e)
         {
             IsLoading = false;

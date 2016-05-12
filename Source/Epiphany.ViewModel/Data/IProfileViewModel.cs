@@ -14,13 +14,19 @@ namespace Epiphany.ViewModel
         IAsyncEnumerator<BookshelfModel> FetchBookshelvesArg { get; }
         IAsyncCommand<ProfileModel, int> FetchProfile { get; }
         ICommand GoHome { get; }
+        ProfileModel Model { get; }
         int Id { get; set; }
         string ImageUrl { get; }
-        ProfileModel Model { get; }
-        string Name { get; set; }
+        string Name { get; }
+        string Username { get; }
+        string MemberSinceString { get; }
+        string Location { get; }
+        int FriendsCount { get; }
+        int GroupsCount { get; }
+        int ReviewsCount { get; }
+        IList<IAuthorItemViewModel> FavoriteAuthors { get; set; }
         IList<IProfileItemViewModel> ProfileItems { get; set; }
         IList<IFeedItemViewModel> RecentUpdates { get; }
-        IProfileItemViewModel SelectedProfileItem { get; set; }
         BookshelfModel SelectedShelf { get; set; }
         IList<BookshelfModel> Shelves { get; }
         bool ShelvesLoaded { get; }

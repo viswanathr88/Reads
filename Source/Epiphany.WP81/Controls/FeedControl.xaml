@@ -246,7 +246,7 @@
                                         <core:EventTriggerBehavior EventName="Click"
                                                                    SourceObject="{Binding ElementName=friendNameButton}">
                                             <core:NavigateToPageAction TargetPage="Epiphany.View.ProfilePage"
-                                                                       Parameter="{Binding Path=User.Item}" />
+                                                                       Parameter="{Binding Path=Friend.Item}" />
                                         </core:EventTriggerBehavior>
                                     </interactivity:Interaction.Behaviors>
                                 </Button>

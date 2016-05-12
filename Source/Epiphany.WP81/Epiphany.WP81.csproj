@@ -94,6 +94,12 @@
       <DependentUpon>FeedControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\FeedItemTemplateSelector.cs" />
+    <Compile Include="Controls\ProfileHeaderItem.xaml.cs">
+      <DependentUpon>ProfileHeaderItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RowEmphasisButton.xaml.cs">
+      <DependentUpon>RowEmphasisButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\SignInControl.xaml.cs">
       <DependentUpon>SignInControl.xaml</DependentUpon>
     </Compile>
@@ -103,6 +109,7 @@
     <Compile Include="Controls\TabHeader.xaml.cs">
       <DependentUpon>TabHeader.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\WrapPanel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\BookPage.xaml.cs">
       <DependentUpon>BookPage.xaml</DependentUpon>
@@ -152,6 +159,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\FeedControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ProfileHeaderItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\RowEmphasisButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
