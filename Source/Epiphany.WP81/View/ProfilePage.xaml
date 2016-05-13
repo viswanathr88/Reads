@@ -12,8 +12,14 @@
 
     <local:DataPage.Resources>
         <converters:BooleanToOpacityConverter x:Key="BooleanToOpacityConverter" />
+        <Storyboard x:Name="ImageFadeInStoryboard">
+            <DoubleAnimation From="0"
+                             To="1"
+                             Storyboard.TargetName="userPhoto"
+                             Storyboard.TargetProperty="Opacity"
+                             Duration="0:0:0.3" />
+        </Storyboard>
     </local:DataPage.Resources>
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -40,7 +46,9 @@
                         Width="128"
                         Height="128"
                         Grid.Row="0">
-                    <Image Source="{Binding ImageUrl}" />
+                    <Image Source="{Binding ImageUrl}"
+                           ImageOpened="Image_ImageOpened"
+                           x:Name="userPhoto" />
                 </Border>
 
                 <TextBlock Text="{Binding Name}"
@@ -53,8 +61,7 @@
                 <StackPanel Grid.Row="2"
                             Orientation="Horizontal"
                             HorizontalAlignment="Center"
-                            Margin="0,10,0,0"
-                            Opacity="{Binding IsLoaded, Converter={StaticResource BooleanToOpacityConverter}}">
+                            Margin="0,10,0,0">
                     <controls:ProfileHeaderItem IconGlyph="&#xE121;"
                                                 Text="{Binding MemberSinceString}" />
                     <controls:ProfileHeaderItem IconGlyph="&#xE139;"
@@ -82,72 +89,57 @@
                                                 PreferTextOverIcon="{Binding IsLoaded}"
                                                 Grid.Column="1" />
 
-                    <controls:RowEmphasisButton FirstRowString="{Binding ReviewsCount}"
-                                                SecondRowString="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ProfileButtonReviewsLabel}"
+                    <controls:RowEmphasisButton FirstRowString="{Binding ShelvesCount}"
+                                                SecondRowString="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ProfileButtonShelvesLabel}"
                                                 IconGlyph="&#xE113;"
                                                 PreferTextOverIcon="{Binding IsLoaded}"
                                                 Grid.Column="2" />
-
                 </Grid>
             </Grid>
         </Grid>
 
+        <!-- Content -->
         <ScrollViewer Grid.Row="1"
                       Margin="19,0,19,0"
                       VerticalScrollMode="Auto">
             <StackPanel Orientation="Vertical">
+                <controls:Section Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ProfileSectionHeaderFavoriteAuthors}">
+                    <controls:Section.SectionContent>
+                        <ListView ItemsSource="{Binding FavoriteAuthors}"
+                                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                  Margin="0,10,0,10">
 
-                <Border BorderThickness="0,0,0,2"
-                        BorderBrush="{ThemeResource PhoneMidBrush}"
-                        HorizontalAlignment="Center">
-                    <TextBlock Text="FAVORITE AUTHORS"
-                               Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                               HorizontalAlignment="Center"
-                               Style="{StaticResource GroupHeaderTextBlockStyle}"
-                               Margin="10,0,10,5" />
-                </Border>
-                <ListView ItemsSource="{Binding FavoriteAuthors}"
-                          ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                          Margin="0,10,0,10">
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <controls:WrapPanel />
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
 
-                    <ListView.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <controls:WrapPanel  />
-                        </ItemsPanelTemplate>
-                    </ListView.ItemsPanel>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Button BorderThickness="0"
+                                            Content="{Binding Name}"
+                                            Background="{ThemeResource PhoneChromeBrush}"
+                                            Margin="0,0,15,0"
+                                            Height="60" />
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </controls:Section.SectionContent>
+                    
+                </controls:Section>
 
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Button BorderThickness="0"
-                                    Content="{Binding Name}"
-                                    Background="{ThemeResource PhoneChromeBrush}"
-                                    Margin="0,0,15,0"
-                                    Height="60" />
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-
-                <Border BorderThickness="0,0,0,2"
-                        BorderBrush="{ThemeResource PhoneMidBrush}"
-                        HorizontalAlignment="Center"
-                        Margin="0,5,0,10">
-                    <TextBlock Text="POSTS"
-                               Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                               HorizontalAlignment="Center"
-                               Style="{StaticResource GroupHeaderTextBlockStyle}"
-                               Margin="10,0,10,5" />
-                </Border>
-
-                <!-- Content -->
-                <controls:FeedControl Items="{Binding RecentUpdates}"
-                                      IsLoading="{Binding IsLoading}"
-                                      Margin="0,10,0,10" />
+                <controls:Section Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ProfileSectionHeaderPosts}">
+                    <controls:Section.SectionContent>
+                        <controls:FeedControl Items="{Binding RecentUpdates}"
+                                              Margin="0,10,0,10"
+                                              IsEmpty="{Binding AreUpdatesEmpty}"
+                                              EmptyFeedMessage="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ProfileEmptyRecentUpdatesMessage}"/>
+                    </controls:Section.SectionContent>
+                    
+                </controls:Section>
             </StackPanel>
         </ScrollViewer>
-
-        
-        
-        
 
     </Grid>
 </local:DataPage>

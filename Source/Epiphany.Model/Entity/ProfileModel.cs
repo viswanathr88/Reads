@@ -141,6 +141,14 @@ namespace Epiphany.Model
             get { return this.profile.FriendStatus == "request_pending_to"; }
         }
 
+        public int ShelvesCount
+        {
+            get
+            {
+                return (this.profile.Shelves != null) ? this.profile.Shelves.Count : 0;
+            }
+        }
+
         public IList<FeedItemModel> RecentUpdates
         {
             get

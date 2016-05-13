@@ -1,10 +1,7 @@
-﻿using Epiphany.Model;
-using Epiphany.Model.Collections;
-using Epiphany.ViewModel;
+﻿using Epiphany.ViewModel;
 using Epiphany.ViewModel.Items;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System;
 
 namespace Epiphany.View.DesignData
 {
@@ -23,14 +20,10 @@ namespace Epiphany.View.DesignData
             FriendsCount = 25;
             GroupsCount = 50;
             ReviewsCount = 75;
+            ShelvesCount = 10;
             ImageUrl = "http://www.viscofoods.com/wp-content/themes/456market/assets/img/placeholder.png";
 
-            ProfileItems = new List<IProfileItemViewModel>();
-            ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.Age, "25", false));
-            ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.Username, "testuser", false));
-            ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.ViewInGoodreads, "www.goodreads.com", true));
-            ProfileItems.Add(new ProfileItemViewModel(ProfileItemType.JoinDate, DateTime.Now.ToString(), false));
-
+            HasFavoriteAuthors = true;
             FavoriteAuthors = new List<IAuthorItemViewModel>();
             FavoriteAuthors.Add(new DesignAuthorItemViewModel()
             {
@@ -47,22 +40,6 @@ namespace Epiphany.View.DesignData
                 Id = 52,
                 Name = "George R. R. Martin"
             });
-
-            SelectedProfileItem = ProfileItems[0];
-
-            Shelves = new ObservableCollection<BookshelfModel>();
-
-            for (int i = 0; i < 5; i++)
-            {
-                BookshelfModel shelf = new BookshelfModel(i)
-                {
-                    Name = "Test Shelf",
-                    BooksCount = 50
-                };
-                Shelves.Add(shelf);
-            }
-            ShelvesLoaded = true;
-            AreShelvesEmpty = false;
         }
         public int Id
         {
@@ -71,18 +48,6 @@ namespace Epiphany.View.DesignData
         }
 
         public string Name
-        {
-            get;
-            set;
-        }
-
-        public ProfileModel Model
-        {
-            get;
-            set;
-        }
-
-        public bool AreShelvesEmpty
         {
             get;
             set;
@@ -100,58 +65,7 @@ namespace Epiphany.View.DesignData
             set;
         }
 
-        public System.Windows.Input.ICommand GoHome
-        {
-            get;
-        }
-
-        public IAsyncCommand<Model.ProfileModel, int> FetchProfile
-        {
-            get;
-        }
-
-        public IAsyncCommand<IEnumerable<BookshelfModel>, IAsyncEnumerator<BookshelfModel>> FetchBookshelves
-        {
-            get;
-        }
-
-        public IAsyncEnumerator<BookshelfModel> FetchBookshelvesArg
-        {
-            get;
-        }
-
-        public IList<IProfileItemViewModel> ProfileItems
-        {
-            get;
-            set;
-        }
-
         public IList<IFeedItemViewModel> RecentUpdates
-        {
-            get;
-            set;
-        }
-
-        public bool ShelvesLoaded
-        {
-            get;
-            set;
-        }
-
-        public IList<BookshelfModel> Shelves
-        {
-            get;
-            set;
-        }
-
-        public IProfileItemViewModel SelectedProfileItem
-        {
-            get;
-            set;
-        }
-
-
-        public BookshelfModel SelectedShelf
         {
             get;
             set;
@@ -194,6 +108,18 @@ namespace Epiphany.View.DesignData
         }
 
         public IList<IAuthorItemViewModel> FavoriteAuthors
+        {
+            get;
+            set;
+        }
+
+        public int ShelvesCount
+        {
+            get;
+            set;
+        }
+
+        public bool HasFavoriteAuthors
         {
             get;
             set;

@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -22,6 +10,7 @@ namespace Epiphany.View.Controls
         public ProfileHeaderItem()
         {
             this.InitializeComponent();
+            Opacity = 0;
         }
 
         public string IconGlyph
@@ -42,8 +31,21 @@ namespace Epiphany.View.Controls
 
         // Using a DependencyProperty as the backing store for Text.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TextProperty =
-            DependencyProperty.Register("Text", typeof(string), typeof(ProfileHeaderItem), new PropertyMetadata(string.Empty));
+            DependencyProperty.Register("Text", typeof(string), typeof(ProfileHeaderItem), new PropertyMetadata(string.Empty, OnTextChanged));
 
+        private static void OnTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            FrameworkElement sender = d as FrameworkElement;
+            string newValue = e.NewValue.ToString();
 
+            if (string.IsNullOrEmpty(newValue))
+            {
+                sender.Opacity = 0;
+            }
+            else
+            {
+                sender.Opacity = 1;
+            }
+        }
     }
 }

@@ -27,5 +27,10 @@ namespace Epiphany.View
             this.InitializeComponent();
             NavigationCacheMode = NavigationCacheMode.Disabled;
         }
+
+        private void Image_ImageOpened(object sender, RoutedEventArgs e)
+        {
+            ImageFadeInStoryboard.Begin();
+        }
     }
 }

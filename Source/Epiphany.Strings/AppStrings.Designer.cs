@@ -917,6 +917,24 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SHELVES.
+        /// </summary>
+        public static string ProfileButtonShelvesLabel {
+            get {
+                return ResourceManager.GetString("ProfileButtonShelvesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are no posts to show here!.
+        /// </summary>
+        public static string ProfileEmptyRecentUpdatesMessage {
+            get {
+                return ResourceManager.GetString("ProfileEmptyRecentUpdatesMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
         public static string ProfilePivotHeaderAbout {
@@ -940,6 +958,24 @@ namespace Epiphany.Strings {
         public static string ProfilePivotHeaderPosts {
             get {
                 return ResourceManager.GetString("ProfilePivotHeaderPosts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FAVORITE AUTHORS.
+        /// </summary>
+        public static string ProfileSectionHeaderFavoriteAuthors {
+            get {
+                return ResourceManager.GetString("ProfileSectionHeaderFavoriteAuthors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to POSTS.
+        /// </summary>
+        public static string ProfileSectionHeaderPosts {
+            get {
+                return ResourceManager.GetString("ProfileSectionHeaderPosts", resourceCulture);
             }
         }
         

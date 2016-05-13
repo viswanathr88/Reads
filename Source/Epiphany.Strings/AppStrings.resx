@@ -531,4 +531,16 @@
   <data name="ProfilePivotHeaderPosts" xml:space="preserve">
     <value>Posts</value>
   </data>
+  <data name="ProfileButtonShelvesLabel" xml:space="preserve">
+    <value>SHELVES</value>
+  </data>
+  <data name="ProfileSectionHeaderFavoriteAuthors" xml:space="preserve">
+    <value>FAVORITE AUTHORS</value>
+  </data>
+  <data name="ProfileSectionHeaderPosts" xml:space="preserve">
+    <value>POSTS</value>
+  </data>
+  <data name="ProfileEmptyRecentUpdatesMessage" xml:space="preserve">
+    <value>There are no posts to show here!</value>
+  </data>
 </root>

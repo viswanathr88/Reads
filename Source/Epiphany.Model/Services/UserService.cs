@@ -27,7 +27,7 @@ namespace Epiphany.Model.Services
             this.feedItemAdapter = new FeedItemAdapter();
 
         }
-        public async Task<ProfileModel> GetProfile(int id)
+        public async Task<ProfileModel> GetProfileAsync(int id)
         {
             // Create the data source and get the profile
             var ds = new DataSource<GoodreadsProfile>(webClient);

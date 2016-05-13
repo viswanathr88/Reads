@@ -90,6 +90,7 @@
     <Compile Include="Controls\BookStack.xaml.cs">
       <DependentUpon>BookStack.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\DeferredContentPresenter.cs" />
     <Compile Include="Controls\FeedControl.xaml.cs">
       <DependentUpon>FeedControl.xaml</DependentUpon>
     </Compile>
@@ -99,6 +100,12 @@
     </Compile>
     <Compile Include="Controls\RowEmphasisButton.xaml.cs">
       <DependentUpon>RowEmphasisButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Section.xaml.cs">
+      <DependentUpon>Section.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SectionHeader.xaml.cs">
+      <DependentUpon>SectionHeader.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\SignInControl.xaml.cs">
       <DependentUpon>SignInControl.xaml</DependentUpon>
@@ -167,6 +174,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\RowEmphasisButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Section.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SectionHeader.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

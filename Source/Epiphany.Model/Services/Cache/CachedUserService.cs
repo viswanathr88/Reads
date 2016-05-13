@@ -21,7 +21,7 @@ namespace Epiphany.Model.Services
             this.friendsCache = new Dictionary<int, IPagedCollection<UserModel>>();
         }
 
-        public async Task<ProfileModel> GetProfile(int id)
+        public async Task<ProfileModel> GetProfileAsync(int id)
         {
             if (cache.ContainsKey(id))
             {
@@ -29,7 +29,7 @@ namespace Epiphany.Model.Services
             }
             else
             {
-                ProfileModel model = await this.baseService.GetProfile(id);
+                ProfileModel model = await this.baseService.GetProfileAsync(id);
                 cache[id] = model;
                 return model;
             }

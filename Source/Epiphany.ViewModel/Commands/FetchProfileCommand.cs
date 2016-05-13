@@ -25,7 +25,7 @@ namespace Epiphany.ViewModel.Commands
 
         protected async override Task RunAsync(int param)
         {
-            Result = await this.userService.GetProfile(param);
+            Result = await this.userService.GetProfileAsync(param);
         }
     }
 }
