@@ -543,4 +543,7 @@
   <data name="ProfileEmptyRecentUpdatesMessage" xml:space="preserve">
     <value>There are no posts to show here!</value>
   </data>
+  <data name="UserFriendsTitleFormat" xml:space="preserve">
+    <value>{0}'s friends</value>
+  </data>
 </root>

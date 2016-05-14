@@ -14,7 +14,8 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             HorizontalContentAlignment="Center"
-            VerticalContentAlignment="Center">
+            VerticalContentAlignment="Center"
+            Click="Button_Click">
         <Button.Content>
             <StackPanel Orientation="Vertical">
                 <Grid HorizontalAlignment="Center"

@@ -16,7 +16,7 @@ namespace Epiphany.Model.Services
         private readonly IAdapter<UserModel, GoodreadsUser> userAdapter;
         private readonly IAdapter<ProfileModel, GoodreadsProfile> profileAdapter;
         private readonly IAdapter<FeedItemModel, GoodreadsUpdate> feedItemAdapter;
-        private readonly int friendCollectionSize = 200;
+        private readonly int friendCollectionSize = 40;
 
         public UserService(IWebClient webClient, IMessenger messenger)
         {
@@ -52,7 +52,7 @@ namespace Epiphany.Model.Services
             var ds = new PagedDataSource<GoodreadsFriends>(webClient);
             ds.SourceUrl = ServiceUrls.FriendsUrl;
             ds.Parameters["id"] = id.ToString();
-            ds.RequiresAuthentication = false;
+            ds.RequiresAuthentication = true;
             ds.Returns = (response) => response.Friends;
             
             // create the paged collection and return

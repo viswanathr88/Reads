@@ -180,7 +180,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "friend/user";
+                return baseUrl + "friend/user";
             }
         }
 

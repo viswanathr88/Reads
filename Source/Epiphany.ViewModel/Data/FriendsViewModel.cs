@@ -1,63 +1,43 @@
 ﻿
 using Epiphany.Model;
-using Epiphany.Model.Collections;
 using Epiphany.Model.Services;
 using Epiphany.ViewModel.Collections;
-using Epiphany.ViewModel.Commands;
+using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using System.Windows.Input;
 namespace Epiphany.ViewModel
 {
     public sealed class FriendsViewModel : DataViewModel<UserModel>, IFriendsViewModel
     {
-        private int id;
         private string name;
+        private string title;
         private bool areFriendsEmpty;
-        private UserModel selectedUser;
-        private IList<KeyedList<string, UserModel>> friendsList;
+        private IList<IUserItemViewModel> friendsList;
 
-        private readonly ICommand goHomeCommand;
-        private readonly INavigationService navService;
         private readonly IUserService userService;
         private readonly IResourceLoader resourceLoader;
 
-        public FriendsViewModel(IUserService userService, INavigationService navService, IResourceLoader resourceLoader)
+        private const string titleFormatKey = "UserFriendsTitleFormat";
+
+        public FriendsViewModel(IUserService userService, IResourceLoader resourceLoader)
         {
-            if (userService == null || navService == null || resourceLoader == null)
+            if (userService == null || resourceLoader == null)
             {
                 throw new ArgumentNullException("services");
             }
 
             this.userService = userService;
-            this.navService = navService;
             this.resourceLoader = resourceLoader;
-
-            this.goHomeCommand = new GoHomeCommand(navService);
-        }
-
-        public int Id
-        {
-            get { return this.id; }
-            set
-            {
-                if (this.id == value) return;
-                this.id = value;
-                RaisePropertyChanged();
-            }
         }
 
         public string Name
         {
             get { return this.name; }
-            set
+            private set
             {
-                if (this.name == value) return;
-                this.name = value;
-                RaisePropertyChanged();
+                SetProperty(ref this.name, value);
             }
         }
 
@@ -66,61 +46,54 @@ namespace Epiphany.ViewModel
             get { return this.areFriendsEmpty; }
             private set
             {
-                if (this.areFriendsEmpty == value) return;
-                this.areFriendsEmpty = value;
-                RaisePropertyChanged();
+                SetProperty(ref this.areFriendsEmpty, value);
             }
         }
 
-        public UserModel SelectedUser
-        {
-            get { return this.selectedUser; }
-            set
-            {
-                if (this.selectedUser == value) return;
-                this.selectedUser = value;
-
-                this.navService.CreateFor<ProfileViewModel>()
-                    .AddParam<int>((x) => x.Id, this.selectedUser.Id)
-                    .AddParam<string>((x) => x.Name, this.selectedUser.Name)
-                    .Navigate();
-
-                this.selectedUser = null;
-
-                RaisePropertyChanged();
-            }
-        }
-
-        public ICommand GoHome
-        {
-            get { return this.goHomeCommand; }
-        }
-
-        public IList<KeyedList<string, UserModel>> FriendList
+        public IList<IUserItemViewModel> FriendList
         {
             get { return this.friendsList; }
             private set
             {
-                if (this.friendsList == value) return;
-                this.friendsList = value;
-                RaisePropertyChanged();
+                SetProperty(ref this.friendsList, value);
             }
         }
 
-        public override async Task LoadAsync(UserModel user)
+        public string Title
         {
-            IsLoading = true;
-            IList<UserModel> friends = new List<UserModel>();
-            IAsyncEnumerator<UserModel> enumerator = this.userService.GetFriends(user.Id).GetEnumerator();
-            while (await enumerator.MoveNext())
+            get
             {
-                friends.Add(enumerator.Current);
+                return this.title;
             }
-            AreFriendsEmpty = (friends.Count == 0);
-            this.FriendList = new ObservableCollection<KeyedList<string, UserModel>>(new AlphabetKeyedList<UserModel>(friends, ((model) => model.Name), resourceLoader));
+            private set
+            {
+                SetProperty(ref this.title, value);
+            }
+        }
 
-            IsLoading = false;
-            IsLoaded = true;
+        public override Task LoadAsync(UserModel user)
+        {
+            if (!IsLoaded)
+            {
+                Name = user.Name;
+                Title = string.Format(this.resourceLoader.GetString(titleFormatKey), Name);
+                var collection = this.userService.GetFriends(user.Id);
+                var friends = new ObservablePagedCollection<IUserItemViewModel, UserModel>(collection, AdapterFn);
+                friends.Loading += (sender, arg) => IsLoading = true;
+                friends.Loaded += (sender, arg) =>
+                {
+                    IsLoading = false;
+                    IsLoaded = true;
+                };
+                FriendList = friends;
+            }
+
+            return Task.FromResult<bool>(true);
+        }
+
+        private IUserItemViewModel AdapterFn(UserModel user)
+        {
+            return new UserItemViewModel(user);
         }
     }
 }

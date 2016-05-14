@@ -1,4 +1,5 @@
-﻿using Windows.UI.Xaml;
+﻿using System;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
@@ -55,6 +56,12 @@ namespace Epiphany.View.Controls
         public static readonly DependencyProperty PreferTextOverIconProperty =
             DependencyProperty.Register("PreferTextOverIcon", typeof(bool), typeof(RowEmphasisButton), new PropertyMetadata(false));
 
+        public event RoutedEventHandler Click;
+        private void RaiseClick(RoutedEventArgs args) => Click?.Invoke(this, args);
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            RaiseClick(e);
+        }
     }
 }

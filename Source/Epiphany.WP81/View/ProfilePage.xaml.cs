@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Epiphany.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -31,6 +32,11 @@ namespace Epiphany.View
         private void Image_ImageOpened(object sender, RoutedEventArgs e)
         {
             ImageFadeInStoryboard.Begin();
+        }
+
+        private void friendsButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(FriendsPage), GetViewModel<IProfileViewModel>().Parameter);
         }
     }
 }

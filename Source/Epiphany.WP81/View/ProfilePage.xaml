@@ -6,6 +6,8 @@
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                 xmlns:controls="using:Epiphany.View.Controls"
                 xmlns:converters="using:Epiphany.View.Converters"
+                xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+                xmlns:core="using:Microsoft.Xaml.Interactions.Core"
                 mc:Ignorable="d"
                 DataContext="{Binding Source={StaticResource VMLocator}, Path=Profile}"
                 Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -81,8 +83,9 @@
                                                 SecondRowString="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ProfileButtonFriendsLabel}"
                                                 IconGlyph="&#xE13D;"
                                                 PreferTextOverIcon="{Binding IsLoaded}"
-                                                Grid.Column="0" />
-
+                                                Grid.Column="0"
+                                                x:Name="friendsButton"
+                                                Click="friendsButton_Click" />
                     <controls:RowEmphasisButton FirstRowString="{Binding GroupsCount}"
                                                 SecondRowString="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ProfileButtonGroupsLabel}"
                                                 IconGlyph="&#xE125;"

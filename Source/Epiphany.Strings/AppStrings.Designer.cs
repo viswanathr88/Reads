@@ -1250,6 +1250,15 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0}&apos;s friends.
+        /// </summary>
+        public static string UserFriendsTitleFormat {
+            get {
+                return ResourceManager.GetString("UserFriendsTitleFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to username.
         /// </summary>
         public static string UsernameText {

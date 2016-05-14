@@ -22,10 +22,10 @@ namespace Epiphany.ViewModel
         protected override void Run(Session session)
         {
             int userId = int.Parse(session.UserId);
-            this.navService.CreateFor<FriendsViewModel>()
+            /*this.navService.CreateFor<FriendsViewModel>()
                 .AddParam<int>((x) => x.Id, userId)
                 .AddParam<string>((x) => x.Name, session.Name)
-                .Navigate();
+                .Navigate();*/
         }
     }
 }

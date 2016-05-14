@@ -1,17 +1,13 @@
-﻿using System.Collections.Generic;
-using System.Windows.Input;
-using Epiphany.Model;
-using Epiphany.ViewModel.Collections;
+﻿using Epiphany.ViewModel.Items;
+using System.Collections.Generic;
 
 namespace Epiphany.ViewModel
 {
     public interface IFriendsViewModel : IDataViewModel
     {
+        string Name { get; }
+        string Title { get; }
+        IList<IUserItemViewModel> FriendList { get; }
         bool AreFriendsEmpty { get; }
-        IList<KeyedList<string, UserModel>> FriendList { get; }
-        ICommand GoHome { get; }
-        int Id { get; set; }
-        string Name { get; set; }
-        UserModel SelectedUser { get; set; }
     }
 }

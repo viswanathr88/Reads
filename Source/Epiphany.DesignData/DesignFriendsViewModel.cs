@@ -1,40 +1,32 @@
-﻿using Epiphany.Model;
-using Epiphany.ViewModel;
-using Epiphany.ViewModel.Collections;
+﻿using Epiphany.ViewModel;
+using Epiphany.ViewModel.Items;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
-using System.Windows.Input;
+using System.IO;
+using System;
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignFriendsViewModel : DesignBaseViewModel, IFriendsViewModel
+    public class DesignFriendsViewModel : DesignBaseViewModel, IFriendsViewModel
     {
         public DesignFriendsViewModel()
         {
-            IsLoading = true;
-            Name = "Test User";
+            Title = $"{Path.GetRandomFileName()}'s friends";
 
-            FriendList = new ObservableCollection<KeyedList<string, UserModel>>();
+            FriendList = new List<IUserItemViewModel>();
             for (int i = 0; i < 5; i++)
             {
-                UserModel model = new UserModel(i);
-                char c = (char)('a' + i);
-                model.Name = c.ToString();
-                model.ImageUrl = @"http://style.anu.edu.au/_anu/4/images/placeholders/person.png";
+                var user = new DesignUserItemViewModel()
+                {
+                    Name = Path.GetRandomFileName(),
+                    ImageUrl = @"http://style.anu.edu.au/_anu/4/images/placeholders/person.png"
+                };
 
-                KeyedList<string, UserModel> list = new KeyedList<string, UserModel>(c.ToString());
-                list.Add(model);
-
-                FriendList.Add(list);
+                FriendList.Add(user);
             }
 
-            
-        }
-        public int Id
-        {
-            get;
-            set;
+            AreFriendsEmpty = false;
+            IsLoaded = true;
         }
 
         public string Name
@@ -46,24 +38,19 @@ namespace Epiphany.View.DesignData
         public bool AreFriendsEmpty
         {
             get;
-            private set;
+            set;
         }
 
-        public UserModel SelectedUser
+        public IList<IUserItemViewModel> FriendList
         {
             get;
             set;
         }
 
-        public ICommand GoHome
-        {
-            get { return null; }
-        }
-
-        public IList<KeyedList<string, UserModel>> FriendList
+        public string Title
         {
             get;
-            private set;
+            set;
         }
     }
 }

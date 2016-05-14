@@ -122,6 +122,9 @@
       <DependentUpon>BookPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DataPage.cs" />
+    <Compile Include="View\FriendsPage.xaml.cs">
+      <DependentUpon>FriendsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LogonPage.xaml.cs">
       <DependentUpon>LogonPage.xaml</DependentUpon>
     </Compile>
@@ -198,6 +201,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\BookPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FriendsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

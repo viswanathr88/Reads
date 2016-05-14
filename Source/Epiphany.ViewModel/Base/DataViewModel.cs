@@ -37,9 +37,7 @@ namespace Epiphany.ViewModel
             get { return this.isLoading; }
             protected set
             {
-                if (this.isLoading == value) return;
-                this.isLoading = value;
-                RaisePropertyChanged();
+                SetProperty(ref this.isLoading, value);
             }
         }
         /// <summary>
@@ -50,9 +48,7 @@ namespace Epiphany.ViewModel
             get { return this.isLoaded; }
             protected set
             {
-                if (this.isLoaded == value) return;
-                this.isLoaded = value;
-                RaisePropertyChanged();
+                SetProperty(ref this.isLoaded, value);
             }
         }
         /// <summary>
@@ -66,9 +62,7 @@ namespace Epiphany.ViewModel
             }
             protected set
             {
-                if (this.error == value) return;
-                this.error = value;
-                RaisePropertyChanged();
+                SetProperty(ref this.error, value);
             }
         }
         /// <summary>
@@ -118,11 +112,22 @@ namespace Epiphany.ViewModel
         /// <summary>
         /// Gets the input parameter
         /// </summary>
-        protected TParam Parameter
+        public TParam Parameter
         {
             get;
             private set;
         }
+        /// <summary>
+        /// Gets the parameter
+        /// </summary>
+        object IDataViewModel.Parameter
+        {
+            get
+            {
+                return Parameter;
+            }
+        }
+
         /// <summary>
         /// Register a command
         /// </summary>

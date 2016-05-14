@@ -122,7 +122,7 @@ namespace Epiphany.View.Services
 
         public IFriendsViewModel Friends
         {
-            get { return new FriendsViewModel(this.serviceFactory.GetUserService(), this.navigationService, this.resourceLoader); }
+            get { return new FriendsViewModel(this.serviceFactory.GetUserService(), this.resourceLoader); }
         }
 
         public IEventsViewModel Events

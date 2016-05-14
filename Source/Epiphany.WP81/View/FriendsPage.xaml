@@ -1,0 +1,73 @@
+﻿<local:DataPage x:Class="Epiphany.View.FriendsPage"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:local="using:Epiphany.View"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d"
+                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                DataContext="{Binding Source={StaticResource VMLocator}, Path=Friends}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <!-- Header -->
+        <Grid Background="{ThemeResource PhoneChromeBrush}">
+            <TextBlock Text="{Binding Title}"
+                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                       Style="{StaticResource GroupHeaderTextBlockStyle}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+        </Grid>
+        
+        <!-- List -->
+        <ListView Grid.Row="1"
+                  ItemsSource="{Binding FriendList}"
+                  Margin="19,19,19,10"
+                  SelectionChanged="OnUserSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,0,0,19">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Border Height="64"
+                                Width="64"
+                                BorderBrush="{ThemeResource PhoneChromeBrush}"
+                                BorderThickness="1"
+                                Grid.Column="0"
+                                HorizontalAlignment="Left">
+                            <Image Source="{Binding ImageUrl}"
+                                   Height="62"
+                                   Width="62" />
+                        </Border>
+
+                        <StackPanel Orientation="Vertical"
+                                    Grid.Column="1">
+                            <TextBlock Text="{Binding Name}"
+                                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                       Style="{StaticResource ListViewItemTextBlockStyle}"
+                                       OpticalMarginAlignment="TrimSideBearings"
+                                       TextWrapping="NoWrap"
+                                       TextTrimming="CharacterEllipsis"
+                                       TextLineBounds="TrimToCapHeight" />
+                        </StackPanel>
+                        
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+            <ListView.Footer>
+                <ProgressRing IsActive="{Binding IsLoading}"
+                              Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                              MinWidth="40"
+                              MinHeight="40" />
+            </ListView.Footer>
+        </ListView>
+    </Grid>
+</local:DataPage>

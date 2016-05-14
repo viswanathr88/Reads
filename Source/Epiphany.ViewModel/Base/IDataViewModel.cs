@@ -37,6 +37,13 @@ namespace Epiphany.ViewModel
             get;
         }
         /// <summary>
+        /// Gets the parameter
+        /// </summary>
+        object Parameter
+        {
+            get;
+        }
+        /// <summary>
         /// Event that is fired when the ViewModel has finished doing what
         /// it needs to do
         /// </summary>
@@ -54,5 +61,12 @@ namespace Epiphany.ViewModel
         /// <param name="parameter">input param</param>
         /// <returns></returns>
         Task LoadAsync(TParam parameter);
+        /// <summary>
+        /// Gets the parameter
+        /// </summary>
+        new TParam Parameter
+        {
+            get;
+        }
     }
 }

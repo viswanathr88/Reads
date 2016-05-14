@@ -1,10 +1,9 @@
 ﻿using Epiphany.Logging;
 using Epiphany.ViewModel;
 using System;
+using System.ComponentModel;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
-using System.ComponentModel;
-using Windows.Phone.UI.Input;
 
 namespace Epiphany.View
 {
@@ -12,7 +11,6 @@ namespace Epiphany.View
     {
         public DataPage()
         {
-            HardwareButtons.BackPressed += HardwareButtons_BackPressed;
         }
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
@@ -103,15 +101,6 @@ namespace Epiphany.View
         protected virtual void OnViewModelDone(object sender, EventArgs e)
         {
             // Nothing to do here
-        }
-
-        protected void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
-        {
-            if (Frame.CanGoBack)
-            {
-                e.Handled = true;
-                Frame.GoBack();
-            }
         }
     }
 }
