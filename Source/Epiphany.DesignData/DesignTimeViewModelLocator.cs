@@ -73,7 +73,12 @@ namespace Epiphany.View.Services
 
         public ICommunityViewModel Community
         {
-            get { return null; }
+            get;
+        }
+
+        public IBookshelvesViewModel Bookshelves
+        {
+            get { return new DesignBookshelvesViewModel(); }
         }
 
         public void Dispose()

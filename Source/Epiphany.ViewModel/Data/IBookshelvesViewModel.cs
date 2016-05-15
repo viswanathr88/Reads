@@ -5,10 +5,8 @@ namespace Epiphany.ViewModel
 {
     public interface IBookshelvesViewModel : IDataViewModel
     {
-        IList<IBookItemViewModel> CurrentlyReadingList { get; }
+        string Title { get; }
+        string Name { get; }
         IList<IBookshelfItemViewModel> Shelves { get; }
-
-        bool IsCurrentlyReadingListLoading { get; }
-        bool IsBookshelvesLoading { get; }
     }
 }

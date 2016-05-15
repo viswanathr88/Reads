@@ -22,5 +22,10 @@ namespace Epiphany.View
         {
             Frame.Navigate(typeof(FriendsPage), GetViewModel<IProfileViewModel>().Parameter);
         }
+
+        private void Shelves_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(BookshelvesPage), GetViewModel<IProfileViewModel>().Parameter);
+        }
     }
 }

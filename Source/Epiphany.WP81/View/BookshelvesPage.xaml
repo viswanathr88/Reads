@@ -1,0 +1,95 @@
+﻿<local:DataPage x:Class="Epiphany.View.BookshelvesPage"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:local="using:Epiphany.View"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d"
+                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                DataContext="{Binding Source={StaticResource VMLocator}, Path=Bookshelves}">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition />
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Background="{ThemeResource PhoneChromeBrush}">
+            <TextBlock Text="{Binding Title}"
+                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                       Style="{StaticResource GroupHeaderTextBlockStyle}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" />
+        </Grid>
+
+        <Grid Grid.Row="1"
+              x:Name="ContentRoot"
+              Margin="19,9.5,19,0">
+            <ListView ItemsSource="{Binding Shelves}"
+                      Margin="0,0,0,0">
+
+                <ListView.ItemContainerTransitions>
+                    <TransitionCollection>
+                        <EntranceThemeTransition IsStaggeringEnabled="True" />
+                    </TransitionCollection>
+                </ListView.ItemContainerTransitions>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="85" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Border Height="64"
+                                    Width="64"
+                                    Background="{ThemeResource PhoneChromeBrush}"
+                                    Margin="0,0,15,15">
+                                <TextBlock HorizontalAlignment="Right"
+                                           VerticalAlignment="Bottom"
+                                           Text="{Binding NumberOfBooks}"
+                                           Style="{StaticResource TitleTextBlockStyle}"
+                                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                           FontWeight="Thin"
+                                           FontSize="28"
+                                           FontStretch="UltraCondensed"
+                                           Margin="0,0,5,3"
+                                           Opacity="0.5" />
+                            </Border>
+
+                            <StackPanel Orientation="Vertical"
+                                        Grid.Column="1"
+                                        VerticalAlignment="Center">
+                                <TextBlock Text="{Binding Name}"
+                                           Style="{StaticResource GroupHeaderTextBlockStyle}"
+                                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Center"
+                                           LineStackingStrategy="BlockLineHeight"
+                                           TextWrapping="NoWrap"
+                                           TextTrimming="CharacterEllipsis"
+                                           TextLineBounds="TrimToCapHeight" />
+                            </StackPanel>
+
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+                <ListView.Footer>
+                    <ProgressRing IsActive="{Binding IsLoading}"
+                                  Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
+                </ListView.Footer>
+
+            </ListView>
+        </Grid>
+    </Grid>
+</local:DataPage>

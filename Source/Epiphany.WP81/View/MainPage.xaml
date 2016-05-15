@@ -191,7 +191,7 @@
                             <!--<controls:BookStack Items="{Binding Path=Books.OwnedBooks}"
                                                 IsLoading="{Binding Path=Books.IsOwnedBooksLoading}"
                                                 Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.OwnedBooksSectionTitle}" />-->
-                            
+
                             <!-- View all books button -->
                             <Button Background="{ThemeResource PhoneChromeBrush}"
                                     BorderThickness="0"
@@ -208,60 +208,6 @@
                         </StackPanel>
 
                     </ScrollViewer>
-                    
-                        <!-- Shelves list -->
-                        <!--<ListView Grid.Row="2"
-                                  ItemsSource="{Binding Path=Books.Shelves}"
-                                  Margin="0,0,0,0">
-
-                            <ListView.Header>
-                                <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.BookshelvesSectionTitle}"
-                                           Style="{StaticResource GroupHeaderTextBlockStyle}"
-                                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                                           Margin="0,0,0,30" />
-                            </ListView.Header>
-
-                            <ListView.ItemContainerTransitions>
-                                <TransitionCollection>
-                                    <EntranceThemeTransition IsStaggeringEnabled="True" />
-                                </TransitionCollection>
-                            </ListView.ItemContainerTransitions>
-
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Border Height="64"
-                                                Width="64"
-                                                Background="{ThemeResource PhoneChromeBrush}"
-                                                Margin="0,0,15,15">
-                                            <TextBlock HorizontalAlignment="Right"
-                                                       VerticalAlignment="Bottom"
-                                                       Text="{Binding NumberOfBooks}"
-                                                       Style="{StaticResource TitleTextBlockStyle}"
-                                                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                                                       FontWeight="Thin"
-                                                       FontSize="28"
-                                                       FontStretch="UltraCondensed"
-                                                       Margin="0,0,5,0"
-                                                       Opacity="0.5" />
-                                        </Border>
-
-                                        <TextBlock Text="{Binding Name}"
-                                                   Style="{StaticResource ListViewItemTextBlockStyle}"
-                                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                                                   HorizontalAlignment="Left"
-                                                   VerticalAlignment="Center"
-                                                   LineStackingStrategy="BlockLineHeight" />
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-
-                            <ListView.Footer>
-                                <ProgressRing IsActive="{Binding Path=Books.IsBookshelvesLoading}"
-                                              Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
-                            </ListView.Footer>
-                            
-                        </ListView>-->
                 </Grid>
 
             </PivotItem>

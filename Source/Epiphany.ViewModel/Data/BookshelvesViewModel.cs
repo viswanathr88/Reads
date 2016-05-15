@@ -8,51 +8,22 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class BookshelvesViewModel : DataViewModel<int>, IBookshelvesViewModel
+    public sealed class BookshelvesViewModel : DataViewModel<UserModel>, IBookshelvesViewModel
     {
         private readonly IBookshelfService bookshelfService;
-        private readonly ILogonService logonService;
-        private readonly IBookService bookService;
 
-        private IObservablePagedCollection<IBookItemViewModel> currentlyReadingList;
         private IObservablePagedCollection<IBookshelfItemViewModel> shelves;
+        private string name;
+        private string title;
 
-        private bool isCurrentReadingListLoading;
-        private bool isBookshelvesLoading;
-
-        public BookshelvesViewModel(IBookshelfService bookshelfService, IBookService bookService, ILogonService logonService)
+        public BookshelvesViewModel(IBookshelfService bookshelfService)
         {
             if (bookshelfService == null)
             {
                 throw new ArgumentNullException(nameof(bookshelfService));
             }
 
-            if (logonService == null)
-            {
-                throw new ArgumentNullException(nameof(logonService));
-            }
-
-            if (bookService == null)
-            {
-                throw new ArgumentNullException(nameof(bookService));
-            }
-
             this.bookshelfService = bookshelfService;
-            this.bookService = bookService;
-            this.logonService = logonService;
-        }
-
-        public IList<IBookItemViewModel> CurrentlyReadingList
-        {
-            get
-            {
-                return this.currentlyReadingList;
-            }
-            private set
-            {
-
-                SetProperty(ref this.currentlyReadingList, value as IObservablePagedCollection<IBookItemViewModel>);
-            }
         }
 
         public IList<IBookshelfItemViewModel> Shelves
@@ -67,44 +38,41 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public bool IsCurrentlyReadingListLoading
+        public string Title
         {
             get
             {
-                return this.isCurrentReadingListLoading;
+                return this.title;
             }
             private set
             {
-                SetProperty(ref this.isCurrentReadingListLoading, value);
+                SetProperty(ref this.title, value);
             }
         }
 
-        public bool IsBookshelvesLoading
+        public string Name
         {
             get
             {
-                return this.isBookshelvesLoading;
+                return this.name;
             }
-
             private set
             {
-                SetProperty(ref this.isBookshelvesLoading, value);
+                SetProperty(ref this.name, value);
             }
         }
 
-        public async override Task LoadAsync(int userId)
+        public override Task LoadAsync(UserModel user)
         {
-            var shelfCollection = this.bookshelfService.GetBookshelves(userId);
+            Name = user.Name;
+            Title = $"{Name}'s Bookshelves";
+
+            var shelfCollection = this.bookshelfService.GetBookshelves(user.Id);
             Shelves = new ObservablePagedCollection<IBookshelfItemViewModel, BookshelfModel>(shelfCollection, BookshelfModelAdapterFn);
-            this.shelves.Loading += (obj, args) => IsBookshelvesLoading = true;
-            this.shelves.Loaded += (obj, args) => IsBookshelvesLoading = false;
+            this.shelves.Loading += (obj, args) => IsLoading = true;
+            this.shelves.Loaded += (obj, args) => IsLoading = false;
 
-            var bookCollection = this.bookService.GetBooks(userId, "currently-reading", BookSortType.date_added, BookSortOrder.d);
-            CurrentlyReadingList = new ObservablePagedCollection<IBookItemViewModel, BookModel>(bookCollection, BookModelAdapterFn);
-            this.currentlyReadingList.Loading += (obj, args) => IsCurrentlyReadingListLoading = true;
-            this.currentlyReadingList.Loaded += (obj, args) => IsCurrentlyReadingListLoading = false;
-
-            await Task.Delay(1);
+            return Task.FromResult<bool>(true);
         }
 
         private IBookItemViewModel BookModelAdapterFn(BookModel model)
@@ -115,12 +83,21 @@ namespace Epiphany.ViewModel
         private IBookshelfItemViewModel BookshelfModelAdapterFn(BookshelfModel model)
         {
             IBookshelfItemViewModel item = null;
-            if (model != null && model.Name != "currently-reading")
+            if (model != null)
             {
                 item = new BookshelfItemViewModel(model);
             }
 
             return item;
+        }
+
+        protected override void Reset()
+        {
+            base.Reset();
+
+            Name = string.Empty;
+            Title = string.Empty;
+            Shelves = null;
         }
     }
 }

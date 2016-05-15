@@ -87,6 +87,14 @@ namespace Epiphany.View.Services
             get { return this.locatorImpl.Scanner; }
         }
 
+        public IBookshelvesViewModel Bookshelves
+        {
+            get
+            {
+                return this.locatorImpl.Bookshelves;
+            }
+        }
+
         public void Dispose()
         {
             locatorImpl.Dispose();

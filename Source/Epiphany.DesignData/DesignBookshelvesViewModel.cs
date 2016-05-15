@@ -15,6 +15,9 @@ namespace Epiphany.View.DesignData
             IsLoading = true;
             IsLoaded = true;
 
+            Name = Path.GetRandomFileName();
+            Title = $"{Name}'s Bookshelves";
+
             PopulateBookshelves();
         }
 
@@ -36,7 +39,19 @@ namespace Epiphany.View.DesignData
             set;
         }
 
+        public string Name
+        {
+            get;
+            set;
+        }
+
         public IList<IBookshelfItemViewModel> Shelves
+        {
+            get;
+            set;
+        }
+
+        public string Title
         {
             get;
             set;

@@ -102,37 +102,41 @@ namespace Epiphany.ViewModel
 
         public override async Task LoadAsync(VoidType parameter)
         {
-            Logger.LogDebug("IsLoaded = " + IsLoaded.ToString());
-            Error = null;
-
-            if (IsLoaded)
-            {
-                Logger.LogInfo("LogonVM already loaded");
-                return;
-            }
-
             // First verify if we are already logged in
-            StartTimer();
-            bool fLoggedIn = await Task.Run(async () => await this.logonService.TryVerifyLogin());
-            StopTimer();
-            Logger.LogDebug("TryVerifyLogin result = " + fLoggedIn);
-
-            if (fLoggedIn)
+            try
             {
-                // Login was successfully verified
-                IsLoginCompleted = true;
-                IsLoaded = true;
-                RaiseDone();
-            }
-            else
-            {
-                // Need to login
-                Logger.LogDebug("Starting login");
                 StartTimer();
-                CurrentUri = await Task.Run(async () => await this.logonService.StartLogin());
+                bool fLoggedIn = await Task.Run(async () => await this.logonService.TryVerifyLogin());
                 StopTimer();
-                IsWaitingForUserInteraction = true;
+                Logger.LogDebug("TryVerifyLogin result = " + fLoggedIn);
+
+                if (fLoggedIn)
+                {
+                    // Login was successfully verified
+                    IsLoginCompleted = true;
+                    IsLoaded = true;
+                    RaiseDone();
+                }
+                else
+                {
+                    // Need to login
+                    Logger.LogDebug("Starting login");
+                    StartTimer();
+                    CurrentUri = await Task.Run(async () => await this.logonService.StartLogin());
+                    StopTimer();
+                    IsWaitingForUserInteraction = true;
+                }
             }
+            catch (Exception ex)
+            {
+                Logger.LogException(ex);
+                Error = ex;
+            }
+            finally
+            {
+                StopTimer();
+            }
+            
         }
 
         public async Task CheckUriAsync(Uri uri)

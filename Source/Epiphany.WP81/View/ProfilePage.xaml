@@ -77,6 +77,7 @@
                                                 Grid.Column="0"
                                                 x:Name="friendsButton"
                                                 Click="friendsButton_Click" />
+                    
                     <controls:RowEmphasisButton FirstRowString="{Binding GroupsCount}"
                                                 SecondRowString="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ProfileButtonGroupsLabel}"
                                                 IconGlyph="&#xE125;"
@@ -87,7 +88,8 @@
                                                 SecondRowString="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ProfileButtonShelvesLabel}"
                                                 IconGlyph="&#xE113;"
                                                 PreferTextOverIcon="{Binding IsLoaded}"
-                                                Grid.Column="2" />
+                                                Grid.Column="2"
+                                                Click="Shelves_Click"/>
                 </Grid>
             </Grid>
         </Grid>

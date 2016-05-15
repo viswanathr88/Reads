@@ -1,4 +1,5 @@
-﻿using Epiphany.Logging;
+﻿using System;
+using Epiphany.Logging;
 using Epiphany.Model.Authentication;
 using Epiphany.Model.Services;
 using Epiphany.Model.Settings;
@@ -163,6 +164,14 @@ namespace Epiphany.View.Services
             get
             {
                 return new ScanViewModel();
+            }
+        }
+
+        public IBookshelvesViewModel Bookshelves
+        {
+            get
+            {
+                return new BookshelvesViewModel(this.serviceFactory.GetBookshelfService());
             }
         }
 
