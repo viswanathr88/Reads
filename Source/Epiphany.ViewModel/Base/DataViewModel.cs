@@ -94,7 +94,10 @@ namespace Epiphany.ViewModel
                     Parameter = param;
                 }
 
-                Logger.LogDebug("About to call LoadAsync after parameter validation");
+                Logger.LogDebug("Resetting ViewModel...");
+                Reset();
+
+                Logger.LogInfo("Loading ViewModel...");
                 await LoadAsync(Parameter);
             }
             catch (Exception ex)
@@ -109,6 +112,15 @@ namespace Epiphany.ViewModel
         /// <param name="parameter"></param>
         /// <returns></returns>
         public abstract Task LoadAsync(TParam parameter);
+        /// <summary>
+        /// Reset method for ViewModel
+        /// </summary>
+        protected virtual void Reset()
+        {
+            Error = null;
+            IsLoaded = false;
+            IsLoading = false;
+        }
         /// <summary>
         /// Gets the input parameter
         /// </summary>
@@ -148,7 +160,7 @@ namespace Epiphany.ViewModel
 
             Logger.LogInfo(string.Format("{0} Registering Command {1}", GetType(), command.GetType()));
 
-            command.Executing += OnCmdExecuting;
+            command.Executing += OnCommandExecuting;
             command.Executed += OnCommandExecuted;
 
             this.commands.Add(command, callback);
@@ -161,7 +173,7 @@ namespace Epiphany.ViewModel
         {
             if (this.commands.ContainsKey(command))
             {
-                command.Executing -= OnCmdExecuting;
+                command.Executing -= OnCommandExecuting;
                 command.Executed -= OnCommandExecuted;
 
                 this.commands.Remove(command);
@@ -179,7 +191,7 @@ namespace Epiphany.ViewModel
         /// </summary>
         /// <param name="sender">event source</param>
         /// <param name="e">event args</param>
-        protected virtual void OnCmdExecuting(object sender, CancelEventArgs e)
+        protected virtual void OnCommandExecuting(object sender, CancelEventArgs e)
         {
             IsLoading = true;
         }

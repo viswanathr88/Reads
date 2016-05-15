@@ -73,22 +73,28 @@ namespace Epiphany.ViewModel
 
         public override Task LoadAsync(UserModel user)
         {
-            if (!IsLoaded)
+            Name = user.Name;
+            Title = string.Format(this.resourceLoader.GetString(titleFormatKey), Name);
+            var collection = this.userService.GetFriends(user.Id);
+            var friends = new ObservablePagedCollection<IUserItemViewModel, UserModel>(collection, AdapterFn);
+            friends.Loading += (sender, arg) => IsLoading = true;
+            friends.Loaded += (sender, arg) =>
             {
-                Name = user.Name;
-                Title = string.Format(this.resourceLoader.GetString(titleFormatKey), Name);
-                var collection = this.userService.GetFriends(user.Id);
-                var friends = new ObservablePagedCollection<IUserItemViewModel, UserModel>(collection, AdapterFn);
-                friends.Loading += (sender, arg) => IsLoading = true;
-                friends.Loaded += (sender, arg) =>
-                {
-                    IsLoading = false;
-                    IsLoaded = true;
-                };
-                FriendList = friends;
-            }
+                IsLoading = false;
+                IsLoaded = true;
+            };
+            FriendList = friends;
 
             return Task.FromResult<bool>(true);
+        }
+
+        protected override void Reset()
+        {
+            base.Reset();
+
+            Name = string.Empty;
+            Title = string.Empty;
+            FriendList = null;
         }
 
         private IUserItemViewModel AdapterFn(UserModel user)

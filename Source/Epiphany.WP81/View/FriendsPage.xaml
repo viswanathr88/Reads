@@ -27,10 +27,15 @@
         <ListView Grid.Row="1"
                   ItemsSource="{Binding FriendList}"
                   Margin="19,19,19,10"
-                  SelectionChanged="OnUserSelected">
+                  SelectionChanged="OnUserSelected"
+                  ScrollViewer.HorizontalScrollMode="Disabled"
+                  ScrollViewer.IsHorizontalRailEnabled="False">
+            
+            
+            
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="0,0,0,19">
+                    <Grid Margin="0,0,0,10">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="85" />
                             <ColumnDefinition Width="*" />
@@ -40,6 +45,7 @@
                                 Width="64"
                                 BorderBrush="{ThemeResource PhoneChromeBrush}"
                                 BorderThickness="1"
+                                Background="{ThemeResource PhoneChromeBrush}"
                                 Grid.Column="0"
                                 HorizontalAlignment="Left">
                             <Image Source="{Binding ImageUrl}"
@@ -48,14 +54,16 @@
                         </Border>
 
                         <StackPanel Orientation="Vertical"
-                                    Grid.Column="1">
+                                    Grid.Column="1"
+                                    VerticalAlignment="Center">
                             <TextBlock Text="{Binding Name}"
                                        Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                                       Style="{StaticResource ListViewItemTextBlockStyle}"
+                                       Style="{StaticResource GroupHeaderTextBlockStyle}"
                                        OpticalMarginAlignment="TrimSideBearings"
                                        TextWrapping="NoWrap"
                                        TextTrimming="CharacterEllipsis"
-                                       TextLineBounds="TrimToCapHeight" />
+                                       TextLineBounds="TrimToCapHeight" 
+                                       VerticalAlignment="Center"/>
                         </StackPanel>
                         
                     </Grid>

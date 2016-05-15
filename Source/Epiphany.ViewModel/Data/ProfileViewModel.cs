@@ -1,14 +1,11 @@
 ﻿using Epiphany.Model;
-using Epiphany.Model.Collections;
 using Epiphany.Model.Services;
-using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
@@ -223,40 +220,57 @@ namespace Epiphany.ViewModel
 
         public override async Task LoadAsync(UserModel user)
         {
-            if (!IsLoaded)
+            IsLoading = true;
+            Id = user.Id;
+            Name = user.Name;
+            ImageUrl = user.ImageUrl;
+
+            Model = await Task.Run(async () => await this.userService.GetProfileAsync(Id));
+            Name = Model.Name;
+            Username = Model.Username;
+            ImageUrl = Model.ImageUrl;
+            FriendsCount = Model.FriendsCount;
+            GroupsCount = Model.GroupsCount;
+            ReviewsCount = Model.ReviewsCount;
+            ShelvesCount = Model.ShelvesCount;
+            Location = !string.IsNullOrEmpty(Model.Location) ? Model.Location : "Unknown";
+            ConstructMemberSinceString();
+
+            RecentUpdates = new ObservableCollection<IFeedItemViewModel>();
+            foreach (FeedItemModel model in Model.RecentUpdates)
             {
-                IsLoading = true;
-                Id = user.Id;
-                Name = user.Name;
-                ImageUrl = user.ImageUrl;
-
-                Model = await Task.Run(async () => await this.userService.GetProfileAsync(Id));
-                Name = Model.Name;
-                Username = Model.Username;
-                ImageUrl = Model.ImageUrl;
-                FriendsCount = Model.FriendsCount;
-                GroupsCount = Model.GroupsCount;
-                ReviewsCount = Model.ReviewsCount;
-                ShelvesCount = Model.ShelvesCount;
-                Location = !string.IsNullOrEmpty(Model.Location) ? Model.Location : "Unknown";
-                ConstructMemberSinceString();
-
-                RecentUpdates = new ObservableCollection<IFeedItemViewModel>();
-                foreach (FeedItemModel model in Model.RecentUpdates)
-                {
-                    RecentUpdates.Add(new FeedItemViewModel(model, resourceLoader));
-                }
-
-                FavoriteAuthors = new ObservableCollection<IAuthorItemViewModel>();
-                foreach (var author in Model.FavoriteAuthors)
-                {
-                    FavoriteAuthors.Add(new AuthorItemViewModel(author));
-                }
-                AreUpdatesEmpty = (RecentUpdates.Count == 0);
-                HasFavoriteAuthors = (FavoriteAuthors.Count != 0);
-                IsLoading = false;
-                IsLoaded = true;
+                RecentUpdates.Add(new FeedItemViewModel(model, resourceLoader));
             }
+
+            FavoriteAuthors = new ObservableCollection<IAuthorItemViewModel>();
+            foreach (var author in Model.FavoriteAuthors)
+            {
+                FavoriteAuthors.Add(new AuthorItemViewModel(author));
+            }
+            AreUpdatesEmpty = (RecentUpdates.Count == 0);
+            HasFavoriteAuthors = (FavoriteAuthors.Count != 0);
+            IsLoading = false;
+            IsLoaded = true;
+        }
+
+        protected override void Reset()
+        {
+            base.Reset();
+
+            Id = -1;
+            Name = string.Empty;
+            ImageUrl = string.Empty;
+            Model = null;
+            FriendsCount = 0;
+            GroupsCount = 0;
+            ReviewsCount = 0;
+            ShelvesCount = 0;
+            Location = string.Empty;
+            MemberSinceString = string.Empty;
+            RecentUpdates = null;
+            FavoriteAuthors = null;
+            AreUpdatesEmpty = false;
+            HasFavoriteAuthors = false;
         }
 
         private void ConstructMemberSinceString()

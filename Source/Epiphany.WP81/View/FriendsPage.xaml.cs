@@ -15,6 +15,7 @@ namespace Epiphany.View
         public FriendsPage()
         {
             this.InitializeComponent();
+            NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Required;
         }
 
         private void OnUserSelected(object sender, SelectionChangedEventArgs e)

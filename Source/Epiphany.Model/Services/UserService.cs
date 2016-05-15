@@ -52,6 +52,7 @@ namespace Epiphany.Model.Services
             var ds = new PagedDataSource<GoodreadsFriends>(webClient);
             ds.SourceUrl = ServiceUrls.FriendsUrl;
             ds.Parameters["id"] = id.ToString();
+            ds.Parameters["sort"] = "first_name";
             ds.RequiresAuthentication = true;
             ds.Returns = (response) => response.Friends;
             

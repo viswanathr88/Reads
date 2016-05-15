@@ -17,7 +17,6 @@ namespace Epiphany.ViewModel.Collections
         private readonly IAsyncEnumerator<TModel> enumerator;
         private readonly Func<TModel, TViewModel> adapterMethod;
         private bool hasMoreItems = true;
-        private int pageSize = 15;
 
         public event EventHandler<EventArgs> Loading;
         private void RaiseLoading() => Loading?.Invoke(this, EventArgs.Empty);
@@ -46,8 +45,10 @@ namespace Epiphany.ViewModel.Collections
             }
             private set
             {
-                if (this.hasMoreItems == value) return;
-                this.hasMoreItems = value;
+                if (this.hasMoreItems != value)
+                {
+                    this.hasMoreItems = value;
+                }
             }
         }
 
@@ -68,14 +69,13 @@ namespace Epiphany.ViewModel.Collections
                 bool fMoveNext = false;
                 int loadedCount = 0;
                 IList<TModel> items = new List<TModel>();
-                while (loadedCount <= pageSize && (fMoveNext = await this.enumerator.MoveNext()) == true)
+                while (loadedCount <= pagedCollection.PageSize && (fMoveNext = await this.enumerator.MoveNext()) == true)
                 {
                     items.Add(enumerator.Current);
                     loadedCount++;
                 }
 
                 HasMoreItems = (fMoveNext != false);
-
 
                 await dispatcher.RunAsync(CoreDispatcherPriority.Normal,
                     () =>

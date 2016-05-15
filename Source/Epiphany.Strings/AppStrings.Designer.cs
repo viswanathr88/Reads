@@ -1250,7 +1250,7 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0}&apos;s friends.
+        ///   Looks up a localized string similar to {0}&apos;s Friends.
         /// </summary>
         public static string UserFriendsTitleFormat {
             get {
