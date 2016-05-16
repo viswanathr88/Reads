@@ -32,13 +32,17 @@ namespace Epiphany.ViewModel
             info.SetValue(this, typedValue, null);
         }
 
-        public void SetProperty<T>(ref T field, T value, [CallerMemberName] string member = null)
+        public bool SetProperty<T>(ref T field, T value, [CallerMemberName] string member = null)
         {
+            bool fResult = false;
             if (!EqualityComparer<T>.Default.Equals(field, value))
             {
                 field = value;
                 RaisePropertyChanged(member);
+                fResult = true;
             }
+
+            return fResult;
         }
         protected string GetName()
         {

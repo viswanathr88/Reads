@@ -1,13 +1,17 @@
-﻿using Epiphany.Model;
+﻿using System;
+using Epiphany.Model;
 
 namespace Epiphany.ViewModel.Items
 {
     public class BookshelfItemViewModel : ItemViewModel<BookshelfModel>, IBookshelfItemViewModel
     {
 
-        public BookshelfItemViewModel(BookshelfModel model) : 
+        private readonly UserModel user;
+
+        public BookshelfItemViewModel(UserModel user, BookshelfModel model) : 
             base(model) 
         {
+            this.user = user;
         }
 
         public int ShelfId
@@ -23,6 +27,14 @@ namespace Epiphany.ViewModel.Items
         public int NumberOfBooks
         {
             get { return this.Item.BooksCount; }
+        }
+
+        public IUserItemViewModel User
+        {
+            get
+            {
+                return new UserItemViewModel(this.user);
+            }
         }
     }
 }

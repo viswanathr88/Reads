@@ -33,7 +33,7 @@ namespace Epiphany.View.Services
 
         public IBooksViewModel Books
         {
-            get { throw new NotImplementedException(); }
+            get { return new DesignBooksViewModel(); }
         }
 
         public IFriendsViewModel Friends

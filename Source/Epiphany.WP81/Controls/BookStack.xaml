@@ -10,7 +10,7 @@
     d:DesignWidth="400"
     x:Name="bookStackControl">
 
-    <Grid>
+    <Grid Background="{Binding ElementName=bookStackControl, Path=Background}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />

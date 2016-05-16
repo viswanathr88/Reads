@@ -1,0 +1,147 @@
+﻿<local:DataPage
+    x:Class="Epiphany.View.BooksPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Epiphany.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:rating="using:JISoft.RatingControl"
+    xmlns:controls="using:Epiphany.View.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{Binding Source={StaticResource VMLocator}, Path=Books}">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <Grid Background="{ThemeResource PhoneChromeBrush}"
+              Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Border Width="48"
+                        Height="48"
+                        BorderBrush="{ThemeResource PhoneLowBrush}"
+                        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                        HorizontalAlignment="Center"
+                        BorderThickness="1"
+                        VerticalAlignment="Center"
+                        Grid.Column="0"
+                        Margin="0,10,0,10">
+                    <Image Source="{Binding Path=User.ImageUrl}"
+                           Width="46"
+                           Height="46" />
+                </Border>
+
+                <TextBlock Text="{Binding ShelfName}"
+                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                           Style="{StaticResource GroupHeaderTextBlockStyle}"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="2"/>
+            </Grid>
+
+            <!-- Refine list -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="75" />
+                </Grid.ColumnDefinitions>
+
+                <Button Margin="19,0,19,0"
+                        Style="{StaticResource TextButtonStyle}"
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchFilterHeader}"
+                                       Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
+                                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
+
+                            <TextBlock Text="{Binding SelectedFilter}"
+                                       Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
+                                       Foreground="{StaticResource PhoneAccentBrush}"
+                                       LineStackingStrategy="BaselineToBaseline"
+                                       Margin="15,0,0,0" />
+                        </StackPanel>
+                    </Button.Content>
+                    <Button.Flyout>
+                        <ListPickerFlyout ItemsSource="{Binding Filters}"
+                                          SelectedItem="{Binding SelectedFilter, Mode=TwoWay}"
+                                          Placement="Top"
+                                          PickerFlyoutBase.Title="FILTER"/>
+                    </Button.Flyout>
+                </Button>
+
+                <!-- Top button -->
+                <Button Margin="19,0,19,0"
+                        Style="{StaticResource TextButtonStyle}"
+                        VerticalAlignment="Stretch"
+                        HorizontalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        Grid.Column="1"
+                        Click="ScrollToTop">
+                    <Button.Content>
+                        <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TopButtonText}"
+                                   Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
+                                   Foreground="{ThemeResource PhoneAccentBrush}" />
+                    </Button.Content>
+                </Button>
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1"
+              x:Name="ContentRoot"
+              Margin="19,19,19,0">
+            <ListView ItemsSource="{Binding Books}"
+                      Margin="0,0,0,0"
+                      x:Name="booksList">
+                <ListView.ItemContainerTransitions>
+                    <TransitionCollection>
+                        <EntranceThemeTransition IsStaggeringEnabled="True" />
+                    </TransitionCollection>
+                </ListView.ItemContainerTransitions>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <controls:BookItem Title="{Binding Title}"
+                                           AverageRating="{Binding AverageRating}"
+                                           ImageUrl="{Binding ImageUrl}"
+                                           RatingsCount="{Binding RatingsCount}"
+                                           Author="{Binding Path=MainAuthor.Name}"
+                                           ExtraInfoVisibility="Collapsed"
+                                           Margin="0,0,0,19"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+                <ListView.Footer>
+                    <ProgressRing IsActive="{Binding IsLoading}"
+                                  Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
+                </ListView.Footer>
+
+            </ListView>
+        </Grid>
+    </Grid>
+</local:DataPage>

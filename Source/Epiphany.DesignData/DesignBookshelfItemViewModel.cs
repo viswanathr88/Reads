@@ -1,4 +1,5 @@
-﻿using Epiphany.ViewModel;
+﻿using System;
+using Epiphany.ViewModel;
 using Epiphany.ViewModel.Items;
 
 namespace Epiphany.View.DesignData
@@ -24,6 +25,12 @@ namespace Epiphany.View.DesignData
         }
 
         public int NumberOfBooks
+        {
+            get;
+            set;
+        }
+
+        public IUserItemViewModel User
         {
             get;
             set;

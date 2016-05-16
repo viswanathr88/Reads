@@ -118,7 +118,7 @@ namespace Epiphany.View.Services
 
         public IBooksViewModel Books
         {
-            get { return new BooksViewModel(); }
+            get { return new BooksViewModel(this.serviceFactory.GetBookService()); }
         }
 
         public IFriendsViewModel Friends

@@ -106,7 +106,7 @@
 
                 <controls:Section Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ProfileSectionHeaderFavoriteAuthors}"
                                   Grid.Row="0"
-                                  Visibility="{Binding IsLoaded, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                  Visibility="{Binding HasFavoriteAuthors, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <controls:Section.SectionContent>
                         <ListView ItemsSource="{Binding FavoriteAuthors}"
                                   ScrollViewer.VerticalScrollBarVisibility="Disabled"

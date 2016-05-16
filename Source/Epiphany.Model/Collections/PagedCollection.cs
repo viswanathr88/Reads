@@ -42,6 +42,7 @@ namespace Epiphany.Model.Collections
                 }
                 this.page++;
                 this.pageSize = this.items.Count;
+                Size = this.items.Count;
             }
         }
 
@@ -135,10 +136,7 @@ namespace Epiphany.Model.Collections
                 isLoaded = true;
                 return false;
             }
-            //
-            // Get the size of the collection
-            //
-            Size = Converter.ToInt(collection.Total, collection.Items.Length);
+
             //
             // Add the new items to the internal list
             //
@@ -150,6 +148,8 @@ namespace Epiphany.Model.Collections
                     this.Items.Add(this.adapter.Convert(item));
                     count++;
                 }
+
+                Size = Converter.ToInt(collection.Total, collection.Items.Length);
             }
 
             //

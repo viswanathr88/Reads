@@ -156,7 +156,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "user_shelves";
+                return baseUrl + "user_shelves";
             }
         }
 

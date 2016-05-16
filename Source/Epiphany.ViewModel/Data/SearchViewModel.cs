@@ -54,8 +54,10 @@ namespace Epiphany.ViewModel
             get { return this.selectedFilter; }
             set
             {
-                SetProperty(ref this.selectedFilter, value);
-                CreateSearchResultCollection();
+                if (SetProperty(ref this.selectedFilter, value))
+                {
+                    CreateSearchResultCollection();
+                }
             }
         }
 

@@ -39,7 +39,7 @@ namespace Epiphany.ViewModel.Items
         }
 
 
-        public IEnumerable<IAuthorItemViewModel> Authors
+        public IList<IAuthorItemViewModel> Authors
         {
             get { return this.authors; }
         }
@@ -47,6 +47,14 @@ namespace Epiphany.ViewModel.Items
         public IAuthorItemViewModel MainAuthor
         {
             get { return this.authors.FirstOrDefault(); }
+        }
+
+        public int RatingsCount
+        {
+            get
+            {
+                return Item.RatingsCount;
+            }
         }
     }
 }

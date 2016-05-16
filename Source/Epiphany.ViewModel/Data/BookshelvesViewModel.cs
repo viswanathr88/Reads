@@ -85,7 +85,7 @@ namespace Epiphany.ViewModel
             IBookshelfItemViewModel item = null;
             if (model != null)
             {
-                item = new BookshelfItemViewModel(model);
+                item = new BookshelfItemViewModel(Parameter, model);
             }
 
             return item;

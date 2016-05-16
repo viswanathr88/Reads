@@ -6,6 +6,8 @@
 
         string Name { get; }
 
+        IUserItemViewModel User { get; }
+
         int NumberOfBooks { get; }
     }
 }

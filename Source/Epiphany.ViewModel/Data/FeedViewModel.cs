@@ -20,17 +20,12 @@ namespace Epiphany.ViewModel
         private bool isFilterEnabled;
         private bool isFeedEmpty;
         
-        // Commands
-        private readonly IAsyncCommand<IEnumerable<FeedItemModel>, VoidType> fetchFeedItemsCommand;
-
         public FeedViewModel(IUserService userService, IResourceLoader resourceLoader)
         {
             this.userService = userService;
             this.resourceLoader = resourceLoader;
 
             this.Items = new ObservableCollection<IFeedItemViewModel>();
-            this.fetchFeedItemsCommand = new FetchFeedCommand(userService);
-            RegisterCommand(this.fetchFeedItemsCommand, OnFetchFeedExecuted);
 
             this.feedOptionsViewModel = new FeedOptionsViewModel(resourceLoader);
             this.feedOptionsViewModel.PropertyChanged += FeedOptions_PropertyChanged;
@@ -83,14 +78,6 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IAsyncCommand<IEnumerable<FeedItemModel>, VoidType> FetchFeed
-        {
-            get
-            {
-                return this.fetchFeedItemsCommand;
-            }
-        }
-
         public override async Task LoadAsync(VoidType parameter)
         {
             if (!IsLoaded)
@@ -127,33 +114,9 @@ namespace Epiphany.ViewModel
             }
         }
 
-        private void OnFetchFeedExecuted(ExecutedEventArgs e)
+        protected override void Reset()
         {
-            if (e.State == CommandExecutionState.Success)
-            {
-                IEnumerable<FeedItemModel> items = this.FetchFeed.Result;
-                Items = new ObservableCollection<IFeedItemViewModel>();
-                if (items != null)
-                {
-                    foreach (FeedItemModel model in items)
-                    {
-                        Items.Add(new FeedItemViewModel(model, this.resourceLoader)); 
-                    }
-                }
-
-                if (this.Items.Count == 0)
-                {
-                    IsFeedEmpty = true;
-                }
-                IsLoaded = true;
-            }
-
-            IsLoading = false;
-        }
-
-        private void OnCommandExecuting(object sender, CancelEventArgs e)
-        {
-            IsLoading = true;
+            // Do nothing here
         }
     }
 }

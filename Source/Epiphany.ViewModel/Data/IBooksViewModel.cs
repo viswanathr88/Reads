@@ -1,14 +1,16 @@
-﻿using Epiphany.ViewModel.Items;
+﻿using Epiphany.Model.Services;
+using Epiphany.ViewModel.Items;
 using System.Collections.Generic;
 
 namespace Epiphany.ViewModel
 {
     public interface IBooksViewModel : IDataViewModel
     {
-        string ShelfName { get; set; }
-        int UserId { get; set; }
-        string UserName { get; set; }
+        string ShelfName { get; }
+        IUserItemViewModel User { get; }
 
         IList<IBookItemViewModel> Books { get; }
+        IList<BookSortType> Filters { get; }
+        BookSortType SelectedFilter { get; set; }
     }
 }

@@ -235,11 +235,6 @@ namespace Epiphany.ViewModel
             }
         }
 
-        private void OnCommandExecuting(object sender, ViewModel.Commands.CancelEventArgs e)
-        {
-            IsLoading = true;
-        }
-
         private void OnFetchBookExecuted(ExecutedEventArgs e)
         {
             IsLoading = false;

@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="Epiphany.View.Controls.BookItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:Epiphany.View.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:rating="using:JISoft.RatingControl"
+             xmlns:dd="using:Epiphany.View.DesignData"
+             mc:Ignorable="d"
+             d:DesignHeight="128"
+             d:DesignWidth="400"
+             x:Name="bookItemControl">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Book image -->
+        <Border Width="96"
+                Height="128"
+                Background="{ThemeResource PhoneChromeBrush}">
+            <Image Source="{Binding ElementName=bookItemControl,Path=ImageUrl}"
+                   Grid.Column="0"
+                   Stretch="UniformToFill"
+                   VerticalAlignment="Top">
+                <Image.Transitions>
+                    <TransitionCollection>
+                        <PopupThemeTransition />
+                    </TransitionCollection>
+                </Image.Transitions>
+            </Image>
+        </Border>
+
+        <!-- Book Details -->
+        <StackPanel Margin="19,0,0,0"
+                    VerticalAlignment="Top"
+                    Orientation="Vertical"
+                    Grid.Column="1">
+
+            <TextBlock Style="{StaticResource ListViewItemTextBlockStyle}"
+                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                       Text="{Binding ElementName=bookItemControl, Path=Title}"
+                       TextTrimming="CharacterEllipsis"
+                       TextWrapping="Wrap"
+                       TextLineBounds="TrimToCapHeight"
+                       MaxLines="2"
+                       Margin="0,-2,0,0"
+                       OpticalMarginAlignment="TrimSideBearings"
+                       LineStackingStrategy="BlockLineHeight"
+                       VerticalAlignment="Top" />
+            <TextBlock Style="{StaticResource ListViewItemSubheaderTextBlockStyle}"
+                       Foreground="{ThemeResource PhoneMidBrush}"
+                       Text="{Binding ElementName=bookItemControl,Path=Author}"
+                       TextWrapping="Wrap"
+                       MaxLines="2"
+                       TextTrimming="CharacterEllipsis" />
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Stretch"
+                        Margin="0,5,0,0">
+                <!-- Rating control -->
+                <rating:Rating RatingItemCount="5"
+                               Value="{Binding ElementName=bookItemControl,Path=AverageRating}"
+                               ReadOnly="True"
+                               Background="Transparent"
+                               Height="15"
+                               Width="75">
+                    <rating:Rating.FilledItemStyle>
+                        <Style TargetType="rating:RatingItem">
+                            <Setter Property="Background"
+                                    Value="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            <Setter Property="Padding"
+                                    Value="0" />
+                            <Setter Property="Margin"
+                                    Value="0" />
+                        </Style>
+                    </rating:Rating.FilledItemStyle>
+                    <rating:Rating.UnfilledItemStyle>
+                        <Style TargetType="rating:RatingItem">
+                            <Setter Property="Background"
+                                    Value="{ThemeResource PhoneMidBrush}" />
+                            <Setter Property="Padding"
+                                    Value="0" />
+                            <Setter Property="Margin"
+                                    Value="0" />
+                        </Style>
+                    </rating:Rating.UnfilledItemStyle>
+                </rating:Rating>
+                <TextBlock Style="{StaticResource ListViewItemContentTextBlockStyle}"
+                           Foreground="{ThemeResource PhoneLowBrush}"
+                           TextWrapping="NoWrap"
+                           TextTrimming="CharacterEllipsis"
+                           VerticalAlignment="Center"
+                           Margin="15,0,0,0">
+                                        <Run Text="{Binding ElementName=bookItemControl,Path=RatingsCount}" />
+                                        <Run Text="ratings" />
+                </TextBlock>
+            </StackPanel>
+
+            <!-- Extra comments about book -->
+            <TextBlock Text="{Binding ElementName=bookItemControl, Path=ExtraInfo}"
+                       Foreground="{ThemeResource PhoneAccentBrush}"
+                       Style="{StaticResource ListViewItemContentTextBlockStyle}"
+                       Visibility="{Binding ElementName=bookItemControl, Path=ExtraInfoVisibility}" />
+            
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,4 +1,5 @@
-﻿using Epiphany.Model.Collections;
+﻿using Epiphany.Logging;
+using Epiphany.Model.Collections;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -61,6 +62,7 @@ namespace Epiphany.ViewModel.Collections
         public IAsyncOperation<LoadMoreItemsResult> LoadMoreItemsAsync(uint count)
         {
             CoreDispatcher dispatcher = Window.Current.Dispatcher;
+            Logger.LogDebug($"{GetType()} - Count = {count}");
 
             RaiseLoading();
 
@@ -69,7 +71,7 @@ namespace Epiphany.ViewModel.Collections
                 bool fMoveNext = false;
                 int loadedCount = 0;
                 IList<TModel> items = new List<TModel>();
-                while (loadedCount <= pagedCollection.PageSize && (fMoveNext = await this.enumerator.MoveNext()) == true)
+                while (loadedCount < count && (fMoveNext = await this.enumerator.MoveNext()) == true)
                 {
                     items.Add(enumerator.Current);
                     loadedCount++;
@@ -91,6 +93,7 @@ namespace Epiphany.ViewModel.Collections
                         RaiseLoaded();
                     });
 
+                Logger.LogDebug($"{GetType()} - Loaded Count = {loadedCount}");
                 return new LoadMoreItemsResult() { Count = Convert.ToUInt32(loadedCount) };
             }).AsAsyncOperation<LoadMoreItemsResult>();
         }

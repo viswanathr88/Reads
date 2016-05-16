@@ -1,10 +1,8 @@
-﻿using Epiphany.Model;
-using Epiphany.Model.Services;
+﻿using Epiphany.Model.Services;
 using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
@@ -64,7 +62,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public async override Task LoadAsync(VoidType parameter)
+        public override Task LoadAsync(VoidType parameter)
         {
             if (!IsLoaded)
             {
@@ -73,6 +71,8 @@ namespace Epiphany.ViewModel
                 IsLoading = false;
                 IsLoaded = true;
             }
+
+            return Task.FromResult<bool>(true);
         }
     }
 }

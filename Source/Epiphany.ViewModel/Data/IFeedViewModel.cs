@@ -9,7 +9,6 @@ namespace Epiphany.ViewModel
     {
         IList<IFeedItemViewModel> Items { get; }
         IFeedOptionsViewModel FeedOptions { get; }
-        IAsyncCommand<IEnumerable<FeedItemModel>, VoidType> FetchFeed { get; }
         bool IsFeedEmpty { get; }
         bool IsFilterEnabled { get; }
     }
