@@ -37,5 +37,18 @@ namespace Epiphany.View
                 Frame.Navigate(typeof(BooksPage), e.AddedItems.First());
             }
         }
+
+        private async void Add_Clicked(object sender, RoutedEventArgs e)
+        {
+            await addShelfDialog.ShowAsync();
+        }
+
+        private void Home_Clicked(object sender, RoutedEventArgs e)
+        {
+            while (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace Epiphany.ViewModel.Commands
 
         public AddShelfCommand(IBookshelfService service)
         {
-            if (this.service == null)
+            if (service == null)
             {
                 throw new ArgumentNullException();
             }

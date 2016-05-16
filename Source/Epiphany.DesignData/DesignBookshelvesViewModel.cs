@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using Epiphany.ViewModel.Commands;
+using System.Windows.Input;
 
 namespace Epiphany.View.DesignData
 {
@@ -21,25 +23,31 @@ namespace Epiphany.View.DesignData
             PopulateBookshelves();
         }
 
-        public IList<IBookItemViewModel> CurrentlyReadingList
+        public ICommand CancelCreateShelf
         {
             get;
             set;
         }
 
-        public bool IsBookshelvesLoading
+        public bool CanEdit
         {
             get;
             set;
         }
 
-        public bool IsCurrentlyReadingListLoading
+        public ICommand<string> CreateShelf
         {
             get;
             set;
         }
 
         public string Name
+        {
+            get;
+            set;
+        }
+
+        public string NewShelfName
         {
             get;
             set;
@@ -67,22 +75,6 @@ namespace Epiphany.View.DesignData
                 {
                     Name = Path.GetRandomFileName().Replace(".", string.Empty),
                     NumberOfBooks = random.Next(0, 20)
-                });
-            }
-
-            CurrentlyReadingList = new ObservableCollection<IBookItemViewModel>();
-
-            for (int i = 1; i <= 5; i++)
-            {
-                CurrentlyReadingList.Add(new DesignBookItemViewModel()
-                {
-                    Title = Path.GetRandomFileName().Replace(".", string.Empty),
-                    MainAuthor = new DesignAuthorItemViewModel()
-                    {
-                        Name = "Jeffrey Archer"
-                    },
-                    AverageRating = random.NextDouble() * 5,
-                    ImageUrl = @"https://upload.wikimedia.org/wikipedia/en/3/33/A_Prisoner_of_Birth_Jeffrey_Archer.jpg"
                 });
             }
         }

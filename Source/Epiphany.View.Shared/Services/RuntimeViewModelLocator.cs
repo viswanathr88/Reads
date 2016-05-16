@@ -171,7 +171,7 @@ namespace Epiphany.View.Services
         {
             get
             {
-                return new BookshelvesViewModel(this.serviceFactory.GetBookshelfService());
+                return new BookshelvesViewModel(this.serviceFactory.GetBookshelfService(), this.serviceFactory.GetLogonService());
             }
         }
 

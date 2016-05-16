@@ -46,7 +46,10 @@ namespace Epiphany.Model.Services
         public async Task AddShelf(BookshelfModel shelf)
         {
             await this.baseService.AddShelf(shelf);
-            this.currentUserShelves.Clear();
+            if (this.currentUserShelves != null)
+            {
+                this.currentUserShelves.Clear();
+            }
         }
 
         public async Task RemoveShelf(BookshelfModel shelf)

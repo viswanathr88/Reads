@@ -55,9 +55,14 @@ namespace Epiphany.Model.Services
             // Create the request, execute it and validate the response
             WebRequest request = new WebRequest(ServiceUrls.AddShelfUrl, WebMethod.Post);
             request.Parameters["user_shelf[name]"] = shelf.Name;
+            request.Parameters["format"] = "xml";
             request.Authenticate = true;
             WebResponse response = await this.webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.Created);
+            if (this.recentProfile != null)
+            {
+                this.recentProfile.Shelves = null;
+            }
         }
 
         public async Task RemoveShelf(BookshelfModel shelf)
@@ -65,6 +70,7 @@ namespace Epiphany.Model.Services
             // Create the request, execute it and validate the response
             WebRequest request = new WebRequest(ServiceUrls.AddShelfUrl, WebMethod.Post);
             request.Parameters["user_shelf[name]"] = shelf.Name;
+            request.Parameters["format"] = "xml";
             request.Authenticate = true;
             WebResponse response = await this.webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.OK);

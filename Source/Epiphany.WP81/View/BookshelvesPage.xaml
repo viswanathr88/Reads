@@ -7,7 +7,6 @@
                 mc:Ignorable="d"
                 Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
                 DataContext="{Binding Source={StaticResource VMLocator}, Path=Bookshelves}">
-
     <Grid x:Name="LayoutRoot">
 
         <Grid.ChildrenTransitions>
@@ -17,7 +16,7 @@
         </Grid.ChildrenTransitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
+            <RowDefinition Height="60" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -92,5 +91,32 @@
 
             </ListView>
         </Grid>
+
+        <ContentDialog x:Name="addShelfDialog"
+                       PrimaryButtonText="create"
+                       SecondaryButtonText="cancel"
+                       Title="CREATE A NEW SHELF"
+                       PrimaryButtonCommand="{Binding CreateShelf}"
+                       PrimaryButtonCommandParameter="{Binding NewShelfName}"
+                       SecondaryButtonCommand="{Binding CancelCreateShelf}">
+            
+            <TextBox Grid.Row="0"
+                     PlaceholderText="enter the shelf name"
+                     Text="{Binding NewShelfName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     Height="80" />
+        </ContentDialog>
     </Grid>
+    
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Icon="Home"
+                          Label="home"
+                          Click="Home_Clicked" />
+            
+            <AppBarButton Icon="Add"
+                          Label="add"
+                          Click="Add_Clicked"
+                          Visibility="{Binding CanEdit, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        </CommandBar>
+    </Page.BottomAppBar>
 </local:DataPage>

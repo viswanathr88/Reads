@@ -139,7 +139,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "https://www.goodreads.com/shelf/add_to_shelf";
+                return baseUrl +  "shelf/add_to_shelf";
             }
         }
 
@@ -156,7 +156,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return baseUrl + "user_shelves";
+                return baseUrl + "user_shelves.xml";
             }
         }
 

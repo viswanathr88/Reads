@@ -202,6 +202,8 @@ namespace Epiphany.ViewModel
         /// <param name="e">event args</param>
         private void OnCommandExecuted(object sender, ExecutedEventArgs e)
         {
+            IsLoading = false;
+
             if (sender == null)
             {
                 Logger.LogError(string.Format("{0} sender cannot be null", GetType()));
