@@ -103,7 +103,7 @@
             <TextBox Grid.Row="0"
                      PlaceholderText="enter the shelf name"
                      Text="{Binding NewShelfName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                     Height="80" />
+                     Height="50" />
         </ContentDialog>
     </Grid>
     
