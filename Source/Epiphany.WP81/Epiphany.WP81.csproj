@@ -97,6 +97,9 @@
     <Compile Include="Controls\BookStack.xaml.cs">
       <DependentUpon>BookStack.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\BusyIndicatorTextButton.xaml.cs">
+      <DependentUpon>BusyIndicatorTextButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FeedControl.xaml.cs">
       <DependentUpon>FeedControl.xaml</DependentUpon>
     </Compile>
@@ -181,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\BookStack.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BusyIndicatorTextButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -66,6 +66,7 @@ namespace Epiphany.Model.Services
             WebRequest request = new WebRequest(ServiceUrls.AddFriendUrl, WebMethod.Post);
             request.Authenticate = true;
             request.Parameters["id"] = profile.Id.ToString();
+            request.Parameters["format"] = "xml";
 
             WebResponse response = await this.webClient.ExecuteAsync(request);
             response.Validate(System.Net.HttpStatusCode.Created);
@@ -78,7 +79,6 @@ namespace Epiphany.Model.Services
             ds.SourceUrl = ServiceUrls.FeedUrl;
             ds.Parameters["update"] = type.ToString();
             ds.Parameters["update_filter"] = filter.ToString();
-            ds.Parameters["v"] = "3";
 
             ds.RequiresAuthentication = true;
             ds.Returns = (response) => response.Updates;

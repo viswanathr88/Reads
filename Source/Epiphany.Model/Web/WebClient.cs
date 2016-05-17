@@ -94,7 +94,7 @@ namespace Epiphany.Web
                     {
                         content = await reader.ReadToEndAsync();
                         response = new WebResponse(httpWebResponse.StatusCode, content);
-                        //Logger.LogDebug(response.ToString());
+                        Logger.LogDebug(response.ToString());
                     }
                 }
                 else

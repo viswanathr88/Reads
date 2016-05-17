@@ -29,7 +29,8 @@
         </Border>
 
         <ContentControl Content="{Binding ElementName=sectionControl, Path=SectionContent}"
-                        Grid.Row="1"/>
+                        Grid.Row="1"
+                        HorizontalContentAlignment="Stretch"/>
 
     </Grid>
 </UserControl>

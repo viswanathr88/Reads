@@ -1,5 +1,7 @@
-﻿using Epiphany.ViewModel.Items;
+﻿using Epiphany.Model;
+using Epiphany.ViewModel.Items;
 using System.Collections.Generic;
+using Windows.UI.Xaml;
 
 namespace Epiphany.ViewModel
 {
@@ -17,7 +19,14 @@ namespace Epiphany.ViewModel
         int ShelvesCount { get; }
         bool AreUpdatesEmpty { get; }
         bool HasFavoriteAuthors { get; }
+        Visibility ProfileActionsVisibility { get; }
+        Visibility FollowUserVisibility { get; }
+        Visibility FollowingUserVisibility { get; }
+        Visibility RequestPendingVisibility { get; }
+
         IList<IAuthorItemViewModel> FavoriteAuthors { get; set; }
         IList<IFeedItemViewModel> RecentUpdates { get; }
+        IAsyncCommand<ProfileModel> SendFriendRequest { get; }
+        IAsyncCommand<ProfileModel> ToggleFollowReviews { get; }
     }
 }

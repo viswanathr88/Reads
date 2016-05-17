@@ -1,11 +1,13 @@
 ﻿using Epiphany.Model;
 using Epiphany.Model.Services;
+using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using Windows.UI.Xaml;
 
 namespace Epiphany.ViewModel
 {
@@ -25,12 +27,20 @@ namespace Epiphany.ViewModel
         private bool hasFavoriteAuthors;
         private ProfileModel profileModel;
 
+        private Visibility profileActionsVisibility = Visibility.Collapsed;
+        private Visibility followReviewsVisibility = Visibility.Collapsed;
+        private Visibility followingReviewsVisibility = Visibility.Collapsed;
+        private Visibility requestPendingVisibility = Visibility.Collapsed;
+
         private readonly IDeviceServices deviceServices;
         private readonly IResourceLoader resourceLoader;
         private readonly IUserService userService;
 
         private IList<IFeedItemViewModel> recentUpdates;
         private IList<IAuthorItemViewModel> favoriteAuthors;
+
+        private readonly IAsyncCommand<ProfileModel> sendFriendRequestCommand;
+        private readonly IAsyncCommand<ProfileModel> followUserCommand;
 
         public ProfileViewModel(IUserService userService, IDeviceServices deviceServices, IResourceLoader resourceLoader)
         {
@@ -49,6 +59,9 @@ namespace Epiphany.ViewModel
 
             RecentUpdates = new ObservableCollection<IFeedItemViewModel>();
             FavoriteAuthors = new ObservableCollection<IAuthorItemViewModel>();
+
+            this.sendFriendRequestCommand = new SendFriendRequestCommand(userService);
+            this.sendFriendRequestCommand.Executed += SendFriendRequestCommand_Executed;
         }
 
         public int Id
@@ -69,12 +82,12 @@ namespace Epiphany.ViewModel
             }
         }
 
-        private ProfileModel Model
+        public ProfileModel Model
         {
             get { return this.profileModel; }
-            set
+            private set
             {
-                this.profileModel = value;
+                SetProperty(ref this.profileModel, value);
             }
         }
 
@@ -218,6 +231,67 @@ namespace Epiphany.ViewModel
             }
         }
 
+        public Visibility ProfileActionsVisibility
+        {
+            get
+            {
+                return this.profileActionsVisibility;
+            }
+            private set
+            {
+                SetProperty(ref this.profileActionsVisibility, value);
+            }
+        }
+
+        public Visibility FollowUserVisibility
+        {
+            get
+            {
+                return this.followReviewsVisibility;
+            }
+            private set
+            {
+                SetProperty(ref this.followReviewsVisibility, value);
+            }
+        }
+
+        public Visibility FollowingUserVisibility
+        {
+            get
+            {
+                return this.followingReviewsVisibility;
+            }
+            private set
+            {
+                SetProperty(ref this.followingReviewsVisibility, value);
+            }
+        }
+
+        public Visibility RequestPendingVisibility
+        {
+            get
+            {
+                return this.requestPendingVisibility;
+            }
+            private set
+            {
+                SetProperty(ref this.requestPendingVisibility, value);
+            }
+        }
+
+        public IAsyncCommand<ProfileModel> SendFriendRequest
+        {
+            get
+            {
+                return this.sendFriendRequestCommand;
+            }
+        }
+
+        public IAsyncCommand<ProfileModel> ToggleFollowReviews
+        {
+            get;
+        }
+
         public override async Task LoadAsync(UserModel user)
         {
             IsLoading = true;
@@ -235,6 +309,20 @@ namespace Epiphany.ViewModel
             ShelvesCount = Model.ShelvesCount;
             Location = !string.IsNullOrEmpty(Model.Location) ? Model.Location : "Unknown";
             ConstructMemberSinceString();
+
+            if (Model.IsPendingFriendRequest)
+            {
+                ProfileActionsVisibility = Visibility.Collapsed;
+                RequestPendingVisibility = Visibility.Visible;
+                FollowingUserVisibility = Visibility.Collapsed;
+                FollowingUserVisibility = Visibility.Collapsed;
+            }
+            else
+            {
+                ProfileActionsVisibility = Model.IsFriend ? Visibility.Collapsed : Visibility.Visible;
+                FollowUserVisibility = Model.IsFollowing ? Visibility.Collapsed : Visibility.Visible;
+                FollowingUserVisibility = Model.IsFollowing ? Visibility.Visible : Visibility.Collapsed;
+            }
 
             RecentUpdates = new ObservableCollection<IFeedItemViewModel>();
             foreach (FeedItemModel model in Model.RecentUpdates)
@@ -271,6 +359,20 @@ namespace Epiphany.ViewModel
             FavoriteAuthors = null;
             AreUpdatesEmpty = false;
             HasFavoriteAuthors = false;
+            RequestPendingVisibility = Visibility.Collapsed;
+            ProfileActionsVisibility = Visibility.Collapsed;
+            FollowingUserVisibility = Visibility.Collapsed;
+            FollowUserVisibility = Visibility.Collapsed;
+        }
+
+        private async void SendFriendRequestCommand_Executed(object sender, ExecutedEventArgs e)
+        {
+            if (e.State == CommandExecutionState.Success)
+            {
+                // Reload the profile
+                Reset();
+                await LoadAsync(Parameter);
+            }
         }
 
         private void ConstructMemberSinceString()

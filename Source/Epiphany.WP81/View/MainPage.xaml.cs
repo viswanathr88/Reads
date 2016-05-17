@@ -1,4 +1,5 @@
-﻿using Epiphany.ViewModel;
+﻿using Epiphany.Logging;
+using Epiphany.ViewModel;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
@@ -16,12 +17,12 @@ namespace Epiphany.View
             NavigationCacheMode = NavigationCacheMode.Required;
         }
 
-        private void OnSearchButtonClicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private void Search_Clicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             Frame.Navigate(typeof(SearchPage), string.Empty);
         }
 
-        private void OnScanButtonClicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private void Scan_Clicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             Frame.Navigate(typeof(ScanPage));
         }
@@ -34,6 +35,19 @@ namespace Epiphany.View
         private void PickerFlyout_Closed(object sender, object e)
         {
             GetViewModel<HomeViewModel>().Feed.FeedOptions.Cancel.Execute(null);
+        }
+
+        private void ViewAllBooks_Clicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            var user = GetViewModel<HomeViewModel>().CurrentlyLoggedInUser;
+
+            if (user == null)
+            {
+                Logger.LogError("User is not logged in!");
+                return;
+            }
+
+            Frame.Navigate(typeof(BookshelvesPage), user);
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Epiphany.Logging;
-using Epiphany.Model;
+﻿using Epiphany.Model;
 using Epiphany.Model.Services;
 using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Commands;
@@ -153,7 +152,7 @@ namespace Epiphany.ViewModel
         }
 
         private IBookshelfItemViewModel BookshelfModelAdapterFn(BookshelfModel model)
-        {
+        { 
             IBookshelfItemViewModel item = null;
             if (model != null)
             {

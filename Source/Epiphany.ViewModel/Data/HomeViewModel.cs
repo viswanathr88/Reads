@@ -1,4 +1,5 @@
-﻿using Epiphany.Model.Authentication;
+﻿using Epiphany.Model;
+using Epiphany.Model.Authentication;
 using Epiphany.Model.Services;
 using System;
 using System.ComponentModel;
@@ -108,6 +109,23 @@ namespace Epiphany.ViewModel
             private set
             {
                 SetProperty(ref this.communityVM, value);
+            }
+        }
+
+        public UserModel CurrentlyLoggedInUser
+        {
+            get
+            {
+                UserModel model = null;
+                if (this.logonService.Session != null)
+                {
+                    int id = int.Parse(this.logonService.Session.UserId);
+                    model = new UserModel(id)
+                    {
+                        Name = this.logonService.Session.Name
+                    };
+                }
+                return model;
             }
         }
 

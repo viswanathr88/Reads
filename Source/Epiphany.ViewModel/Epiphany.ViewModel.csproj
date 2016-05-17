@@ -109,6 +109,7 @@
     <Compile Include="Commands\RateAppCommand.cs" />
     <Compile Include="Commands\RemoveFromReadingListCommand.cs" />
     <Compile Include="Commands\SearchCommand.cs" />
+    <Compile Include="Commands\SendFriendRequestCommand.cs" />
     <Compile Include="Data\AboutViewModel.cs" />
     <Compile Include="Data\AddBookViewModel.cs" />
     <Compile Include="Data\AuthorAttributeViewModel.cs" />

@@ -1,7 +1,9 @@
-﻿using Epiphany.ViewModel;
+﻿using Epiphany.Model;
+using Epiphany.ViewModel;
 using Epiphany.ViewModel.Items;
 using System.Collections.Generic;
 using System;
+using Windows.UI.Xaml;
 
 namespace Epiphany.View.DesignData
 {
@@ -40,6 +42,11 @@ namespace Epiphany.View.DesignData
                 Id = 52,
                 Name = "George R. R. Martin"
             });
+
+            RequestPendingVisibility = Visibility.Collapsed;
+            ProfileActionsVisibility = Visibility.Visible;
+            FollowingUserVisibility = Visibility.Collapsed;
+            FollowUserVisibility = Visibility.Visible;
         }
         public int Id
         {
@@ -120,6 +127,42 @@ namespace Epiphany.View.DesignData
         }
 
         public bool HasFavoriteAuthors
+        {
+            get;
+            set;
+        }
+
+        public IAsyncCommand<ProfileModel> SendFriendRequest
+        {
+            get;
+            set;
+        }
+
+        public IAsyncCommand<ProfileModel> ToggleFollowReviews
+        {
+            get;
+            set;
+        }
+
+        public Visibility ProfileActionsVisibility
+        {
+            get;
+            set;
+        }
+
+        public Visibility FollowUserVisibility
+        {
+            get;
+            set;
+        }
+
+        public Visibility FollowingUserVisibility
+        {
+            get;
+            set;
+        }
+
+        public Visibility RequestPendingVisibility
         {
             get;
             set;

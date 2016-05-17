@@ -188,7 +188,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "/friend/add_as_friend";
+                return baseUrl + "friend/add_as_friend.xml";
             }
         }
 

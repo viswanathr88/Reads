@@ -22,74 +22,136 @@
         </Grid.RowDefinitions>
 
         <!-- Header -->
-        <Grid Grid.Row="0"
+        <Grid HorizontalAlignment="Stretch"
+              Grid.Row="0"
               Background="{ThemeResource PhoneChromeBrush}"
               Margin="0,0,0,15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-            <Grid HorizontalAlignment="Stretch">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+            <Border Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                    BorderBrush="{ThemeResource ApplicationForegroundThemeBrush}"
+                    BorderThickness="1"
+                    Margin="0,20,0,0"
+                    Width="128"
+                    Height="128"
+                    Grid.Row="0">
+                <Image Source="{Binding ImageUrl}" />
+            </Border>
 
-                <Border Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-                        BorderBrush="{ThemeResource ApplicationForegroundThemeBrush}"
-                        BorderThickness="1"
-                        Margin="0,20,0,0"
-                        Width="128"
-                        Height="128"
-                        Grid.Row="0">
-                    <Image Source="{Binding ImageUrl}" />
-                </Border>
+            <TextBlock Text="{Binding Name}"
+                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                       Style="{StaticResource GroupHeaderTextBlockStyle}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Grid.Row="1" />
 
-                <TextBlock Text="{Binding Name}"
-                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                           Style="{StaticResource GroupHeaderTextBlockStyle}"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
-                           Grid.Row="1" />
+            <StackPanel Grid.Row="2"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0,10,0,0">
+                <controls:ProfileHeaderItem IconGlyph="&#xE121;"
+                                            Text="{Binding MemberSinceString}" />
+                <controls:ProfileHeaderItem IconGlyph="&#xE139;"
+                                            Text="{Binding Location}"
+                                            Margin="10,0,0,0" />
+            </StackPanel>
 
-                <StackPanel Grid.Row="2"
-                            Orientation="Horizontal"
-                            HorizontalAlignment="Center"
-                            Margin="0,10,0,0">
-                    <controls:ProfileHeaderItem IconGlyph="&#xE121;"
-                                                Text="{Binding MemberSinceString}" />
-                    <controls:ProfileHeaderItem IconGlyph="&#xE139;"
-                                                Text="{Binding Location}"
-                                                Margin="10,0,0,0" />
-                </StackPanel>
+            <Grid Grid.Row="3"
+                  Margin="0,10,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-                <Grid Grid.Row="3"
-                      Margin="0,10,0,10">
+                <controls:RowEmphasisButton FirstRowString="{Binding FriendsCount}"
+                                            SecondRowString="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ProfileButtonFriendsLabel}"
+                                            IconGlyph="&#xE13D;"
+                                            PreferTextOverIcon="{Binding IsLoaded}"
+                                            Grid.Column="0"
+                                            x:Name="friendsButton"
+                                            Click="friendsButton_Click" />
+
+                <controls:RowEmphasisButton FirstRowString="{Binding GroupsCount}"
+                                            SecondRowString="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ProfileButtonGroupsLabel}"
+                                            IconGlyph="&#xE125;"
+                                            PreferTextOverIcon="{Binding IsLoaded}"
+                                            Grid.Column="1" />
+
+                <controls:RowEmphasisButton FirstRowString="{Binding ShelvesCount}"
+                                            SecondRowString="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ProfileButtonShelvesLabel}"
+                                            IconGlyph="&#xE113;"
+                                            PreferTextOverIcon="{Binding IsLoaded}"
+                                            Grid.Column="2"
+                                            Click="Shelves_Click" />
+            </Grid>
+
+            <Grid Grid.Row="4"
+                  Visibility="{Binding IsLoaded, Converter={StaticResource BooleanToVisibilityConverter}}"
+                  Background="{ThemeResource PhoneAccentBrush}">
+                <Grid Visibility="{Binding ProfileActionsVisibility}"
+                      Height="50">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <controls:RowEmphasisButton FirstRowString="{Binding FriendsCount}"
-                                                SecondRowString="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ProfileButtonFriendsLabel}"
-                                                IconGlyph="&#xE13D;"
-                                                PreferTextOverIcon="{Binding IsLoaded}"
-                                                Grid.Column="0"
-                                                x:Name="friendsButton"
-                                                Click="friendsButton_Click" />
-                    
-                    <controls:RowEmphasisButton FirstRowString="{Binding GroupsCount}"
-                                                SecondRowString="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ProfileButtonGroupsLabel}"
-                                                IconGlyph="&#xE125;"
-                                                PreferTextOverIcon="{Binding IsLoaded}"
-                                                Grid.Column="1" />
+                    <controls:BusyIndicatorTextButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AddFriendButtonLabel}"
+                                                      IconGlyph="&#xE1E2;"
+                                                      Foreground="White"
+                                                      Command="{Binding SendFriendRequest}"
+                                                      CommandParameter="{Binding Model}"
+                                                      IsBusy="{Binding Path=SendFriendRequest.IsExecuting}"
+                                                      Grid.Column="0" />
 
-                    <controls:RowEmphasisButton FirstRowString="{Binding ShelvesCount}"
-                                                SecondRowString="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ProfileButtonShelvesLabel}"
-                                                IconGlyph="&#xE113;"
-                                                PreferTextOverIcon="{Binding IsLoaded}"
-                                                Grid.Column="2"
-                                                Click="Shelves_Click"/>
+                    <Border BorderThickness="0,0,1,0"
+                            BorderBrush="{ThemeResource PhoneChromeBrush}" />
+
+                    <controls:BusyIndicatorTextButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.FollowReviewsButtonLabel}"
+                                                      IconGlyph="&#xE109;"
+                                                      Foreground="White"
+                                                      Command="{Binding ToggleFollowReviews}"
+                                                      CommandParameter="{Binding Model}"
+                                                      IsBusy="{Binding Path=ToggleFollowReviews.IsExecuting}"
+                                                      Grid.Column="2"
+                                                      Visibility="{Binding FollowUserVisibility}"/>
+
+                    <controls:BusyIndicatorTextButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.FollowingReviewsButtonLabel}"
+                                                      IconGlyph="&#xE10B;"
+                                                      Foreground="White"
+                                                      Command="{Binding ToggleFollowReviews}"
+                                                      CommandParameter="{Binding Model}"
+                                                      IsBusy="{Binding Path=ToggleFollowReviews.IsExecuting}"
+                                                      Grid.Column="2"
+                                                      Visibility="{Binding FollowingUserVisibility}" />
+
+                </Grid>
+
+                <Grid Height="50"
+                      Visibility="{Binding RequestPendingVisibility}">
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+                        <FontIcon Glyph="&#xE129;"
+                                  Margin="0,0,10,0"
+                                  Foreground="White"/>
+                        <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.RequestPendingText}"
+                                   Style="{ThemeResource BaseTextBlockStyle}"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   FontFamily="{ThemeResource PhoneFontFamilyNormal}"
+                                   Foreground="White"
+                                   FontWeight="{ThemeResource PhoneButtonFontWeight}"
+                                   FontSize="{ThemeResource TextStyleLargeFontSize}" />
+                    </StackPanel>
+                    
                 </Grid>
             </Grid>
         </Grid>

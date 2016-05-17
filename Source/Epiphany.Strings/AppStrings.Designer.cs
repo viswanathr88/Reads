@@ -71,6 +71,15 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ADD FRIEND.
+        /// </summary>
+        public static string AddFriendButtonLabel {
+            get {
+                return ResourceManager.GetString("AddFriendButtonLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to add to shelf.
         /// </summary>
         public static string AddToShelfTitle {
@@ -535,6 +544,24 @@ namespace Epiphany.Strings {
         public static string FeedOptionsSummaryText {
             get {
                 return ResourceManager.GetString("FeedOptionsSummaryText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FOLLOWING.
+        /// </summary>
+        public static string FollowingReviewsButtonLabel {
+            get {
+                return ResourceManager.GetString("FollowingReviewsButtonLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FOLLOW.
+        /// </summary>
+        public static string FollowReviewsButtonLabel {
+            get {
+                return ResourceManager.GetString("FollowReviewsButtonLabel", resourceCulture);
             }
         }
         
@@ -1039,6 +1066,15 @@ namespace Epiphany.Strings {
         public static string RemoveFromShelfButtonText {
             get {
                 return ResourceManager.GetString("RemoveFromShelfButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FRIEND REQUEST PENDING.
+        /// </summary>
+        public static string RequestPendingText {
+            get {
+                return ResourceManager.GetString("RequestPendingText", resourceCulture);
             }
         }
         

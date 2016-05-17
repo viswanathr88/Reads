@@ -546,4 +546,16 @@
   <data name="UserFriendsTitleFormat" xml:space="preserve">
     <value>{0}'s Friends</value>
   </data>
+  <data name="AddFriendButtonLabel" xml:space="preserve">
+    <value>ADD FRIEND</value>
+  </data>
+  <data name="FollowingReviewsButtonLabel" xml:space="preserve">
+    <value>FOLLOWING</value>
+  </data>
+  <data name="FollowReviewsButtonLabel" xml:space="preserve">
+    <value>FOLLOW</value>
+  </data>
+  <data name="RequestPendingText" xml:space="preserve">
+    <value>FRIEND REQUEST PENDING</value>
+  </data>
 </root>

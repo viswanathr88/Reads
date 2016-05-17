@@ -1,6 +1,5 @@
 ﻿using Epiphany.Model.Collections;
 using Epiphany.Model.Messaging;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -57,9 +56,8 @@ namespace Epiphany.Model.Services
         public async Task AddFriend(ProfileModel profile)
         {
             await this.baseService.AddFriend(profile);
-            //
+            
             // Clear the caches
-            //
             if (cache.ContainsKey(profile.Id))
             {
                 cache.Remove(profile.Id);

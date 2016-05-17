@@ -12,6 +12,8 @@ namespace Epiphany.Model
         private readonly int id;
         private readonly string name;
         private readonly IAdapter<FeedItemModel, GoodreadsUpdate> feedItemAdapter;
+        private IList<FeedItemModel> recentUpdates;
+        private IList<AuthorModel> favoriteAuthors;
 
         public ProfileModel(int id, string name)
         {
@@ -32,6 +34,8 @@ namespace Epiphany.Model
             this.name = profile.Name;
 
             this.feedItemAdapter = new FeedItemAdapter();
+            PopulateRecentUpdates();
+            PopulateFavoriteAuthors();
         }
 
         public override int Id
@@ -141,6 +145,14 @@ namespace Epiphany.Model
             get { return this.profile.FriendStatus == "request_pending_to"; }
         }
 
+        public bool IsFollowing
+        {
+            get
+            {
+                return Converter.ToBool(this.profile.IsFollowing, false);
+            }
+        }
+
         public int ShelvesCount
         {
             get
@@ -153,23 +165,14 @@ namespace Epiphany.Model
         {
             get
             {
-                IList<FeedItemModel> updates = new List<FeedItemModel>();
-                foreach (GoodreadsUpdate update in this.profile.Updates)
+                return this.recentUpdates;
+            }
+            private set
+            {
+                if (this.recentUpdates != value)
                 {
-                    try
-                    {
-                        var model = this.feedItemAdapter.Convert(update);
-                        if (model != null)
-                        {
-                            updates.Add(model);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Logger.LogException(ex);
-                    }
+                    this.recentUpdates = value;
                 }
-                return updates;
             }
         }
 
@@ -177,13 +180,43 @@ namespace Epiphany.Model
         {
             get
             {
-                IList<AuthorModel> authors = new List<AuthorModel>();
-                foreach (var author in this.profile.FavoriteAuthors)
+                return this.favoriteAuthors;
+            }
+            private set
+            {
+                if (this.favoriteAuthors != value)
                 {
-                    authors.Add(new AuthorModel(author, null));
+                    this.favoriteAuthors = value;
                 }
+            }
+        }
 
-                return authors;
+        private void PopulateRecentUpdates()
+        {
+            RecentUpdates = new List<FeedItemModel>();
+            foreach (GoodreadsUpdate update in this.profile.Updates)
+            {
+                try
+                {
+                    var model = this.feedItemAdapter.Convert(update);
+                    if (model != null)
+                    {
+                        RecentUpdates.Add(model);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Logger.LogException(ex);
+                }
+            }
+        }
+
+        private void PopulateFavoriteAuthors()
+        {
+            FavoriteAuthors = new List<AuthorModel>();
+            foreach (var author in this.profile.FavoriteAuthors)
+            {
+                FavoriteAuthors.Add(new AuthorModel(author, null));
             }
         }
     }

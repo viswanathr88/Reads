@@ -198,13 +198,8 @@
                                     Content="View all books"
                                     HorizontalAlignment="Center"
                                     Margin="0,5,0,10"
-                                    MinWidth="200">
-                                <interactivity:Interaction.Behaviors>
-                                    <core:EventTriggerBehavior EventName="Click">
-                                        <core:NavigateToPageAction TargetPage="Epiphany.View.BooksPage" />
-                                    </core:EventTriggerBehavior>
-                                </interactivity:Interaction.Behaviors>
-                            </Button>
+                                    MinWidth="200"
+                                    Click="ViewAllBooks_Clicked" />
                         </StackPanel>
 
                     </ScrollViewer>
@@ -236,10 +231,10 @@
             <CommandBar.PrimaryCommands>
                 <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonSearchText}"
                               Icon="Find"
-                              Click="OnSearchButtonClicked" />
+                              Click="Search_Clicked" />
                 <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonScanText}"
                               Icon="Camera"
-                              Click="OnScanButtonClicked" />
+                              Click="Scan_Clicked" />
             </CommandBar.PrimaryCommands>
             <CommandBar.SecondaryCommands>
                 <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonSettingsText}" />

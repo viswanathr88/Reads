@@ -1,10 +1,11 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows.Input;
 
 namespace Epiphany.ViewModel.Commands
 {
 
-    public interface ICommandEx : ICommand
+    public interface ICommandEx : ICommand, INotifyPropertyChanged
     {
         /// <summary>
         /// Event raised when the command begins execution
@@ -14,6 +15,10 @@ namespace Epiphany.ViewModel.Commands
         /// Event fired when the command has finished execution
         /// </summary>
         event EventHandler<ExecutedEventArgs> Executed;
+        /// <summary>
+        /// Returns true if the command is executing
+        /// </summary>
+        bool IsExecuting { get; }
     }
 
     /// <summary>
