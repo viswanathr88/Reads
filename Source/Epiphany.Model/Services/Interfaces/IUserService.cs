@@ -47,5 +47,17 @@ namespace Epiphany.Model.Services
         /// </summary>
         /// <param name="profile">profile of the user to be added</param>
         Task AddFriend(ProfileModel profile);
+        /// <summary>
+        /// Follow a user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        Task FollowUser(ProfileModel user);
+        /// <summary>
+        /// Unfollow user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        Task UnfollowUser(ProfileModel user);
     }
 }

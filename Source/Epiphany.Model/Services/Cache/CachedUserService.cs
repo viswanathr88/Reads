@@ -68,5 +68,37 @@ namespace Epiphany.Model.Services
                 friendsCache.Remove(profile.Id);
             }
         }
+
+        public async Task FollowUser(ProfileModel user)
+        {
+            await this.baseService.FollowUser(user);
+
+            // Clear the caches
+            if (cache.ContainsKey(user.Id))
+            {
+                cache.Remove(user.Id);
+            }
+
+            if (friendsCache.ContainsKey(user.Id))
+            {
+                friendsCache.Remove(user.Id);
+            }
+        }
+
+        public async Task UnfollowUser(ProfileModel user)
+        {
+            await this.baseService.UnfollowUser(user);
+
+            // Clear the caches
+            if (cache.ContainsKey(user.Id))
+            {
+                cache.Remove(user.Id);
+            }
+
+            if (friendsCache.ContainsKey(user.Id))
+            {
+                friendsCache.Remove(user.Id);
+            }
+        }
     }
 }

@@ -32,9 +32,9 @@ namespace Epiphany.ViewModel
         private Visibility followingReviewsVisibility = Visibility.Collapsed;
         private Visibility requestPendingVisibility = Visibility.Collapsed;
 
-        private readonly IDeviceServices deviceServices;
         private readonly IResourceLoader resourceLoader;
         private readonly IUserService userService;
+        private readonly ILogonService logonService;
 
         private IList<IFeedItemViewModel> recentUpdates;
         private IList<IAuthorItemViewModel> favoriteAuthors;
@@ -42,7 +42,7 @@ namespace Epiphany.ViewModel
         private readonly IAsyncCommand<ProfileModel> sendFriendRequestCommand;
         private readonly IAsyncCommand<ProfileModel> followUserCommand;
 
-        public ProfileViewModel(IUserService userService, IDeviceServices deviceServices, IResourceLoader resourceLoader)
+        public ProfileViewModel(IUserService userService, IResourceLoader resourceLoader, ILogonService logonService)
         {
             if (userService == null)
             {
@@ -53,15 +53,18 @@ namespace Epiphany.ViewModel
                 throw new ArgumentNullException(nameof(resourceLoader));
             }
 
-            this.deviceServices = deviceServices;
             this.resourceLoader = resourceLoader;
             this.userService = userService;
+            this.logonService = logonService;
 
             RecentUpdates = new ObservableCollection<IFeedItemViewModel>();
             FavoriteAuthors = new ObservableCollection<IAuthorItemViewModel>();
 
             this.sendFriendRequestCommand = new SendFriendRequestCommand(userService);
-            this.sendFriendRequestCommand.Executed += SendFriendRequestCommand_Executed;
+            this.sendFriendRequestCommand.Executed += OnProfileActionCompleted;
+
+            this.followUserCommand = new ToggleFollowUserCommand(userService);
+            this.followUserCommand.Executed += OnProfileActionCompleted;
         }
 
         public int Id
@@ -289,7 +292,10 @@ namespace Epiphany.ViewModel
 
         public IAsyncCommand<ProfileModel> ToggleFollowReviews
         {
-            get;
+            get
+            {
+                return this.followUserCommand;
+            }
         }
 
         public override async Task LoadAsync(UserModel user)
@@ -310,7 +316,16 @@ namespace Epiphany.ViewModel
             Location = !string.IsNullOrEmpty(Model.Location) ? Model.Location : "Unknown";
             ConstructMemberSinceString();
 
-            if (Model.IsPendingFriendRequest)
+            int id = -1;
+            if (this.logonService.Session != null && int.TryParse(this.logonService.Session.UserId, out id)
+                && id == Parameter.Id)
+            {
+                ProfileActionsVisibility = Visibility.Collapsed;
+                RequestPendingVisibility = Visibility.Collapsed;
+                FollowingUserVisibility = Visibility.Collapsed;
+                FollowingUserVisibility = Visibility.Collapsed;
+            }
+            else if (Model.IsPendingFriendRequest)
             {
                 ProfileActionsVisibility = Visibility.Collapsed;
                 RequestPendingVisibility = Visibility.Visible;
@@ -365,7 +380,7 @@ namespace Epiphany.ViewModel
             FollowUserVisibility = Visibility.Collapsed;
         }
 
-        private async void SendFriendRequestCommand_Executed(object sender, ExecutedEventArgs e)
+        private async void OnProfileActionCompleted(object sender, ExecutedEventArgs e)
         {
             if (e.State == CommandExecutionState.Success)
             {

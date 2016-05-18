@@ -89,9 +89,9 @@ namespace Epiphany.View.Services
             get
             {
                 return new ProfileViewModel(
-                    this.serviceFactory.GetUserService(), 
-                    this.deviceServices,
-                    this.resourceLoader);
+                    this.serviceFactory.GetUserService(),
+                    this.resourceLoader,
+                    this.serviceFactory.GetLogonService());
             }
         }
 

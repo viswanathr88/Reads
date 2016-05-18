@@ -57,7 +57,7 @@ namespace Epiphany.Model
 
         public static string GroupUrl
         {
-            get 
+            get
             {
                 return "group/show";
             }
@@ -139,7 +139,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return baseUrl +  "shelf/add_to_shelf";
+                return baseUrl + "shelf/add_to_shelf";
             }
         }
 
@@ -270,6 +270,22 @@ namespace Epiphany.Model
             get
             {
                 return "group/search";
+            }
+        }
+
+        public static string FollowUserUrlFormat
+        {
+            get
+            {
+                return @"http://www.goodreads.com/user/{0}/followers.xml";
+            }
+        }
+
+        public static string UnfollowUserUrlFormat
+        {
+            get
+            {
+                return @"http://www.goodreads.com/user/{0}/followers/stop_following.xml";
             }
         }
 

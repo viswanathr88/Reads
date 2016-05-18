@@ -6,6 +6,7 @@ using Epiphany.Web;
 using Epiphany.Xml;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System;
 
 namespace Epiphany.Model.Services
 {
@@ -96,6 +97,29 @@ namespace Epiphany.Model.Services
                 }
             }
             return items;
+        }
+
+        public async Task FollowUser(ProfileModel user)
+        {
+            // Create the web request and execute it
+            WebRequest request = new WebRequest(string.Format(ServiceUrls.FollowUserUrlFormat, user.Id), WebMethod.Post);
+            request.Authenticate = true;
+            request.Parameters["id"] = user.Id.ToString();
+
+            WebResponse response = await this.webClient.ExecuteAsync(request);
+            response.Validate(System.Net.HttpStatusCode.Created);
+        }
+
+        public async Task UnfollowUser(ProfileModel user)
+        {
+            // Create the web request and execute it
+            WebRequest request = new WebRequest(string.Format(ServiceUrls.UnfollowUserUrlFormat, user.Id), WebMethod.Delete);
+            request.Authenticate = true;
+            request.Parameters["id"] = user.Id.ToString();
+            request.Parameters["format"] = "xml";
+
+            WebResponse response = await this.webClient.ExecuteAsync(request);
+            response.Validate(System.Net.HttpStatusCode.OK);
         }
     }
 }
