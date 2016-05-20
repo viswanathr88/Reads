@@ -48,9 +48,12 @@ namespace Epiphany.View.Controls
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var bookItemViewModel = e.AddedItems[0] as BookItemViewModel;
-            Frame frame = Window.Current.Content as Frame;
-            frame.Navigate(typeof(BookPage), bookItemViewModel.Item);
+            if (e.AddedItems != null && e.AddedItems.Count > 0)
+            {
+                var bookItemViewModel = e.AddedItems[0] as BookItemViewModel;
+                Frame frame = Window.Current.Content as Frame;
+                frame.Navigate(typeof(BookPage), bookItemViewModel.Item);
+            }
         }
     }
 }

@@ -7,14 +7,18 @@
                 mc:Ignorable="d"
                 Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
                 DataContext="{Binding Source={StaticResource VMLocator}, Path=Bookshelves}">
+
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <CommonNavigationTransitionInfo IsStaggeringEnabled="True" />
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
     <Grid x:Name="LayoutRoot">
-
-        <Grid.ChildrenTransitions>
-            <TransitionCollection>
-                <EntranceThemeTransition />
-            </TransitionCollection>
-        </Grid.ChildrenTransitions>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
             <RowDefinition Height="*" />
@@ -34,7 +38,8 @@
               Margin="19,9.5,19,0">
             <ListView ItemsSource="{Binding Shelves}"
                       Margin="0,0,0,0"
-                      SelectionChanged="Shelf_Selected">
+                      SelectionChanged="Shelf_Selected"
+                      ContinuumNavigationTransitionInfo.ExitElementContainer="True">
 
                 <ListView.ItemContainerTransitions>
                     <TransitionCollection>
@@ -77,7 +82,8 @@
                                            LineStackingStrategy="BlockLineHeight"
                                            TextWrapping="NoWrap"
                                            TextTrimming="CharacterEllipsis"
-                                           TextLineBounds="TrimToCapHeight" />
+                                           TextLineBounds="TrimToCapHeight"
+                                           ContinuumNavigationTransitionInfo.IsExitElement="True"/>
                             </StackPanel>
 
                         </Grid>

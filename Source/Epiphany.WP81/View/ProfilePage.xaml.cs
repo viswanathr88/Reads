@@ -18,14 +18,14 @@ namespace Epiphany.View
             NavigationCacheMode = NavigationCacheMode.Required;
         }
 
-        private void friendsButton_Click(object sender, RoutedEventArgs e)
+        private void Friends_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(FriendsPage), GetViewModel<IProfileViewModel>().Parameter);
+            Frame.Navigate(typeof(FriendsPage), GetViewModel<IProfileViewModel>().Parameter, new Windows.UI.Xaml.Media.Animation.SlideNavigationTransitionInfo());
         }
 
         private void Shelves_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(BookshelvesPage), GetViewModel<IProfileViewModel>().Parameter);
+            Frame.Navigate(typeof(BookshelvesPage), GetViewModel<IProfileViewModel>().Parameter, new Windows.UI.Xaml.Media.Animation.SlideNavigationTransitionInfo());
         }
     }
 }

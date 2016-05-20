@@ -11,14 +11,17 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     DataContext="{Binding Source={StaticResource VMLocator}, Path=Books}">
 
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <ContinuumNavigationTransitionInfo />
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
     <Grid x:Name="LayoutRoot">
-
-        <Grid.ChildrenTransitions>
-            <TransitionCollection>
-                <EntranceThemeTransition/>
-            </TransitionCollection>
-        </Grid.ChildrenTransitions>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="110"/>
             <RowDefinition Height="*"/>
@@ -58,7 +61,8 @@
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            Grid.Column="0"
-                           Grid.ColumnSpan="2"/>
+                           Grid.ColumnSpan="2"
+                           ContinuumNavigationTransitionInfo.IsEntranceElement="True"/>
             </Grid>
 
             <!-- Refine list -->

@@ -143,7 +143,11 @@ namespace Epiphany.ViewModel
             var shelfCollection = this.bookshelfService.GetBookshelves(Parameter.Id);
             Shelves = new ObservablePagedCollection<IBookshelfItemViewModel, BookshelfModel>(shelfCollection, BookshelfModelAdapterFn);
             this.shelves.Loading += (obj, args) => IsLoading = true;
-            this.shelves.Loaded += (obj, args) => IsLoading = false;
+            this.shelves.Loaded += (obj, args) =>
+            {
+                IsLoading = false;
+                IsLoaded = true;
+            };
         }
 
         private IBookItemViewModel BookModelAdapterFn(BookModel model)

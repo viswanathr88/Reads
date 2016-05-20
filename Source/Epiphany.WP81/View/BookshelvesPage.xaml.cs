@@ -28,6 +28,7 @@ namespace Epiphany.View
         public BookshelvesPage()
         {
             this.InitializeComponent();
+            NavigationCacheMode = NavigationCacheMode.Required;
         }
 
         private void Shelf_Selected(object sender, SelectionChangedEventArgs e)

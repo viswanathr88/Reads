@@ -22,6 +22,8 @@ namespace Epiphany.Model
             this.profile = new GoodreadsProfile();
 
             this.feedItemAdapter = new FeedItemAdapter();
+            PopulateRecentUpdates();
+            PopulateFavoriteAuthors();
         }
 
         internal ProfileModel(GoodreadsProfile profile)
@@ -34,6 +36,7 @@ namespace Epiphany.Model
             this.name = profile.Name;
 
             this.feedItemAdapter = new FeedItemAdapter();
+            RecentUpdates = new List<FeedItemModel>();
             PopulateRecentUpdates();
             PopulateFavoriteAuthors();
         }

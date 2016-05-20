@@ -12,6 +12,14 @@
                 DataContext="{Binding Source={StaticResource VMLocator}, Path=Profile}"
                 Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <ContinuumNavigationTransitionInfo />
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
     <local:DataPage.Resources>
         <converters:BooleanToOpacityConverter x:Key="BooleanToOpacityConverter" />
     </local:DataPage.Resources>
@@ -49,7 +57,8 @@
                        Style="{StaticResource GroupHeaderTextBlockStyle}"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
-                       Grid.Row="1" />
+                       Grid.Row="1"
+                       ContinuumNavigationTransitionInfo.IsEntranceElement="True"/>
 
             <StackPanel Grid.Row="2"
                         Orientation="Horizontal"
@@ -76,7 +85,7 @@
                                             PreferTextOverIcon="{Binding IsLoaded}"
                                             Grid.Column="0"
                                             x:Name="friendsButton"
-                                            Click="friendsButton_Click" />
+                                            Click="Friends_Click" />
 
                 <controls:RowEmphasisButton FirstRowString="{Binding GroupsCount}"
                                             SecondRowString="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ProfileButtonGroupsLabel}"

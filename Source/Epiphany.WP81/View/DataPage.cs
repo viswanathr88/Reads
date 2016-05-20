@@ -31,7 +31,8 @@ namespace Epiphany.View
             }
 
             Logger.LogInfo("Loading ViewModel for " + GetType().ToString());
-            await vm.LoadAsync(e.Parameter);
+            bool fReload = (e.NavigationMode == NavigationMode.New) || (e.NavigationMode == NavigationMode.Refresh);
+            await vm.LoadAsync(e.Parameter, fReload);
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)

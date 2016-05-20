@@ -8,6 +8,16 @@
                 Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
                 DataContext="{Binding Source={StaticResource VMLocator}, Path=Friends}">
 
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <CommonNavigationTransitionInfo IsStaggeringEnabled="True" />
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
@@ -29,9 +39,8 @@
                   Margin="19,19,19,10"
                   SelectionChanged="OnUserSelected"
                   ScrollViewer.HorizontalScrollMode="Disabled"
-                  ScrollViewer.IsHorizontalRailEnabled="False">
-            
-            
+                  ScrollViewer.IsHorizontalRailEnabled="False"
+                  ContinuumNavigationTransitionInfo.ExitElementContainer="True">
             
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -63,7 +72,8 @@
                                        TextWrapping="NoWrap"
                                        TextTrimming="CharacterEllipsis"
                                        TextLineBounds="TrimToCapHeight" 
-                                       VerticalAlignment="Center"/>
+                                       VerticalAlignment="Center"
+                                       ContinuumNavigationTransitionInfo.IsExitElement="True"/>
                         </StackPanel>
                         
                     </Grid>

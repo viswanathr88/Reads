@@ -21,7 +21,8 @@
 
     <Grid>
         <ListView ItemsSource="{Binding ElementName=feedControl, Path=Items}"
-                  Header="{Binding ElementName=feedControl, Path=Header}">
+                  Header="{Binding ElementName=feedControl, Path=Header}"
+                  x:Name="feedItemsList">
             <ListView.ItemContainerTransitions>
                 <TransitionCollection>
                     <EntranceThemeTransition IsStaggeringEnabled="True"
@@ -55,31 +56,21 @@
                         <Button Grid.Column="0"
                                 Style="{StaticResource TextButtonStyle}"
                                 VerticalAlignment="Top"
-                                x:Name="userImageButton">
-                            <Button.Content>
-                                <Border Height="64"
-                                        Width="64"
-                                        BorderBrush="{ThemeResource PhoneChromeBrush}"
-                                        Grid.Column="0"
-                                        BorderThickness="2"
-                                        HorizontalAlignment="Left"
-                                        VerticalAlignment="Top">
-                                    <Image Source="{Binding Path=User.ImageUrl}"
-                                           Height="60"
-                                           Width="60"
-                                           VerticalAlignment="Center"
-                                           HorizontalAlignment="Center" />
-                                </Border>
-                            </Button.Content>
-
-                            <interactivity:Interaction.Behaviors>
-                                <core:EventTriggerBehavior EventName="Click"
-                                                           SourceObject="{Binding ElementName=userImageButton}">
-                                    <core:NavigateToPageAction TargetPage="Epiphany.View.ProfilePage"
-                                                               Parameter="{Binding Path=User.Item}"/>
-                                </core:EventTriggerBehavior>
-                            </interactivity:Interaction.Behaviors>
-                            
+                                x:Name="userImageButton"
+                                Click="User_Click">
+                            <Border Height="64"
+                                    Width="64"
+                                    BorderBrush="{ThemeResource PhoneChromeBrush}"
+                                    Grid.Column="0"
+                                    BorderThickness="2"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top">
+                                <Image Source="{Binding Path=User.ImageUrl}"
+                                       Height="60"
+                                       Width="60"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center" />
+                            </Border>
                         </Button>
 
                         <!-- Content -->
@@ -96,29 +87,20 @@
                                 <Button Grid.Column="0"
                                         Style="{StaticResource TextButtonStyle}"
                                         VerticalAlignment="Top"
-                                        x:Name="userNameButton">
-                                    <Button.Content>
-                                        <TextBlock Text="{Binding Path=User.Name}"
-                                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                                                   Style="{StaticResource BodyTextBlockStyle}"
-                                                   LineStackingStrategy="BlockLineHeight"
-                                                   OpticalMarginAlignment="TrimSideBearings"
-                                                   TextLineBounds="TrimToCapHeight"
-                                                   TextWrapping="NoWrap"
-                                                   TextTrimming="CharacterEllipsis"
-                                                   VerticalAlignment="Top"
-                                                   Margin="0,-2,0,0"
-                                                   FontWeight="Bold"
-                                                   Pivot.SlideInAnimationGroup="GroupOne"/>
-                                    </Button.Content>
-
-                                    <interactivity:Interaction.Behaviors>
-                                        <core:EventTriggerBehavior EventName="Click"
-                                                                   SourceObject="{Binding ElementName=userNameButton}">
-                                            <core:NavigateToPageAction TargetPage="Epiphany.View.ProfilePage"
-                                                                       Parameter="{Binding Path=User.Item}" />
-                                        </core:EventTriggerBehavior>
-                                    </interactivity:Interaction.Behaviors>
+                                        x:Name="userNameButton"
+                                        Click="User_Click">
+                                    <TextBlock Text="{Binding Path=User.Name}"
+                                               Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                               Style="{StaticResource BodyTextBlockStyle}"
+                                               LineStackingStrategy="BlockLineHeight"
+                                               OpticalMarginAlignment="TrimSideBearings"
+                                               TextLineBounds="TrimToCapHeight"
+                                               TextWrapping="NoWrap"
+                                               TextTrimming="CharacterEllipsis"
+                                               VerticalAlignment="Top"
+                                               Margin="0,-2,0,0"
+                                               FontWeight="Bold"
+                                               Pivot.SlideInAnimationGroup="GroupOne" />
                                 </Button>
 
                                 <FontIcon Glyph="&#xE121;"
@@ -149,7 +131,7 @@
                                            TextTrimming="CharacterEllipsis"
                                            MaxLines="2"
                                            Margin="0,5,5,10"
-                                           Pivot.SlideInAnimationGroup="GroupTwo"/>
+                                           Pivot.SlideInAnimationGroup="GroupTwo" />
 
                                 <rating:Rating Value="{Binding Rating, Mode=TwoWay}"
                                                RatingItemCount="5"
@@ -239,7 +221,7 @@
                                                    Margin="0,-2,0,0"
                                                    FontWeight="Bold"
                                                    Grid.Column="1"
-                                                   Pivot.SlideInAnimationGroup="GroupThree"/>
+                                                   Pivot.SlideInAnimationGroup="GroupThree" />
                                     </Button.Content>
 
                                     <interactivity:Interaction.Behaviors>

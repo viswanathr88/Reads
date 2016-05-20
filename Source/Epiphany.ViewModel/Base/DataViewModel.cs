@@ -70,10 +70,12 @@ namespace Epiphany.ViewModel
         /// </summary>
         /// <param name="parameter">input param</param>
         /// <returns></returns>
-        public async Task LoadAsync(object parameter)
+        public async Task LoadAsync(object parameter, bool fReload)
         {
             try
             {
+                TParam param = default(TParam);
+
                 if (typeof(TParam) != typeof(VoidType))
                 {
                     // Perform parameter validation
@@ -90,9 +92,19 @@ namespace Epiphany.ViewModel
                         throw new ArgumentOutOfRangeException(nameof(parameter));
                     }
 
-                    TParam param = (TParam)parameter;
-                    Parameter = param;
+                    param = (TParam)parameter;
                 }
+
+                // Check if the parameters match. If they do, this ViewModel
+                // has already been loaded, so skip loading
+                if (!fReload && IsLoaded && object.Equals(Parameter, param))
+                {
+                    Logger.LogInfo("VM was loaded with same parameter. Skip Loading");
+                    return;
+                }
+
+                // Set the parameter on the VM
+                Parameter = param;
 
                 Logger.LogDebug("Resetting ViewModel...");
                 Reset();

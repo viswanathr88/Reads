@@ -24,6 +24,6 @@
                    Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
                    Style="{StaticResource SubheaderTextBlockStyle}"
                    Margin="20"
-                   ContinuumNavigationTransitionInfo.IsEntranceElement="True"/>
+                   ContinuumNavigationTransitionInfo.IsEntranceElement="True" />
     </Grid>
 </local:DataPage>

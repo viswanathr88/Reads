@@ -1,6 +1,10 @@
-﻿using System.Collections;
+﻿using Epiphany.Logging;
+using Epiphany.ViewModel.Items;
+using System.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -74,6 +78,28 @@ namespace Epiphany.View.Controls
         public static readonly DependencyProperty HeaderProperty =
             DependencyProperty.Register("Header", typeof(object), typeof(FeedControl), new PropertyMetadata(null));
 
+        private void User_Click(object sender, RoutedEventArgs e)
+        {
+            FrameworkElement element = sender as FrameworkElement;
+            if (sender == null)
+            {
+                Logger.LogError("sender is not framework element");
+                return;
+            }
+
+            var feedItemVM = element.DataContext as IFeedItemViewModel;
+            if (feedItemVM == null)
+            {
+                Logger.LogError("DataContext is not IFeedItemViewModel");
+                return;
+            }
+
+            var parameter = (feedItemVM.User as UserItemViewModel).Item;
+
+            // Navigate to Profile
+            var frame = Window.Current.Content as Frame;
+            frame.Navigate(typeof(ProfilePage), parameter, new SlideNavigationTransitionInfo());
+        }
     }
 
 }

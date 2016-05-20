@@ -136,10 +136,10 @@ namespace Epiphany.ViewModel
                 IsLoading = true;
 
                 // Start loading your feed but not await
-                Task feedLoadTask = Feed.LoadAsync(parameter);
+                Task feedLoadTask = Feed.LoadAsync(parameter, true);
 
                 // This should finish quickly as it is just creating the collection
-                await Books.LoadAsync(int.Parse(this.logonService.Session.UserId));
+                await Books.LoadAsync(int.Parse(this.logonService.Session.UserId), true);
 
                 // Wait for the feed task to finish
                 await feedLoadTask;

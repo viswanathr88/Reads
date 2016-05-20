@@ -71,7 +71,9 @@ namespace Epiphany.ViewModel.Collections
                 bool fMoveNext = false;
                 int loadedCount = 0;
                 IList<TModel> items = new List<TModel>();
-                while (loadedCount < count && (fMoveNext = await this.enumerator.MoveNext()) == true)
+
+                while (loadedCount < Math.Max(count, pagedCollection.Count - this.Count) && 
+                (fMoveNext = await this.enumerator.MoveNext()) == true)
                 {
                     items.Add(enumerator.Current);
                     loadedCount++;

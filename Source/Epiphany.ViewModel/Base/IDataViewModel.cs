@@ -28,7 +28,7 @@ namespace Epiphany.ViewModel
         /// </summary>
         /// <param name="parameter">input param</param>
         /// <returns></returns>
-        Task LoadAsync(object parameter);
+        Task LoadAsync(object parameter, bool fReload);
         /// <summary>
         /// Gets the error object
         /// </summary>
