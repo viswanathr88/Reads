@@ -1,4 +1,5 @@
 ﻿using Epiphany.ViewModel.Items;
+using Epiphany.WP81;
 using System.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -46,13 +47,12 @@ namespace Epiphany.View.Controls
         public static readonly DependencyProperty ItemsProperty =
             DependencyProperty.Register("Items", typeof(IEnumerable), typeof(BookStack), new PropertyMetadata(null));
 
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void Book_Clicked(object sender, ItemClickEventArgs e)
         {
-            if (e.AddedItems != null && e.AddedItems.Count > 0)
+            if (e.ClickedItem != null)
             {
-                var bookItemViewModel = e.AddedItems[0] as BookItemViewModel;
-                Frame frame = Window.Current.Content as Frame;
-                frame.Navigate(typeof(BookPage), bookItemViewModel.Item);
+                var bookItemVM = e.ClickedItem as IBookItemViewModel;
+                await App.Navigate(typeof(BookPage), bookItemVM.Item);
             }
         }
     }

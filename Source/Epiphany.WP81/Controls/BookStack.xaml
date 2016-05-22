@@ -28,7 +28,8 @@
                   ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                   ScrollViewer.HorizontalScrollMode="Enabled"
                   ContinuumNavigationTransitionInfo.ExitElementContainer="True"
-                  SelectionChanged="ListView_SelectionChanged">
+                  IsItemClickEnabled="True"
+                  ItemClick="Book_Clicked">
 
             <ListView.ItemContainerTransitions>
                 <TransitionCollection>

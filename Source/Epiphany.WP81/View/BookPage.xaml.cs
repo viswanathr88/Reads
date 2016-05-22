@@ -44,13 +44,12 @@ namespace Epiphany.View
             }
         }
 
-        private async void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void Book_Clicked(object sender, ItemClickEventArgs e)
         {
-            if (e.AddedItems != null && e.AddedItems.Count > 0)
+            if (e.ClickedItem != null)
             {
-                var bookItem = e.AddedItems[0] as BookItemViewModel;
-
-                await App.Navigate(typeof(BookPage), bookItem.Item, new CommonNavigationTransitionInfo());
+                var bookItem = e.ClickedItem as IBookItemViewModel;
+                await App.Navigate(typeof(BookPage), bookItem.Item, new SlideNavigationTransitionInfo());
             }
         }
     }

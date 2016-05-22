@@ -248,7 +248,8 @@
 
             <PivotItem>
                 <ListView ItemsSource="{Binding SimilarBooks}"
-                          SelectionChanged="ListView_SelectionChanged"
+                          IsItemClickEnabled="True"
+                          ItemClick="Book_Clicked"
                           ContinuumNavigationTransitionInfo.ExitElementContainer="True">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
