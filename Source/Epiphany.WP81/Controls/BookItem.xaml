@@ -37,7 +37,8 @@
         <StackPanel Margin="19,0,0,0"
                     VerticalAlignment="Top"
                     Orientation="Vertical"
-                    Grid.Column="1">
+                    Grid.Column="1"
+                    x:Name="outerPanel">
 
             <TextBlock Style="{StaticResource ListViewItemTextBlockStyle}"
                        Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
@@ -49,13 +50,16 @@
                        Margin="0,-2,0,0"
                        OpticalMarginAlignment="TrimSideBearings"
                        LineStackingStrategy="BlockLineHeight"
-                       VerticalAlignment="Top" />
+                       VerticalAlignment="Top"
+                       MaxWidth="{Binding ElementName=outerPanel, Path=ActualWidth}"
+                       ContinuumNavigationTransitionInfo.IsExitElement="True"/>
             <TextBlock Style="{StaticResource ListViewItemSubheaderTextBlockStyle}"
                        Foreground="{ThemeResource PhoneMidBrush}"
                        Text="{Binding ElementName=bookItemControl,Path=Author}"
                        TextWrapping="Wrap"
                        MaxLines="2"
-                       TextTrimming="CharacterEllipsis" />
+                       TextTrimming="CharacterEllipsis"
+                       MaxWidth="{Binding ElementName=outerPanel, Path=ActualWidth}"/>
             <StackPanel Orientation="Horizontal"
                         VerticalAlignment="Stretch"
                         Margin="0,5,0,0">
@@ -92,7 +96,8 @@
                            TextWrapping="NoWrap"
                            TextTrimming="CharacterEllipsis"
                            VerticalAlignment="Center"
-                           Margin="15,0,0,0">
+                           Margin="15,0,0,0"
+                           MaxWidth="{Binding ElementName=outerPanel, Path=ActualWidth}">
                                         <Run Text="{Binding ElementName=bookItemControl,Path=RatingsCount}" />
                                         <Run Text="ratings" />
                 </TextBlock>
@@ -102,7 +107,8 @@
             <TextBlock Text="{Binding ElementName=bookItemControl, Path=ExtraInfo}"
                        Foreground="{ThemeResource PhoneAccentBrush}"
                        Style="{StaticResource ListViewItemContentTextBlockStyle}"
-                       Visibility="{Binding ElementName=bookItemControl, Path=ExtraInfoVisibility}" />
+                       Visibility="{Binding ElementName=bookItemControl, Path=ExtraInfoVisibility}"
+                       MaxWidth="{Binding ElementName=outerPanel, Path=ActualWidth}"/>
             
         </StackPanel>
     </Grid>

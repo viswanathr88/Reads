@@ -19,7 +19,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "book/show";
+                return baseUrl + "book/show";
             }
         }
 

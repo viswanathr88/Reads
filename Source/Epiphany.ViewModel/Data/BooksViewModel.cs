@@ -13,7 +13,7 @@ namespace Epiphany.ViewModel
     public sealed class BooksViewModel : DataViewModel<IBookshelfItemViewModel>, IBooksViewModel
     {
         private string shelfName;
-        private IObservablePagedCollection<IBookItemViewModel> books;
+        private ILazyObservableCollection<IBookItemViewModel> books;
         private IList<BookSortType> filters;
         private BookSortType selectedFilter;
 
@@ -48,7 +48,7 @@ namespace Epiphany.ViewModel
             }
             private set
             {
-                SetProperty(ref this.books, value as IObservablePagedCollection<IBookItemViewModel>);
+                SetProperty(ref this.books, value as ILazyObservableCollection<IBookItemViewModel>);
             }
         }
 

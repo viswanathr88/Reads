@@ -1,4 +1,5 @@
-﻿using Windows.UI.Xaml;
+﻿using System;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
@@ -11,6 +12,10 @@ namespace Epiphany.View.Controls
         {
             this.InitializeComponent();
             FontFamily = new Windows.UI.Xaml.Media.FontFamily("Segoe UI Symbol");
+            if (string.IsNullOrEmpty(Glyph))
+            {
+                icon.Visibility = Visibility.Collapsed;
+            }
         }
 
         public string Glyph
@@ -21,7 +26,14 @@ namespace Epiphany.View.Controls
 
         // Using a DependencyProperty as the backing store for Glyph.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty GlyphProperty =
-            DependencyProperty.Register("Glyph", typeof(string), typeof(TabHeader), new PropertyMetadata(string.Empty));
+            DependencyProperty.Register("Glyph", typeof(string), typeof(TabHeader), new PropertyMetadata(string.Empty, OnGlyphChanged));
+
+        private static void OnGlyphChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            string glyph = e.NewValue as string;
+            TabHeader header = d as TabHeader;
+            header.icon.Visibility = !string.IsNullOrEmpty(glyph) ? Visibility.Visible : Visibility.Collapsed;
+        }
 
         public string HeaderText
         {

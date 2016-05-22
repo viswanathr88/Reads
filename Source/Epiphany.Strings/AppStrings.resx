@@ -558,4 +558,28 @@
   <data name="RequestPendingText" xml:space="preserve">
     <value>FRIEND REQUEST PENDING</value>
   </data>
+  <data name="CollapsableTextLessButtonText" xml:space="preserve">
+    <value>Less</value>
+  </data>
+  <data name="CollapsableTextMoreButtonText" xml:space="preserve">
+    <value>More</value>
+  </data>
+  <data name="BookPivotAboutHeader" xml:space="preserve">
+    <value>ABOUT</value>
+  </data>
+  <data name="BookPivotSimilarHeader" xml:space="preserve">
+    <value>SIMILAR</value>
+  </data>
+  <data name="BookPivotReviewsHeader" xml:space="preserve">
+    <value>REVIEWS</value>
+  </data>
+  <data name="BookDescriptionSectionHeader" xml:space="preserve">
+    <value>DESCRIPTION</value>
+  </data>
+  <data name="BookSimilarBooksSectionHeader" xml:space="preserve">
+    <value>SIMILAR BOOKS</value>
+  </data>
+  <data name="BookPopularShelvesSectionHeader" xml:space="preserve">
+    <value>POPULAR SHELVES</value>
+  </data>
 </root>

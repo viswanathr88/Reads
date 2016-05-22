@@ -22,9 +22,9 @@ namespace Epiphany.Model.Services
             return await this.baseService.GetReviewAsync(id);
         }
 
-        public IPagedCollection<ReviewModel> GetReviewsAsync(BookModel book)
+        public IPagedCollection<ReviewModel> GetReviews(BookModel book)
         {
-            return this.baseService.GetReviewsAsync(book);
+            return this.baseService.GetReviews(book);
         }
 
         public async Task AddReviewAsync(BookModel book, ReviewModel review)

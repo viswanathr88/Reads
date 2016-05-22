@@ -67,8 +67,12 @@
     <Compile Include="DesignLogonViewModel.cs" />
     <Compile Include="DesignMyBooksViewModel.cs" />
     <Compile Include="DesignProfileViewModel.cs" />
+    <Compile Include="DesignRatingDistributionItemViewModel.cs" />
+    <Compile Include="DesignRatingDistributionViewModel.cs" />
+    <Compile Include="DesignReviewItemViewModel.cs" />
     <Compile Include="DesignSearchItemViewModel.cs" />
     <Compile Include="DesignSearchViewModel.cs" />
+    <Compile Include="DesignShelfInformationViewModel.cs" />
     <Compile Include="DesignTimeViewModelLocator.cs" />
     <Compile Include="DesignUserItemViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -87,10 +87,17 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Common\NavigationHelper.cs" />
-    <Compile Include="Common\ObservableDictionary.cs" />
-    <Compile Include="Common\RelayCommand.cs" />
-    <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="Controls\RatingDistribution.xaml.cs">
+      <DependentUpon>RatingDistribution.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ReviewItem.xaml.cs">
+      <DependentUpon>ReviewItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TagsPanel.cs" />
+    <Compile Include="Navigation\NavigationHelper.cs" />
+    <Compile Include="Navigation\ObservableDictionary.cs" />
+    <Compile Include="Navigation\RelayCommand.cs" />
+    <Compile Include="Navigation\SuspensionManager.cs" />
     <Compile Include="Controls\BookItem.xaml.cs">
       <DependentUpon>BookItem.xaml</DependentUpon>
     </Compile>
@@ -99,6 +106,9 @@
     </Compile>
     <Compile Include="Controls\BusyIndicatorTextButton.xaml.cs">
       <DependentUpon>BusyIndicatorTextButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CollapsableText.xaml.cs">
+      <DependentUpon>CollapsableText.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\FeedControl.xaml.cs">
       <DependentUpon>FeedControl.xaml</DependentUpon>
@@ -191,11 +201,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\CollapsableText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\FeedControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\ProfileHeaderItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\RatingDistribution.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ReviewItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

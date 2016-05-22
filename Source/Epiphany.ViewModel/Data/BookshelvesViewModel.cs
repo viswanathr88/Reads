@@ -15,7 +15,7 @@ namespace Epiphany.ViewModel
         private readonly IBookshelfService bookshelfService;
         private readonly ILogonService logonService;
 
-        private IObservablePagedCollection<IBookshelfItemViewModel> shelves;
+        private ILazyObservableCollection<IBookshelfItemViewModel> shelves;
         private string name;
         private string title;
         private bool canEdit;
@@ -52,7 +52,7 @@ namespace Epiphany.ViewModel
             }
             private set
             {
-                SetProperty(ref this.shelves, value as IObservablePagedCollection<IBookshelfItemViewModel>);
+                SetProperty(ref this.shelves, value as ILazyObservableCollection<IBookshelfItemViewModel>);
             }
         }
 

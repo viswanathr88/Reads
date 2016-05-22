@@ -1,6 +1,7 @@
 ﻿using Epiphany.Logging;
 using Epiphany.ViewModel;
 using Epiphany.ViewModel.Items;
+using Epiphany.WP81;
 using System;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.UI.Xaml;
@@ -68,15 +69,14 @@ namespace Epiphany.View
             flyout.ShowAt(element);
         }
 
-        private void SearchResultsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void SearchResultsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.AddedItems == null)
+            if (e.AddedItems != null && e.AddedItems.Count > 0)
             {
-                return;
-            }
+                var searchItem = e.AddedItems[0] as ISearchResultItemViewModel;
+                var book = searchItem.Book as BookItemViewModel;
 
-            if (e.AddedItems.Count > 0)
-            {
+                await App.Navigate(typeof(BookPage), book.Item);
             }
         }
 

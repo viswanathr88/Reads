@@ -1,4 +1,5 @@
-﻿using Epiphany.Model;
+﻿using System;
+using Epiphany.Model;
 
 namespace Epiphany.ViewModel.Items
 {
@@ -12,6 +13,14 @@ namespace Epiphany.ViewModel.Items
         public int Id
         {
             get { return Item.Id; }
+        }
+
+        public string ImageUrl
+        {
+            get
+            {
+                return Item.ImageUrl;
+            }
         }
 
         public string Name

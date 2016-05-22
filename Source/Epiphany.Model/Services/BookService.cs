@@ -41,7 +41,7 @@ namespace Epiphany.Model.Services
             var ds = new DataSource<GoodreadsBook>(webClient);
             ds.SourceUrl = ServiceUrls.BookUrl;
             ds.Parameters["id"] = id.ToString();
-            ds.RequiresAuthentication = false;
+            ds.RequiresAuthentication = true;
             ds.Returns = (response) => response.Book;
 
             GoodreadsBook book = await ds.GetAsync();

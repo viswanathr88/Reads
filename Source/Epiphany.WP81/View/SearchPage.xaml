@@ -11,6 +11,16 @@
                 Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
                 DataContext="{Binding Source={StaticResource VMLocator}, Path=Search}">
 
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <CommonNavigationTransitionInfo IsStaggeringEnabled="True" />
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="125" />
@@ -99,7 +109,8 @@
                       SelectionMode="Single"
                       SelectionChanged="SearchResultsList_SelectionChanged"
                       x:Name="searchResultsList"
-                      Visibility="{Binding HasResults, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}">
+                      Visibility="{Binding HasResults, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}"
+                      ContinuumNavigationTransitionInfo.ExitElementContainer="True">
                 <ListView.ItemContainerTransitions>
                     <TransitionCollection>
                         <EntranceThemeTransition IsStaggeringEnabled="True" />

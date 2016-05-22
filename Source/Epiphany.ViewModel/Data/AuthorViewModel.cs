@@ -126,11 +126,11 @@ namespace Epiphany.ViewModel
                 if (this.selectedBook == value) return;
                 this.selectedBook = value;
 
-                this.navService.CreateFor<BookViewModel>()
+                /*this.navService.CreateFor<BookViewModel>()
                     .AddParam<int>((x) => (x.Id), value.Id)
-                    .AddParam<string>((x) => x.Name, value.Title)
+                    .AddParam<string>((x) => x.Title, value.Title)
                     .Navigate();
-                this.selectedBook = null;
+                this.selectedBook = null;*/
 
                 RaisePropertyChanged();
             }

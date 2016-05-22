@@ -107,7 +107,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return this.review.Body;
+                return Converter.ToPlainText(this.review.Body);
             }
         }
 

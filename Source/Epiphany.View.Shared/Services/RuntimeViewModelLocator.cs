@@ -148,7 +148,7 @@ namespace Epiphany.View.Services
 
         public IBookViewModel Book
         {
-            get { return new BookViewModel(); }
+            get { return new BookViewModel(this.serviceFactory.GetBookService(), this.serviceFactory.GetReviewService()); }
         }
 
         public INavigationService NavigationService

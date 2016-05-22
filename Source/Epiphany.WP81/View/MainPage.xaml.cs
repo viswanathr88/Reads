@@ -1,5 +1,6 @@
 ﻿using Epiphany.Logging;
 using Epiphany.ViewModel;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
@@ -19,7 +20,7 @@ namespace Epiphany.View
 
         private void Search_Clicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(SearchPage), string.Empty);
+            Frame.Navigate(typeof(SearchPage), string.Empty, new ContinuumNavigationTransitionInfo());
         }
 
         private void Scan_Clicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)

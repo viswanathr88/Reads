@@ -36,7 +36,14 @@ namespace Epiphany.Model
         {
             get
             {
-                return Converter.ToInt(this.shelf.Count, 0);
+                if (string.IsNullOrEmpty(this.shelf.Count2))
+                {
+                    return Converter.ToInt(this.shelf.Count, 0);
+                }
+                else
+                {
+                    return Converter.ToInt(this.shelf.Count2, 0);
+                }
             }
         }
     }

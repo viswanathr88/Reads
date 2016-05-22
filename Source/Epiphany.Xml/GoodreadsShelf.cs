@@ -25,5 +25,12 @@ namespace Epiphany.Xml
             get;
             set;
         }
+
+        [XmlAttribute("count")]
+        public string Count2
+        {
+            get;
+            set;
+        }
     }
 }

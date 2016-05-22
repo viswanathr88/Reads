@@ -1,18 +1,34 @@
 ﻿using Epiphany.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel.Items
 {
-    public sealed class ReviewItemViewModel : ItemViewModel<ReviewModel>
+    public sealed class ReviewItemViewModel : ItemViewModel<ReviewModel>, IReviewItemViewModel
     {
         public ReviewItemViewModel(ReviewModel item) : base(item)
         {
+            User = new UserItemViewModel(Item.User);
         }
 
-        
+        public string Body
+        {
+            get
+            {
+                return Item.Body;
+            }
+        }
+
+        public int Rating
+        {
+            get
+            {
+                return Item.Rating;
+            }
+        }
+
+        public IUserItemViewModel User
+        {
+            get;
+            set;
+        }
     }
 }

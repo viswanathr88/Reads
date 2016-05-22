@@ -62,8 +62,9 @@
     <Compile Include="Collections\DeltaListItem.cs" />
     <Compile Include="Collections\Group.cs" />
     <Compile Include="Collections\IGroup.cs" />
-    <Compile Include="Collections\IObservablePagedCollection.cs" />
+    <Compile Include="Collections\ILazyObservableCollection.cs" />
     <Compile Include="Collections\KeyedList.cs" />
+    <Compile Include="Collections\LazyObservableCollection.cs" />
     <Compile Include="Collections\ObservablePagedCollection.cs" />
     <Compile Include="Collections\ObservableSortedGroup.cs" />
     <Compile Include="Collections\SortedList.cs" />
@@ -144,6 +145,7 @@
     <Compile Include="Data\ILogonViewModel.cs" />
     <Compile Include="Data\IMyBooksViewModel.cs" />
     <Compile Include="Data\IProfileViewModel.cs" />
+    <Compile Include="Data\IRatingDistributionViewModel.cs" />
     <Compile Include="Data\IScanViewModel.cs" />
     <Compile Include="Data\ISearchViewModel.cs" />
     <Compile Include="Data\ISettingsViewModel.cs" />
@@ -153,6 +155,7 @@
     <Compile Include="Data\MyBooksViewModel.cs" />
     <Compile Include="Data\ProfileViewModel.cs" />
     <Compile Include="Data\EventsViewModel.cs" />
+    <Compile Include="Data\RatingDistributionViewModel.cs" />
     <Compile Include="Data\ScanViewModel.cs" />
     <Compile Include="Data\SpotlightItemViewModel.cs" />
     <Compile Include="Data\SpotlightViewModel.cs" />
@@ -166,14 +169,19 @@
     <Compile Include="Items\ICustomBookshelfItemViewModel.cs" />
     <Compile Include="Items\IFeedItemViewModel.cs" />
     <Compile Include="Items\IProfileItemViewModel.cs" />
+    <Compile Include="Items\IRatingDistributionItemViewModel.cs" />
+    <Compile Include="Items\IReviewItemViewModel.cs" />
     <Compile Include="Items\ISearchResultItemViewModel.cs" />
+    <Compile Include="Items\IShelfInformationViewModel.cs" />
     <Compile Include="Items\IUserItemViewModel.cs" />
     <Compile Include="Items\ProfileItemViewModel.cs" />
     <Compile Include="Items\ProfileItemViewModelFactory.cs" />
     <Compile Include="Data\SearchQuery.cs" />
+    <Compile Include="Items\RatingDistributionItemViewModel.cs" />
     <Compile Include="Items\ReviewItemViewModel.cs" />
     <Compile Include="Items\SearchResultItemViewModel.cs" />
     <Compile Include="Data\SearchViewModel.cs" />
+    <Compile Include="Items\ShelfInformationViewModel.cs" />
     <Compile Include="Items\UserItemViewModel.cs" />
     <Compile Include="IViewModelLocator.cs" />
     <Compile Include="Services\IDeviceServices.cs" />

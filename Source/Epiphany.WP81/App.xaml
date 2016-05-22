@@ -58,7 +58,11 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="ListViewItem">
                             <Border x:Name="OuterContainer"
-                                    RenderTransformOrigin="0.5,0.5">
+                                    RenderTransformOrigin="0.5,0.5"
+                                    BorderThickness="0,0,0,4">
+                                <Border.BorderBrush>
+                                    <SolidColorBrush />
+                                </Border.BorderBrush>
                                 <Border.RenderTransform>
                                     <ScaleTransform x:Name="ContentScaleTransform" />
                                 </Border.RenderTransform>
@@ -121,6 +125,9 @@
                                         </VisualState>
                                     </VisualStateGroup>
                                     <VisualStateGroup x:Name="SelectionStates">
+                                        <VisualStateGroup.Transitions>
+                                            <VisualTransition GeneratedDuration="0" />
+                                        </VisualStateGroup.Transitions>
                                         <VisualState x:Name="Unselected">
                                             <Storyboard>
                                                 <ColorAnimation Duration="0"
@@ -143,6 +150,10 @@
                                                                 To="{ThemeResource SystemColorControlAccentColor}"
                                                                 Storyboard.TargetProperty="(ContentPresenter.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="contentPresenter" />
+                                                <ColorAnimation Duration="0"
+                                                                To="{ThemeResource SystemColorControlAccentColor}"
+                                                                Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
+                                                                Storyboard.TargetName="OuterContainer" />
 
                                             </Storyboard>
                                         </VisualState>
@@ -160,6 +171,11 @@
                                                                 To="{ThemeResource SystemColorControlAccentColor}"
                                                                 Storyboard.TargetProperty="(ContentPresenter.Foreground).(SolidColorBrush.Color)"
                                                                 Storyboard.TargetName="contentPresenter" />
+                                                <ColorAnimation Duration="0"
+                                                                To="{ThemeResource SystemColorControlAccentColor}"
+                                                                 Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
+                                                                 Storyboard.TargetName="OuterContainer" />
+
                                             </Storyboard>
                                         </VisualState>
                                     </VisualStateGroup>

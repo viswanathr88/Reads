@@ -20,7 +20,7 @@ namespace Epiphany.Model.Services
         /// </summary>
         /// <param name="book">book whose reviews need to be fetched</param>
         /// <returns>collection of reviews</returns>
-        IPagedCollection<ReviewModel> GetReviewsAsync(BookModel book);
+        IPagedCollection<ReviewModel> GetReviews(BookModel book);
         /// <summary>
         /// Add a review to a book
         /// </summary>

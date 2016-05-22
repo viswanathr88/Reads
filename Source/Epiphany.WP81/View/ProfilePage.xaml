@@ -185,9 +185,16 @@
 
                             <ListView.ItemsPanel>
                                 <ItemsPanelTemplate>
-                                    <controls:WrapPanel />
+                                    <controls:TagsPanel />
                                 </ItemsPanelTemplate>
                             </ListView.ItemsPanel>
+
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="HorizontalContentAlignment"
+                                            Value="Stretch" />
+                                </Style>
+                            </ListView.ItemContainerStyle>
 
                             <ListView.ItemTemplate>
                                 <DataTemplate>
@@ -195,7 +202,8 @@
                                             Content="{Binding Name}"
                                             Background="{ThemeResource PhoneChromeBrush}"
                                             Margin="0,0,15,0"
-                                            Height="60" />
+                                            Height="60"
+                                            HorizontalAlignment="Stretch"/>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>

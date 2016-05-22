@@ -53,6 +53,7 @@ namespace Epiphany.Web
                 // We should authenticate if the request says it should be
                 IAuthenticator authenticator = this.authFactory.CreateOAuthAuthenticator();
                 authenticator.Authenticate(request);
+                Logger.LogInfo("Request Authenticated");
             }
 
             System.Net.HttpWebRequest httpWebRequest = System.Net.WebRequest.CreateHttp(request.Url);

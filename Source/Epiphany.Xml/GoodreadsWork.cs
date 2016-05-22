@@ -47,6 +47,13 @@ namespace Epiphany.Xml
             set;
         }
 
+        [XmlElement("rating_dist")]
+        public string RatingsDistribution
+        {
+            get;
+            set;
+        }
+
         [XmlElement("reviews_count")]
         public string ReviewsCount
         {

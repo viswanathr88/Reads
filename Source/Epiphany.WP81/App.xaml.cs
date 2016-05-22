@@ -7,6 +7,7 @@ using Windows.ApplicationModel.Activation;
 using Windows.Media.SpeechRecognition;
 using Windows.Phone.UI.Input;
 using Windows.Storage;
+using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -34,7 +35,6 @@ namespace Epiphany.WP81
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
-            HardwareButtons.BackPressed += HardwareButtons_BackPressed;
         }
 
         /// <summary>
@@ -82,13 +82,12 @@ namespace Epiphany.WP81
                     }
                 }
 
-                rootFrame.ContentTransitions = null;
-                rootFrame.Navigated += this.RootFrame_FirstNavigated;
+                rootFrame.ContentTransitions = this.transitions ?? new TransitionCollection();
 
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                if (!rootFrame.Navigate(typeof(MainPage), e.Arguments))
+                if (!rootFrame.Navigate(typeof(MainPage), e.Arguments, new ContinuumNavigationTransitionInfo()))
                 {
                     throw new Exception("Failed to create initial page");
                 }
@@ -104,17 +103,6 @@ namespace Epiphany.WP81
             Window.Current.Activate();
         }
 
-        /// <summary>
-        /// Restores the content transitions after the app has launched.
-        /// </summary>
-        /// <param name="sender">The object where the handler is attached.</param>
-        /// <param name="e">Details about the navigation event.</param>
-        private void RootFrame_FirstNavigated(object sender, NavigationEventArgs e)
-        {
-            var rootFrame = sender as Frame;
-            rootFrame.ContentTransitions = this.transitions ?? new TransitionCollection(); //{ new EdgeUIThemeTransition() { Edge = EdgeTransitionLocation.Right } };
-            rootFrame.Navigated -= this.RootFrame_FirstNavigated;
-        }
         /// <summary>
         /// Callback when the current window is activated
         /// </summary>
@@ -171,15 +159,36 @@ namespace Epiphany.WP81
 
             return commandSetsInstalled;
         }
-
-        private void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
+        /// <summary>
+        /// Navigation related methods
+        /// </summary>
+        /// <param name="page"></param>
+        /// <param name="parameter"></param>
+        /// <param name="info"></param>
+        /// <returns></returns>
+        public static async Task Navigate(Type page, object parameter, NavigationTransitionInfo info)
         {
             Frame frame = Window.Current.Content as Frame;
-            if (frame.CanGoBack)
+
+            if (frame == null)
             {
-                e.Handled = true;
-                frame.GoBack();
+                Logger.LogError("Frame is null. Navigation failed");
+                return;
             }
+
+            if (info != null)
+            {
+                await Window.Current.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => frame.Navigate(page, parameter, info));
+            }
+            else
+            {
+                await Window.Current.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => frame.Navigate(page, parameter));
+            }
+        }
+
+        public static async Task Navigate(Type page, object parameter)
+        {
+            await App.Navigate(page, parameter, null);
         }
     }
 }

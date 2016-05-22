@@ -1,6 +1,7 @@
 ﻿using Epiphany.Xml;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Epiphany.Model
 {
@@ -113,7 +114,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return this.book.Description;
+                return Converter.ToPlainText(this.book.Description);
             }
         }
 
@@ -178,6 +179,14 @@ namespace Epiphany.Model
             get
             {
                 return this.book.Format;
+            }
+        }
+
+        public string RatingDistribution
+        {
+            get
+            {
+                return this.book.Work?.RatingsDistribution;
             }
         }
 
@@ -256,9 +265,10 @@ namespace Epiphany.Model
             get
             {
                 IList<ShelfInformation> shelves = new List<ShelfInformation>();
+
                 if (this.book.PopularShelves != null)
                 {
-                    foreach (GoodreadsShelf shelf in this.book.PopularShelves)
+                    foreach (GoodreadsShelf shelf in this.book.PopularShelves.Take(15))
                     {
                         shelves.Add(new ShelfInformation(shelf));
                     }

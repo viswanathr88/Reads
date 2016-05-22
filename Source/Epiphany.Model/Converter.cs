@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace Epiphany.Model
 {
@@ -39,6 +40,14 @@ namespace Epiphany.Model
             DateTime dateTime = default(DateTime);
             DateTime.TryParse(dt, out dateTime);
             return dateTime;
+        }
+
+        public static string ToPlainText(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return text;
+
+            return Regex.Replace(text, @"<[^>]*>", String.Empty);
         }
     }
 }

@@ -350,6 +350,51 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DESCRIPTION.
+        /// </summary>
+        public static string BookDescriptionSectionHeader {
+            get {
+                return ResourceManager.GetString("BookDescriptionSectionHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ABOUT.
+        /// </summary>
+        public static string BookPivotAboutHeader {
+            get {
+                return ResourceManager.GetString("BookPivotAboutHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REVIEWS.
+        /// </summary>
+        public static string BookPivotReviewsHeader {
+            get {
+                return ResourceManager.GetString("BookPivotReviewsHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SIMILAR.
+        /// </summary>
+        public static string BookPivotSimilarHeader {
+            get {
+                return ResourceManager.GetString("BookPivotSimilarHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to POPULAR SHELVES.
+        /// </summary>
+        public static string BookPopularShelvesSectionHeader {
+            get {
+                return ResourceManager.GetString("BookPopularShelvesSectionHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All.
         /// </summary>
         public static string BookSearchTypeAll {
@@ -386,6 +431,15 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SIMILAR BOOKS.
+        /// </summary>
+        public static string BookSimilarBooksSectionHeader {
+            get {
+                return ResourceManager.GetString("BookSimilarBooksSectionHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to bookshelves.
         /// </summary>
         public static string BooksTitle {
@@ -400,6 +454,24 @@ namespace Epiphany.Strings {
         public static string ButtonSignIn {
             get {
                 return ResourceManager.GetString("ButtonSignIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Less.
+        /// </summary>
+        public static string CollapsableTextLessButtonText {
+            get {
+                return ResourceManager.GetString("CollapsableTextLessButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to More.
+        /// </summary>
+        public static string CollapsableTextMoreButtonText {
+            get {
+                return ResourceManager.GetString("CollapsableTextMoreButtonText", resourceCulture);
             }
         }
         

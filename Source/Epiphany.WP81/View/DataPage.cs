@@ -1,4 +1,5 @@
 ﻿using Epiphany.Logging;
+using Epiphany.View.Navigation;
 using Epiphany.ViewModel;
 using System;
 using System.ComponentModel;
@@ -9,13 +10,20 @@ namespace Epiphany.View
 {
     public class DataPage : Page
     {
+        private readonly NavigationHelper navigationHelper;
+
         public DataPage()
         {
+            this.navigationHelper = new NavigationHelper(this);
+            this.navigationHelper.LoadState += LoadState;
+            this.navigationHelper.SaveState += SaveState;
         }
 
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+            // Call navigation helper to restore state
+            this.navigationHelper.OnNavigatedTo(e);
 
             if (DataContext == null)
             {
@@ -33,31 +41,15 @@ namespace Epiphany.View
             Logger.LogInfo("Loading ViewModel for " + GetType().ToString());
             bool fReload = (e.NavigationMode == NavigationMode.New) || (e.NavigationMode == NavigationMode.Refresh);
             await vm.LoadAsync(e.Parameter, fReload);
+            Logger.LogInfo($"Loading {GetType()} ViewModel completed");
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
             base.OnNavigatedFrom(e);
 
-            if (e.NavigationMode == NavigationMode.Back)
-            {
-                if (DataContext == null)
-                {
-                    Logger.LogWarn("DataContext is null");
-                    return;
-                }
-
-                IDisposable vm = DataContext as IDisposable;
-
-                if (vm == null)
-                {
-                    Logger.LogWarn("VM does not implement IDisposable");
-                    return;
-                }
-
-                Logger.LogInfo("Disposing ViewModel for " + GetType().ToString());
-                vm.Dispose();
-            }
+            this.navigationHelper.OnNavigatedFrom(e);
+            Logger.LogDebug($"Navigating away from {GetType()}");
         }
 
         protected T GetViewModel<T>()
@@ -102,6 +94,16 @@ namespace Epiphany.View
         protected virtual void OnViewModelDone(object sender, EventArgs e)
         {
             // Nothing to do here
+        }
+
+        protected virtual void LoadState(object sender, LoadStateEventArgs e)
+        {
+            Logger.LogDebug($"{GetType()}");
+        }
+
+        protected virtual void SaveState(object sender, SaveStateEventArgs e)
+        {
+            Logger.LogDebug($"{GetType()}");
         }
     }
 }

@@ -45,14 +45,14 @@ namespace Epiphany.Model.Services
             return this.adapter.Convert(review);
         }
 
-        public IPagedCollection<ReviewModel> GetReviewsAsync(BookModel book)
+        public IPagedCollection<ReviewModel> GetReviews(BookModel book)
         {
             // Create a data source and the collection
             var ds = new PagedDataSource<GoodreadsReviews>(webClient);
             ds.SourceUrl = ServiceUrls.BookUrl;
             ds.Parameters["id"] = book.Id.ToString();
             ds.RequiresAuthentication = false;
-            ds.Returns = (response) => response.Reviews;
+            ds.Returns = (response) => response.Book.PublicReviews;
             
             // Create the collection
             IPagedCollection<ReviewModel> reviews = null;

@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Epiphany.Common
+namespace Epiphany.View.Navigation
 {
     /// <summary>
     /// A command whose sole purpose is to relay its functionality 

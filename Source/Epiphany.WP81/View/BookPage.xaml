@@ -1,13 +1,14 @@
-﻿<local:DataPage
-    x:Class="Epiphany.View.BookPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Epiphany.View"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    DataContext="{Binding Source={StaticResource VMLocator}, Path=Book}">
+﻿<local:DataPage x:Class="Epiphany.View.BookPage"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:local="using:Epiphany.View"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:controls="using:Epiphany.View.Controls"
+                xmlns:rating="using:JISoft.RatingControl"
+                mc:Ignorable="d"
+                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                DataContext="{Binding Source={StaticResource VMLocator}, Path=Book}">
 
     <Page.Transitions>
         <TransitionCollection>
@@ -20,10 +21,263 @@
     </Page.Transitions>
 
     <Grid>
-        <TextBlock Text="Book Title"
-                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                   Style="{StaticResource SubheaderTextBlockStyle}"
-                   Margin="20"
-                   ContinuumNavigationTransitionInfo.IsEntranceElement="True" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0"
+              Background="{ThemeResource PhoneChromeBrush}">
+            <Grid Margin="19,10,19,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Source="{Binding ImageUrl}"
+                       Margin="0,10,10,10"
+                       MaxHeight="160" />
+
+                <StackPanel Orientation="Vertical"
+                            Grid.Column="1"
+                            Margin="20,0,0,0">
+                    <TextBlock Text="{Binding Title}"
+                               Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                               Style="{StaticResource ListViewItemTextBlockStyle}"
+                               TextWrapping="Wrap"
+                               MaxLines="3"
+                               TextTrimming="CharacterEllipsis"
+                               OpticalMarginAlignment="TrimSideBearings"
+                               LineStackingStrategy="MaxHeight"
+                               Margin="0,0,0,10"
+                               ContinuumNavigationTransitionInfo.IsEntranceElement="True" />
+                    <TextBlock Text="{Binding Path=Authors[0].Name}"
+                               Foreground="{ThemeResource PhoneMidBrush}"
+                               Style="{StaticResource GroupHeaderTextBlockStyle}"
+                               TextWrapping="Wrap"
+                               MaxLines="2"
+                               TextTrimming="CharacterEllipsis"
+                               OpticalMarginAlignment="TrimSideBearings"
+                               LineStackingStrategy="MaxHeight"
+                               Margin="0,0,0,10" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+        
+        <!-- Pivot Header -->
+        <ListView Grid.Row="1"
+                  HorizontalAlignment="Stretch"
+                  HorizontalContentAlignment="Stretch"
+                  ItemContainerStyle="{StaticResource HeaderListViewItemStyle}"
+                  SelectionMode="Single"
+                  x:Name="pivotHeaderList"
+                  SelectedIndex="{Binding ElementName=bookContentPivot, Path=SelectedIndex, Mode=TwoWay}"
+                  Background="{ThemeResource PhoneChromeBrush}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <controls:HorizontalStretchPanel Height="60" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListViewItem HorizontalContentAlignment="Stretch"
+                          VerticalContentAlignment="Stretch">
+                <controls:TabHeader HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.BookPivotAboutHeader}" />
+            </ListViewItem>
+
+            <ListViewItem HorizontalContentAlignment="Stretch"
+                          VerticalContentAlignment="Stretch">
+                <controls:TabHeader HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.BookPivotReviewsHeader}" />
+            </ListViewItem>
+
+            <ListViewItem HorizontalContentAlignment="Stretch"
+                          VerticalContentAlignment="Stretch">
+                <controls:TabHeader HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.BookPivotSimilarHeader}" />
+            </ListViewItem>
+
+        </ListView>
+        
+
+        <Pivot Grid.Row="2"
+               x:Name="bookContentPivot"
+               Margin="19,10,19,10">
+            <PivotItem>
+                <ScrollViewer VerticalScrollMode="Auto"
+                              HorizontalContentAlignment="Left">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <!-- Description section -->
+                        <controls:Section Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.BookDescriptionSectionHeader}"
+                                          Visibility="{Binding ShowDescription, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <controls:Section.SectionContent>
+                                <controls:CollapsableText Text="{Binding Description}"
+                                                          HorizontalContentAlignment="Left" />
+                            </controls:Section.SectionContent>
+                        </controls:Section>
+                        
+                        <!-- Popular shelves -->
+                        <controls:Section Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.BookPopularShelvesSectionHeader}"
+                                          Visibility="{Binding ShowPopularShelves, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                          Grid.Row="1">
+                            <controls:Section.SectionContent>
+                                <ListView ItemsSource="{Binding PopularShelves}"
+                                          ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                          Margin="0,10,0,10"
+                                          SelectionMode="None">
+
+                                    <ListView.ItemContainerStyle>
+                                        <Style TargetType="ListViewItem">
+                                            <Setter Property="IsHitTestVisible"
+                                                    Value="False" />
+                                            <Setter Property="HorizontalContentAlignment"
+                                                    Value="Stretch" />
+                                        </Style>
+                                    </ListView.ItemContainerStyle>
+
+                                    <ListView.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <controls:TagsPanel />
+                                        </ItemsPanelTemplate>
+                                    </ListView.ItemsPanel>
+
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border Margin="0,0,15,15"
+                                                    Height="Auto"
+                                                    BorderThickness="1"
+                                                    BorderBrush="{ThemeResource PhoneChromeBrush}"
+                                                    Padding="10,5,10,5"
+                                                    MinWidth="100">
+                                                <Border.Background>
+                                                    <SolidColorBrush Color="{Binding Color}" />
+                                                </Border.Background>
+
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto" />
+                                                        <RowDefinition Height="Auto" />
+                                                    </Grid.RowDefinitions>
+
+                                                    <TextBlock Text="{Binding Name}"
+                                                               Style="{StaticResource BodyTextBlockStyle}"
+                                                               OpticalMarginAlignment="TrimSideBearings"
+                                                               TextWrapping="NoWrap"
+                                                               TextTrimming="CharacterEllipsis"
+                                                               HorizontalAlignment="Center"
+                                                               Grid.Row="0">
+                                                        <TextBlock.Foreground>
+                                                            <SolidColorBrush Color="{Binding Foreground}" />
+                                                        </TextBlock.Foreground>
+                                                    </TextBlock>
+
+                                                    <TextBlock Text="{Binding Count}"
+                                                               Style="{StaticResource BodyTextBlockStyle}"
+                                                               OpticalMarginAlignment="TrimSideBearings"
+                                                               TextWrapping="NoWrap"
+                                                               TextTrimming="CharacterEllipsis"
+                                                               Grid.Row="1"
+                                                               HorizontalAlignment="Center">
+                                                        <TextBlock.Foreground>
+                                                            <SolidColorBrush Color="{Binding Foreground}" />
+                                                        </TextBlock.Foreground>
+                                                    </TextBlock>
+                                                </Grid>
+                                                
+
+                                            </Border>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </controls:Section.SectionContent>
+                        </controls:Section>
+                        
+                    </Grid>
+                </ScrollViewer>
+            </PivotItem>
+
+            <PivotItem>
+                <!-- General Reviews -->
+                <ListView ItemsSource="{Binding Reviews}"
+                          Margin="0,10,0,0">
+
+                    <ListView.Header>
+                        <controls:RatingDistribution Items="{Binding Path=RatingDistribution.Ratings}"
+                                                     Glyph="&#xE113;"
+                                                     RatingsCount="{Binding Path=RatingDistribution.Total}"
+                                                     AverageRating="{Binding AverageRating}"
+                                                     Margin="0,0,0,19"/>
+                    </ListView.Header>
+
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment"
+                                    Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.ItemContainerTransitions>
+                        <TransitionCollection>
+                            <EntranceThemeTransition IsStaggeringEnabled="True" />
+                        </TransitionCollection>
+                    </ListView.ItemContainerTransitions>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <controls:ReviewItem Rating="{Binding Rating}"
+                                                 Body="{Binding Body}"
+                                                 UserImage="{Binding Path=User.ImageUrl}"
+                                                 Username="{Binding Path=User.Name}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <ListView.Footer>
+                        <ProgressRing IsActive="{Binding IsLoading}"
+                                      MinWidth="40"
+                                      MinHeight="40"
+                                      Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
+                    </ListView.Footer>
+
+                </ListView>
+            </PivotItem>
+
+            <PivotItem>
+                <ListView ItemsSource="{Binding SimilarBooks}"
+                          SelectionChanged="ListView_SelectionChanged"
+                          ContinuumNavigationTransitionInfo.ExitElementContainer="True">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment"
+                                    Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.ItemContainerTransitions>
+                        <TransitionCollection>
+                            <EntranceThemeTransition IsStaggeringEnabled="True" />
+                        </TransitionCollection>
+                    </ListView.ItemContainerTransitions>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <controls:BookItem Title="{Binding Title}"
+                                               AverageRating="{Binding AverageRating}"
+                                               RatingsCount="{Binding RatingsCount}"
+                                               Author="{Binding Authors[0].Name}"
+                                               ExtraInfoVisibility="Collapsed"
+                                               ImageUrl="{Binding ImageUrl}"
+                                               Margin="0,0,0,19" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </PivotItem>
+        </Pivot>
+
     </Grid>
 </local:DataPage>

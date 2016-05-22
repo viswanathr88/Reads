@@ -12,7 +12,7 @@ using Windows.UI.Xaml.Data;
 namespace Epiphany.ViewModel.Collections
 {
     public sealed class ObservablePagedCollection<TViewModel, TModel> : ObservableCollection<TViewModel>, 
-        IGroup<string, TViewModel>, IObservablePagedCollection<TViewModel>
+        IGroup<string, TViewModel>, ILazyObservableCollection<TViewModel>
     {
         private readonly IPagedCollection<TModel> pagedCollection;
         private readonly IAsyncEnumerator<TModel> enumerator;
@@ -89,7 +89,7 @@ namespace Epiphany.ViewModel.Collections
                             var item = this.adapterMethod.Invoke(model);
                             if (item != null)
                             {
-                                Add(this.adapterMethod.Invoke(model));
+                                Add(item);
                             }
                         }
                         RaiseLoaded();

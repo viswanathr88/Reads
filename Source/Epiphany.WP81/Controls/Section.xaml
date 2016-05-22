@@ -19,7 +19,7 @@
         <Border BorderThickness="0,0,0,3"
                 BorderBrush="{ThemeResource PhoneMidBrush}"
                 HorizontalAlignment="Center"
-                Margin="0,0,0,10"
+                Margin="0,0,0,20"
                 Grid.Row="0">
             <TextBlock Text="{Binding ElementName=sectionControl, Path=Header}"
                        Foreground="{ThemeResource ApplicationForegroundThemeBrush}"

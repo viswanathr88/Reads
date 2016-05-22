@@ -137,5 +137,14 @@ namespace Epiphany.ViewModel
         {
             return new SearchResultItemViewModel(this.bookService, arg);
         }
+
+        protected override void Reset()
+        {
+            base.Reset();
+
+            SearchTerm = string.Empty;
+            this.searchResults = null;
+            RaisePropertyChanged(nameof(SearchResults));
+        }
     }
 }

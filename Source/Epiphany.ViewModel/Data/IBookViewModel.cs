@@ -1,14 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using Epiphany.ViewModel.Items;
+using System.Collections.Generic;
 
 namespace Epiphany.ViewModel
 {
     public interface IBookViewModel : IDataViewModel
     {
-        IList<IAuthorViewModel> Authors { get; }
+        IList<IAuthorItemViewModel> Authors { get; }
+        IList<IBookItemViewModel> SimilarBooks { get; }
+        IList<IShelfInformationViewModel> PopularShelves { get; }
+        IRatingDistributionViewModel RatingDistribution { get; }
+        IList<IReviewItemViewModel> Reviews { get; }
+
         double AverageRating { get; }
         string Description { get; }
-        int Id { get; set; }
         string ImageUrl { get; }
-        string Name { get; set; }
+        string Title { get; }
+        bool ShowDescription { get; }
+        bool ShowPopularShelves { get; }
+
     }
 }
