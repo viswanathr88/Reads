@@ -1,10 +1,8 @@
-﻿using System;
-using Epiphany.ViewModel;
-using Epiphany.ViewModel.Items;
+﻿using Epiphany.ViewModel.Items;
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignBookshelfItemViewModel : ViewModelBase, IBookshelfItemViewModel
+    public sealed class DesignBookshelfItemViewModel : DesignBaseItemViewModel, IBookshelfItemViewModel
     {
         public int ShelfId
         {

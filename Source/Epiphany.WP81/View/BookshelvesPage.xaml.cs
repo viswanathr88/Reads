@@ -1,5 +1,6 @@
-﻿using System;
-using System.Linq;
+﻿using Epiphany.ViewModel.Items;
+using Epiphany.WP81;
+using System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -19,14 +20,6 @@ namespace Epiphany.View
             NavigationCacheMode = NavigationCacheMode.Required;
         }
 
-        private void Shelf_Selected(object sender, SelectionChangedEventArgs e)
-        {
-            if (e.AddedItems != null && e.AddedItems.Count > 0)
-            {
-                Frame.Navigate(typeof(BooksPage), e.AddedItems.First());
-            }
-        }
-
         private async void Add_Clicked(object sender, RoutedEventArgs e)
         {
             await addShelfDialog.ShowAsync();
@@ -37,6 +30,15 @@ namespace Epiphany.View
             while (Frame.CanGoBack)
             {
                 Frame.GoBack();
+            }
+        }
+
+        private async void Shelf_Clicked(object sender, ItemClickEventArgs e)
+        {
+            if (e.ClickedItem != null)
+            {
+                var shelfItemVM = e.ClickedItem as IBookshelfItemViewModel;
+                await App.Navigate(typeof(BooksPage), shelfItemVM);
             }
         }
     }

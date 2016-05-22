@@ -1,6 +1,6 @@
 ﻿namespace Epiphany.ViewModel.Items
 {
-    public interface IBookshelfItemViewModel
+    public interface IBookshelfItemViewModel : IItemViewModel
     {
         int ShelfId { get; }
 

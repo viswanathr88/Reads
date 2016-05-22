@@ -37,7 +37,8 @@
         <ListView Grid.Row="1"
                   ItemsSource="{Binding FriendList}"
                   Margin="19,19,19,10"
-                  SelectionChanged="OnUserSelected"
+                  IsItemClickEnabled="True"
+                  ItemClick="Friend_Clicked"
                   ScrollViewer.HorizontalScrollMode="Disabled"
                   ScrollViewer.IsHorizontalRailEnabled="False"
                   ContinuumNavigationTransitionInfo.ExitElementContainer="True">

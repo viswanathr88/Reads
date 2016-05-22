@@ -1,6 +1,5 @@
-﻿using Epiphany.Model;
-using Epiphany.ViewModel;
-using System.Linq;
+﻿using Epiphany.ViewModel.Items;
+using Epiphany.WP81;
 using Windows.UI.Xaml.Controls;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
@@ -18,12 +17,12 @@ namespace Epiphany.View
             NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Required;
         }
 
-        private void OnUserSelected(object sender, SelectionChangedEventArgs e)
+        private async void Friend_Clicked(object sender, ItemClickEventArgs e)
         {
-            if (e.AddedItems != null && e.AddedItems.Count > 0)
+            if (e.ClickedItem != null)
             {
-                var userItem = e.AddedItems.First() as ItemViewModel<UserModel>;
-                Frame.Navigate(typeof(ProfilePage), userItem.Item);
+                var userItemVM = e.ClickedItem as IUserItemViewModel;
+                await App.Navigate(typeof(ProfilePage), userItemVM.Item);
             }
         }
     }

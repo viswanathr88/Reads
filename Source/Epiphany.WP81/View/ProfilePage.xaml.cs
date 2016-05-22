@@ -1,6 +1,7 @@
 ﻿using Epiphany.ViewModel;
+using Epiphany.WP81;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
@@ -18,14 +19,16 @@ namespace Epiphany.View
             NavigationCacheMode = NavigationCacheMode.Required;
         }
 
-        private void Friends_Click(object sender, RoutedEventArgs e)
+        private async void Friends_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(FriendsPage), GetViewModel<IProfileViewModel>().Parameter, new Windows.UI.Xaml.Media.Animation.SlideNavigationTransitionInfo());
+            var parameter = GetViewModel<IProfileViewModel>().Parameter;
+            await App.Navigate(typeof(FriendsPage), parameter, new SlideNavigationTransitionInfo());
         }
 
-        private void Shelves_Click(object sender, RoutedEventArgs e)
+        private async void Shelves_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(BookshelvesPage), GetViewModel<IProfileViewModel>().Parameter, new Windows.UI.Xaml.Media.Animation.SlideNavigationTransitionInfo());
+            var parameter = GetViewModel<IProfileViewModel>().Parameter;
+            await App.Navigate(typeof(BookshelvesPage), parameter, new SlideNavigationTransitionInfo());
         }
     }
 }

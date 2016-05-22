@@ -82,7 +82,7 @@ namespace Epiphany.View.Controls
         private async void User_Click(object sender, RoutedEventArgs e)
         {
             var feedItemVM = GetFeedItemViewModel(sender);
-            var parameter = (feedItemVM.User as UserItemViewModel).Item;
+            var parameter = feedItemVM.User.Item;
 
             await App.Navigate(typeof(ProfilePage), parameter, new SlideNavigationTransitionInfo());
         }
@@ -90,7 +90,7 @@ namespace Epiphany.View.Controls
         private async void Book_Click(object sender, RoutedEventArgs e)
         {
             var feedItemVM = GetFeedItemViewModel(sender);
-            var parameter = (feedItemVM.Book as BookItemViewModel).Item;
+            var parameter = feedItemVM.Book.Item;
 
             await App.Navigate(typeof(BookPage), parameter, new SlideNavigationTransitionInfo());
         }

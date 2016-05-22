@@ -5,7 +5,6 @@ namespace Epiphany.ViewModel.Items
 {
     public class BookshelfItemViewModel : ItemViewModel<BookshelfModel>, IBookshelfItemViewModel
     {
-
         private readonly UserModel user;
 
         public BookshelfItemViewModel(UserModel user, BookshelfModel model) : 
