@@ -121,12 +121,22 @@
               Margin="19,19,19,0">
             <ListView ItemsSource="{Binding Books}"
                       Margin="0,0,0,0"
-                      x:Name="booksList">
+                      x:Name="booksList"
+                      IsItemClickEnabled="True"
+                      ItemClick="Book_Click"
+                      ContinuumNavigationTransitionInfo.ExitElementContainer="True">
                 <ListView.ItemContainerTransitions>
                     <TransitionCollection>
                         <EntranceThemeTransition IsStaggeringEnabled="True" />
                     </TransitionCollection>
                 </ListView.ItemContainerTransitions>
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment"
+                                Value="Stretch" />
+                    </Style>
+                </ListView.ItemContainerStyle>
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -142,7 +152,9 @@
 
                 <ListView.Footer>
                     <ProgressRing IsActive="{Binding IsLoading}"
-                                  Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
+                                  Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                  MinWidth="40"
+                                  MinHeight="40"/>
                 </ListView.Footer>
 
             </ListView>

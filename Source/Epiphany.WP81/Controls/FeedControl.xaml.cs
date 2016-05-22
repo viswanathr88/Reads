@@ -1,5 +1,6 @@
 ﻿using Epiphany.Logging;
 using Epiphany.ViewModel.Items;
+using Epiphany.WP81;
 using System.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -78,27 +79,48 @@ namespace Epiphany.View.Controls
         public static readonly DependencyProperty HeaderProperty =
             DependencyProperty.Register("Header", typeof(object), typeof(FeedControl), new PropertyMetadata(null));
 
-        private void User_Click(object sender, RoutedEventArgs e)
+        private async void User_Click(object sender, RoutedEventArgs e)
         {
+            var feedItemVM = GetFeedItemViewModel(sender);
+            var parameter = (feedItemVM.User as UserItemViewModel).Item;
+
+            await App.Navigate(typeof(ProfilePage), parameter, new SlideNavigationTransitionInfo());
+        }
+
+        private async void Book_Click(object sender, RoutedEventArgs e)
+        {
+            var feedItemVM = GetFeedItemViewModel(sender);
+            var parameter = (feedItemVM.Book as BookItemViewModel).Item;
+
+            await App.Navigate(typeof(BookPage), parameter, new SlideNavigationTransitionInfo());
+        }
+
+        private void Author_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private IFeedItemViewModel GetFeedItemViewModel(object sender)
+        {
+            IFeedItemViewModel vm = null;
+
             FrameworkElement element = sender as FrameworkElement;
             if (sender == null)
             {
                 Logger.LogError("sender is not framework element");
-                return;
+                return vm;
             }
 
             var feedItemVM = element.DataContext as IFeedItemViewModel;
             if (feedItemVM == null)
             {
                 Logger.LogError("DataContext is not IFeedItemViewModel");
-                return;
+                return vm;
             }
 
-            var parameter = (feedItemVM.User as UserItemViewModel).Item;
+            vm = feedItemVM;
 
-            // Navigate to Profile
-            var frame = Window.Current.Content as Frame;
-            frame.Navigate(typeof(ProfilePage), parameter, new SlideNavigationTransitionInfo());
+            return vm;
         }
     }
 

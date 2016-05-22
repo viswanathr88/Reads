@@ -250,7 +250,8 @@
 
                                     <Button Grid.Column="0"
                                             Style="{StaticResource TextButtonStyle}"
-                                            VerticalAlignment="Top">
+                                            VerticalAlignment="Top"
+                                            Click="Book_Click">
                                         <!-- Book Image -->
                                         <Border Height="128"
                                                 Width="96"
@@ -270,7 +271,8 @@
                                                 Grid.Column="1">
 
                                         <Button Style="{StaticResource TextButtonStyle}"
-                                                VerticalAlignment="Top">
+                                                VerticalAlignment="Top"
+                                                Click="Book_Click">
                                             <TextBlock Text="{Binding Path=Book.Title}"
                                                        Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
                                                        Style="{StaticResource BodyTextBlockStyle}"
@@ -287,7 +289,8 @@
                                         </Button>
 
                                         <Button Style="{StaticResource TextButtonStyle}"
-                                                VerticalAlignment="Top">
+                                                VerticalAlignment="Top"
+                                                Click="Author_Click">
                                             <TextBlock Text="{Binding Path=Book.MainAuthor.Name}"
                                                        Foreground="{ThemeResource PhoneMidBrush}"
                                                        Style="{ThemeResource BodyTextBlockStyle}"
