@@ -1,11 +1,10 @@
 ﻿using Epiphany.ViewModel.Items;
 using System.Collections.Generic;
-using System;
 using System.Linq;
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignBookItemViewModel : IBookItemViewModel
+    public sealed class DesignBookItemViewModel : DesignBaseItemViewModel, IBookItemViewModel
     {
         public DesignBookItemViewModel()
         {

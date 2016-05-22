@@ -52,6 +52,7 @@
     <Compile Include="DesignAuthorAttributeViewModel.cs" />
     <Compile Include="DesignAuthorItemViewModel.cs" />
     <Compile Include="DesignAuthorViewModel.cs" />
+    <Compile Include="DesignBaseItemViewModel.cs" />
     <Compile Include="DesignBaseViewModel.cs" />
     <Compile Include="DesignBookItemViewModel.cs" />
     <Compile Include="DesignBookshelfItemViewModel.cs" />

@@ -4,7 +4,7 @@ using System;
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignReviewItemViewModel : ViewModelBase, IReviewItemViewModel
+    public sealed class DesignReviewItemViewModel : DesignBaseItemViewModel, IReviewItemViewModel
     {
         private Random random = new Random(Guid.NewGuid().GetHashCode());
         public DesignReviewItemViewModel()

@@ -1,6 +1,6 @@
 ﻿namespace Epiphany.ViewModel.Items
 {
-    public interface IUserItemViewModel
+    public interface IUserItemViewModel : IItemViewModel
     {
         int Id { get; }
         string ImageUrl { get; }

@@ -106,8 +106,8 @@
 
             <!-- Search results -->
             <ListView ItemsSource="{Binding SearchResults}"
-                      SelectionMode="Single"
-                      SelectionChanged="SearchResultsList_SelectionChanged"
+                      IsItemClickEnabled="True"
+                      ItemClick="Book_Click"
                       x:Name="searchResultsList"
                       Visibility="{Binding HasResults, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}"
                       ContinuumNavigationTransitionInfo.ExitElementContainer="True">

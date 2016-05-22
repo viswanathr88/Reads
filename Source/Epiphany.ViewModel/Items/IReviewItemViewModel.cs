@@ -2,7 +2,7 @@
 
 namespace Epiphany.ViewModel.Items
 {
-    public interface IReviewItemViewModel : INotifyPropertyChanged
+    public interface IReviewItemViewModel : IItemViewModel
     {
         IUserItemViewModel User
         {

@@ -1,6 +1,6 @@
 ﻿namespace Epiphany.ViewModel.Items
 {
-    public interface IAuthorItemViewModel
+    public interface IAuthorItemViewModel : IItemViewModel
     {
         int Id { get; }
         string Name { get; }

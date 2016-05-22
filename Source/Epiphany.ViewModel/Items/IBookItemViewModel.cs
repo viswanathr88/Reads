@@ -2,7 +2,7 @@
 
 namespace Epiphany.ViewModel.Items
 {
-    public interface IBookItemViewModel
+    public interface IBookItemViewModel : IItemViewModel
     {
         IList<IAuthorItemViewModel> Authors { get; }
         double AverageRating { get; }

@@ -69,17 +69,6 @@ namespace Epiphany.View
             flyout.ShowAt(element);
         }
 
-        private async void SearchResultsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (e.AddedItems != null && e.AddedItems.Count > 0)
-            {
-                var searchItem = e.AddedItems[0] as ISearchResultItemViewModel;
-                var book = searchItem.Book as BookItemViewModel;
-
-                await App.Navigate(typeof(BookPage), book.Item);
-            }
-        }
-
         private void ShowShareUI(object sender, RoutedEventArgs e)
         {
             Logger.LogDebug("Sender: " + sender.ToString());
@@ -146,6 +135,21 @@ namespace Epiphany.View
             if (this.searchResultsList.Items.Count > 0)
             {
                 this.searchResultsList.ScrollIntoView(this.searchResultsList.Items[0]);
+            }
+        }
+
+        private async void Book_Click(object sender, ItemClickEventArgs e)
+        {
+            if (e.ClickedItem != null)
+            {
+                var searchItemVM = e.ClickedItem as ISearchResultItemViewModel;
+                if (searchItemVM == null)
+                {
+                    Logger.LogError("Item is not of type ISearchResultItemViewModel");
+                    return;
+                }
+
+                await App.Navigate(typeof(BookPage), searchItemVM.Book.Item);
             }
         }
     }
