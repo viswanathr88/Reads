@@ -7,8 +7,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:converters="using:Epiphany.View.Converters"
              xmlns:rating="using:JISoft.RatingControl"
-             xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
-             xmlns:core="using:Microsoft.Xaml.Interactions.Core"
              mc:Ignorable="d"
              d:DesignHeight="300"
              d:DesignWidth="400"
@@ -174,7 +172,8 @@
                                 <Button Grid.Column="0"
                                         Style="{StaticResource TextButtonStyle}"
                                         VerticalAlignment="Top"
-                                        x:Name="friendImageButton">
+                                        x:Name="friendImageButton"
+                                        Click="Friend_Click">
                                     <Button.Content>
                                         <!-- Image -->
                                         <Border Height="64"
@@ -191,20 +190,13 @@
                                                    HorizontalAlignment="Center" />
                                         </Border>
                                     </Button.Content>
-
-                                    <interactivity:Interaction.Behaviors>
-                                        <core:EventTriggerBehavior EventName="Click"
-                                                                   SourceObject="{Binding ElementName=friendImageButton}">
-                                            <core:NavigateToPageAction TargetPage="Epiphany.View.ProfilePage"
-                                                                       Parameter="{Binding Path=Friend.Item}" />
-                                        </core:EventTriggerBehavior>
-                                    </interactivity:Interaction.Behaviors>
                                 </Button>
 
                                 <Button Grid.Column="1"
                                         Style="{StaticResource TextButtonStyle}"
                                         VerticalContentAlignment="Center"
-                                        x:Name="friendNameButton">
+                                        x:Name="friendNameButton"
+                                        Click="Friend_Click">
                                     <Button.Content>
                                         <!-- Name -->
                                         <TextBlock Text="{Binding Path=Friend.Name}"
@@ -223,14 +215,6 @@
                                                    Grid.Column="1"
                                                    Pivot.SlideInAnimationGroup="GroupThree" />
                                     </Button.Content>
-
-                                    <interactivity:Interaction.Behaviors>
-                                        <core:EventTriggerBehavior EventName="Click"
-                                                                   SourceObject="{Binding ElementName=friendNameButton}">
-                                            <core:NavigateToPageAction TargetPage="Epiphany.View.ProfilePage"
-                                                                       Parameter="{Binding Path=Friend.Item}" />
-                                        </core:EventTriggerBehavior>
-                                    </interactivity:Interaction.Behaviors>
                                 </Button>
 
                             </Grid>
