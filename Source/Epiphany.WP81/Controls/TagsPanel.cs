@@ -32,7 +32,6 @@ namespace Epiphany.View.Controls
             foreach (var child in Children)
             {
                 child.Measure(availableSize);
-                Logger.LogDebug($"AvailableSize = {availableSize}, DesiredSize = {child.DesiredSize}");
 
                 if (width + child.DesiredSize.Width > availableSize.Width)
                 {
@@ -53,8 +52,6 @@ namespace Epiphany.View.Controls
             }
 
             finalSize.Height = height;
-
-            Logger.LogDebug($"Required Size for Panel = {finalSize}");
 
             return finalSize;
         }

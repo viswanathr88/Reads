@@ -45,7 +45,8 @@
 
                 <!-- User name -->
                 <Button Style="{StaticResource TextButtonStyle}"
-                        Grid.Column="0">
+                        Grid.Column="0"
+                        Click="User_Click">
                     <TextBlock Text="{Binding ElementName=reviewItemControl, Path=Username}"
                                Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
                                Style="{StaticResource BodyTextBlockStyle}"

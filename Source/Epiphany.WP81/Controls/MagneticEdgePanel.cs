@@ -17,8 +17,6 @@ namespace Epiphany.View.Controls
             double sumX = 0.0;
             double maxY = 0.0;
 
-            Logger.LogDebug("Children Count = " + Children.Count);
-
             foreach (var child in Children)
             {
                 if (child.Visibility == Windows.UI.Xaml.Visibility.Visible)
@@ -30,7 +28,6 @@ namespace Epiphany.View.Controls
             }
 
             Size finalSize = new Size(availableSize.Width, maxY);
-            Logger.LogDebug("Final Size = " + finalSize);
 
             return finalSize;
         }

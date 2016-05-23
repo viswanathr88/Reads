@@ -23,6 +23,9 @@ namespace Epiphany.View
         {
             base.LoadState(sender, e);
 
+            // Reset pivot position
+            this.pivotHeaderList.SelectedIndex = 0;
+
             // Restore pivot position
             if (this.pivotHeaderList != null && e.PageState != null && e.PageState.ContainsKey("PivotSelectedIndex"))
             {
@@ -38,9 +41,6 @@ namespace Epiphany.View
             if (this.pivotHeaderList != null && e.PageState != null)
             {
                 e.PageState["PivotSelectedIndex"] = this.pivotHeaderList.SelectedIndex;
-
-                // Reset pivot position
-                this.pivotHeaderList.SelectedIndex = 0;
             }
         }
 

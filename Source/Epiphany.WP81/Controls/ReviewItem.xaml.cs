@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Epiphany.Logging;
+using Epiphany.Model;
+using Epiphany.WP81;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,6 +14,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
@@ -66,5 +70,25 @@ namespace Epiphany.View.Controls
         public static readonly DependencyProperty BodyProperty =
             DependencyProperty.Register("Body", typeof(string), typeof(ReviewItem), new PropertyMetadata(string.Empty));
 
+        public UserModel User
+        {
+            get { return (UserModel)GetValue(UserProperty); }
+            set { SetValue(UserProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for User.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty UserProperty =
+            DependencyProperty.Register("User", typeof(UserModel), typeof(ReviewItem), new PropertyMetadata(null));
+
+
+        private async void User_Click(object sender, RoutedEventArgs e)
+        {
+            if (User == null)
+            {
+                Logger.LogError("User is null. Cannot navigate");
+            }
+
+            await App.Navigate(typeof(ProfilePage), User, new SlideNavigationTransitionInfo());
+        }
     }
 }

@@ -152,8 +152,7 @@
                                                     Height="Auto"
                                                     BorderThickness="1"
                                                     BorderBrush="{ThemeResource PhoneChromeBrush}"
-                                                    Padding="10,5,10,5"
-                                                    MinWidth="100">
+                                                    Padding="10,5,10,5">
                                                 <Border.Background>
                                                     <SolidColorBrush Color="{Binding Color}" />
                                                 </Border.Background>
@@ -232,7 +231,8 @@
                             <controls:ReviewItem Rating="{Binding Rating}"
                                                  Body="{Binding Body}"
                                                  UserImage="{Binding Path=User.ImageUrl}"
-                                                 Username="{Binding Path=User.Name}" />
+                                                 Username="{Binding Path=User.Name}"
+                                                 User="{Binding Path=User.Item}"/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
 
