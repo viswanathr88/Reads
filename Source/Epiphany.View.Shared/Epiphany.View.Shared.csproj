@@ -60,6 +60,8 @@
     <Compile Include="..\VersionInfo.cs">
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
+    <Compile Include="Converters\BooksFilterTextConverter.cs" />
+    <Compile Include="Converters\BooksOrderByTextConverter.cs" />
     <Compile Include="Converters\BooleanToOpacityConverter.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\FeedOptionsTextConverter.cs" />

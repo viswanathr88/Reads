@@ -38,6 +38,9 @@ namespace Epiphany.View.DesignData
                     }
                 });
             }
+
+            SelectedFilter = BookSortType.num_ratings;
+            SelectedOrderByFilter = BookSortOrder.d;
         }
 
         public IList<IBookItemViewModel> Books
@@ -52,7 +55,19 @@ namespace Epiphany.View.DesignData
             set;
         }
 
+        public IList<BookSortOrder> OrderByFilters
+        {
+            get;
+            set;
+        }
+
         public BookSortType SelectedFilter
+        {
+            get;
+            set;
+        }
+
+        public BookSortOrder SelectedOrderByFilter
         {
             get;
             set;

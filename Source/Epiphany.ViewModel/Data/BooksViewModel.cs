@@ -1,6 +1,7 @@
 ﻿
 using Epiphany.Model;
 using Epiphany.Model.Services;
+using Epiphany.Model.Settings;
 using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Items;
 using System;
@@ -17,6 +18,9 @@ namespace Epiphany.ViewModel
         private IList<BookSortType> filters;
         private BookSortType selectedFilter;
 
+        private IList<BookSortOrder> orderByFilters;
+        private BookSortOrder selectedOrderByFilter = BookSortOrder.d;
+
         private readonly IBookService bookService;
 
         public BooksViewModel(IBookService bookService)
@@ -28,7 +32,10 @@ namespace Epiphany.ViewModel
 
             this.bookService = bookService;
             Filters = Enum.GetValues(typeof(BookSortType)).Cast<BookSortType>().ToList();
-            SelectedFilter = BookSortType.date_added;
+            CreateOrderByFilters();
+
+            SelectedFilter = (BookSortType)Enum.Parse(typeof(BookSortType), ApplicationSettings.Instance.SortType);
+            SelectedOrderByFilter = (BookSortOrder)Enum.Parse(typeof(BookSortOrder), ApplicationSettings.Instance.SortOrder);
         }
 
         public string ShelfName
@@ -74,6 +81,9 @@ namespace Epiphany.ViewModel
             {
                 if (SetProperty(ref this.selectedFilter, value))
                 {
+                    ApplicationSettings.Instance.SortType = value.ToString();
+                    RaisePropertyChanged(nameof(SelectedOrderByFilter));
+                    CreateOrderByFilters();
                     CreateBookCollection();
                 }
             }
@@ -87,11 +97,40 @@ namespace Epiphany.ViewModel
             }
         }
 
+        public IList<BookSortOrder> OrderByFilters
+        {
+            get
+            {
+                return this.orderByFilters;
+            }
+            private set
+            {
+                SetProperty(ref this.orderByFilters, value);
+            }
+        }
+
+        public BookSortOrder SelectedOrderByFilter
+        {
+            get
+            {
+                return this.selectedOrderByFilter;
+            }
+
+            set
+            {
+                if (SetProperty(ref this.selectedOrderByFilter, value))
+                {
+                    ApplicationSettings.Instance.SortOrder = value.ToString();
+                    CreateBookCollection();
+                }
+            }
+        }
+
         private void CreateBookCollection()
         {
             if (Parameter != null)
             {
-                var collection = this.bookService.GetBooks(Parameter.User.Id, ShelfName, SelectedFilter, BookSortOrder.d);
+                var collection = this.bookService.GetBooks(Parameter.User.Id, ShelfName, SelectedFilter, SelectedOrderByFilter);
                 Books = new ObservablePagedCollection<IBookItemViewModel, BookModel>(collection, AdapterFn);
                 this.books.Loading += (sender, arg) => IsLoading = true;
                 this.books.Loaded += (sender, arg) =>
@@ -117,12 +156,17 @@ namespace Epiphany.ViewModel
             return new BookItemViewModel(arg);
         }
 
+        private void CreateOrderByFilters()
+        {
+            OrderByFilters = null;
+            OrderByFilters = Enum.GetValues(typeof(BookSortOrder)).Cast<BookSortOrder>().ToList();
+        }
+
         protected override void Reset()
         {
             base.Reset();
             ShelfName = string.Empty;
             Books = null;
-            Filters = null;
             SelectedFilter = BookSortType.date_added;
         }
     }

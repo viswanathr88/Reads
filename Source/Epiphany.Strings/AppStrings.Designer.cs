@@ -422,6 +422,141 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Author.
+        /// </summary>
+        public static string BooksFilterAuthor {
+            get {
+                return ResourceManager.GetString("BooksFilterAuthor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Average Rating.
+        /// </summary>
+        public static string BooksFilterAverageRating {
+            get {
+                return ResourceManager.GetString("BooksFilterAverageRating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cover.
+        /// </summary>
+        public static string BooksFilterCover {
+            get {
+                return ResourceManager.GetString("BooksFilterCover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date Added.
+        /// </summary>
+        public static string BooksFilterDateAdded {
+            get {
+                return ResourceManager.GetString("BooksFilterDateAdded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date Read.
+        /// </summary>
+        public static string BooksFilterDateRead {
+            get {
+                return ResourceManager.GetString("BooksFilterDateRead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date Started.
+        /// </summary>
+        public static string BooksFilterDateStarted {
+            get {
+                return ResourceManager.GetString("BooksFilterDateStarted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SHOW BOOKS SORTED BY.
+        /// </summary>
+        public static string BooksFilterFlyoutTitle {
+            get {
+                return ResourceManager.GetString("BooksFilterFlyoutTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of Pages.
+        /// </summary>
+        public static string BooksFilterNumPages {
+            get {
+                return ResourceManager.GetString("BooksFilterNumPages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of Ratings.
+        /// </summary>
+        public static string BooksFilterNumRatings {
+            get {
+                return ResourceManager.GetString("BooksFilterNumRatings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Owned.
+        /// </summary>
+        public static string BooksFilterOwned {
+            get {
+                return ResourceManager.GetString("BooksFilterOwned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rating.
+        /// </summary>
+        public static string BooksFilterRating {
+            get {
+                return ResourceManager.GetString("BooksFilterRating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Read Count.
+        /// </summary>
+        public static string BooksFilterReadCount {
+            get {
+                return ResourceManager.GetString("BooksFilterReadCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Review.
+        /// </summary>
+        public static string BooksFilterReview {
+            get {
+                return ResourceManager.GetString("BooksFilterReview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string BooksFilterTitle {
+            get {
+                return ResourceManager.GetString("BooksFilterTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Year Published.
+        /// </summary>
+        public static string BooksFilterYearPublished {
+            get {
+                return ResourceManager.GetString("BooksFilterYearPublished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to BOOKSHELVES.
         /// </summary>
         public static string BookshelvesSectionTitle {
@@ -436,6 +571,105 @@ namespace Epiphany.Strings {
         public static string BookSimilarBooksSectionHeader {
             get {
                 return ResourceManager.GetString("BookSimilarBooksSectionHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order by.
+        /// </summary>
+        public static string BooksOrderHeader {
+            get {
+                return ResourceManager.GetString("BooksOrderHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sort by.
+        /// </summary>
+        public static string BooksSortHeader {
+            get {
+                return ResourceManager.GetString("BooksSortHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ascending.
+        /// </summary>
+        public static string BooksSortOrderAscending {
+            get {
+                return ResourceManager.GetString("BooksSortOrderAscending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Decreasing.
+        /// </summary>
+        public static string BooksSortOrderDecreasing {
+            get {
+                return ResourceManager.GetString("BooksSortOrderDecreasing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Descending.
+        /// </summary>
+        public static string BooksSortOrderDescending {
+            get {
+                return ResourceManager.GetString("BooksSortOrderDescending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ORDER BOOKS BY.
+        /// </summary>
+        public static string BooksSortOrderFlyoutTitle {
+            get {
+                return ResourceManager.GetString("BooksSortOrderFlyoutTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Highest.
+        /// </summary>
+        public static string BooksSortOrderHighest {
+            get {
+                return ResourceManager.GetString("BooksSortOrderHighest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Increasing.
+        /// </summary>
+        public static string BooksSortOrderIncreasing {
+            get {
+                return ResourceManager.GetString("BooksSortOrderIncreasing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lowest.
+        /// </summary>
+        public static string BooksSortOrderLowest {
+            get {
+                return ResourceManager.GetString("BooksSortOrderLowest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Newest.
+        /// </summary>
+        public static string BooksSortOrderNewest {
+            get {
+                return ResourceManager.GetString("BooksSortOrderNewest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oldest.
+        /// </summary>
+        public static string BooksSortOrderOldest {
+            get {
+                return ResourceManager.GetString("BooksSortOrderOldest", resourceCulture);
             }
         }
         

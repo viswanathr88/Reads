@@ -120,7 +120,7 @@ namespace Epiphany.Model.Settings
 		private string UpdateTypeDefault = "all";
 		private string UpdateFilterDefault = "friends";
 		private string SortTypeDefault = "date_added";
-		private string SortOrderDefault = "a";
+		private string SortOrderDefault = "d";
 		private string SearchTypeDefault = "All";
 		private bool EnableTransparentTileDefault = true;
 		

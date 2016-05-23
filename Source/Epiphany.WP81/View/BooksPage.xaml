@@ -1,15 +1,15 @@
-﻿<local:DataPage
-    x:Class="Epiphany.View.BooksPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Epiphany.View"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:rating="using:JISoft.RatingControl"
-    xmlns:controls="using:Epiphany.View.Controls"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    DataContext="{Binding Source={StaticResource VMLocator}, Path=Books}">
+﻿<local:DataPage x:Class="Epiphany.View.BooksPage"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:local="using:Epiphany.View"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:rating="using:JISoft.RatingControl"
+                xmlns:controls="using:Epiphany.View.Controls"
+                xmlns:converters="using:Epiphany.View.Converters"
+                mc:Ignorable="d"
+                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                DataContext="{Binding Source={StaticResource VMLocator}, Path=Books}">
 
     <Page.Transitions>
         <TransitionCollection>
@@ -21,10 +21,16 @@
         </TransitionCollection>
     </Page.Transitions>
 
+    <Page.Resources>
+        <converters:BooksFilterTextConverter x:Key="BooksFilterTextConverter" />
+        <converters:BooksOrderByTextConverter x:Key="BooksOrderByTextConverter"
+                                              SortType="{Binding SelectedFilter}"/>
+    </Page.Resources>
+
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
-            <RowDefinition Height="110"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="110" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
         <!-- Title Panel -->
@@ -62,28 +68,28 @@
                            VerticalAlignment="Center"
                            Grid.Column="0"
                            Grid.ColumnSpan="2"
-                           ContinuumNavigationTransitionInfo.IsEntranceElement="True"/>
+                           ContinuumNavigationTransitionInfo.IsEntranceElement="True" />
             </Grid>
 
-            <!-- Refine list -->
+            <!-- Sort By -->
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="75" />
                 </Grid.ColumnDefinitions>
 
-                <Button Margin="19,0,19,0"
+                <Button Margin="19,0,0,0"
                         Style="{StaticResource TextButtonStyle}"
                         VerticalAlignment="Stretch"
                         HorizontalAlignment="Stretch"
                         VerticalContentAlignment="Center">
                     <Button.Content>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchFilterHeader}"
+                            <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.BooksSortHeader}"
                                        Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
                                        Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
 
-                            <TextBlock Text="{Binding SelectedFilter}"
+                            <TextBlock Text="{Binding SelectedFilter, Converter={StaticResource BooksFilterTextConverter}}"
                                        Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
                                        Foreground="{StaticResource PhoneAccentBrush}"
                                        LineStackingStrategy="BaselineToBaseline"
@@ -94,24 +100,72 @@
                         <ListPickerFlyout ItemsSource="{Binding Filters}"
                                           SelectedItem="{Binding SelectedFilter, Mode=TwoWay}"
                                           Placement="Top"
-                                          PickerFlyoutBase.Title="FILTER"/>
+                                          PickerFlyoutBase.Title="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.BooksFilterFlyoutTitle}">
+                            <ListPickerFlyout.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Converter={StaticResource BooksFilterTextConverter}}"
+                                               Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                               Style="{StaticResource ListViewItemTextBlockStyle}"
+                                               OpticalMarginAlignment="TrimSideBearings" />
+                                </DataTemplate>
+                            </ListPickerFlyout.ItemTemplate>
+                        </ListPickerFlyout>
+                    </Button.Flyout>
+                </Button>
+
+                <!-- Order By -->
+                <Button Style="{StaticResource TextButtonStyle}"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Right"
+                        VerticalContentAlignment="Center"
+                        Grid.Column="1"
+                        Height="42"
+                        Margin="0,0,19,0">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.BooksOrderHeader}"
+                                       Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
+                                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
+
+                            <TextBlock Text="{Binding SelectedOrderByFilter, Converter={StaticResource BooksOrderByTextConverter}, ConverterParameter={Binding SelectedFilter, Mode=OneWay}}"
+                                       Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
+                                       Foreground="{StaticResource PhoneAccentBrush}"
+                                       LineStackingStrategy="BaselineToBaseline"
+                                       Margin="15,0,0,0" />
+                        </StackPanel>
+                    </Button.Content>
+                    <Button.Flyout>
+                        <ListPickerFlyout ItemsSource="{Binding OrderByFilters}"
+                                          SelectedItem="{Binding SelectedOrderByFilter, Mode=TwoWay}"
+                                          Placement="Top"
+                                          PickerFlyoutBase.Title="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.BooksSortOrderFlyoutTitle}">
+                            <ListPickerFlyout.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Converter={StaticResource BooksOrderByTextConverter}, ConverterParameter={Binding SelectedFilter, Mode=OneWay}}"
+                                               Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                               Style="{StaticResource ListViewItemTextBlockStyle}"
+                                               OpticalMarginAlignment="TrimSideBearings" />
+                                </DataTemplate>
+                            </ListPickerFlyout.ItemTemplate>
+                        </ListPickerFlyout>
                     </Button.Flyout>
                 </Button>
 
                 <!-- Top button -->
-                <Button Margin="19,0,19,0"
+                <!--<Button Margin="19,0,19,0"
                         Style="{StaticResource TextButtonStyle}"
                         VerticalAlignment="Stretch"
                         HorizontalAlignment="Stretch"
                         VerticalContentAlignment="Center"
-                        Grid.Column="1"
+                        Grid.Column="2"
                         Click="ScrollToTop">
                     <Button.Content>
                         <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TopButtonText}"
                                    Style="{StaticResource FlyoutPickerTitleTextBlockStyle}"
                                    Foreground="{ThemeResource PhoneAccentBrush}" />
                     </Button.Content>
-                </Button>
+                </Button>-->
 
             </Grid>
         </Grid>
@@ -146,7 +200,7 @@
                                            RatingsCount="{Binding RatingsCount}"
                                            Author="{Binding Path=MainAuthor.Name}"
                                            ExtraInfoVisibility="Collapsed"
-                                           Margin="0,0,0,19"/>
+                                           Margin="0,0,0,19" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
 
@@ -154,7 +208,7 @@
                     <ProgressRing IsActive="{Binding IsLoading}"
                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
                                   MinWidth="40"
-                                  MinHeight="40"/>
+                                  MinHeight="40" />
                 </ListView.Footer>
 
             </ListView>
