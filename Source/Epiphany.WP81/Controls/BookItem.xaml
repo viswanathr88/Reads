@@ -91,6 +91,12 @@
                         </Style>
                     </rating:Rating.UnfilledItemStyle>
                 </rating:Rating>
+
+                <TextBlock Text="{Binding ElementName=bookItemControl, Path=AverageRating}"
+                           Style="{StaticResource ListViewItemContentTextBlockStyle}"
+                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                           Margin="15,0,0,0"/>
+
                 <TextBlock Style="{StaticResource ListViewItemContentTextBlockStyle}"
                            Foreground="{ThemeResource PhoneLowBrush}"
                            TextWrapping="NoWrap"

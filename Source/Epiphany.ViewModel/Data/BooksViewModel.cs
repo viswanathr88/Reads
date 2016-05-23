@@ -167,7 +167,6 @@ namespace Epiphany.ViewModel
             base.Reset();
             ShelfName = string.Empty;
             Books = null;
-            SelectedFilter = BookSortType.date_added;
         }
     }
 }
