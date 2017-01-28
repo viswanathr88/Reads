@@ -30,7 +30,7 @@
         <!-- Header -->
         <Grid Grid.Row="0"
               Background="{ThemeResource PhoneChromeBrush}">
-            <Grid Margin="19,10,19,10">
+            <Grid Margin="19,10,19,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
@@ -52,17 +52,80 @@
                                TextTrimming="CharacterEllipsis"
                                OpticalMarginAlignment="TrimSideBearings"
                                LineStackingStrategy="MaxHeight"
-                               Margin="0,0,0,10"
+                               Margin="0,0,0,5"
                                ContinuumNavigationTransitionInfo.IsEntranceElement="True" />
-                    <TextBlock Text="{Binding Path=Authors[0].Name}"
-                               Foreground="{ThemeResource PhoneMidBrush}"
-                               Style="{StaticResource GroupHeaderTextBlockStyle}"
-                               TextWrapping="Wrap"
-                               MaxLines="2"
-                               TextTrimming="CharacterEllipsis"
-                               OpticalMarginAlignment="TrimSideBearings"
-                               LineStackingStrategy="MaxHeight"
-                               Margin="0,0,0,10" />
+
+                    <ListView ItemsSource="{Binding Authors}"
+                              ScrollViewer.HorizontalScrollMode="Disabled"
+                              ScrollViewer.VerticalScrollMode="Disabled"
+                              ContinuumNavigationTransitionInfo.ExitElementContainer="True"
+                              IsItemClickEnabled="True"
+                              ItemClick="Author_Clicked">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}"
+                                           Foreground="{ThemeResource PhoneMidBrush}"
+                                           Style="{StaticResource GroupHeaderTextBlockStyle}"
+                                           TextWrapping="Wrap"
+                                           MaxLines="2"
+                                           TextTrimming="CharacterEllipsis"
+                                           OpticalMarginAlignment="TrimSideBearings"
+                                           LineStackingStrategy="MaxHeight"
+                                           Margin="0,0,0,2"
+                                           ContinuumNavigationTransitionInfo.IsExitElement="True"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    
+                    <!-- Rating and reviews count -->
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Stretch"
+                                Margin="0,5,0,0">
+                        <!-- Rating control -->
+                        <rating:Rating RatingItemCount="5"
+                                       Value="{Binding AverageRating, Mode=TwoWay}"
+                                       ReadOnly="True"
+                                       Background="Transparent"
+                                       Height="15"
+                                       Width="75">
+                            <rating:Rating.FilledItemStyle>
+                                <Style TargetType="rating:RatingItem">
+                                    <Setter Property="Background"
+                                            Value="{ThemeResource ApplicationForegroundThemeBrush}" />
+                                    <Setter Property="Padding"
+                                            Value="0" />
+                                    <Setter Property="Margin"
+                                            Value="0" />
+                                </Style>
+                            </rating:Rating.FilledItemStyle>
+                            <rating:Rating.UnfilledItemStyle>
+                                <Style TargetType="rating:RatingItem">
+                                    <Setter Property="Background"
+                                            Value="{ThemeResource PhoneMidBrush}" />
+                                    <Setter Property="Padding"
+                                            Value="0" />
+                                    <Setter Property="Margin"
+                                            Value="0" />
+                                </Style>
+                            </rating:Rating.UnfilledItemStyle>
+                        </rating:Rating>
+
+                        <TextBlock Text="{Binding AverageRating}"
+                                   Style="{StaticResource ListViewItemContentTextBlockStyle}"
+                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                   Margin="15,0,0,0" />
+
+                        <TextBlock Style="{StaticResource ListViewItemContentTextBlockStyle}"
+                                   Foreground="{ThemeResource PhoneLowBrush}"
+                                   TextWrapping="NoWrap"
+                                   TextTrimming="CharacterEllipsis"
+                                   VerticalAlignment="Center"
+                                   Margin="15,0,0,0">
+                                        <Run Text="{Binding RatingsCount}" />
+                                        <Run Text="ratings" />
+                        </TextBlock>
+                    </StackPanel>
+
                 </StackPanel>
             </Grid>
         </Grid>

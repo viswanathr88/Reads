@@ -17,6 +17,7 @@ namespace Epiphany.ViewModel
         private string description;
         private string title;
         private string imageUrl;
+        private int ratingsCount;
         private BookModel model;
         private ObservableCollection<IAuthorItemViewModel> authors;
         private IList<IBookItemViewModel> similarBooks;
@@ -183,6 +184,18 @@ namespace Epiphany.ViewModel
             }
         }
 
+        public int RatingsCount
+        {
+            get
+            {
+                return ratingsCount;
+            }
+            private set
+            {
+                SetProperty(ref this.ratingsCount, value);
+            }
+        }
+
         public async override Task LoadAsync(BookModel parameter)
         {
             IsLoading = true;
@@ -193,11 +206,13 @@ namespace Epiphany.ViewModel
             Authors.Add(new AuthorItemViewModel(parameter.Authors.First()));
             AverageRating = parameter.AverageRating;
             Description = parameter.Description;
+            RatingsCount = parameter.RatingsCount;
 
             Model = await Task.Run(() => this.bookService.GetBook(parameter.Id));
 
             AverageRating = Math.Round(Model.AverageRating, 1, MidpointRounding.AwayFromZero);
             Description = Model.Description;
+            RatingsCount = Model.RatingsCount;
             SimilarBooks = new LazyObservableCollection<IBookItemViewModel, BookModel>(
                 () => Model.SimilarBooks,
                 (model) => new BookItemViewModel(model));
@@ -236,7 +251,6 @@ namespace Epiphany.ViewModel
 
             Reviews = reviews;
 
-
             IsLoading = false;
             IsLoaded = true;
         }
@@ -255,6 +269,7 @@ namespace Epiphany.ViewModel
             PopularShelves = null;
             RatingDistribution = null;
             Reviews = null;
+            RatingsCount = 0;
         }
     }
 }

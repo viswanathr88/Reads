@@ -12,6 +12,7 @@ namespace Epiphany.ViewModel
         IList<IReviewItemViewModel> Reviews { get; }
 
         double AverageRating { get; }
+        int RatingsCount { get; }
         string Description { get; }
         string ImageUrl { get; }
         string Title { get; }

@@ -1,6 +1,7 @@
 ﻿using Epiphany.ViewModel;
 using Epiphany.ViewModel.Items;
 using System.Collections.Generic;
+using System;
 
 namespace Epiphany.View.DesignData
 {
@@ -48,6 +49,8 @@ namespace Epiphany.View.DesignData
             Reviews.Add(new DesignReviewItemViewModel());
             Reviews.Add(new DesignReviewItemViewModel());
             Reviews.Add(new DesignReviewItemViewModel());
+
+            RatingsCount = 25000;
 
         }
         public IList<IAuthorItemViewModel> Authors
@@ -117,6 +120,12 @@ namespace Epiphany.View.DesignData
         }
 
         public string Title
+        {
+            get;
+            set;
+        }
+
+        public int RatingsCount
         {
             get;
             set;

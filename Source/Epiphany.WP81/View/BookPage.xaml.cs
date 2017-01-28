@@ -24,13 +24,13 @@ namespace Epiphany.View
             base.LoadState(sender, e);
 
             // Reset pivot position
-            this.pivotHeaderList.SelectedIndex = 0;
+            /*this.pivotHeaderList.SelectedIndex = 0;
 
             // Restore pivot position
             if (this.pivotHeaderList != null && e.PageState != null && e.PageState.ContainsKey("PivotSelectedIndex"))
             {
                 this.pivotHeaderList.SelectedIndex = (int)e.PageState["PivotSelectedIndex"];
-            }
+            }*/
         }
 
         protected override void SaveState(object sender, SaveStateEventArgs e)
@@ -38,10 +38,10 @@ namespace Epiphany.View
             base.SaveState(sender, e);
 
             // Save pivot position
-            if (this.pivotHeaderList != null && e.PageState != null)
+            /*if (this.pivotHeaderList != null && e.PageState != null)
             {
                 e.PageState["PivotSelectedIndex"] = this.pivotHeaderList.SelectedIndex;
-            }
+            }*/
         }
 
         private async void Book_Clicked(object sender, ItemClickEventArgs e)
@@ -50,6 +50,15 @@ namespace Epiphany.View
             {
                 var bookItem = e.ClickedItem as IBookItemViewModel;
                 await App.Navigate(typeof(BookPage), bookItem.Item, new SlideNavigationTransitionInfo());
+            }
+        }
+
+        private async void Author_Clicked(object sender, ItemClickEventArgs e)
+        {
+            if (e.ClickedItem != null)
+            {
+                var authorItem = e.ClickedItem as IAuthorItemViewModel;
+                await App.Navigate(typeof(AuthorPage), authorItem.Item);
             }
         }
     }
