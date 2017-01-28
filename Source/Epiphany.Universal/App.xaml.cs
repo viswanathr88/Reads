@@ -48,7 +48,6 @@ namespace Epiphany.Universal
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 
-            Log.SetLogger(new DebugLog());
 #endif
 
             Frame rootFrame = Window.Current.Content as Frame;

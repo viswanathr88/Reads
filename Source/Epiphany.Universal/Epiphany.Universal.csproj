@@ -17,6 +17,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>Epiphany.Universal_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>B704996A9F9CCE4D9ECDA15B0A1D35E47A7396ED</PackageCertificateThumbprint>
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
@@ -30,37 +31,15 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AppRateService.cs" />
-    <Compile Include="Services\AuthService.cs" />
-    <Compile Include="Services\DebugLog.cs" />
-    <Compile Include="Services\IViewLocator.cs" />
-    <Compile Include="Services\LocationService.cs" />
-    <Compile Include="Services\LoggerBase.cs" />
-    <Compile Include="Services\NavigationOperation.cs" />
-    <Compile Include="Services\NavigationService.cs" />
-    <Compile Include="Services\ReleaseLog.cs" />
-    <Compile Include="Services\ResourceLoader.cs" />
-    <Compile Include="Services\RuntimeViewModelLocator.cs" />
-    <Compile Include="Services\SourceModel.cs" />
-    <Compile Include="Services\Timer.cs" />
-    <Compile Include="Services\TimerService.cs" />
-    <Compile Include="Services\TokenParser.cs" />
-    <Compile Include="Services\UrlLauncher.cs" />
-    <Compile Include="Services\ViewLocator.cs" />
-    <Compile Include="Services\ViewModelLocator.cs" />
-    <Compile Include="Settings\AppSettings.cs" />
     <Compile Include="View\DataPage.cs" />
     <Compile Include="View\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Web\RestSharpExtensions.cs" />
-    <Compile Include="Web\WebClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="Epiphany.Universal_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Default.rd.xml" />
@@ -99,9 +78,17 @@
       <Project>{879404da-bfc5-490f-89c0-56251f88b5f5}</Project>
       <Name>Epiphany.Strings</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Epiphany.View.Shared\Epiphany.View.Shared.csproj">
+      <Project>{128a732f-1608-4e56-a86d-911b75ae057c}</Project>
+      <Name>Epiphany.View.Shared</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Epiphany.ViewModel\Epiphany.ViewModel.csproj">
       <Project>{50f37359-1dea-47ab-9249-ea864608911c}</Project>
       <Name>Epiphany.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Epiphany.Xml\Epiphany.Xml.csproj">
+      <Project>{0cbd2a4b-b8ed-466b-8e12-ad66e984467b}</Project>
+      <Name>Epiphany.Xml</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
