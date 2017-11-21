@@ -3,10 +3,10 @@ using System;
 
 namespace Epiphany.Model
 {
-    public class UserStatusModel : Entity<int>
+    public class UserStatusModel : Entity<long>
     {
         private readonly GoodreadsUserStatus status;
-        private readonly int id;
+        private readonly long id;
 
         public static UserStatusModel Create(BookModel book, int page, int percentage, string body)
         {
@@ -20,7 +20,7 @@ namespace Epiphany.Model
             this.id = status.Id;
         }
 
-        private UserStatusModel(int page, int percentage, string body, int bookId)
+        private UserStatusModel(int page, int percentage, string body, long bookId)
         {
             this.status = new GoodreadsUserStatus()
             {
@@ -34,7 +34,7 @@ namespace Epiphany.Model
             };
         }
 
-        public override int Id
+        public override long Id
         {
             get
             {

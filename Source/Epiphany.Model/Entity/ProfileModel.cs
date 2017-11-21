@@ -6,33 +6,22 @@ using System.Collections.Generic;
 
 namespace Epiphany.Model
 {
-    public sealed class ProfileModel : Entity<int>
+    public sealed class ProfileModel : Entity<long>
     {
         private readonly GoodreadsProfile profile;
-        private readonly int id;
         private readonly string name;
         private readonly IAdapter<FeedItemModel, GoodreadsUpdate> feedItemAdapter;
         private IList<FeedItemModel> recentUpdates;
         private IList<AuthorModel> favoriteAuthors;
 
-        public ProfileModel(int id, string name)
-        {
-            this.id = id;
-            this.name = name;
-            this.profile = new GoodreadsProfile();
-
-            this.feedItemAdapter = new FeedItemAdapter();
-            PopulateRecentUpdates();
-            PopulateFavoriteAuthors();
-        }
-
         internal ProfileModel(GoodreadsProfile profile)
         {
             if (profile == null)
+            {
                 throw new ArgumentNullException("profile", "profile cannot be null");
+            }
 
             this.profile = profile;
-            this.id = profile.Id;
             this.name = profile.Name;
 
             this.feedItemAdapter = new FeedItemAdapter();
@@ -41,7 +30,7 @@ namespace Epiphany.Model
             PopulateFavoriteAuthors();
         }
 
-        public override int Id
+        public override long Id
         {
             get
             {

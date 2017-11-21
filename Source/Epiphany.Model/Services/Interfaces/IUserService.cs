@@ -30,13 +30,13 @@ namespace Epiphany.Model.Services
         /// </summary>
         /// <param name="id">id of the user</param>
         /// <returns>Profile</returns>
-        Task<ProfileModel> GetProfileAsync(int id);
+        Task<ProfileModel> GetProfileAsync(long id);
         /// <summary>
         /// Gets a user's friends
         /// </summary>
         /// <param name="id">id of the user</param>
         /// <returns>user collection</returns>
-        IPagedCollection<UserModel> GetFriends(int id);
+        IPagedCollection<UserModel> GetFriends(long id);
         /// <summary>
         /// Gets the recent updates from friends
         /// </summary>

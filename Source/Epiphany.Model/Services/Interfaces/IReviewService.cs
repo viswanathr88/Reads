@@ -14,7 +14,7 @@ namespace Epiphany.Model.Services
         /// </summary>
         /// <param name="id">id of the review</param>
         /// <returns>review model</returns>
-        Task<ReviewModel> GetReviewAsync(int id);
+        Task<ReviewModel> GetReviewAsync(long id);
         /// <summary>
         /// Get reviews for a book
         /// </summary>

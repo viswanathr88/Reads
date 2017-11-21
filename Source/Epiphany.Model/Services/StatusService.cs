@@ -23,7 +23,7 @@ namespace Epiphany.Model.Services
             this.adapter = new UserStatusAdapter();
         }
 
-        public async Task<UserStatusModel> GetUserStatus(int id)
+        public async Task<UserStatusModel> GetUserStatus(long id)
         {
             // Create the data source
             var ds = new DataSource<GoodreadsUserStatus>(webClient);

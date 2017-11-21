@@ -2,7 +2,7 @@
 {
     public interface IUserItemViewModel : IItemViewModel
     {
-        int Id { get; }
+        long Id {get; }
         string ImageUrl { get; }
         string Name { get; }
     }

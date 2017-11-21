@@ -20,7 +20,7 @@ namespace Epiphany.Model.Services
             this.messenger = messenger;
         }
 
-        public async Task<AuthorModel> GetAuthorAsync(int id)
+        public async Task<AuthorModel> GetAuthorAsync(long id)
         {
             // Create the data source
             var ds = new DataSource<GoodreadsAuthor>(webClient);

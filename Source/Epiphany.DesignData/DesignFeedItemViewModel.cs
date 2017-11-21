@@ -8,7 +8,7 @@ namespace Epiphany.View.DesignData
 {
     public sealed class DesignFeedItemViewModel : IFeedItemViewModel
     {
-        public int Id
+        public long Id
         {
             get;
             set;

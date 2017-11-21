@@ -21,14 +21,14 @@ namespace Epiphany.ViewModel
         private ObservableCollection<ICustomBookshelfItemViewModel> customShelves;
         private ICommand<AddToShelvesCommandArgs> addToShelvesCommand;
         private AddToShelvesCommandArgs addToShelvesCommandArgs;        
-        private IAsyncCommand<BookModel, int> fetchBookCommand;
+        private IAsyncCommand<BookModel, long> fetchBookCommand;
         private ICommand<string> createShelfCommand;
 
         private readonly ILogonService logonService;
         private readonly IBookshelfService bookshelfService;
         private readonly INavigationService navigationService;
 
-        private int id;
+        private long id;
         private BookModel book;
         private string title;
         private string shelfName;
@@ -79,7 +79,7 @@ namespace Epiphany.ViewModel
         /// <summary>
         /// Gets the id of the book
         /// </summary>
-        public int Id
+        public long Id
         {
             get
             {

@@ -11,7 +11,7 @@ namespace Epiphany.ViewModel
         BookModel Book { get; }
         ICommand<string> CreateShelf { get; }
         ObservableCollection<ICustomBookshelfItemViewModel> CustomShelves { get; }
-        int Id { get; }
+        long Id {get; }
         bool IsCurrentlyReadingSelected { get; set; }
         bool IsReadSelected { get; set; }
         bool IsToReadSelected { get; set; }

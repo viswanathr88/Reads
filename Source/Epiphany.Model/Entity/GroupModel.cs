@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 namespace Epiphany.Model
 {
-    public sealed class GroupModel : Entity<int>
+    public sealed class GroupModel : Entity<long>
     {
         private readonly GoodreadsGroup group;
-        private readonly int id;
+        private readonly long id;
 
         public GroupModel(int id)
         {
@@ -20,7 +20,7 @@ namespace Epiphany.Model
             this.group = group;
         }
 
-        public override int Id
+        public override long Id
         {
             get
             {

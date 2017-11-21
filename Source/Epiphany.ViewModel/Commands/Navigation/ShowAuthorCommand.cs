@@ -21,7 +21,7 @@ namespace Epiphany.ViewModel.Commands
         protected override void Run(AuthorModel author)
         {
             this.navService.CreateFor<AuthorViewModel>()
-                .AddParam<int>((x) => x.Id, author.Id)
+                .AddParam<long>((x) => x.Id, author.Id)
                 .AddParam<string>((x) => x.Name, author.Name)
                 .Navigate();
         }
@@ -44,7 +44,7 @@ namespace Epiphany.ViewModel.Commands
         protected override void Run(IAuthorItemViewModel author)
         {
             this.navService.CreateFor<AuthorViewModel>()
-                .AddParam<int>((x) => x.Id, author.Id)
+                .AddParam<long>((x) => x.Id, author.Id)
                 .AddParam<string>((x) => x.Name, author.Name)
                 .Navigate();
         }

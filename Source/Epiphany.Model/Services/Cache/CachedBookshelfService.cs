@@ -23,7 +23,7 @@ namespace Epiphany.Model.Services
             this.messenger.Subscribe<BookAddedOrRemovedMessage>(this, HandleBookAddedOrRemoved);
         }
 
-        public IPagedCollection<BookshelfModel> GetBookshelves(int userId)
+        public IPagedCollection<BookshelfModel> GetBookshelves(long userId)
         {
             //
             // If this request is for the self user, check cache

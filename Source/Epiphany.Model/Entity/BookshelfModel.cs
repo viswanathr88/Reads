@@ -1,9 +1,9 @@
 ﻿
 namespace Epiphany.Model
 {
-    public sealed class BookshelfModel : Entity<int>
+    public sealed class BookshelfModel : Entity<long>
     {
-        private int id;
+        private long id;
         private string name;
         private int booksCount;
         private string description;
@@ -20,7 +20,7 @@ namespace Epiphany.Model
             return shelf;
         }
 
-        public BookshelfModel(int id)
+        public BookshelfModel(long id)
         {
             this.id = id;
         }
@@ -30,7 +30,7 @@ namespace Epiphany.Model
 
         }
 
-        public override int Id
+        public override long Id
         {
             get
             {

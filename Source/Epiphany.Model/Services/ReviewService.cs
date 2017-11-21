@@ -33,7 +33,7 @@ namespace Epiphany.Model.Services
         //
         // TODO: Figure out a way to send the book as well in this case
         //
-        public async Task<ReviewModel> GetReviewAsync(int id)
+        public async Task<ReviewModel> GetReviewAsync(long id)
         {
             // Create a data source
             var ds = new DataSource<GoodreadsReview>(webClient);

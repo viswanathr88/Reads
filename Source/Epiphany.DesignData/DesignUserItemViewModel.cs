@@ -4,7 +4,7 @@ namespace Epiphany.View.DesignData
 {
     public sealed class DesignUserItemViewModel : DesignBaseItemViewModel, IUserItemViewModel
     {
-        public int Id
+        public long Id
         {
             get;
             set;

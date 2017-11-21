@@ -2,10 +2,10 @@
 
 namespace Epiphany.Model
 {
-    public class GroupFolderModel : Entity<int>
+    public class GroupFolderModel : Entity<long>
     {
         private GoodreadsGroupFolder folder;
-        private readonly int id;
+        private readonly long id;
 
         public static GroupFolderModel Create(int id, string name)
         {
@@ -28,7 +28,7 @@ namespace Epiphany.Model
             };
         }
 
-        public override int Id
+        public override long Id
         {
             get
             {

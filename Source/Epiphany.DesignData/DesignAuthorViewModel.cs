@@ -24,7 +24,7 @@ namespace Epiphany.View.DesignData
             PopulateBooks();
         }
 
-        public int Id
+        public long Id
         {
             get;
             set;

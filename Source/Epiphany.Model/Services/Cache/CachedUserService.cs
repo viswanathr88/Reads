@@ -9,18 +9,18 @@ namespace Epiphany.Model.Services
     {
         private readonly IUserService baseService;
         private readonly IMessenger messenger;
-        private readonly IDictionary<int, ProfileModel> cache;
-        private readonly IDictionary<int, IPagedCollection<UserModel>> friendsCache;
+        private readonly IDictionary<long, ProfileModel> cache;
+        private readonly IDictionary<long, IPagedCollection<UserModel>> friendsCache;
 
         public CachedUserService(IUserService service, IMessenger messenger)
         {
             this.baseService = service;
             this.messenger = messenger;
-            this.cache = new Dictionary<int, ProfileModel>();
-            this.friendsCache = new Dictionary<int, IPagedCollection<UserModel>>();
+            this.cache = new Dictionary<long, ProfileModel>();
+            this.friendsCache = new Dictionary<long, IPagedCollection<UserModel>>();
         }
 
-        public async Task<ProfileModel> GetProfileAsync(int id)
+        public async Task<ProfileModel> GetProfileAsync(long id)
         {
             if (cache.ContainsKey(id))
             {
@@ -34,7 +34,7 @@ namespace Epiphany.Model.Services
             }
         }
 
-        public IPagedCollection<UserModel> GetFriends(int id)
+        public IPagedCollection<UserModel> GetFriends(long id)
         {
             if (friendsCache.ContainsKey(id))
             {

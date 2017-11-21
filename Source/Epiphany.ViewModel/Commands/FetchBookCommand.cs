@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel.Commands
 {
-    class FetchBookCommand : AsyncCommand<BookModel, int>
+    class FetchBookCommand : AsyncCommand<BookModel, long>
     {
         private readonly IBookService service;
 
@@ -19,12 +19,12 @@ namespace Epiphany.ViewModel.Commands
             this.service = service;
         }
 
-        public override bool CanExecute(int param)
+        public override bool CanExecute(long param)
         {
             return param > 0;
         }
 
-        protected async override Task RunAsync(int param)
+        protected async override Task RunAsync(long param)
         {
             Result = await this.service.GetBook(param);
         }

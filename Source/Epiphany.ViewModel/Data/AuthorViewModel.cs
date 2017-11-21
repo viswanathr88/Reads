@@ -20,7 +20,7 @@ namespace Epiphany.ViewModel
         private AuthorModel author;
         private string imageUrl;
         private string name;
-        private int id;
+        private long id;
 
         // collections
         private IAsyncEnumerator<BookModel> bookEnumerator;
@@ -29,7 +29,7 @@ namespace Epiphany.ViewModel
 
         // commands
         private readonly IAsyncCommand<IEnumerable<BookModel>, IAsyncEnumerator<BookModel>> fetchBooksCommand;
-        private readonly IAsyncCommand<AuthorModel, int> fetchAuthorCommand;
+        private readonly IAsyncCommand<AuthorModel, long> fetchAuthorCommand;
         private readonly ICommand goHomeCommand;
 
         private readonly IBookService bookService;
@@ -57,7 +57,7 @@ namespace Epiphany.ViewModel
             this.goHomeCommand = new GoHomeCommand(navService);
         }
 
-        public int Id
+        public long Id
         {
             get
             {

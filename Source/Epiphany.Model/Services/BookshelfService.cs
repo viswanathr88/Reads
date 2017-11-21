@@ -27,7 +27,7 @@ namespace Epiphany.Model.Services
             this.messenger.Subscribe<GenericMessage<GoodreadsProfile>>(this, HandleProfileRetrived);
         }
 
-        public IPagedCollection<BookshelfModel> GetBookshelves(int userId)
+        public IPagedCollection<BookshelfModel> GetBookshelves(long userId)
         {
             // Create the data source for the collection
             var ds = new PagedDataSource<GoodreadsShelves>(webClient);

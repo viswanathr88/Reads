@@ -10,7 +10,7 @@ namespace Epiphany.Model.Services
         /// </summary>
         /// <param name="id">id of the user status</param>
         /// <returns>UserStatus</returns>
-        Task<UserStatusModel> GetUserStatus(int id);
+        Task<UserStatusModel> GetUserStatus(long id);
         /// <summary>
         /// Update user status
         /// </summary>

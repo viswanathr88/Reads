@@ -13,7 +13,7 @@ namespace Epiphany.Model.Services
         /// </summary>
         /// <param name="userId">id of the user</param>
         /// <returns>collection of bookshelves</returns>
-        IPagedCollection<BookshelfModel> GetBookshelves(int userId);
+        IPagedCollection<BookshelfModel> GetBookshelves(long userId);
         /// <summary>
         /// Add a new shelf
         /// </summary>

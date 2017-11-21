@@ -44,7 +44,7 @@ namespace Epiphany.Model.Services
         /// </summary>
         /// <param name="id">id of the book</param>
         /// <returns>book</returns>
-        Task<BookModel> GetBook(int id);
+        Task<BookModel> GetBook(long id);
         /// <summary>
         /// Gets the books by an author
         /// </summary>
@@ -57,20 +57,20 @@ namespace Epiphany.Model.Services
         /// <param name="userId"></param>
         /// <param name="year"></param>
         /// <returns></returns>
-        IPagedCollection<BookModel> GetBooksByYear(int userId, int year);
+        IPagedCollection<BookModel> GetBooksByYear(long userId, int year);
         /// <summary>
         /// Gets all the books in a bookshelf
         /// </summary>
         /// <param name="userId">id of the user</param>
         /// <param name="shelfName">name of the bookshelf</param>
         /// <returns>book collection</returns>
-        IPagedCollection<BookModel> GetBooks(int userId, string shelfName, BookSortType sortType, BookSortOrder order);
+        IPagedCollection<BookModel> GetBooks(long userId, string shelfName, BookSortType sortType, BookSortOrder order);
         /// <summary>
         /// Gets the books owned by a user
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
-        IPagedCollection<BookModel> GetOwnedBooks(int userId);
+        IPagedCollection<BookModel> GetOwnedBooks(long userId);
         /// <summary>
         /// Adds a book to the given shelf
         /// </summary>

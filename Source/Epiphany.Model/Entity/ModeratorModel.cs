@@ -2,10 +2,10 @@
 
 namespace Epiphany.Model
 {
-    public class ModeratorModel : Entity<int>
+    public class ModeratorModel : Entity<long>
     {
         private readonly GoodreadsGroupUser user;
-        private readonly int id;
+        private readonly long id;
 
         internal ModeratorModel(GoodreadsGroupUser user)
         {
@@ -13,7 +13,7 @@ namespace Epiphany.Model
             this.id = user.User.Id;
         }
 
-        public override int Id
+        public override long Id
         {
             get
             {

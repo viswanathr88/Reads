@@ -3,9 +3,9 @@ using System;
 
 namespace Epiphany.Model
 {
-    public sealed class UserModel : Entity<int>
+    public sealed class UserModel : Entity<long>
     {
-        private readonly int id;
+        private readonly long id;
         private readonly GoodreadsUser user;
 
         public UserModel(int id)
@@ -23,7 +23,7 @@ namespace Epiphany.Model
             this.id = user.Id;
         }
 
-        public override int Id
+        public override long Id
         {
             get { return this.id; }
         }

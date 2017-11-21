@@ -19,19 +19,19 @@ namespace Epiphany.Model.Services
         /// </summary>
         /// <param name="groupId">id of the group</param>
         /// <returns>group</returns>
-        Task<GroupModel> GetGroup(int groupId);
+        Task<GroupModel> GetGroup(long groupId);
         /// <summary>
         /// Gets topics in a group folder
         /// </summary>
         /// <param name="groupFolder">group folder to fetch topics from</param>
         /// <returns></returns>
-        IPagedCollection<TopicModel> GetTopics(int groupId, int groupFolderId);
+        IPagedCollection<TopicModel> GetTopics(long groupId, long groupFolderId);
         /// <summary>
         /// Gets a topic
         /// </summary>
         /// <param name="topicId">id of the topic</param>
         /// <returns>topic</returns>
-        Task<TopicModel> GetTopic(int topicId);
+        Task<TopicModel> GetTopic(long topicId);
         /// <summary>
         /// Gets comments for a topic
         /// </summary>

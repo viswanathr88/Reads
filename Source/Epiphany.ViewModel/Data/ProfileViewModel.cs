@@ -13,7 +13,7 @@ namespace Epiphany.ViewModel
 {
     public sealed class ProfileViewModel : DataViewModel<UserModel>, IProfileViewModel
     {
-        private int id;
+        private long id;
         private string name;
         private string username;
         private string imageUrl;
@@ -67,7 +67,7 @@ namespace Epiphany.ViewModel
             this.followUserCommand.Executed += OnProfileActionCompleted;
         }
 
-        public int Id
+        public long Id
         {
             get { return this.id;  }
             private set

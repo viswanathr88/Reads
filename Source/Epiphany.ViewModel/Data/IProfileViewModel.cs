@@ -7,7 +7,7 @@ namespace Epiphany.ViewModel
 {
     public interface IProfileViewModel : IDataViewModel
     {
-        int Id { get; }
+        long Id {get; }
         string ImageUrl { get; }
         string Name { get; }
         string Username { get; }

@@ -6,7 +6,7 @@ namespace Epiphany.Model.Services
 {
     class CachedAuthorService : IAuthorService
     {
-        private readonly IDictionary<int, AuthorModel> cache;
+        private readonly IDictionary<long, AuthorModel> cache;
         private readonly IMessenger messenger;
         private readonly IAuthorService service;
 
@@ -14,10 +14,10 @@ namespace Epiphany.Model.Services
         {
             this.service = authorService;
             this.messenger = messenger;
-            this.cache = new Dictionary<int, AuthorModel>();
+            this.cache = new Dictionary<long, AuthorModel>();
         }
 
-        public async Task<AuthorModel> GetAuthorAsync(int id)
+        public async Task<AuthorModel> GetAuthorAsync(long id)
         {
             if (cache.ContainsKey(id))
             {

@@ -9,7 +9,7 @@ namespace Epiphany.View.DesignData
             Name = "Test Author";
         }
 
-        public int Id
+        public long Id
         {
             get;
             set;

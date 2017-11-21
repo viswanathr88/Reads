@@ -17,7 +17,7 @@ namespace Epiphany.Model.Services
             this.messenger = messenger;
         }
 
-        public async Task<ReviewModel> GetReviewAsync(int id)
+        public async Task<ReviewModel> GetReviewAsync(long id)
         {
             return await this.baseService.GetReviewAsync(id);
         }

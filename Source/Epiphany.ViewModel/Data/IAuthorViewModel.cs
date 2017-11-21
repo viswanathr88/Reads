@@ -16,7 +16,7 @@ namespace Epiphany.ViewModel
         IList<IBookItemViewModel> Books { get; }
         IAsyncCommand<IAsyncEnumerator<BookModel>> FetchBooks { get; }
         ICommand GoHome { get; }
-        int Id { get; set; }
+        long Id { get; set; }
         string ImageUrl { get; }
         string Name { get; set; }
         ICommand<AuthorModel> PinAuthor { get; }

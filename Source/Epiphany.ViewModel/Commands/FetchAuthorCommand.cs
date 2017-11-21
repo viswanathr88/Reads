@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel.Commands
 {
-    class FetchAuthorCommand : AsyncCommand<AuthorModel, int>
+    class FetchAuthorCommand : AsyncCommand<AuthorModel, long>
     {
         private readonly IAuthorService service;
 
@@ -18,12 +18,12 @@ namespace Epiphany.ViewModel.Commands
             this.service = service;
         }
 
-        public override bool CanExecute(int param)
+        public override bool CanExecute(long param)
         {
             return param > 0;
         }
 
-        protected async override Task RunAsync(int param)
+        protected async override Task RunAsync(long param)
         {
             Result = await this.service.GetAuthorAsync(param);
         }

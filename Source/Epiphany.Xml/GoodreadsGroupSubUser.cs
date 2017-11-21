@@ -6,7 +6,7 @@ namespace Epiphany.Xml
     public class GoodreadsGroupSubUser
     {
         [XmlElement("id")]
-        public int Id
+        public long Id
         {
             get;
             set;

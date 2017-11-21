@@ -45,7 +45,7 @@ namespace Epiphany.Model.Services
             return new PagedCollection<GroupModel, GoodreadsGroup, GoodreadsGroupList>(ds, adapter, pageSize);
         }
 
-        public async Task<GroupModel> GetGroup(int groupId)
+        public async Task<GroupModel> GetGroup(long groupId)
         {
             // Create the data source
             var ds = new DataSource<GoodreadsGroup>(webClient);
@@ -60,7 +60,7 @@ namespace Epiphany.Model.Services
             return this.adapter.Convert(group);
         }
 
-        public IPagedCollection<TopicModel> GetTopics(int groupId, int groupFolderId)
+        public IPagedCollection<TopicModel> GetTopics(long groupId, long groupFolderId)
         {
             // Create the data source
             var ds = new PagedDataSource<GoodreadsTopics>(webClient);
@@ -72,7 +72,7 @@ namespace Epiphany.Model.Services
             return new PagedCollection<TopicModel, GoodreadsTopic, GoodreadsTopics>(ds, topicAdapter, pageSize);
         }
 
-        public async Task<TopicModel> GetTopic(int topicId)
+        public async Task<TopicModel> GetTopic(long topicId)
         {
             // Create data source
             var ds = new DataSource<GoodreadsTopic>(webClient);

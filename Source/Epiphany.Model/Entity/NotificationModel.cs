@@ -2,12 +2,12 @@
 
 namespace Epiphany.Model
 {
-    public sealed class NotificationModel : Entity<int>
+    public sealed class NotificationModel : Entity<long>
     {
-        private readonly int id;
+        private readonly long id;
         private readonly GoodreadsNotification notification;
 
-        public NotificationModel(int id)
+        public NotificationModel(long id)
         {
             this.id = id;
             this.notification = new GoodreadsNotification();
@@ -19,7 +19,7 @@ namespace Epiphany.Model
             this.id = notification.Id;
         }
 
-        public override int Id
+        public override long Id
         {
             get
             {

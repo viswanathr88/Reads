@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Epiphany.Model
 {
-    public sealed class AuthorModel : Entity<int>
+    public sealed class AuthorModel : Entity<long>
     {
         private readonly GoodreadsAuthor author;
         private readonly IPagedCollection<BookModel> books;
@@ -22,7 +22,7 @@ namespace Epiphany.Model
             this.books = books;
         }
 
-        public override int Id
+        public override long Id
         {
             get 
             {

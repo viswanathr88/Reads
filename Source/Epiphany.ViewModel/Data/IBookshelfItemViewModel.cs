@@ -2,7 +2,7 @@
 {
     public interface IBookshelfItemViewModel : IItemViewModel
     {
-        int ShelfId { get; }
+        long ShelfId { get; }
 
         string Name { get; }
 

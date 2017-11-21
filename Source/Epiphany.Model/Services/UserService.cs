@@ -28,7 +28,7 @@ namespace Epiphany.Model.Services
             this.feedItemAdapter = new FeedItemAdapter();
 
         }
-        public async Task<ProfileModel> GetProfileAsync(int id)
+        public async Task<ProfileModel> GetProfileAsync(long id)
         {
             // Create the data source and get the profile
             var ds = new DataSource<GoodreadsProfile>(webClient);
@@ -47,7 +47,7 @@ namespace Epiphany.Model.Services
             return this.profileAdapter.Convert(profile);
         }
 
-        public IPagedCollection<UserModel> GetFriends(int id)
+        public IPagedCollection<UserModel> GetFriends(long id)
         {
             // Create the data source for the collection
             var ds = new PagedDataSource<GoodreadsFriends>(webClient);

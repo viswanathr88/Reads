@@ -13,7 +13,7 @@ namespace Epiphany.ViewModel.Items
             this.user = user;
         }
 
-        public int ShelfId
+        public long ShelfId
         {
             get { return this.Item.Id; }
         }

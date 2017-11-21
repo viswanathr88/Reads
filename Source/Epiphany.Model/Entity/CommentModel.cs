@@ -3,9 +3,9 @@ using System;
 
 namespace Epiphany.Model
 {
-    public class CommentModel : Entity<int>
+    public class CommentModel : Entity<long>
     {
-        private readonly int id;
+        private readonly long id;
         private readonly GoodreadsComment comment;
 
         public static CommentModel Create(string body)
@@ -27,7 +27,7 @@ namespace Epiphany.Model
             this.id = comment.Id;
         }
 
-        public override int Id
+        public override long Id
         {
             get
             {

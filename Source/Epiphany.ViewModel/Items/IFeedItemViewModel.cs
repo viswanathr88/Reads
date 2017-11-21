@@ -9,7 +9,7 @@ namespace Epiphany.ViewModel.Items
         string Body { get; }
         IBookItemViewModel Book { get; }
         IUserItemViewModel Friend { get; }
-        int Id { get; }
+        long Id {get; }
         string ImageUrl { get; }
         FeedItemType Type { get; }
         DateTime UpdateTime { get; }

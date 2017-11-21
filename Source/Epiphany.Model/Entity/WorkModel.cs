@@ -4,7 +4,7 @@ using System;
 
 namespace Epiphany.Model
 {
-    public class WorkModel : Entity<int>
+    public class WorkModel : Entity<long>
     {
         private readonly GoodreadsWork work;
 
@@ -18,7 +18,7 @@ namespace Epiphany.Model
             this.work = work;
         }
 
-        public override int Id
+        public override long Id
         {
             get
             {

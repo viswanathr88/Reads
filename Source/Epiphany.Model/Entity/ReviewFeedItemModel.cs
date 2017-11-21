@@ -4,7 +4,7 @@ namespace Epiphany.Model
 {
     public sealed class ReviewFeedItemModel : FeedItemModel
     {
-        private readonly int id;
+        private readonly long id;
         private readonly int rating = 0;
         private readonly GoodreadsBook book;
 
@@ -47,7 +47,7 @@ namespace Epiphany.Model
             }
         }
 
-        protected override int GetId(GoodreadsUpdate update)
+        protected override long GetId(GoodreadsUpdate update)
         {
             return this.id;
         }

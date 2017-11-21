@@ -11,9 +11,9 @@ namespace Epiphany.Model
         Other
     };
 
-    public sealed class LiteraryEventModel : Entity<int>
+    public sealed class LiteraryEventModel : Entity<long>
     {
-        private readonly int id;
+        private readonly long id;
         private readonly GoodreadsEvent literaryEvent;
 
         public LiteraryEventModel(int id)
@@ -26,7 +26,7 @@ namespace Epiphany.Model
             this.literaryEvent = literaryEvent;
         }
 
-        public override int Id
+        public override long Id
         {
             get { return this.id; }
         }

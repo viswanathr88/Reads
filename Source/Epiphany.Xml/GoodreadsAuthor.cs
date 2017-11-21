@@ -10,7 +10,7 @@ namespace Epiphany.Xml
     {
         [XmlElement("id")]
         [DataMember(Name = "id", Order = 0)]
-        public int Id
+        public long Id
         {
             get;
             set;

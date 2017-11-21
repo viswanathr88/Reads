@@ -18,7 +18,7 @@ namespace Epiphany.ViewModel.Items
             }
         }
 
-        public int Id
+        public long Id
         {
             get { return Item.Id; }
         }

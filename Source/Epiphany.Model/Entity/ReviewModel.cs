@@ -4,18 +4,16 @@ using System.Collections.Generic;
 
 namespace Epiphany.Model
 {
-    public sealed class ReviewModel : Entity<int>
+    public sealed class ReviewModel : Entity<long>
     {
         private readonly GoodreadsReview review;
-        private readonly int id;
 
         internal ReviewModel(GoodreadsReview review)
         {
             this.review = review;
-            this.id = review.Id;
         }
         
-        public override int Id
+        public override long Id
         {
             get 
             {

@@ -77,7 +77,7 @@ namespace Epiphany.View.DesignData
             set;
         }
 
-        public int Id
+        public long Id
         {
             get;
             set;

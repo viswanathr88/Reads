@@ -3,7 +3,7 @@ using System;
 
 namespace Epiphany.Model
 {
-    public class BookLinkModel : Entity<int>
+    public class BookLinkModel : Entity<long>
     {
         private readonly GoodreadsBookLink bookLink;
 
@@ -16,7 +16,7 @@ namespace Epiphany.Model
             this.bookLink = bookLink;
         }
 
-        public override int Id
+        public override long Id
         {
             get
             {

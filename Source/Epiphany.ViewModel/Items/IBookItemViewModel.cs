@@ -7,7 +7,7 @@ namespace Epiphany.ViewModel.Items
         IList<IAuthorItemViewModel> Authors { get; }
         double AverageRating { get; }
         int RatingsCount { get; }
-        int Id { get; }
+        long Id {get; }
         string ImageUrl { get; }
         IAuthorItemViewModel MainAuthor { get; }
         string Title { get; }

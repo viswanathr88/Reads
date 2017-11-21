@@ -36,7 +36,7 @@ namespace Epiphany.ViewModel.Items
             InitializeProperties();
         }
 
-        public int Id
+        public long Id
         {
             get { return this.Item.Id; }
         }

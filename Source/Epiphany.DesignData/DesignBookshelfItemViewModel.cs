@@ -4,13 +4,13 @@ namespace Epiphany.View.DesignData
 {
     public sealed class DesignBookshelfItemViewModel : DesignBaseItemViewModel, IBookshelfItemViewModel
     {
-        public int ShelfId
+        public long ShelfId
         {
             get;
             set;
         }
 
-        public int UserId
+        public long UserId
         {
             get;
             set;

@@ -4,7 +4,7 @@ namespace Epiphany.Model
 {
     public sealed class FriendFeedItemModel : FeedItemModel
     {
-        private readonly int id;
+        private readonly long id;
         private readonly string name;
 
         private UserModel friend;
@@ -25,7 +25,7 @@ namespace Epiphany.Model
             Friend = new UserModel(user);
         }
 
-        protected override int GetId(GoodreadsUpdate update)
+        protected override long GetId(GoodreadsUpdate update)
         {
             return id;
         }

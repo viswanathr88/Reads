@@ -25,7 +25,7 @@ namespace Epiphany.Model
             }
         }
 
-        protected override int GetId(GoodreadsUpdate update)
+        protected override long GetId(GoodreadsUpdate update)
         {
             return this.userStatus.Id;
         }

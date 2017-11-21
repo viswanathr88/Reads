@@ -3,10 +3,10 @@ using System;
 
 namespace Epiphany.Model
 {
-    public sealed class TopicModel : Entity<int>
+    public sealed class TopicModel : Entity<long>
     {
         private readonly GoodreadsTopic topic;
-        private readonly int id;
+        private readonly long id;
 
         public static TopicModel Create(string title)
         {
@@ -27,7 +27,7 @@ namespace Epiphany.Model
             };
         }
 
-        public override int Id
+        public override long Id
         {
             get
             {

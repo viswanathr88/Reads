@@ -12,7 +12,7 @@ namespace Epiphany.Model.Services
         /// </summary>
         /// <param name="id">id of the author</param>
         /// <returns>author</returns>
-        Task<AuthorModel> GetAuthorAsync(int id);
+        Task<AuthorModel> GetAuthorAsync(long id);
         /// <summary>
         /// Become a fan of an author or stop being a fan
         /// </summary>

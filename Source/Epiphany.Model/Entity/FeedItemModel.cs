@@ -16,7 +16,7 @@ namespace Epiphany.Model
         UserChallenge
     };
 
-    public abstract class FeedItemModel : Entity<int>
+    public abstract class FeedItemModel : Entity<long>
     {
         private readonly GoodreadsUpdate update;
         private FeedItemType itemType;
@@ -27,7 +27,7 @@ namespace Epiphany.Model
             itemType = ToFeedItemType(update.Type);
         }
 
-        public override int Id
+        public override long Id
         {
             get
             {
@@ -106,11 +106,11 @@ namespace Epiphany.Model
             return itemType;
         }
 
-        protected abstract int GetId(GoodreadsUpdate update);
+        protected abstract long GetId(GoodreadsUpdate update);
 
-        protected int ParseIdFromLink(string link)
+        protected long ParseIdFromLink(string link)
         {
-            int id = -1;
+            long id = -1;
             if (!string.IsNullOrEmpty(link))
             {
                 // Get the Id from the Link.
@@ -123,9 +123,9 @@ namespace Epiphany.Model
                     separators[0] = '-';
                     string[] parts2 = parts[parts.Length - 1].Split(separators);
                     if (parts2.Length != 0)
-                        id = int.Parse(parts2[0]);
+                        id = long.Parse(parts2[0]);
                     else
-                        id = int.Parse(parts[parts.Length - 1]);
+                        id = long.Parse(parts[parts.Length - 1]);
                 }
             }
             return id;

@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Epiphany.Model
 {
-    public sealed class BookModel : Entity<int>
+    public sealed class BookModel : Entity<long>
     {
         private GoodreadsBook book;
         private readonly GoodreadsReview review;
@@ -38,7 +38,7 @@ namespace Epiphany.Model
             set { this.book = value; }
         }
 
-        public override int Id
+        public override long Id
         {
             get 
             {

@@ -10,7 +10,7 @@ namespace Epiphany.Xml
     public class GoodreadsUser
     {
         [XmlElement("id")]
-        public int Id
+        public long Id
         {
             get;
             set;

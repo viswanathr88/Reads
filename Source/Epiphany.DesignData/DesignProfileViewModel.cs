@@ -48,7 +48,7 @@ namespace Epiphany.View.DesignData
             FollowingUserVisibility = Visibility.Collapsed;
             FollowUserVisibility = Visibility.Visible;
         }
-        public int Id
+        public long Id
         {
             get;
             set;

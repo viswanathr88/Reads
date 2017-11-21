@@ -2,7 +2,6 @@
 using Epiphany.Model.Messaging;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System;
 
 namespace Epiphany.Model.Services
 {
@@ -10,20 +9,20 @@ namespace Epiphany.Model.Services
     {
         private readonly IBookService baseService;
         private readonly IMessenger messenger;
-        private readonly IDictionary<int, BookModel> cache;
+        private readonly IDictionary<long, BookModel> cache;
 
         public CachedBookService(IBookService service, IMessenger messenger)
         {
             this.baseService = service;
             this.messenger = messenger;
-            this.cache = new Dictionary<int, BookModel>();
+            this.cache = new Dictionary<long, BookModel>();
             //
             // Subscribe for messages
             //
             this.messenger.Subscribe<ReviewAddedOrEditedMessage>(this, HandleReviewAddedOrEdited);
         }
 
-        public async Task<BookModel> GetBook(int id)
+        public async Task<BookModel> GetBook(long id)
         {
             if (cache.ContainsKey(id))
             {
@@ -42,7 +41,7 @@ namespace Epiphany.Model.Services
             return this.baseService.GetBooks(author);
         }
 
-        public IPagedCollection<BookModel> GetBooks(int userId, string shelfName, BookSortType sortType, BookSortOrder order)
+        public IPagedCollection<BookModel> GetBooks(long userId, string shelfName, BookSortType sortType, BookSortOrder order)
         {
             return this.baseService.GetBooks(userId, shelfName, sortType, order);
         }
@@ -80,12 +79,12 @@ namespace Epiphany.Model.Services
             return this.baseService.Find(type, term);
         }
 
-        public IPagedCollection<BookModel> GetBooksByYear(int userId, int year)
+        public IPagedCollection<BookModel> GetBooksByYear(long userId, int year)
         {
             return this.baseService.GetBooksByYear(userId, year);
         }
 
-        public IPagedCollection<BookModel> GetOwnedBooks(int userId)
+        public IPagedCollection<BookModel> GetOwnedBooks(long userId)
         {
             return this.baseService.GetOwnedBooks(userId);
         }

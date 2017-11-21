@@ -35,7 +35,7 @@ namespace Epiphany.Model.Services
             this.messenger.Subscribe<GenericMessage<GoodreadsAuthor>>(this, HandleAuthorRetrieved);
         }
 
-        public async Task<BookModel> GetBook(int id)
+        public async Task<BookModel> GetBook(long id)
         {
             // Create the data source
             var ds = new DataSource<GoodreadsBook>(webClient);
@@ -87,7 +87,7 @@ namespace Epiphany.Model.Services
             return books;
         }
 
-        public IPagedCollection<BookModel> GetBooks(int userId, string shelfName, BookSortType sortType, BookSortOrder order)
+        public IPagedCollection<BookModel> GetBooks(long userId, string shelfName, BookSortType sortType, BookSortOrder order)
         {
             // Create the data source for the collection
             var ds = new PagedDataSource<GoodreadsReviews>(webClient);
@@ -104,7 +104,7 @@ namespace Epiphany.Model.Services
             return new PagedCollection<BookModel, GoodreadsReview, GoodreadsReviews>(ds, ReviewToBookAdapter, pageSize);
         }
 
-        public IPagedCollection<BookModel> GetBooksByYear(int userId, int year)
+        public IPagedCollection<BookModel> GetBooksByYear(long userId, int year)
         {
             var ds = new PagedDataSource<GoodreadsBooks>(webClient);
             ds.SourceUrl = ServiceUrls.BooksInShelfUrl;
@@ -117,7 +117,7 @@ namespace Epiphany.Model.Services
             return new PagedCollection<BookModel, GoodreadsBook, GoodreadsBooks>(ds, BookAdapter, pageSize);
         }
 
-        public IPagedCollection<BookModel> GetOwnedBooks(int userId)
+        public IPagedCollection<BookModel> GetOwnedBooks(long userId)
         {
             var ds = new PagedDataSource<GoodreadsOwnedBooks>(webClient);
             ds.SourceUrl = ServiceUrls.OwnedBooksUrl;
