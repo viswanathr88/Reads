@@ -53,6 +53,6 @@ namespace Epiphany.Model.Services
         /// Gets the recent reviews from Goodreads
         /// </summary>
         /// <returns></returns>
-        Task<IList<FeedItemModel>> GetRecentReviewsAsync();
+        Task<IList<ReviewModel>> GetRecentReviewsAsync();
     }
 }

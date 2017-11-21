@@ -17,7 +17,7 @@
         </Grid.RowDefinitions>
 
         <!-- Description -->
-        <TextBlock Text="{Binding ElementName=collapsableTextControl, Path=Text}"
+        <TextBlock 
                    Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
                    Style="{StaticResource BodyTextBlockStyle}"
                    OpticalMarginAlignment="TrimSideBearings"
@@ -28,11 +28,11 @@
 
         <!-- Expand/Collapse Button -->
         <Button Style="{StaticResource TextButtonStyle}"
-                Content="More"
                 Grid.Row="1"
                 Foreground="{ThemeResource PhoneAccentBrush}"
                 Click="Expand_Click"
                 x:Name="expandCollapseButton"
-                Margin="-1,4,0,0"/>
+                Margin="-1,4,0,0"
+                Visibility="Collapsed"/>
     </Grid>
 </UserControl>

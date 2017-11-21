@@ -1,4 +1,5 @@
 ﻿using Epiphany.Strings;
+using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -105,13 +106,24 @@ namespace Epiphany.View.Controls
         {
             var collapsableTextControl = d as CollapsableText;
 
+            collapsableTextControl.descriptionLabel.SetValue(TextBlock.TextProperty, (string)e.NewValue);
+
             if (string.IsNullOrEmpty(collapsableTextControl.Text))
             {
                 collapsableTextControl.expandCollapseButton.Visibility = Visibility.Collapsed;
             }
             else
             {
-                collapsableTextControl.expandCollapseButton.Visibility = Visibility.Visible;
+                var descLable = collapsableTextControl.descriptionLabel;
+                descLable.Measure(new Size(double.MaxValue, double.MaxValue));
+                if ((descLable.DesiredSize.Height / descLable.LineHeight) > descLable.MaxLines)
+                {
+                    collapsableTextControl.expandCollapseButton.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    collapsableTextControl.expandCollapseButton.Visibility = Visibility.Collapsed;
+                }
             }
         }
     }

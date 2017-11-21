@@ -63,7 +63,7 @@ namespace Epiphany.Model.Services
             await this.baseService.AddComment(review, comment);
         }
 
-        public async Task<IList<FeedItemModel>> GetRecentReviewsAsync()
+        public async Task<IList<ReviewModel>> GetRecentReviewsAsync()
         {
             return await this.baseService.GetRecentReviewsAsync();
         }

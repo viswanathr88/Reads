@@ -104,7 +104,7 @@ namespace Epiphany.Web
                     response = new WebResponse(System.Net.HttpStatusCode.BadRequest, string.Empty);
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
                 Logger.LogException(ex);
             }

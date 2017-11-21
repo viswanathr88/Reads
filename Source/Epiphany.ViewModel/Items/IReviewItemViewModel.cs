@@ -18,5 +18,10 @@ namespace Epiphany.ViewModel.Items
         {
             get;
         }
+
+        IBookItemViewModel Book
+        {
+            get;
+        }
     }
 }

@@ -5,7 +5,7 @@ namespace Epiphany.ViewModel
 {
     public interface ICommunityViewModel : IDataViewModel
     {
-        IList<IFeedItemViewModel> Items { get; }
+        IList<IReviewItemViewModel> Items { get; }
 
         bool IsEmpty { get; }
     }

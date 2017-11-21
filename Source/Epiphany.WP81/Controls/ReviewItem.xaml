@@ -34,6 +34,7 @@
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
@@ -88,11 +89,21 @@
                     </rating:Rating.UnfilledItemStyle>
                 </rating:Rating>
             </Grid>
+            
+            <!-- Show book details -->
+            <local:BookItem ImageUrl="{Binding ElementName=reviewItemControl, Path=ImageUrl}"
+                            Author="{Binding ElementName=reviewItemControl, Path=Author}"
+                            Title="{Binding ElementName=reviewItemControl, Path=Title}"
+                            RatingsCount="{Binding ElementName=reviewItemControl, Path=RatingsCount}"
+                            AverageRating="{Binding ElementName=reviewItemControl, Path=AverageRating}"
+                            x:Name="reviewBook"
+                            Visibility="Collapsed"
+                            Grid.Row="1"/>
 
             <!-- Review body -->
             <local:CollapsableText Text="{Binding ElementName=reviewItemControl, Path=Body}"
                                       MinLines="10"
-                                      Grid.Row="1" />
+                                      Grid.Row="2" />
 
         </Grid>
 

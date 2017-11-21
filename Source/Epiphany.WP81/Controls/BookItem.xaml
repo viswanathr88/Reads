@@ -18,20 +18,27 @@
         </Grid.ColumnDefinitions>
 
         <!-- Book image -->
-        <Border Width="96"
+        <Button Grid.Column="0"
+                Style="{StaticResource TextButtonStyle}"
+                VerticalAlignment="Top"
+                x:Name="bookImageButton"
+                Click="Book_Click">
+            <Border Width="96"
                 Height="128"
                 Background="{ThemeResource PhoneChromeBrush}">
-            <Image Source="{Binding ElementName=bookItemControl,Path=ImageUrl}"
+                <Image Source="{Binding ElementName=bookItemControl,Path=ImageUrl, FallbackValue={x:Null}}"
                    Grid.Column="0"
                    Stretch="UniformToFill"
-                   VerticalAlignment="Top">
-                <Image.Transitions>
-                    <TransitionCollection>
-                        <PopupThemeTransition />
-                    </TransitionCollection>
-                </Image.Transitions>
-            </Image>
-        </Border>
+                   VerticalAlignment="Top"
+                   x:Name="bookImage">
+                    <Image.Transitions>
+                        <TransitionCollection>
+                            <PopupThemeTransition />
+                        </TransitionCollection>
+                    </Image.Transitions>
+                </Image>
+            </Border>
+        </Button>
 
         <!-- Book Details -->
         <StackPanel Margin="19,0,0,0"
@@ -40,7 +47,12 @@
                     Grid.Column="1"
                     x:Name="outerPanel">
 
-            <TextBlock Style="{StaticResource ListViewItemTextBlockStyle}"
+            <Button 
+                Style="{StaticResource TextButtonStyle}"
+                VerticalAlignment="Top"
+                x:Name="bookTitleButton"
+                Click="Book_Click">
+                <TextBlock Style="{StaticResource ListViewItemTextBlockStyle}"
                        Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
                        Text="{Binding ElementName=bookItemControl, Path=Title}"
                        TextTrimming="CharacterEllipsis"
@@ -51,8 +63,8 @@
                        OpticalMarginAlignment="TrimSideBearings"
                        LineStackingStrategy="BlockLineHeight"
                        VerticalAlignment="Top"
-                       MaxWidth="{Binding ElementName=outerPanel, Path=ActualWidth}"
-                       ContinuumNavigationTransitionInfo.IsExitElement="True"/>
+                       MaxWidth="{Binding ElementName=outerPanel, Path=ActualWidth}"/>
+            </Button>
             <TextBlock Style="{StaticResource ListViewItemSubheaderTextBlockStyle}"
                        Foreground="{ThemeResource PhoneMidBrush}"
                        Text="{Binding ElementName=bookItemControl,Path=Author}"
@@ -115,7 +127,7 @@
                        Style="{StaticResource ListViewItemContentTextBlockStyle}"
                        Visibility="{Binding ElementName=bookItemControl, Path=ExtraInfoVisibility}"
                        MaxWidth="{Binding ElementName=outerPanel, Path=ActualWidth}"/>
-            
+
         </StackPanel>
     </Grid>
 </UserControl>

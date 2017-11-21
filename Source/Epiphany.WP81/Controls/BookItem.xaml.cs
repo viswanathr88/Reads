@@ -1,5 +1,9 @@
-﻿using Windows.UI.Xaml;
+﻿using Epiphany.Model;
+using Epiphany.ViewModel.Items;
+using Epiphany.WP81;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media.Animation;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -86,5 +90,26 @@ namespace Epiphany.View.Controls
         public static readonly DependencyProperty ExtraInfoVisibilityProperty =
             DependencyProperty.Register("ExtraInfoVisibility", typeof(Visibility), typeof(BookItem), new PropertyMetadata(Visibility.Collapsed));
 
+        private async void Book_Click(object sender, RoutedEventArgs e)
+        {
+            var frameworkElement = sender as FrameworkElement;
+            if (frameworkElement.DataContext is IReviewItemViewModel)
+            {
+                var reviewItemVM = frameworkElement.DataContext as IReviewItemViewModel;
+                if (reviewItemVM.Book != null)
+                {
+                    await App.Navigate(typeof(BookPage), reviewItemVM.Book.Item);
+                }
+            }
+            else if (frameworkElement.DataContext is ISearchResultItemViewModel)
+            {
+                var searchResultItemVM = frameworkElement.DataContext as ISearchResultItemViewModel;
+                if (searchResultItemVM.Book != null)
+                {
+                    await App.Navigate(typeof(BookPage), searchResultItemVM.Book.Item);
+                }
+            }
+            
+        }
     }
 }

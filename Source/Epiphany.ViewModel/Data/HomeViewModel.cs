@@ -2,6 +2,8 @@
 using Epiphany.Model.Authentication;
 using Epiphany.Model.Services;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
 
@@ -131,18 +133,25 @@ namespace Epiphany.ViewModel
 
         public override async Task LoadAsync(VoidType parameter)
         {
-            if (IsLoggedIn && !IsLoaded)
+            if (!IsLoaded)
             {
                 IsLoading = true;
 
-                // Start loading your feed but not await
-                Task feedLoadTask = Feed.LoadAsync(parameter, true);
+                IList<Task> tasks = new List<Task>();
+                if (IsLoggedIn)
+                {
+                    // Start loading your feed but not await
+                    tasks.Add(Feed.LoadAsync(parameter, true));
 
-                // This should finish quickly as it is just creating the collection
-                await Books.LoadAsync(int.Parse(this.logonService.Session.UserId), true);
+                    // This should finish quickly as it is just creating the collection
+                    tasks.Add(Books.LoadAsync(int.Parse(this.logonService.Session.UserId), true));
+                }
 
-                // Wait for the feed task to finish
-                await feedLoadTask;
+                // Load the community reviews
+                tasks.Add(Community.LoadAsync(parameter, true));
+
+                // Wait for all tasks to finish
+                await Task.WhenAll(tasks);
 
                 IsLoading = false;
                 IsLoaded = true;

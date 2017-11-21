@@ -130,7 +130,7 @@ namespace Epiphany.Model.Services
             response.Validate(System.Net.HttpStatusCode.Created);
         }
 
-        public async Task<IList<FeedItemModel>> GetRecentReviewsAsync()
+        public async Task<IList<ReviewModel>> GetRecentReviewsAsync()
         {
             WebRequest request = new WebRequest(ServiceUrls.RecentReviewsUrl, WebMethod.Get);
             request.Parameters["format"] = "xml";
@@ -140,7 +140,13 @@ namespace Epiphany.Model.Services
 
             var xmlResponse = Parser.GetResponse(response.Content);
 
-            return null;
+            var reviewList = new List<ReviewModel>();
+            foreach (var review in xmlResponse.Reviews.Items)
+            {
+                reviewList.Add(this.adapter.Convert(review));
+            }
+
+            return reviewList;
         }
 
         private void HandleBookRetrieved(object sender, GenericMessage<GoodreadsBook> msg)

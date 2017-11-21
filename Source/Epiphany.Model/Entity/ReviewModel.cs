@@ -29,6 +29,14 @@ namespace Epiphany.Model
             }
         }
 
+        public BookModel Book
+        {
+            get
+            {
+                return review.Book != null ? new BookModel(review.Book) : null;
+            }
+        }
+
         public int Rating
         {
             get

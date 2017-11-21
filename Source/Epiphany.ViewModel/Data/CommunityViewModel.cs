@@ -1,4 +1,6 @@
-﻿using Epiphany.Model.Services;
+﻿using Epiphany.Model;
+using Epiphany.Model.Services;
+using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
 using System;
@@ -10,7 +12,7 @@ namespace Epiphany.ViewModel
     public sealed class CommunityViewModel : DataViewModel<VoidType>, ICommunityViewModel
     {
         private bool isEmpty;
-        private IList<IFeedItemViewModel> items;
+        private IList<IReviewItemViewModel> items;
 
         private readonly IUserService userService;
         private readonly IReviewService reviewService;
@@ -50,7 +52,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<IFeedItemViewModel> Items
+        public IList<IReviewItemViewModel> Items
         {
             get
             {
@@ -62,17 +64,20 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override Task LoadAsync(VoidType parameter)
+        public override async Task LoadAsync(VoidType parameter)
         {
             if (!IsLoaded)
             {
                 IsLoading = true;
 
+                var reviews = await this.reviewService.GetRecentReviewsAsync();
+                Items = new LazyObservableCollection<IReviewItemViewModel, ReviewModel>(
+                () => reviews,
+                (model) => new ReviewItemViewModel(model));
+
                 IsLoading = false;
                 IsLoaded = true;
             }
-
-            return Task.FromResult<bool>(true);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Epiphany.View.Converters
         {
             Visibility visibility = Visibility.Visible;
 
-            if (value == null)
+            if (value == null || (value is string && string.IsNullOrEmpty((string)value)))
             {
                 visibility = Visibility.Collapsed;
             }
