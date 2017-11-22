@@ -111,7 +111,7 @@
                                               Closed="PickerFlyout_Closed">
 
                                     <StackPanel Orientation="Vertical">
-                                        
+
                                         <ListView ItemsSource="{Binding Path=Feed.FeedOptions.UpdateTypes}"
                                                   x:Name="updateTypesList">
                                             <ListView.Header>
@@ -143,22 +143,22 @@
                                                 <DataTemplate>
                                                     <RadioButton Content="{Binding Item, Converter={StaticResource FeedOptionsTextConverter}}"
                                                                  GroupName="UpdateFilter"
-                                                                 IsChecked="{Binding IsSelected, Mode=TwoWay}"/>
+                                                                 IsChecked="{Binding IsSelected, Mode=TwoWay}" />
                                                 </DataTemplate>
                                             </ListView.ItemTemplate>
                                         </ListView>
                                     </StackPanel>
-                                    
+
                                 </PickerFlyout>
                             </Button.Flyout>
-                            
+
                             <!-- Content -->
                             <Button.Content>
                                 <TextBlock Text="{Binding Path=Feed.FeedOptions.OptionsSummary}"
                                            Foreground="{ThemeResource PhoneAccentBrush}"
                                            Style="{StaticResource BaseTextBlockStyle}" />
                             </Button.Content>
-                            
+
                         </Button>
 
                         <!-- Feed -->
@@ -179,40 +179,44 @@
                     <controls:SignInControl Margin="0,20,0,20"
                                             VerticalAlignment="Center"
                                             Visibility="{Binding IsLoggedIn, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
-                                            Message="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabMyBooksSignInText}" />
+                                            Message="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabMyBooksSignInText}"
+                                            Background="Green" />
 
-                    <ScrollViewer>
-                        <!-- Books -->
-                        <StackPanel Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                    Orientation="Vertical"
-                                    HorizontalAlignment="Stretch">
+                    <Grid Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <ScrollViewer>
+                            <!-- Books -->
+                            <StackPanel Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                        Orientation="Vertical"
+                                        HorizontalAlignment="Stretch">
 
-                            <!-- Currently reading list -->
-                            <controls:BookStack Items="{Binding Path=Books.CurrentlyReadingBooks}"
-                                                IsLoading="{Binding Path=Books.IsCurrentlyReadingBooksLoading}"
-                                                Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.CurrentlyReadingSectionTitle}" />
+                                <!-- Currently reading list -->
+                                <controls:BookStack Items="{Binding Path=Books.CurrentlyReadingBooks}"
+                                                    IsLoading="{Binding Path=Books.IsCurrentlyReadingBooksLoading}"
+                                                    Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.CurrentlyReadingSectionTitle}" />
 
-                            <!-- Reading challenge list -->
-                            <controls:BookStack Items="{Binding Path=Books.ReadingChallengeBooks}"
-                                                IsLoading="{Binding Path=Books.IsReadingChallengeBooksLoading}"
-                                                Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ReadingChallengeSectionTitle}" />
+                                <!-- Reading challenge list -->
+                                <controls:BookStack Items="{Binding Path=Books.ReadingChallengeBooks}"
+                                                    IsLoading="{Binding Path=Books.IsReadingChallengeBooksLoading}"
+                                                    Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ReadingChallengeSectionTitle}" />
 
-                            <!-- Owned Books list -->
-                            <!--<controls:BookStack Items="{Binding Path=Books.OwnedBooks}"
+                                <!-- Owned Books list -->
+                                <!--<controls:BookStack Items="{Binding Path=Books.OwnedBooks}"
                                                 IsLoading="{Binding Path=Books.IsOwnedBooksLoading}"
                                                 Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.OwnedBooksSectionTitle}" />-->
 
-                            <!-- View all books button -->
-                            <Button Background="{ThemeResource PhoneChromeBrush}"
-                                    BorderThickness="0"
-                                    Content="View all books"
-                                    HorizontalAlignment="Center"
-                                    Margin="0,5,0,10"
-                                    MinWidth="200"
-                                    Click="ViewAllBooks_Clicked" />
-                        </StackPanel>
+                                <!-- View all books button -->
+                                <Button Background="{ThemeResource PhoneChromeBrush}"
+                                        BorderThickness="0"
+                                        Content="View all books"
+                                        HorizontalAlignment="Center"
+                                        Margin="0,5,0,10"
+                                        MinWidth="200"
+                                        Click="ViewAllBooks_Clicked" />
+                            </StackPanel>
 
-                    </ScrollViewer>
+                        </ScrollViewer>
+                    </Grid>
+
                 </Grid>
 
             </PivotItem>
@@ -228,11 +232,11 @@
                         <ListView.ItemContainerStyle>
                             <Style TargetType="ListViewItem">
                                 <Setter Property="HorizontalContentAlignment"
-                                    Value="Stretch"/>
+                                        Value="Stretch" />
                                 <Setter Property="Margin"
-                                    Value="0,0,0,15"/>
+                                        Value="0,0,0,15" />
                             </Style>
-                            
+
                         </ListView.ItemContainerStyle>
 
                         <ListView.ItemContainerTransitions>
@@ -244,25 +248,24 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <controls:ReviewItem Rating="{Binding Rating}"
-                                                 Body="{Binding Body}"
-                                                 UserImage="{Binding Path=User.ImageUrl}"
-                                                 Username="{Binding Path=User.Name}"
-                                                 User="{Binding Path=User.Item}"
-                                                 Title="{Binding Path=Book.Title}"
-                                                 ImageUrl="{Binding Path=Book.ImageUrl}"
-                                                 AverageRating="{Binding Path=Book.AverageRating}"
+                                                     Body="{Binding Body}"
+                                                     UserImage="{Binding Path=User.ImageUrl}"
+                                                     Username="{Binding Path=User.Name}"
+                                                     User="{Binding Path=User.Item}"
+                                                     Title="{Binding Path=Book.Title}"
+                                                     ImageUrl="{Binding Path=Book.ImageUrl}"
+                                                     AverageRating="{Binding Path=Book.AverageRating}"
                                                      RatingsCount="{Binding Path=Book.RatingsCount}"
                                                      Author="{Binding Path=Book.MainAuthor.Name}"
-                                                     ShowBook="true"
-                                                     />
+                                                     ShowBook="true" />
                             </DataTemplate>
                         </ListView.ItemTemplate>
 
                         <ListView.Footer>
                             <ProgressRing IsActive="{Binding IsLoading}"
-                                      MinWidth="40"
-                                      MinHeight="40"
-                                      Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
+                                          MinWidth="40"
+                                          MinHeight="40"
+                                          Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
                         </ListView.Footer>
 
                     </ListView>
@@ -271,7 +274,55 @@
 
             <!-- More Pivot -->
             <PivotItem>
-                <TextBlock Text="More" />
+                <Grid Margin="19,0,19,0">
+                    <!-- General Reviews -->
+                    <ListView Margin="0,15,0,15"
+                              SelectionChanged="ListView_SelectionChanged"
+                              ContinuumNavigationTransitionInfo.ExitElementContainer="True">
+
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment"
+                                        Value="Stretch" />
+                                <Setter Property="Margin"
+                                        Value="0,0,0,30" />
+                            </Style>
+
+                        </ListView.ItemContainerStyle>
+
+                        <ListView.ItemContainerTransitions>
+                            <TransitionCollection>
+                                <EntranceThemeTransition IsStaggeringEnabled="True" />
+                            </TransitionCollection>
+                        </ListView.ItemContainerTransitions>
+
+                        <ListViewItem>
+                            <controls:LauncherItem HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.HomeMyProfileTitle}"
+                                                   Glyph="&#xE181;" />
+                        </ListViewItem>
+
+                        <ListViewItem>
+                            <controls:LauncherItem HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.HomeFriendsTitle}"
+                                                   Glyph="&#xE1E2;" />
+                        </ListViewItem>
+
+                        <ListViewItem>
+                            <controls:LauncherItem HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.HomeGroupsTitle}"
+                                                   Glyph="&#x1F465;" />
+                        </ListViewItem>
+
+                        <ListViewItem>
+                            <controls:LauncherItem HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.HomeEventsTitle}"
+                                                   Glyph="&#xE1C4;" />
+                        </ListViewItem>
+
+                        <ListViewItem>
+                            <controls:LauncherItem HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.HomeRecommendationsTitle}"
+                                                   Glyph="&#xE19f;" />
+                        </ListViewItem>
+
+                    </ListView>
+                </Grid>
             </PivotItem>
         </Pivot>
     </Grid>

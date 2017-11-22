@@ -1,0 +1,44 @@
+﻿<UserControl
+    x:Class="Epiphany.View.Controls.LauncherItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Epiphany.View.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="128"
+    d:DesignWidth="128"
+    x:Name="launcherItem">
+
+    <Grid Background="{Binding ElementName=launcherItem,Path=Background}"
+          VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Icon -->
+        <FontIcon FontFamily="{Binding FontFamily, ElementName=launcherItem}"
+                  FontSize="{Binding IconSize, ElementName=launcherItem}"
+                  FontStyle="{Binding FontStyle, ElementName=launcherItem}"
+                  FontWeight="{Binding FontWeight, ElementName=launcherItem}"
+                  Glyph="{Binding Glyph, ElementName=launcherItem}"
+                  Foreground="{Binding Foreground, ElementName=launcherItem}"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  x:Name="icon"/>
+
+        <!-- Content -->
+        <TextBlock Grid.Column="1"
+                   Text="{Binding HeaderText, ElementName=launcherItem}"
+                   TextTrimming="CharacterEllipsis"
+                   Foreground="{Binding Foreground, ElementName=launcherItem}"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Style="{StaticResource ListViewItemTextBlockStyle}"
+                   TextLineBounds="Tight"
+                   Margin="20,0,0,0"
+                   ContinuumNavigationTransitionInfo.IsExitElement="True"/>
+
+    </Grid>
+</UserControl>

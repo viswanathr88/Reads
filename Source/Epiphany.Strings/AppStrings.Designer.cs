@@ -908,7 +908,7 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to events.
+        ///   Looks up a localized string similar to Events.
         /// </summary>
         public static string HomeEventsTitle {
             get {
@@ -917,7 +917,7 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to friends.
+        ///   Looks up a localized string similar to Friends.
         /// </summary>
         public static string HomeFriendsTitle {
             get {
@@ -926,7 +926,7 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to groups.
+        ///   Looks up a localized string similar to Groups.
         /// </summary>
         public static string HomeGroupsTitle {
             get {
@@ -944,11 +944,20 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to my profile.
+        ///   Looks up a localized string similar to My Profile.
         /// </summary>
         public static string HomeMyProfileTitle {
             get {
                 return ResourceManager.GetString("HomeMyProfileTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recommendations.
+        /// </summary>
+        public static string HomeRecommendationsTitle {
+            get {
+                return ResourceManager.GetString("HomeRecommendationsTitle", resourceCulture);
             }
         }
         

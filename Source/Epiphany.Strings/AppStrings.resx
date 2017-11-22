@@ -233,19 +233,19 @@
     <value>gender</value>
   </data>
   <data name="HomeEventsTitle" xml:space="preserve">
-    <value>events</value>
+    <value>Events</value>
   </data>
   <data name="HomeFriendsTitle" xml:space="preserve">
-    <value>friends</value>
+    <value>Friends</value>
   </data>
   <data name="HomeGroupsTitle" xml:space="preserve">
-    <value>groups</value>
+    <value>Groups</value>
   </data>
   <data name="HomeMyBooksTitle" xml:space="preserve">
     <value>My Books</value>
   </data>
   <data name="HomeMyProfileTitle" xml:space="preserve">
-    <value>my profile</value>
+    <value>My Profile</value>
   </data>
   <data name="InterestsText" xml:space="preserve">
     <value>interests</value>
@@ -659,5 +659,8 @@
   </data>
   <data name="BooksSortOrderOldest" xml:space="preserve">
     <value>Oldest</value>
+  </data>
+  <data name="HomeRecommendationsTitle" xml:space="preserve">
+    <value>Recommendations</value>
   </data>
 </root>

@@ -1,5 +1,7 @@
 ﻿using Epiphany.Logging;
 using Epiphany.ViewModel;
+using Epiphany.WP81;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
@@ -49,6 +51,49 @@ namespace Epiphany.View
             }
 
             Frame.Navigate(typeof(BookshelvesPage), user);
+        }
+
+        private async void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems != null)
+            {
+                var list = sender as ListView;
+                switch (list.SelectedIndex)
+                {
+                    case 0:
+                        {
+                            var user = GetViewModel<HomeViewModel>().CurrentlyLoggedInUser;
+
+                            if (user == null)
+                            {
+                                Logger.LogError("User is not logged in!");
+                            }
+                            else
+                            {
+                                await App.Navigate(typeof(ProfilePage), user);
+                            }
+
+                            break;
+                        }
+                    case 1:
+                        {
+                            var user = GetViewModel<HomeViewModel>().CurrentlyLoggedInUser;
+
+                            if (user == null)
+                            {
+                                Logger.LogError("User is not logged in!");
+                            }
+                            else
+                            {
+                                await App.Navigate(typeof(FriendsPage), user);
+                            }
+
+                            break;
+                        }
+                    default:
+                        break;
+                }
+            }
         }
     }
 }
