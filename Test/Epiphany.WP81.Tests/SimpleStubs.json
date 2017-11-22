@@ -1,0 +1,8 @@
+{
+    "IgnoredProjects": [
+    ],
+    "IgnoredInterfaces": [
+    ],
+    "StubInternalInterfaces": false,
+    "DefaultMockBehavior": "Loose"
+}

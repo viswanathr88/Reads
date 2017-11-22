@@ -10,3 +10,4 @@ using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Epiphany.Model.Tests")]
 [assembly: InternalsVisibleTo("EpiphanyModelTests")]
+[assembly: InternalsVisibleTo("Epiphany.WP81.Tests")]
