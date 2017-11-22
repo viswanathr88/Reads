@@ -10,6 +10,9 @@ using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
+    /// <summary>
+    /// Class that implements <see cref="IEventsViewModel"/>
+    /// </summary>
     public sealed class EventsViewModel : DataViewModel<VoidType>, IEventsViewModel
     {
         private readonly IEventService eventService;
@@ -18,7 +21,11 @@ namespace Epiphany.ViewModel
         private IEventItemViewModel selectedEvent;
         private IList<IEventItemViewModel> events;
         private readonly IAsyncCommand<IEnumerable<LiteraryEventModel>, VoidType> fetchEventsCommand;
-
+        /// <summary>
+        /// Create a new instance of <see cref="EventsViewModel"/>
+        /// </summary>
+        /// <param name="eventService">Event Service</param>
+        /// <param name="deviceServices">Device Services</param>
         public EventsViewModel(IEventService eventService, IDeviceServices deviceServices)
         {
             this.eventService = eventService;
@@ -27,7 +34,9 @@ namespace Epiphany.ViewModel
             this.fetchEventsCommand = new FetchEventsCommand(eventService, deviceServices);
             RegisterCommand(this.fetchEventsCommand, OnCommandExecuted);
         }
-
+        /// <summary>
+        /// Gets the list of literary events
+        /// </summary>
         public IList<IEventItemViewModel> Events
         {
             get { return this.events; }
@@ -38,7 +47,9 @@ namespace Epiphany.ViewModel
                 RaisePropertyChanged(() => Events);
             }
         }
-
+        /// <summary>
+        /// Gets or sets the selected event
+        /// </summary>
         public IEventItemViewModel SelectedEvent
         {
             get { return this.selectedEvent; }
@@ -51,17 +62,25 @@ namespace Epiphany.ViewModel
                 RaisePropertyChanged(() => SelectedEvent);
             }
         }
-
+        /// <summary>
+        /// Command to start fetching literary events
+        /// </summary>
         public IAsyncCommand<IEnumerable<LiteraryEventModel>, VoidType> FetchEvents
         {
             get { return this.fetchEventsCommand; }
         }
-
+        /// <summary>
+        /// Command to refresh literary events
+        /// </summary>
         public ICommand Refresh
         {
             get { return this.fetchEventsCommand; }
         }
-
+        /// <summary>
+        /// Load the ViewModel async
+        /// </summary>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         public override async Task LoadAsync(VoidType parameter)
         {
             if (this.fetchEventsCommand.CanExecute(parameter))
@@ -69,14 +88,21 @@ namespace Epiphany.ViewModel
                 await this.fetchEventsCommand.ExecuteAsync(parameter);
             }
         }
-
+        /// <summary>
+        /// Override method when command is executing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected override void OnCommandExecuting(object sender, CancelEventArgs e)
         {
             base.OnCommandExecuting(sender, e);
 
             Events = new ObservableCollection<IEventItemViewModel>();
         }
-
+        /// <summary>
+        /// Callback when command has finished execution
+        /// </summary>
+        /// <param name="e"></param>
         private void OnCommandExecuted(ExecutedEventArgs e)
         {
             IsLoading = false;
