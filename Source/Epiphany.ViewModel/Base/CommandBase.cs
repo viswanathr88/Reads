@@ -15,6 +15,11 @@ namespace Epiphany.ViewModel.Commands
 
         public bool CanExecute(object parameter)
         {
+            if (typeof(T) == typeof(VoidType))
+            {
+                parameter = VoidType.Empty;
+            }
+
             if (parameter == null)
                 return false;
 

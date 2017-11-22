@@ -70,6 +70,13 @@ namespace Epiphany.ViewModel
             }
         }
 
+        protected override void OnCommandExecuting(object sender, CancelEventArgs e)
+        {
+            base.OnCommandExecuting(sender, e);
+
+            Events = new ObservableCollection<IEventItemViewModel>();
+        }
+
         private void OnCommandExecuted(ExecutedEventArgs e)
         {
             IsLoading = false;

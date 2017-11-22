@@ -149,4 +149,17 @@
             
         </ListView>
     </Grid>
+
+    <local:DataPage.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarRefreshEventsButtonText}"
+                              Icon="Refresh"
+                              Command="{Binding Refresh}" />
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </local:DataPage.BottomAppBar>
+
 </local:DataPage>
+
+

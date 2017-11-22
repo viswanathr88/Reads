@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Epiphany.ViewModel
 {
-    public sealed class HomeViewModel : DataViewModel<VoidType>, IHomeViewModel
+    public sealed class HomeViewModel : DataViewModel<string>, IHomeViewModel
     {
         private readonly ILogonService logonService;
 
@@ -131,7 +131,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override async Task LoadAsync(VoidType parameter)
+        public override async Task LoadAsync(string parameter)
         {
             if (!IsLoaded)
             {
@@ -141,14 +141,14 @@ namespace Epiphany.ViewModel
                 if (IsLoggedIn)
                 {
                     // Start loading your feed but not await
-                    tasks.Add(Feed.LoadAsync(parameter, true));
+                    tasks.Add(Feed.LoadAsync(VoidType.Empty, true));
 
                     // This should finish quickly as it is just creating the collection
                     tasks.Add(Books.LoadAsync(int.Parse(this.logonService.Session.UserId), true));
                 }
 
                 // Load the community reviews
-                tasks.Add(Community.LoadAsync(parameter, true));
+                tasks.Add(Community.LoadAsync(VoidType.Empty, true));
 
                 // Wait for all tasks to finish
                 await Task.WhenAll(tasks);

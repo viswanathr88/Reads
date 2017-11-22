@@ -76,24 +76,21 @@ namespace Epiphany.ViewModel
             {
                 TParam param = default(TParam);
 
-                if (typeof(TParam) != typeof(VoidType))
+                // Perform parameter validation
+                if (parameter == null)
                 {
-                    // Perform parameter validation
-                    if (parameter == null)
-                    {
-                        Logger.LogError("Parameter is null");
-                        throw new ArgumentNullException(nameof(parameter));
-                    }
-
-                    // Check parameter type
-                    if (!(parameter is TParam))
-                    {
-                        Logger.LogError("Incorrect type passed to load. Type = " + parameter.GetType());
-                        throw new ArgumentOutOfRangeException(nameof(parameter));
-                    }
-
-                    param = (TParam)parameter;
+                    Logger.LogError("Parameter is null");
+                    throw new ArgumentNullException(nameof(parameter));
                 }
+
+                // Check parameter type
+                if (!(parameter is TParam))
+                {
+                    Logger.LogError("Incorrect type passed to load. Type = " + parameter.GetType());
+                    throw new ArgumentOutOfRangeException(nameof(parameter));
+                }
+
+                param = (TParam)parameter;
 
                 // Check if the parameters match. If they do, this ViewModel
                 // has already been loaded, so skip loading

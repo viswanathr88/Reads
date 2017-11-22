@@ -92,7 +92,7 @@ namespace Epiphany.View
                         }
                     case 3:
                         {
-                            await App.Navigate(typeof(EventsPage), null);
+                            await App.Navigate(typeof(EventsPage), VoidType.Empty);
                             break;
                         }
                     default:
