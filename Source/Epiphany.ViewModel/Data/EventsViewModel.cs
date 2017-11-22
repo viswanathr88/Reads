@@ -15,7 +15,7 @@ namespace Epiphany.ViewModel
         private readonly IEventService eventService;
         private readonly IDeviceServices deviceServices;
 
-        private LiteraryEventModel selectedEvent;
+        private IEventItemViewModel selectedEvent;
         private IList<IEventItemViewModel> events;
         private readonly IAsyncCommand<IEnumerable<LiteraryEventModel>, VoidType> fetchEventsCommand;
 
@@ -39,7 +39,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public LiteraryEventModel SelectedEvent
+        public IEventItemViewModel SelectedEvent
         {
             get { return this.selectedEvent; }
             set

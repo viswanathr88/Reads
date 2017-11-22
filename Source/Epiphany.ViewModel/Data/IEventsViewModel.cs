@@ -10,6 +10,6 @@ namespace Epiphany.ViewModel
         IList<IEventItemViewModel> Events { get; }
         IAsyncCommand<IEnumerable<LiteraryEventModel>, VoidType> FetchEvents { get; }
         ICommand Refresh { get; }
-        LiteraryEventModel SelectedEvent { get; set; }
+        IEventItemViewModel SelectedEvent { get; set; }
     }
 }

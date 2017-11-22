@@ -4,6 +4,7 @@ using Epiphany.ViewModel.Items;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System;
 
 namespace Epiphany.View.DesignData
 {
@@ -31,7 +32,7 @@ namespace Epiphany.View.DesignData
             get { return null; }
         }
 
-        public LiteraryEventModel SelectedEvent
+        public IEventItemViewModel SelectedEvent
         {
             get;
             set;

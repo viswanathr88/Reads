@@ -38,5 +38,10 @@ namespace Epiphany.ViewModel.Items
         {
             get;
         }
+
+        string Link
+        {
+            get;
+        }
     }
 }

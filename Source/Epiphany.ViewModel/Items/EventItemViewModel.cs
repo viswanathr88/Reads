@@ -43,6 +43,14 @@ namespace Epiphany.ViewModel.Items
             }
         }
 
+        public string Link
+        {
+            get
+            {
+                return Item.Link;
+            }
+        }
+
         public string StateCode
         {
             get
