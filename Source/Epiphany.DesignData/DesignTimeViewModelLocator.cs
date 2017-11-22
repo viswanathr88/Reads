@@ -58,7 +58,7 @@ namespace Epiphany.View.Services
 
         public ISettingsViewModel Settings
         {
-            get { throw new NotImplementedException(); }
+            get { return new DesignSettingsViewModel(); }
         }
 
         public IBookViewModel Book

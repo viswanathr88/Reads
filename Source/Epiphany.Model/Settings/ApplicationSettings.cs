@@ -123,6 +123,7 @@ namespace Epiphany.Model.Settings
 		private string SortOrderDefault = "d";
 		private string SearchTypeDefault = "All";
 		private bool EnableTransparentTileDefault = true;
+		private int NotificationPreferenceDefault = 1;
 		
 		public event EventHandler<SettingChangedEventArgs> SettingChanged;
 		/// <summary>
@@ -152,6 +153,7 @@ namespace Epiphany.Model.Settings
 			this.settings["SortOrder"] = new Setting(SettingContainer.Roaming, "SortOrder");
 			this.settings["SearchType"] = new Setting(SettingContainer.Roaming, "SearchType");
 			this.settings["EnableTransparentTile"] = new Setting(SettingContainer.Roaming, "EnableTransparentTile");
+			this.settings["NotificationPreference"] = new Setting(SettingContainer.Roaming, "NotificationPreference");
 		}
 		
 		/// <summary>
@@ -454,6 +456,25 @@ namespace Epiphany.Model.Settings
 				if (Store.AddOrUpdate(setting, value))
 				{
 					RaiseSettingChanged("EnableTransparentTile");
+				}
+			}
+		}		
+		/// <summary>
+		/// Gets or sets the NotificationPreference setting
+		/// </summary>
+		public int NotificationPreference
+		{
+			get 
+			{
+				var setting = this.settings["NotificationPreference"];
+				return Store.GetValueOrDefault<int>(setting, NotificationPreferenceDefault);
+			}
+			set 
+			{
+				var setting = this.settings["NotificationPreference"];
+				if (Store.AddOrUpdate(setting, value))
+				{
+					RaiseSettingChanged("NotificationPreference");
 				}
 			}
 		}		

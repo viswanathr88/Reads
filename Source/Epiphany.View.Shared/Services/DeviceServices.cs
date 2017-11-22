@@ -1,6 +1,7 @@
 ﻿using Epiphany.ViewModel.Services;
 using System;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Store;
 
 namespace Epiphany.View.Services
 {
@@ -26,9 +27,9 @@ namespace Epiphany.View.Services
             await Windows.System.Launcher.LaunchUriAsync(new Uri(url, UriKind.Absolute));
         }
 
-        public Task RateApp()
+        public async Task RateApp()
         {
-            throw new NotImplementedException();
+            await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store:reviewapp?appid=" + CurrentApp.AppId));
         }
     }
 }

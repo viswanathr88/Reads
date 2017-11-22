@@ -73,6 +73,7 @@
     <Compile Include="DesignReviewItemViewModel.cs" />
     <Compile Include="DesignSearchItemViewModel.cs" />
     <Compile Include="DesignSearchViewModel.cs" />
+    <Compile Include="DesignSettingsViewModel.cs" />
     <Compile Include="DesignShelfInformationViewModel.cs" />
     <Compile Include="DesignTimeViewModelLocator.cs" />
     <Compile Include="DesignUserItemViewModel.cs" />

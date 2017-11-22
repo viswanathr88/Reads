@@ -30,6 +30,11 @@ namespace Epiphany.View
             Frame.Navigate(typeof(ScanPage));
         }
 
+        private void Settings_Clicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(SettingsPage), VoidType.Empty, new SlideNavigationTransitionInfo());
+        }
+
         private void PickerFlyout_Confirmed(Windows.UI.Xaml.Controls.PickerFlyout sender, Windows.UI.Xaml.Controls.PickerConfirmedEventArgs args)
         {
             GetViewModel<HomeViewModel>().Feed.FeedOptions.Save.Execute(null);

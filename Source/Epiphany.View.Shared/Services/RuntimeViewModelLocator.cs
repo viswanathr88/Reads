@@ -143,7 +143,7 @@ namespace Epiphany.View.Services
 
         public ISettingsViewModel Settings
         {
-            get { return new SettingsViewModel(); }
+            get { return new SettingsViewModel(this.deviceServices); }
         }
 
         public IBookViewModel Book

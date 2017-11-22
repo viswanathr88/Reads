@@ -338,7 +338,8 @@
                               Click="Scan_Clicked" />
             </CommandBar.PrimaryCommands>
             <CommandBar.SecondaryCommands>
-                <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonSettingsText}" />
+                <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonSettingsText}"
+                              Click="Settings_Clicked"/>
             </CommandBar.SecondaryCommands>
         </CommandBar>
     </local:DataPage.BottomAppBar>

@@ -256,8 +256,8 @@
   <data name="LikeonFBButtonText" xml:space="preserve">
     <value>like on facebook</value>
   </data>
-  <data name="LocationPermissionHeader" xml:space="preserve">
-    <value>Allow Epiphany to use my location</value>
+  <data name="SettingsLocationPermissionHeader" xml:space="preserve">
+    <value>Allow Reads to use my location</value>
   </data>
   <data name="LocationText" xml:space="preserve">
     <value>location</value>
@@ -286,16 +286,16 @@
   <data name="NoSearchResultsText" xml:space="preserve">
     <value>No search results</value>
   </data>
-  <data name="NotificationPreference1" xml:space="preserve">
+  <data name="SettingsNotificationPreference1" xml:space="preserve">
     <value>No notifications</value>
   </data>
-  <data name="NotificationPreference2" xml:space="preserve">
+  <data name="SettingsNotificationPreference2" xml:space="preserve">
     <value>Toasts and tile count</value>
   </data>
-  <data name="NotificationPreference3" xml:space="preserve">
+  <data name="SettingsNotificationPreference3" xml:space="preserve">
     <value>Tile count only</value>
   </data>
-  <data name="NotificationPreferenceHeader" xml:space="preserve">
+  <data name="SettingsNotificationPreferenceHeader" xml:space="preserve">
     <value>I prefer to receive</value>
   </data>
   <data name="NoUpdatesMessage" xml:space="preserve">
@@ -367,7 +367,7 @@
     <value>pick a search type</value>
   </data>
   <data name="SettingsTitle" xml:space="preserve">
-    <value>settings</value>
+    <value>SETTINGS</value>
   </data>
   <data name="SigningInStuckMessage" xml:space="preserve">
     <value>This is taking longer than expected. This could be due to a slow network connection.</value>
@@ -665,5 +665,17 @@
   </data>
   <data name="EventsTitle" xml:space="preserve">
     <value>LITERARY EVENTS</value>
+  </data>
+  <data name="SettingsAboutHeaderTitle" xml:space="preserve">
+    <value>ABOUT</value>
+  </data>
+  <data name="SettingsAppHeaderTitle" xml:space="preserve">
+    <value>APP</value>
+  </data>
+  <data name="SettingsEnableLoggingHeader" xml:space="preserve">
+    <value>Enable diagnostic logging</value>
+  </data>
+  <data name="SettingsEnableTransparentTileHeader" xml:space="preserve">
+    <value>Enable transparent tile</value>
   </data>
 </root>

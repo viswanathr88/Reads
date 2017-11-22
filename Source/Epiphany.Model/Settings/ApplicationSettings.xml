@@ -17,5 +17,6 @@
       <Setting Name="SortOrder" Type="string">"d"</Setting>
       <Setting Name="SearchType" Type="string">"All"</Setting>
       <Setting Name="EnableTransparentTile" Type="bool">true</Setting>
+      <Setting Name="NotificationPreference" Type="int">1</Setting>
   </SettingContainer>
 </Settings>
