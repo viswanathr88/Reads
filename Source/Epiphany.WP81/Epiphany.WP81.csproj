@@ -153,6 +153,9 @@
       <DependentUpon>BooksPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DataPage.cs" />
+    <Compile Include="View\EventsPage.xaml.cs">
+      <DependentUpon>EventsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FriendsPage.xaml.cs">
       <DependentUpon>FriendsPage.xaml</DependentUpon>
     </Compile>
@@ -268,6 +271,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\BooksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EventsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

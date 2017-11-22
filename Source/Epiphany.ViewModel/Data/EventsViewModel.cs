@@ -1,6 +1,7 @@
 ﻿using Epiphany.Model;
 using Epiphany.Model.Services;
 using Epiphany.ViewModel.Commands;
+using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,7 +16,7 @@ namespace Epiphany.ViewModel
         private readonly IDeviceServices deviceServices;
 
         private LiteraryEventModel selectedEvent;
-        private IList<LiteraryEventModel> events;
+        private IList<IEventItemViewModel> events;
         private readonly IAsyncCommand<IEnumerable<LiteraryEventModel>, VoidType> fetchEventsCommand;
 
         public EventsViewModel(IEventService eventService, IDeviceServices deviceServices)
@@ -27,7 +28,7 @@ namespace Epiphany.ViewModel
             RegisterCommand(this.fetchEventsCommand, OnCommandExecuted);
         }
 
-        public IList<LiteraryEventModel> Events
+        public IList<IEventItemViewModel> Events
         {
             get { return this.events; }
             private set
@@ -74,7 +75,11 @@ namespace Epiphany.ViewModel
             IsLoading = false;
             if (e.State == CommandExecutionState.Success)
             {
-                Events = new ObservableCollection<LiteraryEventModel>(this.fetchEventsCommand.Result);
+                Events = new ObservableCollection<IEventItemViewModel>();
+                foreach (var ev in fetchEventsCommand.Result)
+                {
+                    Events.Add(new EventItemViewModel(ev));
+                }
                 IsLoaded = true;
             }
         }

@@ -9,6 +9,7 @@ namespace Epiphany.View.Services
         public async Task<GeoCoords> GetCoordinatesAsync()
         {
             Windows.Devices.Geolocation.Geolocator gl = new Windows.Devices.Geolocation.Geolocator();
+
             Windows.Devices.Geolocation.Geoposition position = await gl.GetGeopositionAsync();
 
             GeoCoords coords = new GeoCoords()

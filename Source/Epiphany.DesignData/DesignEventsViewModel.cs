@@ -1,5 +1,6 @@
 ﻿using Epiphany.Model;
 using Epiphany.ViewModel;
+using Epiphany.ViewModel.Items;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -11,10 +12,10 @@ namespace Epiphany.View.DesignData
         public DesignEventsViewModel()
         {
             IsLoading = true;
-            Events = new List<LiteraryEventModel>();
+            Events = new List<IEventItemViewModel>();
         }
 
-        public IList<LiteraryEventModel> Events
+        public IList<IEventItemViewModel> Events
         {
             get;
             private set;

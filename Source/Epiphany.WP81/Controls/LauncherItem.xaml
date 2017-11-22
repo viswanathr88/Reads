@@ -38,7 +38,8 @@
                    Style="{StaticResource ListViewItemTextBlockStyle}"
                    TextLineBounds="Tight"
                    Margin="20,0,0,0"
-                   ContinuumNavigationTransitionInfo.IsExitElement="True"/>
+                   ContinuumNavigationTransitionInfo.IsExitElement="True"
+                   Pivot.SlideInAnimationGroup="GroupOne"/>
 
     </Grid>
 </UserControl>

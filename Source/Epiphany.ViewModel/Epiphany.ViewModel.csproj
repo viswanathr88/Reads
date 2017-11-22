@@ -163,10 +163,12 @@
     <Compile Include="Items\BookItemViewModel.cs" />
     <Compile Include="Items\BookshelfItemViewModel.cs" />
     <Compile Include="Items\CustomBookshelfItemViewModel.cs" />
+    <Compile Include="Items\EventItemViewModel.cs" />
     <Compile Include="Items\FeedItemViewModel.cs" />
     <Compile Include="Items\IAuthorItemViewModel.cs" />
     <Compile Include="Items\IBookItemViewModel.cs" />
     <Compile Include="Items\ICustomBookshelfItemViewModel.cs" />
+    <Compile Include="Items\IEventItemViewModel.cs" />
     <Compile Include="Items\IFeedItemViewModel.cs" />
     <Compile Include="Items\IProfileItemViewModel.cs" />
     <Compile Include="Items\IRatingDistributionItemViewModel.cs" />

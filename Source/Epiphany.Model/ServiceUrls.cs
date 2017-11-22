@@ -83,7 +83,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "review/show";
+                return baseUrl + "review/show";
             }
         }
 
@@ -91,7 +91,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "topic/show";
+                return baseUrl + "topic/show";
             }
         }
 
@@ -99,7 +99,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "user_status/show";
+                return baseUrl + "user_status/show";
             }
         }
 
@@ -115,7 +115,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "author/list";
+                return baseUrl + "author/list";
             }
         }
 
@@ -131,7 +131,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "groups/list";
+                return baseUrl + "groups/list";
             }
         }
 
@@ -164,7 +164,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "user_shelves/destroy";
+                return baseUrl + "user_shelves/destroy";
             }
         }
 
@@ -196,7 +196,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "notifications";
+                return baseUrl + "notifications";
             }
         }
 
@@ -212,7 +212,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "topic/group_folder";
+                return baseUrl + "topic/group_folder";
             }
         }
 
@@ -221,7 +221,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "event";
+                return baseUrl + "event";
             }
         }
 
@@ -229,7 +229,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "review";
+                return baseUrl + "review";
             }
         }
 
@@ -237,7 +237,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "rating";
+                return baseUrl + "rating";
             }
         }
 
@@ -245,7 +245,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "topic";
+                return baseUrl + "topic";
             }
         }
 
@@ -253,7 +253,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "comment";
+                return baseUrl + "comment";
             }
         }
 
@@ -261,7 +261,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "group/join";
+                return baseUrl + "group/join";
             }
         }
 
@@ -269,7 +269,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "group/search";
+                return baseUrl + "group/search";
             }
         }
 

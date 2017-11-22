@@ -746,6 +746,15 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to LITERARY EVENTS.
+        /// </summary>
+        public static string EventsTitle {
+            get {
+                return ResourceManager.GetString("EventsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to favorite books.
         /// </summary>
         public static string FavoriteBooksText {

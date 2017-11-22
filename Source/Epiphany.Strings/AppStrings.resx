@@ -663,4 +663,7 @@
   <data name="HomeRecommendationsTitle" xml:space="preserve">
     <value>Recommendations</value>
   </data>
+  <data name="EventsTitle" xml:space="preserve">
+    <value>LITERARY EVENTS</value>
+  </data>
 </root>

@@ -90,6 +90,11 @@ namespace Epiphany.View
 
                             break;
                         }
+                    case 3:
+                        {
+                            await App.Navigate(typeof(EventsPage), null);
+                            break;
+                        }
                     default:
                         break;
                 }
