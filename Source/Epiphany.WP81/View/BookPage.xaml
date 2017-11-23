@@ -164,9 +164,8 @@
         
 
         <Pivot Grid.Row="2"
-               x:Name="bookContentPivot"
-               Margin="19,10,19,10">
-            <PivotItem>
+               x:Name="bookContentPivot">
+            <PivotItem Margin="19,10,19,10">
                 <ScrollViewer VerticalScrollMode="Auto"
                               HorizontalContentAlignment="Left">
                     <Grid>
@@ -263,7 +262,7 @@
                 </ScrollViewer>
             </PivotItem>
 
-            <PivotItem>
+            <PivotItem Margin="19,10,19,10">
                 <!-- General Reviews -->
                 <ListView ItemsSource="{Binding Reviews}"
                           Margin="0,10,0,0">
@@ -309,7 +308,7 @@
                 </ListView>
             </PivotItem>
 
-            <PivotItem>
+            <PivotItem Margin="19,10,19,10">
                 <ListView ItemsSource="{Binding SimilarBooks}"
                           IsItemClickEnabled="True"
                           ItemClick="Book_Clicked"
