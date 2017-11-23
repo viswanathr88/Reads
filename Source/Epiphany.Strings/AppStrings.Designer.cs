@@ -1682,7 +1682,7 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} is on page {1} of {2} of:.
+        ///   Looks up a localized string similar to {0} is {1}% done with:.
         /// </summary>
         public static string UserStatusFeedItemActionText {
             get {

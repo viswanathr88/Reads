@@ -196,7 +196,7 @@ namespace Epiphany.ViewModel.Items
             else
             {
                 actionText = string.Format(resourceLoader.GetString(UserStatusFeedItemActionTextKey), User.Name, 
-                    userStatusFeedItem.Page, userStatusFeedItem.Book.NumberOfPages);
+                    userStatusFeedItem.Percentage);
             }
 
             PercentageCompleted = userStatusFeedItem.Percentage;

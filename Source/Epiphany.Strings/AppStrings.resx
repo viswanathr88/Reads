@@ -373,7 +373,7 @@
     <value>username</value>
   </data>
   <data name="UserStatusFeedItemActionText" xml:space="preserve">
-    <value>{0} is on page {1} of {2} of:</value>
+    <value>{0} is {1}% done with:</value>
   </data>
   <data name="UserStatusFeedItemFinishedActionText" xml:space="preserve">
     <value>{0} has finished reading:</value>
