@@ -102,9 +102,10 @@ namespace Epiphany.View.Controls
             await App.Navigate(typeof(ProfilePage), feedItemVM.Friend.Item, new SlideNavigationTransitionInfo());
         }
 
-        private void Author_Click(object sender, RoutedEventArgs e)
+        private async void Author_Click(object sender, RoutedEventArgs e)
         {
-
+            var feedItemVM = GetFeedItemViewModel(sender);
+            await App.Navigate(typeof(AuthorPage), feedItemVM.Book.MainAuthor.Item);
         }
 
         private IFeedItemViewModel GetFeedItemViewModel(object sender)

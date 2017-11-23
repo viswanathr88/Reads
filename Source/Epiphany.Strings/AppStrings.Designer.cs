@@ -161,6 +161,15 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to refresh feed.
+        /// </summary>
+        public static string AppBarButtonRefreshFeedText {
+            get {
+                return ResourceManager.GetString("AppBarButtonRefreshFeedText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to scan.
         /// </summary>
         public static string AppBarButtonScanText {
@@ -800,6 +809,33 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Progress: .
+        /// </summary>
+        public static string FeedBookProgressText {
+            get {
+                return ResourceManager.GetString("FeedBookProgressText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comment.
+        /// </summary>
+        public static string FeedCommentActionText {
+            get {
+                return ResourceManager.GetString("FeedCommentActionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Like.
+        /// </summary>
+        public static string FeedLikeActionText {
+            get {
+                return ResourceManager.GetString("FeedLikeActionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FEED OPTIONS.
         /// </summary>
         public static string FeedOptionsHeaderText {
@@ -895,6 +931,24 @@ namespace Epiphany.Strings {
         public static string FeedOptionsSummaryText {
             get {
                 return ResourceManager.GetString("FeedOptionsSummaryText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Website.
+        /// </summary>
+        public static string FeedViewInBrowserActionText {
+            get {
+                return ResourceManager.GetString("FeedViewInBrowserActionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Want to read.
+        /// </summary>
+        public static string FeedWantToReadButtonText {
+            get {
+                return ResourceManager.GetString("FeedWantToReadButtonText", resourceCulture);
             }
         }
         
@@ -1723,15 +1777,6 @@ namespace Epiphany.Strings {
         public static string ViewInGoodreadsText {
             get {
                 return ResourceManager.GetString("ViewInGoodreadsText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Want to read.
-        /// </summary>
-        public static string WantToReadButtonText {
-            get {
-                return ResourceManager.GetString("WantToReadButtonText", resourceCulture);
             }
         }
         

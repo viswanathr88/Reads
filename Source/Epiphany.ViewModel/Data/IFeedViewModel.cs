@@ -11,5 +11,6 @@ namespace Epiphany.ViewModel
         IFeedOptionsViewModel FeedOptions { get; }
         bool IsFeedEmpty { get; }
         bool IsFilterEnabled { get; }
+        ICommand Refresh { get; }
     }
 }

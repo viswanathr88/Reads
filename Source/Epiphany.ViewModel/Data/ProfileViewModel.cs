@@ -35,6 +35,8 @@ namespace Epiphany.ViewModel
         private readonly IResourceLoader resourceLoader;
         private readonly IUserService userService;
         private readonly ILogonService logonService;
+        private readonly INavigationService navService;
+        private readonly IDeviceServices deviceServices;
 
         private IList<IFeedItemViewModel> recentUpdates;
         private IList<IAuthorItemViewModel> favoriteAuthors;
@@ -42,7 +44,8 @@ namespace Epiphany.ViewModel
         private readonly IAsyncCommand<ProfileModel> sendFriendRequestCommand;
         private readonly IAsyncCommand<ProfileModel> followUserCommand;
 
-        public ProfileViewModel(IUserService userService, IResourceLoader resourceLoader, ILogonService logonService)
+        public ProfileViewModel(IUserService userService, IResourceLoader resourceLoader, ILogonService logonService,
+            INavigationService navService, IDeviceServices deviceServices)
         {
             if (userService == null)
             {
@@ -56,6 +59,8 @@ namespace Epiphany.ViewModel
             this.resourceLoader = resourceLoader;
             this.userService = userService;
             this.logonService = logonService;
+            this.navService = navService;
+            this.deviceServices = deviceServices;
 
             RecentUpdates = new ObservableCollection<IFeedItemViewModel>();
             FavoriteAuthors = new ObservableCollection<IAuthorItemViewModel>();
@@ -342,7 +347,7 @@ namespace Epiphany.ViewModel
             RecentUpdates = new ObservableCollection<IFeedItemViewModel>();
             foreach (FeedItemModel model in Model.RecentUpdates)
             {
-                RecentUpdates.Add(new FeedItemViewModel(model, resourceLoader));
+                RecentUpdates.Add(new FeedItemViewModel(model, resourceLoader, this.navService, this.deviceServices));
             }
 
             FavoriteAuthors = new ObservableCollection<IAuthorItemViewModel>();

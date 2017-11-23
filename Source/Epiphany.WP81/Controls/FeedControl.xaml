@@ -45,122 +45,158 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,0,0,15">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="80" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
-                        <!-- Image -->
-                        <Button Grid.Column="0"
-                                Style="{StaticResource TextButtonStyle}"
-                                VerticalAlignment="Top"
-                                x:Name="userImageButton"
-                                Click="User_Click">
-                            <Border Height="64"
-                                    Width="64"
-                                    BorderBrush="{ThemeResource PhoneChromeBrush}"
-                                    Grid.Column="0"
-                                    BorderThickness="2"
-                                    HorizontalAlignment="Left"
-                                    VerticalAlignment="Top">
-                                <Image Source="{Binding Path=User.ImageUrl}"
-                                       Height="60"
-                                       Width="60"
-                                       VerticalAlignment="Center"
-                                       HorizontalAlignment="Center" />
-                            </Border>
-                        </Button>
+                        <!-- Post Header -->
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
 
-                        <!-- Content -->
-                        <StackPanel Grid.Column="1"
-                                    Orientation="Vertical"
-                                    HorizontalAlignment="Stretch">
-                            <Grid HorizontalAlignment="Stretch">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
+                            <!-- User Image -->
+                            <Button Grid.Column="0"
+                                    Style="{StaticResource TextButtonStyle}"
+                                    VerticalAlignment="Top"
+                                    x:Name="userImageButton"
+                                    Click="User_Click">
+                                <Border Height="48"
+                                        Width="48"
+                                        BorderBrush="{ThemeResource PhoneChromeBrush}"
+                                        Grid.Column="0"
+                                        BorderThickness="2"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top">
+                                    <Image Source="{Binding Path=User.ImageUrl}"
+                                           Height="44"
+                                           Width="44"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center" />
+                                </Border>
+                            </Button>
 
-                                <Button Grid.Column="0"
-                                        Style="{StaticResource TextButtonStyle}"
-                                        VerticalAlignment="Top"
-                                        x:Name="userNameButton"
-                                        Click="User_Click">
-                                    <TextBlock Text="{Binding Path=User.Name}"
+                            <!-- Clickable User name + Post Time +  Action Text -->
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Clickable User name -->
+                                    <Button Grid.Column="0"
+                                            Style="{StaticResource TextButtonStyle}"
+                                            VerticalAlignment="Top"
+                                            x:Name="userNameButton"
+                                            Click="User_Click">
+                                        <TextBlock Text="{Binding Path=User.Name}"
+                                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                                   Style="{StaticResource BodyTextBlockStyle}"
+                                                   LineStackingStrategy="BlockLineHeight"
+                                                   OpticalMarginAlignment="TrimSideBearings"
+                                                   TextLineBounds="TrimToCapHeight"
+                                                   TextWrapping="NoWrap"
+                                                   TextTrimming="CharacterEllipsis"
+                                                   VerticalAlignment="Top"
+                                                   Margin="0,-2,0,0"
+                                                   FontWeight="Bold"
+                                                   Pivot.SlideInAnimationGroup="GroupOne" />
+                                    </Button>
+
+                                    <!-- Post time -->
+                                    <Grid Grid.Column="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <FontIcon Glyph="&#xE121;"
+                                                  Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                                  Grid.Column="0"
+                                                  VerticalAlignment="Top"
+                                                  Margin="0,-2,3,0" />
+
+                                        <TextBlock Text="{Binding UpdateTime, Converter={StaticResource TimeToNowConverter}}"
+                                                   Foreground="{ThemeResource PhoneMidBrush}"
+                                                   Style="{ThemeResource ListViewItemContentTextBlockStyle}"
+                                                   LineStackingStrategy="BlockLineHeight"
+                                                   OpticalMarginAlignment="TrimSideBearings"
+                                                   TextLineBounds="TrimToCapHeight"
+                                                   TextWrapping="NoWrap"
+                                                   TextTrimming="CharacterEllipsis"
+                                                   VerticalAlignment="Top"
+                                                   HorizontalAlignment="Right"
+                                                   Grid.Column="1"
+                                                   Margin="0,0,5,0" />
+                                    </Grid>
+
+                                </Grid>
+
+                                <!-- Action Text -->
+                                <RichTextBlock IsTextSelectionEnabled="True"
+                                               Grid.Row="1"
+                                               Style="{StaticResource BodyRichTextBlockStyle}"
+                                               Pivot.SlideInAnimationGroup="GroupTwo">
+                                    <Paragraph>
+                                        <Run Text="{Binding ActionText}" />
+                                        <InlineUIContainer>
+                                            <rating:Rating Value="{Binding Rating, Mode=TwoWay}"
+                                                           RatingItemCount="5"
+                                                           ReadOnly="True"
+                                                           Background="Transparent"
+                                                           Height="15"
+                                                           Width="75"
+                                                           Visibility="{Binding Rating, Converter={StaticResource LessThanZeroVisibilityConverter}}"
+                                                           Margin="0,-1,0,0">
+                                                <rating:Rating.FilledItemStyle>
+                                                    <Style TargetType="rating:RatingItem">
+                                                        <Setter Property="Background"
+                                                                Value="{ThemeResource ApplicationForegroundThemeBrush}" />
+                                                        <Setter Property="Padding"
+                                                                Value="0" />
+                                                        <Setter Property="Margin"
+                                                                Value="0" />
+                                                    </Style>
+                                                </rating:Rating.FilledItemStyle>
+                                                <rating:Rating.UnfilledItemStyle>
+                                                    <Style TargetType="rating:RatingItem">
+                                                        <Setter Property="Background"
+                                                                Value="{ThemeResource PhoneMidBrush}" />
+                                                        <Setter Property="Padding"
+                                                                Value="0" />
+                                                        <Setter Property="Margin"
+                                                                Value="0" />
+                                                    </Style>
+                                                </rating:Rating.UnfilledItemStyle>
+                                            </rating:Rating>
+                                        </InlineUIContainer>
+                                    </Paragraph>
+                                </RichTextBlock>
+
+                                <!--<TextBlock Text="{Binding ActionText}"
                                                Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
                                                Style="{StaticResource BodyTextBlockStyle}"
-                                               LineStackingStrategy="BlockLineHeight"
-                                               OpticalMarginAlignment="TrimSideBearings"
-                                               TextLineBounds="TrimToCapHeight"
-                                               TextWrapping="NoWrap"
+                                               TextWrapping="Wrap"
                                                TextTrimming="CharacterEllipsis"
-                                               VerticalAlignment="Top"
-                                               Margin="0,-2,0,0"
-                                               FontWeight="Bold"
-                                               Pivot.SlideInAnimationGroup="GroupOne" />
-                                </Button>
-
-                                <FontIcon Glyph="&#xE121;"
-                                          Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                                          Grid.Column="1"
-                                          VerticalAlignment="Top"
-                                          Margin="0,-2,3,0" />
-
-                                <TextBlock Text="{Binding UpdateTime, Converter={StaticResource TimeToNowConverter}}"
-                                           Foreground="{ThemeResource PhoneMidBrush}"
-                                           Style="{ThemeResource ListViewItemContentTextBlockStyle}"
-                                           LineStackingStrategy="BlockLineHeight"
-                                           OpticalMarginAlignment="TrimSideBearings"
-                                           TextLineBounds="TrimToCapHeight"
-                                           TextWrapping="NoWrap"
-                                           TextTrimming="CharacterEllipsis"
-                                           VerticalAlignment="Center"
-                                           HorizontalAlignment="Right"
-                                           Grid.Column="2"
-                                           Margin="0,0,5,0" />
+                                               MaxLines="2"
+                                               Margin="0,0,5,10"
+                                               Pivot.SlideInAnimationGroup="GroupTwo" />-->
 
                             </Grid>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding ActionText}"
-                                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                                           Style="{StaticResource BodyTextBlockStyle}"
-                                           TextWrapping="Wrap"
-                                           TextTrimming="CharacterEllipsis"
-                                           MaxLines="2"
-                                           Margin="0,5,5,10"
-                                           Pivot.SlideInAnimationGroup="GroupTwo" />
+                        </Grid>
 
-                                <rating:Rating Value="{Binding Rating, Mode=TwoWay}"
-                                               RatingItemCount="5"
-                                               ReadOnly="True"
-                                               Background="Transparent"
-                                               Height="15"
-                                               Width="75"
-                                               Visibility="{Binding Rating, Converter={StaticResource LessThanZeroVisibilityConverter}}"
-                                               Margin="0,-1,0,0">
-                                    <rating:Rating.FilledItemStyle>
-                                        <Style TargetType="rating:RatingItem">
-                                            <Setter Property="Background"
-                                                    Value="{ThemeResource ApplicationForegroundThemeBrush}" />
-                                            <Setter Property="Padding"
-                                                    Value="0" />
-                                            <Setter Property="Margin"
-                                                    Value="0" />
-                                        </Style>
-                                    </rating:Rating.FilledItemStyle>
-                                    <rating:Rating.UnfilledItemStyle>
-                                        <Style TargetType="rating:RatingItem">
-                                            <Setter Property="Background"
-                                                    Value="{ThemeResource PhoneMidBrush}" />
-                                            <Setter Property="Padding"
-                                                    Value="0" />
-                                            <Setter Property="Margin"
-                                                    Value="0" />
-                                        </Style>
-                                    </rating:Rating.UnfilledItemStyle>
-                                </rating:Rating>
-                            </StackPanel>
+                        <!-- Content -->
+                        <Grid Grid.Row="1">
 
                             <!-- Friend area -->
                             <Grid Visibility="{Binding Friend, Converter={StaticResource NullToVisibilityConverter}}">
@@ -220,7 +256,8 @@
                             </Grid>
 
                             <!-- Book Area -->
-                            <Grid Visibility="{Binding Book, Converter={StaticResource NullToVisibilityConverter}}">
+                            <Grid Visibility="{Binding Book, Converter={StaticResource NullToVisibilityConverter}}"
+                                  Margin="0,10,0,0">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="*" />
@@ -237,14 +274,14 @@
                                             VerticalAlignment="Top"
                                             Click="Book_Click">
                                         <!-- Book Image -->
-                                        <Border Height="128"
-                                                Width="96"
+                                        <Border Height="96"
+                                                Width="72"
                                                 Background="{ThemeResource PhoneChromeBrush}"
                                                 HorizontalAlignment="Left"
                                                 VerticalAlignment="Top">
                                             <Image Source="{Binding Path=Book.ImageUrl}"
-                                                   Height="128"
-                                                   Width="96"
+                                                   Height="96"
+                                                   Width="72"
                                                    VerticalAlignment="Center"
                                                    HorizontalAlignment="Center" />
                                         </Border>
@@ -269,7 +306,7 @@
                                                        Margin="0,-2,0,0"
                                                        FontWeight="ExtraBold"
                                                        MaxLines="2"
-                                                       Pivot.SlideInAnimationGroup="GroupThree"/>
+                                                       Pivot.SlideInAnimationGroup="GroupThree" />
                                         </Button>
 
                                         <Button Style="{StaticResource TextButtonStyle}"
@@ -294,7 +331,7 @@
                                                 <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
-                                            <TextBlock Text="Progress: "
+                                            <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.FeedBookProgressText}"
                                                        Foreground="{ThemeResource PhoneLowBrush}"
                                                        Style="{StaticResource ListViewItemContentTextBlockStyle}"
                                                        Grid.Column="0"
@@ -311,11 +348,12 @@
                                                          Grid.Column="1"
                                                          Margin="15,0,15,0"
                                                          VerticalAlignment="Center" />
+
                                         </Grid>
-                                        <Button Content="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.WantToReadButtonText}"
+                                        <!--<Button Content="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.FeedWantToReadButtonText}"
                                                 MinWidth="120"
                                                 Background="{ThemeResource PhoneChromeBrush}"
-                                                BorderThickness="0" />
+                                                BorderThickness="0" />-->
                                     </StackPanel>
                                 </Grid>
 
@@ -334,28 +372,46 @@
                                            Margin="0,10,0,5" />
                             </Grid>
 
-                            <!-- Common actions -->
-                            <StackPanel Orientation="Horizontal"
-                                        Margin="0,15,0,0">
-                                <Button Style="{StaticResource TextButtonStyle}">
-                                    <FontIcon Glyph="&#xE19F;"
-                                              Foreground="{ThemeResource PhoneMidBrush}" />
-                                </Button>
+                        </Grid>
 
-                                <Button Style="{StaticResource TextButtonStyle}">
-                                    <FontIcon Glyph="&#xE15F;"
-                                              Foreground="{ThemeResource PhoneMidBrush}"
-                                              Margin="75,0,0,0" />
-                                </Button>
+                        <!-- Common actions -->
+                        <Grid Margin="0,15,0,0"
+                              Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
 
-                                <Button Style="{StaticResource TextButtonStyle}">
-                                    <FontIcon Glyph="&#xE12B;"
-                                              Foreground="{ThemeResource PhoneMidBrush}"
-                                              Margin="75,0,0,0" />
-                                </Button>
-                            </StackPanel>
+                            <local:BusyIndicatorTextButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.FeedLikeActionText}"
+                                                           IconGlyph="&#xE19F;"
+                                                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                                           Grid.Column="0" />
 
-                        </StackPanel>
+                            <Border BorderThickness="0,0,1,0"
+                                    BorderBrush="{ThemeResource PhoneChromeBrush}"
+                                    Grid.Column="1" />
+
+                            <local:BusyIndicatorTextButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.FeedCommentActionText}"
+                                                           IconGlyph="&#xE15F;"
+                                                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                                           Command="{Binding Comment}"
+                                                           Grid.Column="2" />
+
+                            <Border BorderThickness="0,0,1,0"
+                                    BorderBrush="{ThemeResource PhoneChromeBrush}"
+                                    Grid.Column="3" />
+
+                            <local:BusyIndicatorTextButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.FeedViewInBrowserActionText}"
+                                                           IconGlyph="&#xE12B;"
+                                                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                                           Command="{Binding ViewInBrowser}"
+                                                           Grid.Column="4"
+                                                           x:Name="BrowserButton" />
+
+                        </Grid>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

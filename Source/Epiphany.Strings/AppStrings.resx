@@ -459,7 +459,7 @@
   <data name="TopButtonText" xml:space="preserve">
     <value>Top</value>
   </data>
-  <data name="WantToReadButtonText" xml:space="preserve">
+  <data name="FeedWantToReadButtonText" xml:space="preserve">
     <value>Want to read</value>
   </data>
   <data name="InShelfText" xml:space="preserve">
@@ -680,5 +680,20 @@
   </data>
   <data name="AboutAppTitle" xml:space="preserve">
     <value>Reads for Windows</value>
+  </data>
+  <data name="FeedCommentActionText" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="FeedLikeActionText" xml:space="preserve">
+    <value>Like</value>
+  </data>
+  <data name="FeedViewInBrowserActionText" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="FeedBookProgressText" xml:space="preserve">
+    <value>Progress: </value>
+  </data>
+  <data name="AppBarButtonRefreshFeedText" xml:space="preserve">
+    <value>refresh feed</value>
   </data>
 </root>

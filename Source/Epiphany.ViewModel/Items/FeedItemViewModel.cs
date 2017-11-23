@@ -1,13 +1,17 @@
 ﻿using Epiphany.Logging;
 using Epiphany.Model;
+using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Services;
 using System;
+using System.Windows.Input;
 
 namespace Epiphany.ViewModel.Items
 {
     public sealed class FeedItemViewModel : ItemViewModel<FeedItemModel>, IFeedItemViewModel
     {
         private readonly IResourceLoader resourceLoader;
+        private readonly INavigationService navService;
+        private readonly IDeviceServices deviceServices;
         private IUserItemViewModel friend;
         private IBookItemViewModel book;
         private string actionText;
@@ -23,7 +27,7 @@ namespace Epiphany.ViewModel.Items
         private const string ReadStatusFeedItemCurrentlyReadingActionTextKey = "ReadStatusFeedItemCurrentlyReadingActionText";
         private const string CommentFeedItemActionTextKey = "CommentFeedItemActionText";
 
-        public FeedItemViewModel(FeedItemModel model, IResourceLoader resourceLoader) 
+        public FeedItemViewModel(FeedItemModel model, IResourceLoader resourceLoader, INavigationService navService, IDeviceServices deviceServices) 
             : base (model)
         {
             if (resourceLoader == null)
@@ -32,8 +36,21 @@ namespace Epiphany.ViewModel.Items
             }
 
             this.resourceLoader = resourceLoader;
+            this.navService = navService;
+            this.deviceServices = deviceServices;
             
             InitializeProperties();
+
+            // Initialize commands
+            Comment = new DelegateCommand(() =>
+            {
+                // TODO: Launch comment page
+            });
+
+            ViewInBrowser = new DelegateCommand(() =>
+            {
+                this.deviceServices.LaunchUrl(Item.Link);
+            });
         }
 
         public long Id
@@ -116,6 +133,23 @@ namespace Epiphany.ViewModel.Items
             {
                 SetProperty(ref this.rating, value);
             }
+        }
+
+        public IAsyncCommand<VoidType> Like
+        {
+            get;
+        }
+
+        public ICommand Comment
+        {
+            get;
+            private set;
+        }
+
+        public ICommand ViewInBrowser
+        {
+            get;
+            private set;
         }
 
         private void InitializeProperties()

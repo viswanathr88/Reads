@@ -1,5 +1,7 @@
 ﻿using Epiphany.Model;
+using Epiphany.ViewModel.Commands;
 using System;
+using System.Windows.Input;
 
 namespace Epiphany.ViewModel.Items
 {
@@ -16,5 +18,8 @@ namespace Epiphany.ViewModel.Items
         IUserItemViewModel User { get; }
         int PercentageCompleted { get; }
         int Rating { get; }
+        IAsyncCommand<VoidType> Like { get; }
+        ICommand Comment { get; }
+        ICommand ViewInBrowser { get; }
     }
 }

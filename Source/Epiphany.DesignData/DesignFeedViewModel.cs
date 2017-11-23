@@ -4,6 +4,7 @@ using Epiphany.ViewModel.Items;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace Epiphany.View.DesignData
 {
@@ -123,6 +124,12 @@ namespace Epiphany.View.DesignData
         public IAsyncCommand<IEnumerable<FeedItemModel>, VoidType> FetchFeed
         {
             get;
+        }
+
+        public ICommand Refresh
+        {
+            get;
+            private set;
         }
     }
 }

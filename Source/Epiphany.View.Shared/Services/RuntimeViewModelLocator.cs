@@ -59,7 +59,7 @@ namespace Epiphany.View.Services
             {
                 if (this.homeVM == null)
                 {
-                    var feedVM = new FeedViewModel(this.serviceFactory.GetUserService(), this.resourceLoader);
+                    var feedVM = new FeedViewModel(this.serviceFactory.GetUserService(), this.resourceLoader, this.navigationService, this.deviceServices);
                     var booksVM = new MyBooksViewModel(this.serviceFactory.GetBookService());
                     var communityVM = new CommunityViewModel(this.serviceFactory.GetUserService(), this.serviceFactory.GetReviewService(), 
                         this.resourceLoader);
@@ -91,7 +91,9 @@ namespace Epiphany.View.Services
                 return new ProfileViewModel(
                     this.serviceFactory.GetUserService(),
                     this.resourceLoader,
-                    this.serviceFactory.GetLogonService());
+                    this.serviceFactory.GetLogonService(),
+                    this.navigationService,
+                    this.deviceServices);
             }
         }
 

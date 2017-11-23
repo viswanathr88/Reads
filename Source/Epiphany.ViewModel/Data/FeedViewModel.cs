@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
@@ -16,19 +17,25 @@ namespace Epiphany.ViewModel
         private IFeedOptionsViewModel feedOptionsViewModel;
         private readonly IUserService userService;
         private readonly IResourceLoader resourceLoader;
+        private readonly INavigationService navService;
+        private readonly IDeviceServices deviceServices;
         private IList<IFeedItemViewModel> items;
         private bool isFilterEnabled;
         private bool isFeedEmpty;
         
-        public FeedViewModel(IUserService userService, IResourceLoader resourceLoader)
+        public FeedViewModel(IUserService userService, IResourceLoader resourceLoader, INavigationService navService, IDeviceServices deviceServices)
         {
             this.userService = userService;
             this.resourceLoader = resourceLoader;
+            this.navService = navService;
+            this.deviceServices = deviceServices;
 
             this.Items = new ObservableCollection<IFeedItemViewModel>();
 
             this.feedOptionsViewModel = new FeedOptionsViewModel(resourceLoader);
             this.feedOptionsViewModel.PropertyChanged += FeedOptions_PropertyChanged;
+
+            Refresh = new DelegateCommand(async () => await RefreshFeed());
         }
 
         private async void FeedOptions_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -78,40 +85,52 @@ namespace Epiphany.ViewModel
             }
         }
 
+        public ICommand Refresh
+        {
+            get;
+            private set;
+        }
+
         public override async Task LoadAsync(VoidType parameter)
         {
             if (!IsLoaded)
             {
-                IsLoading = true;
-
-                IEnumerable<FeedItemViewModel> items = null;
-                try
-                {
-                    items = await Task.Run(async ()=>
-                    {
-                        IEnumerable<FeedItemModel> modelItems = await this.userService.GetFriendUpdatesAsync(FeedOptions.CurrentUpdateType, FeedOptions.CurrentUpdateFilter);
-                        IList<FeedItemViewModel> vmItems = new List<FeedItemViewModel>();
-                        foreach (var modelItem in modelItems)
-                        {
-                            vmItems.Add(new FeedItemViewModel(modelItem, this.resourceLoader));
-                        }
-                        return vmItems;
-                    });
-                }
-                catch (Exception ex)
-                {
-                    Logger.LogError(ex.ToString());
-                }
-
-                if (items != null)
-                {
-                    Items = new ObservableCollection<IFeedItemViewModel>(items);
-                }
-
-                IsFeedEmpty = Items.Count <= 0 ? true : false;
+                await RefreshFeed();
                 IsLoaded = true;
-                IsLoading = false;
+
             }
+        }
+
+        private async Task RefreshFeed()
+        {
+            IsLoading = true;
+
+            IEnumerable<FeedItemViewModel> items = null;
+            try
+            {
+                items = await Task.Run(async () =>
+                {
+                    IEnumerable<FeedItemModel> modelItems = await this.userService.GetFriendUpdatesAsync(FeedOptions.CurrentUpdateType, FeedOptions.CurrentUpdateFilter);
+                    IList<FeedItemViewModel> vmItems = new List<FeedItemViewModel>();
+                    foreach (var modelItem in modelItems)
+                    {
+                        vmItems.Add(new FeedItemViewModel(modelItem, this.resourceLoader, this.navService, this.deviceServices));
+                    }
+                    return vmItems;
+                });
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex.ToString());
+            }
+
+            if (items != null)
+            {
+                Items = new ObservableCollection<IFeedItemViewModel>(items);
+            }
+
+            IsFeedEmpty = Items.Count <= 0 ? true : false;
+            IsLoading = false;
         }
 
         protected override void Reset()

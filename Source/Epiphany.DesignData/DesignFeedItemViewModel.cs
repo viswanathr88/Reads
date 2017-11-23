@@ -3,6 +3,7 @@ using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Items;
 using System;
 using System.Windows.Input;
+using Epiphany.ViewModel;
 
 namespace Epiphany.View.DesignData
 {
@@ -92,6 +93,21 @@ namespace Epiphany.View.DesignData
         public ICommand ShowReview
         {
             get { return null; }
+        }
+
+        public IAsyncCommand<VoidType> Like
+        {
+            get;
+        }
+
+        public ICommand Comment
+        {
+            get;
+        }
+
+        public ICommand ViewInBrowser
+        {
+            get;
         }
     }
 }
