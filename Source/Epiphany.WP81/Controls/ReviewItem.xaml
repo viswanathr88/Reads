@@ -12,84 +12,88 @@
     x:Name="reviewItemControl">
 
     <Grid Margin="0,0,0,19">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="80" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
 
-        <!-- User Image -->
-        <Border Height="64"
-                Width="64"
-                BorderBrush="{ThemeResource PhoneChromeBrush}"
-                Grid.Column="0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Background="{ThemeResource PhoneChromeBrush}">
-            <Image Source="{Binding ElementName=reviewItemControl, Path=UserImage}"
-                   Height="62"
-                   Width="62" />
-        </Border>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <!-- Review Item Header -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
-        <!-- User Name and body -->
-        <Grid Grid.Column="1">
+            <!-- User Image -->
+            <Border Height="48"
+                    Width="48"
+                    BorderBrush="{ThemeResource PhoneChromeBrush}"
+                    Grid.Column="0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Background="{ThemeResource PhoneChromeBrush}">
+                <Image Source="{Binding ElementName=reviewItemControl, Path=UserImage}"
+                       Height="44"
+                       Width="44" />
+            </Border>
+
+            <!-- User name -->
+            <Button Style="{StaticResource TextButtonStyle}"
+                    Grid.Column="1"
+                    Click="User_Click"
+                    Margin="15,0,0,0">
+                <TextBlock Text="{Binding ElementName=reviewItemControl, Path=Username}"
+                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                           Style="{StaticResource BodyTextBlockStyle}"
+                           TextWrapping="NoWrap"
+                           TextTrimming="CharacterEllipsis"
+                           OpticalMarginAlignment="TrimSideBearings"
+                           TextLineBounds="TrimToCapHeight"
+                           FontWeight="Bold" />
+            </Button>
+
+            <!-- Rating -->
+            <rating:Rating RatingItemCount="5"
+                           Value="{Binding ElementName=reviewItemControl, Path=Rating}"
+                           ReadOnly="True"
+                           Background="Transparent"
+                           Height="20"
+                           Width="100"
+                           Grid.Column="2"
+                           VerticalAlignment="Top">
+                <rating:Rating.FilledItemStyle>
+                    <Style TargetType="rating:RatingItem">
+                        <Setter Property="Background"
+                                Value="{ThemeResource ApplicationForegroundThemeBrush}" />
+                        <Setter Property="Padding"
+                                Value="0" />
+                        <Setter Property="Margin"
+                                Value="0" />
+                    </Style>
+                </rating:Rating.FilledItemStyle>
+                <rating:Rating.UnfilledItemStyle>
+                    <Style TargetType="rating:RatingItem">
+                        <Setter Property="Background"
+                                Value="{ThemeResource PhoneMidBrush}" />
+                        <Setter Property="Padding"
+                                Value="0" />
+                        <Setter Property="Margin"
+                                Value="0" />
+                    </Style>
+                </rating:Rating.UnfilledItemStyle>
+            </rating:Rating>
+
+        </Grid>
+
+        <!-- Content -->
+        <Grid Grid.Row="1" Margin="0,15,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-
-                <!-- User name -->
-                <Button Style="{StaticResource TextButtonStyle}"
-                        Grid.Column="0"
-                        Click="User_Click">
-                    <TextBlock Text="{Binding ElementName=reviewItemControl, Path=Username}"
-                               Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                               Style="{StaticResource BodyTextBlockStyle}"
-                               TextWrapping="NoWrap"
-                               TextTrimming="CharacterEllipsis"
-                               OpticalMarginAlignment="TrimSideBearings"
-                               TextLineBounds="TrimToCapHeight"
-                               FontWeight="Bold" />
-                </Button>
-
-                <!-- Rating -->
-                <rating:Rating RatingItemCount="5"
-                               Value="{Binding ElementName=reviewItemControl, Path=Rating}"
-                               ReadOnly="True"
-                               Background="Transparent"
-                               Height="20"
-                               Width="100"
-                               Grid.Column="1"
-                               VerticalAlignment="Top">
-                    <rating:Rating.FilledItemStyle>
-                        <Style TargetType="rating:RatingItem">
-                            <Setter Property="Background"
-                                    Value="{ThemeResource ApplicationForegroundThemeBrush}" />
-                            <Setter Property="Padding"
-                                    Value="0" />
-                            <Setter Property="Margin"
-                                    Value="0" />
-                        </Style>
-                    </rating:Rating.FilledItemStyle>
-                    <rating:Rating.UnfilledItemStyle>
-                        <Style TargetType="rating:RatingItem">
-                            <Setter Property="Background"
-                                    Value="{ThemeResource PhoneMidBrush}" />
-                            <Setter Property="Padding"
-                                    Value="0" />
-                            <Setter Property="Margin"
-                                    Value="0" />
-                        </Style>
-                    </rating:Rating.UnfilledItemStyle>
-                </rating:Rating>
-            </Grid>
-            
             <!-- Show book details -->
             <local:BookItem ImageUrl="{Binding ElementName=reviewItemControl, Path=ImageUrl}"
                             Author="{Binding ElementName=reviewItemControl, Path=Author}"
@@ -98,12 +102,12 @@
                             AverageRating="{Binding ElementName=reviewItemControl, Path=AverageRating}"
                             x:Name="reviewBook"
                             Visibility="Collapsed"
-                            Grid.Row="1"/>
+                            Grid.Row="0"/>
 
             <!-- Review body -->
             <local:CollapsableText Text="{Binding ElementName=reviewItemControl, Path=Body}"
                                       MinLines="10"
-                                      Grid.Row="2" />
+                                      Grid.Row="1" />
 
         </Grid>
 

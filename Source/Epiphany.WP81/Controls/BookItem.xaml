@@ -23,8 +23,8 @@
                 VerticalAlignment="Top"
                 x:Name="bookImageButton"
                 Click="Book_Click">
-            <Border Width="96"
-                Height="128"
+            <Border Width="72"
+                Height="96"
                 Background="{ThemeResource PhoneChromeBrush}">
                 <Image Source="{Binding ElementName=bookItemControl,Path=ImageUrl, FallbackValue={x:Null}}"
                    Grid.Column="0"
