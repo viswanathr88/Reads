@@ -62,6 +62,42 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reads for Windows.
+        /// </summary>
+        public static string AboutAppTitle {
+            get {
+                return ResourceManager.GetString("AboutAppTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Like on Facebook.
+        /// </summary>
+        public static string AboutLikeonFBButtonText {
+            get {
+                return ResourceManager.GetString("AboutLikeonFBButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rate the App.
+        /// </summary>
+        public static string AboutRateButtonText {
+            get {
+                return ResourceManager.GetString("AboutRateButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Version: 3.0.
+        /// </summary>
+        public static string AboutVersionString {
+            get {
+                return ResourceManager.GetString("AboutVersionString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to add.
         /// </summary>
         public static string AddBookshelfButtonText {
@@ -998,15 +1034,6 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to like on facebook.
-        /// </summary>
-        public static string LikeonFBButtonText {
-            get {
-                return ResourceManager.GetString("LikeonFBButtonText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to location.
         /// </summary>
         public static string LocationText {
@@ -1291,15 +1318,6 @@ namespace Epiphany.Strings {
         public static string ProfileUpdatesTitle {
             get {
                 return ResourceManager.GetString("ProfileUpdatesTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to rate the app.
-        /// </summary>
-        public static string RateButtonText {
-            get {
-                return ResourceManager.GetString("RateButtonText", resourceCulture);
             }
         }
         
@@ -1678,15 +1696,6 @@ namespace Epiphany.Strings {
         public static string UserStatusFeedItemFinishedActionText {
             get {
                 return ResourceManager.GetString("UserStatusFeedItemFinishedActionText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Version: 2.5.
-        /// </summary>
-        public static string VersionString {
-            get {
-                return ResourceManager.GetString("VersionString", resourceCulture);
             }
         }
         

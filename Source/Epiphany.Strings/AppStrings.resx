@@ -253,9 +253,6 @@
   <data name="JoinDateText" xml:space="preserve">
     <value>join date</value>
   </data>
-  <data name="LikeonFBButtonText" xml:space="preserve">
-    <value>like on facebook</value>
-  </data>
   <data name="SettingsLocationPermissionHeader" xml:space="preserve">
     <value>Allow Reads to use my location</value>
   </data>
@@ -331,8 +328,8 @@
   <data name="ProfileUpdatesTitle" xml:space="preserve">
     <value>updates</value>
   </data>
-  <data name="RateButtonText" xml:space="preserve">
-    <value>rate the app</value>
+  <data name="AboutRateButtonText" xml:space="preserve">
+    <value>Rate the App</value>
   </data>
   <data name="ReadStatusFeedItemCurrentlyReadingActionText" xml:space="preserve">
     <value>{0} started reading:</value>
@@ -381,8 +378,8 @@
   <data name="UserStatusFeedItemFinishedActionText" xml:space="preserve">
     <value>{0} has finished reading:</value>
   </data>
-  <data name="VersionString" xml:space="preserve">
-    <value>Version: 2.5</value>
+  <data name="AboutVersionString" xml:space="preserve">
+    <value>Version: 3.0</value>
   </data>
   <data name="ViewFriendsText" xml:space="preserve">
     <value>view friends</value>
@@ -677,5 +674,11 @@
   </data>
   <data name="SettingsEnableTransparentTileHeader" xml:space="preserve">
     <value>Enable transparent tile</value>
+  </data>
+  <data name="AboutLikeonFBButtonText" xml:space="preserve">
+    <value>Like on Facebook</value>
+  </data>
+  <data name="AboutAppTitle" xml:space="preserve">
+    <value>Reads for Windows</value>
   </data>
 </root>

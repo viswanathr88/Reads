@@ -9,6 +9,14 @@
                 Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
                 DataContext="{Binding Source={StaticResource VMLocator}, Path=Settings}">
 
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <ContinuumNavigationTransitionInfo />
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -93,7 +101,7 @@
 
                 <!-- About Pivot -->
                 <PivotItem Margin="19,10,19,10">
-                    <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
                         <!-- App Logo -->
                         <Path Height="105"
                               Width="105"
@@ -101,27 +109,55 @@
                               Fill="{ThemeResource ApplicationForegroundThemeBrush}"
                               Data="{StaticResource AppLogoData}"
                               VerticalAlignment="Bottom"
-                              UseLayoutRounding="False" />
+                              UseLayoutRounding="False"
+                              Margin="0,10,0,10"/>
 
                         <!-- App Title -->
-                        <TextBlock Text="Reads for Windows"
-                                   Grid.Row="1" />
+                        <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AboutAppTitle}"
+                                   Grid.Row="1"
+                                   HorizontalAlignment="Center"
+                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                   Style="{StaticResource GroupHeaderTextBlockStyle}"
+                                   Margin="0,10,0,10"/>
 
                         <!-- App Version -->
-                        <TextBlock Text="v 3.0"
-                                   Grid.Row="2" />
+                        <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AboutVersionString}"
+                                   Grid.Row="2"
+                                   HorizontalAlignment="Center"
+                                   Foreground="{ThemeResource PhoneMidBrush}"
+                                   Style="{StaticResource GroupHeaderTextBlockStyle}"
+                                   Margin="0,0,0,10"/>
 
                         <!-- Actions -->
-                        <StackPanel Orientation="Horizontal"
-                                    Grid.Row="3">
-                            <Button Content="Like On Facebook" Command="{Binding LikeOnFacebook}" />
-                            <Button Content="Rate the app" Command="{Binding RateApp}" />
-                        </StackPanel>
+                        <Grid Background="{ThemeResource PhoneAccentBrush}"
+                              Grid.Row="3"
+                              Height="50"
+                              Margin="0,10,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <controls:BusyIndicatorTextButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AboutLikeonFBButtonText}"
+                                                              Command="{Binding LikeOnFacebook}"
+                                                              Foreground="White"
+                                                              Grid.Column="0"
+                                                              IconGlyph="&#xE19F;"
+                                                              Visibility="Visible" />
+                            <Border BorderThickness="0,0,2,0"
+                                    BorderBrush="{ThemeResource PhoneChromeBrush}" />
+                            <controls:BusyIndicatorTextButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AboutRateButtonText}"
+                                                              Command="{Binding RateApp}"
+                                                              Foreground="White"
+                                                              Grid.Column="2"
+                                                              IconGlyph="&#xE1CF;"
+                                                              Visibility="Visible" />
+                        </Grid>
                     </StackPanel>
                 </PivotItem>
             </Pivot>
         </Grid>
         <!-- Settings -->
-        
+
     </Grid>
 </local:DataPage>
