@@ -117,11 +117,11 @@
     <Page.BottomAppBar>
         <CommandBar>
             <AppBarButton Icon="Home"
-                          Label="home"
+                          Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarHomeText}"
                           Click="Home_Clicked" />
             
             <AppBarButton Icon="Add"
-                          Label="add"
+                          Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarAddText}"
                           Click="Add_Clicked"
                           Visibility="{Binding CanEdit, Converter={StaticResource BooleanToVisibilityConverter}}"/>
         </CommandBar>

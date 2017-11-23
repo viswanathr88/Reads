@@ -30,5 +30,13 @@ namespace Epiphany.View
             var parameter = GetViewModel<IProfileViewModel>().Parameter;
             await App.Navigate(typeof(BookshelvesPage), parameter, new SlideNavigationTransitionInfo());
         }
+
+        private void Home_Clicked(object sender, RoutedEventArgs e)
+        {
+            while (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
+        }
     }
 }

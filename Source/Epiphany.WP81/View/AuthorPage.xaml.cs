@@ -26,5 +26,13 @@ namespace Epiphany.View
         {
             this.InitializeComponent();
         }
+
+        private void Home_Clicked(object sender, RoutedEventArgs e)
+        {
+            while (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
+        }
     }
 }

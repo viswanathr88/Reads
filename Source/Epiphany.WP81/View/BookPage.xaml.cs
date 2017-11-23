@@ -61,5 +61,13 @@ namespace Epiphany.View
                 await App.Navigate(typeof(AuthorPage), authorItem.Item);
             }
         }
+
+        private void Home_Clicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            while (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
+        }
     }
 }

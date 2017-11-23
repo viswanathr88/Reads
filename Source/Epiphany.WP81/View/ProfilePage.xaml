@@ -237,4 +237,14 @@
         </ScrollViewer>
 
     </Grid>
+
+    <local:DataPage.BottomAppBar>
+        <CommandBar ClosedDisplayMode="Minimal">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarHomeText}"
+                              Icon="Home"
+                              Click="Home_Clicked" />
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </local:DataPage.BottomAppBar>
 </local:DataPage>

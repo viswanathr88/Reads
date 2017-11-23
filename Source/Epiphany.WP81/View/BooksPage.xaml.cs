@@ -34,5 +34,13 @@ namespace Epiphany.View
                 await App.Navigate(typeof(BookPage), parameter);
             }
         }
+
+        private void Home_Clicked(object sender, RoutedEventArgs e)
+        {
+            while (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
+        }
     }
 }
