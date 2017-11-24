@@ -136,7 +136,7 @@ namespace Epiphany.ViewModel
         public TParam Parameter
         {
             get;
-            private set;
+            protected set;
         }
         /// <summary>
         /// Gets the parameter

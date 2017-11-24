@@ -11,4 +11,12 @@ namespace Epiphany.View.DesignData
             throw new NotImplementedException();
         }
     }
+
+    public class DesignBaseViewModel<TParam> : DataViewModel<TParam>
+    {
+        public override Task LoadAsync(TParam parameter)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

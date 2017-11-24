@@ -23,6 +23,7 @@
             <converters:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter" />
             <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
             <converters:VisibleWhenZeroConverter x:Key="VisibleWhenZeroConverter" />
+            <converters:StringConverter x:Key="StringConverter" />
 
             <FontFamily x:Key="ContentControlThemeFontFamily">Segoe WP</FontFamily>
             <x:Double x:Key="ControlContentThemeFontSize">12</x:Double>

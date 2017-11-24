@@ -696,4 +696,16 @@
   <data name="AppBarButtonRefreshFeedText" xml:space="preserve">
     <value>refresh feed</value>
   </data>
+  <data name="AuthorPivotAboutHeader" xml:space="preserve">
+    <value>ABOUT</value>
+  </data>
+  <data name="AuthorPivotBooksHeader" xml:space="preserve">
+    <value>BOOKS</value>
+  </data>
+  <data name="FollowersCountStringFormat" xml:space="preserve">
+    <value>{0} followers</value>
+  </data>
+  <data name="RatingsCountStringFormat" xml:space="preserve">
+    <value>{0} ratings</value>
+  </data>
 </root>

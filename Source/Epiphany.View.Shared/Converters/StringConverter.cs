@@ -4,19 +4,24 @@ using Windows.UI.Xaml.Data;
 
 namespace Epiphany.View.Converters
 {
-    public sealed class NullToVisibilityConverter : IValueConverter
+    public sealed class StringConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            Visibility visibility = Visibility.Visible;
+            string str = value?.ToString();
+            string format = parameter as string;
 
-            if (value == null || (value is string && string.IsNullOrEmpty((string)value)) || (value is double && (double)value == 0)
-                || (value is int && (int)value == 0))
+            if (string.IsNullOrEmpty(str))
             {
-                visibility = Visibility.Collapsed;
+                return null;
             }
 
-            return visibility;
+            if (string.IsNullOrEmpty(format))
+            {
+                return str;
+            }
+
+            return string.Format(format, str);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)
@@ -24,4 +29,5 @@ namespace Epiphany.View.Converters
             return DependencyProperty.UnsetValue;
         }
     }
+
 }

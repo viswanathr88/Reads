@@ -35,7 +35,7 @@ namespace Epiphany.Model
         {
             get
             {
-                return "author/show";
+                return baseUrl + "author/show";
             }
         }
 

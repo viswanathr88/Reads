@@ -1,33 +1,22 @@
 ﻿using Epiphany.Model;
-using Epiphany.Model.Collections;
 using Epiphany.ViewModel;
-using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Items;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
 
 namespace Epiphany.View.DesignData
 {
-    public sealed class DesignAuthorViewModel : DesignBaseViewModel, IAuthorViewModel
+    public sealed class DesignAuthorViewModel : DesignBaseViewModel<AuthorModel>, IAuthorViewModel
     {
 
         public DesignAuthorViewModel()
         {
-            Id = 50;
             Name = "Test Author";
-            BookLoadingStarted = false;
             ImageUrl = null;
 
             PopulateAttributes();
             PopulateBooks();
-        }
-
-        public long Id
-        {
-            get;
-            set;
         }
 
         public string Name
@@ -36,25 +25,7 @@ namespace Epiphany.View.DesignData
             set;
         }
 
-        public bool BookLoadingStarted
-        {
-            get;
-            set;
-        }
-
-        public AuthorModel Author
-        {
-            get;
-            set;
-        }
-
         public string ImageUrl
-        {
-            get;
-            set;
-        }
-
-        public IBookItemViewModel SelectedBook
         {
             get;
             set;
@@ -72,24 +43,34 @@ namespace Epiphany.View.DesignData
             set;
         }
 
-        public IAsyncCommand<IAsyncEnumerator<BookModel>> FetchBooks
+        public string Description
         {
-            get { return null; }
+            get;
+            set;
         }
 
-        public IAsyncEnumerator<BookModel> BookEnumerator
+        public int FollowersCount
         {
-            get { return null; }
+            get;
+            set;
         }
 
-        public ICommand<AuthorModel> PinAuthor
+        public double AverageRating
         {
-            get { return null; }
+            get;
+            set;
         }
 
-        public ICommand GoHome
+        public int RatingsCount
         {
-            get { return null; }
+            get;
+            set;
+        }
+
+        public string Hometown
+        {
+            get;
+            set;
         }
 
         private void PopulateAttributes()
@@ -147,7 +128,6 @@ namespace Epiphany.View.DesignData
                     AverageRating = 4.0
                 });
             }
-            SelectedBook = Books[0];
         }
     }
 }

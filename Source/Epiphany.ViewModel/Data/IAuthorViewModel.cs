@@ -1,25 +1,73 @@
-﻿using System.Collections.Generic;
-using System.Windows.Input;
-using Epiphany.Model;
-using Epiphany.Model.Collections;
-using Epiphany.ViewModel.Commands;
+﻿using Epiphany.Model;
 using Epiphany.ViewModel.Items;
+using System.Collections.Generic;
 
 namespace Epiphany.ViewModel
 {
-    public interface IAuthorViewModel : IDataViewModel
+    public interface IAuthorViewModel : IDataViewModel<AuthorModel>
     {
-        IList<IAuthorAttributeViewModel> Attributes { get; }
-        AuthorModel Author { get; }
-        IAsyncEnumerator<BookModel> BookEnumerator { get; }
-        bool BookLoadingStarted { get; }
-        IList<IBookItemViewModel> Books { get; }
-        IAsyncCommand<IAsyncEnumerator<BookModel>> FetchBooks { get; }
-        ICommand GoHome { get; }
-        long Id { get; set; }
-        string ImageUrl { get; }
-        string Name { get; set; }
-        ICommand<AuthorModel> PinAuthor { get; }
-        IBookItemViewModel SelectedBook { get; set; }
+        /// <summary>
+        /// Gets the name of the author
+        /// </summary>
+        string Name
+        {
+            get;
+        }
+        /// <summary>
+        /// Gets the description about the author
+        /// </summary>
+        string Description
+        {
+            get;
+        }
+        /// <summary>
+        /// Gets the number of followers for the author
+        /// </summary>
+        int FollowersCount
+        {
+            get;
+        }
+        /// <summary>
+        /// Gets the image url
+        /// </summary>
+        string ImageUrl
+        {
+            get;
+        }
+        /// <summary>
+        /// Gets the average rating for this author
+        /// </summary>
+        double AverageRating
+        {
+            get;
+        }
+        /// <summary>
+        /// Gets the number of ratings for this author
+        /// </summary>
+        int RatingsCount
+        {
+            get;
+        }
+        /// <summary>
+        /// Gets the hometown of the author
+        /// </summary>
+        string Hometown
+        {
+            get;
+        }
+        /// <summary>
+        /// Gets all additional attributes of the author
+        /// </summary>
+        IList<IAuthorAttributeViewModel> Attributes
+        {
+            get;
+        }
+        /// <summary>
+        /// Gets all the books by the author
+        /// </summary>
+        IList<IBookItemViewModel> Books
+        {
+            get;
+        }
     }
 }

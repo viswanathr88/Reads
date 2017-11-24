@@ -26,6 +26,7 @@ namespace Epiphany.Model.Services
             var ds = new DataSource<GoodreadsAuthor>(webClient);
             ds.SourceUrl = ServiceUrls.AuthorUrl;
             ds.Parameters["id"] = id.ToString();
+            ds.Returns = (response) => response.Author;
 
             GoodreadsAuthor author = await ds.GetAsync();
             

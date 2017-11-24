@@ -68,6 +68,7 @@
     <Compile Include="Converters\InverseBooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\LessThanZeroVisibilityConverter.cs" />
     <Compile Include="Converters\NullToVisibilityConverter.cs" />
+    <Compile Include="Converters\StringConverter.cs" />
     <Compile Include="Converters\TimeToNowConverter.cs" />
     <Compile Include="Converters\ValueParameterComparerConverter.cs" />
     <Compile Include="Converters\VisibleWhenZeroConverter.cs" />

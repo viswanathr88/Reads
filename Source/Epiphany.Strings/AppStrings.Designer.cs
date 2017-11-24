@@ -386,6 +386,24 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ABOUT.
+        /// </summary>
+        public static string AuthorPivotAboutHeader {
+            get {
+                return ResourceManager.GetString("AuthorPivotAboutHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BOOKS.
+        /// </summary>
+        public static string AuthorPivotBooksHeader {
+            get {
+                return ResourceManager.GetString("AuthorPivotBooksHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to authors.
         /// </summary>
         public static string AuthorsHeaderText {
@@ -953,6 +971,15 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} followers.
+        /// </summary>
+        public static string FollowersCountStringFormat {
+            get {
+                return ResourceManager.GetString("FollowersCountStringFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FOLLOWING.
         /// </summary>
         public static string FollowingReviewsButtonLabel {
@@ -1372,6 +1399,15 @@ namespace Epiphany.Strings {
         public static string ProfileUpdatesTitle {
             get {
                 return ResourceManager.GetString("ProfileUpdatesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} ratings.
+        /// </summary>
+        public static string RatingsCountStringFormat {
+            get {
+                return ResourceManager.GetString("RatingsCountStringFormat", resourceCulture);
             }
         }
         

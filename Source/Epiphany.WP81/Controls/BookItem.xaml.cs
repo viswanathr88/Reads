@@ -109,6 +109,14 @@ namespace Epiphany.View.Controls
                     await App.Navigate(typeof(BookPage), searchResultItemVM.Book.Item);
                 }
             }
+            else if (frameworkElement.DataContext is IBookItemViewModel)
+            {
+                var bookItemVM = frameworkElement.DataContext as IBookItemViewModel;
+                if (bookItemVM != null)
+                {
+                    await App.Navigate(typeof(BookPage), bookItemVM.Item);
+                }
+            }
             
         }
     }

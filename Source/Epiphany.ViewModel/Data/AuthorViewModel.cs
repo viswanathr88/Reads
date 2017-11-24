@@ -1,37 +1,32 @@
-﻿using Epiphany.Model;
-using Epiphany.Model.Collections;
+﻿using Epiphany.Logging;
+using Epiphany.Model;
 using Epiphany.Model.Services;
-using Epiphany.ViewModel.Commands;
+using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
     public sealed class AuthorViewModel : DataViewModel<AuthorModel>, IAuthorViewModel
     {
         private readonly AuthorAttributeViewModelFactory authorAttributeVMFactory;
-        private IBookItemViewModel selectedBook;
-        private bool bookLoadingStarted;
-        private AuthorModel author;
         private string imageUrl;
         private string name;
-        private long id;
+        private string description;
+        private int followersCount;
+        private double averageRating;
+        private int ratingsCount;
+        private string hometown;
 
         // collections
-        private IAsyncEnumerator<BookModel> bookEnumerator;
         private IList<IBookItemViewModel> books;
         private IList<IAuthorAttributeViewModel> attributes;
 
-        // commands
-        private readonly IAsyncCommand<IEnumerable<BookModel>, IAsyncEnumerator<BookModel>> fetchBooksCommand;
-        private readonly IAsyncCommand<AuthorModel, long> fetchAuthorCommand;
-        private readonly ICommand goHomeCommand;
-
+        private readonly IAuthorService authorService;
         private readonly IBookService bookService;
         private readonly INavigationService navService;
 
@@ -44,31 +39,10 @@ namespace Epiphany.ViewModel
 
             this.bookService = bookService;
             this.navService = navService;
+            this.authorService = authorService;
 
             Books = new ObservableCollection<IBookItemViewModel>();
             this.authorAttributeVMFactory = new AuthorAttributeViewModelFactory();
-
-            this.fetchAuthorCommand = new FetchAuthorCommand(authorService);
-            RegisterCommand(this.fetchAuthorCommand, OnFetchAuthorExecuted);
-
-            this.fetchBooksCommand = new EnumeratorCommand<BookModel>(20);
-            RegisterCommand(this.fetchBooksCommand, OnFetchBooksExecuted);
-            
-            this.goHomeCommand = new GoHomeCommand(navService);
-        }
-
-        public long Id
-        {
-            get
-            {
-                return this.id;
-            }
-            set
-            {
-                if (this.id == value) return;
-                this.id = value;
-                RaisePropertyChanged();
-            }
         }
 
         public string Name
@@ -79,82 +53,31 @@ namespace Epiphany.ViewModel
             }
             set
             {
-                if (this.name == value) return;
-                this.name = value;
-                RaisePropertyChanged();
-            }
-        }
-
-        public bool BookLoadingStarted
-        {
-            get { return this.bookLoadingStarted; }
-            private set
-            {
-                if (this.bookLoadingStarted == value) return;
-                this.bookLoadingStarted = value;
-                RaisePropertyChanged();
+                SetProperty(ref this.name, value);
             }
         }
 
         public string ImageUrl
         {
-            get { return this.imageUrl; }
+            get
+            {
+                return this.imageUrl;
+            }
             private set
             {
-                if (this.imageUrl == value) return;
-                this.imageUrl = value;
-                RaisePropertyChanged();
-            }
-        }
-
-        public AuthorModel Author
-        {
-            get { return this.author; }
-            private set
-            {
-                if (this.author == value) return;
-                this.author = value;
-                RaisePropertyChanged();
-            }
-        }
-
-        public IBookItemViewModel SelectedBook
-        {
-            get { return this.selectedBook; }
-            set
-            {
-                if (this.selectedBook == value) return;
-                this.selectedBook = value;
-
-                /*this.navService.CreateFor<BookViewModel>()
-                    .AddParam<int>((x) => (x.Id), value.Id)
-                    .AddParam<string>((x) => x.Title, value.Title)
-                    .Navigate();
-                this.selectedBook = null;*/
-
-                RaisePropertyChanged();
+                SetProperty(ref this.imageUrl, value);
             }
         }
 
         public IList<IBookItemViewModel> Books
         {
-            get { return this.books; }
-            private set
+            get
             {
-                if (this.books == value) return;
-                this.books = value;
-                RaisePropertyChanged();
+                return this.books;
             }
-        }
-
-        public IAsyncEnumerator<BookModel> BookEnumerator
-        {
-            get { return this.bookEnumerator; }
             private set
             {
-                if (this.bookEnumerator == value) return;
-                this.bookEnumerator = value;
-                RaisePropertyChanged();
+                SetProperty(ref this.books, value);
             }
         }
 
@@ -169,64 +92,106 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IAsyncCommand<IAsyncEnumerator<BookModel>> FetchBooks
+        public string Description
         {
-            get { return this.fetchBooksCommand; }
+            get
+            {
+                return this.description;
+            }
+            private set
+            {
+                SetProperty(ref this.description, value);
+            }
+            
         }
 
-        public ICommand<AuthorModel> PinAuthor
+        public int FollowersCount
         {
-            get { return null; }
+            get
+            {
+                return this.followersCount;
+            }
+            private set
+            {
+                SetProperty(ref this.followersCount, value);
+            }
         }
 
-        public ICommand GoHome
+        public double AverageRating
         {
-            get { return this.goHomeCommand; }
+            get
+            {
+                return this.averageRating;
+            }
+            private set
+            {
+                SetProperty(ref this.averageRating, value);
+            }
+        }
+
+        public int RatingsCount
+        {
+            get
+            {
+                return this.ratingsCount;
+            }
+            private set
+            {
+                SetProperty(ref this.ratingsCount, value);
+            }
+        }
+
+        public string Hometown
+        {
+            get
+            {
+                return this.hometown;
+            }
+            private set
+            {
+                SetProperty(ref this.hometown, value);
+            }
         }
 
         public override async Task LoadAsync(AuthorModel author)
         {
-            if (this.fetchAuthorCommand.CanExecute(author.Id))
-            {
-                await this.fetchAuthorCommand.ExecuteAsync(author.Id);
-            }
-        }
+            IsLoading = true;
 
-        private void OnFetchAuthorExecuted(ExecutedEventArgs e)
-        {
-            if (e.State == CommandExecutionState.Success)
+            // Set available properties
+            UpdateProperties(author);
+
+            try
             {
-                Author = this.fetchAuthorCommand.Result;
-                Attributes = this.authorAttributeVMFactory.GetAuthorAttributeItems(Author);
-                ImageUrl = this.fetchAuthorCommand.Result.ImageUrl;
-                BookEnumerator = this.bookService.GetBooks(Author).GetEnumerator();
+                Parameter = await this.authorService.GetAuthorAsync(author.Id);
+                Attributes = this.authorAttributeVMFactory.GetAuthorAttributeItems(Parameter);
+                UpdateProperties(Parameter);
+                Books = new ObservablePagedCollection<IBookItemViewModel, BookModel>(this.bookService.GetBooks(Parameter), (model) => new BookItemViewModel(model));
                 IsLoaded = true;
             }
-
-            IsLoading = false;
+            catch (Exception ex)
+            {
+                Logger.LogException(ex);
+            }
+            finally
+            {
+                IsLoading = false;
+            }
         }
 
-        private void OnFetchBooksExecuted(ExecutedEventArgs e)
+        private void UpdateProperties(AuthorModel author)
         {
-            if (e.State == CommandExecutionState.Success)
+            if (author == null)
             {
-                foreach (BookModel book in this.fetchBooksCommand.Result)
-                {
-                    Books.Add(new BookItemViewModel(book));
-                }
-
-                BookLoadingStarted = (Books.Count > 0);
+                throw new ArgumentNullException(nameof(author));
             }
 
-            IsLoading = false;
-        }
-
-        public override void Dispose()
-        {
-            base.Dispose();
-
-            DeregisterCommand(this.fetchAuthorCommand);
-            DeregisterCommand(this.fetchBooksCommand);
+            Name = author.Name;
+            ImageUrl = author.ImageUrl;
+            Description = author.About;
+            FollowersCount = (author.FansCount != 0) ? author.FansCount : FollowersCount;
+            Hometown = (!string.IsNullOrEmpty(author.Hometown)) ? author.Hometown : Hometown;
+            AverageRating = (author.AverageRating != 0) ? author.AverageRating : AverageRating;
+            RatingsCount = (author.RatingsCount != 0) ? author.RatingsCount : RatingsCount;
         }
     }
 }
