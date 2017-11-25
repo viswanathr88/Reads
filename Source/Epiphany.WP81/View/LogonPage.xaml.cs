@@ -1,6 +1,6 @@
 ﻿using Epiphany.Logging;
 using Epiphany.ViewModel;
-using System;
+using System.ComponentModel;
 using Windows.UI.Xaml.Controls;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
@@ -15,17 +15,23 @@ namespace Epiphany.View
         public LogonPage()
         {
             this.InitializeComponent();
-            RegisterDoneEvent();
+
+            // Register for property changed events from the ViewModel
+            RegisterPropertyChanged();
         }
 
-        protected override void OnViewModelDone(object sender, EventArgs e)
+        protected override void OnViewModelPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            base.OnViewModelDone(sender, e);
-            Logger.LogDebug("Navigating Back");
-            
-            if (Frame.CanGoBack)
+            base.OnViewModelPropertyChanged(sender, e);
+
+            if (e.PropertyName == nameof(ILogonViewModel.IsLoginCompleted))
             {
-                Frame.GoBack();
+                Logger.LogDebug("Navigating Back");
+
+                if (Frame.CanGoBack)
+                {
+                    Frame.GoBack();
+                }
             }
         }
 

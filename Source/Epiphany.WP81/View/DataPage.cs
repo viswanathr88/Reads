@@ -65,18 +65,6 @@ namespace Epiphany.View
             return vm;
         }
 
-        protected void RegisterDoneEvent()
-        {
-            IDataViewModel vm = DataContext as IDataViewModel;
-            if (vm == null)
-            {
-                Logger.LogError("DataContext does not implement IDataViewModel");
-                return;
-            }
-
-            vm.Done += OnViewModelDone;
-        }
-
         protected void RegisterPropertyChanged()
         {
             IDataViewModel vm = DataContext as IDataViewModel;
@@ -89,11 +77,6 @@ namespace Epiphany.View
         }
 
         protected virtual void OnViewModelPropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            // Nothing to do here
-        }
-
-        protected virtual void OnViewModelDone(object sender, EventArgs e)
         {
             // Nothing to do here
         }

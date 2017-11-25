@@ -19,9 +19,6 @@ namespace Epiphany.ViewModel
         private bool isLoaded;
         private object error;
 
-        public event EventHandler<EventArgs> Done;
-        protected void RaiseDone() => Done?.Invoke(this, EventArgs.Empty);
-
         /// <summary>
         /// Create an instance of DataViewModel
         /// </summary>

@@ -115,7 +115,6 @@ namespace Epiphany.ViewModel
                     // Login was successfully verified
                     IsLoginCompleted = true;
                     IsLoaded = true;
-                    RaiseDone();
                 }
                 else
                 {
@@ -158,7 +157,6 @@ namespace Epiphany.ViewModel
                     IsLoginCompleted = true;
                     IsLoading = false;
                     IsLoaded = true;
-                    RaiseDone();
                 }
             }
         }
