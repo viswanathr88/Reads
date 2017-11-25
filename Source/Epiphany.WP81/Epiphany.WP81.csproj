@@ -152,6 +152,7 @@
     <Compile Include="View\BooksPage.xaml.cs">
       <DependentUpon>BooksPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DataContextWrapper.cs" />
     <Compile Include="View\DataPage.cs" />
     <Compile Include="View\EventsPage.xaml.cs">
       <DependentUpon>EventsPage.xaml</DependentUpon>

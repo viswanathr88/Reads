@@ -54,17 +54,6 @@ namespace Epiphany.View
             Logger.LogDebug($"Navigating away from {GetType()}");
         }
 
-        protected T GetViewModel<T>()
-        {
-            T vm = default(T);
-            if (DataContext != null && DataContext is T)
-            {
-                vm = (T)DataContext;
-            }
-
-            return vm;
-        }
-
         protected void RegisterPropertyChanged()
         {
             IDataViewModel vm = DataContext as IDataViewModel;

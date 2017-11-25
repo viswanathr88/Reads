@@ -13,21 +13,23 @@ namespace Epiphany.View
     /// </summary>
     public sealed partial class ProfilePage : DataPage
     {
+        private readonly DataContextWrapper<IProfileViewModel> Context;
         public ProfilePage()
         {
             this.InitializeComponent();
             NavigationCacheMode = NavigationCacheMode.Required;
+            Context = new DataContextWrapper<IProfileViewModel>(DataContext);
         }
 
         private async void Friends_Click(object sender, RoutedEventArgs e)
         {
-            var parameter = GetViewModel<IProfileViewModel>().Parameter;
+            var parameter = Context.ViewModel.Parameter;
             await App.Navigate(typeof(FriendsPage), parameter, new SlideNavigationTransitionInfo());
         }
 
         private async void Shelves_Click(object sender, RoutedEventArgs e)
         {
-            var parameter = GetViewModel<IProfileViewModel>().Parameter;
+            var parameter = Context.ViewModel.Parameter;
             await App.Navigate(typeof(BookshelvesPage), parameter, new SlideNavigationTransitionInfo());
         }
 

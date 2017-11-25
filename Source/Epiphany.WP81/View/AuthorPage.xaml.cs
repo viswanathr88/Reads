@@ -17,9 +17,12 @@ namespace Epiphany.View
     /// </summary>
     public sealed partial class AuthorPage : DataPage
     {
+        private readonly DataContextWrapper<IAuthorViewModel> Context;
+
         public AuthorPage()
         {
             this.InitializeComponent();
+            Context = new DataContextWrapper<IAuthorViewModel>(DataContext);
         }
 
         protected override void OnViewModelPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -28,7 +31,7 @@ namespace Epiphany.View
 
             if (e.PropertyName == nameof(IDataViewModel.IsLoaded))
             {
-                if (GetViewModel<IDataViewModel>().IsLoaded)
+                if (Context.DataViewModel.IsLoaded)
                 {
                     UpdatePinState();
                 }
@@ -57,11 +60,10 @@ namespace Epiphany.View
             string tileId = GetTileId();
             if (!SecondaryTile.Exists(tileId))
             {
-                var vm = GetViewModel<IAuthorViewModel>();
                 var tile = new SecondaryTile(
                     tileId,
-                    vm.Name,
-                    $"id={vm.Parameter.Id}",
+                    Context.ViewModel.Name,
+                    $"id={Context.ViewModel.Parameter.Id}",
                     new Uri("ms-appx:///Assets/Square71x71Logo.scale-240.png"),
                     TileSize.Default);
                 await tile.RequestCreateAsync();
@@ -90,7 +92,7 @@ namespace Epiphany.View
 
         private string GetTileId()
         {
-            long id = GetViewModel<IAuthorViewModel>().Parameter.Id;
+            long id = Context.ViewModel.Parameter.Id;
             return $"author_{id}";
         }
     }

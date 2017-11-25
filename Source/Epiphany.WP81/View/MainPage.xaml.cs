@@ -14,10 +14,12 @@ namespace Epiphany.View
     /// </summary>
     public sealed partial class MainPage : DataPage
     {
+        private readonly DataContextWrapper<IHomeViewModel> Context;
         public MainPage()
         {
             this.InitializeComponent();
             NavigationCacheMode = NavigationCacheMode.Required;
+            Context = new DataContextWrapper<IHomeViewModel>(DataContext);
         }
 
         private void Search_Clicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
@@ -37,17 +39,17 @@ namespace Epiphany.View
 
         private void PickerFlyout_Confirmed(Windows.UI.Xaml.Controls.PickerFlyout sender, Windows.UI.Xaml.Controls.PickerConfirmedEventArgs args)
         {
-            GetViewModel<HomeViewModel>().Feed.FeedOptions.Save.Execute(null);
+            Context.ViewModel.Feed.FeedOptions.Save.Execute(null);
         }
 
         private void PickerFlyout_Closed(object sender, object e)
         {
-            GetViewModel<HomeViewModel>().Feed.FeedOptions.Cancel.Execute(null);
+            Context.ViewModel.Feed.FeedOptions.Cancel.Execute(null);
         }
 
         private void ViewAllBooks_Clicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            var user = GetViewModel<HomeViewModel>().CurrentlyLoggedInUser;
+            var user = Context.ViewModel.CurrentlyLoggedInUser;
 
             if (user == null)
             {
@@ -67,7 +69,7 @@ namespace Epiphany.View
                 {
                     case 0:
                         {
-                            var user = GetViewModel<HomeViewModel>().CurrentlyLoggedInUser;
+                            var user = Context.ViewModel.CurrentlyLoggedInUser;
 
                             if (user == null)
                             {
@@ -82,7 +84,7 @@ namespace Epiphany.View
                         }
                     case 1:
                         {
-                            var user = GetViewModel<HomeViewModel>().CurrentlyLoggedInUser;
+                            var user = Context.ViewModel.CurrentlyLoggedInUser;
 
                             if (user == null)
                             {

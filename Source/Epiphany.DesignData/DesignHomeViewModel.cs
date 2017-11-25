@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Epiphany.Model;
 using Epiphany.ViewModel;
 
 namespace Epiphany.View.DesignData
@@ -43,6 +43,12 @@ namespace Epiphany.View.DesignData
         }
 
         public double Opacity
+        {
+            get;
+            set;
+        }
+
+        public UserModel CurrentlyLoggedInUser
         {
             get;
             set;
