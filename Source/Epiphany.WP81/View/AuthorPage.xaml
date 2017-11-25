@@ -226,6 +226,16 @@
                 <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarHomeText}"
                               Icon="Home"
                               Click="Home_Clicked" />
+                <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarPinText}"
+                              Icon="Pin"
+                              x:Name="pinButton"
+                              Click="Pin_Clicked"
+                              Visibility="Collapsed"/>
+                <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarUnpinText}"
+                              Icon="UnPin"
+                              x:Name="unpinButton"
+                              Click="Pin_Clicked"
+                              Visibility="Collapsed"/>
             </CommandBar.PrimaryCommands>
         </CommandBar>
     </local:DataPage.BottomAppBar>

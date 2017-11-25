@@ -708,4 +708,7 @@
   <data name="RatingsCountStringFormat" xml:space="preserve">
     <value>{0} ratings</value>
   </data>
+  <data name="AppBarUnpinText" xml:space="preserve">
+    <value>unpin</value>
+  </data>
 </root>

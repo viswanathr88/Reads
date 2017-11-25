@@ -1,7 +1,6 @@
 ﻿using Epiphany.Logging;
 using Epiphany.Model;
 using Epiphany.Model.Services;
-using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
 using System;

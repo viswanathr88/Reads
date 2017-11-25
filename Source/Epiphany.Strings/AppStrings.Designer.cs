@@ -287,6 +287,15 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to unpin.
+        /// </summary>
+        public static string AppBarUnpinText {
+            get {
+                return ResourceManager.GetString("AppBarUnpinText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to reads.
         /// </summary>
         public static string ApplicationName {

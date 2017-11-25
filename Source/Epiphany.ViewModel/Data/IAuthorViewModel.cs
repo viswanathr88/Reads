@@ -1,6 +1,7 @@
 ﻿using Epiphany.Model;
 using Epiphany.ViewModel.Items;
 using System.Collections.Generic;
+using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {

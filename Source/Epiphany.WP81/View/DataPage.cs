@@ -38,6 +38,8 @@ namespace Epiphany.View
                 return;
             }
 
+            RegisterPropertyChanged();
+
             Logger.LogInfo("Loading ViewModel for " + GetType().ToString());
             bool fReload = (e.NavigationMode == NavigationMode.New) || (e.NavigationMode == NavigationMode.Refresh);
             await vm.LoadAsync(e.Parameter, fReload);
