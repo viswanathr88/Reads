@@ -1583,6 +1583,15 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Want to read.
+        /// </summary>
+        public static string SearchWantToReadButtonText {
+            get {
+                return ResourceManager.GetString("SearchWantToReadButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ABOUT.
         /// </summary>
         public static string SettingsAboutHeaderTitle {

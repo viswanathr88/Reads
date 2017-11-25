@@ -81,7 +81,7 @@ namespace Epiphany.ViewModel
                 }
 
                 // Check parameter type
-                if (parameter is string)
+                if (parameter is string && !string.IsNullOrEmpty(parameter as string))
                 {
                     await LoadFromStringAsync(parameter as string);
                     return;

@@ -137,7 +137,7 @@
                                     <FontIcon Margin="10,0,0,0"
                                               Glyph="&#xE1CF;"
                                               FontSize="18" />
-                                    <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.WantToReadButtonText}"
+                                    <TextBlock Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.SearchWantToReadButtonText}"
                                                Style="{StaticResource MessageDialogContentStyle}"
                                                Foreground="White"
                                                HorizontalAlignment="Left"

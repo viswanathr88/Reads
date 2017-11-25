@@ -711,4 +711,7 @@
   <data name="AppBarUnpinText" xml:space="preserve">
     <value>unpin</value>
   </data>
+  <data name="SearchWantToReadButtonText" xml:space="preserve">
+    <value>Want to read</value>
+  </data>
 </root>
