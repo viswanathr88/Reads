@@ -81,7 +81,12 @@ namespace Epiphany.ViewModel
                 }
 
                 // Check parameter type
-                if (!(parameter is TParam))
+                if (parameter is string)
+                {
+                    await LoadFromStringAsync(parameter as string);
+                    return;
+                }
+                else if (!(parameter is TParam))
                 {
                     Logger.LogError("Incorrect type passed to load. Type = " + parameter.GetType());
                     throw new ArgumentOutOfRangeException(nameof(parameter));
@@ -118,6 +123,16 @@ namespace Epiphany.ViewModel
         /// <param name="parameter"></param>
         /// <returns></returns>
         public abstract Task LoadAsync(TParam parameter);
+        /// <summary>
+        /// Method that is called when the parameter passed is a uri string
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        protected virtual Task LoadFromStringAsync(string param)
+        {
+            // To be overridden by derived classes
+            return Task.FromResult(0);
+        }
         /// <summary>
         /// Reset method for ViewModel
         /// </summary>
