@@ -76,7 +76,7 @@ namespace Epiphany.ViewModel
             Name = user.Name;
             Title = string.Format(this.resourceLoader.GetString(titleFormatKey), Name);
             var collection = this.userService.GetFriends(user.Id);
-            var friends = new ObservablePagedCollection<IUserItemViewModel, UserModel>(collection, AdapterFn);
+            var friends = new ObservablePagedCollection<IUserItemViewModel, UserModel>(collection, (model) => new UserItemViewModel(model));
             friends.Loading += (sender, arg) => IsLoading = true;
             friends.Loaded += (sender, arg) =>
             {
@@ -95,11 +95,6 @@ namespace Epiphany.ViewModel
             Name = string.Empty;
             Title = string.Empty;
             FriendList = null;
-        }
-
-        private IUserItemViewModel AdapterFn(UserModel user)
-        {
-            return new UserItemViewModel(user);
         }
     }
 }

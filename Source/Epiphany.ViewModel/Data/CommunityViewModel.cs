@@ -66,18 +66,15 @@ namespace Epiphany.ViewModel
 
         public override async Task LoadAsync(VoidType parameter)
         {
-            if (!IsLoaded)
-            {
-                IsLoading = true;
+            IsLoading = true;
 
-                var reviews = await this.reviewService.GetRecentReviewsAsync();
-                Items = new LazyObservableCollection<IReviewItemViewModel, ReviewModel>(
-                () => reviews,
-                (model) => new ReviewItemViewModel(model));
+            var reviews = await this.reviewService.GetRecentReviewsAsync();
+            Items = new LazyObservableCollection<IReviewItemViewModel, ReviewModel>(
+            () => reviews,
+            (model) => new ReviewItemViewModel(model));
 
-                IsLoading = false;
-                IsLoaded = true;
-            }
+            IsLoading = false;
+            IsLoaded = true;
         }
     }
 }

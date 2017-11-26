@@ -133,29 +133,26 @@ namespace Epiphany.ViewModel
 
         public override async Task LoadAsync(string parameter)
         {
-            if (!IsLoaded)
+            IsLoading = true;
+
+            IList<Task> tasks = new List<Task>();
+            if (IsLoggedIn)
             {
-                IsLoading = true;
+                // Start loading your feed but not await
+                tasks.Add(Feed.LoadAsync(VoidType.Empty, true));
 
-                IList<Task> tasks = new List<Task>();
-                if (IsLoggedIn)
-                {
-                    // Start loading your feed but not await
-                    tasks.Add(Feed.LoadAsync(VoidType.Empty, true));
-
-                    // This should finish quickly as it is just creating the collection
-                    tasks.Add(Books.LoadAsync(int.Parse(this.logonService.Session.UserId), true));
-                }
-
-                // Load the community reviews
-                tasks.Add(Community.LoadAsync(VoidType.Empty, true));
-
-                // Wait for all tasks to finish
-                await Task.WhenAll(tasks);
-
-                IsLoading = false;
-                IsLoaded = true;
+                // This should finish quickly as it is just creating the collection
+                tasks.Add(Books.LoadAsync(int.Parse(this.logonService.Session.UserId), true));
             }
+
+            // Load the community reviews
+            tasks.Add(Community.LoadAsync(VoidType.Empty, true));
+
+            // Wait for all tasks to finish
+            await Task.WhenAll(tasks);
+
+            IsLoading = false;
+            IsLoaded = true;
         }
 
         private void OnChildVMPropertyChanged(object sender, PropertyChangedEventArgs e)

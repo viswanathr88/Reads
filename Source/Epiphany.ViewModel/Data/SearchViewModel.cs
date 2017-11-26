@@ -88,7 +88,7 @@ namespace Epiphany.ViewModel
         {
             SearchTerm = parameter;
             CreateSearchResultCollection();
-            await Task.Delay(1);
+            await Task.FromResult(0);
         }
 
         private void CreateSearchResultCollection()
