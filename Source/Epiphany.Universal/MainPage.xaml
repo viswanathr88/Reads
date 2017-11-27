@@ -12,6 +12,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="1"
-                   Text="{Binding Path=LocalizedResources.ApplicationName, Source={StaticResource LocalizedStrings}}" />
+                   Text="{Binding Path=LocalizedResources.ApplicationName, Source={StaticResource LocalizedStrings}}"
+                   Style="{StaticResource ListViewItemSubheaderTextBlockStyle}"/>
     </Grid>
 </Page>

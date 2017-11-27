@@ -226,7 +226,9 @@
                     <!-- General Reviews -->
                     <ListView ItemsSource="{Binding Path=Community.Items}"
                               Margin="0,10,0,0"
-                              ContinuumNavigationTransitionInfo.ExitElementContainer="True">
+                              ContinuumNavigationTransitionInfo.ExitElementContainer="True"
+                              IsItemClickEnabled="True"
+                              ItemClick="Review_Click">
 
                         <ListView.ItemContainerStyle>
                             <Style TargetType="ListViewItem">

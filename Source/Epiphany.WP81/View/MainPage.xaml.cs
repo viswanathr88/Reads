@@ -1,6 +1,8 @@
 ﻿using Epiphany.Logging;
 using Epiphany.ViewModel;
+using Epiphany.ViewModel.Items;
 using Epiphany.WP81;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
@@ -106,6 +108,12 @@ namespace Epiphany.View
                         break;
                 }
             }
+        }
+
+        private async void Review_Click(object sender, ItemClickEventArgs e)
+        {
+            var reviewItemVM = e.ClickedItem as IReviewItemViewModel;
+            await App.Navigate(typeof(ReviewPage), reviewItemVM.Item, new SlideNavigationTransitionInfo());
         }
     }
 }

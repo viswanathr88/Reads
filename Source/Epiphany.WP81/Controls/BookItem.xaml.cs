@@ -119,5 +119,34 @@ namespace Epiphany.View.Controls
             }
             
         }
+
+        private async void Author_Click(object sender, RoutedEventArgs e)
+        {
+            var frameworkElement = sender as FrameworkElement;
+            if (frameworkElement.DataContext is IReviewItemViewModel)
+            {
+                var reviewItemVM = frameworkElement.DataContext as IReviewItemViewModel;
+                if (reviewItemVM.Book != null)
+                {
+                    await App.Navigate(typeof(AuthorPage), reviewItemVM.Book.MainAuthor.Item);
+                }
+            }
+            else if (frameworkElement.DataContext is ISearchResultItemViewModel)
+            {
+                var searchResultItemVM = frameworkElement.DataContext as ISearchResultItemViewModel;
+                if (searchResultItemVM.Book != null)
+                {
+                    await App.Navigate(typeof(AuthorPage), searchResultItemVM.Book.MainAuthor.Item);
+                }
+            }
+            else if (frameworkElement.DataContext is IBookItemViewModel)
+            {
+                var bookItemVM = frameworkElement.DataContext as IBookItemViewModel;
+                if (bookItemVM != null)
+                {
+                    await App.Navigate(typeof(AuthorPage), bookItemVM.MainAuthor.Item);
+                }
+            }
+        }
     }
 }

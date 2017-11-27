@@ -1,5 +1,6 @@
 ﻿using Epiphany.Logging;
 using Epiphany.Model;
+using Epiphany.ViewModel.Items;
 using Epiphany.WP81;
 using System;
 using System.Collections.Generic;
@@ -167,6 +168,14 @@ namespace Epiphany.View.Controls
             }
 
             await App.Navigate(typeof(ProfilePage), User, new SlideNavigationTransitionInfo());
+        }
+
+        private async void Book_Click(object sender, RoutedEventArgs e)
+        {
+            var frameworkElement = sender as FrameworkElement;
+            var vm = frameworkElement.DataContext as IReviewItemViewModel;
+
+            await App.Navigate(typeof(BookPage), vm.Book.Item, new SlideNavigationTransitionInfo());
         }
     }
 }
