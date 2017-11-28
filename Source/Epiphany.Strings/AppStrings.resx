@@ -714,4 +714,10 @@
   <data name="SearchWantToReadButtonText" xml:space="preserve">
     <value>Want to read</value>
   </data>
+  <data name="ReviewTitleFormat" xml:space="preserve">
+    <value>{0}'s Review</value>
+  </data>
+  <data name="ReviewShelvedAsText" xml:space="preserve">
+    <value>Shelved as: </value>
+  </data>
 </root>

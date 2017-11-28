@@ -24,22 +24,41 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <!-- Header -->
         <Grid Grid.Row="0"
-              Background="{ThemeResource PhoneChromeBrush}"
-              DataContext="{Binding Book}">
-            <Grid Margin="19,10,19,0">
+              Background="{ThemeResource PhoneChromeBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            <!-- Page Title -->
+            <TextBlock Text="{Binding Path=User.Name, Converter={StaticResource StringConverter}, 
+                ConverterParameter={Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ReviewTitleFormat}}"
+                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                       Style="{StaticResource GroupHeaderTextBlockStyle}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" />
+            
+            <!-- Book Info -->
+            <Grid Margin="19,10,19,10"
+                  Grid.Row="1"
+                  DataContext="{Binding Book}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" /> 
                 </Grid.ColumnDefinitions>
-                <Image HorizontalAlignment="Left"
-                       VerticalAlignment="Center"
-                       Source="{Binding ImageUrl}"
-                       Margin="0,10,10,10"
-                       MaxHeight="160" />
+                <Border Height="128"
+                        Width="128">
+                    <Image HorizontalAlignment="Left"
+                           VerticalAlignment="Center"
+                           Source="{Binding ImageUrl}"
+                           Margin="0,10,10,10"
+                           MaxHeight="160" />
+                </Border>
 
                 <StackPanel Orientation="Vertical"
                             Grid.Column="1"
@@ -129,6 +148,125 @@
                 </StackPanel>
             </Grid>
         </Grid>
+        
+        <!-- Content -->
+        <ScrollViewer Grid.Row="1">
+            <Grid Margin="19,10,19,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!-- User Info -->
+                <Grid Margin="0,15,0,15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- User image -->
+                    <Border Width="48"
+                            Height="48">
+                        <Image Source="{Binding Path=User.ImageUrl}"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Left" />
+                    </Border>
+
+                    <!-- User name -->
+                    <Button Grid.Column="1"
+                            Click="User_Click"
+                            HorizontalAlignment="Stretch"
+                            Style="{StaticResource TextButtonStyle}"
+                            Margin="15,0,15,0">
+                        <TextBlock Text="{Binding Path=User.Name}"
+                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                   Style="{StaticResource GroupHeaderTextBlockStyle}"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center" />
+                    </Button>
+                </Grid>
+
+                <!-- Rating -->
+                <Border BorderThickness="0,1,0,1"
+                        BorderBrush="{ThemeResource PhoneChromeBrush}"
+                        Grid.Row="1"
+                        Margin="0,10,0,10">
+                    <Grid Margin="0,10,0,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Rating control -->
+                        <rating:Rating RatingItemCount="5"
+                                       Value="{Binding Rating, Mode=TwoWay}"
+                                       ReadOnly="True"
+                                       Background="Transparent"
+                                       Height="15"
+                                       Width="75"
+                                       HorizontalAlignment="Left">
+                            <rating:Rating.FilledItemStyle>
+                                <Style TargetType="rating:RatingItem">
+                                    <Setter Property="Background"
+                                            Value="{ThemeResource ApplicationForegroundThemeBrush}" />
+                                    <Setter Property="Padding"
+                                            Value="0" />
+                                    <Setter Property="Margin"
+                                            Value="0" />
+                                </Style>
+                            </rating:Rating.FilledItemStyle>
+                            <rating:Rating.UnfilledItemStyle>
+                                <Style TargetType="rating:RatingItem">
+                                    <Setter Property="Background"
+                                            Value="{ThemeResource PhoneLowBrush}" />
+                                    <Setter Property="Padding"
+                                            Value="0" />
+                                    <Setter Property="Margin"
+                                            Value="0" />
+                                </Style>
+                            </rating:Rating.UnfilledItemStyle>
+                        </rating:Rating>
+
+                        <Grid Grid.Column="1"
+                              HorizontalAlignment="Right">
+                            <TextBlock Text="{Binding ReviewTime}"
+                                       Style="{StaticResource BodyTextBlockStyle}" />
+                        </Grid>
+
+                    </Grid>
+                </Border>
+
+                <!-- Review -->
+                <Grid Grid.Row="2"
+                      Margin="0,10,0,10">
+                    <TextBlock Text="{Binding ReviewText}"
+                               TextWrapping="Wrap"
+                               TextTrimming="WordEllipsis"
+                               Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                               Style="{StaticResource BodyTextBlockStyle}"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top" />
+                </Grid>
+
+                <!-- Shelves -->
+                <Grid Grid.Row="3"
+                      Margin="0,10,0,10">
+                    <Border BorderThickness="0,1,0,1"
+                            BorderBrush="{ThemeResource PhoneChromeBrush}">
+                        <RichTextBlock Style="{StaticResource BodyRichTextBlockStyle}"
+                                       Margin="0,10,0,10">
+                            <Paragraph>
+                                <Run Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ReviewShelvedAsText}"
+                                     Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
+                            </Paragraph>
+                        </RichTextBlock>
+                    </Border>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
 
     </Grid>
+    
 </local:DataPage>

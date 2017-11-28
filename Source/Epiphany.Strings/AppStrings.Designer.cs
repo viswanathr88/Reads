@@ -1511,6 +1511,24 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shelved as: .
+        /// </summary>
+        public static string ReviewShelvedAsText {
+            get {
+                return ResourceManager.GetString("ReviewShelvedAsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}&apos;s Review.
+        /// </summary>
+        public static string ReviewTitleFormat {
+            get {
+                return ResourceManager.GetString("ReviewTitleFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Find books, authors.
         /// </summary>
         public static string SearchBoxPlaceholderText {

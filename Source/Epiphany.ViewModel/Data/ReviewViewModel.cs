@@ -3,6 +3,7 @@ using Epiphany.Model.Services;
 using Epiphany.ViewModel.Items;
 using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Epiphany.ViewModel
 {
@@ -12,8 +13,9 @@ namespace Epiphany.ViewModel
         private IBookItemViewModel book;
         private int rating;
         private string reviewText;
-        private DateTime reviewTime;
+        private string reviewTime;
         private ReviewModel review;
+        private IUserItemViewModel user;
 
         public ReviewViewModel(IReviewService reviewService)
         {
@@ -61,7 +63,7 @@ namespace Epiphany.ViewModel
             }
         }
          
-        public DateTime ReviewTime
+        public string ReviewTime
         {
             get
             {
@@ -70,6 +72,26 @@ namespace Epiphany.ViewModel
             private set
             {
                 SetProperty(ref this.reviewTime, value);
+            }
+        }
+
+        public IUserItemViewModel User
+        {
+            get
+            {
+                return this.user;
+            }
+            private set
+            {
+                SetProperty(ref this.user, value);
+            }
+        }
+
+        public IList<IBookshelfItemViewModel> Shelves
+        {
+            get
+            {
+                throw new NotImplementedException();
             }
         }
 
@@ -99,9 +121,10 @@ namespace Epiphany.ViewModel
             if (this.review != null)
             {
                 Rating = this.review.Rating;
-                ReviewText = this.review.Body;
+                ReviewText = this.review.Body?.Trim();
                 Book = new BookItemViewModel(this.review.Book);
-                ReviewTime = this.review.LastUpdatedDate;
+                ReviewTime = this.review.LastUpdatedDate.ToString("MMM dd yyyy");
+                User = new UserItemViewModel(this.review.User);
             }
         }
     }

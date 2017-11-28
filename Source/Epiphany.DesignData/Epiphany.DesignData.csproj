@@ -71,6 +71,7 @@
     <Compile Include="DesignRatingDistributionItemViewModel.cs" />
     <Compile Include="DesignRatingDistributionViewModel.cs" />
     <Compile Include="DesignReviewItemViewModel.cs" />
+    <Compile Include="DesignReviewViewModel.cs" />
     <Compile Include="DesignSearchItemViewModel.cs" />
     <Compile Include="DesignSearchViewModel.cs" />
     <Compile Include="DesignSettingsViewModel.cs" />

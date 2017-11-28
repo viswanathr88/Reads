@@ -9,7 +9,9 @@ namespace Epiphany.View.DesignData
         public DesignBookItemViewModel()
         {
             Title = "Test Book";
+            ImageUrl = "";
             AverageRating = 3.75;
+            RatingsCount = 5000;
             Authors = new List<IAuthorItemViewModel>();
             Authors.Add(new DesignAuthorItemViewModel());
             MainAuthor = Authors.First();

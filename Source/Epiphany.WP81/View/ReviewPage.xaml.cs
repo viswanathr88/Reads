@@ -31,5 +31,10 @@ namespace Epiphany.View
         {
 
         }
+
+        private void User_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

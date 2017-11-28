@@ -85,7 +85,7 @@ namespace Epiphany.View.Services
         {
             get
             {
-                throw new NotImplementedException();
+                return new DesignReviewViewModel();
             }
         }
 
