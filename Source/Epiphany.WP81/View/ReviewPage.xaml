@@ -1,15 +1,134 @@
-﻿<local:DataPage
-    x:Class="Epiphany.View.ReviewPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Epiphany.View"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    DataContext="{Binding Source={StaticResource VMLocator}, Path=Review}">
+﻿<local:DataPage x:Class="Epiphany.View.ReviewPage"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:local="using:Epiphany.View"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:controls="using:Epiphany.View.Controls"
+                xmlns:rating="using:JISoft.RatingControl"
+                mc:Ignorable="d"
+                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                DataContext="{Binding Source={StaticResource VMLocator}, Path=Review}">
+
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <ContinuumNavigationTransitionInfo />
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0"
+              Background="{ThemeResource PhoneChromeBrush}"
+              DataContext="{Binding Book}">
+            <Grid Margin="19,10,19,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" /> 
+                </Grid.ColumnDefinitions>
+                <Image HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Source="{Binding ImageUrl}"
+                       Margin="0,10,10,10"
+                       MaxHeight="160" />
+
+                <StackPanel Orientation="Vertical"
+                            Grid.Column="1"
+                            Margin="20,0,0,0">
+                    <TextBlock Text="{Binding Title}"
+                               Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                               Style="{StaticResource ListViewItemTextBlockStyle}"
+                               TextWrapping="Wrap"
+                               MaxLines="3"
+                               TextTrimming="CharacterEllipsis"
+                               OpticalMarginAlignment="TrimSideBearings"
+                               LineStackingStrategy="MaxHeight"
+                               Margin="0,0,0,5"
+                               ContinuumNavigationTransitionInfo.IsEntranceElement="True" />
+
+                    <ListView ItemsSource="{Binding Authors}"
+                              ScrollViewer.HorizontalScrollMode="Disabled"
+                              ScrollViewer.VerticalScrollMode="Disabled"
+                              ContinuumNavigationTransitionInfo.ExitElementContainer="True"
+                              IsItemClickEnabled="True"
+                              ItemClick="Author_Clicked">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}"
+                                           Foreground="{ThemeResource PhoneMidBrush}"
+                                           Style="{StaticResource GroupHeaderTextBlockStyle}"
+                                           TextWrapping="Wrap"
+                                           MaxLines="2"
+                                           TextTrimming="CharacterEllipsis"
+                                           OpticalMarginAlignment="TrimSideBearings"
+                                           LineStackingStrategy="MaxHeight"
+                                           Margin="0,0,0,2"
+                                           ContinuumNavigationTransitionInfo.IsExitElement="True" />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <!-- Rating and reviews count -->
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Stretch"
+                                Margin="0,5,0,0">
+                        <!-- Rating control -->
+                        <rating:Rating RatingItemCount="5"
+                                       Value="{Binding AverageRating, Mode=TwoWay}"
+                                       ReadOnly="True"
+                                       Background="Transparent"
+                                       Height="15"
+                                       Width="75">
+                            <rating:Rating.FilledItemStyle>
+                                <Style TargetType="rating:RatingItem">
+                                    <Setter Property="Background"
+                                            Value="{ThemeResource ApplicationForegroundThemeBrush}" />
+                                    <Setter Property="Padding"
+                                            Value="0" />
+                                    <Setter Property="Margin"
+                                            Value="0" />
+                                </Style>
+                            </rating:Rating.FilledItemStyle>
+                            <rating:Rating.UnfilledItemStyle>
+                                <Style TargetType="rating:RatingItem">
+                                    <Setter Property="Background"
+                                            Value="{ThemeResource PhoneMidBrush}" />
+                                    <Setter Property="Padding"
+                                            Value="0" />
+                                    <Setter Property="Margin"
+                                            Value="0" />
+                                </Style>
+                            </rating:Rating.UnfilledItemStyle>
+                        </rating:Rating>
+
+                        <TextBlock Text="{Binding AverageRating}"
+                                   Style="{StaticResource ListViewItemContentTextBlockStyle}"
+                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                   Margin="15,0,0,0" />
+
+                        <TextBlock Style="{StaticResource ListViewItemContentTextBlockStyle}"
+                                   Foreground="{ThemeResource PhoneLowBrush}"
+                                   TextWrapping="NoWrap"
+                                   TextTrimming="CharacterEllipsis"
+                                   VerticalAlignment="Center"
+                                   Margin="15,0,0,0">
+                                        <Run Text="{Binding RatingsCount}" />
+                                        <Run Text="ratings" />
+                        </TextBlock>
+                    </StackPanel>
+
+                </StackPanel>
+            </Grid>
+        </Grid>
 
     </Grid>
 </local:DataPage>

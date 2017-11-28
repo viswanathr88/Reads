@@ -1,4 +1,5 @@
 ﻿using Epiphany.Logging;
+using Epiphany.Model;
 using Epiphany.ViewModel;
 using Epiphany.ViewModel.Items;
 using Epiphany.WP81;
@@ -113,7 +114,7 @@ namespace Epiphany.View
         private async void Review_Click(object sender, ItemClickEventArgs e)
         {
             var reviewItemVM = e.ClickedItem as IReviewItemViewModel;
-            await App.Navigate(typeof(ReviewPage), reviewItemVM.Item, new SlideNavigationTransitionInfo());
+            await App.Navigate(typeof(ReviewPage), new ReviewParameter() { ReviewModel = reviewItemVM.Item as ReviewModel }, new SlideNavigationTransitionInfo());
         }
     }
 }

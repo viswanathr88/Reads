@@ -26,5 +26,10 @@ namespace Epiphany.View
         {
             this.InitializeComponent();
         }
+
+        private void Author_Clicked(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

@@ -146,6 +146,7 @@
     <Compile Include="Data\IMyBooksViewModel.cs" />
     <Compile Include="Data\IProfileViewModel.cs" />
     <Compile Include="Data\IRatingDistributionViewModel.cs" />
+    <Compile Include="Data\IReviewViewModel.cs" />
     <Compile Include="Data\IScanViewModel.cs" />
     <Compile Include="Data\ISearchViewModel.cs" />
     <Compile Include="Data\ISettingsViewModel.cs" />
@@ -156,6 +157,8 @@
     <Compile Include="Data\ProfileViewModel.cs" />
     <Compile Include="Data\EventsViewModel.cs" />
     <Compile Include="Data\RatingDistributionViewModel.cs" />
+    <Compile Include="Data\ReviewParameter.cs" />
+    <Compile Include="Data\ReviewViewModel.cs" />
     <Compile Include="Data\ScanViewModel.cs" />
     <Compile Include="Data\SpotlightItemViewModel.cs" />
     <Compile Include="Data\SpotlightViewModel.cs" />

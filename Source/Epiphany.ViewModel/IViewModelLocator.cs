@@ -1,5 +1,4 @@
 ﻿using Epiphany.ViewModel;
-using Epiphany.ViewModel.Services;
 using System;
 
 namespace Epiphany.View.Services
@@ -27,6 +26,8 @@ namespace Epiphany.View.Services
         IAuthorViewModel Author { get; }
 
         IBookViewModel Book { get; }
+
+        IReviewViewModel Review { get; }
 
         IScanViewModel Scanner { get; }
 

@@ -177,6 +177,14 @@ namespace Epiphany.View.Services
             }
         }
 
+        public IReviewViewModel Review
+        {
+            get
+            {
+                return new ReviewViewModel(this.serviceFactory.GetReviewService());
+            }
+        }
+
         /// <summary>
         /// Setup logging
         /// </summary>

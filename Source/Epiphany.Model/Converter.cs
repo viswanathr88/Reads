@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace Epiphany.Model
@@ -38,7 +39,14 @@ namespace Epiphany.Model
         public static DateTime ToDateTime(string dt)
         {
             DateTime dateTime = default(DateTime);
-            DateTime.TryParse(dt, out dateTime);
+            if (!DateTime.TryParse(dt, out dateTime))
+            {
+                // Try the special format Mon Nov 27 19:56:49 -0800 2017
+                string pattern = "ddd MMM dd HH:mm:ss zzz yyyy";
+                DateTime.ParseExact(dt, pattern, CultureInfo.InvariantCulture);
+                DateTime.TryParseExact(dt, pattern, CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind, out dateTime);
+            }
+
             return dateTime;
         }
 

@@ -1,4 +1,5 @@
-﻿using Epiphany.ViewModel;
+﻿using System;
+using Epiphany.ViewModel;
 using Windows.ApplicationModel;
 
 namespace Epiphany.View.Services
@@ -92,6 +93,14 @@ namespace Epiphany.View.Services
             get
             {
                 return this.locatorImpl.Bookshelves;
+            }
+        }
+
+        public IReviewViewModel Review
+        {
+            get
+            {
+                return this.locatorImpl.Review;
             }
         }
 

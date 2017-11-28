@@ -81,6 +81,14 @@ namespace Epiphany.View.Services
             get { return new DesignBookshelvesViewModel(); }
         }
 
+        public IReviewViewModel Review
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public void Dispose()
         {
 
