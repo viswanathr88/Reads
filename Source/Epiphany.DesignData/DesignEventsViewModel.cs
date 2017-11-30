@@ -13,6 +13,13 @@ namespace Epiphany.View.DesignData
         {
             IsLoading = true;
             Events = new DesignLazyObservableCollection<IEventItemViewModel>();
+            Events.Add(new DesignEventItemViewModel());
+            Events.Add(new DesignEventItemViewModel());
+            Events.Add(new DesignEventItemViewModel());
+            Events.Add(new DesignEventItemViewModel());
+            Events.Add(new DesignEventItemViewModel());
+            Events.Add(new DesignEventItemViewModel());
+
         }
 
         public ILazyObservableCollection<IEventItemViewModel> Events

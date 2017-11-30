@@ -2,6 +2,7 @@
                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:local="using:Epiphany.View"
+                xmlns:controls="using:Epiphany.View.Controls"
                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                 mc:Ignorable="d"
@@ -55,94 +56,12 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,0,0,15">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        
-                        <!-- Picture -->
-                        <Grid Margin="10,0,10,0"
-                              Grid.Column="0">
-                            <Border Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-                                    BorderBrush="{ThemeResource ApplicationForegroundThemeBrush}"
-                                    BorderThickness="1"
-                                    Width="64"
-                                    Height="64"
-                                    VerticalAlignment="Top"
-                                    Grid.Row="0">
-                                <Image Source="{Binding ImageUrl}" />
-                            </Border>
-                        </Grid>
-                        
-                        <!-- Event Details -->
-                        <Grid Margin="10,0,10,0"
-                              Grid.Column="1">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            
-                            <!-- Event title -->
-                            <TextBlock Style="{StaticResource ListViewItemTextBlockStyle}"
-                                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                                       TextWrapping="WrapWholeWords"
-                                       TextTrimming="CharacterEllipsis"
-                                       MaxLines="2"
-                                       Text="{Binding Title}"
-                                       TextLineBounds="TrimToCapHeight"
-                                       Grid.Row="0"
-                                       Margin="0,0,0,6"
-                                       Visibility="{Binding Title, Converter={StaticResource NullToVisibilityConverter}, FallbackValue=Collapsed}"/>
-                            
-                            <!-- Event Date -->
-                            <TextBlock Style="{StaticResource ListViewItemSubheaderTextBlockStyle}"
-                                       Foreground="{ThemeResource PhoneMidBrush}"
-                                       TextWrapping="NoWrap"
-                                       TextTrimming="CharacterEllipsis"
-                                       Text="{Binding Time}"
-                                       Grid.Row="1"
-                                       TextLineBounds="Tight"
-                                       Margin="0,1,0,1" />
-
-                            <!-- Event Venue -->
-                            <TextBlock Style="{StaticResource ListViewItemSubheaderTextBlockStyle}"
-                                       Foreground="{ThemeResource PhoneMidBrush}"
-                                       TextWrapping="WrapWholeWords"
-                                       TextTrimming="CharacterEllipsis"
-                                       MaxLines="2"
-                                       Text="{Binding Venue}"
-                                       Grid.Row="2"
-                                       TextLineBounds="Tight"
-                                       Margin="0,1,0,1"
-                                       Visibility="{Binding Venue, Converter={StaticResource NullToVisibilityConverter}, FallbackValue=Collapsed}" />
-
-                            <!-- Event City -->
-                            <TextBlock Style="{StaticResource ListViewItemSubheaderTextBlockStyle}"
-                                       Foreground="{ThemeResource PhoneMidBrush}"
-                                       TextWrapping="NoWrap"
-                                       TextTrimming="CharacterEllipsis"
-                                       Text="{Binding City}"
-                                       Grid.Row="3"
-                                       TextLineBounds="Tight"
-                                       Margin="0,1,0,1"
-                                       Visibility="{Binding City, Converter={StaticResource NullToVisibilityConverter}, FallbackValue=Collapsed}" />
-
-                            <!-- Event Description -->
-                            <TextBlock Style="{StaticResource ListViewItemContentTextBlockStyle}"
-                                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                                       TextWrapping="WrapWholeWords"
-                                       TextTrimming="CharacterEllipsis"
-                                       Text="{Binding Description}"
-                                       MaxLines="5"
-                                       TextLineBounds="Tight"
-                                       Grid.Row="4"
-                                       Margin="0,1,0,1"
-                                       Visibility="{Binding Description, Converter={StaticResource NullToVisibilityConverter}, FallbackValue=Collapsed}" />
-                        </Grid>
-                        
+                        <controls:EventItem ImageUrl="{Binding ImageUrl}"
+                                            City="{Binding City}"
+                                            Venue="{Binding Venue}"
+                                            Title="{Binding Title}"
+                                            Time="{Binding Time}"
+                                            Description="{Binding Description}"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

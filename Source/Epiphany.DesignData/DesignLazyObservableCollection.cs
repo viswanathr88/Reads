@@ -20,7 +20,10 @@ namespace Epiphany.View.DesignData
         }
 
         public event EventHandler<LoadedEventArgs> Loaded;
+        private void RaiseLoaded() => Loaded?.Invoke(this, new LoadedEventArgs(null));
         public event EventHandler<EventArgs> Loading;
+        private void RaiseLoading() => Loading?.Invoke(this, EventArgs.Empty);
+
 
         public IAsyncOperation<LoadMoreItemsResult> LoadMoreItemsAsync(uint count)
         {
