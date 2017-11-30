@@ -50,7 +50,8 @@
             <Button Style="{StaticResource TextButtonStyle}"
                     VerticalAlignment="Top"
                     x:Name="bookTitleButton"
-                    Click="Book_Click">
+                    Click="Book_Click"
+                    MinHeight="0">
                 <TextBlock Style="{StaticResource ListViewItemTextBlockStyle}"
                            Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
                            Text="{Binding ElementName=bookItemControl, Path=Title}"
@@ -68,7 +69,8 @@
             <Button Style="{StaticResource TextButtonStyle}"
                     VerticalAlignment="Top"
                     x:Name="bookAuthorButton"
-                    Click="Author_Click">
+                    Click="Author_Click"
+                    MinHeight="0">
                 <TextBlock Style="{StaticResource ListViewItemSubheaderTextBlockStyle}"
                            Foreground="{ThemeResource PhoneMidBrush}"
                            Text="{Binding ElementName=bookItemControl,Path=Author}"
@@ -83,7 +85,7 @@
             </Button>
             <StackPanel Orientation="Horizontal"
                         VerticalAlignment="Stretch"
-                        Margin="0,5,0,0">
+                        Margin="0,0,0,0">
                 <!-- Rating control -->
                 <rating:Rating RatingItemCount="5"
                                Value="{Binding ElementName=bookItemControl,Path=AverageRating}"
