@@ -14,6 +14,11 @@ namespace Epiphany.View.DesignData
         {
             Name = "Test Author";
             ImageUrl = null;
+            FollowersCount = 5000;
+            Description = @"lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum 
+                lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum 
+                lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ";
+            Hometown = "Chennai";
 
             PopulateAttributes();
             PopulateBooks();

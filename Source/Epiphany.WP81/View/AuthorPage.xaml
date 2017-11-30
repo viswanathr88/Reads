@@ -165,19 +165,14 @@
                 <ScrollViewer VerticalScrollMode="Auto"
                               HorizontalContentAlignment="Left">
                     <Grid>
-                        <!-- Description section -->
-                        <controls:Section Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.BookDescriptionSectionHeader}"
-                                          Visibility="{Binding Description, Converter={StaticResource NullToVisibilityConverter}}">
-                            <controls:Section.SectionContent>
-                                <!-- Description -->
-                                <TextBlock Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                                           Style="{StaticResource BodyTextBlockStyle}"
-                                           OpticalMarginAlignment="TrimSideBearings"
-                                           TextTrimming="CharacterEllipsis"
-                                           TextWrapping="Wrap"
-                                           Text="{Binding Description}"/>
-                            </controls:Section.SectionContent>
-                        </controls:Section>
+                        <!-- Description -->
+                        <TextBlock Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                   Visibility="{Binding Description, Converter={StaticResource NullToVisibilityConverter}}"
+                                   Style="{StaticResource BodyTextBlockStyle}"
+                                   OpticalMarginAlignment="TrimSideBearings"
+                                   TextTrimming="CharacterEllipsis"
+                                   TextWrapping="Wrap"
+                                   Text="{Binding Description}" />
 
                     </Grid>
                 </ScrollViewer>
