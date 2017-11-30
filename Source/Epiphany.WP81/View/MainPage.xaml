@@ -66,7 +66,8 @@
         </ListView>
 
         <Pivot Grid.Row="1"
-               x:Name="contentPivot">
+               x:Name="contentPivot"
+               SelectionChanged="Pivot_SelectionChanged">
             <Pivot.Background>
                 <ImageBrush ImageSource="/Assets/PageBackground.png"
                             Opacity="{Binding Opacity}" />
@@ -263,10 +264,11 @@
                         </ListView.ItemTemplate>
 
                         <ListView.Footer>
-                            <ProgressRing IsActive="{Binding IsLoading}"
+                            <ProgressRing IsActive="{Binding Path=Community.IsLoading}"
                                           MinWidth="40"
                                           MinHeight="40"
-                                          Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
+                                          Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                          Background="Transparent"/>
                         </ListView.Footer>
 
                     </ListView>
@@ -334,13 +336,21 @@
                 <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonSearchText}"
                               Icon="Find"
                               Click="Search_Clicked" />
+                <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarRefreshText}"
+                              Icon="Refresh"
+                              x:Name="refreshFeedButton"
+                              Visibility="Collapsed"
+                              Command="{Binding Path=Feed.Refresh}" />
+                <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarRefreshText}"
+                              Icon="Refresh"
+                              x:Name="refreshCommunityButton"
+                              Visibility="Collapsed"
+                              Command="{Binding Path=Community.Refresh}" />
                 <!--<AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonScanText}"
                               Icon="Camera"
                               Click="Scan_Clicked" />-->
             </CommandBar.PrimaryCommands>
             <CommandBar.SecondaryCommands>
-                <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonRefreshFeedText}"
-                              Command="{Binding Path=Feed.Refresh}" />
                 <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarButtonSettingsText}"
                               Click="Settings_Clicked"/>
             </CommandBar.SecondaryCommands>

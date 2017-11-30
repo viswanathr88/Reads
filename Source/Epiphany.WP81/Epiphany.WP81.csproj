@@ -93,6 +93,7 @@
     <Compile Include="Controls\RatingDistribution.xaml.cs">
       <DependentUpon>RatingDistribution.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\RefreshableListView.cs" />
     <Compile Include="Controls\ReviewItem.xaml.cs">
       <DependentUpon>ReviewItem.xaml</DependentUpon>
     </Compile>

@@ -1,12 +1,18 @@
-﻿using Epiphany.ViewModel.Items;
-using System.Collections.Generic;
+﻿using Epiphany.ViewModel.Collections;
+using Epiphany.ViewModel.Items;
+using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
     public interface ICommunityViewModel : IDataViewModel
     {
-        IList<IReviewItemViewModel> Items { get; }
+        ILazyObservableCollection<IReviewItemViewModel> Items { get; }
 
         bool IsEmpty { get; }
+
+        ICommand Refresh
+        {
+            get;
+        }
     }
 }

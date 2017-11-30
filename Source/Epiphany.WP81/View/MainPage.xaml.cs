@@ -116,5 +116,27 @@ namespace Epiphany.View
             var reviewItemVM = e.ClickedItem as IReviewItemViewModel;
             await App.Navigate(typeof(ReviewPage), new ReviewParameter() { ReviewModel = reviewItemVM.Item as ReviewModel }, new SlideNavigationTransitionInfo());
         }
+
+        private void Pivot_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var pivot = sender as Pivot;
+            if (pivot.SelectedIndex == 0)
+            {
+                // Show feed refresh
+                this.refreshFeedButton.Visibility = Visibility.Visible;
+                this.refreshCommunityButton.Visibility = Visibility.Collapsed;
+            }
+            else if (pivot.SelectedIndex == 2)
+            {
+                // Show Community refresh
+                this.refreshCommunityButton.Visibility = Visibility.Visible;
+                this.refreshFeedButton.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                this.refreshCommunityButton.Visibility = Visibility.Collapsed;
+                this.refreshFeedButton.Visibility = Visibility.Collapsed;
+            }
+        }
     }
 }

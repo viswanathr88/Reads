@@ -6,13 +6,15 @@ using Epiphany.ViewModel.Services;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
     public sealed class CommunityViewModel : DataViewModel<VoidType>, ICommunityViewModel
     {
         private bool isEmpty;
-        private IList<IReviewItemViewModel> items;
+        private ICommand refreshCommand;
+        private ILazyObservableCollection<IReviewItemViewModel> items;
 
         private readonly IUserService userService;
         private readonly IReviewService reviewService;
@@ -38,6 +40,8 @@ namespace Epiphany.ViewModel
             this.userService = userService;
             this.reviewService = reviewService;
             this.resourceLoader = resourceLoader;
+
+            this.refreshCommand = new DelegateCommand(() => CreateCollection());
         }
 
         public bool IsEmpty
@@ -52,7 +56,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<IReviewItemViewModel> Items
+        public ILazyObservableCollection<IReviewItemViewModel> Items
         {
             get
             {
@@ -64,17 +68,32 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public override async Task LoadAsync(VoidType parameter)
+        public ICommand Refresh
         {
-            IsLoading = true;
+            get
+            {
+                return this.refreshCommand;
+            }
+        }
 
-            var reviews = await this.reviewService.GetRecentReviewsAsync();
-            Items = new LazyObservableCollection<IReviewItemViewModel, ReviewModel>(
-            () => reviews,
-            (model) => new ReviewItemViewModel(model));
+        public override Task LoadAsync(VoidType parameter)
+        {
+            CreateCollection();
+            return Task.FromResult(0);
+        }
 
-            IsLoading = false;
-            IsLoaded = true;
+        private void CreateCollection()
+        {
+            Items = new AsyncLazyObservableCollection<IReviewItemViewModel, ReviewModel>(
+                async () => await this.reviewService.GetRecentReviewsAsync(),
+                (model) => new ReviewItemViewModel(model));
+            Items.Loading += (sender, args) => IsLoading = true;
+            Items.Loaded += (sender, args) =>
+            {
+                Error = args.Error;
+                IsLoading = false;
+                IsLoaded = true;
+            };
         }
     }
 }

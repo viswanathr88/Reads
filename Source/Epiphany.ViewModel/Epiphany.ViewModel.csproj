@@ -57,6 +57,7 @@
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="Base\VoidType.cs" />
     <Compile Include="Collections\AlphabetKeyedList.cs" />
+    <Compile Include="Collections\AsyncLazyObservableCollection.cs" />
     <Compile Include="Collections\BidirectionalMap.cs" />
     <Compile Include="Collections\DeltaList.cs" />
     <Compile Include="Collections\DeltaListItem.cs" />

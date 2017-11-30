@@ -37,14 +37,6 @@ namespace Epiphany.ViewModel.Collections
             }
         }
 
-        public Exception Error
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
         public event EventHandler<LoadedEventArgs> Loaded;
         private void RaiseLoaded(Exception error) => Loaded?.Invoke(this, new LoadedEventArgs(error));
 
