@@ -1,4 +1,5 @@
-﻿using Epiphany.Model;
+﻿using System;
+using Epiphany.Model;
 using Epiphany.ViewModel;
 
 namespace Epiphany.View.DesignData
@@ -52,6 +53,14 @@ namespace Epiphany.View.DesignData
         {
             get;
             set;
+        }
+
+        public IEventsViewModel Events
+        {
+            get
+            {
+                return new DesignEventsViewModel();
+            }
         }
     }
 }

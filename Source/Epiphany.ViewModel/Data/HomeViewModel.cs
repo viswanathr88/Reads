@@ -2,7 +2,6 @@
 using Epiphany.Model.Authentication;
 using Epiphany.Model.Services;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
@@ -17,16 +16,18 @@ namespace Epiphany.ViewModel
         private ILauncherViewModel launcherVM;
         private IMyBooksViewModel booksVM;
         private ICommunityViewModel communityVM;
+        private IEventsViewModel eventsVM;
 
         private bool isLoggedIn;
         private double opacity = 0;
 
         public HomeViewModel(IFeedViewModel feedVM, IMyBooksViewModel booksVm, 
-            ICommunityViewModel communityVM, ILogonService logonService)
+            ICommunityViewModel communityVM, IEventsViewModel eventsVM, ILogonService logonService)
         {
             Feed = feedVM;
             Books = booksVm;
             Community = communityVM;
+            Events = eventsVM;
             Launcher = new LauncherViewModel(null, logonService);
             this.logonService = logonService;
 
@@ -128,6 +129,18 @@ namespace Epiphany.ViewModel
                     };
                 }
                 return model;
+            }
+        }
+
+        public IEventsViewModel Events
+        {
+            get
+            {
+                return this.eventsVM;
+            }
+            private set
+            {
+                SetProperty(ref this.eventsVM, value);
             }
         }
 

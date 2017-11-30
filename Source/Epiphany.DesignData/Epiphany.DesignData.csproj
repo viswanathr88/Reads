@@ -65,6 +65,7 @@
     <Compile Include="DesignFeedViewModel.cs" />
     <Compile Include="DesignFriendsViewModel.cs" />
     <Compile Include="DesignHomeViewModel.cs" />
+    <Compile Include="DesignLazyObservableCollection.cs" />
     <Compile Include="DesignLogonViewModel.cs" />
     <Compile Include="DesignMyBooksViewModel.cs" />
     <Compile Include="DesignProfileViewModel.cs" />

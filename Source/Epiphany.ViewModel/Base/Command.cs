@@ -3,7 +3,7 @@
 namespace Epiphany.ViewModel.Commands
 {
 
-    abstract class Command<T> : CommandBase<T>
+    public abstract class Command<T> : CommandBase<T>
     {
         public abstract override bool CanExecute(T param);
 
@@ -39,7 +39,7 @@ namespace Epiphany.ViewModel.Commands
     }
 
 
-    abstract class Command<T1, T2> : Command<T2>, ICommand<T1, T2>
+    public abstract class Command<T1, T2> : Command<T2>, ICommand<T1, T2>
     {
 
         public T1 Result
@@ -53,7 +53,7 @@ namespace Epiphany.ViewModel.Commands
         protected abstract override void Run(T2 param);
     }
 
-    abstract class Command : Command<VoidType>
+    public abstract class Command : Command<VoidType>
     {
 
         protected abstract bool CanExecute();

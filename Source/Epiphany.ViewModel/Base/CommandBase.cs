@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace Epiphany.ViewModel.Commands
 {
-    abstract class CommandBase<T> : ICommand<T>
+    public abstract class CommandBase<T> : ICommand<T>
     {
         private bool isExecuting;
         private Exception error;

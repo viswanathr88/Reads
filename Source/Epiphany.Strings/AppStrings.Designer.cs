@@ -1772,6 +1772,15 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Events.
+        /// </summary>
+        public static string TabHeaderEvents {
+            get {
+                return ResourceManager.GetString("TabHeaderEvents", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string TabHeaderHome {

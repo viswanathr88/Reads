@@ -53,6 +53,7 @@
     <Compile Include="Base\IDataViewModel.cs" />
     <Compile Include="Base\IItemViewModel.cs" />
     <Compile Include="Base\ItemViewModel.cs" />
+    <Compile Include="Base\RelayCommand.cs" />
     <Compile Include="Base\UriBuilder.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="Base\VoidType.cs" />

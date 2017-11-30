@@ -1,10 +1,10 @@
 ﻿using Epiphany.Model;
 using Epiphany.Model.Services;
+using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -19,8 +19,8 @@ namespace Epiphany.ViewModel
         private readonly IDeviceServices deviceServices;
 
         private IEventItemViewModel selectedEvent;
-        private IList<IEventItemViewModel> events;
-        private readonly IAsyncCommand<IEnumerable<LiteraryEventModel>, VoidType> fetchEventsCommand;
+        private ILazyObservableCollection<IEventItemViewModel> events;
+        private RelayCommand refreshCommand;
         /// <summary>
         /// Create a new instance of <see cref="EventsViewModel"/>
         /// </summary>
@@ -30,21 +30,21 @@ namespace Epiphany.ViewModel
         {
             this.eventService = eventService;
             this.deviceServices = deviceServices;
-
-            this.fetchEventsCommand = new FetchEventsCommand(eventService, deviceServices);
-            RegisterCommand(this.fetchEventsCommand, OnCommandExecuted);
+            this.refreshCommand = new RelayCommand(
+                () => CreateCollection(), () => !IsLoading);
         }
         /// <summary>
         /// Gets the list of literary events
         /// </summary>
-        public IList<IEventItemViewModel> Events
+        public ILazyObservableCollection<IEventItemViewModel> Events
         {
-            get { return this.events; }
+            get
+            {
+                return this.events;
+            }
             private set
             {
-                if (this.events == value) return;
-                this.events = value;
-                RaisePropertyChanged(() => Events);
+                SetProperty(ref this.events, value);
             }
         }
         /// <summary>
@@ -63,58 +63,55 @@ namespace Epiphany.ViewModel
             }
         }
         /// <summary>
-        /// Command to start fetching literary events
-        /// </summary>
-        public IAsyncCommand<IEnumerable<LiteraryEventModel>, VoidType> FetchEvents
-        {
-            get { return this.fetchEventsCommand; }
-        }
-        /// <summary>
         /// Command to refresh literary events
         /// </summary>
         public ICommand Refresh
         {
-            get { return this.fetchEventsCommand; }
+            get { return this.refreshCommand; }
         }
+
         /// <summary>
         /// Load the ViewModel async
         /// </summary>
         /// <param name="parameter"></param>
         /// <returns></returns>
-        public override async Task LoadAsync(VoidType parameter)
+        public override Task LoadAsync(VoidType parameter)
         {
-            if (this.fetchEventsCommand.CanExecute(parameter))
-            {
-                await this.fetchEventsCommand.ExecuteAsync(parameter);
-            }
+            CreateCollection();
+            return Task.FromResult(0);
         }
-        /// <summary>
-        /// Override method when command is executing
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected override void OnCommandExecuting(object sender, CancelEventArgs e)
-        {
-            base.OnCommandExecuting(sender, e);
 
-            Events = new ObservableCollection<IEventItemViewModel>();
-        }
-        /// <summary>
-        /// Callback when command has finished execution
-        /// </summary>
-        /// <param name="e"></param>
-        private void OnCommandExecuted(ExecutedEventArgs e)
+        private void CreateCollection()
         {
-            IsLoading = false;
-            if (e.State == CommandExecutionState.Success)
+            if (Events != null)
             {
-                Events = new ObservableCollection<IEventItemViewModel>();
-                foreach (var ev in fetchEventsCommand.Result)
-                {
-                    Events.Add(new EventItemViewModel(ev));
-                }
-                IsLoaded = true;
+                Events.Loading -= Events_Loading;
+                Events.Loaded -= Events_Loaded;
             }
+
+            Events = new AsyncLazyObservableCollection<IEventItemViewModel, LiteraryEventModel>(
+                async() =>
+                {
+                    var coords = await this.deviceServices.GetCoordinatesAsync();
+                    return await this.eventService.GetEvents(coords.Latitude, coords.Longitude);
+                },
+                (model) => new EventItemViewModel(model));
+            Events.Loading += Events_Loading;
+            Events.Loaded += Events_Loaded;
+        }
+
+        private void Events_Loading(object sender, EventArgs e)
+        {
+            IsLoading = true;
+            this.refreshCommand.NotifyCanExecuteChanged();
+        }
+
+        private void Events_Loaded(object sender, LoadedEventArgs e)
+        {
+            Error = e.Error;
+            IsLoading = false;
+            IsLoaded = (Error == null);
+            this.refreshCommand.NotifyCanExecuteChanged();
         }
     }
 }

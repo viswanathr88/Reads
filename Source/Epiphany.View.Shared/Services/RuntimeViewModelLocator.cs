@@ -63,7 +63,7 @@ namespace Epiphany.View.Services
                     var communityVM = new CommunityViewModel(this.serviceFactory.GetUserService(), this.serviceFactory.GetReviewService(), 
                         this.resourceLoader);
 
-                    this.homeVM = new HomeViewModel(feedVM, booksVM, communityVM, this.serviceFactory.GetLogonService());
+                    this.homeVM = new HomeViewModel(feedVM, booksVM, communityVM, Events, this.serviceFactory.GetLogonService());
                 }
 
                 return this.homeVM;

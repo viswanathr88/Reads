@@ -1,10 +1,9 @@
 ﻿using Epiphany.Model;
 using Epiphany.ViewModel;
+using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Items;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Windows.Input;
-using System;
 
 namespace Epiphany.View.DesignData
 {
@@ -13,10 +12,10 @@ namespace Epiphany.View.DesignData
         public DesignEventsViewModel()
         {
             IsLoading = true;
-            Events = new List<IEventItemViewModel>();
+            Events = new DesignLazyObservableCollection<IEventItemViewModel>();
         }
 
-        public IList<IEventItemViewModel> Events
+        public ILazyObservableCollection<IEventItemViewModel> Events
         {
             get;
             private set;

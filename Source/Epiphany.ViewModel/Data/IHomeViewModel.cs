@@ -33,6 +33,13 @@ namespace Epiphany.ViewModel
             get;
         }
         /// <summary>
+        /// Gets ViewModel for Events
+        /// </summary>
+        IEventsViewModel Events
+        {
+            get;
+        }
+        /// <summary>
         /// Gets whether the user is logged in
         /// </summary>
         bool IsLoggedIn
