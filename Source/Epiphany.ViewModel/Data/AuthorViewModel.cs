@@ -7,6 +7,7 @@ using Epiphany.ViewModel.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -188,7 +189,12 @@ namespace Epiphany.ViewModel
 
             Name = author.Name;
             ImageUrl = author.ImageUrl;
-            Description = author.About;
+
+            // Extract description
+            StringBuilder builder = new StringBuilder();
+            builder.AppendWithoutTags(author.About);
+            Description = builder.ToString();
+
             FollowersCount = (author.FansCount != 0) ? author.FansCount : FollowersCount;
             Hometown = (!string.IsNullOrEmpty(author.Hometown)) ? author.Hometown : Hometown;
             AverageRating = (author.AverageRating != 0) ? author.AverageRating : AverageRating;
