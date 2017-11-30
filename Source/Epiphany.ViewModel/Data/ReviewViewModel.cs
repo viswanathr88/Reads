@@ -152,7 +152,10 @@ namespace Epiphany.ViewModel
             {
                 Rating = this.review.Rating;
                 ReviewText = this.review.Body?.Trim();
-                Book = new BookItemViewModel(this.review.Book);
+                if (this.review.Book != null)
+                {
+                    Book = new BookItemViewModel(this.review.Book);
+                }
                 ReviewTime = this.review.LastUpdatedDate.ToString("MMM dd yyyy");
                 User = new UserItemViewModel(this.review.User);
                 Shelves = new ObservableCollection<IBookshelfItemViewModel>();

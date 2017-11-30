@@ -265,7 +265,9 @@
             <PivotItem Margin="19,10,19,10">
                 <!-- General Reviews -->
                 <ListView ItemsSource="{Binding Reviews}"
-                          Margin="0,10,0,0">
+                          Margin="0,10,0,0"
+                          IsItemClickEnabled="True"
+                          ItemClick="Review_Click">
 
                     <ListView.Header>
                         <controls:RatingDistribution Items="{Binding Path=RatingDistribution.Ratings}"

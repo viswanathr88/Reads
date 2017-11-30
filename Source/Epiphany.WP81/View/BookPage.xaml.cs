@@ -1,6 +1,8 @@
 ﻿// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
+using Epiphany.Model;
 using Epiphany.View.Navigation;
+using Epiphany.ViewModel;
 using Epiphany.ViewModel.Items;
 using Epiphany.WP81;
 using Windows.UI.Xaml.Controls;
@@ -67,6 +69,15 @@ namespace Epiphany.View
             while (Frame.CanGoBack)
             {
                 Frame.GoBack();
+            }
+        }
+
+        private async void Review_Click(object sender, ItemClickEventArgs e)
+        {
+            if (e.ClickedItem != null)
+            { 
+                var reviewItemVM = e.ClickedItem as IReviewItemViewModel;
+                await App.Navigate(typeof(ReviewPage), new ReviewParameter() { ReviewModel = reviewItemVM.Item as ReviewModel }, new SlideNavigationTransitionInfo());
             }
         }
     }
