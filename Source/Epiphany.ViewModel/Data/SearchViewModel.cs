@@ -19,13 +19,22 @@ namespace Epiphany.ViewModel
         private string searchTerm;
 
         private readonly IBookService bookService;
+        private readonly ILogonService logonService;
 
-        public SearchViewModel(IBookService bookService, bool isLoggedIn)
+        public SearchViewModel(IBookService bookService, ILogonService logonService)
         {
             this.bookService = bookService;
-            IsLoggedIn = isLoggedIn;
+            this.logonService = logonService;
+            this.logonService.SessionChanged += LogonService_SessionChanged;
+
+            IsLoggedIn = (logonService.Session != null);
             SearchFilters = Enum.GetValues(typeof(BookSearchType)).Cast<BookSearchType>().ToList();
             this.selectedFilter = BookSearchType.All;
+        }
+
+        private void LogonService_SessionChanged(object sender, Model.Authentication.SessionChangedEventArgs e)
+        {
+            IsLoggedIn = (e.Session != null);
         }
 
         public bool IsLoggedIn
@@ -145,6 +154,13 @@ namespace Epiphany.ViewModel
             SearchTerm = string.Empty;
             this.searchResults = null;
             RaisePropertyChanged(nameof(SearchResults));
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+
+            this.logonService.SessionChanged -= LogonService_SessionChanged;
         }
     }
 }

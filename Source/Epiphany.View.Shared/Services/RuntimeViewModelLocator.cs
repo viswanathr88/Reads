@@ -1,5 +1,4 @@
-﻿using System;
-using Epiphany.Logging;
+﻿using Epiphany.Logging;
 using Epiphany.Model.Authentication;
 using Epiphany.Model.Services;
 using Epiphany.Model.Settings;
@@ -135,7 +134,7 @@ namespace Epiphany.View.Services
 
         public ISearchViewModel Search
         {
-            get { return new SearchViewModel(this.serviceFactory.GetBookService(), Home.IsLoggedIn); }
+            get { return new SearchViewModel(this.serviceFactory.GetBookService(), this.serviceFactory.GetLogonService()); }
         }
 
         public IAuthorViewModel Author
