@@ -43,8 +43,7 @@ namespace Epiphany.Model
             {
                 // Try the special format Mon Nov 27 19:56:49 -0800 2017
                 string pattern = "ddd MMM dd HH:mm:ss zzz yyyy";
-                DateTime.ParseExact(dt, pattern, CultureInfo.InvariantCulture);
-                DateTime.TryParseExact(dt, pattern, CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind, out dateTime);
+                DateTime.TryParseExact(dt, pattern, CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime);
             }
 
             return dateTime;
