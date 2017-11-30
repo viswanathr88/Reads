@@ -99,11 +99,11 @@ namespace Epiphany.View.Controls
 
             if ((bool)e.NewValue == true)
             {
-                item.reviewBook.Visibility = Visibility.Visible;
+                item.bookGrid.Visibility = Visibility.Visible;
             }
             else
             {
-                item.reviewBook.Visibility = Visibility.Collapsed;    
+                item.bookGrid.Visibility = Visibility.Collapsed;    
             }
         }
 

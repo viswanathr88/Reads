@@ -97,7 +97,9 @@
             <!-- Show book details -->
             <Grid HorizontalAlignment="Center"
                   Background="{ThemeResource PhoneChromeBrush}"
-                  Margin="0,0,0,15">
+                  Margin="0,0,0,15"
+                  x:Name="bookGrid"
+                  Visibility="Collapsed">
                 <Button Style="{StaticResource TextButtonStyle}"
                         x:Name="BookBlock"
                         Click="Book_Click">
@@ -107,7 +109,6 @@
                                     RatingsCount="{Binding ElementName=reviewItemControl, Path=RatingsCount}"
                                     AverageRating="{Binding ElementName=reviewItemControl, Path=AverageRating}"
                                     x:Name="reviewBook"
-                                    Visibility="Collapsed"
                                     Margin="20" />
                 </Button>
             </Grid>

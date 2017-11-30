@@ -294,7 +294,8 @@
                                                  Body="{Binding Body}"
                                                  UserImage="{Binding Path=User.ImageUrl}"
                                                  Username="{Binding Path=User.Name}"
-                                                 User="{Binding Path=User.Item}"/>
+                                                 User="{Binding Path=User.Item}"
+                                                 ShowBook="False"/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
 
