@@ -4,6 +4,8 @@ using Epiphany.ViewModel.Items;
 using System;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
@@ -16,6 +18,9 @@ namespace Epiphany.ViewModel
         private string reviewTime;
         private ReviewModel review;
         private IUserItemViewModel user;
+        private IList<IBookshelfItemViewModel> shelves;
+        private string commentText;
+        private ICommand postComment;
 
         public ReviewViewModel(IReviewService reviewService)
         {
@@ -91,7 +96,32 @@ namespace Epiphany.ViewModel
         {
             get
             {
-                throw new NotImplementedException();
+                return this.shelves;
+            }
+            private set
+            {
+                SetProperty(ref this.shelves, value);
+            }
+        }
+
+        public string CommentText
+        {
+            get
+            {
+                return this.commentText;
+            }
+
+            set
+            {
+                SetProperty(ref this.commentText, value);
+            }
+        }
+
+        public ICommand PostComment
+        {
+            get
+            {
+                return this.postComment;
             }
         }
 
@@ -125,6 +155,15 @@ namespace Epiphany.ViewModel
                 Book = new BookItemViewModel(this.review.Book);
                 ReviewTime = this.review.LastUpdatedDate.ToString("MMM dd yyyy");
                 User = new UserItemViewModel(this.review.User);
+                Shelves = new ObservableCollection<IBookshelfItemViewModel>();
+
+                if (this.review.Shelves != null)
+                {
+                    foreach (var shelf in this.review.Shelves)
+                    {
+                        Shelves.Add(new BookshelfItemViewModel(this.review.User, new BookshelfModel(50) { Name = shelf }));
+                    }
+                }
             }
         }
     }

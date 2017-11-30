@@ -314,6 +314,29 @@ namespace Epiphany.Model.Collections
             }
         }
 
+        global::System.Exception global::Epiphany.Model.Collections.IPagedCollection<T>.Error
+        {
+            get
+            {
+                {
+                    Error_Get_Delegate del;
+                    if (MockBehavior == MockBehavior.Strict)
+                    {
+                        del = _stubs.GetMethodStub<Error_Get_Delegate>("get_Error");
+                    }
+                    else
+                    {
+                        if (!_stubs.TryGetMethodStub<Error_Get_Delegate>("get_Error", out del))
+                        {
+                            return default(global::System.Exception);
+                        }
+                    }
+
+                    return del.Invoke();
+                }
+            }
+        }
+
         public delegate int Count_Get_Delegate();
 
         public StubIPagedCollection<T> Count_Get(Count_Get_Delegate del, int count = Times.Forever, bool overwrite = false)
@@ -401,6 +424,14 @@ namespace Epiphany.Model.Collections
         public delegate void Clear_Delegate();
 
         public StubIPagedCollection<T> Clear(Clear_Delegate del, int count = Times.Forever, bool overwrite = false)
+        {
+            _stubs.SetMethodStub(del, count, overwrite);
+            return this;
+        }
+
+        public delegate global::System.Exception Error_Get_Delegate();
+
+        public StubIPagedCollection<T> Error_Get(Error_Get_Delegate del, int count = Times.Forever, bool overwrite = false)
         {
             _stubs.SetMethodStub(del, count, overwrite);
             return this;

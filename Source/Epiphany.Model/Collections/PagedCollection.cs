@@ -91,6 +91,12 @@ namespace Epiphany.Model.Collections
             }
         }
 
+        public Exception Error
+        {
+            get;
+            private set;
+        }
+
         public T this[int index]
         {
             get
@@ -117,7 +123,7 @@ namespace Epiphany.Model.Collections
             //
             page++;
 
-
+            Error = null;
             TSourceCollection collection = default(TSourceCollection);
 
             try
@@ -129,6 +135,7 @@ namespace Epiphany.Model.Collections
             {
                 Logger.LogException(ex);
                 collection = default(TSourceCollection);
+                Error = ex;
             }
 
             if (collection == null)

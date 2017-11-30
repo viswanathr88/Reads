@@ -1,6 +1,8 @@
-﻿using Epiphany.ViewModel.Items;
+﻿using Epiphany.ViewModel.Commands;
+using Epiphany.ViewModel.Items;
 using System;
 using System.Collections.Generic;
+using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
@@ -48,5 +50,20 @@ namespace Epiphany.ViewModel
         {
             get;
         }
+        /// <summary>
+        /// Gets or sets the comment text
+        /// </summary>
+        string CommentText
+        {
+            get;
+            set;
+        }
+        /// <summary>
+        /// Command to post a comment on a review
+        /// </summary>
+        ICommand PostComment
+        {
+            get;
+        } 
     }
 }

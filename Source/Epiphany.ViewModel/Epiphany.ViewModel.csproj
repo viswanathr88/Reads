@@ -65,6 +65,7 @@
     <Compile Include="Collections\ILazyObservableCollection.cs" />
     <Compile Include="Collections\KeyedList.cs" />
     <Compile Include="Collections\LazyObservableCollection.cs" />
+    <Compile Include="Collections\LoadedEventArgs.cs" />
     <Compile Include="Collections\ObservablePagedCollection.cs" />
     <Compile Include="Collections\ObservableSortedGroup.cs" />
     <Compile Include="Collections\SortedList.cs" />

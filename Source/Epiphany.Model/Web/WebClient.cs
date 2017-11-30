@@ -85,28 +85,23 @@ namespace Epiphany.Web
             Logger.LogDebug(request.ToString());
 
             WebResponse response = null;
-            try
+
+            // Issue the request
+            var httpWebResponse = (System.Net.HttpWebResponse)await httpWebRequest.GetResponseAsync();
+            if (httpWebResponse != null)
             {
-                var httpWebResponse = (System.Net.HttpWebResponse)await httpWebRequest.GetResponseAsync();
-                if (httpWebResponse != null)
+                string content = string.Empty;
+                using (StreamReader reader = new StreamReader(httpWebResponse.GetResponseStream()))
                 {
-                    string content = string.Empty;
-                    using (StreamReader reader = new StreamReader(httpWebResponse.GetResponseStream()))
-                    {
-                        content = await reader.ReadToEndAsync();
-                        response = new WebResponse(httpWebResponse.StatusCode, content);
-                        //Logger.LogDebug(response.ToString());
-                    }
-                }
-                else
-                {
-                    Logger.LogError("GetResponseAsync returned null");
-                    response = new WebResponse(System.Net.HttpStatusCode.BadRequest, string.Empty);
+                    content = await reader.ReadToEndAsync();
+                    response = new WebResponse(httpWebResponse.StatusCode, content);
+                    //Logger.LogDebug(response.ToString());
                 }
             }
-            catch (Exception ex) 
+            else
             {
-                Logger.LogException(ex);
+                Logger.LogError("GetResponseAsync returned null");
+                response = new WebResponse(System.Net.HttpStatusCode.BadRequest, string.Empty);
             }
 
             return response;

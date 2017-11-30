@@ -32,7 +32,7 @@ namespace Epiphany.ViewModel
         /// <summary>
         /// Gets the error object
         /// </summary>
-        object Error
+        Exception Error
         {
             get;
         }

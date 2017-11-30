@@ -118,7 +118,7 @@ namespace Epiphany.ViewModel
             HasResults = true;
         }
 
-        private void SearchResults_Loaded(object sender, EventArgs e)
+        private void SearchResults_Loaded(object sender, LoadedEventArgs e)
         {
             IsLoading = false;
             IsLoaded = true;

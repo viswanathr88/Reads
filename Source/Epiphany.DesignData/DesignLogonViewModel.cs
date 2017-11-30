@@ -12,7 +12,7 @@ namespace Epiphany.View.DesignData
             IsLoading = true;
             IsWaitingForUserInteraction = false;
             IsSignInTakingLonger = true;
-            Error = new object();
+            Error = new Exception();
         }
 
         public Uri CallbackUri

@@ -205,10 +205,18 @@
                 </ListView.ItemTemplate>
 
                 <ListView.Footer>
-                    <ProgressRing IsActive="{Binding IsLoading}"
-                                  Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                                  MinWidth="40"
-                                  MinHeight="40" />
+                    <StackPanel Orientation="Vertical">
+                        <ProgressRing IsActive="{Binding IsLoading}"
+                                      Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                      MinWidth="40"
+                                      MinHeight="40" />
+                        <TextBlock x:Name="errorText"
+                                   Visibility="Collapsed"
+                                   Style="{StaticResource ListViewEmptyStaticTextBlockStyle}"
+                                   Foreground="{ThemeResource PhoneAccentBrush}"
+                                   Margin="19,10,19,10"/>
+                    </StackPanel>
+                    
                 </ListView.Footer>
 
             </ListView>

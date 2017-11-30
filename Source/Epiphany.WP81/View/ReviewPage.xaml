@@ -63,16 +63,19 @@
                 <StackPanel Orientation="Vertical"
                             Grid.Column="1"
                             Margin="20,0,0,0">
-                    <TextBlock Text="{Binding Title}"
-                               Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                               Style="{StaticResource ListViewItemTextBlockStyle}"
-                               TextWrapping="Wrap"
-                               MaxLines="3"
-                               TextTrimming="CharacterEllipsis"
-                               OpticalMarginAlignment="TrimSideBearings"
-                               LineStackingStrategy="MaxHeight"
-                               Margin="0,0,0,5"
-                               ContinuumNavigationTransitionInfo.IsEntranceElement="True" />
+                    <Button Style="{StaticResource TextButtonStyle}"
+                            Click="Book_Click">
+                        <TextBlock Text="{Binding Title}"
+                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                   Style="{StaticResource ListViewItemTextBlockStyle}"
+                                   TextWrapping="Wrap"
+                                   MaxLines="3"
+                                   TextTrimming="CharacterEllipsis"
+                                   OpticalMarginAlignment="TrimSideBearings"
+                                   LineStackingStrategy="MaxHeight"
+                                   Margin="0,0,0,5"
+                                   ContinuumNavigationTransitionInfo.IsEntranceElement="True" />
+                    </Button>
 
                     <ListView ItemsSource="{Binding Authors}"
                               ScrollViewer.HorizontalScrollMode="Disabled"
@@ -184,7 +187,8 @@
                                    Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
                                    Style="{StaticResource GroupHeaderTextBlockStyle}"
                                    HorizontalAlignment="Left"
-                                   VerticalAlignment="Center" />
+                                   VerticalAlignment="Center"
+                                   ContinuumNavigationTransitionInfo.IsExitElement="True"/>
                     </Button>
                 </Grid>
 
@@ -252,20 +256,44 @@
 
                 <!-- Shelves -->
                 <Grid Grid.Row="3"
-                      Margin="0,10,0,10">
+                      Margin="0,10,0,10"
+                      Visibility="{Binding Path=Shelves.Count, Converter={StaticResource NullToVisibilityConverter}}">
                     <Border BorderThickness="0,1,0,1"
                             BorderBrush="{ThemeResource PhoneChromeBrush}">
-                        <RichTextBlock Style="{StaticResource BodyRichTextBlockStyle}"
-                                       Margin="0,10,0,10">
-                            <Paragraph>
-                                <Run Text="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ReviewShelvedAsText}"
-                                     Foreground="{ThemeResource ApplicationForegroundThemeBrush}" />
-                            </Paragraph>
-                        </RichTextBlock>
+                        <RichTextBlock x:Name="shelvesList"
+                                       Style="{StaticResource BodyRichTextBlockStyle}"
+                                       TextWrapping="Wrap"
+                                       TextTrimming="WordEllipsis"
+                                       MaxLines="8"
+                                       Margin="0,10,0,10" />
                     </Border>
                 </Grid>
             </Grid>
         </ScrollViewer>
+        
+        <!-- Comment input box -->
+        <Grid Grid.Row="2" Margin="19,0,19,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox AcceptsReturn="True"
+                     PlaceholderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ReviewWriteACommentText}"
+                     TextWrapping="Wrap"
+                     MaxHeight="275"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+                     IsSpellCheckEnabled="True"
+                     IsTextPredictionEnabled="True"
+                     Text="{Binding CommentText, Mode=TwoWay}"/>
+
+            <Button Style="{StaticResource TextButtonStyle}"
+                    Content="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ReviewPostCommentButtonText}"
+                    Grid.Column="1"
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Center"
+                    Foreground="{ThemeResource PhoneAccentBrush}"
+                    Command="{Binding PostComment}"/>
+        </Grid>
 
     </Grid>
     

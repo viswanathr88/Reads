@@ -22,8 +22,8 @@ namespace Epiphany.ViewModel.Collections
         public event EventHandler<EventArgs> Loading;
         private void RaiseLoading() => Loading?.Invoke(this, EventArgs.Empty);
 
-        public event EventHandler<EventArgs> Loaded;
-        private void RaiseLoaded() => Loaded?.Invoke(this, EventArgs.Empty);
+        public event EventHandler<LoadedEventArgs> Loaded;
+        private void RaiseLoaded(Exception error) => Loaded?.Invoke(this, new LoadedEventArgs(error));
 
         public ObservablePagedCollection(IPagedCollection<TModel> pagedCollection,
             Func<TModel, TViewModel> adapterMethod)
@@ -59,6 +59,12 @@ namespace Epiphany.ViewModel.Collections
             set;
         }
 
+        public Exception Error
+        {
+            get;
+            private set;
+        }
+
         public IAsyncOperation<LoadMoreItemsResult> LoadMoreItemsAsync(uint count)
         {
             CoreDispatcher dispatcher = Window.Current.Dispatcher;
@@ -92,7 +98,7 @@ namespace Epiphany.ViewModel.Collections
                                 Add(item);
                             }
                         }
-                        RaiseLoaded();
+                        RaiseLoaded(pagedCollection.Error);
                     });
 
                 Logger.LogDebug($"{GetType()} - Loaded Count = {loadedCount}");

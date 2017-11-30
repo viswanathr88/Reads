@@ -17,7 +17,7 @@ namespace Epiphany.ViewModel
 
         private bool isLoading;
         private bool isLoaded;
-        private object error;
+        private Exception error;
 
         /// <summary>
         /// Create an instance of DataViewModel
@@ -51,7 +51,7 @@ namespace Epiphany.ViewModel
         /// <summary>
         /// Gets the error
         /// </summary>
-        public object Error
+        public Exception Error
         {
             get
             {

@@ -720,4 +720,16 @@
   <data name="ReviewShelvedAsText" xml:space="preserve">
     <value>Shelved as: </value>
   </data>
+  <data name="ReviewPostCommentButtonText" xml:space="preserve">
+    <value>Post</value>
+  </data>
+  <data name="ReviewWriteACommentText" xml:space="preserve">
+    <value>Write a comment...</value>
+  </data>
+  <data name="BooksInShelfGenericErrorMessage" xml:space="preserve">
+    <value>Oops! Books in this shelf could not be loaded!</value>
+  </data>
+  <data name="BooksInShelfPermissionDeniedErrorMessage" xml:space="preserve">
+    <value>You do not have permissions to view this bookshelf!</value>
+  </data>
 </root>

@@ -14,6 +14,7 @@ namespace Epiphany.ViewModel
     public sealed class BooksViewModel : DataViewModel<IBookshelfItemViewModel>, IBooksViewModel
     {
         private string shelfName;
+        private IUserItemViewModel user;
         private ILazyObservableCollection<IBookItemViewModel> books;
         private IList<BookSortType> filters;
         private BookSortType selectedFilter;
@@ -93,7 +94,11 @@ namespace Epiphany.ViewModel
         {
             get
             {
-                return Parameter.User;
+                return this.user;
+            }
+            private set
+            {
+                SetProperty(ref this.user, value);
             }
         }
 
@@ -135,6 +140,7 @@ namespace Epiphany.ViewModel
                 this.books.Loading += (sender, arg) => IsLoading = true;
                 this.books.Loaded += (sender, arg) =>
                 {
+                    Error = arg.Error;
                     IsLoading = false;
                     IsLoaded = true;
                 };
@@ -145,6 +151,7 @@ namespace Epiphany.ViewModel
         {
             IsLoading = true;
             ShelfName = parameter.Name;
+            User = parameter.User;
 
             CreateBookCollection();
 

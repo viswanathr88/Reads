@@ -647,6 +647,24 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Oops! Books in this shelf could not be loaded!.
+        /// </summary>
+        public static string BooksInShelfGenericErrorMessage {
+            get {
+                return ResourceManager.GetString("BooksInShelfGenericErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You do not have permissions to view this bookshelf!.
+        /// </summary>
+        public static string BooksInShelfPermissionDeniedErrorMessage {
+            get {
+                return ResourceManager.GetString("BooksInShelfPermissionDeniedErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Order by.
         /// </summary>
         public static string BooksOrderHeader {
@@ -1511,6 +1529,15 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Post.
+        /// </summary>
+        public static string ReviewPostCommentButtonText {
+            get {
+                return ResourceManager.GetString("ReviewPostCommentButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shelved as: .
         /// </summary>
         public static string ReviewShelvedAsText {
@@ -1525,6 +1552,15 @@ namespace Epiphany.Strings {
         public static string ReviewTitleFormat {
             get {
                 return ResourceManager.GetString("ReviewTitleFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Write a comment....
+        /// </summary>
+        public static string ReviewWriteACommentText {
+            get {
+                return ResourceManager.GetString("ReviewWriteACommentText", resourceCulture);
             }
         }
         

@@ -4,6 +4,11 @@ namespace Epiphany.View.DesignData
 {
     public sealed class DesignBookshelfItemViewModel : DesignBaseItemViewModel, IBookshelfItemViewModel
     {
+        public DesignBookshelfItemViewModel()
+        {
+            Name = "Test Shelf";
+            User = new DesignUserItemViewModel();
+        }
         public long ShelfId
         {
             get;

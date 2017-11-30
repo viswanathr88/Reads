@@ -37,8 +37,16 @@ namespace Epiphany.ViewModel.Collections
             }
         }
 
-        public event EventHandler<EventArgs> Loaded;
-        private void RaiseLoaded() => Loaded?.Invoke(this, EventArgs.Empty);
+        public Exception Error
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public event EventHandler<LoadedEventArgs> Loaded;
+        private void RaiseLoaded(Exception error) => Loaded?.Invoke(this, new LoadedEventArgs(error));
 
         public event EventHandler<EventArgs> Loading;
         private void RaiseLoading() => Loading?.Invoke(this, EventArgs.Empty);
@@ -62,7 +70,7 @@ namespace Epiphany.ViewModel.Collections
 
             HasMoreItems = false;
 
-            RaiseLoaded();
+            RaiseLoaded(null);
 
             return Task.FromResult<LoadMoreItemsResult>(new LoadMoreItemsResult() { Count = Convert.ToUInt32(Count) }).AsAsyncOperation<LoadMoreItemsResult>();
         }

@@ -37,5 +37,12 @@ namespace Epiphany.Model.Collections
         Task<bool> LoadPage();
 
         void Clear();
+        /// <summary>
+        /// Gets any errors while loading the page
+        /// </summary>
+        Exception Error
+        {
+            get;
+        }
     }
 }
