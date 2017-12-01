@@ -25,6 +25,7 @@ namespace Epiphany.ViewModel
         private int shelvesCount;
         private bool areUpdatesEmpty;
         private bool hasFavoriteAuthors;
+        private bool isLoggedIn;
         private ProfileModel profileModel;
 
         private Visibility profileActionsVisibility = Visibility.Collapsed;
@@ -59,6 +60,7 @@ namespace Epiphany.ViewModel
             this.resourceLoader = resourceLoader;
             this.userService = userService;
             this.logonService = logonService;
+            IsLoggedIn = (this.logonService.Session != null);
             this.logonService.SessionChanged += LogonService_SessionChanged;
             this.navService = navService;
             this.deviceServices = deviceServices;
@@ -304,6 +306,18 @@ namespace Epiphany.ViewModel
             }
         }
 
+        public bool IsLoggedIn
+        {
+            get
+            {
+                return this.isLoggedIn;
+            }
+            private set
+            {
+                SetProperty(ref this.isLoggedIn, value);
+            }
+        }
+
         public override async Task LoadAsync(UserModel user)
         {
             IsLoading = true;
@@ -398,6 +412,7 @@ namespace Epiphany.ViewModel
 
         private void LogonService_SessionChanged(object sender, Model.Authentication.SessionChangedEventArgs e)
         {
+            IsLoggedIn = (this.logonService.Session != null);
             UpdateProfileActionsVisibility();
         }
 

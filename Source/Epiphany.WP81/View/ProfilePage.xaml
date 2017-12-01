@@ -217,6 +217,7 @@
                     <controls:Section.SectionContent>
                         <controls:FeedControl Items="{Binding RecentUpdates}"
                                               Margin="0,10,0,10"
+                                              IsLoggedIn="{Binding IsLoggedIn}"
                                               IsEmpty="{Binding AreUpdatesEmpty}"
                                               EmptyFeedMessage="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ProfileEmptyRecentUpdatesMessage}" />
                     </controls:Section.SectionContent>

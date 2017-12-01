@@ -383,7 +383,8 @@
 
                         <!-- Common actions -->
                         <Grid Margin="0,15,0,0"
-                              Grid.Row="2">
+                              Grid.Row="2"
+                              Visibility="{Binding Path=IsLoggedIn, ElementName=feedControl, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />

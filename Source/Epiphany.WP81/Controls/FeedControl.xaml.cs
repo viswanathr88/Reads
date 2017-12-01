@@ -37,6 +37,16 @@ namespace Epiphany.View.Controls
         public static readonly DependencyProperty FrameProperty =
             DependencyProperty.Register("Frame", typeof(Frame), typeof(FeedControl), new PropertyMetadata(null));
 
+        public bool IsLoggedIn
+        {
+            get { return (bool)GetValue(IsLoggedInProperty); }
+            set { SetValue(IsLoggedInProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for IsLoggedIn.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IsLoggedInProperty =
+            DependencyProperty.Register("IsLoggedIn", typeof(bool), typeof(FeedControl), new PropertyMetadata(false));
+
 
         public bool IsLoading
         {

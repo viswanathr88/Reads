@@ -167,6 +167,7 @@
                                               Margin="0,5,0,0"
                                               Grid.Row="1"
                                               IsLoading="{Binding Path=Feed.IsLoading}"
+                                              IsLoggedIn="{Binding IsLoggedIn}"
                                               IsEmpty="{Binding Path=Feed.IsFeedEmpty}"
                                               EmptyFeedMessage="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.NoFeedMessage}" />
                     </Grid>
