@@ -4,7 +4,6 @@ using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -84,16 +83,43 @@ namespace Epiphany.ViewModel
 
         private void CreateCollection()
         {
-            Items = new AsyncLazyObservableCollection<IReviewItemViewModel, ReviewModel>(
+            if (Items != null)
+            {
+                Items.PropertyChanged -= Items_PropertyChanged;
+            }
+
+            Items = new LazyObservableCollection<IReviewItemViewModel, ReviewModel>(
                 async () => await this.reviewService.GetRecentReviewsAsync(),
                 (model) => new ReviewItemViewModel(model));
-            Items.Loading += (sender, args) => IsLoading = true;
-            Items.Loaded += (sender, args) =>
+            Items.PropertyChanged += Items_PropertyChanged;
+        }
+
+        private void Items_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(Items.IsLoading))
             {
-                Error = args.Error;
-                IsLoading = false;
-                IsLoaded = true;
-            };
+                IsLoading = Items.IsLoading;
+                if (!Items.IsLoading)
+                {
+                    IsLoaded = (Items.Count != 0 || Error != null);
+                }
+
+            }
+            else if (e.PropertyName == nameof(Items.Error))
+            {
+                Error = Items.Error;
+                IsLoaded = false;
+            }
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+
+            if (Items != null)
+            {
+                Items.PropertyChanged -= Items_PropertyChanged;
+            }
         }
     }
 }

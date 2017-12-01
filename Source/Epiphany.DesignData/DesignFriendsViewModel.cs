@@ -1,9 +1,7 @@
 ﻿using Epiphany.ViewModel;
+using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Items;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
-using System;
 
 namespace Epiphany.View.DesignData
 {
@@ -13,7 +11,7 @@ namespace Epiphany.View.DesignData
         {
             Title = $"{Path.GetRandomFileName()}'s friends";
 
-            FriendList = new List<IUserItemViewModel>();
+            FriendList = new DesignLazyObservableCollection<IUserItemViewModel>();
             for (int i = 0; i < 5; i++)
             {
                 var user = new DesignUserItemViewModel()
@@ -41,7 +39,7 @@ namespace Epiphany.View.DesignData
             set;
         }
 
-        public IList<IUserItemViewModel> FriendList
+        public ILazyObservableCollection<IUserItemViewModel> FriendList
         {
             get;
             set;

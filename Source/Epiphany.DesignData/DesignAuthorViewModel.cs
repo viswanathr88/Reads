@@ -1,5 +1,6 @@
 ﻿using Epiphany.Model;
 using Epiphany.ViewModel;
+using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Items;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ namespace Epiphany.View.DesignData
             set;
         }
 
-        public IList<IBookItemViewModel> Books
+        public ILazyObservableCollection<IBookItemViewModel> Books
         {
             get;
             set;
@@ -121,7 +122,7 @@ namespace Epiphany.View.DesignData
 
         private void PopulateBooks()
         {
-            Books = new ObservableCollection<IBookItemViewModel>();
+            Books = new DesignLazyObservableCollection<IBookItemViewModel>();
 
             for (int i = 0; i < 15; i++ )
             {

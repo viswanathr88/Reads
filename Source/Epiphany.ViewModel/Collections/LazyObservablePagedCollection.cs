@@ -1,18 +1,72 @@
-﻿using Epiphany.Logging;
-using Epiphany.Model.Collections;
+﻿using Epiphany.Model.Collections;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Threading.Tasks;
-using Windows.Foundation;
-using Windows.UI.Core;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Data;
 
 namespace Epiphany.ViewModel.Collections
 {
-    public sealed class ObservablePagedCollection<TViewModel, TModel> : ObservableCollection<TViewModel>, 
+    /// <summary>
+    /// Lazy load paged collections with observable properties
+    /// </summary>
+    /// <typeparam name="TViewModel">ViewModel class</typeparam>
+    /// <typeparam name="TModel">Model class</typeparam>
+    public sealed class LazyObservablePagedCollection<TViewModel, TModel> : LazyObservableCollectionBase<TViewModel>
+    {
+        private readonly IPagedCollection<TModel> pagedCollection;
+        private readonly IAsyncEnumerator<TModel> enumerator;
+        private readonly Func<TModel, TViewModel> adapterMethod;
+        /// <summary>
+        /// Create a new instance of <see cref="LazyObservablePagedCollection{TViewModel, TModel}"/>
+        /// </summary>
+        /// <param name="pagedCollection">Paged collection</param>
+        /// <param name="adapterMethod">Adapter method to convert model item to a viewmodel item</param>
+        public LazyObservablePagedCollection(IPagedCollection<TModel> pagedCollection, Func<TModel, TViewModel> adapterMethod)
+        {
+            if (pagedCollection == null)
+            {
+                throw new ArgumentNullException(nameof(pagedCollection));
+            }
+
+            if (adapterMethod == null)
+            {
+                throw new ArgumentNullException(nameof(adapterMethod));
+            }
+
+            this.pagedCollection = pagedCollection;
+            this.enumerator = this.pagedCollection.GetEnumerator();
+            this.adapterMethod = adapterMethod;
+        }
+        /// <summary>
+        /// Load items asynchronously
+        /// </summary>
+        /// <param name="count">Requested number of items to load</param>
+        /// <returns>List of loaded items</returns>
+        protected override async Task<IList<TViewModel>> LoadItemsAsync(uint count)
+        {
+            bool fMoveNext = false;
+            int loadedCount = 0;
+            IList<TModel> items = new List<TModel>();
+
+            while (loadedCount < Math.Max(count, pagedCollection.Count - this.Count) &&
+            (fMoveNext = await this.enumerator.MoveNext()) == true)
+            {
+                items.Add(enumerator.Current);
+                loadedCount++;
+            }
+
+            LoadCompleted = (fMoveNext == false);
+
+            IList<TViewModel> itemsVM = new List<TViewModel>();
+            foreach (var item in items)
+            {
+                itemsVM.Add(adapterMethod(item));
+            }
+
+            return itemsVM;
+        }
+    }
+
+    /*public sealed class ObservablePagedCollection<TViewModel, TModel> : ObservableCollection<TViewModel>, 
         IGroup<string, TViewModel>, ILazyObservableCollection<TViewModel>, INotifyPropertyChanged
     {
         private readonly IPagedCollection<TModel> pagedCollection;
@@ -125,5 +179,5 @@ namespace Epiphany.ViewModel.Collections
                 return new LoadMoreItemsResult() { Count = Convert.ToUInt32(loadedCount) };
             }).AsAsyncOperation<LoadMoreItemsResult>();
         }
-    }
+    }*/
 }

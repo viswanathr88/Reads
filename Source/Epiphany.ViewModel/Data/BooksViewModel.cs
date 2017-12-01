@@ -48,7 +48,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<IBookItemViewModel> Books
+        public ILazyObservableCollection<IBookItemViewModel> Books
         {
             get
             {
@@ -56,7 +56,7 @@ namespace Epiphany.ViewModel
             }
             private set
             {
-                SetProperty(ref this.books, value as ILazyObservableCollection<IBookItemViewModel>);
+                SetProperty(ref this.books, value);
             }
         }
 
@@ -133,17 +133,35 @@ namespace Epiphany.ViewModel
 
         private void CreateBookCollection()
         {
+            if (Books != null)
+            {
+                Books.PropertyChanged -= Books_PropertyChanged;
+            }
+
             if (Parameter != null)
             {
-                var collection = this.bookService.GetBooks(Parameter.User.Id, ShelfName, SelectedFilter, SelectedOrderByFilter);
-                Books = new ObservablePagedCollection<IBookItemViewModel, BookModel>(collection, AdapterFn);
-                this.books.Loading += (sender, arg) => IsLoading = true;
-                this.books.Loaded += (sender, arg) =>
+                Books = new LazyObservablePagedCollection<IBookItemViewModel, BookModel>
+                    (this.bookService.GetBooks(Parameter.User.Id, ShelfName, SelectedFilter, SelectedOrderByFilter), 
+                    (model) => new BookItemViewModel(model));
+                Books.PropertyChanged += Books_PropertyChanged;
+            }
+        }
+
+        private void Books_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(Books.IsLoading))
+            {
+                IsLoading = Books.IsLoading;
+                if (!Books.IsLoading)
                 {
-                    Error = arg.Error;
-                    IsLoading = false;
-                    IsLoaded = true;
-                };
+                    IsLoaded = (Books.Count != 0 || Error != null);
+                }
+
+            }
+            else if (e.PropertyName == nameof(Books.Error))
+            {
+                Error = Books.Error;
+                IsLoaded = false;
             }
         }
 
@@ -158,11 +176,6 @@ namespace Epiphany.ViewModel
             return Task.FromResult<bool>(true);
         }
 
-        private IBookItemViewModel AdapterFn(BookModel arg)
-        {
-            return new BookItemViewModel(arg);
-        }
-
         private void CreateOrderByFilters()
         {
             OrderByFilters = null;
@@ -174,6 +187,16 @@ namespace Epiphany.ViewModel
             base.Reset();
             ShelfName = string.Empty;
             Books = null;
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+
+            if (Books != null)
+            {
+                Books.PropertyChanged -= Books_PropertyChanged;
+            }
         }
     }
 }

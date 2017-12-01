@@ -1,4 +1,5 @@
 ﻿using Epiphany.Model.Services;
+using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Items;
 using System.Collections.Generic;
 
@@ -16,7 +17,7 @@ namespace Epiphany.ViewModel
             get;
         }
 
-        IList<IBookItemViewModel> Books
+        ILazyObservableCollection<IBookItemViewModel> Books
         {
             get;
         }

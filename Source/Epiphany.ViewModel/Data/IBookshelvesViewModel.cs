@@ -1,6 +1,6 @@
-﻿using Epiphany.ViewModel.Commands;
+﻿using Epiphany.ViewModel.Collections;
+using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Items;
-using System.Collections.Generic;
 using System.Windows.Input;
 
 namespace Epiphany.ViewModel
@@ -22,7 +22,7 @@ namespace Epiphany.ViewModel
         /// <summary>
         /// Gets the list of bookshelves
         /// </summary>
-        IList<IBookshelfItemViewModel> Shelves { get; }
+        ILazyObservableCollection<IBookshelfItemViewModel> Shelves { get; }
         /// <summary>
         /// Gets or sets the new shelf name
         /// </summary>

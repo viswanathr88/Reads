@@ -1,90 +1,93 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Threading.Tasks;
-using Windows.Foundation;
-using Windows.UI.Xaml.Data;
 
 namespace Epiphany.ViewModel.Collections
 {
-    sealed class LazyObservableCollection<TViewModel, TModel> : ObservableCollection<TViewModel>, ILazyObservableCollection<TViewModel>, ISupportIncrementalLoading
+    /// <summary>
+    /// Class for lazy loading a list. The assumption is the view understands
+    /// <see cref="ISupportIncrementalLoading"/> and will initiate a load only when the List UI is
+    /// in view. Supports both async and sync versions to obtain the list
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    sealed class LazyObservableCollection<TViewModel, TModel> : LazyObservableCollectionBase<TViewModel>
     {
-        private readonly Func<IEnumerable<TModel>> collectionSourceFn;
+        private readonly Func<IEnumerable<TModel>> sourceFn;
+        private readonly Func<Task<IEnumerable<TModel>>> sourceAsyncFn;
         private readonly Func<TModel, TViewModel> adapterFn;
-        private bool isLoading = false;
-        private bool hasMoreItems = true;
-
-        public LazyObservableCollection(Func<IEnumerable<TModel>> sourceFn, Func<TModel, TViewModel> adapterFn)
+        /// <summary>
+        /// Create a new instance of <see cref="LazyObservableCollection{TViewModel, TModel}"/>
+        /// </summary>
+        /// <param name="sourceFn">Synchronous source function to fetch the list of model items</param>
+        /// <param name="adapterFn">Adapter method to convert a model item to a viewmodel item</param>
+        public LazyObservableCollection(Func<IEnumerable<TModel>> sourceFn, Func<TModel, TViewModel> adapterFn) :
+            this(sourceFn, null, adapterFn)
         {
-            if (sourceFn == null)
+        }
+        /// <summary>
+        /// Create a new instance of <see cref="LazyObservableCollection{TViewModel, TModel}"/>
+        /// </summary>
+        /// <param name="sourceAsyncFn">Asynchronous source function to fetch the list of model items</param>
+        /// <param name="adapterFn">Adapter method to convert a model item to a viewmodel item</param>
+        public LazyObservableCollection(Func<Task<IEnumerable<TModel>>> sourceAsyncFn, Func<TModel, TViewModel> adapterFn) :
+            this(null, sourceAsyncFn, adapterFn)
+        {
+        }
+        /// <summary>
+        /// Internal constructor
+        /// </summary>
+        /// <param name="sourceFn"></param>
+        /// <param name="sourceAsyncFn"></param>
+        /// <param name="adapterFn"></param>
+        private LazyObservableCollection(
+            Func<IEnumerable<TModel>> sourceFn, 
+            Func<Task<IEnumerable<TModel>>> sourceAsyncFn, 
+            Func<TModel, TViewModel> adapterFn)
+        {
+            if (sourceFn == null && sourceAsyncFn == null)
             {
-                throw new ArgumentNullException(nameof(collectionSourceFn));
+                throw new ArgumentNullException("There is no source function");
             }
 
-            this.collectionSourceFn = sourceFn;
+            if (adapterFn == null)
+            {
+                throw new ArgumentNullException(nameof(adapterFn));
+            }
+
+            this.sourceFn = sourceFn;
+            this.sourceAsyncFn = sourceAsyncFn;
             this.adapterFn = adapterFn;
         }
-
-
-        public bool HasMoreItems
+        /// <summary>
+        /// Load more items asynchronously
+        /// </summary>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        protected override async Task<IList<TViewModel>> LoadItemsAsync(uint count)
         {
-            get
+            IEnumerable<TModel> items = null;
+            if (sourceFn != null)
             {
-                return this.hasMoreItems;
+                items = sourceFn.Invoke();
+                await Task.FromResult(0);
             }
-            private set
+            else if (sourceAsyncFn != null)
             {
-                this.hasMoreItems = value;
+                items = await sourceAsyncFn();
             }
-        }
 
-        public bool IsLoading
-        {
-            get
+            LoadCompleted = true;
+
+            IList<TViewModel> itemsVM = new List<TViewModel>();
+            if (items != null)
             {
-                return this.isLoading;
-            }
-            private set
-            {
-                if (this.isLoading != value)
+                foreach (var item in items)
                 {
-                    this.isLoading = value;
-                    OnPropertyChanged(new PropertyChangedEventArgs(nameof(IsLoading)));
-                }
-            }
-        }
-
-        public event EventHandler<LoadedEventArgs> Loaded;
-        private void RaiseLoaded(Exception error) => Loaded?.Invoke(this, new LoadedEventArgs(error));
-
-        public event EventHandler<EventArgs> Loading;
-        private void RaiseLoading() => Loading?.Invoke(this, EventArgs.Empty);
-
-        public IAsyncOperation<LoadMoreItemsResult> LoadMoreItemsAsync(uint count)
-        {
-            IsLoading = true;
-            RaiseLoading();
-
-            IEnumerable<TModel> collectionSource = collectionSourceFn.Invoke();
-            if (Count <= 0 && collectionSource != null)
-            {
-                foreach (TModel model in collectionSource)
-                {
-                    var item = this.adapterFn.Invoke(model);
-                    if (item != null)
-                    {
-                        Add(item);
-                    }
+                    itemsVM.Add(this.adapterFn(item));
                 }
             }
 
-            HasMoreItems = false;
-
-            RaiseLoaded(null);
-            IsLoading = false;
-
-            return Task.FromResult<LoadMoreItemsResult>(new LoadMoreItemsResult() { Count = Convert.ToUInt32(Count) }).AsAsyncOperation<LoadMoreItemsResult>();
+            return itemsVM;
         }
     }
 }

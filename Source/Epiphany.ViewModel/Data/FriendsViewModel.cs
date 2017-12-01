@@ -5,7 +5,6 @@ using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 namespace Epiphany.ViewModel
 {
@@ -14,7 +13,7 @@ namespace Epiphany.ViewModel
         private string name;
         private string title;
         private bool areFriendsEmpty;
-        private IList<IUserItemViewModel> friendsList;
+        private ILazyObservableCollection<IUserItemViewModel> friendsList;
 
         private readonly IUserService userService;
         private readonly IResourceLoader resourceLoader;
@@ -34,7 +33,10 @@ namespace Epiphany.ViewModel
 
         public string Name
         {
-            get { return this.name; }
+            get
+            {
+                return this.name;
+            }
             private set
             {
                 SetProperty(ref this.name, value);
@@ -43,16 +45,22 @@ namespace Epiphany.ViewModel
 
         public bool AreFriendsEmpty
         {
-            get { return this.areFriendsEmpty; }
+            get
+            {
+                return this.areFriendsEmpty;
+            }
             private set
             {
                 SetProperty(ref this.areFriendsEmpty, value);
             }
         }
 
-        public IList<IUserItemViewModel> FriendList
+        public ILazyObservableCollection<IUserItemViewModel> FriendList
         {
-            get { return this.friendsList; }
+            get
+            {
+                return this.friendsList;
+            }
             private set
             {
                 SetProperty(ref this.friendsList, value);
@@ -75,17 +83,29 @@ namespace Epiphany.ViewModel
         {
             Name = user.Name;
             Title = string.Format(this.resourceLoader.GetString(titleFormatKey), Name);
-            var collection = this.userService.GetFriends(user.Id);
-            var friends = new ObservablePagedCollection<IUserItemViewModel, UserModel>(collection, (model) => new UserItemViewModel(model));
-            friends.Loading += (sender, arg) => IsLoading = true;
-            friends.Loaded += (sender, arg) =>
-            {
-                IsLoading = false;
-                IsLoaded = true;
-            };
-            FriendList = friends;
+            FriendList = new LazyObservablePagedCollection<IUserItemViewModel, UserModel>
+                (this.userService.GetFriends(user.Id), (model) => new UserItemViewModel(model));
+            FriendList.PropertyChanged += FriendList_PropertyChanged;
 
             return Task.FromResult<bool>(true);
+        }
+
+        private void FriendList_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(FriendList.IsLoading))
+            {
+                IsLoading = FriendList.IsLoading;
+                if (!FriendList.IsLoading)
+                {
+                    IsLoaded = (FriendList.Count != 0 || Error != null);
+                }
+
+            }
+            else if (e.PropertyName == nameof(FriendList.Error))
+            {
+                Error = FriendList.Error;
+                IsLoaded = false;
+            }
         }
 
         protected override void Reset()
@@ -95,6 +115,16 @@ namespace Epiphany.ViewModel
             Name = string.Empty;
             Title = string.Empty;
             FriendList = null;
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+
+            if (FriendList != null)
+            {
+                FriendList.PropertyChanged -= FriendList_PropertyChanged;
+            }
         }
     }
 }

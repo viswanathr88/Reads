@@ -1,9 +1,9 @@
 ﻿using Epiphany.Model.Services;
 using Epiphany.ViewModel;
+using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Items;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace Epiphany.View.DesignData
@@ -18,7 +18,7 @@ namespace Epiphany.View.DesignData
                 Name = "Test User"
             };
 
-            Books = new ObservableCollection<IBookItemViewModel>();
+            Books = new DesignLazyObservableCollection<IBookItemViewModel>();
 
             Filters = Enum.GetValues(typeof(BookSortType)).Cast<BookSortType>().ToList();
             SelectedFilter = BookSortType.date_added;
@@ -43,7 +43,7 @@ namespace Epiphany.View.DesignData
             SelectedOrderByFilter = BookSortOrder.d;
         }
 
-        public IList<IBookItemViewModel> Books
+        public ILazyObservableCollection<IBookItemViewModel> Books
         {
             get;
             set;

@@ -18,7 +18,6 @@ namespace Epiphany.ViewModel
         private readonly IEventService eventService;
         private readonly IDeviceServices deviceServices;
 
-        private IEventItemViewModel selectedEvent;
         private ILazyObservableCollection<IEventItemViewModel> events;
         private RelayCommand refreshCommand;
         /// <summary>
@@ -48,21 +47,6 @@ namespace Epiphany.ViewModel
             }
         }
         /// <summary>
-        /// Gets or sets the selected event
-        /// </summary>
-        public IEventItemViewModel SelectedEvent
-        {
-            get { return this.selectedEvent; }
-            set
-            {
-                if (this.selectedEvent == value) return;
-                this.selectedEvent = value;
-                this.deviceServices.LaunchUrl(this.selectedEvent.Link);
-                this.selectedEvent = null;
-                RaisePropertyChanged(() => SelectedEvent);
-            }
-        }
-        /// <summary>
         /// Command to refresh literary events
         /// </summary>
         public ICommand Refresh
@@ -85,33 +69,47 @@ namespace Epiphany.ViewModel
         {
             if (Events != null)
             {
-                Events.Loading -= Events_Loading;
-                Events.Loaded -= Events_Loaded;
+                Events.PropertyChanged -= Events_PropertyChanged;
             }
 
-            Events = new AsyncLazyObservableCollection<IEventItemViewModel, LiteraryEventModel>(
+            Events = new LazyObservableCollection<IEventItemViewModel, LiteraryEventModel>(
                 async() =>
                 {
                     var coords = await this.deviceServices.GetCoordinatesAsync();
                     return await this.eventService.GetEvents(coords.Latitude, coords.Longitude);
                 },
                 (model) => new EventItemViewModel(model));
-            Events.Loading += Events_Loading;
-            Events.Loaded += Events_Loaded;
+            Events.PropertyChanged += Events_PropertyChanged;
         }
 
-        private void Events_Loading(object sender, EventArgs e)
+        private void Events_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            IsLoading = true;
-            this.refreshCommand.NotifyCanExecuteChanged();
+            if (e.PropertyName == nameof(Events.IsLoading))
+            {
+                IsLoading = Events.IsLoading;
+                if (!Events.IsLoading)
+                {
+                    IsLoaded = (Events.Count != 0 || Error != null);
+                }
+
+                this.refreshCommand.NotifyCanExecuteChanged();
+
+            }
+            else if (e.PropertyName == nameof(Events.Error))
+            {
+                Error = Events.Error;
+                IsLoaded = false;
+            }
         }
 
-        private void Events_Loaded(object sender, LoadedEventArgs e)
+        public override void Dispose()
         {
-            Error = e.Error;
-            IsLoading = false;
-            IsLoaded = (Error == null);
-            this.refreshCommand.NotifyCanExecuteChanged();
+            base.Dispose();
+
+            if (Events != null)
+            {
+                Events.PropertyChanged -= Events_PropertyChanged;
+            }
         }
     }
 }

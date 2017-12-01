@@ -1,4 +1,5 @@
 ﻿using Epiphany.Model;
+using Epiphany.Model.Authentication;
 using Epiphany.Model.Services;
 using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Items;
@@ -12,7 +13,7 @@ namespace Epiphany.ViewModel
     public class SearchViewModel : DataViewModel<string>, ISearchViewModel
     {
         private IList<BookSearchType> searchFilters;
-        private ObservablePagedCollection<ISearchResultItemViewModel, WorkModel> searchResults;
+        private ILazyObservableCollection<ISearchResultItemViewModel> searchResults;
         private BookSearchType selectedFilter;
         private bool hasResults = true;
         private bool isLoggedIn = false;
@@ -32,11 +33,6 @@ namespace Epiphany.ViewModel
             this.selectedFilter = BookSearchType.All;
         }
 
-        private void LogonService_SessionChanged(object sender, Model.Authentication.SessionChangedEventArgs e)
-        {
-            IsLoggedIn = (e.Session != null);
-        }
-
         public bool IsLoggedIn
         {
             get
@@ -51,7 +47,10 @@ namespace Epiphany.ViewModel
 
         public string SearchTerm
         {
-            get { return this.searchTerm; }
+            get
+            {
+                return this.searchTerm;
+            }
             set
             {
                 SetProperty(ref this.searchTerm, value);
@@ -60,7 +59,10 @@ namespace Epiphany.ViewModel
 
         public BookSearchType SelectedFilter
         {
-            get { return this.selectedFilter; }
+            get
+            {
+                return this.selectedFilter;
+            }
             set
             {
                 if (SetProperty(ref this.selectedFilter, value))
@@ -72,21 +74,34 @@ namespace Epiphany.ViewModel
 
         public IList<BookSearchType> SearchFilters
         {
-            get { return this.searchFilters; }
+            get
+            {
+                return this.searchFilters;
+            }
             private set
             {
                 SetProperty(ref this.searchFilters, value);
             }
         }
 
-        public IList<ISearchResultItemViewModel> SearchResults
+        public ILazyObservableCollection<ISearchResultItemViewModel> SearchResults
         {
-            get { return this.searchResults; }
+            get
+            {
+                return this.searchResults;
+            }
+            private set
+            {
+                SetProperty(ref this.searchResults, value);
+            }
         }
 
         public bool HasResults
         {
-            get { return this.hasResults; }
+            get
+            {
+                return this.hasResults;
+            }
             private set
             {
                 SetProperty(ref this.hasResults, value);
@@ -111,40 +126,41 @@ namespace Epiphany.ViewModel
 
         private void CreateObservableCollection(Model.Collections.IPagedCollection<WorkModel> collection)
         {
-            if (this.searchResults != null)
+            if (SearchResults != null)
             {
-                this.searchResults.Loading -= SearchResults_Loading;
-                this.searchResults.Loaded -= SearchResults_Loaded;
-                this.searchResults = null;
-                RaisePropertyChanged(nameof(SearchResults));
+                SearchResults.PropertyChanged -= SearchResults_PropertyChanged;
             }
 
-            this.searchResults = new ObservablePagedCollection<ISearchResultItemViewModel, WorkModel>(collection, ConvertToVM);
-            this.searchResults.Loading += SearchResults_Loading;
-            this.searchResults.Loaded += SearchResults_Loaded;
-            RaisePropertyChanged(nameof(SearchResults));
+            // Create the collection
+            SearchResults = new LazyObservablePagedCollection<ISearchResultItemViewModel, WorkModel>
+                (collection, (model) => new SearchResultItemViewModel(this.bookService, model));
+            SearchResults.PropertyChanged += SearchResults_PropertyChanged;
 
             HasResults = true;
         }
 
-        private void SearchResults_Loaded(object sender, LoadedEventArgs e)
+        private void SearchResults_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            IsLoading = false;
-            IsLoaded = true;
-            if (SearchResults.Count == 0)
+            if (e.PropertyName == nameof(SearchResults.IsLoading))
             {
-                HasResults = false;
+                IsLoading = SearchResults.IsLoading;
+                if (!SearchResults.IsLoading)
+                {
+                    HasResults = (SearchResults.Count != 0);
+                    IsLoaded = (HasResults || Error != null);
+                }
+                
+            }
+            else if (e.PropertyName == nameof(SearchResults.Error))
+            {
+                Error = SearchResults.Error;
+                IsLoaded = false;
             }
         }
 
-        private void SearchResults_Loading(object sender, EventArgs e)
+        private void LogonService_SessionChanged(object sender, SessionChangedEventArgs e)
         {
-            IsLoading = true;
-        }
-
-        private SearchResultItemViewModel ConvertToVM(WorkModel arg)
-        {
-            return new SearchResultItemViewModel(this.bookService, arg);
+            IsLoggedIn = (e.Session != null);
         }
 
         protected override void Reset()
@@ -152,13 +168,17 @@ namespace Epiphany.ViewModel
             base.Reset();
 
             SearchTerm = string.Empty;
-            this.searchResults = null;
-            RaisePropertyChanged(nameof(SearchResults));
+            SearchResults = null;
         }
 
         public override void Dispose()
         {
             base.Dispose();
+
+            if (SearchResults != null)
+            {
+                SearchResults.PropertyChanged -= SearchResults_PropertyChanged;
+            }
 
             this.logonService.SessionChanged -= LogonService_SessionChanged;
         }

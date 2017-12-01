@@ -193,18 +193,18 @@
 
                                 <!-- Currently reading list -->
                                 <controls:BookStack Items="{Binding Path=Books.CurrentlyReadingBooks}"
-                                                    IsLoading="{Binding Path=Books.IsCurrentlyReadingBooksLoading}"
+                                                    IsLoading="{Binding Path=Books.CurrentlyReadingBooks.IsLoading}"
                                                     Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.CurrentlyReadingSectionTitle}" />
 
                                 <!-- Reading challenge list -->
                                 <controls:BookStack Items="{Binding Path=Books.ReadingChallengeBooks}"
-                                                    IsLoading="{Binding Path=Books.IsReadingChallengeBooksLoading}"
+                                                    IsLoading="{Binding Path=Books.ReadingChallengeBooks.IsLoading}"
                                                     Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.ReadingChallengeSectionTitle}" />
 
                                 <!-- Owned Books list -->
-                                <!--<controls:BookStack Items="{Binding Path=Books.OwnedBooks}"
-                                                IsLoading="{Binding Path=Books.IsOwnedBooksLoading}"
-                                                Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.OwnedBooksSectionTitle}" />-->
+                                <controls:BookStack Items="{Binding Path=Books.OwnedBooks}"
+                                                    IsLoading="{Binding Path=Books.IsOwnedBooksLoading}"
+                                                    Header="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.OwnedBooksSectionTitle}" />
 
                                 <!-- View all books button -->
                                 <Button Background="{ThemeResource PhoneChromeBrush}"
@@ -266,7 +266,7 @@
                         </ListView.ItemTemplate>
 
                         <ListView.Footer>
-                            <ProgressRing IsActive="{Binding Path=Community.IsLoading}"
+                            <ProgressRing IsActive="{Binding Path=Community.Items.IsLoading}"
                                           MinWidth="40"
                                           MinHeight="40"
                                           Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
@@ -284,7 +284,7 @@
                                               Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}"/>
 
                     <controls:EventsControl Items="{Binding Path=Events.Events}"
-                                            IsLoading="{Binding Path=Events.IsLoading}"
+                                            IsLoading="{Binding Path=Events.Events.IsLoading}"
                                             SelectedItem="{Binding Path=Events.SelectedEvent, Mode=TwoWay}"
                                             Visibility="{Binding IsLoggedIn, Converter={StaticResource InverseBooleanToVisibilityConverter}}"/>
                 </Grid>

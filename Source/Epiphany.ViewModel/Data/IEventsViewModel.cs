@@ -17,9 +17,5 @@ namespace Epiphany.ViewModel
         /// Command to refresh the list of events
         /// </summary>
         ICommand Refresh { get; }
-        /// <summary>
-        /// Gets or sets the current selected event
-        /// </summary>
-        IEventItemViewModel SelectedEvent { get; set; }
     }
 }

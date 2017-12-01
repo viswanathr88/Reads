@@ -232,11 +232,9 @@ namespace Epiphany.ViewModel
                 RatingDistribution = new RatingDistributionViewModel(Model.RatingDistribution);
             }
 
-            var reviews = new ObservablePagedCollection<IReviewItemViewModel, ReviewModel>(
+            var reviews = new LazyObservablePagedCollection<IReviewItemViewModel, ReviewModel>(
                 this.reviewService.GetReviews(Model),
                 model => new ReviewItemViewModel(model));
-            reviews.Loading += (sender, arg) => IsLoading = true;
-            reviews.Loaded += (sender, arg) => IsLoading = false;
 
             if (Model.FriendReviews != null)
             {

@@ -1,7 +1,7 @@
 ﻿using Epiphany.Model;
+using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Items;
 using System.Collections.Generic;
-using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
@@ -66,7 +66,7 @@ namespace Epiphany.ViewModel
         /// <summary>
         /// Gets all the books by the author
         /// </summary>
-        IList<IBookItemViewModel> Books
+        ILazyObservableCollection<IBookItemViewModel> Books
         {
             get;
         }

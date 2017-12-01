@@ -4,7 +4,6 @@ using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Commands;
 using Epiphany.ViewModel.Items;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -44,7 +43,7 @@ namespace Epiphany.ViewModel
             this.cancelCreateShelfCommand = new DelegateCommand(() => NewShelfName = string.Empty);
         }
 
-        public IList<IBookshelfItemViewModel> Shelves
+        public ILazyObservableCollection<IBookshelfItemViewModel> Shelves
         {
             get
             {
@@ -52,7 +51,7 @@ namespace Epiphany.ViewModel
             }
             private set
             {
-                SetProperty(ref this.shelves, value as ILazyObservableCollection<IBookshelfItemViewModel>);
+                SetProperty(ref this.shelves, value);
             }
         }
 
@@ -140,30 +139,34 @@ namespace Epiphany.ViewModel
 
         private void CreateCollection()
         {
-            var shelfCollection = this.bookshelfService.GetBookshelves(Parameter.Id);
-            Shelves = new ObservablePagedCollection<IBookshelfItemViewModel, BookshelfModel>(shelfCollection, BookshelfModelAdapterFn);
-            this.shelves.Loading += (obj, args) => IsLoading = true;
-            this.shelves.Loaded += (obj, args) =>
+            if (Shelves != null)
             {
-                IsLoading = false;
-                IsLoaded = true;
-            };
-        }
+                Shelves.PropertyChanged -= Shelves_PropertyChanged;
 
-        private IBookItemViewModel BookModelAdapterFn(BookModel model)
-        {
-            return new BookItemViewModel(model);
-        }
-
-        private IBookshelfItemViewModel BookshelfModelAdapterFn(BookshelfModel model)
-        { 
-            IBookshelfItemViewModel item = null;
-            if (model != null)
-            {
-                item = new BookshelfItemViewModel(Parameter, model);
             }
+            var shelfCollection = this.bookshelfService.GetBookshelves(Parameter.Id);
+            Shelves = new LazyObservablePagedCollection<IBookshelfItemViewModel, BookshelfModel>
+                (this.bookshelfService.GetBookshelves(Parameter.Id), 
+                (model) => new BookshelfItemViewModel(Parameter, model));
+            Shelves.PropertyChanged += Shelves_PropertyChanged;
+        }
 
-            return item;
+        private void Shelves_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(Shelves.IsLoading))
+            {
+                IsLoading = Shelves.IsLoading;
+                if (!Shelves.IsLoading)
+                {
+                    IsLoaded = (Shelves.Count != 0 || Error != null);
+                }
+
+            }
+            else if (e.PropertyName == nameof(Shelves.Error))
+            {
+                Error = Shelves.Error;
+                IsLoaded = false;
+            }
         }
 
         private void OnShelfAdded(ExecutedEventArgs args)
@@ -191,6 +194,11 @@ namespace Epiphany.ViewModel
             base.Dispose();
 
             DeregisterCommand(this.createShelfCommand);
+
+            if (Shelves != null)
+            {
+                Shelves.PropertyChanged -= Shelves_PropertyChanged;
+            }
         }
     }
 }

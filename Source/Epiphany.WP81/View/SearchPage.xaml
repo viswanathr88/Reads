@@ -204,7 +204,7 @@
 
                 <!-- Footer -->
                 <ListView.Footer>
-                    <ProgressRing IsActive="{Binding IsLoading}"
+                    <ProgressRing IsActive="{Binding Path=SearchResults.IsLoading}"
                                   HorizontalAlignment="Center"
                                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
                                   MinHeight="45"

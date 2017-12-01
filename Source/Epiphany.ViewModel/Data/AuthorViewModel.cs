@@ -6,10 +6,8 @@ using Epiphany.ViewModel.Items;
 using Epiphany.ViewModel.Services;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace Epiphany.ViewModel
 {
@@ -25,7 +23,7 @@ namespace Epiphany.ViewModel
         private string hometown;
 
         // collections
-        private IList<IBookItemViewModel> books;
+        private ILazyObservableCollection<IBookItemViewModel> books;
         private IList<IAuthorAttributeViewModel> attributes;
 
         private readonly IAuthorService authorService;
@@ -43,7 +41,6 @@ namespace Epiphany.ViewModel
             this.navService = navService;
             this.authorService = authorService;
 
-            Books = new ObservableCollection<IBookItemViewModel>();
             this.authorAttributeVMFactory = new AuthorAttributeViewModelFactory();
         }
 
@@ -71,7 +68,7 @@ namespace Epiphany.ViewModel
             }
         }
 
-        public IList<IBookItemViewModel> Books
+        public ILazyObservableCollection<IBookItemViewModel> Books
         {
             get
             {
@@ -85,12 +82,13 @@ namespace Epiphany.ViewModel
 
         public IList<IAuthorAttributeViewModel> Attributes
         {
-            get { return this.attributes; }
+            get
+            {
+                return this.attributes;
+            }
             private set
             {
-                if (this.attributes == value) return;
-                this.attributes = value;
-                RaisePropertyChanged();
+                SetProperty(ref this.attributes, value);
             }
         }
 
@@ -104,7 +102,7 @@ namespace Epiphany.ViewModel
             {
                 SetProperty(ref this.description, value);
             }
-            
+
         }
 
         public int FollowersCount
@@ -167,7 +165,9 @@ namespace Epiphany.ViewModel
                 Parameter = await this.authorService.GetAuthorAsync(author.Id);
                 Attributes = this.authorAttributeVMFactory.GetAuthorAttributeItems(Parameter);
                 UpdateProperties(Parameter);
-                Books = new ObservablePagedCollection<IBookItemViewModel, BookModel>(this.bookService.GetBooks(Parameter), (model) => new BookItemViewModel(model));
+                Books = new LazyObservablePagedCollection<IBookItemViewModel, BookModel>(
+                    this.bookService.GetBooks(Parameter), (model) => new BookItemViewModel(model));
+                Books.PropertyChanged += Books_PropertyChanged;
                 IsLoaded = true;
             }
             catch (Exception ex)
@@ -177,6 +177,22 @@ namespace Epiphany.ViewModel
             finally
             {
                 IsLoading = false;
+            }
+        }
+
+        private void Books_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(Books.IsLoading))
+            {
+                if (!Books.IsLoading)
+                {
+                    IsLoaded = (Books.Count != 0 || Error != null);
+                }
+            }
+            else if (e.PropertyName == nameof(Books.Error))
+            {
+                Error = Books.Error;
+                IsLoaded = false;
             }
         }
 
@@ -199,6 +215,16 @@ namespace Epiphany.ViewModel
             Hometown = (!string.IsNullOrEmpty(author.Hometown)) ? author.Hometown : Hometown;
             AverageRating = (author.AverageRating != 0) ? author.AverageRating : AverageRating;
             RatingsCount = (author.RatingsCount != 0) ? author.RatingsCount : RatingsCount;
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+
+            if (Books != null)
+            {
+                Books.PropertyChanged -= Books_PropertyChanged;
+            }
         }
     }
 }

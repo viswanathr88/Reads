@@ -58,7 +58,6 @@
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="Base\VoidType.cs" />
     <Compile Include="Collections\AlphabetKeyedList.cs" />
-    <Compile Include="Collections\AsyncLazyObservableCollection.cs" />
     <Compile Include="Collections\BidirectionalMap.cs" />
     <Compile Include="Collections\DeltaList.cs" />
     <Compile Include="Collections\DeltaListItem.cs" />
@@ -67,8 +66,9 @@
     <Compile Include="Collections\ILazyObservableCollection.cs" />
     <Compile Include="Collections\KeyedList.cs" />
     <Compile Include="Collections\LazyObservableCollection.cs" />
+    <Compile Include="Collections\LazyObservableCollectionBase.cs" />
     <Compile Include="Collections\LoadedEventArgs.cs" />
-    <Compile Include="Collections\ObservablePagedCollection.cs" />
+    <Compile Include="Collections\LazyObservablePagedCollection.cs" />
     <Compile Include="Collections\ObservableSortedGroup.cs" />
     <Compile Include="Collections\SortedList.cs" />
     <Compile Include="Commands\AddShelfCommand.cs">

@@ -1,6 +1,7 @@
 ﻿using Epiphany.Model;
 using Epiphany.Model.Services;
 using Epiphany.ViewModel;
+using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Items;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace Epiphany.View.DesignData
 
         private void PopulateSearchResults()
         {
-            SearchResults = new ObservableCollection<ISearchResultItemViewModel>();
+            SearchResults = new DesignLazyObservableCollection<ISearchResultItemViewModel>();
 
             for (int i = 0; i < 5; i++)
             {
@@ -80,7 +81,7 @@ namespace Epiphany.View.DesignData
             set;
         }
 
-        public IList<ISearchResultItemViewModel> SearchResults
+        public ILazyObservableCollection<ISearchResultItemViewModel> SearchResults
         {
             get;
             set;

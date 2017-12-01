@@ -1,7 +1,7 @@
 ﻿using Epiphany.ViewModel;
+using Epiphany.ViewModel.Collections;
 using Epiphany.ViewModel.Items;
 using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace Epiphany.View.DesignData
@@ -12,7 +12,7 @@ namespace Epiphany.View.DesignData
 
         public DesignMyBooksViewModel()
         {
-            CurrentlyReadingBooks = new List<IBookItemViewModel>();
+            CurrentlyReadingBooks = new DesignLazyObservableCollection<IBookItemViewModel>();
             for (int i = 0; i < 4; i++)
             {
                 DesignBookItemViewModel item = new DesignBookItemViewModel()
@@ -22,7 +22,7 @@ namespace Epiphany.View.DesignData
                 CurrentlyReadingBooks.Add(item);
             }
 
-            ReadingChallengeBooks = new List<IBookItemViewModel>();
+            ReadingChallengeBooks = new DesignLazyObservableCollection<IBookItemViewModel>();
             for (int i = 0; i < 4; i++)
             {
                 DesignBookItemViewModel item = new DesignBookItemViewModel()
@@ -34,37 +34,19 @@ namespace Epiphany.View.DesignData
         }
 
 
-        public IList<IBookItemViewModel> CurrentlyReadingBooks
+        public ILazyObservableCollection<IBookItemViewModel> CurrentlyReadingBooks
         {
             get;
             set;
         }
 
-        public bool IsCurrentlyReadingBooksLoading
+        public ILazyObservableCollection<IBookItemViewModel> OwnedBooks
         {
             get;
             set;
         }
 
-        public bool IsOwnedBooksLoading
-        {
-            get;
-            set;
-        }
-
-        public bool IsReadingChallengeBooksLoading
-        {
-            get;
-            set;
-        }
-
-        public IList<IBookItemViewModel> OwnedBooks
-        {
-            get;
-            set;
-        }
-
-        public IList<IBookItemViewModel> ReadingChallengeBooks
+        public ILazyObservableCollection<IBookItemViewModel> ReadingChallengeBooks
         {
             get;
             set;
