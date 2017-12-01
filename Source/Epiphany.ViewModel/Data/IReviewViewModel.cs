@@ -1,6 +1,4 @@
-﻿using Epiphany.ViewModel.Commands;
-using Epiphany.ViewModel.Items;
-using System;
+﻿using Epiphany.ViewModel.Items;
 using System.Collections.Generic;
 using System.Windows.Input;
 
@@ -8,6 +6,13 @@ namespace Epiphany.ViewModel
 {
     public interface IReviewViewModel : IDataViewModel<ReviewParameter>
     {
+        /// <summary>
+        /// Gets whether any user is logged in
+        /// </summary>
+        bool IsLoggedIn
+        {
+            get;
+        }
         /// <summary>
         /// Gets the book for the review
         /// </summary>

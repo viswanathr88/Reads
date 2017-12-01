@@ -12,6 +12,8 @@ namespace Epiphany.ViewModel
     public sealed class ReviewViewModel : DataViewModel<ReviewParameter>, IReviewViewModel
     {
         private readonly IReviewService reviewService;
+        private readonly ILogonService logonService;
+        private bool isLoggedIn;
         private IBookItemViewModel book;
         private int rating;
         private string reviewText;
@@ -22,14 +24,22 @@ namespace Epiphany.ViewModel
         private string commentText;
         private ICommand postComment;
 
-        public ReviewViewModel(IReviewService reviewService)
+        public ReviewViewModel(IReviewService reviewService, ILogonService logonService)
         {
             if (reviewService == null)
             {
                 throw new ArgumentNullException(nameof(reviewService));
             }
 
+            if (logonService == null)
+            {
+                throw new ArgumentNullException(nameof(logonService));
+            }
+
             this.reviewService = reviewService;
+            this.logonService = logonService;
+            this.logonService.SessionChanged += LogonService_SessionChanged;
+            IsLoggedIn = (this.logonService.Session != null);
         }
 
         public IBookItemViewModel Book
@@ -125,6 +135,18 @@ namespace Epiphany.ViewModel
             }
         }
 
+        public bool IsLoggedIn
+        {
+            get
+            {
+                return this.isLoggedIn;
+            }
+            private set
+            {
+                SetProperty(ref this.isLoggedIn, value);
+            }
+        }
+
         public async override Task LoadAsync(ReviewParameter param)
         {
             IsLoading = true;
@@ -144,6 +166,11 @@ namespace Epiphany.ViewModel
 
             IsLoading = false;
             IsLoaded = true;
+        }
+
+        private void LogonService_SessionChanged(object sender, Model.Authentication.SessionChangedEventArgs e)
+        {
+            IsLoggedIn = (this.logonService.Session != null);
         }
 
         private void UpdateProperties()

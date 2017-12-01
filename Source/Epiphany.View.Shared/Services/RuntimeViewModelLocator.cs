@@ -180,7 +180,7 @@ namespace Epiphany.View.Services
         {
             get
             {
-                return new ReviewViewModel(this.serviceFactory.GetReviewService());
+                return new ReviewViewModel(this.serviceFactory.GetReviewService(), this.serviceFactory.GetLogonService());
             }
         }
 

@@ -2,7 +2,6 @@
 using Epiphany.ViewModel;
 using Epiphany.ViewModel.Items;
 using System.Collections.Generic;
-using System;
 using Windows.UI.Xaml;
 
 namespace Epiphany.View.DesignData
@@ -11,6 +10,7 @@ namespace Epiphany.View.DesignData
     {
         public DesignProfileViewModel()
         {
+            IsLoggedIn = true;
             Id = 50;
             Name = "Test User";
             Username = "viswanathr";
@@ -163,6 +163,12 @@ namespace Epiphany.View.DesignData
         }
 
         public Visibility RequestPendingVisibility
+        {
+            get;
+            set;
+        }
+
+        public bool IsLoggedIn
         {
             get;
             set;

@@ -24,6 +24,8 @@ namespace Epiphany.View.DesignData
             Shelves.Add(new DesignBookshelfItemViewModel() { Name = "Temp Shelf 6" });
 
             CommentText = "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum";
+
+            IsLoggedIn = true;
         }
 
         public IBookItemViewModel Book
@@ -33,6 +35,12 @@ namespace Epiphany.View.DesignData
         }
 
         public string CommentText
+        {
+            get;
+            set;
+        }
+
+        public bool IsLoggedIn
         {
             get;
             set;

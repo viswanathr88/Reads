@@ -59,6 +59,7 @@ namespace Epiphany.ViewModel
             this.resourceLoader = resourceLoader;
             this.userService = userService;
             this.logonService = logonService;
+            this.logonService.SessionChanged += LogonService_SessionChanged;
             this.navService = navService;
             this.deviceServices = deviceServices;
 
@@ -321,28 +322,7 @@ namespace Epiphany.ViewModel
             Location = !string.IsNullOrEmpty(Model.Location) ? Model.Location : "Unknown";
             ConstructMemberSinceString();
 
-            int id = -1;
-            if (this.logonService.Session != null && int.TryParse(this.logonService.Session.UserId, out id)
-                && id == Parameter.Id)
-            {
-                ProfileActionsVisibility = Visibility.Collapsed;
-                RequestPendingVisibility = Visibility.Collapsed;
-                FollowingUserVisibility = Visibility.Collapsed;
-                FollowingUserVisibility = Visibility.Collapsed;
-            }
-            else if (Model.IsPendingFriendRequest)
-            {
-                ProfileActionsVisibility = Visibility.Collapsed;
-                RequestPendingVisibility = Visibility.Visible;
-                FollowingUserVisibility = Visibility.Collapsed;
-                FollowingUserVisibility = Visibility.Collapsed;
-            }
-            else
-            {
-                ProfileActionsVisibility = Model.IsFriend ? Visibility.Collapsed : Visibility.Visible;
-                FollowUserVisibility = Model.IsFollowing ? Visibility.Collapsed : Visibility.Visible;
-                FollowingUserVisibility = Model.IsFollowing ? Visibility.Visible : Visibility.Collapsed;
-            }
+            UpdateProfileActionsVisibility();
 
             RecentUpdates = new ObservableCollection<IFeedItemViewModel>();
             foreach (FeedItemModel model in Model.RecentUpdates)
@@ -385,6 +365,42 @@ namespace Epiphany.ViewModel
             FollowUserVisibility = Visibility.Collapsed;
         }
 
+        private void UpdateProfileActionsVisibility()
+        {
+            int id = -1;
+
+            // Check if the user is signed in
+            if (this.logonService.Session == null)
+            {
+                ProfileActionsVisibility = Visibility.Collapsed;
+            }
+            else if (int.TryParse(this.logonService.Session.UserId, out id) && id == Parameter.Id)
+            {
+                ProfileActionsVisibility = Visibility.Collapsed;
+                RequestPendingVisibility = Visibility.Collapsed;
+                FollowingUserVisibility = Visibility.Collapsed;
+                FollowingUserVisibility = Visibility.Collapsed;
+            }
+            else if (Model.IsPendingFriendRequest)
+            {
+                ProfileActionsVisibility = Visibility.Collapsed;
+                RequestPendingVisibility = Visibility.Visible;
+                FollowingUserVisibility = Visibility.Collapsed;
+                FollowingUserVisibility = Visibility.Collapsed;
+            }
+            else
+            {
+                ProfileActionsVisibility = Model.IsFriend ? Visibility.Collapsed : Visibility.Visible;
+                FollowUserVisibility = Model.IsFollowing ? Visibility.Collapsed : Visibility.Visible;
+                FollowingUserVisibility = Model.IsFollowing ? Visibility.Visible : Visibility.Collapsed;
+            }
+        }
+
+        private void LogonService_SessionChanged(object sender, Model.Authentication.SessionChangedEventArgs e)
+        {
+            UpdateProfileActionsVisibility();
+        }
+
         private async void OnProfileActionCompleted(object sender, ExecutedEventArgs e)
         {
             if (e.State == CommandExecutionState.Success)
@@ -401,6 +417,13 @@ namespace Epiphany.ViewModel
             {
                 MemberSinceString = string.Format("{0:MMM yyyy}", Model.JoinDate);
             }
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+
+            this.logonService.SessionChanged -= LogonService_SessionChanged;
         }
     }
 }
