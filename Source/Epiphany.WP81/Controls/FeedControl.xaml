@@ -62,6 +62,7 @@
                             <!-- User Image -->
                             <Button Grid.Column="0"
                                     Style="{StaticResource TextButtonStyle}"
+                                    MinHeight="0"
                                     VerticalAlignment="Top"
                                     x:Name="userImageButton"
                                     Click="User_Click">
@@ -97,6 +98,7 @@
                                     <Button Grid.Column="0"
                                             Style="{StaticResource TextButtonStyle}"
                                             VerticalAlignment="Top"
+                                            MinHeight="0"
                                             x:Name="userNameButton"
                                             Click="User_Click">
                                         <TextBlock Text="{Binding Path=User.Name}"
@@ -208,6 +210,7 @@
                                 <Button Grid.Column="0"
                                         Style="{StaticResource TextButtonStyle}"
                                         VerticalAlignment="Top"
+                                        MinHeight="0"
                                         x:Name="friendImageButton"
                                         Click="Friend_Click">
                                     <Button.Content>
@@ -231,6 +234,7 @@
                                 <Button Grid.Column="1"
                                         Style="{StaticResource TextButtonStyle}"
                                         VerticalContentAlignment="Center"
+                                        MinHeight="0"
                                         x:Name="friendNameButton"
                                         Click="Friend_Click">
                                     <Button.Content>
@@ -272,6 +276,7 @@
                                     <Button Grid.Column="0"
                                             Style="{StaticResource TextButtonStyle}"
                                             VerticalAlignment="Top"
+                                            MinHeight="0"
                                             Click="Book_Click">
                                         <!-- Book Image -->
                                         <Border Height="96"
@@ -293,6 +298,7 @@
 
                                         <Button Style="{StaticResource TextButtonStyle}"
                                                 VerticalAlignment="Top"
+                                                MinHeight="0"
                                                 Click="Book_Click">
                                             <TextBlock Text="{Binding Path=Book.Title}"
                                                        Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
@@ -311,6 +317,7 @@
 
                                         <Button Style="{StaticResource TextButtonStyle}"
                                                 VerticalAlignment="Top"
+                                                MinHeight="0"
                                                 Click="Author_Click">
                                             <TextBlock Text="{Binding Path=Book.MainAuthor.Name}"
                                                        Foreground="{ThemeResource PhoneMidBrush}"
