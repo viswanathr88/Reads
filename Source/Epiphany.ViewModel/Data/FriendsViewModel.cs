@@ -98,6 +98,7 @@ namespace Epiphany.ViewModel
                 if (!FriendList.IsLoading)
                 {
                     IsLoaded = (FriendList.Count != 0 || Error != null);
+                    AreFriendsEmpty = (FriendList.Count == 0);
                 }
 
             }

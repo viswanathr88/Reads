@@ -55,6 +55,10 @@ namespace Epiphany.ViewModel.Collections
             }
 
             LoadCompleted = (fMoveNext == false);
+            if (pagedCollection.Error != null)
+            {
+                throw pagedCollection.Error;
+            }
 
             IList<TViewModel> itemsVM = new List<TViewModel>();
             foreach (var item in items)

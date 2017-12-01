@@ -735,4 +735,10 @@
   <data name="TabHeaderEvents" xml:space="preserve">
     <value>Events</value>
   </data>
+  <data name="FriendsPageGenericErrorText" xml:space="preserve">
+    <value>Oops. This friend list could not be loaded. Please try again later.</value>
+  </data>
+  <data name="FriendsPagePermissionDeniedErrorText" xml:space="preserve">
+    <value>You do not have permissions to view this list. You need to be signed in to Goodreads. Please sign in and try again later.</value>
+  </data>
 </root>

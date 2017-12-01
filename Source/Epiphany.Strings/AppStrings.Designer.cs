@@ -1034,6 +1034,24 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Oops. This friend list could not be loaded. Please try again later..
+        /// </summary>
+        public static string FriendsPageGenericErrorText {
+            get {
+                return ResourceManager.GetString("FriendsPageGenericErrorText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You do not have permissions to view this list. You need to be signed in to Goodreads. Please sign in and try again later..
+        /// </summary>
+        public static string FriendsPagePermissionDeniedErrorText {
+            get {
+                return ResourceManager.GetString("FriendsPagePermissionDeniedErrorText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to friend status.
         /// </summary>
         public static string FriendStatusText {
