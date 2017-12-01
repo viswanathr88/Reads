@@ -209,6 +209,14 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
 
+                    <ListView.Footer>
+                        <ProgressRing IsActive="{Binding Path=Books.IsLoading}"
+                                      MinWidth="40"
+                                      MinHeight="40"
+                                      Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
+                                      Background="Transparent" />
+                    </ListView.Footer>
+
                 </ListView>
             </PivotItem>
         </Pivot>

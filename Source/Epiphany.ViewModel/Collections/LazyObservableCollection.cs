@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.UI.Xaml.Data;
@@ -11,6 +12,7 @@ namespace Epiphany.ViewModel.Collections
     {
         private readonly Func<IEnumerable<TModel>> collectionSourceFn;
         private readonly Func<TModel, TViewModel> adapterFn;
+        private bool isLoading = false;
         private bool hasMoreItems = true;
 
         public LazyObservableCollection(Func<IEnumerable<TModel>> sourceFn, Func<TModel, TViewModel> adapterFn)
@@ -37,6 +39,22 @@ namespace Epiphany.ViewModel.Collections
             }
         }
 
+        public bool IsLoading
+        {
+            get
+            {
+                return this.isLoading;
+            }
+            private set
+            {
+                if (this.isLoading != value)
+                {
+                    this.isLoading = value;
+                    OnPropertyChanged(new PropertyChangedEventArgs(nameof(IsLoading)));
+                }
+            }
+        }
+
         public event EventHandler<LoadedEventArgs> Loaded;
         private void RaiseLoaded(Exception error) => Loaded?.Invoke(this, new LoadedEventArgs(error));
 
@@ -45,6 +63,7 @@ namespace Epiphany.ViewModel.Collections
 
         public IAsyncOperation<LoadMoreItemsResult> LoadMoreItemsAsync(uint count)
         {
+            IsLoading = true;
             RaiseLoading();
 
             IEnumerable<TModel> collectionSource = collectionSourceFn.Invoke();
@@ -63,6 +82,7 @@ namespace Epiphany.ViewModel.Collections
             HasMoreItems = false;
 
             RaiseLoaded(null);
+            IsLoading = false;
 
             return Task.FromResult<LoadMoreItemsResult>(new LoadMoreItemsResult() { Count = Convert.ToUInt32(Count) }).AsAsyncOperation<LoadMoreItemsResult>();
         }

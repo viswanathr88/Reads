@@ -8,12 +8,13 @@ namespace Epiphany.View.DesignData
 {
     class DesignLazyObservableCollection<T> : ObservableCollection<T>, ILazyObservableCollection<T>
     {
-        public void AddItem(T item)
+        public bool HasMoreItems
         {
-            Add(item);
+            get;
+            set;
         }
 
-        public bool HasMoreItems
+        public bool IsLoading
         {
             get;
             set;

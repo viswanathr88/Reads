@@ -3,6 +3,7 @@ using Epiphany.Model.Collections;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.UI.Core;
@@ -12,12 +13,13 @@ using Windows.UI.Xaml.Data;
 namespace Epiphany.ViewModel.Collections
 {
     public sealed class ObservablePagedCollection<TViewModel, TModel> : ObservableCollection<TViewModel>, 
-        IGroup<string, TViewModel>, ILazyObservableCollection<TViewModel>
+        IGroup<string, TViewModel>, ILazyObservableCollection<TViewModel>, INotifyPropertyChanged
     {
         private readonly IPagedCollection<TModel> pagedCollection;
         private readonly IAsyncEnumerator<TModel> enumerator;
         private readonly Func<TModel, TViewModel> adapterMethod;
         private bool hasMoreItems = true;
+        private bool isLoading = false;
 
         public event EventHandler<EventArgs> Loading;
         private void RaiseLoading() => Loading?.Invoke(this, EventArgs.Empty);
@@ -65,12 +67,29 @@ namespace Epiphany.ViewModel.Collections
             private set;
         }
 
+        public bool IsLoading
+        {
+            get
+            {
+                return this.isLoading;
+            }
+            private set
+            {
+                if (this.isLoading != value)
+                {
+                    this.isLoading = value;
+                    OnPropertyChanged(new PropertyChangedEventArgs(nameof(IsLoading)));
+                }
+            }
+        }
+
         public IAsyncOperation<LoadMoreItemsResult> LoadMoreItemsAsync(uint count)
         {
             CoreDispatcher dispatcher = Window.Current.Dispatcher;
             Logger.LogDebug($"{GetType()} - Count = {count}");
 
             RaiseLoading();
+            IsLoading = true;
 
             return Task.Run(async () =>
             {
@@ -98,6 +117,7 @@ namespace Epiphany.ViewModel.Collections
                                 Add(item);
                             }
                         }
+                        IsLoading = false;
                         RaiseLoaded(pagedCollection.Error);
                     });
 

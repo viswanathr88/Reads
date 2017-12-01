@@ -18,5 +18,12 @@ namespace Epiphany.ViewModel.Collections
         /// Event when the list has loaded
         /// </summary>
         event EventHandler<LoadedEventArgs> Loaded;
+        /// <summary>
+        /// Gets whether the list is loading
+        /// </summary>
+        bool IsLoading
+        {
+            get;
+        }
     }
 }
