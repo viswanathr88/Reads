@@ -1,4 +1,6 @@
-﻿using Epiphany.Logging;
+﻿using System;
+using System.ComponentModel;
+using Epiphany.Logging;
 using Epiphany.Model;
 using Epiphany.ViewModel;
 using Epiphany.ViewModel.Items;
@@ -7,6 +9,8 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
+using Epiphany.View.Controls;
+using Epiphany.Strings;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
@@ -23,6 +27,39 @@ namespace Epiphany.View
             this.InitializeComponent();
             NavigationCacheMode = NavigationCacheMode.Required;
             Context = new DataContextWrapper<IHomeViewModel>(DataContext);
+            RegisterPropertyChanged();
+            Loaded += MainPage_Loaded;
+        }
+
+        protected override void OnViewModelPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            base.OnViewModelPropertyChanged(sender, e);
+
+            if (e.PropertyName == nameof(IHomeViewModel.IsLoggedIn))
+            {
+                UpdatePivotHeaders();
+            }
+        }
+
+        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            UpdatePivotHeaders();
+        }
+
+        private void UpdatePivotHeaders()
+        {
+            var tabHeader = eventsOrMoreTabHeader.Content as TabHeader;
+
+            if (Context.ViewModel.IsLoggedIn)
+            {
+                tabHeader.HeaderText = AppStrings.TabHeaderMore;
+                tabHeader.Glyph = "\uE179";
+            }
+            else
+            {
+                tabHeader.HeaderText = AppStrings.TabHeaderEvents;
+                tabHeader.Glyph = "\uE1C4";
+            }
         }
 
         private void Search_Clicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
@@ -61,54 +98,6 @@ namespace Epiphany.View
             }
 
             Frame.Navigate(typeof(BookshelvesPage), user);
-        }
-
-        private async void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (e.AddedItems != null)
-            {
-                var list = sender as ListView;
-                switch (list.SelectedIndex)
-                {
-                    case 0:
-                        {
-                            var user = Context.ViewModel.CurrentlyLoggedInUser;
-
-                            if (user == null)
-                            {
-                                Logger.LogError("User is not logged in!");
-                            }
-                            else
-                            {
-                                await App.Navigate(typeof(ProfilePage), user);
-                            }
-
-                            break;
-                        }
-                    case 1:
-                        {
-                            var user = Context.ViewModel.CurrentlyLoggedInUser;
-
-                            if (user == null)
-                            {
-                                Logger.LogError("User is not logged in!");
-                            }
-                            else
-                            {
-                                await App.Navigate(typeof(FriendsPage), user);
-                            }
-
-                            break;
-                        }
-                    case 3:
-                        {
-                            await App.Navigate(typeof(EventsPage), VoidType.Empty);
-                            break;
-                        }
-                    default:
-                        break;
-                }
-            }
         }
 
         private async void Review_Click(object sender, ItemClickEventArgs e)

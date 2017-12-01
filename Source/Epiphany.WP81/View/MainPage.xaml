@@ -58,8 +58,9 @@
                                     Glyph="&#xE125;" />
             </ListViewItem>
 
-            <!-- More Tab -->
-            <ListViewItem VerticalContentAlignment="Center">
+            <!-- Events/More Tab -->
+            <ListViewItem VerticalContentAlignment="Center"
+                          x:Name="eventsOrMoreTabHeader">
                 <controls:TabHeader HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.TabHeaderMore}"
                                     Glyph="&#xE179;" />
             </ListViewItem>
@@ -275,56 +276,16 @@
                 </Grid>
             </PivotItem>
 
-            <!-- More Pivot -->
+            <!-- More/Events Pivot -->
             <PivotItem>
                 <Grid Margin="19,0,19,0">
-                    <!-- General Reviews -->
-                    <ListView Margin="0,15,0,15"
-                              SelectionChanged="ListView_SelectionChanged"
-                              ContinuumNavigationTransitionInfo.ExitElementContainer="True">
+                    <controls:LauncherControl CurrentUser="{Binding CurrentlyLoggedInUser}"
+                                              Visibility="{Binding IsLoggedIn, Converter={StaticResource BooleanToVisibilityConverter}}"/>
 
-                        <ListView.ItemContainerStyle>
-                            <Style TargetType="ListViewItem">
-                                <Setter Property="HorizontalContentAlignment"
-                                        Value="Stretch" />
-                                <Setter Property="Margin"
-                                        Value="0,0,0,30" />
-                            </Style>
-
-                        </ListView.ItemContainerStyle>
-
-                        <ListView.ItemContainerTransitions>
-                            <TransitionCollection>
-                                <EntranceThemeTransition IsStaggeringEnabled="True" />
-                            </TransitionCollection>
-                        </ListView.ItemContainerTransitions>
-
-                        <ListViewItem>
-                            <controls:LauncherItem HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.HomeMyProfileTitle}"
-                                                   Glyph="&#xE181;" />
-                        </ListViewItem>
-
-                        <ListViewItem>
-                            <controls:LauncherItem HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.HomeFriendsTitle}"
-                                                   Glyph="&#xE1E2;" />
-                        </ListViewItem>
-
-                        <ListViewItem>
-                            <controls:LauncherItem HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.HomeGroupsTitle}"
-                                                   Glyph="&#x1F465;" />
-                        </ListViewItem>
-
-                        <ListViewItem>
-                            <controls:LauncherItem HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.HomeEventsTitle}"
-                                                   Glyph="&#xE1C4;" />
-                        </ListViewItem>
-
-                        <ListViewItem>
-                            <controls:LauncherItem HeaderText="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.HomeRecommendationsTitle}"
-                                                   Glyph="&#xE19f;" />
-                        </ListViewItem>
-
-                    </ListView>
+                    <controls:EventsControl Items="{Binding Path=Events.Events}"
+                                            IsLoading="{Binding Path=Events.IsLoading}"
+                                            SelectedItem="{Binding Path=Events.SelectedEvent, Mode=TwoWay}"
+                                            Visibility="{Binding IsLoggedIn, Converter={StaticResource InverseBooleanToVisibilityConverter}}"/>
                 </Grid>
             </PivotItem>
         </Pivot>

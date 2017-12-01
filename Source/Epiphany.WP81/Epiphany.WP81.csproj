@@ -90,6 +90,12 @@
     <Compile Include="Controls\EventItem.xaml.cs">
       <DependentUpon>EventItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\EventsControl.xaml.cs">
+      <DependentUpon>EventsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LauncherControl.xaml.cs">
+      <DependentUpon>LauncherControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\LauncherItem.xaml.cs">
       <DependentUpon>LauncherItem.xaml</DependentUpon>
     </Compile>
@@ -229,7 +235,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\EventsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\FeedControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LauncherControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

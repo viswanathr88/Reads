@@ -34,39 +34,9 @@
                        Margin="0,10,0,15"/>
         </Grid>
 
-        <ListView ItemsSource="{Binding Events}"
-                  SelectedItem="{Binding SelectedEvent, Mode=TwoWay}"
-                  Grid.Row="1">
-
-            <ListView.Header>
-                <ProgressRing IsActive="{Binding IsLoading}"
-                              HorizontalAlignment="Center"
-                              Foreground="{ThemeResource ApplicationForegroundThemeBrush}"
-                              MinHeight="45"
-                              MinWidth="45"
-                              Visibility="{Binding IsLoading, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}" />
-            </ListView.Header>
-
-            <ListView.ItemContainerTransitions>
-                <TransitionCollection>
-                    <EntranceThemeTransition IsStaggeringEnabled="True" />
-                </TransitionCollection>
-            </ListView.ItemContainerTransitions>
-
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="0,0,0,15">
-                        <controls:EventItem ImageUrl="{Binding ImageUrl}"
-                                            City="{Binding City}"
-                                            Venue="{Binding Venue}"
-                                            Title="{Binding Title}"
-                                            Time="{Binding Time}"
-                                            Description="{Binding Description}"/>
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-            
-        </ListView>
+        <controls:EventsControl Grid.Row="1"
+                                IsLoading="{Binding IsLoading}"
+                                Items="{Binding Events}" />
     </Grid>
 
     <local:DataPage.BottomAppBar>

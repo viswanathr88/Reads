@@ -151,7 +151,7 @@ namespace Epiphany.ViewModel
             IList<Task> tasks = new List<Task>();
             if (IsLoggedIn)
             {
-                // Start loading your feed but not await
+                // Start loading your feed but not wait
                 tasks.Add(Feed.LoadAsync(VoidType.Empty, true));
 
                 // This should finish quickly as it is just creating the collection
@@ -160,6 +160,9 @@ namespace Epiphany.ViewModel
 
             // Load the community reviews
             tasks.Add(Community.LoadAsync(VoidType.Empty, true));
+
+            // Load the Events VM
+            tasks.Add(Events.LoadAsync(VoidType.Empty, true));
 
             // Wait for all tasks to finish
             await Task.WhenAll(tasks);
