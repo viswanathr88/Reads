@@ -741,4 +741,7 @@
   <data name="FriendsPagePermissionDeniedErrorText" xml:space="preserve">
     <value>You do not have permissions to view this list. You need to be signed in to Goodreads. Please sign in and try again later.</value>
   </data>
+  <data name="AppBarShareText" xml:space="preserve">
+    <value>share</value>
+  </data>
 </root>

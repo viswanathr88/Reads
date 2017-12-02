@@ -7,6 +7,7 @@ using Epiphany.ViewModel.Items;
 using Epiphany.WP81;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
+using Epiphany.View.Share;
 
 namespace Epiphany.View
 {
@@ -15,10 +16,12 @@ namespace Epiphany.View
     /// </summary>
     public sealed partial class BookPage : DataPage
     {
+        private readonly DataContextWrapper<IBookViewModel> Context;
         public BookPage()
         {
             this.InitializeComponent();
             NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Required;
+            Context = new DataContextWrapper<IBookViewModel>(DataContext);
         }
 
         protected override void LoadState(object sender, LoadStateEventArgs e)
@@ -79,6 +82,17 @@ namespace Epiphany.View
                 var reviewItemVM = e.ClickedItem as IReviewItemViewModel;
                 await App.Navigate(typeof(ReviewPage), new ReviewParameter() { ReviewModel = reviewItemVM.Item as ReviewModel }, new SlideNavigationTransitionInfo());
             }
+        }
+
+        private void Share_Clicked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            var bookshare = new BookShare();
+            bookshare.Share(Context.ViewModel.Parameter as BookModel);
+        }
+
+        private void Pin_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+
         }
     }
 }

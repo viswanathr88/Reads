@@ -260,6 +260,15 @@ namespace Epiphany.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to share.
+        /// </summary>
+        public static string AppBarShareText {
+            get {
+                return ResourceManager.GetString("AppBarShareText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to sign out.
         /// </summary>
         public static string AppBarSignOutText {

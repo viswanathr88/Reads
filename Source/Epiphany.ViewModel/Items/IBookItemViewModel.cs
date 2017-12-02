@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Epiphany.Model;
+using System.Collections.Generic;
 
 namespace Epiphany.ViewModel.Items
 {
-    public interface IBookItemViewModel : IItemViewModel
+    public interface IBookItemViewModel : IItemViewModel<BookModel>
     {
         IList<IAuthorItemViewModel> Authors { get; }
         double AverageRating { get; }

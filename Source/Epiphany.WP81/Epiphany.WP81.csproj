@@ -150,6 +150,9 @@
     </Compile>
     <Compile Include="Controls\WrapPanel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Share\BookShare.cs" />
+    <Compile Include="Share\ISupportShare.cs" />
+    <Compile Include="Share\SupportShareBase.cs" />
     <Compile Include="View\AuthorPage.xaml.cs">
       <DependentUpon>AuthorPage.xaml</DependentUpon>
     </Compile>

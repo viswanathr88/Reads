@@ -1,4 +1,5 @@
 ﻿using Epiphany.Logging;
+using Epiphany.View.Share;
 using Epiphany.ViewModel;
 using Epiphany.ViewModel.Items;
 using Epiphany.WP81;
@@ -29,9 +30,6 @@ namespace Epiphany.View
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            DataTransferManager dataTransferManager = DataTransferManager.GetForCurrentView();
-            dataTransferManager.DataRequested += ShareData;
-
             base.OnNavigatedTo(e);
         }
 
@@ -73,55 +71,12 @@ namespace Epiphany.View
         {
             Logger.LogDebug("Sender: " + sender.ToString());
             this.selectedMenuItem = sender as FrameworkElement;
-            Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI();
-        }
+            var itemVM = this.selectedMenuItem.DataContext as ISearchResultItemViewModel;
 
-        private void ShareData(DataTransferManager sender, DataRequestedEventArgs args)
-        {
-            try
-            {
-                var request = args.Request;
-                var deferral = request.GetDeferral();
+            var bookShare = new BookShare();
+            bookShare.Share(itemVM.Book.Item);
 
-                if (this.selectedMenuItem == null)
-                {
-                    request.FailWithDisplayText(Strings.AppStrings.SharingFailedMessage);
-                    Logger.LogError("There is no sender, Cannot share...");
-                    deferral.Complete();
-                    return;
-                }
-
-                if (this.selectedMenuItem.DataContext == null)
-                {
-                    request.FailWithDisplayText(Strings.AppStrings.SharingFailedMessage);
-                    Logger.LogError("No Datacontext on sender. Cannot share...");
-                    deferral.Complete();
-                    return;
-                }
-
-                Logger.LogDebug(this.selectedMenuItem.DataContext.GetType().ToString());
-
-                var searchResultItem = this.selectedMenuItem.DataContext as SearchResultItemViewModel;
-                if (searchResultItem == null)
-                {
-                    request.FailWithDisplayText(Strings.AppStrings.SharingFailedMessage);
-                    Logger.LogError("DataContext is not of expected type. Cannot share...");
-                    deferral.Complete();
-                    return;
-                }
-
-                request.Data.Properties.Title = Strings.AppStrings.ShareBookTitle;
-                request.Data.Properties.Description = searchResultItem.Author.Name;
-                request.Data.SetText(searchResultItem.Book.Title);
-                request.Data.SetWebLink(new Uri(@"http://www.goodreads.com/book/show/" + searchResultItem.Book.Id));
-                deferral.Complete();
-
-                this.selectedMenuItem = null;
-            }
-            catch (Exception ex)
-            {
-                Logger.LogException(ex);
-            }
+            this.selectedMenuItem = null;
         }
 
         private void ScrollToTop(object sender, RoutedEventArgs e)

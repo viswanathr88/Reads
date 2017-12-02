@@ -348,11 +348,20 @@
     </Grid>
 
     <local:DataPage.BottomAppBar>
-        <CommandBar ClosedDisplayMode="Minimal">
+        <CommandBar>
             <CommandBar.PrimaryCommands>
                 <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarHomeText}"
                               Icon="Home"
                               Click="Home_Clicked" />
+                <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarShareText}"
+                              Click="Share_Clicked">
+                    <AppBarButton.Icon>
+                        <FontIcon FontFamily="Segoe UI Symbol" Glyph="&#xE2FD;" />
+                    </AppBarButton.Icon>
+                </AppBarButton>
+                <AppBarButton Label="{Binding Source={StaticResource LocalizedStrings}, Path=LocalizedResources.AppBarPinText}"
+                              Icon="Pin"
+                              Click="Pin_Click" />
             </CommandBar.PrimaryCommands>
         </CommandBar>
     </local:DataPage.BottomAppBar>
